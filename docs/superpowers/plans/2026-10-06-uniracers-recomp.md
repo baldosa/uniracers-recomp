@@ -92,3 +92,20 @@ every repeat run; `$7E:01F3` (stack) differs at frame 402 in some runs.
 - [ ] Step 1: README status, controls, build instructions (headless and
   desktop), no ROM-derived data in the tree (`git ls-files` check).
 - [ ] Step 2: commit.
+
+## Status 2026-10-06 (end of session)
+
+Done: scaffold, headless harness, deterministic routes (7), snes9x oracle
+(snesref + pad-2 scripting), checkpoint oracle (interp == snes9x == AOT),
+framework fix HVBJOY beam sync (branch uniracers/hvbjoy-beam-sync), coverage
+loop tools (capture_coverage.sh, promote_roots.py), 164 promoted roots.
+
+In progress (framework branch uniracers/native-handoff, game side OFF):
+native entry hand-off so frame resumes / NMI run compiled. Remaining
+interpreted work is ~68% the WaitForNMI spin resumed in the interpreter.
+Blocker found: compiled I_NMI's `JML [$0053]` tiers down with subroutine
+stack semantics and over-pops 3 bytes after the handler's RTI. Next step:
+resolve it in cfg as an indirect dispatch with the only three handlers the
+ROM installs: $80:F60C (80:A165), $80:8610 (82:D74D), $80:85A5 (82:DE1B);
+then set I_NMI/I_RESET emit = true and enable the hand-off in game_rtl.c.
+Then: promote resume/continuation PCs from captures, League route, decomp.

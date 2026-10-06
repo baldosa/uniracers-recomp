@@ -35,6 +35,16 @@
 #include "game_rtl.h"
 
 #include "beam_frame_driver.h"
+#include "snes/interp_bridge.h"
+
+/* Frame resumes and interrupt vectors run compiled when analysis has an
+ * entry there (snesrecomp native entry hand-off); without it the main loop,
+ * parked in WaitForNMI ($82:D4E9) at every frame cut, would resume in the
+ * interpreter and stay there. */
+static void GameInitialize(void)
+{
+    interp_bridge_set_native_handoff(0);  /* WIP: off until JML [$0053] is resolved (see docs) */
+}
 
 void GameRunOneFrame(void)
 {
@@ -57,7 +67,7 @@ void GameSessionReset(void)
 
 const RtlGameInfo kGameInfo = {
     .title = "uniracers",
-    .initialize = NULL,
+    .initialize = &GameInitialize,
     .run_frame = &GameRunOneFrame,
     .draw_ppu_frame = &GameDrawPpuFrame,
     .save_name_prefix = "save",
