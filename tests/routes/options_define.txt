@@ -40,4 +40,5 @@ wait 60
 wait 250
 wait 250
 wait 300
+dump end
 quit

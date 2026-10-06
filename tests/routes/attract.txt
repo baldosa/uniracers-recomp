@@ -1,3 +1,10 @@
+# Boot, title, menu idle -> attract demo race.
 turbo on
-wait 3000
+until16 0053 == F60C
+wait 300
+dump menu
+until16 0053 == 8610
+until 0E1F != 00
+wait 600
+dump race
 quit

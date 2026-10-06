@@ -15,7 +15,8 @@ rm -rf "$O"; mkdir -p "$O/fd" "$O/saves"
 O=$(realpath "$O")
 cp "$here/build/config.ini" "$O/config.ini"
 [ -n "${SRM:-}" ] && cp "$SRM" "$O/saves/save.srm"
-cd "$O" && env SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy SNESRECOMP_FRAMEDUMP_PIXELS=${PIXELS:-0} "$@" \
+mkdir -p "$O/dump"
+cd "$O" && env SNESRECOMP_DUMP_DIR="$O/dump" SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy SNESRECOMP_FRAMEDUMP_PIXELS=${PIXELS:-0} "$@" \
   timeout "${TMO:-900}" "$BIN" --no-launcher --config "$O/config.ini" --script "$S" \
   --framedump "$O/fd" "$SNESRECOMP_ROM" > "$O/log.txt" 2>&1
 rc=$?

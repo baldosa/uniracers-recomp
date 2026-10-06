@@ -21,9 +21,17 @@ from it (`src/gen/`, dumps) never enter git.
 2. Routes covered: boot/attract, every main-menu branch, 1P race and stunt
    modes, 2P split-screen, VS, League progression, options, SRAM save/load.
 3. Determinism: identical input script gives identical per-frame WRAM.
-4. Equivalence: AOT build matches the interpreter-only baseline per-frame WRAM
-   over every route script, and matches the snes9x oracle (snesref) on
-   the same scripts within known device-model differences.
+4. Equivalence: on every route script the AOT build, the interpreter-only
+   build and snes9x (snesref) reach every `until` gate, and their `dump`
+   checkpoints (WRAM + SRAM) match outside tools/state_mask.txt.
+
+   Per-frame WRAM equality across tiers is NOT a goal: the AOT tier charges
+   cycles per block (code-region speed) while the interpreter charges per bus
+   transfer, so frames are cut a few cycles apart. Uniracers snapshots
+   in-progress work at timing-dependent points (race-setup table $0764,
+   palette-cycle counters), so only those bytes differ; each masked byte was
+   traced to its writer. Exact tier parity (paced data accesses +
+   per-instruction deadline checks in codegen) is a framework follow-up.
 
 **Decomp** (separate spec when we get there): byte-identical matching
 disassembly, 100% labelled, split per subsystem, named and commented; progress

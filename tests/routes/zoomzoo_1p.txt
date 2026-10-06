@@ -1,0 +1,34 @@
+# 1P: Mike, Crawler tour, Pick Track -> down to Zoom Zoo (3-lap loop, runs
+# leftward) vs Bronsen, with stunt inputs. Race inputs timed from GO.
+turbo on
+until16 0053 == F60C
+wait 300
+press start 2
+wait 200
+press start 2
+wait 200
+press start 2
+wait 200
+press down 2
+wait 30
+press start 2
+wait 200
+press start 2
+until16 0053 == 8610
+until 0E1F != 00
+press left 300
+press left+up 20
+press left 200
+press left+down 20
+press left 200
+press left+l 40
+press left 200
+press left+r 40
+press left+y 20
+press left 900
+press left+x 20
+press left 6000
+until16 0053 == F60C
+wait 300
+dump end
+quit

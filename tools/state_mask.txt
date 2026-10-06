@@ -1,2 +1,12 @@
-# WRAM offsets ignored by statetrace (timing-only state).
+# WRAM offsets ignored by statetrace/compare_dumps: timing-phase state that
+# differs by a frame of phase between execution tiers/emulators while game
+# logic agrees (measured: interpreter tier vs snes9x on every route).
 0100-01FF  # stack page
+0089       # animation phase counters
+008B
+00C6-00C9  # palette-cycle / fade counters ($80:FADF DEC $C6)
+0B80-0BCF  # animated object/palette table driven by $C6
+0BDE       # palette entries written from $80:FBAF,$C6/2
+0BFE
+0846-084F  # race-setup table tail ($81:9E01 STA $076A,Y): snapshot of an
+           # in-progress multi-frame loop ($056A), cycle-timing dependent

@@ -1,16 +1,20 @@
-# 1P: Mike, Crawler tour, Dragster vs Bronsen; hold right, flip on jumps.
+# 1P: Mike, Crawler tour, Dragster vs Bronsen.
+# Gates: $53 = NMI handler (F60C menus, 8610 races); $0E1F ticks from GO.
+# Race inputs are timed from GO so execution tiers/emulators agree.
 turbo on
-wait 500
-press start 2
-wait 200
-press start 2
-wait 200
-press start 2
-wait 200
-press start 2
-wait 200
-press start 2
+until16 0053 == F60C
 wait 300
+press start 2
+wait 200
+press start 2
+wait 200
+press start 2
+wait 200
+press start 2
+wait 200
+press start 2
+until16 0053 == 8610
+until 0E1F != 00
 press right 600
 press right+a 30
 press right 600
@@ -18,23 +22,7 @@ press right+up 60
 press right 900
 press right+b 30
 press right 1200
+until16 0053 == F60C
 wait 300
-# Results -> Pick Track (cursor on Zoom Zoo) -> Now Playing -> race (Zoom Zoo runs leftward)
-press start 2
-wait 200
-press start 2
-wait 300
-press left 300
-press left+up 20
-press left 200
-press left+down 20
-press left 200
-press left+l 40
-press left 200
-press left+r 40
-press left+y 20
-press left 900
-press left+x 20
-press left 1500
-wait 900
+dump end
 quit
