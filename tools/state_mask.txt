@@ -1,0 +1,2 @@
+# WRAM offsets ignored by statetrace (timing-only state).
+0100-01FF  # stack page

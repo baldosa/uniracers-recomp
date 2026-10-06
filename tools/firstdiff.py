@@ -12,8 +12,9 @@ def _crcs(d):
     return open(p).read().split() if os.path.exists(p) else None
 
 def first_diff(a, b):
+    raw = all(os.path.exists(f'{d}/frame_000000_wram.bin') for d in (a, b))
     ca, cb = _crcs(a), _crcs(b)
-    if ca is not None and cb is not None:
+    if not raw and ca is not None and cb is not None:
         for f, (x, y) in enumerate(zip(ca, cb)):
             if x != y:
                 return f, None

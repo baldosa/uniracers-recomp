@@ -25,4 +25,10 @@ with tempfile.TemporaryDirectory() as t:
     crcs(f'{t}/z', ['0x1', '0x9', '0x3'])
     assert first_diff(f'{t}/x', f'{t}/y') is None
     assert first_diff(f'{t}/x', f'{t}/z') == (1, None)
+    # raw dumps win over crc.txt when both sides have them (offsets available)
+    crcs(f'{t}/r1', ['0x1', '0x2', '0x3', '0x4']); crcs(f'{t}/r2', ['0x1', '0x2', '0x9', '0x4'])
+    for d, frames in ((f'{t}/r1', base), (f'{t}/r2', changed)):
+        for f, data in enumerate(frames):
+            open(f'{d}/frame_{f:06d}_wram.bin', 'wb').write(data)
+    assert first_diff(f'{t}/r1', f'{t}/r2') == (2, [5])
 print('ok')
