@@ -1,10 +1,23 @@
-"""First frame where two framedump directories' WRAM differ.
+"""First frame where two route runs' WRAM differ.
 
-usage: firstdiff.py DUMP_A DUMP_B   (exit 1 and print offsets on a difference)
+usage: firstdiff.py RUN_A RUN_B   (exit 1 on a difference)
+Each argument is a framedump dir holding crc.txt (one WRAM CRC per frame,
+written by run_route.sh) or raw frame_NNNNNN_wram.bin files. With raw dumps
+on both sides the differing offsets are reported too.
 """
 import os, sys
 
+def _crcs(d):
+    p = f'{d}/crc.txt'
+    return open(p).read().split() if os.path.exists(p) else None
+
 def first_diff(a, b):
+    ca, cb = _crcs(a), _crcs(b)
+    if ca is not None and cb is not None:
+        for f, (x, y) in enumerate(zip(ca, cb)):
+            if x != y:
+                return f, None
+        return None
     f = 0
     while True:
         pa, pb = (f'{d}/frame_{f:06d}_wram.bin' for d in (a, b))
@@ -20,6 +33,9 @@ if __name__ == '__main__':
     if r is None:
         print('identical'); sys.exit(0)
     f, offs = r
-    a, b = (open(f'{d}/frame_{f:06d}_wram.bin', 'rb').read() for d in sys.argv[1:3])
-    print(f'frame {f}: {len(offs)} bytes:', ' '.join(f'{i:05X}:{a[i]:02X}/{b[i]:02X}' for i in offs[:24]))
+    if offs is None:
+        print(f'frame {f}: WRAM CRC differs (re-run both with KEEP_WRAM=1 for offsets)')
+    else:
+        a, b = (open(f'{d}/frame_{f:06d}_wram.bin', 'rb').read() for d in sys.argv[1:3])
+        print(f'frame {f}: {len(offs)} bytes:', ' '.join(f'{i:05X}:{a[i]:02X}/{b[i]:02X}' for i in offs[:24]))
     sys.exit(1)

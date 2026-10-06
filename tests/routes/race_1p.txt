@@ -1,0 +1,40 @@
+# 1P: Mike, Crawler tour, Dragster vs Bronsen; hold right, flip on jumps.
+turbo on
+wait 500
+press start 2
+wait 200
+press start 2
+wait 200
+press start 2
+wait 200
+press start 2
+wait 200
+press start 2
+wait 300
+press right 600
+press right+a 30
+press right 600
+press right+up 60
+press right 900
+press right+b 30
+press right 1200
+wait 300
+# Results -> Pick Track (cursor on Zoom Zoo) -> Now Playing -> race (Zoom Zoo runs leftward)
+press start 2
+wait 200
+press start 2
+wait 300
+press left 300
+press left+up 20
+press left 200
+press left+down 20
+press left 200
+press left+l 40
+press left 200
+press left+r 40
+press left+y 20
+press left 900
+press left+x 20
+press left 1500
+wait 900
+quit
