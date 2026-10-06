@@ -1,0 +1,28 @@
+# VS: "Pick Player One" (pad 1) then "Pick Player Two" (pad 2), race.
+turbo on
+wait 500
+press down 2
+wait 30
+press down 2
+wait 30
+press start 2
+wait 200
+press start 2
+wait 200
+press p2:down 2
+wait 30
+press p2:start 2
+wait 200
+press start 2
+wait 200
+press start 2
+wait 200
+press start 2
+wait 300
+press right+p2:right 800
+press right+a+p2:right+p2:b 30
+press right+p2:right 800
+press right+up+p2:right+p2:down 60
+press right+p2:right 1500
+wait 900
+quit

@@ -1,0 +1,52 @@
+# Options > Records > Track Records (paged with down), back with b.
+turbo on
+wait 500
+press down 2
+wait 30
+press down 2
+wait 30
+press down 2
+wait 30
+press down 2
+wait 30
+press start 2
+wait 200
+press start 2
+wait 60
+wait 250
+press start 2
+wait 60
+wait 250
+wait 250
+press start 2
+wait 60
+wait 250
+press b 2
+wait 60
+wait 250
+press down 2
+wait 60
+press start 2
+wait 60
+wait 250
+press b 2
+wait 60
+wait 250
+press down 2
+wait 60
+press start 2
+wait 60
+wait 250
+press b 2
+wait 60
+wait 250
+press down 2
+wait 60
+press start 2
+wait 60
+wait 250
+press b 2
+wait 60
+wait 250
+wait 300
+quit

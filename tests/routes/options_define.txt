@@ -1,0 +1,43 @@
+# Options > Define Player > pick Mike > removal warning; back; Records.
+turbo on
+wait 500
+press down 2
+wait 30
+press down 2
+wait 30
+press down 2
+wait 30
+press down 2
+wait 30
+press start 2
+wait 200
+press down 2
+wait 60
+press start 2
+wait 60
+wait 250
+press start 2
+wait 60
+wait 250
+wait 250
+press start 2
+wait 60
+wait 250
+wait 250
+press start 2
+wait 60
+wait 250
+wait 250
+press start 2
+wait 60
+wait 250
+press a 2
+wait 60
+wait 250
+wait 250
+press b 2
+wait 60
+wait 250
+wait 250
+wait 300
+quit
