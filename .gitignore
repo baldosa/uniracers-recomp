@@ -26,3 +26,6 @@
 /input.ini
 
 .DS_Store
+/baselines/
+/coverage/
+/runs/

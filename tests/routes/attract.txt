@@ -1,0 +1,3 @@
+turbo on
+wait 3000
+quit
