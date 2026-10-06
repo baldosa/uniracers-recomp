@@ -6,6 +6,7 @@
 *.sfc
 *.smc
 *.srm
+*.zip
 
 # Build trees and packaged output
 /build/
