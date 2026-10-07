@@ -1,0 +1,76 @@
+# League: Options > Define League slot ONE (clear with SELECT+Y+A, toggle
+# Colin and Tony with B, START, name "T"), then League > ONE > Crawler:
+# league table > Now Playing (Colin pad 1 vs Tony pad 2) > Race, timed from GO.
+turbo on
+until16 0053 == F60C
+wait 300
+press down 2
+wait 30
+press down 2
+wait 30
+press down 2
+wait 30
+press down 2
+wait 30
+press start 2
+wait 300
+press down 2
+wait 30
+press down 2
+wait 30
+press down 2
+wait 30
+press start 2
+wait 300
+press start 2
+wait 300
+press select+y+a 4
+wait 300
+press b 2
+wait 60
+press down 2
+wait 30
+press b 2
+wait 60
+press start 2
+wait 300
+press a 2
+wait 60
+press start 2
+wait 300
+press down 2
+wait 30
+press down 2
+wait 30
+press down 2
+wait 30
+press down 2
+wait 30
+press start 2
+wait 300
+press down 2
+wait 30
+press down 2
+wait 30
+press down 2
+wait 30
+press start 2
+wait 300
+press start 2
+wait 300
+press start 2
+wait 300
+press start 2
+wait 300
+press start 2
+until16 0053 == 8610
+until 0E1F != 00
+press right+p2:right 800
+press right+a+p2:right+p2:b 30
+press right+p2:right 800
+press right+up+p2:right+p2:down 60
+press right+p2:right 1500
+until16 0053 == F60C
+wait 300
+dump end
+quit
