@@ -11,6 +11,6 @@ cd "$here"
 python3 -I tools/promote_roots.py "$prev"/*.json "$prev"/*.jsonl
 seeds=()
 for d in $(ls -d coverage/it* | sort -V); do seeds+=(--profiles "$d"); done
-bash tools/regen.sh "${seeds[@]}" 2>&1 | grep -E 'v2_emit: [0-9]+ roots'
+bash tools/regen.sh --cfg-roots "${seeds[@]}" 2>&1 | grep -E 'v2_emit: [0-9]+ roots'
 cmake --build build -j"$(nproc)" >/dev/null 2>&1
 tools/capture_coverage.sh "$next" baselines/interp0

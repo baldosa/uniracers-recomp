@@ -20,7 +20,8 @@ for s in "$here"/tests/routes/*.txt; do
     --cfg-dir "$here/recomp" --program-manifest "$here/src/gen/program_manifest.json" 2>&1 \
     | sed -n 's/^Interpreted work: //p'
   if [ -n "$base" ]; then
-    python3 -I "$here/tools/compare_dumps.py" "$here/$base/$r" "$tmp/$r" | sed 's/^/    /' || fail=1
+    python3 -I "$here/tools/compare_dumps.py" "$here/$base/$r" "$tmp/$r" > "$tmp/cmp.txt" || fail=1
+    sed 's/^/    /' "$tmp/cmp.txt"; rm -f "$tmp/cmp.txt"
   fi
   rm -rf "$tmp/$r"
 done
