@@ -1,0 +1,3 @@
+#!/bin/sh
+# Zig as a cross ar (see aarch64-linux.cmake).
+exec zig ar "$@"

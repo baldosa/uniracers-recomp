@@ -1,0 +1,3 @@
+#!/bin/sh
+# Zig as a cross cc (see aarch64-linux.cmake).
+exec zig cc -target "${ZIG_TARGET:-aarch64-linux-musl}" "$@"

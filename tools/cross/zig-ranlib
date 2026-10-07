@@ -1,0 +1,3 @@
+#!/bin/sh
+# Zig as a cross ranlib (see aarch64-linux.cmake).
+exec zig ranlib "$@"

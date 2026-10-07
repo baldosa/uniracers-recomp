@@ -73,6 +73,36 @@ both from ever being committed.
 `tools/regen.sh` verifies the ROM, generates `src/gen/*.c`, and re-syncs
 `recomp/funcs.h`. Re-run it whenever you change anything under `recomp/`.
 
+### Raspberry Pi (arm64)
+
+Use 64-bit Raspberry Pi OS. Build on the Pi, but generate the C on a PC: the
+generated code is architecture-independent, so the Pi never needs Rust or
+the analyzer.
+
+```sh
+# on the PC, after tools/regen.sh: copy the repo, src/gen/ included
+rsync -a --exclude build/ uniracers-recomp/ pi@raspberrypi:uniracers-recomp/
+
+# on the Pi
+sudo apt install build-essential cmake ninja-build pkg-config \
+  libx11-dev libxext-dev libxrandr-dev libxcursor-dev libxi-dev libxss-dev \
+  libwayland-dev libxkbcommon-dev libegl-dev libgles-dev libgl-dev \
+  libdrm-dev libgbm-dev libasound2-dev libpulse-dev libudev-dev
+cd uniracers-recomp
+cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+cmake --build build -j2        # -j2: the generated files need RAM; add swap on 1-2 GB Pis
+./build/UniracersSNESRecomp ~/uni.sfc
+```
+
+The default presenter goes through SDL's renderer (GLES on the Pi), so it
+also runs on a Pi 3; the OpenGL presenter needs GL 3.1 (Pi 4/5). With
+`libdrm-dev`/`libgbm-dev` installed SDL can also run straight on the console
+(KMSDRM), without a desktop.
+
+The arm64 build is checked on x86 under qemu: `tools/cross/aarch64-linux.cmake`
+cross-compiles with Zig (static musl), and `BIN=tools/cross/run-arm64.sh
+tools/routes.sh OUT baselines/snes9x` runs every route; all checkpoints match.
+
 ### Decomp
 
 ```sh
