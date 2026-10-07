@@ -15,17 +15,24 @@ Native static recompilation of Uniracers (SNES)
 
 **Recomp: the game runs as compiled native code.** On every scripted route
 (boot/attract, 1P races on Dragster and Zoom Zoo, 2P split-screen, VS,
-Options/Records) the only instructions left to the interpreter are the
-7-instruction reset prologue that runs in 6502 emulation mode before
-`XCE` (the AOT tier compiles native-mode code only).
+League, Options/Define/Records) the only instructions left to the
+interpreter are the 7-instruction reset prologue that runs in 6502
+emulation mode before `XCE` (the AOT tier compiles native-mode code only).
 
 Every route checkpoint (WRAM + SRAM, `dump` in `tests/routes/*.txt`) matches
 both the interpreter-only build and snes9x (snesref); masked bytes in
 `tools/state_mask.txt` are each traced to a timing-phase writer.
 
-Open: League mode is compiled but not yet covered by a route (its setup
-menus need player definitions); the decomp (matching disassembly) has not
-started. See `docs/superpowers/` for the design and plan.
+**Decomp: a matching, fully named disassembly.** `tools/decomp/build.sh`
+regenerates Asar source from your ROM and rebuilds it byte-identically.
+All code in banks $80-$83 is source (42.8k instructions, including
+off-route and unreferenced routines); everything else is data, incbin'd.
+All 674 functions are named and commented, 620 RAM variables named, I/O
+registers symbolic, and the source is split into 20 subsystem files. The
+recomp's `symbols.toml` names are generated from it, so the generated C
+reads the same.
+
+See `docs/superpowers/` for the designs and plan.
 
 Framework changes this port relies on (submodule branch, not yet upstream):
 HVBJOY beam sync, native entry hand-off, `[[variant]]` roots,
@@ -66,6 +73,18 @@ both from ever being committed.
 `tools/regen.sh` verifies the ROM, generates `src/gen/*.c`, and re-syncs
 `recomp/funcs.h`. Re-run it whenever you change anything under `recomp/`.
 
+### Decomp
+
+```sh
+tools/decomp/build.sh /path/to/Uniracers (USA).sfc   # needs asar (1.91) on PATH
+```
+
+Decodes the program (through the recompiler), writes the Asar source to
+`build/disasm/` (one file per subsystem), assembles it and checks the result
+is byte-identical to the ROM. The source is generated from your ROM, never
+committed; what is committed is the knowledge in `decomp/`.
+`tools/decomp/progress.py` reports coverage and naming.
+
 ## Run
 
 ```sh
@@ -93,6 +112,8 @@ than mis-executing ten frames in.
 | `src/gen/` | Generated C. Never committed — regenerate locally |
 | `snesrecomp/` | Framework submodule (owns `lib/recomp-net`, `lib/retcomm-rbengine`) |
 | `tools/` | `regen.sh` — the ROM → C pipeline |
+| `decomp/` | Decomp knowledge: `symbols.txt` (names, comments), `ram.txt`, `hw.asm`, `subsystems.txt` |
+| `tools/decomp/` | `build.sh` — decode, generate the Asar disassembly, rebuild, compare |
 | `scripts/` | `package_release.sh` — player-facing zip |
 | `framework_pins.txt` | Exact framework commits this project was scaffolded against |
 

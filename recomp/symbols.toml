@@ -6832,3 +6832,441 @@ emit = true
 entry_m = 1
 entry_x = 0
 note = "coverage discovery"
+
+[[func]]
+name = "MainLoop_88AE"
+addr = "88AE"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "Menu_DrawTrackNameGrid_95E0"
+addr = "95E0"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "DefineLeague_Main_9BE2"
+addr = "9BE2"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "DefineLeague_Main_9BE8"
+addr = "9BE8"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "DefineLeague_Main_9BEB"
+addr = "9BEB"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "DefineLeague_Main_9BF1"
+addr = "9BF1"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "DefineLeague_Main_9C04"
+addr = "9C04"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "DefineLeague_Main_9C2E"
+addr = "9C2E"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "DefineLeague_PickTracks_9CA2"
+addr = "9CA2"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "DefineLeague_PickTracks_9CAC"
+addr = "9CAC"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "DefineLeague_PickTracks_9CB2"
+addr = "9CB2"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "DefineLeague_PickTracks_9CE9"
+addr = "9CE9"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "DefineLeague_PickTracks_9CFE"
+addr = "9CFE"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "DefineLeague_PickTracks_9D22"
+addr = "9D22"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "DefineLeague_PickTracks_9D96"
+addr = "9D96"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "DefineLeague_PickTracks_9D9F"
+addr = "9D9F"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "DefineLeague_PickTracks_9DD2"
+addr = "9DD2"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "DefineLeague_CalcItemPos_9E62"
+addr = "9E62"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "DefineLeague_CalcItemPos_9E68"
+addr = "9E68"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "DefineLeague_CalcItemPos_9E6B"
+addr = "9E6B"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "DefineLeague_CalcItemPos_9E71"
+addr = "9E71"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "DefineLeague_SelectSlot_9F09"
+addr = "9F09"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "DefineLeague_SelectSlot_9F0C"
+addr = "9F0C"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "Text_NameEntry_A203"
+addr = "A203"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "Text_NameEntry_A225"
+addr = "A225"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "League_DrawTable_A54C"
+addr = "A54C"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "League_DrawTable_A62B"
+addr = "A62B"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "League_DrawTable_A65D"
+addr = "A65D"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "League_DrawTable_A66E"
+addr = "A66E"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "League_DrawTable_A67D"
+addr = "A67D"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "MainMenu_Draw_ACFE"
+addr = "ACFE"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "Mode_League_BE06"
+addr = "BE06"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "Mode_League_BE09"
+addr = "BE09"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "Mode_League_BE1C"
+addr = "BE1C"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "Mode_League_BEEB"
+addr = "BEEB"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "Mode_League_BEFA"
+addr = "BEFA"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "Mode_League_BEFD"
+addr = "BEFD"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "Mode_League_BF0D"
+addr = "BF0D"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "Text_DrawLoop_C40D"
+addr = "C40D"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "Rider_BuildRotationTables_9B57"
+addr = "9B57"
+bank = 1
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
+
+[[variant]]
+bank = 3
+addr = "90F7"
+entry_m = 1
+entry_x = 0
+
+[[func]]
+name = "DefineLeague_Main_9BD1"
+addr = "9BD1"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "DefineLeague_Main_9C3D"
+addr = "9C3D"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "DefineLeague_CalcItemPos_9E7F"
+addr = "9E7F"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "DefineLeague_CalcItemPos_9EBA"
+addr = "9EBA"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "Mode_League_BDCF"
+addr = "BDCF"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "Mode_League_BE45"
+addr = "BE45"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "League_Clear_D40E"
+addr = "D40E"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "DefineLeague_Main_9C3A"
+addr = "9C3A"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"

@@ -118,3 +118,15 @@ snes9x. Coverage loop: `tools/coverage_iter.sh PREV NEXT` (promote ->
 regen with every capture dir as seeds -> build -> capture + validate).
 Remaining: League route; then the decomp spec (matching disassembly whose
 labels feed recomp/symbols.toml).
+
+## Status 2026-10-07 (later)
+
+League route added (define a league in Options, race it 2P); three coverage
+iterations (it34-it37) brought it to the 7-instruction floor. Reading the
+disassembly exposed five analysis facts the recomp had wrong (two dispatch
+tables with a text word as 4th target, and three PHP/PLP exit widths the
+solver could not see: $C775, $951C, $8151, plus $879A); all fixed in cfg.
+All eight routes x nine checkpoints match the interpreter build and snes9x.
+Decomp done per docs/superpowers/specs/2026-10-07-uniracers-decomp-design.md:
+byte-identical rebuild, 674/674 functions named and commented, 620 RAM
+variables, 20 subsystem files, names exported to recomp/symbols.toml.
