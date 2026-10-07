@@ -13,10 +13,23 @@ Native static recompilation of Uniracers (SNES)
 
 ## Status
 
-Scaffolded on 2026-10-06 — **not yet a working port.** The layout, build,
-regeneration pipeline, CI, and packaging are wired up; the game does not run
-until the host work in `src/game_rtl.c` is done. See
-[Porting from here](#porting-from-here).
+**Recomp: the game runs as compiled native code.** On every scripted route
+(boot/attract, 1P races on Dragster and Zoom Zoo, 2P split-screen, VS,
+Options/Records) the only instructions left to the interpreter are the
+7-instruction reset prologue that runs in 6502 emulation mode before
+`XCE` (the AOT tier compiles native-mode code only).
+
+Every route checkpoint (WRAM + SRAM, `dump` in `tests/routes/*.txt`) matches
+both the interpreter-only build and snes9x (snesref); masked bytes in
+`tools/state_mask.txt` are each traced to a timing-phase writer.
+
+Open: League mode is compiled but not yet covered by a route (its setup
+menus need player definitions); the decomp (matching disassembly) has not
+started. See `docs/superpowers/` for the design and plan.
+
+Framework changes this port relies on (submodule branch, not yet upstream):
+HVBJOY beam sync, native entry hand-off, `[[variant]]` roots,
+`--historical-profile-manifest` passthrough, `paced_bus` codegen mode.
 
 ## ROM identity
 

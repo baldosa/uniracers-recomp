@@ -109,3 +109,12 @@ resolve it in cfg as an indirect dispatch with the only three handlers the
 ROM installs: $80:F60C (80:A165), $80:8610 (82:D74D), $80:85A5 (82:DE1B);
 then set I_NMI/I_RESET emit = true and enable the hand-off in game_rtl.c.
 Then: promote resume/continuation PCs from captures, League route, decomp.
+
+## Status 2026-10-07
+
+Recomp milestone reached: all routes interpret only the 7-instruction
+emulation-mode reset prologue; checkpoints match interpreter build and
+snes9x. Coverage loop: `tools/coverage_iter.sh PREV NEXT` (promote ->
+regen with every capture dir as seeds -> build -> capture + validate).
+Remaining: League route; then the decomp spec (matching disassembly whose
+labels feed recomp/symbols.toml).
