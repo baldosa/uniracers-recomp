@@ -16,3 +16,672 @@
 82D4E9 WaitForNMI                 ; waits for the NMI handler to signal a new frame
 # Text
 80C3AB DrawText                   ; text renderer; control codes dispatched through the table at $C3CB
+# Proposed by the naming pass
+808587 Unused_RtlStub             ; Lone RTL; unreferenced (not a vector target)
+80859C Unused_NmiRestoreRti       ; Restores A/Y/X/D/B and RTI; unreferenced duplicate of the NMI exit
+8085A4 Unused_RtiStub             ; Lone RTI; unreferenced
+8088DD Race_CheckExited           ; If either player's total time is $EA62 (race exited) fades out and resets the screen; Z=0 if exited
+808917 League_ShowPointAwards     ; POINT AWARDS screen: adds placing + bonus points (stunt/lap/wipeout bonus by event) to league table
+808C3D Text_GetCharClassLong      ; JSL wrapper for Text_GetCharClass
+808C41 Text_GetCharClass          ; Looks up char A in table $C6F8 and tests bit 7 (N flag) for the text renderer
+808C4E Sram_ValidateOrInit        ; Boot: compares SRAM signature at $770000 with ROM $838000; on mismatch reinitialises all save data
+808CCB Records_InsertHighScore    ; Inserts score $12 / uni $B2 into the top-3 record table for track $CE (higher is better)
+808D6E Results_DrawLapRace        ; Results screen for lap races: per-lap bars, totals, best lap; updates best-lap record (via table $95A5)
+809314 Oam_UploadLong             ; JSL wrapper for Oam_Upload
+809318 Oam_Upload                 ; DMA ch1: copies the $0A00 OAM buffer ($220 bytes) to OAM
+80933C Text_CopyWord              ; Copies a string X->Y up to and including the first $FF, space or '_' terminator
+80935E Text_CopyStripUnderscores  ; Copies a $FF-terminated string X->Y, dropping '_' characters
+80937B Vram_UploadTilemapAtA8     ; DMA ch7: copies the $0200 tilemap buffer ($800 bytes) to VRAM address in $A8
+8093A1 Vram_UploadTilemapLong     ; JSL wrapper for Vram_UploadTilemap
+8093A5 Vram_UploadTilemap         ; DMA ch7: copies the $0200 tilemap buffer ($800 bytes) to VRAM address in $5A
+8093CB Vram_UploadTilemapBottom   ; DMA ch7: copies $0780.. ($1FF bytes) to VRAM $5A+$2C0 (bottom rows of the tilemap)
+8093FB Attract_Main               ; Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track
+80951C Results_Show               ; Post-race results: loads both unis' palettes, dispatches by event type via table $95A5
+8095AB Menu_DrawTrackNameGrid     ; Draws 16 track-name entries in two columns with DrawText (track picker)
+809625 Menu_SetupTrackGridSprites ; Builds OAM entries for the 16-slot track grid and its hi-table bits
+8096FD Math_Div16by8Long          ; JSL wrapper for Math_Div16by8
+809701 Math_Div16by8              ; Hardware divide X / A: returns quotient in A, remainder in X
+809719 Math_Div16Long             ; JSL wrapper for Math_Div16
+80971D Math_Div16                 ; Software 16-bit unsigned divide X / A, quotient in A (restoring shift-subtract)
+80974B Tour_DrawSelectIcons       ; Tour select: loads palettes and places the 9 tour icons, tile depends on tour medal/unlock state
+809805 Results_ResetMarkerSpritesOnce ; Once per results (flag $0100 in $770742): parks 30 marker objects and sprites, sets OAM hi bits
+809865 Video_FadeInLong           ; JSL wrapper for Video_FadeIn
+809869 Video_FadeIn               ; Fades INIDISP brightness up over 7 frames, uploading OAM each frame
+809881 Video_FadeOutLong          ; JSL wrapper for Video_FadeOut
+809885 Video_FadeOut              ; Fades INIDISP brightness down over 7 frames then forces blank
+8098A4 Menu_HideCursor            ; Moves the menu cursor object off-screen ($0C62=$FD00, $0C6A=$0700)
+8098B3 Results_AnimateLapMarkers  ; Lap-race results: eases 20 marker sprites toward their targets until a button is pressed
+809980 Math_ScaleClampVelocity    ; Signed >>3 of A, clamped to -40..+40 (marker easing speed)
+80999F Race_StartKeepParam        ; Race_Start entry that keeps $77074D unchanged
+8099A4 Race_Start                 ; Clears lap times, stores unis/track/flags to SRAM, runs the race, updates win counters after
+809AB2 League_CalcPointBars       ; Computes 8 bar lengths at $0175 as each entry's points relative to the leader's
+809B2F Sram_CopyPlayerName        ; Copies 16-byte player name A from SRAM $77000C+A*16 to Y (MVN trampoline)
+809B55 Text_CopyTrackName         ; Copies 16-byte track name A (pointer table $839F96) to Y
+809B79 Sram_CopyLeagueName        ; Copies 32-byte league name record A from SRAM $77016E+A*32 to Y
+809BA0 Text_CopyTourName          ; Copies 18-byte name A (pointer table $83A1B4) to Y; used by track select, likely tour name
+809BC4 DefineLeague_Main          ; Options DEFINE LEAGUE: pick slot, warn/confirm overwrite, pick tracks, enter league name
+809C8E DefineLeague_PickTracks    ; PICK YOUR LEAGUE: toggle tracks in a 16-bit mask (2 min, 8 max), saved to $7702B2+league*2
+809E3C DefineLeague_CalcItemPos   ; Sets text row/column ($E0/$DF) for track-grid item A
+809EF7 DefineLeague_SelectSlot    ; Menu to choose league slot ONE..SIX; result in $CC
+809F6B Fx_HdmaWipeReveal          ; Uploads both tilemaps/palettes then runs a 57-frame HDMA window wipe, ends with HDMA off
+80A022 Fx_HdmaWipeCover           ; Reverse of Fx_HdmaWipeReveal: 57-frame HDMA window wipe closing
+80A087 Menu_InitVideoLong         ; JSL wrapper for Menu_InitVideo; unreferenced
+80A08B Menu_InitVideo             ; Forced blank, clears OAM, loads menu gfx/palettes and music, sets BG mode 3 registers
+80A15B Sys_InitVars               ; Sets tilemap VRAM bases, menu NMI handler, MVN trampoline at $0199, zeroes DP work vars
+80A1E3 Text_NameEntry             ; On-screen keyboard name entry into buffer X (max length $4B); result flag in $94
+80A372 NameEntry_Cancel           ; Name-entry fragment: terminates buffer and sets $94=$FF; unreferenced entry (body shared via branches)
+80A538 League_DrawTable           ; LEAGUE TABLE screen for league A: rank, player, played, points
+80A6F6 Pal_UploadSpritePalettes   ; DMA ch7: $80A71C ($FF bytes) to CGRAM from colour $80
+80A81C Gfx_UploadOverlayTilesA    ; DMA ch7: $84A378 ($780 bytes) to VRAM $3D80 (race/league variant)
+80A849 Pal_LoadMenuSpritePalettes ; Loads sprite palettes $23 and $24 to CGRAM $00/$40, one per frame
+80A868 Gfx_UploadOverlayTilesB    ; DMA ch7: $84AAF8 ($780 bytes) to VRAM $3D80 (menu variant)
+80A895 Pal_UploadBgPalettesLong   ; JSL wrapper for Pal_UploadBgPalettesNow; unreferenced
+80A899 Pal_UploadBgPalettes       ; Waits a frame, uploads OAM, then falls into Pal_UploadBgPalettesNow
+80A89F Pal_UploadBgPalettesNow    ; DMA ch7: $80A8C5 ($D8 bytes) to CGRAM from colour 0
+80AA0C Options_WipeRam            ; WIPE RAM: warning screen; Select+Y+A reinitialises battery RAM, else 'nothing done'
+80ABB9 MainMenu_Run               ; Main menu input (1P/2P/VS/LEAGUE/OPTIONS), idle timeout to attract demo, secret button combos
+80ACC6 MainMenu_Draw              ; Draws the main menu once, uploads tilemap/palettes, resets play mode $7710AD
+80AD34 League_SortStandingsLong   ; JSL wrapper for League_SortStandings
+80AD38 League_SortStandings       ; Sorts league $CC table and stores standings order to $7705E8+league*8 and leader to $770686
+80ADD4 PostRace_Menu              ; Post-race menu: NEXT TRACK / SAME TRACK / SELECT TRACK / SELECT TOUR / QUIT (table $AE77)
+80AE81 PostRace_NextTrack         ; Advances $CE to the next playable track (wraps at 45) and shows the pre-race screen
+80AEBF PostRace_SameTrack         ; Shows the pre-race screen for the same track again
+80AED7 PostRace_Quit              ; Quit choice: restores tilemap base, returns $00=$FF
+80AEE4 PostRace_SelectTrack       ; Track select then pre-race screen
+80AF0C PostRace_SelectTour        ; Tour select, track select, then pre-race screen
+80AF45 League_AdvanceAfterRace    ; Counts races played, after the last race shows awards and table, advances league track
+80B07D Boot_ShowLogo              ; Boot: loads logo gfx, fades in, holds ~110 frames, fades out
+80B0CD Unused_NmiEntryDB80        ; Copy of I_NMI with DB=$80 that JMLs [$0053]; unreferenced
+80B0EB Snd_PlayError              ; Queues sound command $087F/$0203 (same as Snd_PlayCursor); used for refusals
+80B100 Snd_PlayToggle             ; Queues sound command $083F/$0206 (letter typed, item toggled)
+80B115 Snd_PlayConfirm            ; Queues sound command $083F/$0204 (menu confirm)
+80B12A Snd_PlayWipe               ; Queues sound command $084F/$0202 (screen wipe/transition)
+80B13F Snd_PlayWipeAlt            ; Queues sound command $084F/$0201
+80B154 Snd_PlayWipeDup            ; Queues sound command $084F/$0202, same as Snd_PlayWipe; unreferenced
+80B169 Snd_PlayCursor             ; Queues sound command $087F/$0203 (cursor move)
+80B17E PreRace_Show               ; NOW PLAYING screen: dispatches by event type ($B1ED) to build the title, then Race/Exit choice
+80B21B PreRace_TitleRace          ; Builds 'racing on <track>' title (event type 0)
+80B229 PreRace_TitleLaps          ; Builds 'over N laps on <track>' title (event type 1)
+80B260 PreRace_TitleStunt         ; Builds 'doing stunts on <track>'; shared tail draws players, records and the Race/Exit menu
+80B569 PreRace_BuildPlayerLine    ; Builds a text line with player name A, slot $9A and that uni's record for this track
+80B5FD Vram_ClearAll              ; Zero all 64KB of VRAM (32K word writes from address 0); used at boot
+80B611 Options_Main               ; Options menu (records / define player / rename player / define league / main menu); main-menu entry 4
+80B6BA Input_IsAnyButtonHeldL     ; Long wrapper for Input_IsAnyButtonHeld
+80B6BE Input_IsAnyButtonHeld      ; NE if any button (mask FFF0) held on an enabled pad ($72/$74; $770742 bits 9/10 disable pads)
+80B6E3 Input_IsNonUDLButtonHeld   ; NE if any button except Up/Down/Left held (mask F1F0) on an enabled pad
+80B708 Input_IsConfirmHeld        ; NE if B, A or Start held (mask 9080) on an enabled pad: menu confirm
+80B735 Input_IsCancelHeld         ; NE if X or Y held (mask 4040) on an enabled pad: menu back/cancel
+80B75A Input_IsUpHeld             ; NE if Up held on an enabled pad
+80B77F Input_IsDownOrSelectHeld   ; NE if Down or Select held (mask 2400) on an enabled pad: menu next
+80B7A4 Input_IsLeftHeld           ; NE if Left held on an enabled pad
+80B7C9 Input_IsRightHeld          ; NE if Right held on an enabled pad
+80B7EE Input_IsUpHeld2            ; NE if Up held on an enabled pad (duplicate of Input_IsUpHeld)
+80B81B Input_IsDownHeld           ; NE if Down held on an enabled pad
+80B840 Input_IsYStartXLRHeld      ; NE if Y, Start, X, L or R held (mask 5070); unreferenced
+80B865 Input_IsLHeld              ; NE if L held on an enabled pad; unreferenced
+80B88A Input_IsBASelectHeld       ; NE if B, A or Select held (mask A080); unreferenced
+80B8AF Input_IsStartOrAHeld       ; NE if Start or A held (mask 1080) on an enabled pad
+80B8DC Input_IsSelectHeld         ; NE if Select held on an enabled pad
+80B901 Input_IsStartHeld          ; NE if Start held on an enabled pad
+80B926 Menu_Nop                   ; Empty RTS stub; unreferenced
+80B927 Menu_RunVerticalFromTop    ; Reset menu cursor $9B to 0, then run the vertical text menu
+80B929 Menu_RunVertical           ; Place cursor sprite at item $9B (x from table [$AE]) and run the vertical menu loop
+80B965 Menu_VerticalLoop          ; Vertical menu loop: up/down moves cursor with sound, confirm/cancel set $A6 and return choice
+80BA55 Menu_RunVerticalAlt        ; Variant of Menu_RunVertical with a different row base (cursor Y base $48)
+80BA8F Menu_VerticalLoopAlt       ; Variant vertical menu loop (also clears $7710D2 each frame)
+80BB87 Mode_OnePlayerRace         ; Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results
+80BCAA Mode_TwoPlayerRace         ; Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts
+80BDBF Mode_League                ; Main-menu mode 3: pick league, tour selection and league race loop
+80BF34 Mode_ChallengeRace         ; Main-menu mode 2: pick players one/two, winner stays, 'PICK CHALLENGER'/'REMATCH'
+80BFD9 Challenge_ExitIfDone       ; Fragment inside Mode_ChallengeRace (exit if $00 set); unreferenced as a function
+80C055 Challenge_CompareStuntScores ; Challenge-mode branch for stunt races: compare p1/p2 stunt scores to pick who is replaced
+80C115 Options_DefinePlayer       ; Options 'define player': pick player, warn, Y+Select+A wipes the player then renames
+80C1DA Oam_ClearCursorHFlip       ; Clear the H-flip bit on sprites $77 and $7F (attr bytes $0BDF/$0BFF)
+80C1F1 Input_WaitAnyButtonL       ; Long wrapper for Input_WaitAnyButton
+80C1F5 Input_WaitAnyButton        ; Wait frames until a button is pressed on either pad (2-frame confirm), then hide sprites
+80C23B Input_WaitAllReleased      ; Wait frames until no buttons are held on either pad
+80C258 Records_DrawTopScores      ; Draw a track's top-3 records as numbers with holder names (stunt scores)
+80C2FD Records_DrawTopTimes       ; Draw a track's top-3 record times with holder names
+80C3AF Text_DrawLoop              ; DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer
+80C440 Text_CmdEnd                ; Text code $FF: end of string, return from DrawText
+80C445 Text_CmdPrintNum5          ; Text code $FD: print word at pointer as 5-digit decimal
+80C463 Text_CmdPrintNum2          ; Text code $F0: print word at pointer as decimal, last digits only
+80C481 Text_CmdSetPos             ; Text code $FE x y: set text cursor $9F
+80C4A7 Text_CmdCenterLine         ; Text code $FC row: center the rest of the line on that row
+80C4EF Text_CmdCenterWord         ; Text code $F2 row: center the next word (up to '_') on that row
+80C534 Text_CmdCallString         ; Text code $FA ptr: draw a nested string, then continue
+80C546 Text_CmdSetPalette         ; Text code $F9 n: set tile palette bits $B0
+80C5BA Text_CmdPlayerNameImm      ; Text code $F5 id: draw player name (SRAM $77000C+id*16) for an immediate id
+80C5C2 Text_CmdPlayerNameVar      ; Text code $F8 ptr: draw player name for the id stored at ptr
+80C60F Text_CmdRomNameImm         ; Text code $F4 id: draw name from ROM table DATA_839F96 (CPU/uni names), immediate id
+80C617 Text_CmdRomNameVar         ; Text code $F7 ptr: draw name from ROM table DATA_839F96, id at ptr
+80C664 Text_CmdLeagueNameImm      ; Text code $F3 id: draw league name (SRAM $77016E+id*32), immediate id
+80C66C Text_CmdLeagueNameVar      ; Text code $F6 ptr: draw league name, id at ptr
+80C6AA Text_CmdPrintTime          ; Text code $F1 ptr: print direct-page word as a race time
+80C6C4 Text_CmdPlaceSprite        ; Text code $EF n: move OAM sprite $68+n to the text cursor position
+80C775 Race_RecordResults         ; After a race: set stats offsets, dispatch on race type $77074B to update stats/records
+80C7B3 Race_RecordTimeRace        ; Race type 0: decide winner by total time, update stats and track records
+80C7EF Race_RecordP1TimeOrDnf     ; Insert p1 time into records, or count a non-finish if time >= 10:00.00
+80C80B Race_RecordP1Time          ; Insert p1 total time into the track records
+80C81E Race_RecordP2TimeOrDnf     ; Insert p2 time (human only) into records, or count a non-finish
+80C83F Race_RecordP2Time          ; Insert p2 total time (human only) into the track records
+80C857 Race_RecordLapRace         ; Race type 1: find best laps, decide winner by time, record best laps
+80C8D7 Race_RecordP1LapOrDnf      ; Insert p1 best lap into records, or count a non-finish
+80C8F1 Race_RecordP1Lap           ; Insert p1 best lap into the track records
+80C902 Race_RecordP2LapOrDnf      ; Insert p2 best lap (human only) into records, or count a non-finish
+80C921 Race_RecordP2Lap           ; Insert p2 best lap (human only) into the track records
+80C937 Race_RecordStuntRace       ; Race type 2: decide winner by stunt score, add scores to player totals
+80C973 Race_AddP1StuntScore       ; Add p1 stunt score to p1 total and insert into the track records
+80C99A Race_AddP2StuntScore       ; Add p2 stunt score (human only) to p2 total and insert into records
+80C9C6 Records_InsertTime         ; Insert value $12 by player $B2 into track $CE's top-3 table, shifting lower entries
+80CA63 Stats_IncP1Races           ; Increment p1 races-played count
+80CA72 Stats_IncP1Wins            ; Increment p1 wins and the session p1 win counter
+80CA8A Stats_IncP1Dnf             ; Increment p1 non-finish count
+80CA99 Stats_IncP2Races           ; Increment p2 races-played count (human only)
+80CAB4 Stats_IncP2Wins            ; Increment p2 wins (human only) and the session p2 win counter
+80CAD8 Stats_IncP2Dnf             ; Increment p2 non-finish count (human only)
+80CAF3 PickUni_Open               ; Set up the uni/player picker screen with a title string (X), slide in, then run PickUni_Loop
+80CBB2 PickUni_Loop               ; Player picker loop: animate unis, 2x8 grid cursor, returns choice in $9B (bit7 = cancelled)
+80CF8C Results_RowNone            ; Results row type 0: nothing
+80CF90 Results_RowP1              ; Results row: player 1 (update personal best, place sprite, store id/time)
+80CFF6 Results_RowP2              ; Results row: player 2 if human (update personal best, place sprite)
+80D061 Results_RowRecord1         ; Results row: track record 1st place
+80D088 Results_RowRecord2         ; Results row: track record 2nd place
+80D0AF Results_RowRecord3         ; Results row: track record 3rd place
+80D152 Results_LoadRowPalette     ; Load the palette for a results row's player (id+6) into the next CGRAM slot
+80D1D7 Input_ReadPadsL            ; Long wrapper for Input_ReadPads
+80D1DB Input_ReadPads             ; Read JOY1/JOY2 into $72/$74
+80D1E9 Text_ClearBuffer           ; Point text VRAM target at $0200 and clear the text buffer
+80D1F9 Menu_InitScreenL           ; Long wrapper for Menu_InitScreen
+80D1FD Menu_InitScreen            ; Force blank, set PPU regs (mode 3) and load menu graphics/palettes, then reset OAM
+80D2B0 Oam_ResetMenuSprites       ; Hide all sprites, reset OAM high table and set up the default menu sprites; enable NMI
+80D37A League_Clear               ; Erase league $CC: name, members, progress and stats; save checksum
+80D40F Oam_HideRowSprites         ; Hide sprites $68-$6F (row markers)
+80D437 Options_RenamePlayer       ; Options 'rename player': pick player, enter name, write to SRAM
+80D4F6 Menu_ResetSlideHooks       ; Hide sprites 4-11 and restore default slide hooks ($56/$58)
+80D518 Records_Menu               ; Records submenu: track records, high scores, player scores, group tables
+80D5D9 Records_TrackRecords       ; Track records screen: browse tracks, show top-3 times/scores
+80D7C0 Records_HighScores         ; High scores screen: most wins/losses/races, best/worst ratios, top scorers
+80DA48 Records_HighScoresText     ; Not code: string data of the high-scores screen misdecoded as code
+80DAC2 Records_PlayerScores       ; Player scores screen: per-player races/wins/score bars, browse with up/down
+80DC5E PlayerScores_SlideFwdHook  ; Slide hook: shift player-score sprites by slide speed, then default forward step
+80DC84 PlayerScores_HideBars      ; Hide player-score bar sprites 4-8
+80DCA0 PlayerScores_SlideBackHook ; Slide hook: shift sprites/window back, then default backward step
+80DDE6 Records_GroupTables        ; Group tables screen: per-league member scores with bars, browse leagues
+80DFAC GroupTables_SlideFwdHook   ; Slide hook for group tables (start misdecoded): shift sprites, default forward step
+80DFFA GroupTables_SlideBackHook  ; Slide hook for group tables: shift sprites/window back, default backward step
+80E1EB Slide_ClearBg2Tilemap      ; During slide: DMA-fill VRAM $1000 tilemap with 0 and show only OBJ
+80E21D Slide_Forward              ; Slide transition forward: ease BG2 scroll via hook $56, then swap front/back tilemaps
+80E23B Slide_DefaultFwdStep       ; Default forward slide step: wait frame, add speed to BG2 HOFS
+80E268 Slide_Back                 ; Slide transition backward: ease BG2 scroll via hook $58, then swap front/back tilemaps
+80E286 Slide_DefaultBackStep      ; Default backward slide step: wait frame, update window, subtract speed from BG2 HOFS
+80E2B9 Screen_OpenWipeL           ; Long wrapper for Screen_OpenWipe
+80E2BD Screen_OpenWipe            ; HDMA wipe effect (BG1VOFS + brightness tables) opening the screen over ~75 frames
+80E3D3 TrackRecords_HandleInput   ; Track records cursor: move over track grid with d-pad, update cursor sprite
+80E536 Menu_RunE53AL              ; Long wrapper for sub_80E53A (post-pick menu step; role unclear)
+80E53A Menu_PickTour              ; PICK TOUR menu: list unlocked tours, move cursor, returns $01 on select ($D0=tour) or $FF on cancel
+80E6C7 Menu_ApplyCycledSpriteColor ; Copy colour-cycle attribute (DATA_839B27[$0191]) into the 9 menu sprites at $0A02..
+80E71A Menu_DrawTourList          ; Draw the PICK TOUR screen: title, tour names (crawler..hunter) per unlocked level
+80E78B Menu_CheckTourUnlocked     ; Z set if tour A (low nibble) is unlocked (league level >= table $E82C), Z clear otherwise
+80E838 Menu_PickTrack             ; PICK TRACK menu for the chosen tour: shows class medal, skips done tracks, stores choice to $CE/$77074A
+80EA79 Menu_CycleLeagueClass      ; On PICK TRACK with no tracks done, cycle league class bronze/silver/gold up to the unlocked one
+80EB0D Menu_CycleSpriteTiles      ; Step the $7710A7 animation index (13..0) and write tile numbers into OAM entries 0-4
+80EB60 Menu_ShowTourTables        ; Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks
+80ED07 Menu_DrawTourTrackTable    ; Draw one page of tours: name plus gold/silver/bronze rows of 5 track numbers ($1E=page)
+80EEDC Menu_DrawTrackNumber       ; Draw one track-number icon (2 tiles) from value A at text scratch buffer $DC, coloured by group
+80EF37 Menu_DrawOptionList        ; Draw $9D+1 option strings from pointer list X, then slide the menu panel in
+80EF73 Scores_LoadPlayerSorted    ; Copy player $CC's 8 score entries from SRAM $7702C0 into $0151, tag ids 0-7, sort descending
+80EFBE Util_SortTable8Descending  ; Selection-sort the 8 four-byte {id,value} entries at $0151 by value, highest first
+80F015 Util_SortTable16Descending ; Selection-sort the 16 four-byte {id,value} entries at $0C20 by value, highest first
+80F06C Util_SortTable8Ascending   ; Selection-sort the 8 four-byte {id,value} entries at $0151 by value, lowest first
+80F0D8 Results_ShowRaceResults    ; End-of-race results screen: tally, totals, best-score update, qualify line; no direct JSR (pointer at ROM $8095A9)
+80F4A2 Menu_HideSpritesAndReloadGfx ; Hide menu sprites (OAM hi = $55), wait a frame, reload menu sprite graphics, set OBSEL
+80F4D3 Menu_ResetScreenGfx        ; Disable HDMA, clear screen, reload menu sprite and font graphics, set OBSEL
+80F505 Menu_RequestPanelOpen      ; Set SRAM flag $770742 bit 1 (menu panel slides open)
+80F515 Menu_RequestPanelClose     ; Clear SRAM flag $770742 bit 1 (menu panel slides closed)
+80F525 Menu_SnapPanelOpenLong     ; JSL wrapper for Menu_SnapPanelOpen
+80F529 Menu_SnapPanelOpen         ; Set panel-open flag and immediately set BG1 vertical scroll ($AD) to fully open ($4F)
+80F545 Boot_ShowLegalScreenLong   ; JSL wrapper for Boot_ShowLegalScreen; unreferenced
+80F549 Boot_ShowLegalScreen       ; Boot screen (110 frames); restores unlocks after cheat; pad code Up,Left,Up,R,A unlocks all tours
+80F632 Menu_StepPanelScroll       ; Move menu panel BG1 scroll $AD one pixel toward open/closed; unreferenced
+80F653 Results_AnimateTally       ; Count up 4 rows x 5 columns of result tallies with sound/frame waits, accumulate total in $C0
+80F7C6 Results_NextTallyColumn    ; Advance tally draw position $96/$9F by $40 (next column)
+80F7E5 Menu_WaitFramesOrButton    ; Wait Y frames (with palette/sprite updates), returning early if a button is pressed
+80F7FE Dma_UploadTilemapRowsLong  ; JSL wrapper for Dma_UploadTilemapRows
+80F802 Dma_UploadTilemapRows      ; DMA five $C0-byte buffers ($0CF0,$0EF0,..$14F0) to VRAM at $0A + n*$100 via channel 7
+80F859 Dma_UploadVramC0           ; DMA $C0 bytes from bank 0 (A1T7 preset) to VRAM address X on channel 7
+80F877 Scores_StoreResult         ; Store X (and Y unless $FFFF) into player $CC's SRAM result slot $770618, then re-checksum
+80F8A3 Text_ConvertBufferCase     ; Convert scratch text $DC..$FB: lowercase letters and digits remapped to the alternate font tiles
+80F8D1 Vs_ShowChampions           ; VS CHAMPIONS screen: sort 16 players by wins ($770400) and list top 8 with name, unis, wins, %
+80FAC5 WaitVBlankLong             ; JSL wrapper for WaitVBlank
+80FAC9 WaitVBlank                 ; Poll sound comms until the next vblank (HVBJOY), then run the menu cursor update
+80FADF Menu_UpdateCursor          ; Animate the cursor sprite tile and ease cursor X/Y ($0C60/$0C68) toward targets ($0C62/$0C6A)
+80FBBF Menu_KeepResetScores       ; KEEP SCORES / RESET SCORES / EXIT menu; jumps through table $FC13
+80FC1C Scores_ResetPlayer         ; Clear player $CC's 16 score words at SRAM $7702C0 and return Z clear (jump-table target)
+80FC38 Menu_ReturnContinue        ; Return with Z clear (KEEP SCORES jump-table target)
+80FC3D Menu_ReturnExit            ; Return with Z set (EXIT jump-table target)
+8182E2 Uni_ApplyTileEffectLong    ; JSL wrapper for Uni_ApplyTileEffect
+8182E6 Uni_ApplyTileEffect        ; If not pass-through, look up the contact tile type ($7EC000) and run its handler from table $8320
+8184D6 Uni_TileNopLong            ; JSL wrapper for an empty RTS stub; unreferenced
+8184DA Uni_TileNop                ; Lone RTS stub just before tile handler $8184DB
+8185B7 Uni_EndFrameUpdateLong     ; JSL wrapper for Uni_EndFrameUpdate
+8185BB Uni_EndFrameUpdate         ; Per-frame unicycle bookkeeping: count down timers, loop state, clear one-frame flags
+818745 Uni_TileBoost              ; Tile handler 1: push ground speed $0F9F by $80+$0DE7 in the tile's direction
+8187E8 Uni_EmptyStub              ; REP #$30 / RTS stub before tile handler $8187EB; unreferenced
+818A4A Uni_FetchMapCells          ; Fetch the 4 track-map cells ($7F000F) around the unicycle position $A5/$A7
+818B95 Uni_ProbeCollision         ; Sample 10 probe points against track tiles; fill $0230 (height/angle) and $0290 (side)
+818D14 Uni_UpdatePhysicsBothLong  ; JSL wrapper for Uni_UpdatePhysicsBoth
+818D18 Uni_UpdatePhysicsBoth      ; For each active player: load state into $0Fxx work vars, probe and resolve collision, save back
+818FB8 Uni_ResolveTrackContact    ; Evaluate collision probes: ground contact, slope, airtime, landing, speed changes
+819484 Uni_ResolveContact_Entry819484 ; Mid-function entry inside Uni_ResolveTrackContact (sets slope table $A3=$0764); unreferenced
+819646 Uni_ResolveContact_Entry819646 ; Mid-function entry inside Uni_ResolveTrackContact (halves $0F4B); unreferenced
+8196AD Rider_DeadJump_8196AD      ; unreachable JMP stub inside the rider ground-physics routine sub_819646 (never called)
+81983B Rider_CalcMotionAngle      ; from rider position delta ($A5/$A7 vs $0EE3/$0EE5) derives target tilt $0254 and picks a rotation table into $A3
+819972 Rider_CalcMotionAngle_Table0 ; alternate tail of Rider_CalcMotionAngle selecting table $056C; no direct callers
+8199D6 Rider_BuildRotationTablesLong ; JSL wrapper for Rider_BuildRotationTables (called during race/track init)
+819A5A Rider_BuildRotationTables  ; builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C
+819E2A Rider_LoadPoseOffsets      ; reads pose frame $0F7B from ROM banks $21+, adds part offsets, mirrors by $0F47, stores at $125B
+819FBF Cam_UpdateFollowSpeed      ; computes camera scroll velocities ($04F5/$04F9, P2 $04F7/$04FB) easing toward the rider
+81A2E5 Cam_StepLeadTowardVelocity ; moves lead value $02 one step toward 2-(velocity $00 / 8)
+81A30F Track_SetupSizeParamsLong  ; JSL wrapper for Track_SetupSizeParams
+81A313 Track_SetupSizeParams      ; sets map wrap masks, row stride and camera limits from track size code $7F000D
+81A52B Race_UpdateCameraLong      ; JSL wrapper for Race_UpdateCamera (per-frame race update)
+81A52F Race_UpdateCamera          ; applies camera velocities to view scroll ($0419/$041D, P2 $041B/$041F), streams BG edges
+81A59E Bg_StreamTilemapEdges      ; decides scroll edges and builds new tilemap row/column strips for each view
+81AA40 Bg_CancelOverlappingTileEdits ; drops pending tile-edit entries ($0D8D/$0DAD) that lie on rows/columns being streamed; no direct callers
+81AB88 Bg_QueueEdgeStripDma       ; queues VRAM DMA for the built row/column strip buffers ($0433 P1, $0475 P2)
+81ACB1 Dma_QueueVramEntry         ; fills VRAM DMA queue slot X: dest A, length Y, src $0230-$0232, VMAIN $80/$81
+81ACFB Bg_FetchMapStrip           ; computes track-map index and reads a metatile row (Y!=0) or column into $00-$09
+81AD2C Bg_FetchMapRow             ; reads 5 metatile ids of a track-map row from $7F000F with wrap, zero when off-map
+81AD7A Bg_FetchMapColumn          ; reads 5 metatile ids of a track-map column from $7F000F, zero above/below map
+81ADB6 Bg_SplitCoordToMetatile    ; splits pixel coords $0260/$0262 into metatile col/row ($0405/$0407) and subtile ($0409/$040B)
+81ADF9 Bg_SplitCoordToMetatileClampLong ; JSL wrapper for Bg_SplitCoordToMetatileClamp; unreferenced
+81ADFD Bg_SplitCoordToMetatileClamp ; like Bg_SplitCoordToMetatile but zeroes results when $0415 is negative
+81AE4A Math_Shr6                  ; A >>= 6 (pixel to metatile); unreferenced
+81AE51 Math_SubtileOf64           ; (A & $3F) >> 4: subtile within a 64px metatile; unreferenced
+81AE59 Bg_UpdateScroll1P          ; 1-player: advances tile accumulators, BG1/BG2 parallax scroll shadows, picks row/column to refresh
+81AFC3 Bg_UpdateScroll2P          ; split-screen version of Bg_UpdateScroll1P for both views
+81B27F Bg_BuildStripTiles         ; expands fetched metatiles into tilemap words in the strip buffer (via Bg_CopyMetatileTiles)
+81B375 Bg_CopyMetatileTiles       ; copies Y+1 tile words of a metatile from $7F000F,x into the buffer at $0339 with stride $0236
+81B603 Bg_RemapTilesToBuffer      ; remaps a byte list through DATA_81B3FF into tile words at $7E2132; unreferenced
+81B664 Math_Multiply16Long        ; JSL wrapper for Math_Multiply16
+81B668 Math_Multiply16            ; unsigned shift-add multiply X*Y, product in A and X
+81B68B Math_MulS16x8Long          ; JSL wrapper for Math_MulS16x8
+81B68F Math_MulS16x8              ; signed A(16) * X(8) via M7A/M7B multiplier, 24-bit result at $055F
+81B6B0 Math_AddCarryToX           ; A += X, X = $FF if carry else 0; unreferenced
+81B6C0 Math_MulFixed8p8Long       ; JSL wrapper for Math_MulFixed8p8
+81B6C4 Math_MulFixed8p8           ; signed 8.8 fixed-point multiply A*X using the PPU multiplier, 8.8 result in A
+81B713 Ppu_FadeInBusyWait         ; raises INIDISP brightness 0..15, 3 frames per step, busy-waiting on vblank; unreferenced
+81B73E Ppu_FadeOutBusyWait        ; lowers INIDISP brightness 15..0, 3 frames per step, busy-waiting; unreferenced
+81B767 Ppu_DisplayOnDark          ; INIDISP = $00 (display on, brightness 0); unreferenced
+81B76D Ppu_ForceBlank             ; INIDISP = $80 (forced blank)
+81B773 Math_DistanceLong          ; JSL wrapper for Math_Distance
+81B777 Math_DistanceLong2         ; duplicate JSL wrapper for Math_Distance; unreferenced
+81B77B Math_Distance              ; sqrt(x^2+y^2) of low bytes of |A| and |X| via square table $81DD74 and Math_Sqrt16
+81B7A4 Math_DistanceScaled        ; shrinks X/Y by 4x until both < 128, then Math_Distance; unreferenced
+81B7C9 Math_Sqrt16Long            ; JSL wrapper for Math_Sqrt16
+81B7CD Math_Sqrt16                ; integer square root of 16-bit A
+81B7FC Math_Sqrt32Long            ; JSL wrapper for Math_Sqrt32; unreferenced
+81B800 Math_Sqrt32                ; integer square root of 32-bit A:X (high:low)
+81B85B Math_MulS16x16Long         ; JSL wrapper for Math_MulS16x16; unreferenced
+81B85F Math_MulS16x16             ; signed 16x16 multiply via WRMPYA/B, 32-bit result high in A, low in X
+81B8D7 Math_BcdToBinaryLong       ; JSL wrapper for Math_BcdToBinary; unreferenced
+81B8DB Math_BcdToBinary           ; converts BCD byte A to binary (tens*10+units) in $00
+81B8F1 Decomp_ToRam               ; decompresses Huffman+LZ data (stack args: src long, dest) to RAM
+81BA26 Decomp_DecodeSymbol        ; Decomp_ToRam: decodes one Huffman symbol plus extra bits
+81BA7A Decomp_ReadBits            ; Decomp_ToRam: reads A bits from the bitstream at [$82]
+81BADC Decomp_BuildHuffTable      ; Decomp_ToRam: reads code lengths and builds a canonical Huffman table at [$88]+Y
+81BB6F Decomp_FetchWord           ; Decomp_ToRam: loads next 16-bit word from [$82], handling bank crossing
+81BB89 Decomp_ToVram              ; same Huffman+LZ codec writing to VMDATA, history window in WRAM at $03A0
+81BD48 Decomp_DecodeSymbolVram    ; Decomp_ToVram: decodes one Huffman symbol plus extra bits
+81BD9F Decomp_ReadBitsVram        ; Decomp_ToVram: reads A bits from the bitstream
+81BE01 Decomp_BuildHuffTableVram  ; Decomp_ToVram: builds a canonical Huffman table in bank 0 at Y
+81BE99 Decomp_FetchWordVram       ; Decomp_ToVram: loads next 16-bit word from [$82]
+81BEB3 Hud_UpdateStuntNamesLong   ; JSL wrapper for Hud_UpdateStuntNames (per-frame race update)
+81BEB7 Hud_UpdateStuntNames       ; per player: when the name timer expires, shows the next queued stunt's name
+81BF41 Hud_ShowCachedStuntName    ; copies the cached stunt name $1283 into the P1/P2 HUD text buffer
+81BFE3 Hud_LoadStuntName          ; converts a 16-char stunt name (DATA_97CA04) to tiles in the HUD buffer, sets display time
+81C0DD Stunt_DequeueAndScore      ; pops next stunt from the player's queue, bumps SRAM stunt counters, adds score
+81C572 Race_PushEventFrontLong    ; JSL wrapper for Race_PushEventFront
+81C576 Race_PushEventFront        ; Insert event A at the head of P1 event queue (and P2 queue in 2P mode, $770750 bit3) so it runs next
+81C5AF Race_QueueEventLong        ; JSL wrapper for Race_QueueEvent (A=event code, Y=player 0/nonzero)
+81C5B3 Race_QueueEvent            ; Append stunt/announcer event A to player Y's 32-entry ring; codes < $16 cancel pending $0C9F/$12D9 state
+81C605 Race_ResetEventQueuesLong  ; JSL wrapper for Race_ResetEventQueues
+81C609 Race_ResetEventQueues      ; Clear both players' race event rings and reset read/write indices (read=0, write=1 = empty)
+81C634 Race_ResetEventQueueP1     ; Reset P1 event ring indices; unreferenced
+81C641 Race_ResetEventQueueP2     ; Reset P2 event ring indices; unreferenced
+81C64E Race_GetEventQueueCount    ; Return number of pending events in player Y's ring (31 when read==write, i.e. full)
+81C697 Race_UpdateClockLong       ; JSL wrapper for Race_UpdateClock; called once per race frame
+81C69B Race_UpdateClock           ; Update lap split displays, then tick the race clock up or down according to $0E23
+81C6A4 Race_UpdateClockAlt        ; Alternate entry using the single-display split routine; unreferenced
+81C6D3 Race_TickClockUp           ; Advance race clock one frame (6 frames per tenth), cap at 9:59.9, refresh digit tiles, warn sfx $021A near cap
+81C7E1 Race_TickClockDown         ; Count race clock down; beeps ($021A) in last 5 s, at 0:00.0 sets time-up flag and marks racers finished
+81C907 Race_UpdateLapSplits       ; Per player: on lap split trigger compute time vs stored lap time, build split digit/sign tiles, store new time
+81CB37 Race_UpdateLapSplitAlt     ; Single-player split variant using the second clock ($0E51..) and $139B.. tiles; only via unreferenced entry
+81CCE6 Hud_InitRaceLong           ; JSL wrapper for Hud_InitRace (called from race setup)
+81CD07 Hud_InitRace               ; Reset race clock to start time, clear lap records, draw static HUD (player names from SRAM, lap/score labels)
+81D86E Hud_UpdateSplitScreenNmi   ; NMI HUD VRAM update for split screen ($0DDB set): rival arrows, lap counter, clocks, splits, scores, messages
+81E8D9 Hud_UpdateFullScreenNmi    ; NMI HUD VRAM update for single full-screen view ($0DDB clear): same items as split-screen version
+828000 Snd_QueueCommand           ; Push 16-bit sound command A into 16-entry ring $7E2006/$7E2016 (dropped if full); sent by sub_828035
+828035 Snd_SendQueuedCommand      ; sends one queued 16-bit sound command to APUIO2/3 when the SPC acknowledged; C set if nothing sent
+82807E Snd_UploadBlockLong        ; JSL wrapper for Snd_UploadBlock
+828082 Snd_UploadBlock            ; uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue
+82812A Snd_SeekDataBlock          ; points $63-$65 at block X in the sound data directory at $108000 by summing block sizes
+828151 Snd_IncDataPtr             ; advances the long sound data pointer $63 by one, wrapping to the next LoROM bank
+828161 Snd_SetStreamList          ; stores X as the pending stream ID list ($6A) if no stream is active
+82816C Snd_StartNextStream        ; when idle, takes the next ID from the stream list ($FFFF ends) and starts it
+828189 Snd_BeginStream            ; looks up stream/sample A in directory block 8, sets source pointer $66, length $6D, state 1
+8281E4 Snd_AbortStream            ; clears stream list/bank and sets stream state 5
+8281F3 Snd_UpdateStream           ; per-frame stream state machine, dispatches by $6C through the table at $81FF
+828216 Snd_StreamStateReset       ; stream state handler: back to idle (state 0)
+828219 Snd_StreamStateSendFD      ; stream state handler: sends SPC command $FD and advances state
+828223 Snd_StreamStateHandshake   ; stream state handler: runs $58 APUIO0 echo handshakes then advances (bytes partly misdecoded)
+82823C Snd_StreamStateSendFE      ; stream state handler: sends SPC command $FE and advances state
+828244 Snd_StreamStateTransfer    ; stream state handler: sends $58 bytes per frame from [$66] via APUIO1/0; advances when done
+828286 Snd_SendCmdWait            ; writes A to APUIO0, waits for the SPC echo, then clears APUIO0
+828294 Snd_StopStreamLong         ; JSL wrapper for Snd_StopStream
+828298 Snd_StopStream             ; clears stream bank, state and list pointer
+8282A5 Snd_UploadBlockListLong    ; JSL wrapper for Snd_UploadBlockList
+8282A9 Snd_UploadBlockList        ; uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3
+828328 Snd_SendByteWait           ; sends byte A on APUIO3 with counter on APUIO2 and waits for the echo
+828337 Uni_UpdateLookFramesLong   ; JSL wrapper for Uni_UpdateLookFrames (race frame)
+82836D Uni_UpdateLookFrames       ; alternate frames per uni: picks look-at-rival pose from relative position, else idle pose sequence
+8287CC Uni_StepLookFrame          ; moves the uni's look frame $0D43,Y one step toward target $124F,Y (9 = neutral, stored as 0)
+82892A Uni_StartIdleLookSeq       ; advances to the next of 6 idle look sequences (tables $97C606/$97C608)
+828952 Uni_StepAnimScriptLong     ; JSL wrapper for Uni_StepAnimScript
+828956 Uni_StepAnimScript         ; steps uni Y's animation script A (pointer table $17:C7C8) and writes the frame to $0DE9,Y
+8289B5 Race_UpdateUnisLong        ; JSL wrapper for Race_UpdateUnis
+8289B9 Race_UpdateUnis            ; per uni: copies state into the $0F09 context block, runs physics/stunt routines, copies back
+829385 Uni_UpdateLoop             ; handles loop/flip-around motion: rotation counter $123F, override frame $0F4F, landing resets
+829704 Uni_UpdateTrackProgress    ; stuck-input hint timer (msg $16) and track-sector progress counter from the tile attribute
+8297DC Uni_TrackProgressBadSector ; mid-function entry of Uni_UpdateTrackProgress (unreferenced): flags wrong sector
+82980D Race_UpdateHintArrowsLong  ; JSL wrapper for Race_UpdateHintArrows
+829811 Race_UpdateHintArrows      ; picks a hint arrow (0-3) for the trailing uni from its tile flags; $FFFF = none
+8298BE Uni_UpdateDriveAndCharge   ; applies d-pad acceleration; Y held charges a boost that is released as speed, with charge sfx
+829A42 Uni_TrackStunts            ; counts quarter turns/flips while airborne; on landing queues stunt and wipeout messages
+82A01B Uni_UpdateSkidTimer        ; starts skid timer $11ED when the d-pad opposes the current velocity
+82A05D Uni_SetPushDir             ; sets $0F33 to +/-2 from d-pad direction and facing when airborne or idle
+82A0AB Uni_UpdateGroundLean       ; on ground: idle timer/idle anim flag and lean angle $0F2D adjustment
+82A22B Uni_UpdateTurnFlag         ; maintains post-turn flags $0F7D/$0F8D/$0F39 (purpose unclear)
+82A27C Uni_UpdateFastFlag         ; sets context flag $0F0B when speed/angle conditions are met (purpose unclear)
+82A354 Uni_UpdateTurnAround       ; starts/advances the turn-around animation when steering against facing; flips facing at end
+82A484 Uni_FinishTurnAround       ; mid-function entry of Uni_UpdateTurnAround (unreferenced): mirrors angle, ends turn
+82A498 Uni_HandleTwistInput       ; L or R alone sets twist tilt $0F4D and starts/stops the per-uni twist loop sfx
+82A5F3 Uni_DecayVelocityX         ; slowly decays X velocity toward zero when no drive and no slope
+82A618 Uni_ApplyVelocity          ; applies X/Y velocity with subpixel accumulators to the current position ($A5/$A7)
+82A6F1 Uni_ClampSpeed             ; computes max speed (base, boosts, CPU catch-up) and clamps X/Y velocity
+82A794 Uni_ClampSpeedCatchup      ; mid-function entry of Uni_ClampSpeed (unreferenced)
+82A8C2 Uni_HandleJump             ; B button jump: starts jump and applies upward velocity for up to 8 frames
+82A968 Uni_ApplyGravity           ; adds gravity to Y velocity up to $0200 unless disabled
+82A9AC Uni_AccelerateRight        ; adds acceleration to X velocity (or boost charge) toward the right
+82AA09 Uni_AccelerateLeft         ; adds acceleration to X velocity (or boost charge) toward the left
+82AA6A Input_MapJoypadsLong       ; JSL wrapper for Input_MapJoypads
+82AA6E Input_MapJoypads           ; splits raw joypad bytes into per-uni button flags and d-pad dirs; handles disabled/CPU/swap
+82ACA1 Race_UpdateUniScreenPosLong ; JSL wrapper for Race_UpdateUniScreenPos
+82ACA5 Race_UpdateUniScreenPos    ; computes uni sprite screen positions from the camera and off-screen indicators
+82AE77 Race_UpdateUni2ScreenPosSplit ; mid-function entry of Race_UpdateUniScreenPos (unreferenced): split-screen uni 2
+82B180 Res_LoadToCgram            ; Loads resource A (index into [$4F] table) to CGRAM starting at color X
+82B1AB Res_LoadToVramAddHigh      ; Loads resource A to VRAM at X, adding $47 to each high (attribute) byte
+82B1D8 Res_LoadToVram             ; Loads resource A to VRAM at X; flagged (compressed) resources go through sub_81BB89
+82B241 Res_RleRunToVram           ; Fragment of an unreachable RLE-to-VRAM decoder (repeat-run case); only reached from that dead loop
+82B293 Res_ReadByte               ; Reads next source byte at DB:Y, wrapping to next bank at $8000 when Y overflows
+82B2A9 Res_Lookup_Long            ; JSL wrapper for Res_Lookup
+82B2AD Res_Lookup                 ; Looks up 5-byte resource entry A in [$4F]: returns bank in A, address in Y, size in $4B, flag in $4D
+82B2DA Res_LoadToWram             ; Copies resource A to WRAM X (bank Y) via WMDATA; compressed resources go through sub_81B8F1
+82B8A7 Nmi_FlushTileDmaList_Long  ; JSL wrapper for Nmi_FlushTileDmaList (called from NMI handlers)
+82B8AB Nmi_FlushTileDmaList       ; If $0306 set, unrolled DMA of 32-byte tiles listed in $15A1/$1645/$16E9 to VRAM until bank<0
+82D197 Nmi_FlushVramDmaSlots_Long ; JSL wrapper for Nmi_FlushVramDmaSlots
+82D19B Nmi_FlushVramDmaSlots      ; Runs pending VRAM DMA slots 0-7 ($0399.. queue); slots 4-7 only when $0DDB set
+82D2D4 Nmi_UploadReservedSprites_Long ; JSL wrapper for Nmi_UploadReservedSprites
+82D2D8 Nmi_UploadReservedSprites  ; Writes OAM entries for sprites 96-99 ($1501-$1510) and their high-table byte $1599
+82D353 Nmi_DmaOamBuffer_Long      ; JSL wrapper for Nmi_DmaOamBuffer
+82D357 Nmi_DmaOamBuffer           ; DMAs the full $220-byte OAM buffer at $1381 to OAM
+82D37B Vram_WriteQueuedCells_Long ; JSL wrapper for Vram_WriteQueuedCells; unreferenced
+82D37F Vram_WriteQueuedCells      ; Writes two queued lists of single tilemap words (via $7E2132 lookup) to VRAM
+82D3CC Pal_CycleRaceColors_Long   ; JSL wrapper for Pal_CycleRaceColors (called from race NMI path)
+82D3D0 Pal_CycleRaceColors        ; If $0B8C set, writes 16-step animated colors to CGRAM $60-$6F and color 0, steps $0B7E
+82D4E5 WaitForNMI_Long            ; JSL wrapper for WaitForNMI
+82D4F6 Vram_Clear_Long            ; JSL wrapper for Vram_Clear
+82D4FA Vram_Clear                 ; Fills all 64KB of VRAM with zero
+82D50E Cgram_Clear_Long           ; JSL wrapper for Cgram_Clear
+82D512 Cgram_Clear                ; Zeroes CGRAM from color 0 ($A0 writes)
+82D526 Race_InitHdma_Long         ; JSL wrapper for Race_InitHdma
+82D56A Race_InitHdma              ; Sets window regs and HDMA channels 1-7 and builds race HDMA tables at $7E2046-$7E2095
+82D731 Race_InitVideo_Long        ; JSL wrapper for Race_InitVideo
+82D735 Race_InitVideo             ; Disables NMI, sets IRQ/NMI handler vectors and resource table $82B32F, clears VRAM and CGRAM
+82D76D Oam_InitBuffer             ; Hides all sprites in OAM buffer, sets high table to $55, sets up reserved sprites 96-99
+82D80C Race_InitState_Long        ; JSL wrapper for Race_InitState
+82D810 Race_ClearRam_Long         ; JSL wrapper for Race_ClearRam
+82D814 Race_ClearRam              ; Calls sub_81B76D then zeroes WRAM $0082-$00B2 and $0200-$178C
+82D849 Race_InitState             ; Initializes race variables from track header at $7F0000, resets race SRAM stats, sets up OAM/objects
+82DC1F Race_SetPpuRegs            ; Sets PPU modes for racing: OBSEL, BG mode 1 w/ BG3 prio, BG1-3 maps, char bases, TM
+82DC56 Race_LoadTrackGraphics_Long ; JSL wrapper for Race_LoadTrackGraphics
+82DC68 Race_LoadTrackGraphics     ; Loads track theme ($77074A mod 14) tiles/palettes, unicycle palettes, then track data
+82DE13 League_RunPodium_Long      ; JSL wrapper for League_RunPodium
+82DE17 League_RunPodium           ; League award podium screen: loads gfx/sprites/music, animates until exit condition
+82DF40 League_AnimatePodium       ; Steps podium animation phase $0300 (0-3), cycling frame ids $0A45-$0A5C and swapping $0C75 sets
+82DFD8 League_InitPodiumSprites   ; Positions podium sprites 96-99 and sets starting animation frame ids
+82E02E League_LoadPodiumGraphics  ; Loads podium tiles/palettes and the palettes of the 1st-3rd unicycles ($77074D-$77074F)
+82E0A9 League_StartPodiumMusic    ; Resets sound state, loads sound banks $32/$34/$3A, sends song data and start commands
+82E13D League_SetPodiumPpuRegs    ; Sets PPU modes for the podium screen (BG mode 1, BG1/BG2 maps, TM)
+82E165 Race_LoadTrackData         ; Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM
+838484 Gfx_CopyRomTileToWram      ; Copies one 32-byte ROM tile (A=tile id) into WRAM buffer at cell ($80,$82)+$87 via MVN trampoline
+8384D9 Name_CheckProfanityLong    ; Long wrapper: Z set if name at X contains a word from the banned-word list
+8384DD Name_CheckProfanity        ; Scan $FF-terminated name at X for any of 71 banned words (DATA_838537); returns Z set if found
+838779 Str_MatchPrefix            ; Compare $FF-terminated pattern at X against text at Y; Z set on match (code at $83879A is league result handler, called from $80BC62)
+8387E9 League_AbortToMainLoop     ; Drop caller frame, set $A7=1/$A6=0 and JML MainLoop; reached only indirectly
+8388D3 League_CheckRaceWin        ; Result check (race kinds 0/1): Z set if P1 total time beats P2 (via table $88F7)
+8388E1 League_CheckStuntWin       ; Result check (stunt kind): Z set if P1 stunt score reaches the tier/medal target
+83890F Award_Tier0Cutscene        ; Tier-complete cutscene thunk (table $88FD entry 0) -> $83C49C
+838914 Award_Tier1Cutscene        ; Tier-complete cutscene thunk (table $88FD entry 1) -> $83BB80
+838919 Award_Tier2Cutscene        ; Tier-complete cutscene thunk (table $88FD entry 2) -> $83B1EB
+83891E Award_Tier3Cutscene        ; Tier-complete cutscene thunk (table $88FD entry 3) -> $83B7D2
+838923 Award_Tier4Cutscene        ; Tier-complete cutscene thunk (table $88FD entry 4) -> $83B506
+838928 Award_Tier5Cutscene        ; Tier-complete cutscene thunk (table $88FD entry 5) -> $83C715
+83892D Award_Tier6Cutscene        ; Tier-complete cutscene thunk (table $88FD entry 6) -> $83C11E
+838932 Award_Tier7Cutscene        ; Tier-complete cutscene thunk (table $88FD entry 7) -> $83BED0
+838937 Award_Tier8Cutscene        ; Tier-complete cutscene thunk (table $88FD entry 8) -> ending $83AB9A
+83893C League_RoundTrackToTierLong ; Long wrapper for League_RoundTrackToTier
+838940 League_RoundTrackToTier    ; Round track index $CE down to the first track of its tier ((CE/5)*5)
+838957 League_ClearTierResultsLong ; Long wrapper for League_ClearTierResults
+83895B League_ClearTierResults    ; Zero the 5 per-track result bytes at $771075 for current tier $D0
+838971 Text_CenterOnRowCode       ; DrawText $FC control: set cursor $9F to center rest of string on given row; no direct callers found
+8389BA Ppu_ResetBgScroll          ; Reset BG1/BG2 H scroll and tilemap buffer pointers $AA=$1000, $A8=$1400
+8389D9 Sram_VerifyNamesBlock      ; Verify checksum of SRAM $77000C block (0x160 bytes) vs $77016C; Z set if OK
+8389F7 Sram_VerifyPlayerStats     ; Verify checksum of player stats $770230 (0x80 bytes) vs $7702B0; Z set if OK
+838A15 Sram_VerifyBlock16E        ; Verify checksum of SRAM $77016E block (0xC0 bytes) vs $77022E; Z set if OK
+838A33 Sram_VerifyLeagueResults   ; Verify checksum of $7702C0 block (0x160 bytes) vs $770420; Z set if OK
+838A59 Sram_VerifyLeagueMembers   ; Verify checksum of league member masks $7702B2 (12 bytes) vs $7702BE; Z set if OK
+838A77 Sram_VerifyTrackRecords    ; Verify checksum of track records $770422 (0x12C bytes) vs $77054E; Z set if OK
+838A95 Sram_VerifyRecordHolders   ; Verify checksum of record holders $770550 (0x96 bytes) vs $7705E6; Z set if OK
+838AB3 Sram_VerifyLeagueBlock     ; Verify checksum of league data $7705E8 (0x154 bytes) vs $77073C; Z set if OK
+838AD1 Sram_VerifyPlayerBests     ; Verify checksum of personal bests $770829 (0x640 bytes) vs $770E69; Z set if OK
+838AF3 Sram_VerifyFail            ; Shared checksum-failure exit: PLP, clear Z, RTL
+838AF7 Sram_CheckSizeMirror       ; Copy-protection check: SRAM must be 8KB (write at $772000 mirrors $770000) else jump to $8094EB
+838B23 Sram_ClearSessionData      ; Clear session win counts $770400, $7710AD and per-player flags $7710FD at boot
+838B51 Vram_ClearRegions          ; Clear by bitmask: b0 VRAM $0000, b1 VRAM $1000, b2 WRAM tilemap $0200-$09FF, b5 VRAM $1400
+838B9D Vram_FillBlank2K           ; Fixed-source DMA ch7: fill 2KB of VRAM at VMADD with blank tile word $004C
+838BC9 Str_CopyLong               ; Long wrapper for Str_Copy
+838BCD Str_Copy                   ; Copy $FF-terminated string from X to Y (including terminator)
+838BE7 Text_FormatDecimal5        ; Convert A to 5 ASCII digits at $02-$06 + $FF, leading zeros as '_'
+838C7B Text_FormatRaceTimeLong    ; Long wrapper for Text_FormatRaceTime
+838C7F Text_FormatRaceTime        ; Format time A (1/100 s) as m:ss.hh string at $00FF; $EA60='no time', $EA61='quit'
+838D5D Math_Divide32By16Long      ; Long wrapper for Math_Divide32By16
+838D61 Math_Divide32By16          ; Divide 32-bit Y:X by 16-bit A (shift-subtract); 16-bit quotient in A/$0C
+838D8F Menu_DrawTierBadge         ; Draw 5x5-tile tier icon A into tilemap buffer $0200 at X; shows lock icon if tier not unlocked
+838E3A Anim_DecodeFrame           ; Decode animation frame X from table $A08000 (bitmask of 6x5 tiles) into buffer at $87
+838EFE Records_CalcPlayerBars     ; Compute stats-screen bar lengths/percentages ($0A-$0E, $B4-$B8) for player $CA
+83904A Records_CalcTrackTimeRange ; Find slowest ($78) and fastest ($77106F) times for track $CE, min 2 s spread
+8390F4 Sram_UpdateChecksumsLong   ; Long wrapper for Sram_UpdateChecksums
+8390F8 Sram_UpdateChecksums       ; Recompute and store all nine SRAM block checksums
+8391CC Math_CalcBarLengthLong     ; Long wrapper for Math_CalcBarLength
+8391D0 Math_CalcBarLength         ; Percent Y/A into $7710B2, return scaled to 0-128 bar length
+8391F7 Pal_LoadPlayerColorLong    ; Long wrapper for Pal_LoadPlayerColor
+8391FB Pal_LoadPlayerColor        ; Load sprite palette $F0: player 1 unicycle colour ($017D+6) in mode 1, else palette 2
+839229 Vs_RecordResult            ; After a VS race bump both players' race counts and winner's (or both on tie) win counts
+8392B0 Vs_AddWin                  ; Increment session ($770400) and lifetime ($770382) VS wins for player $00
+8392CC Sram_InitNamesBlock        ; Copy default names block (DATA_83800C, 0x160 bytes) to $77000C
+8392E3 Sram_ClearPlayerStats      ; Zero player stats table $770230 (0x80 bytes)
+8392FA Sram_InitBlock16E          ; Copy defaults (DATA_83815E, 0xC0 bytes) to $77016E
+839311 Sram_ClearLeagueResults    ; Zero $7702C0 block (0x160 bytes)
+839328 Sram_InitLeagueMembers     ; Copy default league member masks (DATA_838222) to $7702B2
+839340 Sram_ClearPlayerBests      ; Reset all personal-best entries at $770829 to $EA5F times
+83936E Sram_InitTrackRecords      ; Fill track records $770422 with default times and holders, other slots no-time
+8393D8 Sram_ClearRecordHolders    ; Set all record holder bytes $770550 (0x96) to $10 (none)
+8393F5 Sram_InitLeagues           ; Reset league rosters, points, counts, medals $77069C, $77071C and player tiers $7710D3
+839486 Sram_InitOptions           ; Copy defaults (DATA_838472, 20 bytes) to $77073E and clear $771116
+8394A5 Sram_WriteSignature        ; Write SRAM signature bytes to $770000 (12) and $771118 (8)
+8394D0 Gfx_UploadTiles7A00A       ; DMA 0xC00 bytes from $07F1D8 to VRAM $7A00
+8394FF Gfx_UploadTiles7A00B       ; DMA 0xC00 bytes from $07E5D8 to VRAM $7A00
+83952E Input_DisablePad1          ; Set save flag $0200 (ignore joypad 1) and clear $0400
+839543 Input_DisablePad2          ; Set save flag $0400 (ignore joypad 2) and clear $0200
+839558 Input_EnableBothPads       ; Clear save flags $0200/$0400 so both joypads are read
+83956D Math_MultiplyBy100         ; Return A*100 (shift-add)
+83958C Vs_SortPlayersForRace      ; In mode 4 swap P1/P2 profiles so lower index is P1; sets $7710CF if swapped
+8395CA Vs_UnswapPlayers           ; Undo Vs_SortPlayersForRace: swap profiles and race result blocks back
+83961E Oam_SetXHighBit            ; Set X bit 8 for sprite A in OAM high table $0C00
+83963C League_BuildMemberList     ; Build up to 8 player indices of league A (mask $7702B2) into $00D4, $10 = empty
+83967C League_LoadRoster          ; Copy league A's 8-player roster from $7705E8 into $00D4 and index it
+83969F League_IndexRoster         ; Build reverse lookup $7710B6[player] = slot from $00D4 list
+8396B1 Str_SkipToNext             ; Advance X past the next $FF terminator; no direct callers found
+8396BE League_CopyMenuOrder       ; Map 8 menu entries via $0151 table through $00D4 and copy to $00D4 via MVN
+839700 League_UpdateBestScore     ; Check both players' results and update league $CC best score/holder at $770684
+839734 League_UpdateBestFor       ; Update league best ($770684/$770686) from one player's result block by race kind
+8397BD Records_CalcMaxima         ; Compute per-field maxima of player stats into $013F-$014F for graph scaling
+83986A Records_PercentOfRaces     ; Return value A as percent of player's race count
+83987D Sram_RestoreDirectPage     ; Restore WRAM $0000-$019D from SRAM copy $770E6B
+839894 Sram_SaveDirectPage        ; Save WRAM $0000-$019D to SRAM $770E6B
+8398AB League_SetupNextRace       ; Load league $CC next track and the two next racers into $017D/$017F; Z clear if none
+839920 Math_Multiply16x16Long     ; Long wrapper for Math_Multiply16x16
+839924 Math_Multiply16x16         ; Unsigned 16x16->32 multiply via hardware; result high in A, low in X
+839972 Race_FadeUnlessKind1       ; Call $80C1F1 unless race kind $77074B is 1
+839983 Track_SetCurrentLong       ; Long wrapper for Track_SetCurrent
+839987 Track_SetCurrent           ; From track $CE set tier $D0, track slot $77074C, race kind $77074B, music $770744
+8399C2 Race_CheckTie              ; Z set if P1 and P2 results are equal (time or stunt score by race kind)
+8399F6 Oam_InitCursorSpritesLong  ; Long wrapper for Oam_InitCursorSprites
+8399FA Oam_InitCursorSprites      ; Initialise sprite position/attribute words at $0C60-$0C6E
+839A1E Menu_AnimateSprites        ; Per-frame menu sprite animation: cycle tiles/colours of OAM buffer entries
+839B45 Player_DeleteLong          ; Long wrapper for Player_Delete
+839B49 Player_Delete              ; Erase profile $CA: name, stats, bests, VS counts, records, leagues; update checksums
+839C47 League_RemovePlayer        ; Remove player $CA from league $0C roster, points and results, shifting entries
+839D80 Math_Percent               ; Return $7710FB*100/$7710F9, halving both first to avoid overflow
+839DB3 Index_PlayerX16            ; X = $CA*16
+839DC6 Index_LeagueX32            ; X = $CC*32
+839DDA Index_LeaguePlayer         ; X = $CC*32 + $CA*8
+839DFB Index_LeagueX12            ; X = $CC*12
+839E12 Index_LeagueX80            ; X = $CC*80
+839E2C Index_TrackX2              ; X = $CE*2
+839E3A Index_Track                ; X = $CE
+839E47 Index_PlayerBest           ; X = ($CA*50 + $CE)*2 into personal bests
+839E7F League_IndexRankSlot       ; X = $CC*32 + 4*(rank of $00D4[A] among the 8 entries)
+839EB4 Index_TierMedal            ; X = $D0*16 + $CA into medals $77069C
+839EC8 Index_Track6               ; X = $CE & $3F
+839ED5 Index_TierX5               ; X = $D0*5
+839EEB League_GetStuntTarget      ; Return stunt score target for tier $D0 and current medal level (DATA_83A218)
+839F14 Player_GetTier             ; Return unlocked tier of player $CA (mode 1) or highest of all players
+839F49 Player_SetTier             ; Store A as unlocked tier of player $CA ($7710D3)
+839F5E Player_GetPromoted         ; Return promotion flag of player $CA in mode 1, else 0
+839F81 Player_SetPromoted         ; Store A as promotion flag of player $CA ($7710FD)
+83A286 Snd_Play01                 ; Queue sound commands $087F and $0201
+83A29B Snd_Play02                 ; Queue sound commands $083F and $0202
+83A2B0 Snd_Play03                 ; Queue sound commands $083F and $0203
+83A2C5 Snd_Play04                 ; Queue sound commands $084F and $0204
+83A2DA Snd_Play05                 ; Queue sound commands $084F and $0205
+83A2EF Snd_Play06                 ; Queue sound commands $084F and $0206; no direct callers found
+83A304 Snd_Play07                 ; Queue sound commands $084F and $0207
+83A319 Snd_Play08                 ; Queue sound commands $084F and $0208
+83A32E Snd_Play09                 ; Queue sound commands $084F and $0209
+83A343 Snd_Play0A                 ; Queue sound commands $084F and $020A
+83A358 Snd_Play0B                 ; Queue sound commands $084F and $020B
+83A36D Snd_Play0C                 ; Queue sound commands $084F and $020C
+83A382 Snd_Play0D                 ; Queue sound commands $087F and $020D
+83A397 Snd_Play0E                 ; Queue sound commands $084F and $020E
+83A3AC Snd_Play0F                 ; Queue sound commands $084F and $020F
+83A3C1 Snd_Play10                 ; Queue sound commands $084F and $0210
+83A3D6 Snd_Play11                 ; Queue sound commands $087F and $0211
+83A3EB Snd_Play12                 ; Queue sound commands $087F and $0212
+83A400 Snd_Play13                 ; Queue sound commands $087F and $0213
+83A415 Snd_Play14                 ; Queue sound commands $087F and $0214
+83A42A Snd_Play15                 ; Queue sound commands $087F and $0215
+83A43F Snd_Play16                 ; Queue sound commands $087F and $0216; no direct callers found
+83A454 Snd_Play17                 ; Queue sound commands $087F and $0217; no direct callers found
+83A469 Snd_Play18                 ; Queue sound commands $087F and $0218
+83A47E Snd_Play19                 ; Queue sound commands $087F and $0219; no direct callers found
+83A493 Snd_Play1A                 ; Queue sound commands $087F and $021A
+83A4A8 Snd_Play1B                 ; Queue sound commands $087F and $021B; no direct callers found
+83A4BD Snd_Play1C                 ; Queue sound commands $087F and $021C; no direct callers found
+83A4D2 Ppu_FadeIn                 ; Raise INIDISP brightness 0->15, one step per vblank
+83A4E9 Ppu_FadeOut                ; Lower brightness 15->0 one step per vblank, then force blank
+83A507 Cutscene_InitScreenA       ; Load sound sets $33/$37/$3C and music, clear VRAM/OAM, set up tier cutscene screen
+83A614 Cutscene_InitScreenB       ; Load sound sets $32/$34/$3A and music, clear VRAM/OAM, set up medal award screen
+83A923 Ppu_WaitVBlank             ; Wait for start of next vblank via HVBJOY while pumping the sound queue
+83A93A Text2_DrawString           ; Second text renderer entry: draw string at X (bank $83) into tilemap buffer at $9F
+83A943 Text2_DrawLoop             ; Text2 main loop: 2x2 or narrow glyphs, control codes $EE-$FF via table $A95F
+83A9D7 Text2_CmdEnd               ; Text2 code $FF: end string, restore registers
+83A9DD Text2_CmdPrintNumber       ; Text2 code $FD: print 5-digit value read through word pointer
+83A9FB Text2_CmdSetPos            ; Text2 code $FE: set cursor to column/row bytes
+83AA21 Text2_CmdCenterLine        ; Text2 code $FC: center rest of line on given row
+83AA6A Text2_CmdCenterWord        ; Text2 code $F2: center up to next space on given row
+83AAB0 Text2_CmdSetPalette        ; Text2 code $F9: set tile palette bits $B0
+83AB24 Dma_UploadAnimBuffer2      ; (Real entry $83AB25) DMA 5x$C0 bytes from $16F0.. to VRAM $0A+n*$100; also bogus Text2 codes
+83AB7C Dma_UploadC0ToVram         ; DMA $C0 bytes from bank 0 (A1T7 preset) to VRAM X
+83AB9A Ending_ShowFinale          ; Game ending: picture screens, 'WHODUNNIT' animation until button, then reset
+83AEF6 Award_ShowMedal            ; Medal award cutscene for player's tier medal, then rebuild menu screen
+83B1EB Award_Tier2Scene           ; Tier-complete cutscene for tier 2 (table $88FD)
+83B275 Cutscene2_Play             ; Body of league-win cutscene 2 (entered by fall-through from sub_83B1EB): sprite/BG animation loop
+83B506 Cutscene4_Init             ; League-win cutscene 4 (DATA_8388FD idx 4): fade out, mode 2, load palettes/graphics, falls into play
+83B587 Cutscene4_Play             ; Body of cutscene 4 (fall-through from Cutscene4_Init): scripted OAM/BG animation with SFX, fades out
+83B79C Cutscene_DrawLoopFrameA    ; Draw BG animation frame (frame counter/2 mod 23) into $0CF0, SFX on frames 0 and 11
+83B7D2 Cutscene3_Init             ; League-win cutscene 3 (DATA_8388FD idx 3): fade out, mode 2, load palettes/graphics, falls into play
+83B85C Cutscene3_Play             ; Body of cutscene 3 (fall-through from Cutscene3_Init): scripted OAM/BG animation, fades out
+83BB80 Cutscene1_Init             ; League-win cutscene 1 (DATA_8388FD idx 1): fade out, mode 2, load palettes/graphics, falls into play
+83BC0A Cutscene1_Play             ; Body of cutscene 1 (fall-through from Cutscene1_Init): scrolling BG1 plus sprite animation
+83BE6F Cutscene_DrawLoopFrameB    ; Draw BG animation frame (counter*2 mod 23, base $38) into $0CF0 for cutscene 1
+83BEBA Cutscene_ScrollBg1         ; Advance BG1 horizontal scroll ($90) by 8 pixels and write BG1HOFS
+83BED0 Cutscene7_Main             ; League-win cutscene 7 (DATA_8388FD idx 7): setup and scripted animation
+83C11E Cutscene6_Init             ; League-win cutscene 6 (DATA_8388FD idx 6): fade out, mode 2, load palettes/graphics, falls into play
+83C1D2 Cutscene6_Play             ; Body of cutscene 6 (fall-through from Cutscene6_Init)
+83C49C Cutscene0_Main             ; League-win cutscene 0 (DATA_8388FD idx 0): setup and scripted animation
+83C715 Cutscene5_Init             ; League-win cutscene 5 (DATA_8388FD idx 5): fade out, mode 2, load palettes/graphics, falls into play
+83C79F Cutscene5_Play             ; Body of cutscene 5 (fall-through from Cutscene5_Init)
+83C8E0 Race_Main                  ; Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit
+83CDA0 Race_UpdateColorHints      ; While $12D9/$12DB set, every 360 frames queue next of 8 per-player messages; then mark colour seen
+83CEAD Race_UpdateSpecialFx       ; Special-track (>= $28) handler: run the active one of 8 timed race effects ($131D-$132B)
+83D0E8 Race_CheckFxTrigger        ; Racer bounding-box overlap test; on contact start effect (P1 x & 7) unless one is active
+83D1AE Race_UpdateBackdropFade    ; Track $2A 1P: ease colour $12C9 toward DATA_83D1A7 target, build BGR word $12CB; 2P starts fx 4
+83D259 Race_ClearFxTables         ; Fill $1283 and $1294 16-byte tables with $80
+83D26E Race_Fx7Tick               ; Effect 7: 600-frame timer, on expiry announce message $23 and clear
+83D2AD Race_Fx3Tick               ; Effect 3 (screen flip): 600-frame timer with blink in/out, builds flip HDMA table when on
+83D32D Race_Fx6Tick               ; Effect 6: 600-frame timer, sets $0559 active with blink at start/end
+83D3E0 Race_Fx4Tick               ; Effect 4: 600-frame timer, sets $0557 active with blink at start/end
+83D458 Race_Fx0Tick               ; Effect 0: 600-frame timer, on expiry announce message $23 and clear
+83D492 Race_Fx2Tick               ; Effect 2: 600-frame timer, on expiry announce message $23 and clear
+83D4CC Race_Fx5Tick               ; Effect 5 (slow motion): 600-frame timer, skips game update 3 of 4 frames via $1281
+83D514 Race_Fx1Tick               ; Effect 1 (stutter): ramping pause counter $127B/$127F, freezes updates via $1281
+83D565 Race_BuildFlipHdmaTable    ; Write reversed line table (double-buffered $7E2332/$7E24F8) and flip racer sprites vertically
+83E066 Race_UpdateCpuRival        ; 1-player CPU rival AI: generate virtual joypad inputs ($0313-$032F) from rival state
+83E238 Demo_UpdateCpuInput        ; Attract demo: ticks demo timer, aborts demo on any keypress ($12A9), synthesizes AI pad input for both riders
+83E580 Race_UpdateCountdown       ; Pre-race 3-2-1-GO countdown: beeps, flashes HDMA6 colour table, start-boost bookkeeping, holds pads neutral
+83E7A5 Race_UpdateFinish          ; After finish: end timer/music fade, stunt-mode landing lock, queues win/lose/draw messages, brakes rider, result flash
+83EBCC Race_SetHdma6TableFromIndex ; Sets HDMA6 table pointer (bank $15) from $11F7 via sub_81B664; unreferenced
+83EC46 Race_UpdateRiderOverlayFrames ; Computes P1/P2 overlay graphics frame ($0D3F/$0D41) and enable flags from overlay type and anim counter
+83ED2F Rider_UpdateAnimFrameL     ; Long wrapper for Rider_UpdateAnimFrame
+83ED33 Rider_UpdateAnimFrame      ; Current rider: updates body lean, wheel spin speed/rotation (0-23) and blur level, picks final sprite frame $0F97
+83ED63 Rider_DecayWheelSpin       ; Alternate entry adjusting wheel spin speed toward zero by direction $0F17; not referenced directly
+83EF10 Rider_UpdateBodyLean       ; Current rider: computes target lean from tilt/velocity, steps lean angle $0F49 toward it, stores frame $0F77
+83F0B7 Gfx_QueueRiderTileDmaL     ; Long wrapper for Gfx_QueueRiderTileDma
+83F0BB Gfx_QueueRiderTileDma      ; Builds VRAM tile DMA list ($1645 src/$15A1 bank/$16E9 dest from $6000) for both riders' body+overlay frames
+83F296 Gfx_GetRiderFramePtr       ; Looks up 3-byte entry A in frame table at $20:8000; returns A=address, X=bank+$23
+83F2BB Gfx_DecodeRiderFrameHeaders ; Decodes the four rider frame headers into tile-presence masks and tile counts in DP $00-$13/$18-$2E
+83F4D2 Sys_BlankAndJumpC8E0       ; Forces blank then jumps to sub_83C8E0 (disables NMI/HDMA, reinit); unreferenced
+83F602 Race_UpdatePauseMenu       ; Pause screen: dims screen, draws random pause phrase and continue/quit, handles cursor; A=0 resume,1 quit,FF none
+83F940 Ppu_ResetAllRegisters      ; Force blank, disable NMI/IRQ/DMA and zero every PPU/CPU I/O register; returns A=1
+83FA5B Splash_ShowLogoL           ; Long wrapper for Splash_ShowLogo; unreferenced
+83FA5F Splash_ShowLogo            ; Mode 3 still screen: loads palette $C1 and gfx $C0/$BF, fades in, holds ~2s, fades out; unreferenced
+83FAC0 Sram_ClearAllL             ; Long wrapper for Sram_ClearAll
+83FAC4 Sram_ClearAll              ; Zeroes all 8KB of battery SRAM $770000-$771FFF
+# Proposed by the naming pass
+80CE7F Results_ShowRaceTable      ; Race results screen: build p1/p2/record rows, draw the 'COMPLETE' table and times
+83A721 Menu_InitScreenFull        ; Force blank, reload menu sounds, PPU regs (mode 3), palettes, gfx and sprites; enable NMI
+80DFD2 BgSlide_HideCursorSprites  ; Hides the eight menu-cursor sprites ($0A10.. Y = $FF) for the BG2 slide hook
+83879A League_ApplyRaceResult     ; League race result: PHP/PLP wrapper that updates standings and dispatches via $87CF

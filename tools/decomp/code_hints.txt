@@ -3,3 +3,4 @@
 80859C  1 0  NMI exit epilogue (REP #$30, PLA/PLY/PLX/PLD/PLB, RTI); no static reference
 80BFD9  1 0  orphaned case arm between BRA $BFC3 and CODE_80BFE0 (LDA $00 / BEQ / BRL $C0D9)
 8389D9  1 0  SRAM checksum verifiers (sum $77:000C.., return Z via SEP/REP #$02, RTL)
+80DFAC  1 0  BG2 slide per-frame hook (pointer loaded by ldx #$DFAC at $80DDF4): LDA $90 / CMP #$9C at 8-bit A

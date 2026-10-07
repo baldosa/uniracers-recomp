@@ -1,0 +1,622 @@
+# RAM variables for the disassembly (tools/decomp/gen_disasm.py).
+# BBAAAA name size ; comment   (WRAM $7E/$7F, SRAM $70-$77; D = $0000)
+770000 sSignature               12   ; SRAM signature header (from DATA_838000); also used for 8KB mirror check
+77000C sPlayerProfiles          16   ; Player profile records, 16 bytes each; name string first ('_' padded, $FF end), indexed by $770748/$770749
+77016C sNamesChecksum           2    ; Checksum of $77000C block
+77016E sBlock16E                192  ; Checksummed SRAM block initialised from DATA_83815E
+77022E sBlock16EChecksum        2    ; Checksum of $77016E block
+770230 sPlayerStats             128  ; Per-player stats, 16x8 bytes: races, wins, +4 and +6 counters
+770232 sStatsWins               2    ; Per-player wins; stats block of 8 bytes per player at $770230 (races, wins, DNFs, score)
+770234 sStatsDnf                2    ; Per-player non-finish count (race time >= 10:00.00), stride 8
+770236 sStatsScore              2    ; Per-player total stunt score, stride 8
+7702B0 sPlayerStatsChecksum     2    ; Checksum of $770230
+7702B2 sLeagueMembers           12   ; Six word bitmasks: which player profiles belong to each league
+7702BE sLeagueMembersChecksum   2    ; Checksum of $7702B2
+7702C0 sLeagueTable             192  ; League tables: 6 leagues x 8 entries x {played word, points word}
+7702C2 sLeaguePoints            2    ; Points word of a league table entry (sLeagueTable+2)
+770380 sVsRaces                 64   ; Per-player VS counts, 16x4 bytes: +0 races played
+770382 sVsWins                  2    ; Within sVsRaces entry: +2 lifetime VS wins
+770400 sVsSessionWins           32   ; Per-player VS wins this session (cleared at boot)
+770420 sLeagueResultsChecksum   2    ; Checksum of $7702C0 block
+770422 sRecordTime1             100  ; Track records 1st place value (time or score), word per track, 50 tracks
+770486 sRecordTime2             100  ; Track records 2nd place value, word per track
+7704EA sRecordTime3             100  ; Track records 3rd place value, word per track
+77054E sTrackRecordsChecksum    2    ; Checksum of $770422
+770550 sRecordHolder1           50   ; Player id holding 1st place record, byte per track
+770582 sRecordHolder2           50   ; Player id holding 2nd place record, byte per track
+7705B4 sRecordHolder3           50   ; Player id holding 3rd place record, byte per track
+7705E6 sRecordHoldersChecksum   2    ; Checksum of $770550 record holders
+7705E8 sLeagueRosters           48   ; Six leagues x 8 player indices in ranking order, $10 = empty
+770618 sLeaguePointTable        96   ; Six leagues x 8 word points
+770678 sLeagueRaceNum           6    ; Per league current race count
+77067E sLeagueTrackPos          6    ; Per-league current tour start (tour*5)
+770684 sLeagueBestScore         24   ; Per league 4 bytes: best score (+0) and holder player (+2)
+770686 sLeagueBestHolder        2    ; Within sLeagueBestScore: player index, $10 = none
+77069C sTierMedals              160  ; Medal level 0-3 per tier ($D0*16) per player
+77071C sPlayerSetting           16   ; Per-player byte initialised to 2
+77073C sLeagueBlockChecksum     2    ; Checksum of $7705E8 block
+77073E sP1StatsOffset           2    ; Player 1 id*8, offset into the stats block
+770740 sP2StatsOffset           2    ; Player 2 id*8, offset into the stats block
+770742 sGameFlags               2    ; Flags: bit1 in menu, bit3 two-player, bit4 MainLoop reset, bit5 group-table window, bits9/10 ignore pad1/pad2
+770744 sTrackLaps               1    ; Lap count of the current track (from table $83A254)
+770748 sUniColorP1              1    ; Player 1 unicycle colour 0-15 (palette = value+6); random pick in attract demo
+770749 sPlayer2Id               1    ; Player 2 profile id (>= $10 means CPU/none, $FF none)
+77074A sCurTrack                1    ; Selected track number; theme = track mod 14, >=$28 and $2A are special
+77074B sEventType               1    ; Current event type: 0 race, 1 lap race, 2 stunts (track slot mod 3)
+77074C sTourSlot                1    ; Position of the current track within its tour (track mod 5)
+77074F sPodiumThird             1    ; Unicycle id placed 3rd on league podium ($FF none); $77074D/E are 1st/2nd
+770750 sRaceFlags               1    ; Race setup flags: bit1 attract demo, bit3 two-player; bits 2-3 from $770742
+770753 sStuntTargetScore        2    ; Score both players are compared against in stunt mode unless $770750 bit3; computed by sub_839EEB (uncertain)
+770755 sP1RaceResult            106  ; Player 1 race result: lap times, total at +$14, stunt score at +$66; P2 at $7707BF
+770769 sP1RaceTime              2    ; Player 1 total race time of the last race (centiseconds; $EA60 = 10:00.00 cap)
+77076B sStuntStatsP1            1    ; P1 per-stunt stats in SRAM: word pairs (times performed, points) indexed by stunt type
+7707BB sP1StuntScore            2    ; Player 1 stunt score of the last race
+7707BF sP2LapTimes              22   ; Player 2 lap times (10 words) followed by total at $7707D3; P1 equivalent at $770755
+7707D3 sP2RaceTime              2    ; P2 race result time; $EA60 none, $EA61 quit while racing, $EA62 quit during countdown (P1 at $770769)
+7707D5 sStuntStatsP2            1    ; P2 per-stunt stats in SRAM, same layout as sStuntStatsP1
+770825 sP2StuntScore            2    ; P2 score in stunt/points races (P1 counterpart $7707BB); compared to decide stunt-mode winner
+770829 sPersonalBest            1    ; Per-player best times per track, indexed via sub_839E47
+77082B sPlayerBestTime2         2    ; Field +2 of personal-best entries ($770829, 10 bytes each)
+77082D sPlayerBestCount         2    ; Field +4 of personal-best entries (init 0)
+770E69 sPlayerBestsChecksum     2    ; Checksum of personal bests $770829
+770E6B sSavedDirectPage         414  ; Copy of WRAM $0000-$019D saved in SRAM
+77106B sSavedFlags              2    ; Copy of $770742 flags saved across Race_Start
+77106F sTrackFastestTime        2    ; Fastest time on track $CE (graph scale); $771071 holds slowest
+771073 sLeagueRetries           1    ; Set to 3 when a league starts, decremented when $770742 bit $1000 is set; tentative
+771075 sTourTracksDone          50   ; League: 10 tours x 5 tracks completed flags, cleared when a new league starts
+7710A7 sCutsceneTimer2          2    ; Secondary frame counter in league-win cutscenes (SRAM used as scratch)
+7710A9 sSessionWinsP1           2    ; Player 1 wins in the current VS session
+7710AB sSessionWinsP2           2    ; Player 2 wins in the current VS session
+7710AD sPlayMode                1    ; Play mode: 0 menu, 1 1P, 2 2P, 3 VS, 4 league, 5 attract demo
+7710B1 sRaceMusicCycle          1    ; Race music/variant index 0-5, advanced each non-demo race; also seeds demo colours
+7710B2 sLastPercent             2    ; Result of last percentage calculation
+7710B4 sResultBlockOffset       2    ; Offset of current player's result block (0 or $6A)
+7710C8 sDemoTrack               1    ; Attract demo track cycle counter (0-39)
+7710C9 sCutsceneTimer           2    ; Main frame counter for league-win cutscene scripts (SRAM used as scratch)
+7710CB sCutsceneTimer3          2    ; Auxiliary counter in league-win cutscenes
+7710CF sPlayersSwapped          2    ; Set when P1/P2 profiles were swapped for the race
+7710D0 sUnlockCheatActive       1    ; 1 while the boot-screen unlock code is active (real unlocks backed up at $7710E3)
+7710D1 sLeagueClass             1    ; Selected league class: 0 bronze, 1 silver, 2 gold
+7710D2 sLeagueClassCycled       1    ; Set once the class has been changed on PICK TRACK
+7710D3 sPlayerTier              16   ; Unlocked tier per player profile
+7710E3 sTourUnlockBackup        16   ; Backup of the tour unlock table $7710D3 while the cheat is active
+7710F3 sAwardsFlags             1    ; Point Awards screen state; bit0 = bonus line already drawn
+7710F5 sDelSkipCount            2    ; Temp while removing a player from a league: entries before
+7710F7 sDelMoveCount            2    ; Temp while removing a player: entries after
+7710F9 sPercentTotal            2    ; Percent denominator
+7710FB sPercentPart             2    ; Percent numerator
+7710FD sPlayerPromoted          16   ; Per-player promotion flag
+771115 sDemoAlternate           1    ; Toggles 0/1 each attract demo: 1 = two-player demo
+771116 sUniColorsSeenMask       2    ; Bitmask of unicycle colours already raced (gates colour-hint messages); cleared on save reset
+771118 sSignature2              8    ; Second SRAM signature
+771FFF sMirrorTestWord          2    ; Last SRAM word; used by 8KB mirror test
+7E0000 wTemp00                  2    ; Direct-page scratch
+7E0001 wScratch01               1    ; Direct-page scratch byte $01 (general temporary)
+7E0003 wScratch03               1    ; Direct-page scratch byte $03 (general temporary)
+7E0004 wTemp04                  2    ; Direct-page scratch
+7E0006 wTemp06                  2    ; Direct-page scratch
+7E000D wTrackSizeCode           1    ; really $7F000D: track size code byte ($00..$80) in the track map header
+7E000E wTemp0E                  2    ; Direct-page scratch (multiply result low)
+7E0028 wContactHeightA          1    ; Collision temp: highest penetration among lower probes
+7E002A wContactAngle            2    ; Collision temp: contact surface angle of best probe
+7E002C wContactHeightB          1    ; Collision temp: highest penetration among side probes
+7E0049 wResBank                 1    ; Source bank of the current resource being loaded
+7E004B wResSize                 2    ; Byte size of the current resource (from resource table)
+7E004D wResFlag                 1    ; Bit 7 of resource entry: compressed/special-format resource
+7E004F wResTablePtr             3    ; Long pointer to the active 5-byte-entry resource table ($82B32F or $82B7DA)
+7E0053 wNmiHandler              3    ; Long pointer to current NMI handler (I_NMI does JML [$0053])
+7E0056 wSlideFwdHook            2    ; Per-frame step routine used by the forward slide transition
+7E0057 wNmiDoneFlag             1    ; Set to $FF by NMI handlers; WaitForNMI clears and polls it
+7E0058 wSlideBackHook           2    ; Per-frame step routine used by the backward slide transition
+7E005A wTilemapVramDest         2    ; VRAM word address used by Vram_UploadTilemap
+7E005D wJumpVector              2    ; Temp pointer for JMP ($005D) dispatches
+7E0063 wSndDataPtr              2    ; sound data source pointer (low word; bank in $65)
+7E0065 wSndDataBank             1    ; bank of the sound data source pointer
+7E0066 wSndStreamPtr            2    ; stream source pointer (bank in $68)
+7E0068 wSndStreamBank           1    ; stream source bank; 0 = no stream active
+7E0069 wSndXferCounter          1    ; APUIO0 handshake counter during block upload
+7E006A wSndStreamList           2    ; pointer to a $FFFF-terminated list of stream IDs
+7E006C wSndStreamState          1    ; stream state machine index (table $81FF)
+7E006D wSndStreamRemain         2    ; bytes left in the current stream
+7E006F wSndTemp                 2    ; sound scratch: directory offset / block counter
+7E0072 wJoy1Held                2    ; Joypad 1 buttons held (JOY1L)
+7E0074 wJoy2Held                2    ; Joypad 2 buttons held (JOY2L)
+7E0076 wTemp76                  2    ; General loop counter/temp used by many menu routines
+7E0078 wTemp78                  2    ; General loop counter/temp (row offsets, SRAM indices)
+7E007A wWindow1Left             1    ; Shadow of WH0 (window 1 left)
+7E007B wWindow1Right            1    ; Shadow of WH1 (window 1 right)
+7E007E wNameEntryCurY           2    ; Name-entry keyboard cursor vertical offset (0,-$18,-$30,-$48)
+7E0080 wBlitColumn              2    ; Tile column counter for frame blit
+7E0087 wGfxDecodeDest           2    ; Destination buffer pointer for graphics frame decoder sub_838E3A (usually $0CF0)
+7E0089 wMenuIdleTimer           2    ; Main menu idle countdown ($1E0 frames) before attract demo; also other menu timers
+7E008B wMenuAnimTimer           1    ; Menu sprite animation sub-timer
+7E008D wNameEntryLen            1    ; Number of characters typed in name entry
+7E008F wInputLatch              1    ; Menu input debounce bits (set while a direction is held, cleared on release)
+7E0090 wBg2HScroll              2    ; BG2 horizontal scroll used by menu slide transitions
+7E0094 wNameEntryStatus         1    ; Name entry result: 0 running, 1 accepted, $FF cancelled
+7E009B wMenuCursor              1    ; Menu cursor / selected item; MainLoop dispatches main-menu choice on it
+7E009F wTextPos                 2    ; DrawText tilemap cursor position
+7E00A1 wSlideSpeed              1    ; Current scroll speed during a slide transition
+7E00A5 wUniPosX                 2    ; Current unicycle X position (work copy; per-player $0411/$0413)
+7E00A6 wMenuChoiceMade          1    ; Set to 1 when a menu loop returns a choice/cancel
+7E00A7 wCurUniY                 2    ; current uni Y position during physics
+7E00A8 wTilemapVramFront        2    ; VRAM address of the visible menu tilemap (swapped with back after a slide)
+7E00AA wTilemapVramBack         2    ; VRAM address of the off-screen menu tilemap being drawn
+7E00AC wSlideDirection          1    ; Slide direction for next screen: 2 = forward, 1 = back
+7E00AD wMenuPanelScrollY        1    ; Menu panel BG1 vertical scroll; slides toward 0 or $4F depending on $770742 bit 1
+7E00AE wMenuItemTable           2    ; Pointer to the current menu's per-item cursor X offsets
+7E00B0 wTextAttr                2    ; Tile attribute (palette) bits OR'd into drawn text
+7E00B6 wTextArg3                2    ; Third numeric argument for DrawText format codes (with $B2/$B4)
+7E00B8 wTextArg4                2    ; DrawText numeric argument slot $B8
+7E00C0 wResultTotal             2    ; Accumulated tally total printed by results screens
+7E00C6 wCursorAnimTimer         1    ; Cursor sprite animation counter (31..0)
+7E00C8 wPalCycleTimer           1    ; Menu palette cycle frame timer (6..0)
+7E00C9 wPalCycleIndex           1    ; Menu palette cycle step (3..0) for colours $6C-$6F
+7E00CA wCurPlayerId             1    ; Currently selected player profile id
+7E00CC wLeagueIndex             1    ; Selected league slot (0-5) for league table/define league
+7E00CE wTrackIndex              1    ; Current track number (0-44)
+7E00D0 wTourIndex               1    ; Current tour/track group (track/5)
+7E00D2 wDefineLeagueMask        2    ; Track bitmask being edited in Define League
+7E00D4 wPlayerList              8    ; Working list of 8 player indices ($10 = empty)
+7E00DC wTextFmtBuf              35   ; Scratch buffer for formatted strings (position header + name)
+7E00DD wTextScratchCol          1    ; Column byte of the $DC scratch text string (FE col row ...)
+7E0101 wTimeDigits              11   ; Digit scratch for race-time formatting
+7E013F wStatMaxRaces            2    ; Maximum race count over all profiles (records graph)
+7E0141 wStatMaxWins             2    ; Maximum wins over all profiles
+7E0143 wStatMaxLosses           2    ; Maximum races-wins over all profiles
+7E0147 wStatMaxField6           2    ; Maximum of stats field +6
+7E0151 wSortTable8              32   ; 8 entries of {id word, value word}, sorted by the Util_SortTable8 routines
+7E0175 wLeagueBarLengths        8    ; Per-entry point bar lengths computed by League_CalcPointBars
+7E017D wPlayer1Id               2    ; Player 1 profile id chosen in the picker
+7E017F wP2Uni                   1    ; Player 2 / opponent uni id; >=$10 means CPU opponent
+7E0187 wMenuAnimFrames          8    ; Animation frame per menu sprite
+7E018F wRecordUni               1    ; Uni id of the record holder shown on the pre-race screen
+7E0190 wPickUniAnimTimer        1    ; Picker idle animation frame counter (counts down from $27)
+7E0191 wMenuAnimPhase           1    ; Menu colour cycle phase
+7E0195 wIndexTemp               2    ; Temp for index calculations
+7E0197 wIndexTemp2              2    ; Temp for index calculations
+7E0199 wMvnTrampoline           1    ; RAM routine: MVN opcode ($54) of the block-move trampoline ($0199-$019C)
+7E019A wMvnDestBank             1    ; MVN destination bank operand of the trampoline
+7E019B wMvnSrcBank              1    ; MVN source bank operand of the trampoline
+7E019C wMvnRtl                  1    ; RTL ($6B) ending the MVN trampoline
+7E0230 wProbeResults            20   ; 10 collision probes x {height/penetration, angle} bytes
+7E0254 wRiderTargetTilt         2    ; target tilt angle computed from rider motion
+7E0260 wTemp0260                2    ; General temporary (stunt index*2, player offset loop counter, etc.)
+7E026A wStuntComboIndex         2    ; index into the stunt message table built from trick counts
+7E02A6 wProbeSubX               2    ; Unicycle X within cell (pos & $F)
+7E02A8 wProbeSubY               2    ; Unicycle Y within cell (pos & $F)
+7E02E8 wProbeAnyContact         1    ; 1 if any probe found contact this frame
+7E0300 wFramePhase              2    ; Frame phase / alternate-frame selector; nonzero selects second tile buffer (+$0800 VRAM)
+7E0302 wPhysicsParity           2    ; toggles 0/1 each frame; picks which uni gets full physics
+7E0304 wFrameMod3               1    ; Frame counter cycling 0,1,2 during the race loop
+7E0306 wTileDmaPending          1    ; Set to request Nmi_FlushTileDmaList on the next NMI
+7E030D wJoy1RawLo               1    ; JOY1L latched in NMI
+7E030E wJoy2RawLo               1    ; JOY2L latched in NMI
+7E030F wJoy1RawHi               1    ; JOY1H latched in NMI
+7E0310 wJoy2RawHi               1    ; JOY2H latched in NMI
+7E0311 wJoy1VertDir             1    ; P1 d-pad vertical: 0 up, 1 none, 2 down
+7E0313 wJoy2VertDir             1    ; P2 d-pad vertical: 0 up, 1 none, 2 down
+7E0315 wJoy1Horiz               1    ; P1 decoded d-pad horizontal: 0 left, 1 none, 2 right (also written by demo/CPU AI)
+7E0317 wJoy2Horiz               1    ; P2 decoded d-pad horizontal: 0 left, 1 none, 2 right (also written by CPU AI)
+7E0319 wJoy1BtnA                2    ; P1 A button held (P2 at $031B)
+7E031B wJoy2BtnA                1    ; P2 A button held flag (nonzero = held); per-button flags at $0319-$0337, P1 even/P2 odd+2
+7E031D wJoy1BtnX                2    ; P1 X button held
+7E031F wJoy2BtnX                2    ; P2 X button held
+7E0321 wJoy1BtnY                1    ; P1 Y button held flag
+7E0323 wJoy2BtnY                1    ; P2 Y button held flag
+7E0325 wJoy1BtnL                2    ; P1 L button held (P2 at $0327)
+7E0327 wJoy2BtnL                1    ; P2 L button held flag
+7E0329 wJoy1BtnR                2    ; P1 R button held (P2 at $032B)
+7E032B wJoy2BtnR                1    ; P2 R button held flag
+7E032D wJoy1BtnB                1    ; P1 B button held flag
+7E032F wJoy2BtnB                1    ; P2 B button held flag
+7E0331 wJoy1BtnSelect           1    ; P1 Select held
+7E0333 wJoy2BtnSelect           1    ; P2 Select held
+7E0335 wJoy1BtnStart            1    ; P1 Start button held flag (opens pause)
+7E0337 wJoy2BtnStart            1    ; P2 Start button held flag (opens pause)
+7E0339 wStripBufPtr             2    ; write pointer into the tilemap strip buffer ($0433 P1, $0475 P2)
+7E033B wUniTakeoffFacing        4    ; per uni: facing at takeoff, for stunt direction
+7E033F wUniCatchupSpeed         4    ; per uni: CPU/rubber-band speed bonus
+7E0345 wSplitDrawP1             2    ; P1 lap split HUD request: 1 = draw, $FFFF = erase, 0 = none
+7E0347 wSplitDrawP2             2    ; P2 lap split HUD request: 1 = draw, $FFFF = erase, 0 = none
+7E0349 wClockDrawP1             2    ; P1 race clock HUD redraw request (positive draw, negative blank), cleared by NMI HUD
+7E034B wClockDrawP2             2    ; P2 race clock HUD redraw request (positive draw, negative blank)
+7E034D wUniLoopDir              4    ; Per-player loop direction
+7E0351 wUniLoopState            4    ; Per-player loop tile progress (0 none, 1-$10 steps, negative = cooldown)
+7E0355 wUniLoopTimer            4    ; Per-player loop step timer
+7E03A9 wVramDmaSize             16   ; VRAM DMA queue: byte counts
+7E03B9 wVramDmaPending          16   ; VRAM DMA queue: slot pending flags, consumed at $82D2AE
+7E03C9 wVramDmaDest             16   ; VRAM DMA queue: destination addresses (word per slot)
+7E03D9 wVramDmaVmain            16   ; VRAM DMA queue: VMAIN value per slot ($80/$81)
+7E03E9 wStuntNameShown1         2    ; P1 stunt name currently on screen flag
+7E03EB wStuntNameShown2         2    ; P2 stunt name currently on screen flag
+7E03ED wTrackSizeShift          2    ; track size shift count (0..6) used to scale camera lead
+7E03EF wCamLeadMin              2    ; minimum camera lead window (track size dependent)
+7E03F1 wCamLeadMax              2    ; maximum camera lead window (track size dependent)
+7E03FD wUniXSub                 4    ; per uni: X subpixel accumulator
+7E0401 wUniYSub                 4    ; per uni: Y subpixel accumulator
+7E0405 wMapCol                  2    ; metatile column from Bg_SplitCoordToMetatile
+7E0407 wMapRow                  2    ; metatile row from Bg_SplitCoordToMetatile
+7E0409 wMapSubCol               2    ; tile column within the metatile
+7E040B wMapSubRow               2    ; tile row within the metatile
+7E0411 wUni1X                   2    ; uni 1 X position
+7E0413 wUni2X                   2    ; uni 2 X position
+7E0415 wUni1Y                   2    ; uni 1 Y position
+7E0417 wUni2Y                   2    ; uni 2 Y position
+7E0419 wViewScrollX1            2    ; P1 view camera X
+7E041B wViewScrollX2            2    ; P2 view camera X
+7E041D wViewScrollY1            2    ; P1 view camera Y
+7E041F wViewScrollY2            2    ; P2 view camera Y
+7E04B7 wP1VelX                  2    ; P1 rider horizontal velocity (signed); braked toward 0 after finish
+7E04B9 wP2VelX                  2    ; P2 rider horizontal velocity (signed)
+7E04BB wP1VelY                  2    ; P1 rider vertical velocity (signed, negative = rising)
+7E04BD wP2VelY                  2    ; P2 rider vertical velocity (signed, negative = rising)
+7E04BF wUni1JumpFrames          2    ; uni 1 jump frame counter
+7E04C1 wUni2JumpFrames          2    ; uni 2 jump frame counter
+7E04C3 wRaceFrameMod32          2    ; Race frame counter, incremented and masked to 0-31 each frame
+7E04C7 wUni1Angle               2    ; uni 1 rotation angle (0-63)
+7E04C9 wUni2Angle               2    ; uni 2 rotation angle (0-63)
+7E04EF wNoInputFrames           2    ; incremented on frames with no joypad input
+7E04F1 wTrackMapStride          2    ; track map row length in metatiles
+7E04F3 wTrackMapStrideBytes     2    ; track map row length in bytes (stride*2)
+7E04F5 wCamVelX1                2    ; P1 camera X scroll speed this frame
+7E04F7 wCamVelX2                2    ; P2 camera X scroll speed
+7E04F9 wCamVelY1                2    ; P1 camera Y scroll speed
+7E04FB wCamVelY2                2    ; P2 camera Y scroll speed
+7E04FD wBgTileAccX1             2    ; P1 9-bit X scroll accumulator for tile streaming
+7E04FF wBgTileAccX2             2    ; P2 9-bit X scroll accumulator
+7E0501 wBgTileAccY1             2    ; P1 9-bit Y scroll accumulator
+7E0503 wBgTileAccY2             2    ; P2 9-bit Y scroll accumulator
+7E0505 wBgColVramOfs1           2    ; P1 tilemap offset of the column to refresh, $FFFF = none
+7E0507 wBgColVramOfs2           2    ; P2 tilemap offset of the column to refresh, $FFFF = none
+7E050D wBgRowVramOfs1           2    ; P1 tilemap offset of the row to refresh, $FFFF = none
+7E050F wBgRowVramOfs2           2    ; P2 tilemap offset of the row to refresh, $FFFF = none
+7E0527 wHudVramAddrTop          2    ; HUD score drawing: VRAM address of upper tile row
+7E0529 wHudVramAddrBot          2    ; HUD score drawing: VRAM address of lower tile row
+7E052B wBgColLen1               2    ; P1 column strip first-part length
+7E052D wBgColLen2               2    ; P2 column strip first-part length
+7E0533 wBgRowLen1               2    ; P1 row strip first-part length in tiles
+7E0535 wBgRowLen2               2    ; P2 row strip first-part length
+7E053B wHudNoLapCount           2    ; Set when race type has no lap counter (HUD shows alternate label instead)
+7E0541 wUniFlipTimer            4    ; Per-player timer set to 8 on a flip, counts down
+7E0545 wP1AirTime               2    ; P1 airborne frame count (<2 means on ground)
+7E0547 wP2AirTime               2    ; P2 airborne frame count
+7E054D wCamLeadX1               2    ; P1 camera horizontal lead offset
+7E054F wCamLeadX2               2    ; P2 camera horizontal lead offset
+7E0551 wFx0Timer                2    ; Race effect 0 countdown (600 frames)
+7E0553 wTrackMapRowOfs          2    ; byte offset into $7F000F map data (from multiply of size params)
+7E0555 wFx4Timer                2    ; Race effect 4 countdown (600 frames)
+7E0557 wFx4Active               2    ; Race effect 4 visible flag (blinks at start/end)
+7E0559 wFx6Active               2    ; Race effect 6 visible flag (blinks at start/end)
+7E055B wFx6Timer                2    ; Race effect 6 countdown (600 frames)
+7E055D wMosaicCounter           1    ; Frame counter driving the race mosaic effect
+7E0A00 wOamBuf                  544  ; OAM shadow buffer (512 bytes + 32-byte high table at $0C00)
+7E0B00 wOamBuffer               512  ; OAM shadow buffer (low table); high table at $0C00
+7E0B7E wPalCycleStep            1    ; Step (0-15) of the race palette color cycle
+7E0B8C wPalCycleEnable          1    ; Nonzero enables race palette color cycling
+7E0B8D wP1JumpFlag              1    ; Player 1 saved copy of $0F19; tentative
+7E0BA1 wUni1Facing              2    ; uni 1 facing direction (0/1)
+7E0BA3 wUni2Facing              2    ; uni 2 facing direction (0/1)
+7E0BDF wCursorSpriteAttr        1    ; OAM attribute byte of sprite $77 (menu cursor): palette and H-flip
+7E0BE5 wUni1BoostCharge         2    ; uni 1 boost charge
+7E0BE7 wUni2BoostCharge         2    ; uni 2 boost charge
+7E0BE9 wBgRowsAboveTop1         2    ; P1 count of rows above the map top (blank fill)
+7E0BEB wBgRowsAboveTop2         2    ; P2 count of rows above the map top
+7E0BEF wRaceTimeUp              2    ; Race clock stopped/expired flag (countdown reached zero); suppresses clock updates
+7E0BFB wRaceStartMinutes        2    ; Race clock start value: minutes digit
+7E0BFD wRaceStartTenSecs        2    ; Race clock start value: tens-of-seconds digit
+7E0BFF wOamCursorAttr2          1    ; OAM attribute byte of the second menu cursor sprite (bit 6 = h-flip)
+7E0C19 wOamHi19                 1    ; OAM high-table byte $19 (size/X9 bits for sprites $64-$67)
+7E0C20 wSortTable16Id           2    ; Id word of first wSortTable16 entry
+7E0C22 wSortTable16             64   ; 16 entries of {id,value} at $0C20 (value at +2) for VS champions sort
+7E0C60 wCursorX                 2    ; Menu cursor X, eased toward wCursorTargetX
+7E0C62 wMenuCursorX             2    ; Menu cursor object X (fixed-point); $FD00 hides it
+7E0C64 wCursorStepX             2    ; Cursor X step this frame
+7E0C67 wCpuRivalActive          2    ; nonzero when uni 2 is the CPU rival
+7E0C68 wCursorY                 2    ; Menu cursor Y, eased toward wCursorTargetY
+7E0C69 wP2AiStuntHold           2    ; P2 CPU rival: frames left holding the planned stunt buttons
+7E0C6A wMenuCursorY             2    ; Menu cursor object Y (fixed point, <<4)
+7E0C6C wCursorStepY             2    ; Cursor Y step this frame
+7E0C6D wP2AiReverseTimer        2    ; P2 CPU rival: frames left steering reversed (set to 30)
+7E0C6F wP2AiStuntButtons        2    ; P2 CPU rival planned stunt: bit0 R (else L), bit1 A, bit2 X
+7E0C9F wStuntNameTimer1         2    ; P1 frames left showing the current stunt name
+7E0CA1 wStuntNameTimer2         2    ; P2 frames left showing the current stunt name
+7E0CB8 wHdmaWipeBrightTable     38   ; HDMA table for INIDISP used by the screen wipe
+7E0CBB wEventQueueP1            32   ; P1 race event ring buffer (stunt/announcer event codes)
+7E0CE1 wEventQueueP1Read        2    ; P1 event ring read index (0-31)
+7E0CE3 wEventQueueP1Write       2    ; P1 event ring write index (0-31)
+7E0CE5 wEventQueueP2            32   ; P2 race event ring buffer
+7E0CF0 wMarkerX                 40   ; Results marker objects X positions (20 words)
+7E0D0B wEventQueueP2Read        2    ; P2 event ring read index
+7E0D0D wEventQueueP2Write       2    ; P2 event ring write index
+7E0D0F wRaceTotalLaps           2    ; Total laps of the race (lap shown = total - laps remaining)
+7E0D11 wLapCountDirty           2    ; Lap counter HUD redraw request, cleared by NMI HUD
+7E0D13 wSplitShownP1            2    ; Set while P1 split display is shown; cleared when erased (affects rival-arrow drawing)
+7E0D15 wSplitShownP2            2    ; Set while P2 split display is shown; cleared when erased
+7E0D1B wP1OverlayEnable         2    ; P1 overlay graphics frame active flag
+7E0D1D wP2OverlayEnable         2    ; P2 overlay graphics frame active flag
+7E0D2C wMarkerTargetX           40   ; Results marker target X (20 words)
+7E0D3F wP1OverlayFrame          2    ; P1 overlay graphics frame index into $20:8000 table
+7E0D41 wP2OverlayFrame          2    ; P2 overlay graphics frame index
+7E0D43 wUniLookFrame            4    ; per uni: look/pose frame (0 = neutral)
+7E0D45 wP2OverlayType           2    ; P2 overlay type (1-based, 0 = none; P1 at $0D43)
+7E0D47 wTrackHeightLimit        2    ; track height limit; rows beyond are blank
+7E0D49 wTrackWrapMaskX          2    ; horizontal track wrap mask (pixels), set by track size
+7E0D4B wTrackColMask            2    ; metatile column wrap mask for the track map
+7E0D55 wUni1IdleAnimOn          2    ; uni 1 idle look sequence active
+7E0D57 wUni2IdleAnimOn          2    ; uni 2 idle look sequence active
+7E0D59 wUniIdleSeqPtr           4    ; per uni: current idle look sequence pointer
+7E0D5D wUniIdleSeqEnd           4    ; per uni: idle look sequence end
+7E0D61 wUniIdleSeqTimer         4    ; per uni: frames left on the current idle frame
+7E0D65 wUni1IdleTimer           2    ; uni 1 frames idle on the ground
+7E0D67 wUni2IdleTimer           2    ; uni 2 frames idle on the ground
+7E0D68 wMarkerVelX              40   ; Results marker X velocity (20 words)
+7E0D69 wUniIdleSeqIndex         2    ; idle look sequence number (0-5)
+7E0DA4 wMarkerGoalVelX          40   ; Results marker desired X velocity (20 words)
+7E0DD1 wViewTilemapVram         2    ; BG tilemap VRAM base for the view being built ($0C00 P1, $1C00 P2)
+7E0DD9 wViewHeight              2    ; visible height per view: $E0 one player, $70 split screen
+7E0DDB wSplitScreen             2    ; nonzero in 2-player split-screen races (second view processed)
+7E0DE0 wMarkerY                 40   ; Results marker objects Y positions (20 words)
+7E0DE1 wTileTemp                2    ; Scratch: tile attribute / tile index temp in physics code
+7E0DE7 wUniBoostAmount          2    ; Extra speed added by Uni_TileBoost
+7E0DE9 wUni1AnimFrame           2    ; uni 1 animation override frame
+7E0DEB wUni2AnimFrame           2    ; uni 2 animation override frame
+7E0DFD wUni1TurnTimer           2    ; uni 1 turn-around progress
+7E0DFF wUni2TurnTimer           2    ; uni 2 turn-around progress
+7E0E0F wClockMinutes            2    ; Race clock minutes digit (0-9)
+7E0E13 wClockTenSecs            2    ; Race clock tens-of-seconds digit (0-5)
+7E0E17 wClockSeconds            2    ; Race clock seconds digit (0-9)
+7E0E1B wClockTenths             2    ; Race clock tenths digit (0-9)
+7E0E1C wMarkerTargetY           40   ; Results marker target Y (20 words)
+7E0E1F wClockFrameTick          2    ; Race clock sub-tick 0-5 (6 frames per tenth); also used as start countdown tick
+7E0E23 wClockMode               2    ; Race clock direction: 0 = not started, positive = count up, negative = count down
+7E0E25 wClockTileMinP1          1    ; P1 HUD tile for clock minutes
+7E0E27 wClockTileMinP2          1    ; P2 HUD tile for clock minutes
+7E0E29 wClockTileTenSecP1       1    ; P1 HUD tile for clock tens of seconds
+7E0E2B wClockTileTenSecP2       1    ; P2 HUD tile for clock tens of seconds
+7E0E2D wClockTileSecP1          1    ; P1 HUD tile for clock seconds
+7E0E2F wClockTileSecP2          1    ; P2 HUD tile for clock seconds
+7E0E31 wClockTileTenthP1        1    ; P1 HUD tile for clock tenths
+7E0E33 wClockTileTenthP2        1    ; P2 HUD tile for clock tenths
+7E0E35 wLapTimeHundredths       4    ; Per-player lap time digit: hundredths
+7E0E39 wLapTimeMinutes          4    ; Per-player lap time digit: minutes
+7E0E3D wLapTimeTenSecs          4    ; Per-player lap time digit: tens of seconds
+7E0E41 wLapTimeSecs             4    ; Per-player lap time digit: seconds
+7E0E45 wLapTimeTenths           4    ; Per-player lap time digit: tenths
+7E0E4D wUniStuckTimer           4    ; per uni: frames stuck holding a direction, triggers hint msg at 180
+7E0E58 wMarkerVelY              40   ; Results marker Y velocity (20 words)
+7E0E89 wTrackGfxMapOfs          2    ; Running offset into $7EA000 map built while loading track tile blocks
+7E0E8B wTrackGfxBlock           1    ; Current track tile-block id being loaded
+7E0E8D wTrackGfxColumn          1    ; Column (0-7) within VRAM row while streaming track tiles
+7E0E8F wTrackGfxCount           2    ; Remaining tile pairs to stream for current track block
+7E0E93 wTrackGfxAttrOfs         2    ; Running offset into $7EC000 table built while loading track tile blocks
+7E0E94 wMarkerGoalVelY          40   ; Results marker desired Y velocity (20 words)
+7E0E95 wP1ContactCell           2    ; Player 1 saved contact cell
+7E0E97 wP2ContactCell           2    ; Player 2 saved contact cell
+7E0E9D wHudMessageP1            16   ; P1 HUD message line tile codes (16 chars)
+7E0EBD wHudText2                16   ; P2 16-char HUD text tiles (P1 at $0E9D)
+7E0EDD wHudMessageP1Dirty       2    ; P1 HUD message redraw request
+7E0EDF wHudText2Dirty           1    ; P2 HUD text needs upload (P1 at $0EDD)
+7E0EE7 wUniPassThrough          2    ; Pass-through flag: set by $7F cells, cleared when no probe touches; disables tile effects
+7E0EE9 wPauseCursor             2    ; Pause menu: 0 not paused, 1 continue selected, -1 quit selected
+7E0EED wNoOverlayFrames         2    ; Set to 1 when neither rider has $0D55/$0D57 set (cleared otherwise)
+7E0EEF wProbeHitFlag            2    ; 1 if any probe penetrates a solid tile
+7E0EF1 wLapsRemainingP1         2    ; P1 laps remaining (decremented each lap; 1 = final lap); P2 at $0EF3
+7E0EF3 wLapsRemainingP2         2    ; P2 laps remaining
+7E0EF5 wP1Finished              2    ; P1 finished race flag ($FFFF also set by result flash end)
+7E0EF7 wP2Finished              2    ; P2 finished race flag
+7E0EF9 wP1ResultFlashFrame      2    ; P1 result colour-flash HDMA frame (cycles 7-24 into DATA_83E540)
+7E0EFB wP2ResultFlashFrame      2    ; P2 result colour-flash HDMA frame
+7E0EFD wP1ResultFlashTimer      2    ; P1 result flash countdown (starts 360 frames)
+7E0EFF wP2ResultFlashTimer      2    ; P2 result flash countdown
+7E0F01 wLapSplitArmed           4    ; Per-player flag set after first split pass (word per player)
+7E0F05 wRaceEndTimer            2    ; Frames since race end; music fades at 180, race exits at 240
+7E0F09 wUniContactCell          2    ; Track map cell word under the unicycle (tile index + flip bits); per-player $0E95/$0E97
+7E0F0D wUniSlopeAngle           2    ; Ground slope angle from last contact (per-player $0B68/$0B6A)
+7E0F0F wCurUniBtnY              2    ; current uni Y button (boost charge)
+7E0F11 wCurUniBtnL              2    ; current uni L button
+7E0F13 wCurUniBtnR              2    ; current uni R button
+7E0F15 wCurUniBtnB              2    ; current uni B button (jump)
+7E0F17 wCurUniHorizDir          2    ; current uni d-pad horizontal: 0 left, 1 none, 2 right
+7E0F19 wUniJumpFlag             2    ; Set to 1 for one frame by jump/flip events; cleared in Uni_EndFrameUpdate; tentative
+7E0F27 wUniContactFlags         2    ; Attribute flags byte of the contact cell
+7E0F29 wUniAirFrames            2    ; Frames without ground contact, capped at 9 (per-player $0545/$0547)
+7E0F43 wRiderWheelBlur          2    ; Current rider wheel motion-blur level 0-2 from spin speed
+7E0F47 wUniFacing               2    ; Unicycle facing direction 0/1 (per-player $0BA1/$0BA3)
+7E0F49 wCurUniAngle             2    ; current uni rotation angle (0-63)
+7E0F4B wUniTiltRate             2    ; Signed rotation/tilt rate set from slope changes (per-player $0BAD/$0BAF); tentative
+7E0F4D wCurUniTwistTilt         2    ; current uni twist tilt from L/R
+7E0F4F wCurUniAnimFrame         2    ; current uni animation override frame
+7E0F53 wUniWheelOnGround        2    ; 1 when the wheel probe touches the track
+7E0F55 wCurUniBoostCharge       2    ; current uni boost charge, added to X velocity on release
+7E0F57 wCurUniTurnTimer         2    ; current uni turn-around progress
+7E0F59 wCurUniChargeSfxOn       2    ; boost charge loop sfx playing
+7E0F5B wCurUniPrevBtnY          2    ; Y button state last frame
+7E0F5D wCurUniTakeoffQuadrant   2    ; angle quadrant used for flip counting
+7E0F61 wCurUniAirTurns          2    ; turn-arounds done in the air (stunt)
+7E0F73 wCurUniIdleAnimOn        2    ; idle look sequence active
+7E0F75 wCurUniIdleTimer         2    ; frames idle on the ground
+7E0F81 wCurUniTurnEnd           2    ; turn-around end step
+7E0F87 wCurUniJumping           2    ; jump started flag
+7E0F89 wCurUniJumpFrames        2    ; jump frame counter
+7E0F8B wCurUniJumpPower         2    ; jump strength
+7E0F8F wRiderWheelSpeed         2    ; Current rider wheel spin speed (signed), added to wheel rotation frame $0F83
+7E0F9B wCurUniPrevBtnB          2    ; B button state last frame
+7E0F9D wUniTrickCount           2    ; Flip/trick step counter of the current stunt
+7E0F9F wUniSpeedX               2    ; Current unicycle ground/horizontal speed, signed (work copy; per-player $04B7/$04B9)
+7E0FA1 wCurUniVelY              2    ; current uni Y velocity
+7E0FA3 wUniSpin                 2    ; Spin amount derived from tilt rate (per-player $0D2F/$0D31); tentative
+7E0FA9 wUniContactCellSave      2    ; Copy of the contact cell (per-player $0FF1/$0FF3)
+7E0FAB wCurUniTileAttr          2    ; tile attribute under the uni (bits 10-12 sector, 14/15 flags)
+7E0FAD wCurUniSector            2    ; last track sector
+7E0FAF wCurUniProgress          2    ; track progress counter
+7E0FB1 wCurUniWrongSector       2    ; set when the sector sequence is invalid
+7E0FB5 wUniAirTime              2    ; Airtime counter, uncapped (per-player $0FB7/$0FB9)
+7E0FBB wUni1TileAttr            2    ; uni 1 tile attribute
+7E0FBD wP2AiFlags               2    ; P2 AI control bits: $8000 off, $4000 steer left (else right), $2000 do stunt/pedal (P1 $0FBB)
+7E0FC3 wUni1Progress            2    ; uni 1 track progress
+7E0FC5 wUni2Progress            2    ; uni 2 track progress
+7E0FC7 wRivalArrowHideP1        2    ; Nonzero hides the rival direction arrows in P1 HUD
+7E0FCB wUni1HintArrow           2    ; uni 1 hint arrow (0-3, $FFFF none)
+7E0FCD wUni2HintArrow           2    ; uni 2 hint arrow (0-3, $FFFF none)
+7E0FCF wRivalArrowLastP1        2    ; Last drawn rival arrow direction for P1 (1/2/-1/-2), erased next NMI
+7E0FD1 wRivalArrowLastP2        2    ; Last drawn rival arrow direction for P2
+7E0FDF wStuntResultsReady       2    ; Stunt mode: set once both riders finished, landed and message queues drained
+7E0FE7 wBrightness              1    ; Screen brightness 0-15 written to INIDISP by the NMI handlers (fade level)
+7E0FEF wCurUniIndex             2    ; current uni index * 2 (0 or 2) during physics
+7E0FF5 wLapBannerTimer          4    ; Per-player lap message timer (120 frames)
+7E0FF9 wUni1TwistSfxOn          2    ; uni 1 twist loop sfx playing
+7E0FFB wUni2TwistSfxOn          2    ; uni 2 twist loop sfx playing
+7E1003 wLapTimes                80   ; Lap time records, 4 bytes (min, 10s, s, tenths) per lap, 16 bytes per player/laps-remaining slot
+7E1143 wLapTimeEmpty            80   ; Per-lap-record flags, init $FF = no previous time stored
+7E1193 wSplitNegative           2    ; Temp: split time computation went negative (selects sign tile)
+7E1195 wSplitLapP1              2    ; P1 lap index used for split/lap-time records
+7E1197 wSplitLapP2              2    ; P2 lap index used for split/lap-time records
+7E1199 wCheckpointNext          4    ; Per-player next checkpoint stage expected (0-3)
+7E119D wLapLineLatch            4    ; Per-player flag: currently on the lap line (prevents double count)
+7E11A1 wSplitTileMinP1          2    ; P1 split display minutes tile (P2 at +2)
+7E11A5 wSplitTileTenSecP1       2    ; P1 split display tens-of-seconds tile (P2 at +2)
+7E11A9 wSplitTileSecP1          2    ; P1 split display seconds tile (P2 at +2)
+7E11AD wSplitTileTenthP1        2    ; P1 split display tenths tile (P2 at +2)
+7E11B1 wSplitTileSignP1         2    ; P1 split display sign tile (+/-) (P2 at +2)
+7E11B7 wStuntNamePending1       2    ; P1 stunt name waiting to be shown
+7E11B9 wStuntNamePending2       2    ; P2 stunt name waiting to be shown
+7E11BB wCountdownTimer          2    ; Pre-race countdown frames; thresholds $DC/$A0/$64/$46 give 3,2,1,GO
+7E11BD wCountdown3Beeped        2    ; Countdown: '3' beep played
+7E11BF wCountdown2Beeped        2    ; Countdown: '2' beep played
+7E11C1 wCountdown1Beeped        2    ; Countdown: '1' beep played
+7E11C3 wCountdownGoBeeped       2    ; Countdown: GO sound played
+7E11C7 wCurUniMaxSpeed          2    ; current uni base max speed
+7E11CD wCurUniSpeedBonus        2    ; current uni speed bonus (decays)
+7E11CF wStuntPointsP1           2    ; P1 stunt points accumulated this race
+7E11D1 wStuntPointsP2           2    ; P2 stunt points accumulated this race
+7E11D5 wStuntTotalP1            2    ; P1 stunt points running total
+7E11D7 wStuntTotalP2            2    ; P2 stunt points running total
+7E11DB wUniAnimStep             4    ; per uni: animation script step
+7E11DF wUniAnimId               4    ; per uni: animation script ID
+7E11E3 wUniAnimLatch            4    ; per uni: animation latch, blocks script change
+7E11E7 wCurUniBoostCap          2    ; extra max speed after a boost release
+7E11ED wCurUniSkidTimer         2    ; skid timer when steering against motion
+7E11F3 wHdma6TablePtr           2    ; HDMA channel 6 table address (bank in $11F5); $DB4E = idle, set for countdown/result flashes
+7E11F5 wHdma6TableBank          1    ; HDMA channel 6 table bank (always $15)
+7E11F9 wUniFlipsA               4    ; per uni: full flips one way this jump
+7E11FD wUniFlipsB               4    ; per uni: full flips the other way this jump
+7E1201 wUniQuarterTurnsA        4    ; per uni: quarter-turn counter toward wUniFlipsA
+7E1205 wUniQuarterTurnsB        4    ; per uni: quarter-turn counter toward wUniFlipsB
+7E121B wUni1Offscreen           2    ; uni 1 sprite off screen
+7E121F wHdma6ThemeIndex         2    ; Base index into DATA_83E540 HDMA colour tables for this track
+7E1221 wLapSplitInit            4    ; Per-player init flag for lap split logic (word per player)
+7E1233 wNmiTick                 1    ; Set to 1 by NMI handlers; polled/cleared by race code
+7E1249 wRivalArrowCount         2    ; Number of rival arrows to draw (1-3, by distance between racers, blinking)
+7E124B wRivalArrowPhase         2    ; Rival arrow blink phase 0-3, advanced every 8 frames
+7E124D wHudFrameCounter         2    ; HUD frame counter mod 8
+7E124F wUniLookTarget           4    ; per uni: target look frame
+7E1257 wP1StartBoost            2    ; P1 start boost accumulated during countdown, added to $11CF when released
+7E1259 wP2StartBoost            2    ; P2 start boost accumulated during countdown, added to $11D1
+7E1267 wLookIdleTimer           2    ; look timer, idle/cooldown
+7E126B wCpuRivalLevel           2    ; CPU rival skill level (rival id $770749 - $10)
+7E126F wUniLandedFlag           2    ; Set when landing after airtime (per-player $1271/$1273); tentative
+7E1275 wFrameCounter8           1    ; 8-bit frame counter
+7E1277 wCpuRivalSpeedBase       2    ; CPU rival base speed value ($60 or $48 minus bonus)
+7E1279 wCpuRivalSpeedBonus      2    ; CPU rival speed bonus from track table DATA_83C8B3 plus level
+7E127B wFx1PauseCount           1    ; Effect 1 frames left to freeze
+7E127F wFx1PauseLen             1    ; Effect 1 ramping pause length (up to 20 then down)
+7E1281 wSkipRaceUpdate          1    ; Nonzero: skip the race game update this frame (slow-motion/stutter effects)
+7E1283 wStuntNameCache          16   ; cached 16-char stunt name tiles
+7E12A5 wLastRaceMessage         2    ; Id of the last race announcer message queued ($1B-$24)
+7E12A9 wRaceExitRequest         2    ; Nonzero ends the race loop in Race_Main
+7E12AB wFx5Timer                2    ; Race effect 5 countdown (600 frames)
+7E12AD wFx2Timer                2    ; Race effect 2 countdown (600 frames)
+7E12AF wScoreShownP1            2    ; Last P1 score value converted to digits
+7E12B1 wScoreShownP2            2    ; Last P2 score value converted to digits
+7E12B3 wScoreTile100P1          2    ; P1 score hundreds digit tile
+7E12B5 wScoreTile100P2          2    ; P2 score hundreds digit tile
+7E12B7 wScoreTile10P1           2    ; P1 score tens digit tile
+7E12B9 wScoreTile10P2           2    ; P2 score tens digit tile
+7E12BB wScoreTile1P1            2    ; P1 score ones digit tile
+7E12BD wScoreTile1P2            2    ; P2 score ones digit tile
+7E12BF wScoreDirtyP1            2    ; P1 score HUD redraw request
+7E12C1 wScoreDirtyP2            2    ; P2 score HUD redraw request
+7E12C3 wFx7Timer                2    ; Race effect 7 countdown (600 frames)
+7E12C7 wSpecialTrackFlag        2    ; Set for track $2A (non-VS); special palette, disables palette cycling
+7E12C9 wBackdropFadeLevel       1    ; Current backdrop colour component eased toward target (track $2A)
+7E12CB wRaceTintColor           2    ; BGR colour written to CGRAM $71 when colour math overlay is on in race NMI
+7E12D5 wP1InputLocked           2    ; P1 pad input forced neutral (set after stunt-mode finish and landing)
+7E12D7 wP2InputLocked           2    ; P2 pad input forced neutral
+7E12DD wP1UniMask               2    ; 1<<player 1 unicycle id (0 if id>=16)
+7E12DF wP2UniMask               2    ; 1<<player 2 unicycle id (0 if id>=16)
+7E12E1 wHintTimerP1             2    ; Frames until next colour hint message for player 1 (360)
+7E12E3 wHintTimerP2             2    ; Frames until next colour hint message for player 2 (360)
+7E12E5 wHintIndexP1             2    ; Colour hint message index 0-7 for player 1
+7E12E7 wHintIndexP2             2    ; Colour hint message index 0-7 for player 2
+7E12EB wTileDmaUsePhase         2    ; Nonzero: tile DMA list uses wFramePhase for VRAM bank select; also podium frame id
+7E12ED wScoreLead10P1           2    ; P1 score tens leading-zero flag (negative = blank digit)
+7E12EF wScoreLead10P2           2    ; P2 score tens leading-zero flag
+7E12F1 wScoreLead100P1          2    ; P1 score hundreds leading-zero flag (negative = blank digit)
+7E12F3 wScoreLead100P2          2    ; P2 score hundreds leading-zero flag
+7E1305 wPauseVramRow1           2    ; Pause menu VRAM address of phrase row start (P1/P2 screen half)
+7E1307 wPauseVramRow1End        2    ; Pause menu phrase row end VRAM address
+7E1309 wPauseVramRow2           2    ; Pause menu VRAM address of continue/quit row
+7E130B wPauseVramRow2Lo         2    ; Pause menu continue/quit second tile-row VRAM address
+7E1317 wRacersOverlap           2    ; Set when the two racers' bounding boxes overlap this frame
+7E1319 wFxActive                2    ; Nonzero while a special-track race effect is running
+7E131B wFxArmed                 2    ; Set once racers have separated enough to allow effect triggering
+7E131D wFxStateTable            16   ; 8 word states for race effects 0-7 (1 = start, 2 = running)
+7E133D wPausePhraseIndex        2    ; Pause phrase index (0-15 into DATA_83F4DA, -1 = none chosen)
+7E1359 wRaceSndParamA           2    ; Race sound/volume parameter set per music variant ($FF)
+7E135B wRaceSndParamB           2    ; Race sound/volume parameter set per music variant ($7F/$FF)
+7E1361 wUniTrickTracking        4    ; per uni: airborne trick counting active
+7E1369 wP1ResultMsgVariant      2    ; Random variant for P1 win/lose message
+7E136B wP2ResultMsgVariant      2    ; Random variant for P2 win/lose message
+7E136D wP1DemoStuntButtons      2    ; Demo AI P1 planned stunt: bit0 R (else L), bit1 A, bit2 X
+7E136F wP2DemoStuntButtons      2    ; Demo AI P2 planned stunt buttons
+7E1375 wP1DemoReverseTimer      2    ; Demo AI P1 reversed-steering timer
+7E1377 wP2DemoReverseTimer      2    ; Demo AI P2 reversed-steering timer
+7E1379 wP1DemoStuntHold         2    ; Demo AI P1 frames left holding stunt buttons
+7E137B wP2DemoStuntHold         2    ; Demo AI P2 frames left holding stunt buttons
+7E137D wDemoTimer               2    ; Attract demo frame counter; music fades at $825, demo ends at $834
+7E1381 wOamDmaBuffer            544  ; OAM image DMA'd to the PPU in NMI (512-byte low + 32-byte high table)
+7E1501 wOamReservedSprites      16   ; OAM entries for reserved sprites 96-99 (inside wOamBuffer)
+7E1509 wUni1SprX                1    ; uni 1 sprite screen X
+7E150A wUni1SprY                1    ; uni 1 sprite screen Y
+7E150C wUni1SprAttr             1    ; uni 1 sprite attributes (bit 6 = flip)
+7E1510 wUni2SprAttr             1    ; uni 2 sprite attributes (bit 6 = flip)
+7E1581 wOamHighTable            32   ; OAM high table shadow (inside wOamBuffer)
+7E1599 wOamHighReserved         1    ; OAM high-table byte for sprites 96-99
+7E15A1 wTileDmaSrcBank          162  ; Tile DMA list: source bank per entry (words, negative ends list)
+7E1645 wTileDmaSrcAddr          162  ; Tile DMA list: source address per entry
+7E16E9 wTileDmaVramAddr         162  ; Tile DMA list: VRAM destination per entry
+7E2000 wSndQueueRead            1    ; sound command queue read index (0-15)
+7E2002 wSndQueueWrite           1    ; sound command queue write index (0-15)
+7E2004 wSndApuToggle            1    ; handshake toggle sent with the sound command (xor $C0)
+7E2006 wSndQueueLo              16   ; sound command queue, low bytes
+7E2016 wSndQueueHi              16   ; sound command queue, high bytes
+7E2026 wBg1HofsShadow1          2    ; P1 BG1 horizontal scroll
+7E202A wBg1VofsShadow1          2    ; P1 BG1 vertical scroll
+7E202E wBg2HofsShadow1          2    ; P1 BG2 horizontal scroll (half speed parallax)
+7E2032 wBg2VofsShadow1          2    ; P1 BG2 vertical scroll (half speed parallax)
+7E2036 wBg1HofsShadow2          2    ; P2 BG1 horizontal scroll
+7E203A wBg1VofsShadow2          2    ; P2 BG1 vertical scroll
+7E203E wBg2HofsShadow2          2    ; P2 BG2 horizontal scroll (parallax)
+7E2042 wBg2VofsShadow2          2    ; P2 BG2 vertical scroll (parallax)
+7E2046 wHdmaBg1ScrollTbl        18   ; HDMA table for BG1 scroll (channel 4)
+7E2052 wFx3Timer                2    ; Race effect 3 (screen flip) countdown (600 frames)
+7E2058 wHdmaBg2ScrollTbl        12   ; HDMA table for BG2 scroll (channel 3)
+7E2064 wHdmaBrightnessTbl       8    ; HDMA table for INIDISP (channel 7)
+7E2065 wInidispTopHalf          1    ; INIDISP value in HDMA table $7E2064 for top (P1) screen half
+7E2067 wInidispDivider          1    ; INIDISP value in HDMA table for the split-screen divider strip
+7E2069 wInidispBottomHalf       1    ; INIDISP value in HDMA table for bottom (P2) screen half
+7E206C wHdmaCh1Tbl              19   ; HDMA table for channel 1
+7E207F wHdmaBg1ScTbl            5    ; HDMA table for BG1SC split-screen tilemap switch (channel 2)
+7E2084 wHdmaColorMathTbl        18   ; HDMA table for CGADSUB/COLDATA, per-player tint from unicycle choice (channel 5)
+7E20A8 wTrackWorkRam            57175 ; Large track work area $7E20A8-$7EFFFF, cleared on track load
+7E212C wDemoPlayback            2    ; Nonzero during attract demo (1 or 2 = demo kind); selects demo input playback
+7E2132 wTileValueTbl            1    ; Lookup of tilemap words used by Vram_WriteQueuedCells (byte-swapped)
+7E2332 wFlipHdmaTableA          450  ; Buffer A of reversed scanline table built by Race_BuildFlipHdmaTable
+7E24F8 wFlipHdmaTableB          450  ; Buffer B of reversed scanline table built by Race_BuildFlipHdmaTable
+7E26BE wFlipHdmaBufSel          2    ; Toggles 0/1 to select flip HDMA table buffer
+7EA000 wTileHeightTable         1    ; Per-tile height/angle profile (32 bytes per tile)
+7EC000 wTileTypeTable           1    ; Per-tile attribute bytes; bits 1-5 = tile type for Uni_ApplyTileEffect
+7F000B wTrackBlockCursor        2    ; Index into $7F0000 track data: next tile-block id to load ($FF ends)
+7F000F wTrackMap                1    ; Track metatile map (words); width $04F1, stride $04F3
+7F800F wMetatileCells           1    ; Metatile to 16 cell words lookup used by collision probes

@@ -14,7 +14,7 @@ one instruction stream, so the generator emits them as data and reports them.
 Derived from the ROM's layout only (no ROM bytes), but keep it out of git
 with the rest of build/.
 """
-import argparse, importlib, json, os, pathlib, re, sys, tempfile
+import argparse, collections, importlib, json, os, pathlib, re, sys, tempfile
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 sys.path[:0] = [str(ROOT / "snesrecomp" / "tools"), str(ROOT / "snesrecomp" / "recompiler")]
@@ -46,7 +46,8 @@ def looks_like_table(rom, graph, mine):
     run = same_bytes = 1
     for a, b in zip(insns, insns[1:]):
         same = a.insn.opcode == b.insn.opcode and a.insn.length > 1
-        run = run + 1 if same else 1
+        store = a.insn.mnem in ("STA", "STZ", "STX", "STY")  # unrolled clears are code
+        run = run + 1 if same and not store else 1
         same_bytes = same_bytes + 1 if same and a.insn.operand == b.insn.operand else 1
         if same_bytes >= 4 or run >= 8:  # fill, or a value table (unrolled code stays shorter)
             return True
@@ -129,7 +130,37 @@ def data_reads(rom, seen):
     return longs, absolutes
 
 
-def find_dead_code(rom, decode, seen, record, declared, blocked):
+class Own:
+    """A decode graph restricted to the instructions a dead routine owns."""
+    def __init__(self, graph, offsets):
+        self.insns = {k: d for k, d in graph.insns.items()
+                      if lorom_offset(d.key.pc & 0xFFFFFF) in offsets}
+
+
+def table_entry_widths(rom, seen, declared):
+    """{entry offset: (m, x)} for undeclared JMP/JSR (abs,X) tables in decoded
+    code: words into the site's bank, ending where the first handler begins."""
+    out = {}
+    for off in sorted(seen):
+        if rom[off] not in (0x7C, 0xFC) or off in declared or off // 0x8000 not in CODE_BANKS:
+            continue
+        m, x = next(iter(seen[off]))[1:]
+        bank = 0x80 | off // 0x8000
+        base = lorom_offset(bank << 16 | rom[off + 1] | rom[off + 2] << 8)
+        limit = base + 64
+        while base + 1 < limit:
+            w = rom[base] | rom[base + 1] << 8
+            if w < 0x8000:
+                break
+            e = lorom_offset(bank << 16 | w)
+            out.setdefault(e, (m, x))
+            if e > base:
+                limit = min(limit, e)
+            base += 2
+    return out
+
+
+def find_dead_code(rom, decode, seen, record, declared, blocked, forced):
     """Unreferenced routines inside the code banks' gaps.
 
     A gap entry (first byte after decoded code) is accepted as code only if
@@ -187,6 +218,8 @@ def find_dead_code(rom, decode, seen, record, declared, blocked):
         off = lorom_offset(pc24)
         if off in starts:
             return True
+        if forced.get(off, (m, x)) != (m, x):
+            return why(12, pc24)  # a jump table names this entry at other widths
         if off in covered or pc24 in stack or len(stack) > 8:
             return why(1, pc24)
         graph = decode(pc24, m, x)
@@ -201,6 +234,8 @@ def find_dead_code(rom, decode, seen, record, declared, blocked):
             if o in starts and o not in mine:
                 if d.insn.length not in {v[0] for v in seen.get(o, {(d.insn.length,): 0})}:
                     return why(7, pc24)
+                if o in seen and (d.key.m & 1, d.key.x & 1) not in {v[1:] for v in seen[o]}:
+                    return why(13, pc24)  # joins known code at widths it never runs at
                 evidence = True  # flows into known code at an instruction start: a join
                 kinds.add("join")
                 continue
@@ -268,7 +303,7 @@ def find_dead_code(rom, decode, seen, record, declared, blocked):
         mark = len(log)
         if attempt(pc24, m, x, frozenset(), need_evidence):
             for graph, _, own_starts in txn:
-                record(graph, "dead")
+                record(Own(graph, own_starts), "dead")  # joined known code keeps its decode
                 accepted += len(own_starts)
             return True
         del log[mark:]
@@ -329,7 +364,7 @@ def find_dead_code(rom, decode, seen, record, declared, blocked):
                     continue  # inside a gap: only right after an RTS/RTL byte
                 pc24 = 0x800000 | bank << 16 | 0x8000 | (off & 0x7FFF)
                 m, x = widths_before(off)
-                for mm, xx in dict.fromkeys([(m, x), (1, 0), (0, 0), (1, 1), (0, 1)]):
+                for mm, xx in dict.fromkeys([forced.get(off, (m, x)), (1, 0), (0, 0), (1, 1), (0, 1)]):
                     if top(pc24, mm, xx):
                         progress = True
                         break
@@ -350,6 +385,8 @@ def main():
     seen = {}
 
 
+    votes = collections.Counter()  # compiled graphs containing each decode
+
     def record(graph, source, into=None):
         into = seen if into is None else into
         for d in graph.insns.values():
@@ -357,8 +394,10 @@ def main():
             if (pc24 & 0xFFFF) < 0x8000 or ((pc24 >> 16) & 0x7F) >= 0x7E:
                 continue
             ins = d.insn
-            into.setdefault(lorom_offset(pc24), {}).setdefault(
-                (ins.length, int(ins.m_flag) & 1, int(ins.x_flag) & 1), source)
+            key = (ins.length, int(ins.m_flag) & 1, int(ins.x_flag) & 1)
+            into.setdefault(lorom_offset(pc24), {}).setdefault(key, source)
+            if source == "aot":
+                votes[lorom_offset(pc24), key] += 1
 
     def observe(rom, bank, start, entry_m, entry_x, **kwargs):
         graph = original(rom, bank, start, entry_m, entry_x, **kwargs)
@@ -428,33 +467,49 @@ def main():
     # Dead code can reveal tables (lda.l $83C89A,x in a recovered routine)
     # that an earlier acceptance decoded as code: rerun with those bytes
     # blocked until no recovered code covers bytes that code reads as data.
-    blocked = set()
+    # Likewise a jump table in recovered code fixes its entries' widths
+    # (SEP #$30 / JSR ($81FF,X) enters every handler with 8-bit A and X).
+    blocked, forced = set(), {}
     while True:
         trial = {off: dict(v) for off, v in seen.items()}
         dead, dead_log = find_dead_code(rom, decode, trial, lambda g, src: record(g, src, trial),
-                                        declared, blocked)
+                                        declared, blocked, forced)
         dead_bytes = {off + n for off, v in trial.items() if "dead" in v.values()
                       for n in range(max(x[0] for x in v))}
         clash = (data_reads(rom, trial)[0] & dead_bytes) - blocked
-        if not clash:
+        widths = {e: mx for e, mx in table_entry_widths(rom, trial, declared).items()
+                  if e in trial and "dead" in trial[e].values()
+                  and mx not in {v[1:] for v in trial[e]} and e not in forced}
+        if not clash and not widths:
             seen = trial
             break
         blocked |= clash
+        forced.update(widths)
     pathlib.Path(args.out).with_name("dead.json").write_text(json.dumps(dead_log, indent=0))
 
-    insns, conflicts, static = {}, {}, 0
+    # Compiled variants can disagree where a callee has a multi-mode exit
+    # (the recomp forks by runtime width): the listing takes the decode most
+    # compiled graphs agree on and reports the minority.
+    insns, conflicts, minority, static = {}, {}, {}, 0
     for off, variants in sorted(seen.items()):
         lengths = {v[0] for v in variants}
-        aot = [v for v, src in variants.items() if src == "aot"]
-        if len(lengths) > 1 and len({v[0] for v in aot}) != 1:
+        aot = sorted((v for v, src in variants.items() if src == "aot"),
+                     key=lambda v: (-votes[off, v], v))
+        if len(lengths) > 1 and not aot:
             conflicts[str(off)] = sorted(variants)
-        else:
-            best = sorted(aot or variants)[0]
-            insns[str(off)] = [*best, variants[best]]
-            static += not aot
-    pathlib.Path(args.out).write_text(json.dumps({"insns": insns, "conflicts": conflicts}))
+            continue
+        if len({v[0] for v in aot}) > 1:
+            if votes[off, aot[0]] == votes[off, aot[1]]:
+                conflicts[str(off)] = sorted(variants)
+                continue
+            minority[str(off)] = [v for v in aot if v[0] != aot[0][0]]
+        best = aot[0] if aot else sorted(variants)[0]
+        insns[str(off)] = [*best, variants[best]]
+        static += not aot
+    pathlib.Path(args.out).write_text(json.dumps({"insns": insns, "conflicts": conflicts,
+                                                  "minority": minority}))
     print(f"{len(insns)} instructions ({static} static-only, {dead} dead-code), "
-          f"{len(conflicts)} conflicting offsets")
+          f"{len(conflicts)} conflicting offsets, {len(minority)} minority decodes")
 
 
 if __name__ == "__main__":
