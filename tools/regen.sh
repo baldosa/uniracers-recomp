@@ -16,6 +16,8 @@
 #                 not been pinned to yet — expect the generated C to differ)
 #   --cfg-roots   seed analysis from every func declaration in recomp/*.cfg
 #   --profiles D  seed AOT roots from every coverage capture (*.json, *.jsonl) in D
+#                 (repeatable: pass every past capture directory so variants
+#                 compiled in earlier rounds keep their seeds)
 #   -h|--help     this message
 set -euo pipefail
 
@@ -25,14 +27,14 @@ cd "$ROOT"
 
 VERIFY=1
 CFG_ROOTS=0
-PROFILES=""
+PROFILES=()
 ROM=""
 while [ $# -gt 0 ]; do
   case "$1" in
     --rom) ROM=$2; shift 2 ;;
     --no-verify) VERIFY=0; shift ;;
     --cfg-roots) CFG_ROOTS=1; shift ;;
-    --profiles) PROFILES=$2; shift 2 ;;
+    --profiles) PROFILES+=("$2"); shift 2 ;;
     -h|--help) sed -n '2,/^set -euo/p' "$0" | sed -n '/^# /p' | sed 's/^# //'; exit 0 ;;
     *) echo "regen.sh: unknown flag: $1 (try --help)" >&2; exit 2 ;;
   esac
@@ -82,11 +84,17 @@ fi
 GEN_ARGS=(--rom "$ROM" --cfg-dir recomp --out-dir src/gen
           --funcs-h recomp/funcs.h --project-root "$ROOT")
 if [ "$CFG_ROOTS" -eq 1 ]; then GEN_ARGS+=(--cfg-roots); fi
-if [ -n "$PROFILES" ]; then
-  for f in "$PROFILES"/*.json "$PROFILES"/*.jsonl; do
-    [ -e "$f" ] && GEN_ARGS+=(--profile-manifest "$f")
+# The last --profiles directory is the current build's capture; earlier ones
+# come from older builds and are passed as historical seeds (validated
+# independently -- captures of different builds cannot be merged).
+n=${#PROFILES[@]}
+for ((i = 0; i < n; i++)); do
+  flag=--historical-profile-manifest
+  [ $i -eq $((n - 1)) ] && flag=--profile-manifest
+  for f in "${PROFILES[$i]}"/*.json "${PROFILES[$i]}"/*.jsonl; do
+    [ -e "$f" ] && GEN_ARGS+=("$flag" "$f")
   done
-fi
+done
 if [ "$VERIFY" -eq 1 ]; then GEN_ARGS+=("${VERIFY_ARGS[@]}"); fi
 
 echo "== Generating src/gen =="

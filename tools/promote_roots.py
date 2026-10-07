@@ -19,7 +19,10 @@ def candidates(discoveries):
     """{(bank, addr): (m, x)} for promotable discoveries, hottest mode per address."""
     best = {}
     for d in discoveries:
-        if d['candidate_status'] not in PROMOTE or d['emulation'] or d['bail_hits']:
+        # A frame-resume landing (native hand-off records site == target) is
+        # where the guest really continued, even with no counted hits.
+        resume = d['site_pc24'] == d['target_pc24']
+        if (d['candidate_status'] not in PROMOTE and not resume) or d['emulation'] or d['bail_hits']:
             continue
         pc, mx = d['variant'].split(':')
         pc = int(pc, 16)
