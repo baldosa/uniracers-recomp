@@ -9,6 +9,7 @@ cd "$ROOT"
 mkdir -p build/decomp
 ln -sf "$ROM" build/baserom.sfc
 [ -f build/decomp/decode.json ] || python3 tools/decomp/decode_dump.py "$ROM" build/decomp/decode.json
+rm -rf build/disasm  # a stale file from an older layout must not linger
 python3 tools/decomp/gen_disasm.py "$ROM" build/decomp/decode.json build/disasm
 (cd build/disasm && "$ASAR" --fix-checksum=off main.asm ../decomp/uniracers.sfc)
 if cmp -s build/decomp/uniracers.sfc "$ROM"; then

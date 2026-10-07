@@ -17,7 +17,7 @@ def main(args):
     listing = pathlib.Path(next((a for a in args if not a.startswith('--')), ROOT / 'build' / 'disasm'))
     code = incbin = 0
     funcs = named = commented = 0
-    for f in sorted(listing.glob('bank_*.asm')):
+    for f in sorted(p for p in listing.glob('*.asm') if p.name not in ('main.asm', 'hw.asm', 'ram.asm')):
         lines = f.read_text().splitlines()
         for i, line in enumerate(lines):
             if line.startswith('  incbin'):

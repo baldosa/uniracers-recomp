@@ -1,0 +1,23 @@
+# Subsystem files for the disassembly: each starts at its address and runs to
+# the next. Derived from the function names in address order.
+# BBAAAA file ; contents
+808000 system.asm        ; vectors, NMI/IRQ, boot, main loop, video/DMA/text/SRAM helpers
+809BC4 options.asm       ; define-league, name entry, palette/gfx effects, options, main menu
+80ADD4 race_flow.asm     ; post-race and pre-race menus, sound-effect wrappers
+80B5FD frontend.asm      ; input tests, menu loops, game modes (1P, 2P, VS, league)
+80C3AB text.asm          ; DrawText renderer and its control codes
+80C775 results.asm       ; race bookkeeping, stats, results and records screens
+80E536 menus.asm         ; tour/track pickers, league tables, sorting, WaitVBlank, misc
+818000 uni_physics.asm   ; unicycle tile effects, collision, physics, rider poses
+819FBF camera_bg.asm     ; camera, track, background streaming, math helpers
+81B713 util.asm          ; PPU fades, math routines, decompressor
+81BEB3 hud.asm           ; HUD, stunt and announcer events, race clock, lap splits
+828000 sound.asm         ; SPC700 upload, sound command queue
+828337 uni_race.asm      ; rider look/animation, per-uni race physics and stunts
+82B180 resources.asm     ; resource table lookup and loaders
+82B8A7 nmi_video.asm     ; NMI-time DMA, OAM, palettes, VRAM/CGRAM helpers
+82D526 race_setup.asm    ; race video/RAM/HDMA setup, track loading, league podium
+838000 sram_league.asm   ; name filter, SRAM blocks, records math, league/VS/medals
+83A286 cutscenes.asm     ; sound wrappers, second text renderer, cutscenes, ending
+83C8E0 race_main.asm     ; race main loop, CPU rival, special-track effects
+848000 data.asm          ; banks $84-$BF: graphics, music, track data (incbin)
