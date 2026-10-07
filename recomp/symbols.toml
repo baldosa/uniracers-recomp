@@ -6526,3 +6526,264 @@ emit = true
 entry_m = 1
 entry_x = 0
 note = "coverage discovery"
+
+[[func]]
+name = "sub_009302"
+addr = "9302"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_00AD81"
+addr = "AD81"
+bank = 0
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_00C4CB"
+addr = "C4CB"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_00D2BA"
+addr = "D2BA"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_00EE8C"
+addr = "EE8C"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_019A93"
+addr = "9A93"
+bank = 1
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_019B97"
+addr = "9B97"
+bank = 1
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_019CCC"
+addr = "9CCC"
+bank = 1
+emit = true
+entry_m = 1
+entry_x = 1
+note = "coverage discovery"
+
+[[func]]
+name = "sub_019D61"
+addr = "9D61"
+bank = 1
+emit = true
+entry_m = 1
+entry_x = 1
+note = "coverage discovery"
+
+[[func]]
+name = "sub_01B943"
+addr = "B943"
+bank = 1
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_01B9C5"
+addr = "B9C5"
+bank = 1
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_01BB30"
+addr = "BB30"
+bank = 1
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_01CED1"
+addr = "CED1"
+bank = 1
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_01D860"
+addr = "D860"
+bank = 1
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_02DBCF"
+addr = "DBCF"
+bank = 2
+emit = true
+entry_m = 1
+entry_x = 1
+note = "coverage discovery"
+
+[[func]]
+name = "sub_02DDE6"
+addr = "DDE6"
+bank = 2
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_02E28C"
+addr = "E28C"
+bank = 2
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_02E2B6"
+addr = "E2B6"
+bank = 2
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_02E376"
+addr = "E376"
+bank = 2
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_019A88"
+addr = "9A88"
+bank = 1
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_01B997"
+addr = "B997"
+bank = 1
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_01CCE9"
+addr = "CCE9"
+bank = 1
+emit = true
+entry_m = 0
+entry_x = 1
+note = "coverage discovery"
+
+[[func]]
+name = "sub_01CF1D"
+addr = "CF1D"
+bank = 1
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_02DC1E"
+addr = "DC1E"
+bank = 2
+emit = true
+entry_m = 0
+entry_x = 1
+note = "coverage discovery"
+
+[[func]]
+name = "sub_00EF58"
+addr = "EF58"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_019B55"
+addr = "9B55"
+bank = 1
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_019DB8"
+addr = "9DB8"
+bank = 1
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_028050"
+addr = "8050"
+bank = 2
+emit = true
+entry_m = 1
+entry_x = 1
+note = "coverage discovery"
+
+[[func]]
+name = "sub_0391AF"
+addr = "91AF"
+bank = 3
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"

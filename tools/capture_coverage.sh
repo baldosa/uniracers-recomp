@@ -16,7 +16,8 @@ for s in "$here"/tests/routes/*.txt; do
     SNESRECOMP_TIER2_MANIFEST="$out/$r.json" SNESRECOMP_TIER2_JOURNAL="$out/$r.jsonl" >/dev/null \
     || { echo "$r: run FAILED"; fail=1; }
   printf '%s: ' "$r"
-  python3 "$here/snesrecomp/tools/tier2_ingest.py" "$out/$r.json" "$out/$r.jsonl" \
+  # A run with no interpreter transfers writes no journal.
+  python3 "$here/snesrecomp/tools/tier2_ingest.py" "$out/$r.json" $( [ -f "$out/$r.jsonl" ] && echo "$out/$r.jsonl" ) \
     --cfg-dir "$here/recomp" --program-manifest "$here/src/gen/program_manifest.json" 2>&1 \
     | sed -n 's/^Interpreted work: //p'
   if [ -n "$base" ]; then
