@@ -6787,3 +6787,48 @@ emit = true
 entry_m = 0
 entry_x = 0
 note = "coverage discovery"
+
+[[func]]
+name = "sub_00C4D2"
+addr = "C4D2"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_019BF2"
+addr = "9BF2"
+bank = 1
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_01BB36"
+addr = "BB36"
+bank = 1
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_01D6D8"
+addr = "D6D8"
+bank = 1
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_0280C4"
+addr = "80C4"
+bank = 2
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
