@@ -29,3 +29,6 @@
 /baselines/
 /coverage/
 /runs/
+
+# Python bytecode
+__pycache__/
