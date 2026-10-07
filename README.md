@@ -102,6 +102,15 @@ Either way the ROM is checked against the digests above before anything boots
 — a dump that could not have produced this build is refused at the door rather
 than mis-executing ten frames in.
 
+### Controls
+
+The first run writes `keybinds.ini` next to the executable: one `[player1]`
+and one `[player2]` section mapping the SNES buttons (`a b x y l r start
+select up down left right`) to SDL key names (`Z`, `Return`, `Right Shift`,
+`Up`, ..., or `None`). Edit it and restart. Both players default to the same
+keys; give player 2 its own if both play on one keyboard. The launcher's
+Configure view edits the same file.
+
 ## Layout
 
 | Path | What lives there |
