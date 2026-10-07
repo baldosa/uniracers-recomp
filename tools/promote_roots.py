@@ -44,12 +44,23 @@ def entries(new, have):
                    f'note = "coverage discovery"\n')
     return out
 
+def discoveries(captures):
+    """Ingest each capture (stem.json + stem.jsonl) on its own: captures from
+    different builds carry different identities and cannot be merged."""
+    groups = {}
+    for c in captures:
+        groups.setdefault(os.path.splitext(c)[0], []).append(c)
+    out = []
+    for files in groups.values():
+        r = subprocess.run([sys.executable, os.path.join(ROOT, 'snesrecomp/tools/tier2_ingest.py'),
+                            *sorted(files), '--cfg-dir', os.path.join(ROOT, 'recomp'), '--json'],
+                           capture_output=True, text=True, check=True)
+        out += json.loads(r.stdout)['discoveries']
+    return out
+
 def main(captures):
-    r = subprocess.run([sys.executable, os.path.join(ROOT, 'snesrecomp/tools/tier2_ingest.py'),
-                        *captures, '--cfg-dir', os.path.join(ROOT, 'recomp'), '--json'],
-                       capture_output=True, text=True, check=True)
     text = open(SYMBOLS).read()
-    add = entries(candidates(json.loads(r.stdout)['discoveries']), existing(text))
+    add = entries(candidates(discoveries(captures)), existing(text))
     open(SYMBOLS, 'a').write(''.join(add))
     print(f'promoted {len(add)} roots')
 

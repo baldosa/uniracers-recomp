@@ -43,7 +43,7 @@
  * interpreter and stay there. */
 static void GameInitialize(void)
 {
-    interp_bridge_set_native_handoff(0);  /* WIP: off until JML [$0053] is resolved (see docs) */
+    interp_bridge_set_native_handoff(1);
 }
 
 void GameRunOneFrame(void)

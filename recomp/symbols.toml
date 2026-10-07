@@ -10,14 +10,14 @@
 name = "I_RESET"
 addr = "8858"
 bank = 0
-emit = false
+emit = true
 note = "Emulation RESET vector ($FFFC)"
 
 [[func]]
 name = "I_NMI"
 addr = "8588"
 bank = 0
-emit = false
+emit = true
 note = "Native NMI vector ($FFEA)"
 
 [[func]]
@@ -1486,3 +1486,165 @@ emit = true
 entry_m = 1
 entry_x = 0
 note = "experiment: frame-yield resume point inside WaitForNMI"
+
+[[func]]
+name = "sub_00937B"
+addr = "937B"
+bank = 0
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_00EFBE"
+addr = "EFBE"
+bank = 0
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_0199D6"
+addr = "99D6"
+bank = 1
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_019A5A"
+addr = "9A5A"
+bank = 1
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_01B6C0"
+addr = "B6C0"
+bank = 1
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_01B6C4"
+addr = "B6C4"
+bank = 1
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_01C605"
+addr = "C605"
+bank = 1
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_01C609"
+addr = "C609"
+bank = 1
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_01CCE6"
+addr = "CCE6"
+bank = 1
+emit = true
+entry_m = 1
+entry_x = 1
+note = "coverage discovery"
+
+[[func]]
+name = "sub_01CD07"
+addr = "CD07"
+bank = 1
+emit = true
+entry_m = 1
+entry_x = 1
+note = "coverage discovery"
+
+[[func]]
+name = "sub_02B2A9"
+addr = "B2A9"
+bank = 2
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_02D810"
+addr = "D810"
+bank = 2
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_02D814"
+addr = "D814"
+bank = 2
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_02DC1F"
+addr = "DC1F"
+bank = 2
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_038B23"
+addr = "8B23"
+bank = 3
+emit = true
+entry_m = 1
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_039340"
+addr = "9340"
+bank = 3
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_039486"
+addr = "9486"
+bank = 3
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
+
+[[func]]
+name = "sub_0394A5"
+addr = "94A5"
+bank = 3
+emit = true
+entry_m = 0
+entry_x = 0
+note = "coverage discovery"
