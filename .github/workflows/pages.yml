@@ -1,0 +1,58 @@
+# Web player on GitHub Pages.
+#
+# Builds the interpreter host (snesrecomp's emulator core, no recompiled code)
+# with Emscripten and publishes web/index.html beside it. The site carries no
+# game: visitors load their own ROM, which never leaves their browser.
+name: Web (GitHub Pages)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Assert no generated C in the tree
+        run: |
+          if compgen -G 'src/gen/*.c' >/dev/null; then
+            echo "::error::src/gen/*.c is present in the checkout."; exit 1
+          fi
+
+      - name: Install Ninja
+        run: sudo apt-get update -q && sudo apt-get install -y -q ninja-build
+
+      - uses: mymindstorm/setup-emsdk@v14
+        with:
+          version: 6.0.11
+
+      - name: Build the web player
+        run: bash tools/web/build.sh site
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

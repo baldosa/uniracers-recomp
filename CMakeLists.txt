@@ -113,3 +113,19 @@ snesrecomp_target_rom_cache(UniracersSNESRecomp)
 
 # Netplay is not built into this target.
 # No multitap: two seats, one controller per port.
+
+# Web build (Emscripten, interpreter host only: tools/web/build.sh). The page
+# (web/index.html) writes the visitor's ROM into the in-memory file system and
+# calls main(); saves and settings live in IndexedDB (IDBFS at /persist).
+if(EMSCRIPTEN)
+    if(NOT SNESRECOMP_INTERP_HOST)
+        message(FATAL_ERROR "The web build publishes no ROM-derived code: configure with -DSNESRECOMP_INTERP_HOST=ON.")
+    endif()
+    set_target_properties(UniracersSNESRecomp PROPERTIES OUTPUT_NAME uniracers SUFFIX ".js")
+    target_link_options(UniracersSNESRecomp PRIVATE
+        -sASYNCIFY -sASYNCIFY_STACK_SIZE=65536
+        -sALLOW_MEMORY_GROWTH=1 -sSTACK_SIZE=1048576
+        -sINVOKE_RUN=0 -sEXIT_RUNTIME=1 -sENVIRONMENT=web
+        -sFORCE_FILESYSTEM=1 -lidbfs.js
+        "-sEXPORTED_RUNTIME_METHODS=['callMain','FS']")
+endif()

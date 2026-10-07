@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uniracers Web</title>
+<style>
+  :root { --bg: #14161c; --panel: #1e2129; --fg: #e8e8ec; --muted: #9a9cab; --accent: #f2c14e; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.5 system-ui, sans-serif;
+         display: flex; flex-direction: column; align-items: center; min-height: 100vh; padding: 16px; }
+  h1 { font-size: 22px; margin: 8px 0 4px; letter-spacing: .02em; }
+  .note { color: var(--muted); max-width: 640px; text-align: center; margin: 0 0 16px; }
+  #picker { background: var(--panel); border-radius: 10px; padding: 24px; max-width: 640px; width: 100%; text-align: center; }
+  label.btn { display: inline-block; background: var(--accent); color: #1a1a1a; font-weight: 600;
+              padding: 10px 18px; border-radius: 8px; cursor: pointer; }
+  input[type=file] { display: none; }
+  #status { color: var(--muted); margin-top: 12px; min-height: 1.5em; }
+  #status.err { color: #ff7b72; }
+  canvas { display: none; width: 100%; max-width: 768px; aspect-ratio: 8 / 7; image-rendering: pixelated;
+           background: #000; outline: none; border-radius: 6px; }
+  details { max-width: 640px; width: 100%; margin-top: 16px; color: var(--muted); }
+  kbd { background: var(--panel); border-radius: 4px; padding: 1px 6px; color: var(--fg); }
+  table { margin: 8px auto; border-collapse: collapse; }
+  td { padding: 2px 10px; }
+</style>
+</head>
+<body>
+<h1>Uniracers Web</h1>
+<p class="note">Runs in your browser on the snesrecomp interpreter. No game is included:
+pick your own <b>Uniracers (USA)</b> ROM. It stays on your machine; saves and settings are kept in this browser.</p>
+
+<div id="picker">
+  <label class="btn">Choose ROM&hellip;<input id="rom" type="file" accept=".sfc,.smc"></label>
+  <div id="status"></div>
+</div>
+<canvas id="canvas" tabindex="-1" oncontextmenu="event.preventDefault()"></canvas>
+
+<details>
+  <summary>Controls</summary>
+  <table>
+    <tr><td>D-pad</td><td><kbd>Arrows</kbd></td><td>Start</td><td><kbd>Enter</kbd></td></tr>
+    <tr><td>B / A</td><td><kbd>Z</kbd> / <kbd>X</kbd></td><td>Select</td><td><kbd>Right Shift</kbd></td></tr>
+    <tr><td>Y / X</td><td><kbd>A</kbd> / <kbd>S</kbd></td><td>L / R</td><td><kbd>C</kbd> / <kbd>V</kbd></td></tr>
+  </table>
+  Gamepads work through the browser. Two players on one keyboard: edit
+  <code>keybinds.ini</code> (desktop builds) &mdash; the web build uses the defaults above.
+</details>
+
+<script>
+  const status = (msg, err) => { const s = document.getElementById('status'); s.textContent = msg; s.className = err ? 'err' : ''; };
+  const canvas = document.getElementById('canvas');
+  var Module = {
+    canvas,
+    noInitialRun: true,
+    print: (t) => console.log(t),
+    printErr: (t) => console.warn(t),
+    onAbort: (what) => status('The game stopped: ' + what, true),
+    onRuntimeInitialized: () => status('Ready. Choose your ROM to start.'),
+    // ?fps shows the frame-rate overlay.
+    preRun: [() => { if (new URLSearchParams(location.search).has('fps')) ENV.SNESRECOMP_OSD_FPS = '1'; }],
+  };
+
+  // Saves, config.ini and keybinds.ini live in IndexedDB-backed /persist.
+  function mountPersist() {
+    return new Promise((resolve) => {
+      FS.mkdir('/persist');
+      FS.mount(IDBFS, {}, '/persist');
+      FS.syncfs(true, () => resolve());
+    });
+  }
+  const flush = () => { try { FS.syncfs(false, () => {}); } catch (e) {} };
+
+  document.getElementById('rom').addEventListener('change', async (ev) => {
+    const file = ev.target.files[0];
+    if (!file) return;
+    if (!Module.calledRun && !Module.callMain) { status('Still loading, try again in a moment.'); return; }
+    const bytes = new Uint8Array(await file.arrayBuffer());
+    await mountPersist();
+    FS.writeFile('/uni.sfc', bytes);
+    FS.chdir('/persist');
+    setInterval(flush, 5000);
+    document.addEventListener('visibilitychange', () => { if (document.hidden) flush(); });
+    window.addEventListener('pagehide', flush);
+    document.getElementById('picker').style.display = 'none';
+    canvas.style.display = 'block';
+    canvas.focus();
+    try {
+      Module.callMain(['--no-launcher', '/uni.sfc']);
+    } catch (e) {
+      if (e !== 'unwind') status(String(e), true);
+    }
+  });
+</script>
+<script src="uniracers.js"></script>
+</body>
+</html>

@@ -38,6 +38,22 @@ Framework changes this port relies on (submodule branch, not yet upstream):
 HVBJOY beam sync, native entry hand-off, `[[variant]]` roots,
 `--historical-profile-manifest` passthrough, `paced_bus` codegen mode.
 
+## Play
+
+- **In the browser:** https://baldosa.github.io/uniracers-recomp/ — pick your
+  own ROM; it never leaves your machine.
+- **Downloads** (Linux x64, Linux arm64 / Raspberry Pi, Windows x64): the
+  [Releases](https://github.com/baldosa/uniracers-recomp/releases) page, or
+  the latest *Builds* workflow run's artifacts.
+
+Both are *interpreter builds*: snesrecomp's emulator core with no recompiled
+code and no ROM data, so they can be published. They play your own ROM at
+full speed on a PC; on a Raspberry Pi the native build below is the faster
+choice. The fully native recomp is ROM-derived and
+is never distributed: build it yourself from source with your ROM (below).
+`-DSNESRECOMP_INTERP_HOST=ON` builds an interpreter host; `tools/web/build.sh`
+builds the web player.
+
 ## ROM identity
 
 | | |

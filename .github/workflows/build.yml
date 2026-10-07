@@ -1,0 +1,128 @@
+# Native player builds: Linux x64, Linux arm64 (Raspberry Pi), Windows x64.
+#
+# These are interpreter hosts (snesrecomp's emulator core, no recompiled code,
+# no ROM data): each plays the player's own ROM as-is. The fully native recomp
+# is built from source with your ROM (README). Every push uploads the zips as
+# workflow artifacts; a v* tag also publishes them as a GitHub Release.
+name: Builds
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  EXE_NAME: UniracersSNESRecomp
+
+jobs:
+  build:
+    name: ${{ matrix.artifact }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-24.04
+            artifact: linux-x64
+          - os: ubuntu-24.04-arm
+            artifact: linux-arm64
+          - os: windows-2022
+            artifact: windows-x64
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Assert no generated C in the tree
+        run: |
+          if compgen -G 'src/gen/*.c' >/dev/null; then
+            echo "::error::src/gen/*.c is present in the checkout."; exit 1
+          fi
+
+      - name: Install build dependencies (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q build-essential cmake ninja-build pkg-config \
+            libx11-dev libxext-dev libxrandr-dev libxcursor-dev libxi-dev libxss-dev \
+            libxtst-dev libxfixes-dev libwayland-dev libxkbcommon-dev libegl-dev \
+            libgles-dev libgl-dev libdrm-dev libgbm-dev libasound2-dev libpulse-dev \
+            libudev-dev libdbus-1-dev
+
+      # Windows builds with the framework's clang toolchain pack (cmake, ninja,
+      # clang), the same one its setup-pack release uses.
+      - name: Fetch toolchain pack (Windows)
+        if: runner.os == 'Windows'
+        run: bash snesrecomp/tools/ci/fetch_toolchain.sh --artifact windows-x64
+
+      - name: Configure and build
+        run: |
+          set -euo pipefail
+          if [[ -n "${TOOLCHAIN_DIR:-}" ]]; then
+            # shellcheck disable=SC1091
+            source "${TOOLCHAIN_DIR}/env.sh"
+          fi
+          cmake -S . -B build-ci -G Ninja -DCMAKE_BUILD_TYPE=Release \
+            -DSNESRECOMP_INTERP_HOST=ON -DSNESRECOMP_ENABLE_TRACE=OFF
+          cmake --build build-ci --target "${EXE_NAME}"
+
+      - name: Package
+        run: |
+          set -euo pipefail
+          STAGE="uniracers-${{ matrix.artifact }}"
+          mkdir -p "dist/${STAGE}"
+          EXE="build-ci/${EXE_NAME}"
+          [[ -f "${EXE}.exe" ]] && EXE="${EXE}.exe"
+          cp "${EXE}" "dist/${STAGE}/"
+          [[ -d build-ci/mods ]] && cp -r build-ci/mods "dist/${STAGE}/"
+          cat > "dist/${STAGE}/README.txt" <<'TXT'
+          Uniracers (snesrecomp interpreter build)
+
+          No game is included. Start the program with your own
+          "Uniracers (USA)" ROM, e.g.:
+              ./UniracersSNESRecomp uni.sfc        (Linux)
+              UniracersSNESRecomp.exe uni.sfc      (Windows; or drag the ROM onto the exe)
+
+          keybinds.ini and config.ini are written next to the program on the
+          first run; edit them and restart to change controls and display.
+          Source and the fully native build: https://github.com/${{ github.repository }}
+          TXT
+          sed -i 's/^          //' "dist/${STAGE}/README.txt"
+          cd dist
+          if [[ "${{ runner.os }}" == "Windows" ]]; then
+            7z a -tzip "${STAGE}.zip" "${STAGE}" >/dev/null
+          else
+            zip -qr "${STAGE}.zip" "${STAGE}"
+          fi
+          ls -la
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: uniracers-${{ matrix.artifact }}
+          path: dist/uniracers-${{ matrix.artifact }}.zip
+          if-no-files-found: error
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" dist/*.zip --repo "${GITHUB_REPOSITORY}" \
+            --title "Uniracers ${GITHUB_REF_NAME}" \
+            --notes "Interpreter builds for Linux x64, Linux arm64 (Raspberry Pi) and Windows x64. Bring your own ROM. Web player: https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/"
