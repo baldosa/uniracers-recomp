@@ -1,0 +1,18 @@
+# Names and one-line comments for the disassembly (tools/decomp/gen_disasm.py).
+# BBAAAA name ; comment          (addresses in the $80-$BF FastROM mirror)
+#
+# Vectors and interrupts
+808580 I_BRK                      ; native BRK vector
+808584 I_IRQ                      ; native/emulation IRQ vector
+808588 I_NMI                      ; native NMI vector: saves state, JML [$0053] to the current NMI handler
+808858 I_RESET                    ; reset vector (emulation mode): jumps to the boot code
+8085A5 NmiHandler_Default         ; NMI handler installed in $0053 at boot
+808610 NmiHandler_Race            ; NMI handler while racing ($0053 = $8610)
+80F60C NmiHandler_Menu            ; NMI handler for menus and the title ($0053 = $F60C)
+# Boot and main loop
+8091D1 Boot                       ; reset continuation: native mode, hardware init, WRAM clear
+8092F2 Boot_ClearWRAM             ; clears WRAM with the $0199 RAM block-move trampoline
+808881 MainLoop                   ; per-frame loop: dispatches through ModeHandlerTable by $9B
+82D4E9 WaitForNMI                 ; waits for the NMI handler to signal a new frame
+# Text
+80C3AB DrawText                   ; text renderer; control codes dispatched through the table at $C3CB
