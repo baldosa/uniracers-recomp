@@ -1,0 +1,5 @@
+# Code the static passes cannot prove, confirmed by reading the listing.
+# PC24  M X  why
+80859C  1 0  NMI exit epilogue (REP #$30, PLA/PLY/PLX/PLD/PLB, RTI); no static reference
+80BFD9  1 0  orphaned case arm between BRA $BFC3 and CODE_80BFE0 (LDA $00 / BEQ / BRL $C0D9)
+8389D9  1 0  SRAM checksum verifiers (sum $77:000C.., return Z via SEP/REP #$02, RTL)
