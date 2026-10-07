@@ -123,7 +123,10 @@ if(EMSCRIPTEN)
     endif()
     set_target_properties(UniracersSNESRecomp PROPERTIES OUTPUT_NAME uniracers SUFFIX ".js")
     target_link_options(UniracersSNESRecomp PRIVATE
+        # Only the host's wait paths may suspend (HostSleepMs in host_main.c);
+        # instrumenting nothing else keeps the interpreter at full speed.
         -sASYNCIFY -sASYNCIFY_STACK_SIZE=65536
+        "-sASYNCIFY_ONLY=['main','__main_argc_argv','snesrecomp_desktop_main','WaitUntil','RunSavestateMenuLoop','RunRewindLoop','HostSleepMs']"
         -sALLOW_MEMORY_GROWTH=1 -sSTACK_SIZE=1048576
         -sINVOKE_RUN=0 -sEXIT_RUNTIME=1 -sENVIRONMENT=web
         -sFORCE_FILESYSTEM=1 -lidbfs.js
