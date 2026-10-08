@@ -121,7 +121,7 @@ endif()
 if(EMSCRIPTEN)
     set_target_properties(UniracersSNESRecomp PROPERTIES OUTPUT_NAME uniracers SUFFIX ".js")
     # Online two-player: the lockstep half (web/netplay.js is the lobby).
-    target_sources(UniracersSNESRecomp PRIVATE src/web_netplay.c)
+    target_sources(UniracersSNESRecomp PRIVATE src/web_netplay.c src/web_debug.c)
     target_link_options(UniracersSNESRecomp PRIVATE
         # Only the host's wait paths may suspend (HostSleepMs in host_main.c);
         # instrumenting nothing else keeps the interpreter at full speed.

@@ -33,7 +33,9 @@
   #banner { position: fixed; top: 12px; left: 50%; transform: translateX(-50%); z-index: 2;
             padding: 6px 12px; border-radius: 6px; background: #3a3f4d; max-width: calc(100% - 32px); }
   body.playing .note, body.playing > footer { display: none; }
-  #stage { width: 100%; display: flex; flex-direction: column; align-items: center; }
+  #stage { width: 100%; display: flex; flex-direction: column; align-items: center; position: relative; }
+  #debug { position: absolute; top: 4px; left: 4px; margin: 0; padding: 6px 8px; font: 12px/1.35 ui-monospace, monospace;
+           color: #9f9; background: rgba(0,0,0,.75); border-radius: 4px; pointer-events: none; z-index: 5; }
   canvas { width: 100%; max-width: 768px; aspect-ratio: 4 / 3; image-rendering: pixelated;
            background: #000; outline: none; border-radius: 6px; }
   #stage:fullscreen { background: #000; justify-content: center; }
@@ -113,6 +115,7 @@ Play alone or two players on one keyboard, or online: one player creates a game 
 <div id="banner" hidden></div>
 <div id="stage" hidden>
   <canvas id="canvas" tabindex="-1" oncontextmenu="event.preventDefault()"></canvas>
+  <pre id="debug" hidden></pre>
   <div id="toolbar">
     <button class="btn alt small" id="fullscreen">Fullscreen</button>
     <button class="btn alt small" id="ingame-settings">&#9881; Settings</button>
@@ -283,6 +286,7 @@ Player 2, a gamepad, other keys: Settings.</footer>
     document.body.classList.add('playing');
     running = true;
     canvas.focus();
+    if (debugOn()) startDebug();
     try {
       Module.callMain(['--no-launcher', '/uni.sfc']);
     } catch (e) {
@@ -290,6 +294,36 @@ Player 2, a gamepad, other keys: Settings.</footer>
     }
   }
   $('solo').onclick = () => startGame('/persist');
+
+  // ?debug (or localStorage uni.debug=1): what the browser and the game's audio are doing, once a second.
+  // Gaps are time between animation frames; a gap over 25 ms is a dropped frame on a 60 Hz display.
+  function startDebug() {
+    const el = $('debug'), stat = (i) => Module._web_debug_stat ? Module._web_debug_stat(i) : 0;
+    el.hidden = false;
+    let last = performance.now(), frames = 0, worst = 0, long = 0, longTotal = 0, prev = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    const tick = (t) => {
+      const gap = t - last; last = t; frames++;
+      if (gap > worst) worst = gap;
+      if (gap > 25) { long++; longTotal++; }
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+    setInterval(() => {
+      const ctx = Module.SDL3 && Module.SDL3.audioContext;
+      const s = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(stat), d = s.map((v, i) => v - prev[i]);
+      const lines = [
+        `page ${frames} fps  worst gap ${worst.toFixed(1)} ms  long gaps ${long}/s (${longTotal} total)`,
+        `game ${d[6]} fps  ${d[6] ? (d[9] / d[6]).toFixed(1) : 0} ms/frame  vsync waits ${d[7]}  forced yields ${d[8]}`,
+        `audio underruns +${d[0]} (${s[0]})  silence ${(d[1] / (ctx ? ctx.sampleRate : 48000) * 1000).toFixed(0)} ms  dropped +${d[2]}`,
+        `audio queue ${s[3]} samples (${(s[3] / 32).toFixed(0)} ms)  produced ${s[4]}  consumed ${s[5]}`,
+        ctx ? `audio ${ctx.state} ${ctx.sampleRate} Hz  latency ${((ctx.baseLatency || 0) * 1000).toFixed(0)}+${((ctx.outputLatency || 0) * 1000).toFixed(0)} ms` : 'audio context: none',
+      ];
+      el.textContent = lines.join('\n');
+      console.log('[debug] ' + lines.join(' | '));
+      prev = s; frames = 0; worst = 0; long = 0;
+    }, 1000);
+  }
+  const debugOn = () => { try { return localStorage.getItem('uni.debug') === '1' || new URLSearchParams(location.search).has('debug'); } catch (e) { return false; } };
 
   $('open-settings').onclick = () => settings.open();
   $('ingame-settings').onclick = () => settings.open();
