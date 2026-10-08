@@ -85,6 +85,7 @@ RecompReturn Vram_ClearRegions_M1X0(CpuState *cpu);
 RecompReturn Vram_UploadTilemapAtA8_FastRom_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_FastRom_M1X0(CpuState *cpu);
 
+/* decomp: Options 'define player': pick player, warn, Y+Select+A wipes the player then renames; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Options_DefinePlayer_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Options_DefinePlayer_FastRom_M0X0";
@@ -1567,6 +1568,7 @@ RecompReturn Options_DefinePlayer_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Clear the H-flip bit on sprites $77 and $7F (attr bytes $0BDF/$0BFF); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Oam_ClearCursorHFlip_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Oam_ClearCursorHFlip_FastRom_M1X0";
@@ -1727,6 +1729,7 @@ RecompReturn Oam_ClearCursorHFlip_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for Input_WaitAnyButton; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_WaitAnyButtonL_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_WaitAnyButtonL_M1X0";
@@ -1858,6 +1861,7 @@ RecompReturn Input_WaitAnyButtonL_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Wait frames until a button is pressed on either pad (2-frame confirm), then hide sprites; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_WaitAnyButton_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_WaitAnyButton_FastRom_M1X0";
@@ -2342,6 +2346,7 @@ RecompReturn Input_WaitAnyButton_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Wait frames until no buttons are held on either pad; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_WaitAllReleased_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_WaitAllReleased_FastRom_M1X0";
@@ -2637,6 +2642,7 @@ RecompReturn Input_WaitAllReleased_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Draw a track's top-3 records as numbers with holder names (stunt scores); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Records_DrawTopScores_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_DrawTopScores_FastRom_M1X0";
@@ -3294,6 +3300,7 @@ RecompReturn Records_DrawTopScores_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Draw a track's top-3 record times with holder names; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Records_DrawTopTimes_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_DrawTopTimes_FastRom_M1X0";
@@ -4161,6 +4168,7 @@ RecompReturn Records_DrawTopTimes_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: text renderer; control codes dispatched through the table at $C3CB; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn DrawText_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DrawText_FastRom_M0X0";
@@ -5245,6 +5253,7 @@ RecompReturn DrawText_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: text renderer; control codes dispatched through the table at $C3CB; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DrawText_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DrawText_FastRom_M1X0";
@@ -6329,6 +6338,7 @@ RecompReturn DrawText_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_DrawLoop_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_DrawLoop_FastRom_M0X0";
@@ -7415,6 +7425,7 @@ RecompReturn Text_DrawLoop_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $FF: end of string, return from DrawText; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdEnd_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdEnd_FastRom_M0X0";
@@ -7537,6 +7548,7 @@ RecompReturn Text_CmdEnd_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $FD: print word at pointer as 5-digit decimal; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdPrintNum5_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdPrintNum5_FastRom_M0X0";
@@ -7735,6 +7747,7 @@ RecompReturn Text_CmdPrintNum5_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $F0: print word at pointer as decimal, last digits only; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdPrintNum2_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdPrintNum2_FastRom_M0X0";
@@ -7933,6 +7946,7 @@ RecompReturn Text_CmdPrintNum2_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $FE x y: set text cursor $9F; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdSetPos_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdSetPos_FastRom_M0X0";
@@ -8133,6 +8147,7 @@ RecompReturn Text_CmdSetPos_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $FC row: center the rest of the line on that row; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdCenterLine_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdCenterLine_FastRom_M0X0";
@@ -8520,6 +8535,7 @@ RecompReturn Text_CmdCenterLine_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $F2 row: center the next word (up to '_') on that row; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdCenterWord_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdCenterWord_FastRom_M0X0";
@@ -8886,6 +8902,7 @@ RecompReturn Text_CmdCenterWord_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $FA ptr: draw a nested string, then continue; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdCallString_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdCallString_FastRom_M0X0";
@@ -9024,6 +9041,7 @@ RecompReturn Text_CmdCallString_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $F9 n: set tile palette bits $B0; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdSetPalette_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdSetPalette_FastRom_M0X0";
@@ -9131,6 +9149,7 @@ RecompReturn Text_CmdSetPalette_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $F5 id: draw player name (SRAM $77000C+id*16) for an immediate id; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdPlayerNameImm_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdPlayerNameImm_FastRom_M0X0";
@@ -9495,6 +9514,7 @@ RecompReturn Text_CmdPlayerNameImm_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $F8 ptr: draw player name for the id stored at ptr; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdPlayerNameVar_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdPlayerNameVar_FastRom_M0X0";
@@ -9874,6 +9894,7 @@ RecompReturn Text_CmdPlayerNameVar_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $F4 id: draw name from ROM table DATA_839F96 (CPU/uni names), immediate id; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdRomNameImm_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdRomNameImm_FastRom_M0X0";
@@ -10238,6 +10259,7 @@ RecompReturn Text_CmdRomNameImm_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $F7 ptr: draw name from ROM table DATA_839F96, id at ptr; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdRomNameVar_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdRomNameVar_FastRom_M0X0";
@@ -10617,6 +10639,7 @@ RecompReturn Text_CmdRomNameVar_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $F3 id: draw league name (SRAM $77016E+id*32), immediate id; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdLeagueNameImm_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdLeagueNameImm_FastRom_M0X0";
@@ -10911,6 +10934,7 @@ RecompReturn Text_CmdLeagueNameImm_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $F6 ptr: draw league name, id at ptr; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdLeagueNameVar_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdLeagueNameVar_FastRom_M0X0";
@@ -11220,6 +11244,7 @@ RecompReturn Text_CmdLeagueNameVar_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $F1 ptr: print direct-page word as a race time; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdPrintTime_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdPrintTime_FastRom_M0X0";
@@ -11407,6 +11432,7 @@ RecompReturn Text_CmdPrintTime_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $EF n: move OAM sprite $68+n to the text cursor position; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdPlaceSprite_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdPlaceSprite_FastRom_M0X0";
@@ -11647,6 +11673,7 @@ RecompReturn Text_CmdPlaceSprite_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: After a race: set stats offsets, dispatch on race type $77074B to update stats/records; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_RecordResults_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_RecordResults_FastRom_M1X0";
@@ -11873,6 +11900,7 @@ RecompReturn Race_RecordResults_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Race type 0: decide winner by total time, update stats and track records; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_RecordTimeRace_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_RecordTimeRace_FastRom_M0X0";
@@ -12452,6 +12480,7 @@ RecompReturn Race_RecordTimeRace_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Insert p1 time into records, or count a non-finish if time >= 10:00.00; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_RecordP1TimeOrDnf_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_RecordP1TimeOrDnf_FastRom_M0X0";
@@ -12719,6 +12748,7 @@ RecompReturn Race_RecordP1TimeOrDnf_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Options 'define player': pick player, warn, Y+Select+A wipes the player then renames; reached through the other ROM mirror bank */
 void Options_DefinePlayer_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -12736,6 +12766,7 @@ void Options_DefinePlayer_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Clear the H-flip bit on sprites $77 and $7F (attr bytes $0BDF/$0BFF); reached through the other ROM mirror bank */
 void Oam_ClearCursorHFlip_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -12753,6 +12784,7 @@ void Oam_ClearCursorHFlip_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Long wrapper for Input_WaitAnyButton */
 void Input_WaitAnyButtonL(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -12770,6 +12802,7 @@ void Input_WaitAnyButtonL(CpuState *cpu) {
   }
 }
 
+/* decomp: Wait frames until a button is pressed on either pad (2-frame confirm), then hide sprites; reached through the other ROM mirror bank */
 void Input_WaitAnyButton_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -12787,6 +12820,7 @@ void Input_WaitAnyButton_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Wait frames until no buttons are held on either pad; reached through the other ROM mirror bank */
 void Input_WaitAllReleased_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -12804,6 +12838,7 @@ void Input_WaitAllReleased_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Draw a track's top-3 records as numbers with holder names (stunt scores); reached through the other ROM mirror bank */
 void Records_DrawTopScores_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -12821,6 +12856,7 @@ void Records_DrawTopScores_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Draw a track's top-3 record times with holder names; reached through the other ROM mirror bank */
 void Records_DrawTopTimes_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -12838,6 +12874,7 @@ void Records_DrawTopTimes_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: text renderer; control codes dispatched through the table at $C3CB; reached through the other ROM mirror bank */
 void DrawText_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -12855,6 +12892,7 @@ void DrawText_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer; reached through the other ROM mirror bank */
 void Text_DrawLoop_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -12872,6 +12910,7 @@ void Text_DrawLoop_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $FF: end of string, return from DrawText; reached through the other ROM mirror bank */
 void Text_CmdEnd_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -12889,6 +12928,7 @@ void Text_CmdEnd_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $FD: print word at pointer as 5-digit decimal; reached through the other ROM mirror bank */
 void Text_CmdPrintNum5_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -12906,6 +12946,7 @@ void Text_CmdPrintNum5_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $F0: print word at pointer as decimal, last digits only; reached through the other ROM mirror bank */
 void Text_CmdPrintNum2_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -12923,6 +12964,7 @@ void Text_CmdPrintNum2_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $FE x y: set text cursor $9F; reached through the other ROM mirror bank */
 void Text_CmdSetPos_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -12940,6 +12982,7 @@ void Text_CmdSetPos_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $FC row: center the rest of the line on that row; reached through the other ROM mirror bank */
 void Text_CmdCenterLine_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -12957,6 +13000,7 @@ void Text_CmdCenterLine_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $F2 row: center the next word (up to '_') on that row; reached through the other ROM mirror bank */
 void Text_CmdCenterWord_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -12974,6 +13018,7 @@ void Text_CmdCenterWord_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $FA ptr: draw a nested string, then continue; reached through the other ROM mirror bank */
 void Text_CmdCallString_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -12991,6 +13036,7 @@ void Text_CmdCallString_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $F9 n: set tile palette bits $B0; reached through the other ROM mirror bank */
 void Text_CmdSetPalette_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -13008,6 +13054,7 @@ void Text_CmdSetPalette_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $F5 id: draw player name (SRAM $77000C+id*16) for an immediate id; reached through the other ROM mirror bank */
 void Text_CmdPlayerNameImm_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -13025,6 +13072,7 @@ void Text_CmdPlayerNameImm_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $F8 ptr: draw player name for the id stored at ptr; reached through the other ROM mirror bank */
 void Text_CmdPlayerNameVar_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -13042,6 +13090,7 @@ void Text_CmdPlayerNameVar_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $F4 id: draw name from ROM table DATA_839F96 (CPU/uni names), immediate id; reached through the other ROM mirror bank */
 void Text_CmdRomNameImm_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -13059,6 +13108,7 @@ void Text_CmdRomNameImm_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $F7 ptr: draw name from ROM table DATA_839F96, id at ptr; reached through the other ROM mirror bank */
 void Text_CmdRomNameVar_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -13076,6 +13126,7 @@ void Text_CmdRomNameVar_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $F3 id: draw league name (SRAM $77016E+id*32), immediate id; reached through the other ROM mirror bank */
 void Text_CmdLeagueNameImm_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -13093,6 +13144,7 @@ void Text_CmdLeagueNameImm_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $F6 ptr: draw league name, id at ptr; reached through the other ROM mirror bank */
 void Text_CmdLeagueNameVar_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -13110,6 +13162,7 @@ void Text_CmdLeagueNameVar_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $F1 ptr: print direct-page word as a race time; reached through the other ROM mirror bank */
 void Text_CmdPrintTime_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -13127,6 +13180,7 @@ void Text_CmdPrintTime_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $EF n: move OAM sprite $68+n to the text cursor position; reached through the other ROM mirror bank */
 void Text_CmdPlaceSprite_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -13144,6 +13198,7 @@ void Text_CmdPlaceSprite_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: After a race: set stats offsets, dispatch on race type $77074B to update stats/records; reached through the other ROM mirror bank */
 void Race_RecordResults_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -13161,6 +13216,7 @@ void Race_RecordResults_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Race type 0: decide winner by total time, update stats and track records; reached through the other ROM mirror bank */
 void Race_RecordTimeRace_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -13178,6 +13234,7 @@ void Race_RecordTimeRace_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Insert p1 time into records, or count a non-finish if time >= 10:00.00; reached through the other ROM mirror bank */
 void Race_RecordP1TimeOrDnf_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

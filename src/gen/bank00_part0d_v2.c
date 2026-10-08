@@ -110,6 +110,7 @@ RecompReturn Vram_UploadTilemapAtA8_M1X0(CpuState *cpu);
 RecompReturn Vram_UploadTilemap_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_M1X0(CpuState *cpu);
 
+/* decomp: PICK TRACK menu for the chosen tour: shows class medal, skips done tracks, stores choice to $CE/$77074A; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_PickTrack_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_PickTrack_M1X0";
@@ -2475,6 +2476,7 @@ RecompReturn Menu_PickTrack_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $E865 inside Menu_PickTrack: PICK TRACK menu for the chosen tour: shows class medal, skips done tracks, stores choice to $CE/$77074A; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_PickTrack_E865_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_PickTrack_E865_M1X0";
@@ -4710,6 +4712,7 @@ RecompReturn Menu_PickTrack_E865_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $E872 inside Menu_PickTrack: PICK TRACK menu for the chosen tour: shows class medal, skips done tracks, stores choice to $CE/$77074A; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_PickTrack_E872_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_PickTrack_E872_M1X0";
@@ -6835,6 +6838,7 @@ RecompReturn Menu_PickTrack_E872_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $E8C4 inside Menu_PickTrack: PICK TRACK menu for the chosen tour: shows class medal, skips done tracks, stores choice to $CE/$77074A; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_PickTrack_E8C4_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_PickTrack_E8C4_M1X0";
@@ -8582,6 +8586,7 @@ RecompReturn Menu_PickTrack_E8C4_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $E8E8 inside Menu_PickTrack: PICK TRACK menu for the chosen tour: shows class medal, skips done tracks, stores choice to $CE/$77074A; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_PickTrack_E8E8_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_PickTrack_E8E8_M1X0";
@@ -10170,6 +10175,7 @@ RecompReturn Menu_PickTrack_E8E8_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $E910 inside Menu_PickTrack: PICK TRACK menu for the chosen tour: shows class medal, skips done tracks, stores choice to $CE/$77074A; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_PickTrack_E910_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_PickTrack_E910_M1X0";
@@ -11570,6 +11576,7 @@ RecompReturn Menu_PickTrack_E910_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $E913 inside Menu_PickTrack: PICK TRACK menu for the chosen tour: shows class medal, skips done tracks, stores choice to $CE/$77074A; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_PickTrack_E913_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_PickTrack_E913_M1X0";
@@ -12939,6 +12946,7 @@ RecompReturn Menu_PickTrack_E913_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $E927 inside Menu_PickTrack: PICK TRACK menu for the chosen tour: shows class medal, skips done tracks, stores choice to $CE/$77074A; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_PickTrack_E927_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_PickTrack_E927_M1X0";
@@ -14149,6 +14157,7 @@ RecompReturn Menu_PickTrack_E927_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $E9BB inside Menu_PickTrack: PICK TRACK menu for the chosen tour: shows class medal, skips done tracks, stores choice to $CE/$77074A; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_PickTrack_E9BB_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_PickTrack_E9BB_M1X0";
@@ -14687,6 +14696,7 @@ RecompReturn Menu_PickTrack_E9BB_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $E9F7 inside Menu_PickTrack: PICK TRACK menu for the chosen tour: shows class medal, skips done tracks, stores choice to $CE/$77074A; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_PickTrack_E9F7_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_PickTrack_E9F7_M1X0";
@@ -14926,6 +14936,7 @@ RecompReturn Menu_PickTrack_E9F7_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $E9FE inside Menu_PickTrack: PICK TRACK menu for the chosen tour: shows class medal, skips done tracks, stores choice to $CE/$77074A; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_PickTrack_E9FE_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_PickTrack_E9FE_M1X0";
@@ -15097,6 +15108,7 @@ RecompReturn Menu_PickTrack_E9FE_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: On PICK TRACK with no tracks done, cycle league class bronze/silver/gold up to the unlocked one; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_CycleLeagueClass_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_CycleLeagueClass_M1X0";
@@ -15809,6 +15821,7 @@ RecompReturn Menu_CycleLeagueClass_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Step the $7710A7 animation index (13..0) and write tile numbers into OAM entries 0-4; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_CycleSpriteTiles_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_CycleSpriteTiles_M1X0";
@@ -16103,6 +16116,7 @@ RecompReturn Menu_CycleSpriteTiles_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_ShowTourTables_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ShowTourTables_M1X0";
@@ -17978,6 +17992,7 @@ RecompReturn Menu_ShowTourTables_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EBCC inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_ShowTourTables_EBCC_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ShowTourTables_EBCC_M1X0";
@@ -19512,6 +19527,7 @@ RecompReturn Menu_ShowTourTables_EBCC_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EBF2 inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_ShowTourTables_EBF2_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ShowTourTables_EBF2_M1X0";
@@ -20818,6 +20834,7 @@ RecompReturn Menu_ShowTourTables_EBF2_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EC07 inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_ShowTourTables_EC07_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ShowTourTables_EC07_M1X0";
@@ -22017,6 +22034,7 @@ RecompReturn Menu_ShowTourTables_EC07_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EC0A inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_ShowTourTables_EC0A_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ShowTourTables_EC0A_M1X0";
@@ -23185,6 +23203,7 @@ RecompReturn Menu_ShowTourTables_EC0A_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EC1F inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_ShowTourTables_EC1F_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ShowTourTables_EC1F_M1X0";
@@ -24278,6 +24297,7 @@ RecompReturn Menu_ShowTourTables_EC1F_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EC49 inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_ShowTourTables_EC49_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ShowTourTables_EC49_M1X0";
@@ -25124,6 +25144,7 @@ RecompReturn Menu_ShowTourTables_EC49_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EC56 inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_ShowTourTables_EC56_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ShowTourTables_EC56_M1X0";
@@ -25871,6 +25892,7 @@ RecompReturn Menu_ShowTourTables_EC56_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EC5D inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_ShowTourTables_EC5D_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ShowTourTables_EC5D_M1X0";
@@ -26578,6 +26600,7 @@ RecompReturn Menu_ShowTourTables_EC5D_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EC6C inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_ShowTourTables_EC6C_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ShowTourTables_EC6C_M1X0";
@@ -27150,6 +27173,7 @@ RecompReturn Menu_ShowTourTables_EC6C_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EC6F inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_ShowTourTables_EC6F_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ShowTourTables_EC6F_M1X0";
@@ -27691,6 +27715,7 @@ RecompReturn Menu_ShowTourTables_EC6F_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EC7E inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_ShowTourTables_EC7E_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ShowTourTables_EC7E_M1X0";
@@ -28177,6 +28202,7 @@ RecompReturn Menu_ShowTourTables_EC7E_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $ECA1 inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_ShowTourTables_ECA1_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ShowTourTables_ECA1_M1X0";
@@ -28460,6 +28486,7 @@ RecompReturn Menu_ShowTourTables_ECA1_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $ECB1 inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_ShowTourTables_ECB1_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ShowTourTables_ECB1_M1X0";
@@ -28652,6 +28679,7 @@ RecompReturn Menu_ShowTourTables_ECB1_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Draw one page of tours: name plus gold/silver/bronze rows of 5 track numbers ($1E=page); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawTourTrackTable_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawTourTrackTable_M1X0";
@@ -30609,6 +30637,7 @@ RecompReturn Menu_DrawTourTrackTable_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EDB6 inside Menu_DrawTourTrackTable: Draw one page of tours: name plus gold/silver/bronze rows of 5 track numbers ($1E=page); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawTourTrackTable_EDB6_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawTourTrackTable_EDB6_M1X0";
@@ -32421,6 +32450,7 @@ RecompReturn Menu_DrawTourTrackTable_EDB6_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EE0E inside Menu_DrawTourTrackTable: Draw one page of tours: name plus gold/silver/bronze rows of 5 track numbers ($1E=page); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawTourTrackTable_EE0E_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawTourTrackTable_EE0E_M1X0";
@@ -34233,6 +34263,7 @@ RecompReturn Menu_DrawTourTrackTable_EE0E_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EE34 inside Menu_DrawTourTrackTable: Draw one page of tours: name plus gold/silver/bronze rows of 5 track numbers ($1E=page); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawTourTrackTable_EE34_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawTourTrackTable_EE34_M1X0";
@@ -36045,6 +36076,7 @@ RecompReturn Menu_DrawTourTrackTable_EE34_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EE3F inside Menu_DrawTourTrackTable: Draw one page of tours: name plus gold/silver/bronze rows of 5 track numbers ($1E=page); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawTourTrackTable_EE3F_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawTourTrackTable_EE3F_M1X0";
@@ -37857,6 +37889,7 @@ RecompReturn Menu_DrawTourTrackTable_EE3F_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EE66 inside Menu_DrawTourTrackTable: Draw one page of tours: name plus gold/silver/bronze rows of 5 track numbers ($1E=page); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawTourTrackTable_EE66_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawTourTrackTable_EE66_M1X0";
@@ -39669,6 +39702,7 @@ RecompReturn Menu_DrawTourTrackTable_EE66_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EE8C inside Menu_DrawTourTrackTable: Draw one page of tours: name plus gold/silver/bronze rows of 5 track numbers ($1E=page); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawTourTrackTable_EE8C_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawTourTrackTable_EE8C_M1X0";
@@ -41481,6 +41515,7 @@ RecompReturn Menu_DrawTourTrackTable_EE8C_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Draw one track-number icon (2 tiles) from value A at text scratch buffer $DC, coloured by group; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawTrackNumber_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawTrackNumber_M1X0";
@@ -41848,6 +41883,7 @@ RecompReturn Menu_DrawTrackNumber_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EEFF inside Menu_DrawTrackNumber: Draw one track-number icon (2 tiles) from value A at text scratch buffer $DC, coloured by group; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawTrackNumber_EEFF_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawTrackNumber_EEFF_M1X0";
@@ -42083,6 +42119,7 @@ RecompReturn Menu_DrawTrackNumber_EEFF_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EF09 inside Menu_DrawTrackNumber: Draw one track-number icon (2 tiles) from value A at text scratch buffer $DC, coloured by group; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawTrackNumber_EF09_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawTrackNumber_EF09_M1X0";
@@ -42274,6 +42311,7 @@ RecompReturn Menu_DrawTrackNumber_EF09_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EF1C inside Menu_DrawTrackNumber: Draw one track-number icon (2 tiles) from value A at text scratch buffer $DC, coloured by group; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawTrackNumber_EF1C_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawTrackNumber_EF1C_M1X0";
@@ -42392,6 +42430,7 @@ RecompReturn Menu_DrawTrackNumber_EF1C_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Draw $9D+1 option strings from pointer list X, then slide the menu panel in; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawOptionList_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawOptionList_M1X0";
@@ -42935,6 +42974,7 @@ RecompReturn Menu_DrawOptionList_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EF58 inside Menu_DrawOptionList: Draw $9D+1 option strings from pointer list X, then slide the menu panel in; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawOptionList_EF58_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawOptionList_EF58_M1X0";
@@ -43393,6 +43433,7 @@ RecompReturn Menu_DrawOptionList_EF58_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EF62 inside Menu_DrawOptionList: Draw $9D+1 option strings from pointer list X, then slide the menu panel in; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawOptionList_EF62_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawOptionList_EF62_M1X0";
@@ -43675,6 +43716,7 @@ RecompReturn Menu_DrawOptionList_EF62_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EF6E inside Menu_DrawOptionList: Draw $9D+1 option strings from pointer list X, then slide the menu panel in; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawOptionList_EF6E_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawOptionList_EF6E_M1X0";
@@ -43774,6 +43816,7 @@ RecompReturn Menu_DrawOptionList_EF6E_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EF72 inside Menu_DrawOptionList: Draw $9D+1 option strings from pointer list X, then slide the menu panel in; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawOptionList_EF72_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawOptionList_EF72_M1X0";
@@ -43873,6 +43916,7 @@ RecompReturn Menu_DrawOptionList_EF72_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copy player $CC's 8 score entries from SRAM $7702C0 into $0151, tag ids 0-7, sort descending; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Scores_LoadPlayerSorted_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Scores_LoadPlayerSorted_M1X0";
@@ -44377,6 +44421,7 @@ RecompReturn Scores_LoadPlayerSorted_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Selection-sort the 8 four-byte {id,value} entries at $0151 by value, highest first; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Util_SortTable8Descending_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Util_SortTable8Descending_M0X0";
@@ -44814,6 +44859,7 @@ RecompReturn Util_SortTable8Descending_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EFC9 inside Util_SortTable8Descending: Selection-sort the 8 four-byte {id,value} entries at $0151 by value, highest first; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Util_SortTable8Descending_EFC9_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Util_SortTable8Descending_EFC9_M0X0";
@@ -45201,6 +45247,7 @@ RecompReturn Util_SortTable8Descending_EFC9_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $EFDC inside Util_SortTable8Descending: Selection-sort the 8 four-byte {id,value} entries at $0151 by value, highest first; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Util_SortTable8Descending_EFDC_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Util_SortTable8Descending_EFDC_M0X0";
@@ -45561,6 +45608,7 @@ RecompReturn Util_SortTable8Descending_EFDC_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: PICK TRACK menu for the chosen tour: shows class medal, skips done tracks, stores choice to $CE/$77074A */
 void Menu_PickTrack(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -45578,6 +45626,7 @@ void Menu_PickTrack(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $E865 inside Menu_PickTrack: PICK TRACK menu for the chosen tour: shows class medal, skips done tracks, stores choice to $CE/$77074A */
 void Menu_PickTrack_E865(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -45595,6 +45644,7 @@ void Menu_PickTrack_E865(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $E872 inside Menu_PickTrack: PICK TRACK menu for the chosen tour: shows class medal, skips done tracks, stores choice to $CE/$77074A */
 void Menu_PickTrack_E872(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -45612,6 +45662,7 @@ void Menu_PickTrack_E872(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $E8C4 inside Menu_PickTrack: PICK TRACK menu for the chosen tour: shows class medal, skips done tracks, stores choice to $CE/$77074A */
 void Menu_PickTrack_E8C4(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -45629,6 +45680,7 @@ void Menu_PickTrack_E8C4(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $E8E8 inside Menu_PickTrack: PICK TRACK menu for the chosen tour: shows class medal, skips done tracks, stores choice to $CE/$77074A */
 void Menu_PickTrack_E8E8(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -45646,6 +45698,7 @@ void Menu_PickTrack_E8E8(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $E910 inside Menu_PickTrack: PICK TRACK menu for the chosen tour: shows class medal, skips done tracks, stores choice to $CE/$77074A */
 void Menu_PickTrack_E910(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -45663,6 +45716,7 @@ void Menu_PickTrack_E910(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $E913 inside Menu_PickTrack: PICK TRACK menu for the chosen tour: shows class medal, skips done tracks, stores choice to $CE/$77074A */
 void Menu_PickTrack_E913(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -45680,6 +45734,7 @@ void Menu_PickTrack_E913(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $E927 inside Menu_PickTrack: PICK TRACK menu for the chosen tour: shows class medal, skips done tracks, stores choice to $CE/$77074A */
 void Menu_PickTrack_E927(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -45697,6 +45752,7 @@ void Menu_PickTrack_E927(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $E9BB inside Menu_PickTrack: PICK TRACK menu for the chosen tour: shows class medal, skips done tracks, stores choice to $CE/$77074A */
 void Menu_PickTrack_E9BB(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -45714,6 +45770,7 @@ void Menu_PickTrack_E9BB(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $E9F7 inside Menu_PickTrack: PICK TRACK menu for the chosen tour: shows class medal, skips done tracks, stores choice to $CE/$77074A */
 void Menu_PickTrack_E9F7(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -45731,6 +45788,7 @@ void Menu_PickTrack_E9F7(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $E9FE inside Menu_PickTrack: PICK TRACK menu for the chosen tour: shows class medal, skips done tracks, stores choice to $CE/$77074A */
 void Menu_PickTrack_E9FE(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -45748,6 +45806,7 @@ void Menu_PickTrack_E9FE(CpuState *cpu) {
   }
 }
 
+/* decomp: On PICK TRACK with no tracks done, cycle league class bronze/silver/gold up to the unlocked one */
 void Menu_CycleLeagueClass(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -45765,6 +45824,7 @@ void Menu_CycleLeagueClass(CpuState *cpu) {
   }
 }
 
+/* decomp: Step the $7710A7 animation index (13..0) and write tile numbers into OAM entries 0-4 */
 void Menu_CycleSpriteTiles(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -45782,6 +45842,7 @@ void Menu_CycleSpriteTiles(CpuState *cpu) {
   }
 }
 
+/* decomp: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks */
 void Menu_ShowTourTables(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -45799,6 +45860,7 @@ void Menu_ShowTourTables(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EBCC inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks */
 void Menu_ShowTourTables_EBCC(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -45816,6 +45878,7 @@ void Menu_ShowTourTables_EBCC(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EBF2 inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks */
 void Menu_ShowTourTables_EBF2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -45833,6 +45896,7 @@ void Menu_ShowTourTables_EBF2(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EC07 inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks */
 void Menu_ShowTourTables_EC07(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -45850,6 +45914,7 @@ void Menu_ShowTourTables_EC07(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EC0A inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks */
 void Menu_ShowTourTables_EC0A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -45867,6 +45932,7 @@ void Menu_ShowTourTables_EC0A(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EC1F inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks */
 void Menu_ShowTourTables_EC1F(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -45884,6 +45950,7 @@ void Menu_ShowTourTables_EC1F(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EC49 inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks */
 void Menu_ShowTourTables_EC49(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -45901,6 +45968,7 @@ void Menu_ShowTourTables_EC49(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EC56 inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks */
 void Menu_ShowTourTables_EC56(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -45918,6 +45986,7 @@ void Menu_ShowTourTables_EC56(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EC5D inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks */
 void Menu_ShowTourTables_EC5D(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -45935,6 +46004,7 @@ void Menu_ShowTourTables_EC5D(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EC6C inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks */
 void Menu_ShowTourTables_EC6C(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -45952,6 +46022,7 @@ void Menu_ShowTourTables_EC6C(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EC6F inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks */
 void Menu_ShowTourTables_EC6F(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -45969,6 +46040,7 @@ void Menu_ShowTourTables_EC6F(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EC7E inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks */
 void Menu_ShowTourTables_EC7E(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -45986,6 +46058,7 @@ void Menu_ShowTourTables_EC7E(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $ECA1 inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks */
 void Menu_ShowTourTables_ECA1(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -46003,6 +46076,7 @@ void Menu_ShowTourTables_ECA1(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $ECB1 inside Menu_ShowTourTables: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks */
 void Menu_ShowTourTables_ECB1(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -46020,6 +46094,7 @@ void Menu_ShowTourTables_ECB1(CpuState *cpu) {
   }
 }
 
+/* decomp: Draw one page of tours: name plus gold/silver/bronze rows of 5 track numbers ($1E=page) */
 void Menu_DrawTourTrackTable(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -46037,6 +46112,7 @@ void Menu_DrawTourTrackTable(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EDB6 inside Menu_DrawTourTrackTable: Draw one page of tours: name plus gold/silver/bronze rows of 5 track numbers ($1E=page) */
 void Menu_DrawTourTrackTable_EDB6(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -46054,6 +46130,7 @@ void Menu_DrawTourTrackTable_EDB6(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EE0E inside Menu_DrawTourTrackTable: Draw one page of tours: name plus gold/silver/bronze rows of 5 track numbers ($1E=page) */
 void Menu_DrawTourTrackTable_EE0E(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -46071,6 +46148,7 @@ void Menu_DrawTourTrackTable_EE0E(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EE34 inside Menu_DrawTourTrackTable: Draw one page of tours: name plus gold/silver/bronze rows of 5 track numbers ($1E=page) */
 void Menu_DrawTourTrackTable_EE34(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -46088,6 +46166,7 @@ void Menu_DrawTourTrackTable_EE34(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EE3F inside Menu_DrawTourTrackTable: Draw one page of tours: name plus gold/silver/bronze rows of 5 track numbers ($1E=page) */
 void Menu_DrawTourTrackTable_EE3F(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -46105,6 +46184,7 @@ void Menu_DrawTourTrackTable_EE3F(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EE66 inside Menu_DrawTourTrackTable: Draw one page of tours: name plus gold/silver/bronze rows of 5 track numbers ($1E=page) */
 void Menu_DrawTourTrackTable_EE66(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -46122,6 +46202,7 @@ void Menu_DrawTourTrackTable_EE66(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EE8C inside Menu_DrawTourTrackTable: Draw one page of tours: name plus gold/silver/bronze rows of 5 track numbers ($1E=page) */
 void Menu_DrawTourTrackTable_EE8C(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -46139,6 +46220,7 @@ void Menu_DrawTourTrackTable_EE8C(CpuState *cpu) {
   }
 }
 
+/* decomp: Draw one track-number icon (2 tiles) from value A at text scratch buffer $DC, coloured by group */
 void Menu_DrawTrackNumber(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -46156,6 +46238,7 @@ void Menu_DrawTrackNumber(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EEFF inside Menu_DrawTrackNumber: Draw one track-number icon (2 tiles) from value A at text scratch buffer $DC, coloured by group */
 void Menu_DrawTrackNumber_EEFF(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -46173,6 +46256,7 @@ void Menu_DrawTrackNumber_EEFF(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EF09 inside Menu_DrawTrackNumber: Draw one track-number icon (2 tiles) from value A at text scratch buffer $DC, coloured by group */
 void Menu_DrawTrackNumber_EF09(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -46190,6 +46274,7 @@ void Menu_DrawTrackNumber_EF09(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EF1C inside Menu_DrawTrackNumber: Draw one track-number icon (2 tiles) from value A at text scratch buffer $DC, coloured by group */
 void Menu_DrawTrackNumber_EF1C(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -46207,6 +46292,7 @@ void Menu_DrawTrackNumber_EF1C(CpuState *cpu) {
   }
 }
 
+/* decomp: Draw $9D+1 option strings from pointer list X, then slide the menu panel in */
 void Menu_DrawOptionList(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -46224,6 +46310,7 @@ void Menu_DrawOptionList(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EF58 inside Menu_DrawOptionList: Draw $9D+1 option strings from pointer list X, then slide the menu panel in */
 void Menu_DrawOptionList_EF58(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -46241,6 +46328,7 @@ void Menu_DrawOptionList_EF58(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EF62 inside Menu_DrawOptionList: Draw $9D+1 option strings from pointer list X, then slide the menu panel in */
 void Menu_DrawOptionList_EF62(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -46258,6 +46346,7 @@ void Menu_DrawOptionList_EF62(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EF6E inside Menu_DrawOptionList: Draw $9D+1 option strings from pointer list X, then slide the menu panel in */
 void Menu_DrawOptionList_EF6E(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -46275,6 +46364,7 @@ void Menu_DrawOptionList_EF6E(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EF72 inside Menu_DrawOptionList: Draw $9D+1 option strings from pointer list X, then slide the menu panel in */
 void Menu_DrawOptionList_EF72(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -46292,6 +46382,7 @@ void Menu_DrawOptionList_EF72(CpuState *cpu) {
   }
 }
 
+/* decomp: Copy player $CC's 8 score entries from SRAM $7702C0 into $0151, tag ids 0-7, sort descending */
 void Scores_LoadPlayerSorted(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -46309,6 +46400,7 @@ void Scores_LoadPlayerSorted(CpuState *cpu) {
   }
 }
 
+/* decomp: Selection-sort the 8 four-byte {id,value} entries at $0151 by value, highest first */
 void Util_SortTable8Descending(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -46326,6 +46418,7 @@ void Util_SortTable8Descending(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EFC9 inside Util_SortTable8Descending: Selection-sort the 8 four-byte {id,value} entries at $0151 by value, highest first */
 void Util_SortTable8Descending_EFC9(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -46343,6 +46436,7 @@ void Util_SortTable8Descending_EFC9(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $EFDC inside Util_SortTable8Descending: Selection-sort the 8 four-byte {id,value} entries at $0151 by value, highest first */
 void Util_SortTable8Descending_EFDC(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

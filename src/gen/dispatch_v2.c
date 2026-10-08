@@ -39,7 +39,7 @@ RecompReturn Results_DrawLapRace_M0X0(CpuState *cpu);
 RecompReturn Results_DrawLapRace_8FFD_M1X0(CpuState *cpu);
 RecompReturn Results_DrawLapRace_910A_M0X0(CpuState *cpu);
 RecompReturn Results_DrawLapRace_910E_M0X0(CpuState *cpu);
-RecompReturn Reset_ClearWRAM_loop00_M1X0(CpuState *cpu);
+RecompReturn Boot_ClearWRAM_92F7_M1X0(CpuState *cpu);
 RecompReturn Boot_ClearWRAM_92FF_M1X0(CpuState *cpu);
 RecompReturn Boot_ClearWRAM_9300_M1X0(CpuState *cpu);
 RecompReturn Boot_ClearWRAM_9302_M1X0(CpuState *cpu);
@@ -983,8 +983,8 @@ RecompReturn Sram_ValidateOrInit_FastRom_M1X0(CpuState *cpu);
 RecompReturn Records_InsertHighScore_FastRom_M0X0(CpuState *cpu);
 RecompReturn Results_DrawLapRace_FastRom_M0X0(CpuState *cpu);
 RecompReturn Boot_91DC_M1X0(CpuState *cpu);
-RecompReturn Reset_ClearWRAM_M1X0(CpuState *cpu);
-RecompReturn Reset_ClearWRAM_loop80_M1X0(CpuState *cpu);
+RecompReturn Boot_ClearWRAM_M1X0(CpuState *cpu);
+RecompReturn Boot_ClearWRAM_92F7_FastRom_M1X0(CpuState *cpu);
 RecompReturn Oam_UploadLong_M1X0(CpuState *cpu);
 RecompReturn Oam_Upload_FastRom_M1X0(CpuState *cpu);
 RecompReturn Text_CopyWord_FastRom_M1X0(CpuState *cpu);
@@ -1372,7 +1372,7 @@ RecompReturn WaitForNMI_Long_M1X1(CpuState *cpu);
 RecompReturn WaitForNMI_M0X0(CpuState *cpu);
 RecompReturn WaitForNMI_M1X0(CpuState *cpu);
 RecompReturn WaitForNMI_M1X1(CpuState *cpu);
-RecompReturn WaitForNMI_spin_M1X0(CpuState *cpu);
+RecompReturn WaitForNMI_D4EE_M1X0(CpuState *cpu);
 RecompReturn Vram_Clear_Long_M1X0(CpuState *cpu);
 RecompReturn Vram_Clear_M1X0(CpuState *cpu);
 RecompReturn Cgram_Clear_Long_M1X0(CpuState *cpu);
@@ -1612,7 +1612,7 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x008FFDu, { NULL, NULL, Results_DrawLapRace_8FFD_M1X0, NULL }, 0 },  /* Results_DrawLapRace_8FFD */
     { 0x00910Au, { Results_DrawLapRace_910A_M0X0, NULL, NULL, NULL }, 0 },  /* Results_DrawLapRace_910A */
     { 0x00910Eu, { Results_DrawLapRace_910E_M0X0, NULL, NULL, NULL }, 0 },  /* Results_DrawLapRace_910E */
-    { 0x0092F7u, { NULL, NULL, Reset_ClearWRAM_loop00_M1X0, NULL }, 0 },  /* Reset_ClearWRAM_loop00 */
+    { 0x0092F7u, { NULL, NULL, Boot_ClearWRAM_92F7_M1X0, NULL }, 0 },  /* Boot_ClearWRAM_92F7 */
     { 0x0092FFu, { NULL, NULL, Boot_ClearWRAM_92FF_M1X0, NULL }, 0 },  /* Boot_ClearWRAM_92FF */
     { 0x009300u, { NULL, NULL, Boot_ClearWRAM_9300_M1X0, NULL }, 0 },  /* Boot_ClearWRAM_9300 */
     { 0x009302u, { NULL, NULL, Boot_ClearWRAM_9302_M1X0, NULL }, 0 },  /* Boot_ClearWRAM_9302 */
@@ -2529,8 +2529,8 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x808CCBu, { Records_InsertHighScore_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Records_InsertHighScore_FastRom */
     { 0x808D6Eu, { Results_DrawLapRace_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Results_DrawLapRace_FastRom */
     { 0x8091DCu, { NULL, NULL, Boot_91DC_M1X0, NULL }, 0 },  /* Boot_91DC */
-    { 0x8092F2u, { NULL, NULL, Reset_ClearWRAM_M1X0, NULL }, 0 },  /* Reset_ClearWRAM */
-    { 0x8092F7u, { NULL, NULL, Reset_ClearWRAM_loop80_M1X0, NULL }, 0 },  /* Reset_ClearWRAM_loop80 */
+    { 0x8092F2u, { NULL, NULL, Boot_ClearWRAM_M1X0, NULL }, 0 },  /* Boot_ClearWRAM */
+    { 0x8092F7u, { NULL, NULL, Boot_ClearWRAM_92F7_FastRom_M1X0, NULL }, 0 },  /* Boot_ClearWRAM_92F7_FastRom */
     { 0x809302u, { NULL, NULL, NULL, NULL }, 0 },  /* Boot_ClearWRAM_9302_FastRom */
     { 0x809314u, { NULL, NULL, Oam_UploadLong_M1X0, NULL }, 0 },  /* Oam_UploadLong */
     { 0x809318u, { NULL, NULL, Oam_Upload_FastRom_M1X0, NULL }, 0 },  /* Oam_Upload_FastRom */
@@ -2892,7 +2892,7 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x82D3D0u, { NULL, NULL, Pal_CycleRaceColors_M1X0, NULL }, 0 },  /* Pal_CycleRaceColors */
     { 0x82D4E5u, { WaitForNMI_Long_M0X0, NULL, WaitForNMI_Long_M1X0, WaitForNMI_Long_M1X1 }, 0 },  /* WaitForNMI_Long */
     { 0x82D4E9u, { WaitForNMI_M0X0, NULL, WaitForNMI_M1X0, WaitForNMI_M1X1 }, 0 },  /* WaitForNMI */
-    { 0x82D4EEu, { NULL, NULL, WaitForNMI_spin_M1X0, NULL }, 0 },  /* WaitForNMI_spin */
+    { 0x82D4EEu, { NULL, NULL, WaitForNMI_D4EE_M1X0, NULL }, 0 },  /* WaitForNMI_D4EE */
     { 0x82D4F6u, { NULL, NULL, Vram_Clear_Long_M1X0, NULL }, 0 },  /* Vram_Clear_Long */
     { 0x82D4FAu, { NULL, NULL, Vram_Clear_M1X0, NULL }, 0 },  /* Vram_Clear */
     { 0x82D50Eu, { NULL, NULL, Cgram_Clear_Long_M1X0, NULL }, 0 },  /* Cgram_Clear_Long */

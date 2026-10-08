@@ -34,6 +34,7 @@ RecompReturn Uni_StepLookFrame_M0X0(CpuState *cpu);
 RecompReturn Uni_UpdateLookFramesLong_M0X1(CpuState *cpu);
 RecompReturn Uni_UpdateLookFrames_M0X1(CpuState *cpu);
 
+/* decomp: Push 16-bit sound command A into 16-entry ring $7E2006/$7E2016 (dropped if full); sent by sub_828035; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Snd_QueueCommand_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_QueueCommand_M0X0";
@@ -406,6 +407,7 @@ RecompReturn Snd_QueueCommand_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Push 16-bit sound command A into 16-entry ring $7E2006/$7E2016 (dropped if full); sent by sub_828035; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Snd_QueueCommand_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_QueueCommand_M0X1";
@@ -778,6 +780,7 @@ RecompReturn Snd_QueueCommand_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: sends one queued 16-bit sound command to APUIO2/3 when the SPC acknowledged; C set if nothing sent; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Snd_SendQueuedCommand_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_SendQueuedCommand_M0X0";
@@ -1184,6 +1187,7 @@ RecompReturn Snd_SendQueuedCommand_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: sends one queued 16-bit sound command to APUIO2/3 when the SPC acknowledged; C set if nothing sent; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_SendQueuedCommand_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_SendQueuedCommand_M1X0";
@@ -1590,6 +1594,7 @@ RecompReturn Snd_SendQueuedCommand_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Snd_UploadBlock; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockLong_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockLong_M0X0";
@@ -1721,6 +1726,7 @@ RecompReturn Snd_UploadBlockLong_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlock_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlock_M0X0";
@@ -2564,6 +2570,7 @@ RecompReturn Snd_UploadBlock_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: points $63-$65 at block X in the sound data directory at $108000 by summing block sizes; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_SeekDataBlock_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_SeekDataBlock_FastRom_M1X0";
@@ -2869,6 +2876,7 @@ RecompReturn Snd_SeekDataBlock_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: advances the long sound data pointer $63 by one, wrapping to the next LoROM bank; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Snd_IncDataPtr_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_IncDataPtr_FastRom_M0X0";
@@ -3064,6 +3072,7 @@ RecompReturn Snd_IncDataPtr_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: advances the long sound data pointer $63 by one, wrapping to the next LoROM bank; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_IncDataPtr_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_IncDataPtr_FastRom_M1X0";
@@ -3259,6 +3268,7 @@ RecompReturn Snd_IncDataPtr_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Snd_StopStream; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Snd_StopStreamLong_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_StopStreamLong_M0X0";
@@ -3390,6 +3400,7 @@ RecompReturn Snd_StopStreamLong_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: clears stream bank, state and list pointer; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Snd_StopStream_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_StopStream_M0X0";
@@ -3528,6 +3539,7 @@ RecompReturn Snd_StopStream_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Snd_UploadBlockList; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockListLong_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockListLong_M0X0";
@@ -3659,6 +3671,7 @@ RecompReturn Snd_UploadBlockListLong_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_M0X0";
@@ -4461,6 +4474,7 @@ RecompReturn Snd_UploadBlockList_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: sends byte A on APUIO3 with counter on APUIO2 and waits for the echo; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_SendByteWait_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_SendByteWait_FastRom_M1X0";
@@ -4619,6 +4633,7 @@ RecompReturn Snd_SendByteWait_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Uni_UpdateLookFrames (race frame); compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Uni_UpdateLookFramesLong_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_UpdateLookFramesLong_M0X1";
@@ -4750,6 +4765,7 @@ RecompReturn Uni_UpdateLookFramesLong_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: alternate frames per uni: picks look-at-rival pose from relative position, else idle pose sequence; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Uni_UpdateLookFrames_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_UpdateLookFrames_M0X1";
@@ -9002,6 +9018,7 @@ RecompReturn Uni_UpdateLookFrames_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: moves the uni's look frame $0D43,Y one step toward target $124F,Y (9 = neutral, stored as 0); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_StepLookFrame_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_StepLookFrame_M0X0";
@@ -10428,6 +10445,7 @@ RecompReturn Uni_StepLookFrame_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Push 16-bit sound command A into 16-entry ring $7E2006/$7E2016 (dropped if full); sent by sub_828035 */
 void Snd_QueueCommand(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10445,6 +10463,7 @@ void Snd_QueueCommand(CpuState *cpu) {
   }
 }
 
+/* decomp: sends one queued 16-bit sound command to APUIO2/3 when the SPC acknowledged; C set if nothing sent */
 void Snd_SendQueuedCommand(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10462,6 +10481,7 @@ void Snd_SendQueuedCommand(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Snd_UploadBlock */
 void Snd_UploadBlockLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10479,6 +10499,7 @@ void Snd_UploadBlockLong(CpuState *cpu) {
   }
 }
 
+/* decomp: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue */
 void Snd_UploadBlock(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10496,6 +10517,7 @@ void Snd_UploadBlock(CpuState *cpu) {
   }
 }
 
+/* decomp: points $63-$65 at block X in the sound data directory at $108000 by summing block sizes; reached through the other ROM mirror bank */
 void Snd_SeekDataBlock_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10513,6 +10535,7 @@ void Snd_SeekDataBlock_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: advances the long sound data pointer $63 by one, wrapping to the next LoROM bank; reached through the other ROM mirror bank */
 void Snd_IncDataPtr_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10530,6 +10553,7 @@ void Snd_IncDataPtr_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Snd_StopStream */
 void Snd_StopStreamLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10547,6 +10571,7 @@ void Snd_StopStreamLong(CpuState *cpu) {
   }
 }
 
+/* decomp: clears stream bank, state and list pointer */
 void Snd_StopStream(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10564,6 +10589,7 @@ void Snd_StopStream(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Snd_UploadBlockList */
 void Snd_UploadBlockListLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10581,6 +10607,7 @@ void Snd_UploadBlockListLong(CpuState *cpu) {
   }
 }
 
+/* decomp: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10598,6 +10625,7 @@ void Snd_UploadBlockList(CpuState *cpu) {
   }
 }
 
+/* decomp: sends byte A on APUIO3 with counter on APUIO2 and waits for the echo; reached through the other ROM mirror bank */
 void Snd_SendByteWait_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10615,6 +10643,7 @@ void Snd_SendByteWait_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Uni_UpdateLookFrames (race frame) */
 void Uni_UpdateLookFramesLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10632,6 +10661,7 @@ void Uni_UpdateLookFramesLong(CpuState *cpu) {
   }
 }
 
+/* decomp: alternate frames per uni: picks look-at-rival pose from relative position, else idle pose sequence */
 void Uni_UpdateLookFrames(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10649,6 +10679,7 @@ void Uni_UpdateLookFrames(CpuState *cpu) {
   }
 }
 
+/* decomp: moves the uni's look frame $0D43,Y one step toward target $124F,Y (9 = neutral, stored as 0) */
 void Uni_StepLookFrame(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

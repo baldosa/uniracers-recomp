@@ -53,6 +53,7 @@ RecompReturn Vs_ShowChampions_FastRom_M1X0(CpuState *cpu);
 RecompReturn WaitVBlankLong_FastRom_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_FastRom_M1X0(CpuState *cpu);
 
+/* decomp: DMA five $C0-byte buffers ($0CF0,$0EF0,..$14F0) to VRAM at $0A + n*$100 via channel 7; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Dma_UploadTilemapRows_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Dma_UploadTilemapRows_FastRom_M1X0";
@@ -600,6 +601,7 @@ RecompReturn Dma_UploadTilemapRows_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DMA five $C0-byte buffers ($0CF0,$0EF0,..$14F0) to VRAM at $0A + n*$100 via channel 7; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Dma_UploadTilemapRows_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Dma_UploadTilemapRows_FastRom_M0X0";
@@ -1147,6 +1149,7 @@ RecompReturn Dma_UploadTilemapRows_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DMA $C0 bytes from bank 0 (A1T7 preset) to VRAM address X on channel 7; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Dma_UploadVramC0_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Dma_UploadVramC0_FastRom_M0X0";
@@ -1285,6 +1288,7 @@ RecompReturn Dma_UploadVramC0_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Store X (and Y unless $FFFF) into player $CC's SRAM result slot $770618, then re-checksum; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Scores_StoreResult_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Scores_StoreResult_FastRom_M0X0";
@@ -1605,6 +1609,7 @@ RecompReturn Scores_StoreResult_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Convert scratch text $DC..$FB: lowercase letters and digits remapped to the alternate font tiles; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_ConvertBufferCase_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_ConvertBufferCase_FastRom_M0X0";
@@ -1938,6 +1943,7 @@ RecompReturn Text_ConvertBufferCase_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: VS CHAMPIONS screen: sort 16 players by wins ($770400) and list top 8 with name, unis, wins, %; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Vs_ShowChampions_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Vs_ShowChampions_FastRom_M1X0";
@@ -3194,6 +3200,7 @@ RecompReturn Vs_ShowChampions_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $FA4A inside Vs_ShowChampions: VS CHAMPIONS screen: sort 16 players by wins ($770400) and list top 8 with name, unis, wins, %; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Vs_ShowChampions_FA4A_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Vs_ShowChampions_FA4A_M1X0";
@@ -3511,6 +3518,7 @@ RecompReturn Vs_ShowChampions_FA4A_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for WaitVBlank; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn WaitVBlankLong_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "WaitVBlankLong_FastRom_M1X0";
@@ -3642,6 +3650,7 @@ RecompReturn WaitVBlankLong_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Poll sound comms until the next vblank (HVBJOY), then run the menu cursor update; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn WaitVBlank_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "WaitVBlank_FastRom_M1X0";
@@ -3880,6 +3889,7 @@ RecompReturn WaitVBlank_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Animate the cursor sprite tile and ease cursor X/Y ($0C60/$0C68) toward targets ($0C62/$0C6A); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_UpdateCursor_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_UpdateCursor_FastRom_M1X0";
@@ -4762,6 +4772,7 @@ RecompReturn Menu_UpdateCursor_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: KEEP SCORES / RESET SCORES / EXIT menu; jumps through table $FC13; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_KeepResetScores_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_KeepResetScores_FastRom_M1X0";
@@ -5018,6 +5029,7 @@ RecompReturn Menu_KeepResetScores_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Clear player $CC's 16 score words at SRAM $7702C0 and return Z clear (jump-table target); reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Scores_ResetPlayer_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Scores_ResetPlayer_FastRom_M0X0";
@@ -5256,6 +5268,7 @@ RecompReturn Scores_ResetPlayer_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Return with Z clear (KEEP SCORES jump-table target); reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Menu_ReturnContinue_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ReturnContinue_FastRom_M0X0";
@@ -5369,6 +5382,7 @@ RecompReturn Menu_ReturnContinue_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Return with Z set (EXIT jump-table target); reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Menu_ReturnExit_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ReturnExit_FastRom_M0X0";
@@ -5482,6 +5496,7 @@ RecompReturn Menu_ReturnExit_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DMA five $C0-byte buffers ($0CF0,$0EF0,..$14F0) to VRAM at $0A + n*$100 via channel 7; reached through the other ROM mirror bank */
 void Dma_UploadTilemapRows_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5499,6 +5514,7 @@ void Dma_UploadTilemapRows_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: DMA $C0 bytes from bank 0 (A1T7 preset) to VRAM address X on channel 7; reached through the other ROM mirror bank */
 void Dma_UploadVramC0_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5516,6 +5532,7 @@ void Dma_UploadVramC0_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Store X (and Y unless $FFFF) into player $CC's SRAM result slot $770618, then re-checksum; reached through the other ROM mirror bank */
 void Scores_StoreResult_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5533,6 +5550,7 @@ void Scores_StoreResult_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Convert scratch text $DC..$FB: lowercase letters and digits remapped to the alternate font tiles; reached through the other ROM mirror bank */
 void Text_ConvertBufferCase_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5550,6 +5568,7 @@ void Text_ConvertBufferCase_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: VS CHAMPIONS screen: sort 16 players by wins ($770400) and list top 8 with name, unis, wins, %; reached through the other ROM mirror bank */
 void Vs_ShowChampions_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5567,6 +5586,7 @@ void Vs_ShowChampions_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $FA4A inside Vs_ShowChampions: VS CHAMPIONS screen: sort 16 players by wins ($770400) and list top 8 with name, unis, wins, % */
 void Vs_ShowChampions_FA4A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5584,6 +5604,7 @@ void Vs_ShowChampions_FA4A(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for WaitVBlank; reached through the other ROM mirror bank */
 void WaitVBlankLong_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5601,6 +5622,7 @@ void WaitVBlankLong_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Poll sound comms until the next vblank (HVBJOY), then run the menu cursor update; reached through the other ROM mirror bank */
 void WaitVBlank_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5618,6 +5640,7 @@ void WaitVBlank_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Animate the cursor sprite tile and ease cursor X/Y ($0C60/$0C68) toward targets ($0C62/$0C6A); reached through the other ROM mirror bank */
 void Menu_UpdateCursor_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5635,6 +5658,7 @@ void Menu_UpdateCursor_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: KEEP SCORES / RESET SCORES / EXIT menu; jumps through table $FC13; reached through the other ROM mirror bank */
 void Menu_KeepResetScores_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5652,6 +5676,7 @@ void Menu_KeepResetScores_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Clear player $CC's 16 score words at SRAM $7702C0 and return Z clear (jump-table target); reached through the other ROM mirror bank */
 void Scores_ResetPlayer_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5669,6 +5694,7 @@ void Scores_ResetPlayer_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Return with Z clear (KEEP SCORES jump-table target); reached through the other ROM mirror bank */
 void Menu_ReturnContinue_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5686,6 +5712,7 @@ void Menu_ReturnContinue_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Return with Z set (EXIT jump-table target); reached through the other ROM mirror bank */
 void Menu_ReturnExit_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

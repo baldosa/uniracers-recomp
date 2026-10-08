@@ -26,6 +26,7 @@ RecompReturn Snd_QueueCommand_M0X1(CpuState *cpu);
 RecompReturn Snd_SendQueuedCommand_M0X0(CpuState *cpu);
 RecompReturn Snd_SendQueuedCommand_M1X0(CpuState *cpu);
 
+/* decomp: Builds VRAM tile DMA list ($1645 src/$15A1 bank/$16E9 dest from $6000) for both riders' body+overlay frames; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Gfx_QueueRiderTileDma_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Gfx_QueueRiderTileDma_M0X0";
@@ -1834,6 +1835,7 @@ RecompReturn Gfx_QueueRiderTileDma_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Looks up 3-byte entry A in frame table at $20:8000; returns A=address, X=bank+$23; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Gfx_GetRiderFramePtr_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Gfx_GetRiderFramePtr_M0X1";
@@ -2106,6 +2108,7 @@ RecompReturn Gfx_GetRiderFramePtr_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Decodes the four rider frame headers into tile-presence masks and tile counts in DP $00-$13/$18-$2E; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Gfx_DecodeRiderFrameHeaders_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Gfx_DecodeRiderFrameHeaders_M0X1";
@@ -4977,6 +4980,7 @@ RecompReturn Gfx_DecodeRiderFrameHeaders_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Pause screen: dims screen, draws random pause phrase and continue/quit, handles cursor; A=0 resume,1 quit,FF none; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Race_UpdatePauseMenu_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdatePauseMenu_M1X1";
@@ -7878,6 +7882,7 @@ RecompReturn Race_UpdatePauseMenu_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Builds VRAM tile DMA list ($1645 src/$15A1 bank/$16E9 dest from $6000) for both riders' body+overlay frames */
 void Gfx_QueueRiderTileDma(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7895,6 +7900,7 @@ void Gfx_QueueRiderTileDma(CpuState *cpu) {
   }
 }
 
+/* decomp: Looks up 3-byte entry A in frame table at $20:8000; returns A=address, X=bank+$23 */
 void Gfx_GetRiderFramePtr(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7912,6 +7918,7 @@ void Gfx_GetRiderFramePtr(CpuState *cpu) {
   }
 }
 
+/* decomp: Decodes the four rider frame headers into tile-presence masks and tile counts in DP $00-$13/$18-$2E */
 void Gfx_DecodeRiderFrameHeaders(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7929,6 +7936,7 @@ void Gfx_DecodeRiderFrameHeaders(CpuState *cpu) {
   }
 }
 
+/* decomp: Pause screen: dims screen, draws random pause phrase and continue/quit, handles cursor; A=0 resume,1 quit,FF none */
 void Race_UpdatePauseMenu(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

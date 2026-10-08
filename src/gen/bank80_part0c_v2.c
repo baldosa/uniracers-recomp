@@ -67,6 +67,7 @@ RecompReturn Vram_UploadTilemapAtA8_FastRom_M1X0(CpuState *cpu);
 RecompReturn Vram_UploadTilemap_FastRom_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_FastRom_M1X0(CpuState *cpu);
 
+/* decomp: Slide transition forward: ease BG2 scroll via hook $56, then swap front/back tilemaps; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Slide_Forward_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Slide_Forward_FastRom_M1X0";
@@ -259,6 +260,7 @@ RecompReturn Slide_Forward_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Default forward slide step: wait frame, add speed to BG2 HOFS; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Slide_DefaultFwdStep_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Slide_DefaultFwdStep_FastRom_M1X0";
@@ -693,6 +695,7 @@ RecompReturn Slide_DefaultFwdStep_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Slide transition backward: ease BG2 scroll via hook $58, then swap front/back tilemaps; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Slide_Back_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Slide_Back_FastRom_M1X0";
@@ -885,6 +888,7 @@ RecompReturn Slide_Back_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Default backward slide step: wait frame, update window, subtract speed from BG2 HOFS; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Slide_DefaultBackStep_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Slide_DefaultBackStep_FastRom_M1X0";
@@ -1299,6 +1303,7 @@ RecompReturn Slide_DefaultBackStep_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for Screen_OpenWipe; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Screen_OpenWipeL_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Screen_OpenWipeL_M1X0";
@@ -1430,6 +1435,7 @@ RecompReturn Screen_OpenWipeL_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: HDMA wipe effect (BG1VOFS + brightness tables) opening the screen over ~75 frames; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Screen_OpenWipe_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Screen_OpenWipe_FastRom_M1X0";
@@ -2132,6 +2138,7 @@ RecompReturn Screen_OpenWipe_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Track records cursor: move over track grid with d-pad, update cursor sprite; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn TrackRecords_HandleInput_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "TrackRecords_HandleInput_FastRom_M1X0";
@@ -3829,6 +3836,7 @@ RecompReturn TrackRecords_HandleInput_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for sub_80E53A (post-pick menu step; role unclear); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_RunE53AL_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_RunE53AL_M1X0";
@@ -3960,6 +3968,7 @@ RecompReturn Menu_RunE53AL_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: PICK TOUR menu: list unlocked tours, move cursor, returns $01 on select ($D0=tour) or $FF on cancel; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_PickTour_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_PickTour_FastRom_M1X0";
@@ -6352,6 +6361,7 @@ RecompReturn Menu_PickTour_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copy colour-cycle attribute (DATA_839B27[$0191]) into the 9 menu sprites at $0A02..; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_ApplyCycledSpriteColor_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ApplyCycledSpriteColor_FastRom_M1X0";
@@ -6510,6 +6520,7 @@ RecompReturn Menu_ApplyCycledSpriteColor_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Draw the PICK TOUR screen: title, tour names (crawler..hunter) per unlocked level; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawTourList_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawTourList_FastRom_M1X0";
@@ -7334,6 +7345,7 @@ RecompReturn Menu_DrawTourList_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Z set if tour A (low nibble) is unlocked (league level >= table $E82C), Z clear otherwise; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_CheckTourUnlocked_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_CheckTourUnlocked_FastRom_M1X0";
@@ -7698,6 +7710,7 @@ RecompReturn Menu_CheckTourUnlocked_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Slide transition forward: ease BG2 scroll via hook $56, then swap front/back tilemaps; reached through the other ROM mirror bank */
 void Slide_Forward_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7715,6 +7728,7 @@ void Slide_Forward_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Default forward slide step: wait frame, add speed to BG2 HOFS; reached through the other ROM mirror bank */
 void Slide_DefaultFwdStep_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7732,6 +7746,7 @@ void Slide_DefaultFwdStep_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Slide transition backward: ease BG2 scroll via hook $58, then swap front/back tilemaps; reached through the other ROM mirror bank */
 void Slide_Back_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7749,6 +7764,7 @@ void Slide_Back_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Default backward slide step: wait frame, update window, subtract speed from BG2 HOFS; reached through the other ROM mirror bank */
 void Slide_DefaultBackStep_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7766,6 +7782,7 @@ void Slide_DefaultBackStep_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Long wrapper for Screen_OpenWipe */
 void Screen_OpenWipeL(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7783,6 +7800,7 @@ void Screen_OpenWipeL(CpuState *cpu) {
   }
 }
 
+/* decomp: HDMA wipe effect (BG1VOFS + brightness tables) opening the screen over ~75 frames; reached through the other ROM mirror bank */
 void Screen_OpenWipe_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7800,6 +7818,7 @@ void Screen_OpenWipe_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Track records cursor: move over track grid with d-pad, update cursor sprite; reached through the other ROM mirror bank */
 void TrackRecords_HandleInput_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7817,6 +7836,7 @@ void TrackRecords_HandleInput_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Long wrapper for sub_80E53A (post-pick menu step; role unclear) */
 void Menu_RunE53AL(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7834,6 +7854,7 @@ void Menu_RunE53AL(CpuState *cpu) {
   }
 }
 
+/* decomp: PICK TOUR menu: list unlocked tours, move cursor, returns $01 on select ($D0=tour) or $FF on cancel; reached through the other ROM mirror bank */
 void Menu_PickTour_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7851,6 +7872,7 @@ void Menu_PickTour_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Copy colour-cycle attribute (DATA_839B27[$0191]) into the 9 menu sprites at $0A02..; reached through the other ROM mirror bank */
 void Menu_ApplyCycledSpriteColor_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7868,6 +7890,7 @@ void Menu_ApplyCycledSpriteColor_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Draw the PICK TOUR screen: title, tour names (crawler..hunter) per unlocked level; reached through the other ROM mirror bank */
 void Menu_DrawTourList_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7885,6 +7908,7 @@ void Menu_DrawTourList_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Z set if tour A (low nibble) is unlocked (league level >= table $E82C), Z clear otherwise; reached through the other ROM mirror bank */
 void Menu_CheckTourUnlocked_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

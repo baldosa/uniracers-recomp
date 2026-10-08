@@ -63,6 +63,7 @@ RecompReturn Vram_UploadTilemap_M1X0(CpuState *cpu);
 RecompReturn Vs_ShowChampions_FA4A_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_M1X0(CpuState *cpu);
 
+/* decomp: Selection-sort the 16 four-byte {id,value} entries at $0C20 by value, highest first; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Util_SortTable16Descending_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Util_SortTable16Descending_M0X0";
@@ -500,6 +501,7 @@ RecompReturn Util_SortTable16Descending_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Selection-sort the 8 four-byte {id,value} entries at $0151 by value, lowest first; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Util_SortTable8Ascending_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Util_SortTable8Ascending_M0X0";
@@ -932,6 +934,7 @@ RecompReturn Util_SortTable8Ascending_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: End-of-race results screen: tally, totals, best-score update, qualify line; no direct JSR (pointer at ROM $8095A9); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Results_ShowRaceResults_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_ShowRaceResults_M0X0";
@@ -3018,6 +3021,7 @@ RecompReturn Results_ShowRaceResults_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Hide menu sprites (OAM hi = $55), wait a frame, reload menu sprite graphics, set OBSEL; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_HideSpritesAndReloadGfx_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_HideSpritesAndReloadGfx_M1X0";
@@ -3310,6 +3314,7 @@ RecompReturn Menu_HideSpritesAndReloadGfx_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $F4BC inside Menu_HideSpritesAndReloadGfx: Hide menu sprites (OAM hi = $55), wait a frame, reload menu sprite graphics, set OBSEL; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_HideSpritesAndReloadGfx_F4BC_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_HideSpritesAndReloadGfx_F4BC_M1X0";
@@ -3538,6 +3543,7 @@ RecompReturn Menu_HideSpritesAndReloadGfx_F4BC_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Disable HDMA, clear screen, reload menu sprite and font graphics, set OBSEL; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_ResetScreenGfx_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ResetScreenGfx_M1X0";
@@ -3955,6 +3961,7 @@ RecompReturn Menu_ResetScreenGfx_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $F4DC inside Menu_ResetScreenGfx: Disable HDMA, clear screen, reload menu sprite and font graphics, set OBSEL; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_ResetScreenGfx_F4DC_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ResetScreenGfx_F4DC_M1X0";
@@ -4323,6 +4330,7 @@ RecompReturn Menu_ResetScreenGfx_F4DC_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $F4DF inside Menu_ResetScreenGfx: Disable HDMA, clear screen, reload menu sprite and font graphics, set OBSEL; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_ResetScreenGfx_F4DF_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ResetScreenGfx_F4DF_M1X0";
@@ -4660,6 +4668,7 @@ RecompReturn Menu_ResetScreenGfx_F4DF_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $F4E5 inside Menu_ResetScreenGfx: Disable HDMA, clear screen, reload menu sprite and font graphics, set OBSEL; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_ResetScreenGfx_F4E5_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ResetScreenGfx_F4E5_M1X0";
@@ -4935,6 +4944,7 @@ RecompReturn Menu_ResetScreenGfx_F4E5_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Set SRAM flag $770742 bit 1 (menu panel slides open); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_RequestPanelOpen_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_RequestPanelOpen_M1X0";
@@ -5070,6 +5080,7 @@ RecompReturn Menu_RequestPanelOpen_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Clear SRAM flag $770742 bit 1 (menu panel slides closed); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_RequestPanelClose_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_RequestPanelClose_M1X0";
@@ -5205,6 +5216,7 @@ RecompReturn Menu_RequestPanelClose_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Set panel-open flag and immediately set BG1 vertical scroll ($AD) to fully open ($4F); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_SnapPanelOpen_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_SnapPanelOpen_M1X0";
@@ -5359,6 +5371,7 @@ RecompReturn Menu_SnapPanelOpen_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Boot screen (110 frames); restores unlocks after cheat; pad code Up,Left,Up,R,A unlocks all tours; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Boot_ShowLegalScreen_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Boot_ShowLegalScreen_M1X0";
@@ -6187,6 +6200,7 @@ RecompReturn Boot_ShowLegalScreen_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $F599 inside Boot_ShowLegalScreen: Boot screen (110 frames); restores unlocks after cheat; pad code Up,Left,Up,R,A unlocks all tours; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Boot_ShowLegalScreen_F599_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Boot_ShowLegalScreen_F599_M1X0";
@@ -6777,6 +6791,7 @@ RecompReturn Boot_ShowLegalScreen_F599_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $F5A2 inside Boot_ShowLegalScreen: Boot screen (110 frames); restores unlocks after cheat; pad code Up,Left,Up,R,A unlocks all tours; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Boot_ShowLegalScreen_F5A2_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Boot_ShowLegalScreen_F5A2_M1X0";
@@ -7320,6 +7335,7 @@ RecompReturn Boot_ShowLegalScreen_F5A2_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $F5AA inside Boot_ShowLegalScreen: Boot screen (110 frames); restores unlocks after cheat; pad code Up,Left,Up,R,A unlocks all tours; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Boot_ShowLegalScreen_F5AA_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Boot_ShowLegalScreen_F5AA_M1X0";
@@ -7825,6 +7841,7 @@ RecompReturn Boot_ShowLegalScreen_F5AA_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $F5B7 inside Boot_ShowLegalScreen: Boot screen (110 frames); restores unlocks after cheat; pad code Up,Left,Up,R,A unlocks all tours; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Boot_ShowLegalScreen_F5B7_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Boot_ShowLegalScreen_F5B7_M1X0";
@@ -8306,6 +8323,7 @@ RecompReturn Boot_ShowLegalScreen_F5B7_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $F601 inside Boot_ShowLegalScreen: Boot screen (110 frames); restores unlocks after cheat; pad code Up,Left,Up,R,A unlocks all tours; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Boot_ShowLegalScreen_F601_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Boot_ShowLegalScreen_F601_M1X0";
@@ -8405,6 +8423,7 @@ RecompReturn Boot_ShowLegalScreen_F601_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NMI handler for menus and the title ($0053 = $F60C); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn NmiHandler_Menu_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "NmiHandler_Menu_M1X0";
@@ -8590,6 +8609,7 @@ RecompReturn NmiHandler_Menu_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Count up 4 rows x 5 columns of result tallies with sound/frame waits, accumulate total in $C0; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Results_AnimateTally_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_AnimateTally_M1X0";
@@ -10755,6 +10775,7 @@ RecompReturn Results_AnimateTally_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Advance tally draw position $96/$9F by $40 (next column); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Results_NextTallyColumn_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_NextTallyColumn_M0X0";
@@ -10892,6 +10913,7 @@ RecompReturn Results_NextTallyColumn_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Wait Y frames (with palette/sprite updates), returning early if a button is pressed; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Menu_WaitFramesOrButton_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_WaitFramesOrButton_M0X0";
@@ -11202,6 +11224,7 @@ RecompReturn Menu_WaitFramesOrButton_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Selection-sort the 16 four-byte {id,value} entries at $0C20 by value, highest first */
 void Util_SortTable16Descending(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11219,6 +11242,7 @@ void Util_SortTable16Descending(CpuState *cpu) {
   }
 }
 
+/* decomp: Selection-sort the 8 four-byte {id,value} entries at $0151 by value, lowest first */
 void Util_SortTable8Ascending(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11236,6 +11260,7 @@ void Util_SortTable8Ascending(CpuState *cpu) {
   }
 }
 
+/* decomp: End-of-race results screen: tally, totals, best-score update, qualify line; no direct JSR (pointer at ROM $8095A9) */
 void Results_ShowRaceResults(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11253,6 +11278,7 @@ void Results_ShowRaceResults(CpuState *cpu) {
   }
 }
 
+/* decomp: Hide menu sprites (OAM hi = $55), wait a frame, reload menu sprite graphics, set OBSEL */
 void Menu_HideSpritesAndReloadGfx(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11270,6 +11296,7 @@ void Menu_HideSpritesAndReloadGfx(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $F4BC inside Menu_HideSpritesAndReloadGfx: Hide menu sprites (OAM hi = $55), wait a frame, reload menu sprite graphics, set OBSEL */
 void Menu_HideSpritesAndReloadGfx_F4BC(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11287,6 +11314,7 @@ void Menu_HideSpritesAndReloadGfx_F4BC(CpuState *cpu) {
   }
 }
 
+/* decomp: Disable HDMA, clear screen, reload menu sprite and font graphics, set OBSEL */
 void Menu_ResetScreenGfx(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11304,6 +11332,7 @@ void Menu_ResetScreenGfx(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $F4DC inside Menu_ResetScreenGfx: Disable HDMA, clear screen, reload menu sprite and font graphics, set OBSEL */
 void Menu_ResetScreenGfx_F4DC(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11321,6 +11350,7 @@ void Menu_ResetScreenGfx_F4DC(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $F4DF inside Menu_ResetScreenGfx: Disable HDMA, clear screen, reload menu sprite and font graphics, set OBSEL */
 void Menu_ResetScreenGfx_F4DF(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11338,6 +11368,7 @@ void Menu_ResetScreenGfx_F4DF(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $F4E5 inside Menu_ResetScreenGfx: Disable HDMA, clear screen, reload menu sprite and font graphics, set OBSEL */
 void Menu_ResetScreenGfx_F4E5(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11355,6 +11386,7 @@ void Menu_ResetScreenGfx_F4E5(CpuState *cpu) {
   }
 }
 
+/* decomp: Set SRAM flag $770742 bit 1 (menu panel slides open) */
 void Menu_RequestPanelOpen(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11372,6 +11404,7 @@ void Menu_RequestPanelOpen(CpuState *cpu) {
   }
 }
 
+/* decomp: Clear SRAM flag $770742 bit 1 (menu panel slides closed) */
 void Menu_RequestPanelClose(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11389,6 +11422,7 @@ void Menu_RequestPanelClose(CpuState *cpu) {
   }
 }
 
+/* decomp: Set panel-open flag and immediately set BG1 vertical scroll ($AD) to fully open ($4F) */
 void Menu_SnapPanelOpen(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11406,6 +11440,7 @@ void Menu_SnapPanelOpen(CpuState *cpu) {
   }
 }
 
+/* decomp: Boot screen (110 frames); restores unlocks after cheat; pad code Up,Left,Up,R,A unlocks all tours */
 void Boot_ShowLegalScreen(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11423,6 +11458,7 @@ void Boot_ShowLegalScreen(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $F599 inside Boot_ShowLegalScreen: Boot screen (110 frames); restores unlocks after cheat; pad code Up,Left,Up,R,A unlocks all tours */
 void Boot_ShowLegalScreen_F599(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11440,6 +11476,7 @@ void Boot_ShowLegalScreen_F599(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $F5A2 inside Boot_ShowLegalScreen: Boot screen (110 frames); restores unlocks after cheat; pad code Up,Left,Up,R,A unlocks all tours */
 void Boot_ShowLegalScreen_F5A2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11457,6 +11494,7 @@ void Boot_ShowLegalScreen_F5A2(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $F5AA inside Boot_ShowLegalScreen: Boot screen (110 frames); restores unlocks after cheat; pad code Up,Left,Up,R,A unlocks all tours */
 void Boot_ShowLegalScreen_F5AA(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11474,6 +11512,7 @@ void Boot_ShowLegalScreen_F5AA(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $F5B7 inside Boot_ShowLegalScreen: Boot screen (110 frames); restores unlocks after cheat; pad code Up,Left,Up,R,A unlocks all tours */
 void Boot_ShowLegalScreen_F5B7(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11491,6 +11530,7 @@ void Boot_ShowLegalScreen_F5B7(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $F601 inside Boot_ShowLegalScreen: Boot screen (110 frames); restores unlocks after cheat; pad code Up,Left,Up,R,A unlocks all tours */
 void Boot_ShowLegalScreen_F601(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11508,6 +11548,7 @@ void Boot_ShowLegalScreen_F601(CpuState *cpu) {
   }
 }
 
+/* decomp: NMI handler for menus and the title ($0053 = $F60C) */
 void NmiHandler_Menu(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11525,6 +11566,7 @@ void NmiHandler_Menu(CpuState *cpu) {
   }
 }
 
+/* decomp: Count up 4 rows x 5 columns of result tallies with sound/frame waits, accumulate total in $C0 */
 void Results_AnimateTally(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11542,6 +11584,7 @@ void Results_AnimateTally(CpuState *cpu) {
   }
 }
 
+/* decomp: Advance tally draw position $96/$9F by $40 (next column) */
 void Results_NextTallyColumn(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11559,6 +11602,7 @@ void Results_NextTallyColumn(CpuState *cpu) {
   }
 }
 
+/* decomp: Wait Y frames (with palette/sprite updates), returning early if a button is pressed */
 void Menu_WaitFramesOrButton(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

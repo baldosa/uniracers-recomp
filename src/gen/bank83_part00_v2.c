@@ -46,6 +46,7 @@ RecompReturn Sram_UpdateChecksumsLong_FastRom_M0X0(CpuState *cpu);
 RecompReturn Sram_UpdateChecksumsLong_FastRom_M1X0(CpuState *cpu);
 RecompReturn Str_MatchPrefix_M0X0(CpuState *cpu);
 
+/* decomp: Copies one 32-byte ROM tile (A=tile id) into WRAM buffer at cell ($80,$82)+$87 via MVN trampoline; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Gfx_CopyRomTileToWram_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Gfx_CopyRomTileToWram_FastRom_M1X0";
@@ -526,6 +527,7 @@ RecompReturn Gfx_CopyRomTileToWram_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper: Z set if name at X contains a word from the banned-word list; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Name_CheckProfanityLong_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Name_CheckProfanityLong_M1X0";
@@ -657,6 +659,7 @@ RecompReturn Name_CheckProfanityLong_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Scan $FF-terminated name at X for any of 71 banned words (DATA_838537); returns Z set if found; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Name_CheckProfanity_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Name_CheckProfanity_M1X0";
@@ -1209,6 +1212,7 @@ RecompReturn Name_CheckProfanity_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Compare $FF-terminated pattern at X against text at Y; Z set on match (code at $83879A is league result handler, called from $80BC62); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Str_MatchPrefix_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Str_MatchPrefix_M0X0";
@@ -1542,6 +1546,7 @@ RecompReturn Str_MatchPrefix_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: League race result: PHP/PLP wrapper that updates standings and dispatches via $87CF; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_ApplyRaceResult_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_ApplyRaceResult_FastRom_M1X0";
@@ -3382,6 +3387,7 @@ RecompReturn League_ApplyRaceResult_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copies one 32-byte ROM tile (A=tile id) into WRAM buffer at cell ($80,$82)+$87 via MVN trampoline; reached through the other ROM mirror bank */
 void Gfx_CopyRomTileToWram_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3399,6 +3405,7 @@ void Gfx_CopyRomTileToWram_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Long wrapper: Z set if name at X contains a word from the banned-word list */
 void Name_CheckProfanityLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3416,6 +3423,7 @@ void Name_CheckProfanityLong(CpuState *cpu) {
   }
 }
 
+/* decomp: Scan $FF-terminated name at X for any of 71 banned words (DATA_838537); returns Z set if found */
 void Name_CheckProfanity(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3433,6 +3441,7 @@ void Name_CheckProfanity(CpuState *cpu) {
   }
 }
 
+/* decomp: Compare $FF-terminated pattern at X against text at Y; Z set on match (code at $83879A is league result handler, called from $80BC62) */
 void Str_MatchPrefix(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3450,6 +3459,7 @@ void Str_MatchPrefix(CpuState *cpu) {
   }
 }
 
+/* decomp: League race result: PHP/PLP wrapper that updates standings and dispatches via $87CF; reached through the other ROM mirror bank */
 void League_ApplyRaceResult_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

@@ -27,6 +27,7 @@ RecompReturn Res_Lookup_FastRom_M1X0(CpuState *cpu);
 RecompReturn Res_Lookup_Long_FastRom_M1X0(CpuState *cpu);
 RecompReturn Res_ReadByte_FastRom_M1X0(CpuState *cpu);
 
+/* decomp: Loads resource A (index into [$4F] table) to CGRAM starting at color X; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Res_LoadToCgram_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_LoadToCgram_M0X0";
@@ -364,6 +365,7 @@ RecompReturn Res_LoadToCgram_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Loads resource A (index into [$4F] table) to CGRAM starting at color X; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Res_LoadToCgram_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_LoadToCgram_M1X0";
@@ -701,6 +703,7 @@ RecompReturn Res_LoadToCgram_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Loads resource A to VRAM at X, adding $47 to each high (attribute) byte; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Res_LoadToVramAddHigh_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_LoadToVramAddHigh_M1X0";
@@ -1037,6 +1040,7 @@ RecompReturn Res_LoadToVramAddHigh_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Loads resource A to VRAM at X; flagged (compressed) resources go through sub_81BB89; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Res_LoadToVram_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_LoadToVram_M0X0";
@@ -1587,6 +1591,7 @@ RecompReturn Res_LoadToVram_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Loads resource A to VRAM at X; flagged (compressed) resources go through sub_81BB89; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Res_LoadToVram_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_LoadToVram_M1X0";
@@ -2137,6 +2142,7 @@ RecompReturn Res_LoadToVram_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Reads next source byte at DB:Y, wrapping to next bank at $8000 when Y overflows; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Res_ReadByte_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_ReadByte_FastRom_M1X0";
@@ -2405,6 +2411,7 @@ RecompReturn Res_ReadByte_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Res_Lookup; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Res_Lookup_Long_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_Lookup_Long_FastRom_M1X0";
@@ -2536,6 +2543,7 @@ RecompReturn Res_Lookup_Long_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Looks up 5-byte resource entry A in [$4F]: returns bank in A, address in Y, size in $4B, flag in $4D; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Res_Lookup_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_Lookup_FastRom_M1X0";
@@ -2850,6 +2858,7 @@ RecompReturn Res_Lookup_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copies resource A to WRAM X (bank Y) via WMDATA; compressed resources go through sub_81B8F1; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Res_LoadToWram_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_LoadToWram_M1X0";
@@ -3392,6 +3401,7 @@ RecompReturn Res_LoadToWram_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Loads resource A (index into [$4F] table) to CGRAM starting at color X */
 void Res_LoadToCgram(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3409,6 +3419,7 @@ void Res_LoadToCgram(CpuState *cpu) {
   }
 }
 
+/* decomp: Loads resource A to VRAM at X, adding $47 to each high (attribute) byte */
 void Res_LoadToVramAddHigh(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3426,6 +3437,7 @@ void Res_LoadToVramAddHigh(CpuState *cpu) {
   }
 }
 
+/* decomp: Loads resource A to VRAM at X; flagged (compressed) resources go through sub_81BB89 */
 void Res_LoadToVram(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3443,6 +3455,7 @@ void Res_LoadToVram(CpuState *cpu) {
   }
 }
 
+/* decomp: Reads next source byte at DB:Y, wrapping to next bank at $8000 when Y overflows; reached through the other ROM mirror bank */
 void Res_ReadByte_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3460,6 +3473,7 @@ void Res_ReadByte_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Res_Lookup; reached through the other ROM mirror bank */
 void Res_Lookup_Long_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3477,6 +3491,7 @@ void Res_Lookup_Long_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Looks up 5-byte resource entry A in [$4F]: returns bank in A, address in Y, size in $4B, flag in $4D; reached through the other ROM mirror bank */
 void Res_Lookup_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3494,6 +3509,7 @@ void Res_Lookup_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Copies resource A to WRAM X (bank Y) via WMDATA; compressed resources go through sub_81B8F1 */
 void Res_LoadToWram(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

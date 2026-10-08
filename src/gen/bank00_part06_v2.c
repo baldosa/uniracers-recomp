@@ -111,6 +111,7 @@ RecompReturn Vram_ClearRegions_M1X0(CpuState *cpu);
 RecompReturn Vram_UploadTilemapAtA8_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_M1X0(CpuState *cpu);
 
+/* decomp: Boot: loads logo gfx, fades in, holds ~110 frames, fades out; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Boot_ShowLogo_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Boot_ShowLogo_M1X0";
@@ -625,6 +626,7 @@ RecompReturn Boot_ShowLogo_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B082 inside Boot_ShowLogo: Boot: loads logo gfx, fades in, holds ~110 frames, fades out; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Boot_ShowLogo_B082_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Boot_ShowLogo_B082_M1X0";
@@ -1101,6 +1103,7 @@ RecompReturn Boot_ShowLogo_B082_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B085 inside Boot_ShowLogo: Boot: loads logo gfx, fades in, holds ~110 frames, fades out; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Boot_ShowLogo_B085_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Boot_ShowLogo_B085_M1X0";
@@ -1546,6 +1549,7 @@ RecompReturn Boot_ShowLogo_B085_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B0AA inside Boot_ShowLogo: Boot: loads logo gfx, fades in, holds ~110 frames, fades out; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Boot_ShowLogo_B0AA_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Boot_ShowLogo_B0AA_M1X0";
@@ -1839,6 +1843,7 @@ RecompReturn Boot_ShowLogo_B0AA_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B0B3 inside Boot_ShowLogo: Boot: loads logo gfx, fades in, holds ~110 frames, fades out; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Boot_ShowLogo_B0B3_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Boot_ShowLogo_B0B3_M1X0";
@@ -2085,6 +2090,7 @@ RecompReturn Boot_ShowLogo_B0B3_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B0C0 inside Boot_ShowLogo: Boot: loads logo gfx, fades in, holds ~110 frames, fades out; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Boot_ShowLogo_B0C0_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Boot_ShowLogo_B0C0_M1X0";
@@ -2284,6 +2290,7 @@ RecompReturn Boot_ShowLogo_B0C0_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B0C6 inside Boot_ShowLogo: Boot: loads logo gfx, fades in, holds ~110 frames, fades out; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Boot_ShowLogo_B0C6_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Boot_ShowLogo_B0C6_M1X0";
@@ -2467,6 +2474,7 @@ RecompReturn Boot_ShowLogo_B0C6_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B0CC inside Boot_ShowLogo: Boot: loads logo gfx, fades in, holds ~110 frames, fades out; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Boot_ShowLogo_B0CC_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Boot_ShowLogo_B0CC_M1X0";
@@ -2566,6 +2574,7 @@ RecompReturn Boot_ShowLogo_B0CC_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Queues sound command $087F/$0203 (same as Snd_PlayCursor); used for refusals; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_PlayError_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_PlayError_M1X0";
@@ -2785,6 +2794,7 @@ RecompReturn Snd_PlayError_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Queues sound command $083F/$0206 (letter typed, item toggled); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_PlayToggle_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_PlayToggle_M1X0";
@@ -3004,6 +3014,7 @@ RecompReturn Snd_PlayToggle_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Queues sound command $083F/$0204 (menu confirm); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_PlayConfirm_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_PlayConfirm_M1X0";
@@ -3223,6 +3234,7 @@ RecompReturn Snd_PlayConfirm_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Queues sound command $084F/$0202 (screen wipe/transition); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_PlayWipe_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_PlayWipe_M1X0";
@@ -3442,6 +3454,7 @@ RecompReturn Snd_PlayWipe_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Queues sound command $084F/$0201; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_PlayWipeAlt_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_PlayWipeAlt_M1X0";
@@ -3661,6 +3674,7 @@ RecompReturn Snd_PlayWipeAlt_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Queues sound command $087F/$0203 (cursor move); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_PlayCursor_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_PlayCursor_M1X0";
@@ -3880,6 +3894,7 @@ RecompReturn Snd_PlayCursor_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NOW PLAYING screen: dispatches by event type ($B1ED) to build the title, then Race/Exit choice; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn PreRace_Show_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PreRace_Show_M1X0";
@@ -4271,6 +4286,7 @@ RecompReturn PreRace_Show_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B188 inside PreRace_Show: NOW PLAYING screen: dispatches by event type ($B1ED) to build the title, then Race/Exit choice; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn PreRace_Show_B188_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PreRace_Show_B188_M1X0";
@@ -4578,6 +4594,7 @@ RecompReturn PreRace_Show_B188_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Builds 'racing on <track>' title (event type 0); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn PreRace_TitleRace_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PreRace_TitleRace_M0X0";
@@ -7540,6 +7557,7 @@ RecompReturn PreRace_TitleRace_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Builds 'over N laps on <track>' title (event type 1); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn PreRace_TitleLaps_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PreRace_TitleLaps_M0X0";
@@ -10664,6 +10682,7 @@ RecompReturn PreRace_TitleLaps_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Builds 'doing stunts on <track>'; shared tail draws players, records and the Race/Exit menu; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn PreRace_TitleStunt_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PreRace_TitleStunt_M0X0";
@@ -13615,6 +13634,7 @@ RecompReturn PreRace_TitleStunt_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B3C2 inside PreRace_TitleStunt: Builds 'doing stunts on <track>'; shared tail draws players, records and the Race/Exit menu; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn PreRace_TitleStunt_B3C2_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PreRace_TitleStunt_B3C2_M1X0";
@@ -15090,6 +15110,7 @@ RecompReturn PreRace_TitleStunt_B3C2_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B3C8 inside PreRace_TitleStunt: Builds 'doing stunts on <track>'; shared tail draws players, records and the Race/Exit menu; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn PreRace_TitleStunt_B3C8_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PreRace_TitleStunt_B3C8_M1X0";
@@ -16529,6 +16550,7 @@ RecompReturn PreRace_TitleStunt_B3C8_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B3D3 inside PreRace_TitleStunt: Builds 'doing stunts on <track>'; shared tail draws players, records and the Race/Exit menu; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn PreRace_TitleStunt_B3D3_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PreRace_TitleStunt_B3D3_M1X0";
@@ -17928,6 +17950,7 @@ RecompReturn PreRace_TitleStunt_B3D3_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B3ED inside PreRace_TitleStunt: Builds 'doing stunts on <track>'; shared tail draws players, records and the Race/Exit menu; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn PreRace_TitleStunt_B3ED_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PreRace_TitleStunt_B3ED_M1X0";
@@ -19176,6 +19199,7 @@ RecompReturn PreRace_TitleStunt_B3ED_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B41D inside PreRace_TitleStunt: Builds 'doing stunts on <track>'; shared tail draws players, records and the Race/Exit menu; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn PreRace_TitleStunt_B41D_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PreRace_TitleStunt_B41D_M1X0";
@@ -20173,6 +20197,7 @@ RecompReturn PreRace_TitleStunt_B41D_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B45C inside PreRace_TitleStunt: Builds 'doing stunts on <track>'; shared tail draws players, records and the Race/Exit menu; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn PreRace_TitleStunt_B45C_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PreRace_TitleStunt_B45C_M1X0";
@@ -21002,6 +21027,7 @@ RecompReturn PreRace_TitleStunt_B45C_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Builds a text line with player name A, slot $9A and that uni's record for this track; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn PreRace_BuildPlayerLine_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PreRace_BuildPlayerLine_M1X0";
@@ -21698,6 +21724,7 @@ RecompReturn PreRace_BuildPlayerLine_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Zero all 64KB of VRAM (32K word writes from address 0); used at boot; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Vram_ClearAll_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Vram_ClearAll_M1X0";
@@ -21867,6 +21894,7 @@ RecompReturn Vram_ClearAll_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B609 inside Vram_ClearAll: Zero all 64KB of VRAM (32K word writes from address 0); used at boot; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Vram_ClearAll_B609_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Vram_ClearAll_B609_M0X0";
@@ -21997,6 +22025,7 @@ RecompReturn Vram_ClearAll_B609_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B60C inside Vram_ClearAll: Zero all 64KB of VRAM (32K word writes from address 0); used at boot; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Vram_ClearAll_B60C_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Vram_ClearAll_B60C_M0X0";
@@ -22125,6 +22154,7 @@ RecompReturn Vram_ClearAll_B60C_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B60D inside Vram_ClearAll: Zero all 64KB of VRAM (32K word writes from address 0); used at boot; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Vram_ClearAll_B60D_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Vram_ClearAll_B60D_M0X0";
@@ -22243,6 +22273,7 @@ RecompReturn Vram_ClearAll_B60D_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Options menu (records / define player / rename player / define league / main menu); main-menu entry 4; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Options_Main_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Options_Main_M0X0";
@@ -22708,6 +22739,7 @@ RecompReturn Options_Main_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B627 inside Options_Main: Options menu (records / define player / rename player / define league / main menu); main-menu entry 4; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Options_Main_B627_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Options_Main_B627_M1X0";
@@ -23150,6 +23182,7 @@ RecompReturn Options_Main_B627_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B62A inside Options_Main: Options menu (records / define player / rename player / define league / main menu); main-menu entry 4; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Options_Main_B62A_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Options_Main_B62A_M1X0";
@@ -23592,6 +23625,7 @@ RecompReturn Options_Main_B62A_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B644 inside Options_Main: Options menu (records / define player / rename player / define league / main menu); main-menu entry 4; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Options_Main_B644_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Options_Main_B644_M1X0";
@@ -24063,6 +24097,7 @@ RecompReturn Options_Main_B644_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if any button (mask FFF0) held on an enabled pad ($72/$74; $770742 bits 9/10 disable pads); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Input_IsAnyButtonHeld_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsAnyButtonHeld_M0X0";
@@ -24384,6 +24419,7 @@ RecompReturn Input_IsAnyButtonHeld_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if any button (mask FFF0) held on an enabled pad ($72/$74; $770742 bits 9/10 disable pads); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsAnyButtonHeld_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsAnyButtonHeld_M1X0";
@@ -24705,6 +24741,7 @@ RecompReturn Input_IsAnyButtonHeld_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if any button except Up/Down/Left held (mask F1F0) on an enabled pad; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsNonUDLButtonHeld_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsNonUDLButtonHeld_M1X0";
@@ -25026,6 +25063,7 @@ RecompReturn Input_IsNonUDLButtonHeld_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if B, A or Start held (mask 9080) on an enabled pad: menu confirm; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsConfirmHeld_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsConfirmHeld_M1X0";
@@ -25347,6 +25385,7 @@ RecompReturn Input_IsConfirmHeld_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if X or Y held (mask 4040) on an enabled pad: menu back/cancel; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsCancelHeld_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsCancelHeld_M1X0";
@@ -25668,6 +25707,7 @@ RecompReturn Input_IsCancelHeld_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if X or Y held (mask 4040) on an enabled pad: menu back/cancel; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Input_IsCancelHeld_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsCancelHeld_M0X0";
@@ -25989,6 +26029,7 @@ RecompReturn Input_IsCancelHeld_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if Up held on an enabled pad; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsUpHeld_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsUpHeld_M1X0";
@@ -26310,6 +26351,7 @@ RecompReturn Input_IsUpHeld_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if Down or Select held (mask 2400) on an enabled pad: menu next; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsDownOrSelectHeld_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsDownOrSelectHeld_M1X0";
@@ -26631,6 +26673,7 @@ RecompReturn Input_IsDownOrSelectHeld_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if Left held on an enabled pad; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsLeftHeld_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsLeftHeld_M1X0";
@@ -26952,6 +26995,7 @@ RecompReturn Input_IsLeftHeld_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if Right held on an enabled pad; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsRightHeld_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsRightHeld_M1X0";
@@ -27273,6 +27317,7 @@ RecompReturn Input_IsRightHeld_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if Up held on an enabled pad (duplicate of Input_IsUpHeld); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsUpHeld2_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsUpHeld2_M1X0";
@@ -27594,6 +27639,7 @@ RecompReturn Input_IsUpHeld2_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Boot: loads logo gfx, fades in, holds ~110 frames, fades out */
 void Boot_ShowLogo(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -27611,6 +27657,7 @@ void Boot_ShowLogo(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B082 inside Boot_ShowLogo: Boot: loads logo gfx, fades in, holds ~110 frames, fades out */
 void Boot_ShowLogo_B082(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -27628,6 +27675,7 @@ void Boot_ShowLogo_B082(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B085 inside Boot_ShowLogo: Boot: loads logo gfx, fades in, holds ~110 frames, fades out */
 void Boot_ShowLogo_B085(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -27645,6 +27693,7 @@ void Boot_ShowLogo_B085(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B0AA inside Boot_ShowLogo: Boot: loads logo gfx, fades in, holds ~110 frames, fades out */
 void Boot_ShowLogo_B0AA(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -27662,6 +27711,7 @@ void Boot_ShowLogo_B0AA(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B0B3 inside Boot_ShowLogo: Boot: loads logo gfx, fades in, holds ~110 frames, fades out */
 void Boot_ShowLogo_B0B3(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -27679,6 +27729,7 @@ void Boot_ShowLogo_B0B3(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B0C0 inside Boot_ShowLogo: Boot: loads logo gfx, fades in, holds ~110 frames, fades out */
 void Boot_ShowLogo_B0C0(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -27696,6 +27747,7 @@ void Boot_ShowLogo_B0C0(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B0C6 inside Boot_ShowLogo: Boot: loads logo gfx, fades in, holds ~110 frames, fades out */
 void Boot_ShowLogo_B0C6(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -27713,6 +27765,7 @@ void Boot_ShowLogo_B0C6(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B0CC inside Boot_ShowLogo: Boot: loads logo gfx, fades in, holds ~110 frames, fades out */
 void Boot_ShowLogo_B0CC(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -27730,6 +27783,7 @@ void Boot_ShowLogo_B0CC(CpuState *cpu) {
   }
 }
 
+/* decomp: Queues sound command $087F/$0203 (same as Snd_PlayCursor); used for refusals */
 void Snd_PlayError(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -27747,6 +27801,7 @@ void Snd_PlayError(CpuState *cpu) {
   }
 }
 
+/* decomp: Queues sound command $083F/$0206 (letter typed, item toggled) */
 void Snd_PlayToggle(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -27764,6 +27819,7 @@ void Snd_PlayToggle(CpuState *cpu) {
   }
 }
 
+/* decomp: Queues sound command $083F/$0204 (menu confirm) */
 void Snd_PlayConfirm(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -27781,6 +27837,7 @@ void Snd_PlayConfirm(CpuState *cpu) {
   }
 }
 
+/* decomp: Queues sound command $084F/$0202 (screen wipe/transition) */
 void Snd_PlayWipe(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -27798,6 +27855,7 @@ void Snd_PlayWipe(CpuState *cpu) {
   }
 }
 
+/* decomp: Queues sound command $084F/$0201 */
 void Snd_PlayWipeAlt(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -27815,6 +27873,7 @@ void Snd_PlayWipeAlt(CpuState *cpu) {
   }
 }
 
+/* decomp: Queues sound command $087F/$0203 (cursor move) */
 void Snd_PlayCursor(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -27832,6 +27891,7 @@ void Snd_PlayCursor(CpuState *cpu) {
   }
 }
 
+/* decomp: NOW PLAYING screen: dispatches by event type ($B1ED) to build the title, then Race/Exit choice */
 void PreRace_Show(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -27849,6 +27909,7 @@ void PreRace_Show(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B188 inside PreRace_Show: NOW PLAYING screen: dispatches by event type ($B1ED) to build the title, then Race/Exit choice */
 void PreRace_Show_B188(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -27866,6 +27927,7 @@ void PreRace_Show_B188(CpuState *cpu) {
   }
 }
 
+/* decomp: Builds 'racing on <track>' title (event type 0) */
 void PreRace_TitleRace(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -27883,6 +27945,7 @@ void PreRace_TitleRace(CpuState *cpu) {
   }
 }
 
+/* decomp: Builds 'over N laps on <track>' title (event type 1) */
 void PreRace_TitleLaps(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -27900,6 +27963,7 @@ void PreRace_TitleLaps(CpuState *cpu) {
   }
 }
 
+/* decomp: Builds 'doing stunts on <track>'; shared tail draws players, records and the Race/Exit menu */
 void PreRace_TitleStunt(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -27917,6 +27981,7 @@ void PreRace_TitleStunt(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B3C2 inside PreRace_TitleStunt: Builds 'doing stunts on <track>'; shared tail draws players, records and the Race/Exit menu */
 void PreRace_TitleStunt_B3C2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -27934,6 +27999,7 @@ void PreRace_TitleStunt_B3C2(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B3C8 inside PreRace_TitleStunt: Builds 'doing stunts on <track>'; shared tail draws players, records and the Race/Exit menu */
 void PreRace_TitleStunt_B3C8(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -27951,6 +28017,7 @@ void PreRace_TitleStunt_B3C8(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B3D3 inside PreRace_TitleStunt: Builds 'doing stunts on <track>'; shared tail draws players, records and the Race/Exit menu */
 void PreRace_TitleStunt_B3D3(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -27968,6 +28035,7 @@ void PreRace_TitleStunt_B3D3(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B3ED inside PreRace_TitleStunt: Builds 'doing stunts on <track>'; shared tail draws players, records and the Race/Exit menu */
 void PreRace_TitleStunt_B3ED(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -27985,6 +28053,7 @@ void PreRace_TitleStunt_B3ED(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B41D inside PreRace_TitleStunt: Builds 'doing stunts on <track>'; shared tail draws players, records and the Race/Exit menu */
 void PreRace_TitleStunt_B41D(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28002,6 +28071,7 @@ void PreRace_TitleStunt_B41D(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B45C inside PreRace_TitleStunt: Builds 'doing stunts on <track>'; shared tail draws players, records and the Race/Exit menu */
 void PreRace_TitleStunt_B45C(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28019,6 +28089,7 @@ void PreRace_TitleStunt_B45C(CpuState *cpu) {
   }
 }
 
+/* decomp: Builds a text line with player name A, slot $9A and that uni's record for this track */
 void PreRace_BuildPlayerLine(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28036,6 +28107,7 @@ void PreRace_BuildPlayerLine(CpuState *cpu) {
   }
 }
 
+/* decomp: Zero all 64KB of VRAM (32K word writes from address 0); used at boot */
 void Vram_ClearAll(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28053,6 +28125,7 @@ void Vram_ClearAll(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B609 inside Vram_ClearAll: Zero all 64KB of VRAM (32K word writes from address 0); used at boot */
 void Vram_ClearAll_B609(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28070,6 +28143,7 @@ void Vram_ClearAll_B609(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B60C inside Vram_ClearAll: Zero all 64KB of VRAM (32K word writes from address 0); used at boot */
 void Vram_ClearAll_B60C(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28087,6 +28161,7 @@ void Vram_ClearAll_B60C(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B60D inside Vram_ClearAll: Zero all 64KB of VRAM (32K word writes from address 0); used at boot */
 void Vram_ClearAll_B60D(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28104,6 +28179,7 @@ void Vram_ClearAll_B60D(CpuState *cpu) {
   }
 }
 
+/* decomp: Options menu (records / define player / rename player / define league / main menu); main-menu entry 4 */
 void Options_Main(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28121,6 +28197,7 @@ void Options_Main(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B627 inside Options_Main: Options menu (records / define player / rename player / define league / main menu); main-menu entry 4 */
 void Options_Main_B627(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28138,6 +28215,7 @@ void Options_Main_B627(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B62A inside Options_Main: Options menu (records / define player / rename player / define league / main menu); main-menu entry 4 */
 void Options_Main_B62A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28155,6 +28233,7 @@ void Options_Main_B62A(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B644 inside Options_Main: Options menu (records / define player / rename player / define league / main menu); main-menu entry 4 */
 void Options_Main_B644(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28172,6 +28251,7 @@ void Options_Main_B644(CpuState *cpu) {
   }
 }
 
+/* decomp: NE if any button (mask FFF0) held on an enabled pad ($72/$74; $770742 bits 9/10 disable pads) */
 void Input_IsAnyButtonHeld(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28189,6 +28269,7 @@ void Input_IsAnyButtonHeld(CpuState *cpu) {
   }
 }
 
+/* decomp: NE if any button except Up/Down/Left held (mask F1F0) on an enabled pad */
 void Input_IsNonUDLButtonHeld(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28206,6 +28287,7 @@ void Input_IsNonUDLButtonHeld(CpuState *cpu) {
   }
 }
 
+/* decomp: NE if B, A or Start held (mask 9080) on an enabled pad: menu confirm */
 void Input_IsConfirmHeld(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28223,6 +28305,7 @@ void Input_IsConfirmHeld(CpuState *cpu) {
   }
 }
 
+/* decomp: NE if X or Y held (mask 4040) on an enabled pad: menu back/cancel */
 void Input_IsCancelHeld(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28240,6 +28323,7 @@ void Input_IsCancelHeld(CpuState *cpu) {
   }
 }
 
+/* decomp: NE if Up held on an enabled pad */
 void Input_IsUpHeld(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28257,6 +28341,7 @@ void Input_IsUpHeld(CpuState *cpu) {
   }
 }
 
+/* decomp: NE if Down or Select held (mask 2400) on an enabled pad: menu next */
 void Input_IsDownOrSelectHeld(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28274,6 +28359,7 @@ void Input_IsDownOrSelectHeld(CpuState *cpu) {
   }
 }
 
+/* decomp: NE if Left held on an enabled pad */
 void Input_IsLeftHeld(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28291,6 +28377,7 @@ void Input_IsLeftHeld(CpuState *cpu) {
   }
 }
 
+/* decomp: NE if Right held on an enabled pad */
 void Input_IsRightHeld(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28308,6 +28395,7 @@ void Input_IsRightHeld(CpuState *cpu) {
   }
 }
 
+/* decomp: NE if Up held on an enabled pad (duplicate of Input_IsUpHeld) */
 void Input_IsUpHeld2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

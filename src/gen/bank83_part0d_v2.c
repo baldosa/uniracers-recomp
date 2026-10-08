@@ -25,6 +25,7 @@ RecompReturn Rider_UpdateAnimFrame_M0X1(CpuState *cpu);
 RecompReturn Rider_UpdateBodyLean_M0X0(CpuState *cpu);
 RecompReturn Rider_UpdateBodyLean_M0X1(CpuState *cpu);
 
+/* decomp: Computes P1/P2 overlay graphics frame ($0D3F/$0D41) and enable flags from overlay type and anim counter; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_UpdateRiderOverlayFrames_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateRiderOverlayFrames_FastRom_M0X0";
@@ -1082,6 +1083,7 @@ RecompReturn Race_UpdateRiderOverlayFrames_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for Rider_UpdateAnimFrame; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_UpdateAnimFrameL_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_UpdateAnimFrameL_M0X0";
@@ -1213,6 +1215,7 @@ RecompReturn Rider_UpdateAnimFrameL_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for Rider_UpdateAnimFrame; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Rider_UpdateAnimFrameL_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_UpdateAnimFrameL_M0X1";
@@ -1344,6 +1347,7 @@ RecompReturn Rider_UpdateAnimFrameL_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Current rider: updates body lean, wheel spin speed/rotation (0-23) and blur level, picks final sprite frame $0F97; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_UpdateAnimFrame_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_UpdateAnimFrame_M0X0";
@@ -3402,6 +3406,7 @@ RecompReturn Rider_UpdateAnimFrame_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Current rider: updates body lean, wheel spin speed/rotation (0-23) and blur level, picks final sprite frame $0F97; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Rider_UpdateAnimFrame_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_UpdateAnimFrame_M0X1";
@@ -5460,6 +5465,7 @@ RecompReturn Rider_UpdateAnimFrame_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Current rider: computes target lean from tilt/velocity, steps lean angle $0F49 toward it, stores frame $0F77; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_UpdateBodyLean_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_UpdateBodyLean_M0X0";
@@ -7312,6 +7318,7 @@ RecompReturn Rider_UpdateBodyLean_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Current rider: computes target lean from tilt/velocity, steps lean angle $0F49 toward it, stores frame $0F77; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Rider_UpdateBodyLean_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_UpdateBodyLean_M0X1";
@@ -9164,6 +9171,7 @@ RecompReturn Rider_UpdateBodyLean_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Computes P1/P2 overlay graphics frame ($0D3F/$0D41) and enable flags from overlay type and anim counter; reached through the other ROM mirror bank */
 void Race_UpdateRiderOverlayFrames_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9181,6 +9189,7 @@ void Race_UpdateRiderOverlayFrames_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Long wrapper for Rider_UpdateAnimFrame */
 void Rider_UpdateAnimFrameL(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9198,6 +9207,7 @@ void Rider_UpdateAnimFrameL(CpuState *cpu) {
   }
 }
 
+/* decomp: Current rider: updates body lean, wheel spin speed/rotation (0-23) and blur level, picks final sprite frame $0F97 */
 void Rider_UpdateAnimFrame(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9215,6 +9225,7 @@ void Rider_UpdateAnimFrame(CpuState *cpu) {
   }
 }
 
+/* decomp: Current rider: computes target lean from tilt/velocity, steps lean angle $0F49 toward it, stores frame $0F77 */
 void Rider_UpdateBodyLean(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

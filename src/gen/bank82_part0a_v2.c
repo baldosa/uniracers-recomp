@@ -37,14 +37,15 @@ RecompReturn Race_InitVideo_Long_M1X0(CpuState *cpu);
 RecompReturn Race_InitVideo_M1X0(CpuState *cpu);
 RecompReturn Vram_Clear_Long_M1X0(CpuState *cpu);
 RecompReturn Vram_Clear_M1X0(CpuState *cpu);
+RecompReturn WaitForNMI_D4EE_M1X0(CpuState *cpu);
 RecompReturn WaitForNMI_Long_M0X0(CpuState *cpu);
 RecompReturn WaitForNMI_Long_M1X0(CpuState *cpu);
 RecompReturn WaitForNMI_Long_M1X1(CpuState *cpu);
 RecompReturn WaitForNMI_M0X0(CpuState *cpu);
 RecompReturn WaitForNMI_M1X0(CpuState *cpu);
 RecompReturn WaitForNMI_M1X1(CpuState *cpu);
-RecompReturn WaitForNMI_spin_M1X0(CpuState *cpu);
 
+/* decomp: JSL wrapper for Nmi_FlushVramDmaSlots; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Nmi_FlushVramDmaSlots_Long_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Nmi_FlushVramDmaSlots_Long_M1X0";
@@ -176,6 +177,7 @@ RecompReturn Nmi_FlushVramDmaSlots_Long_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Runs pending VRAM DMA slots 0-7 ($0399.. queue); slots 4-7 only when $0DDB set; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Nmi_FlushVramDmaSlots_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Nmi_FlushVramDmaSlots_M1X0";
@@ -827,6 +829,7 @@ RecompReturn Nmi_FlushVramDmaSlots_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Nmi_UploadReservedSprites; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Nmi_UploadReservedSprites_Long_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Nmi_UploadReservedSprites_Long_M1X0";
@@ -958,6 +961,7 @@ RecompReturn Nmi_UploadReservedSprites_Long_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Writes OAM entries for sprites 96-99 ($1501-$1510) and their high-table byte $1599; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Nmi_UploadReservedSprites_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Nmi_UploadReservedSprites_M1X0";
@@ -1218,6 +1222,7 @@ RecompReturn Nmi_UploadReservedSprites_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Nmi_DmaOamBuffer; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Nmi_DmaOamBuffer_Long_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Nmi_DmaOamBuffer_Long_M0X0";
@@ -1349,6 +1354,7 @@ RecompReturn Nmi_DmaOamBuffer_Long_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Nmi_DmaOamBuffer; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Nmi_DmaOamBuffer_Long_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Nmi_DmaOamBuffer_Long_M1X0";
@@ -1480,6 +1486,7 @@ RecompReturn Nmi_DmaOamBuffer_Long_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DMAs the full $220-byte OAM buffer at $1381 to OAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Nmi_DmaOamBuffer_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Nmi_DmaOamBuffer_M0X0";
@@ -1630,6 +1637,7 @@ RecompReturn Nmi_DmaOamBuffer_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DMAs the full $220-byte OAM buffer at $1381 to OAM; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Nmi_DmaOamBuffer_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Nmi_DmaOamBuffer_M1X0";
@@ -1780,6 +1788,7 @@ RecompReturn Nmi_DmaOamBuffer_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Pal_CycleRaceColors (called from race NMI path); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Pal_CycleRaceColors_Long_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Pal_CycleRaceColors_Long_M1X0";
@@ -1911,6 +1920,7 @@ RecompReturn Pal_CycleRaceColors_Long_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: If $0B8C set, writes 16-step animated colors to CGRAM $60-$6F and color 0, steps $0B7E; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Pal_CycleRaceColors_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Pal_CycleRaceColors_M1X0";
@@ -2363,6 +2373,7 @@ RecompReturn Pal_CycleRaceColors_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for WaitForNMI; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn WaitForNMI_Long_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "WaitForNMI_Long_M0X0";
@@ -2494,6 +2505,7 @@ RecompReturn WaitForNMI_Long_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for WaitForNMI; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn WaitForNMI_Long_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "WaitForNMI_Long_M1X0";
@@ -2625,6 +2637,7 @@ RecompReturn WaitForNMI_Long_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for WaitForNMI; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn WaitForNMI_Long_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "WaitForNMI_Long_M1X1";
@@ -2756,6 +2769,7 @@ RecompReturn WaitForNMI_Long_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: waits for the NMI handler to signal a new frame; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn WaitForNMI_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "WaitForNMI_M0X0";
@@ -2919,6 +2933,7 @@ RecompReturn WaitForNMI_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: waits for the NMI handler to signal a new frame; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn WaitForNMI_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "WaitForNMI_M1X0";
@@ -3082,6 +3097,7 @@ RecompReturn WaitForNMI_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: waits for the NMI handler to signal a new frame; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn WaitForNMI_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "WaitForNMI_M1X1";
@@ -3245,12 +3261,13 @@ RecompReturn WaitForNMI_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn WaitForNMI_spin_M1X0(CpuState *cpu) {
+/* decomp: entry point at $D4EE inside WaitForNMI: waits for the NMI handler to signal a new frame; compiled for 8-bit A, 16-bit X/Y */
+RecompReturn WaitForNMI_D4EE_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "WaitForNMI_spin_M1X0";
-  RecompStackPush("WaitForNMI_spin_M1X0");
-  cpu_dbg_funcname("WaitForNMI_spin_M1X0");
-  cpu_trace_func_entry(cpu, 0x82D4EE, "WaitForNMI_spin_M1X0");
+  g_last_recomp_func = "WaitForNMI_D4EE_M1X0";
+  RecompStackPush("WaitForNMI_D4EE_M1X0");
+  cpu_dbg_funcname("WaitForNMI_D4EE_M1X0");
+  cpu_trace_func_entry(cpu, 0x82D4EE, "WaitForNMI_D4EE_M1X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xd4eeu));
@@ -3378,6 +3395,7 @@ RecompReturn WaitForNMI_spin_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Vram_Clear; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Vram_Clear_Long_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Vram_Clear_Long_M1X0";
@@ -3509,6 +3527,7 @@ RecompReturn Vram_Clear_Long_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Fills all 64KB of VRAM with zero; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Vram_Clear_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Vram_Clear_M1X0";
@@ -3678,6 +3697,7 @@ RecompReturn Vram_Clear_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Cgram_Clear; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Cgram_Clear_Long_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Cgram_Clear_Long_M1X0";
@@ -3809,6 +3829,7 @@ RecompReturn Cgram_Clear_Long_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Zeroes CGRAM from color 0 ($A0 writes); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Cgram_Clear_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Cgram_Clear_M1X0";
@@ -3978,6 +3999,7 @@ RecompReturn Cgram_Clear_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Race_InitHdma; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Race_InitHdma_Long_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_InitHdma_Long_M0X1";
@@ -4109,6 +4131,7 @@ RecompReturn Race_InitHdma_Long_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Race_InitHdma; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Race_InitHdma_Long_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_InitHdma_Long_M1X1";
@@ -4240,6 +4263,7 @@ RecompReturn Race_InitHdma_Long_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Sets window regs and HDMA channels 1-7 and builds race HDMA tables at $7E2046-$7E2095; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Race_InitHdma_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_InitHdma_M0X1";
@@ -4948,6 +4972,7 @@ RecompReturn Race_InitHdma_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Sets window regs and HDMA channels 1-7 and builds race HDMA tables at $7E2046-$7E2095; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Race_InitHdma_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_InitHdma_M1X1";
@@ -5656,6 +5681,7 @@ RecompReturn Race_InitHdma_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Race_InitVideo; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_InitVideo_Long_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_InitVideo_Long_M1X0";
@@ -5787,6 +5813,7 @@ RecompReturn Race_InitVideo_Long_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Disables NMI, sets IRQ/NMI handler vectors and resource table $82B32F, clears VRAM and CGRAM; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_InitVideo_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_InitVideo_M1X0";
@@ -6035,6 +6062,7 @@ RecompReturn Race_InitVideo_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Hides all sprites in OAM buffer, sets high table to $55, sets up reserved sprites 96-99; reached through the other ROM mirror bank; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Oam_InitBuffer_FastRom_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Oam_InitBuffer_FastRom_M0X1";
@@ -6457,6 +6485,7 @@ RecompReturn Oam_InitBuffer_FastRom_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Hides all sprites in OAM buffer, sets high table to $55, sets up reserved sprites 96-99; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Oam_InitBuffer_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Oam_InitBuffer_FastRom_M1X0";
@@ -6879,6 +6908,7 @@ RecompReturn Oam_InitBuffer_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Nmi_FlushVramDmaSlots */
 void Nmi_FlushVramDmaSlots_Long(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6896,6 +6926,7 @@ void Nmi_FlushVramDmaSlots_Long(CpuState *cpu) {
   }
 }
 
+/* decomp: Runs pending VRAM DMA slots 0-7 ($0399.. queue); slots 4-7 only when $0DDB set */
 void Nmi_FlushVramDmaSlots(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6913,6 +6944,7 @@ void Nmi_FlushVramDmaSlots(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Nmi_UploadReservedSprites */
 void Nmi_UploadReservedSprites_Long(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6930,6 +6962,7 @@ void Nmi_UploadReservedSprites_Long(CpuState *cpu) {
   }
 }
 
+/* decomp: Writes OAM entries for sprites 96-99 ($1501-$1510) and their high-table byte $1599 */
 void Nmi_UploadReservedSprites(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6947,6 +6980,7 @@ void Nmi_UploadReservedSprites(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Nmi_DmaOamBuffer */
 void Nmi_DmaOamBuffer_Long(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6964,6 +6998,7 @@ void Nmi_DmaOamBuffer_Long(CpuState *cpu) {
   }
 }
 
+/* decomp: DMAs the full $220-byte OAM buffer at $1381 to OAM */
 void Nmi_DmaOamBuffer(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6981,6 +7016,7 @@ void Nmi_DmaOamBuffer(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Pal_CycleRaceColors (called from race NMI path) */
 void Pal_CycleRaceColors_Long(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6998,6 +7034,7 @@ void Pal_CycleRaceColors_Long(CpuState *cpu) {
   }
 }
 
+/* decomp: If $0B8C set, writes 16-step animated colors to CGRAM $60-$6F and color 0, steps $0B7E */
 void Pal_CycleRaceColors(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7015,6 +7052,7 @@ void Pal_CycleRaceColors(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for WaitForNMI */
 void WaitForNMI_Long(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7032,6 +7070,7 @@ void WaitForNMI_Long(CpuState *cpu) {
   }
 }
 
+/* decomp: waits for the NMI handler to signal a new frame */
 void WaitForNMI(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7049,23 +7088,25 @@ void WaitForNMI(CpuState *cpu) {
   }
 }
 
-void WaitForNMI_spin(CpuState *cpu) {
+/* decomp: entry point at $D4EE inside WaitForNMI: waits for the NMI handler to signal a new frame */
+void WaitForNMI_D4EE(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
     case 0: _r = interp_tier_dispatch(cpu, 0x82d4eeu); break; /* exact M0X0 LLE */
     case 1: _r = interp_tier_dispatch(cpu, 0x82d4eeu); break; /* exact M0X1 LLE */
-    case 2: _r = WaitForNMI_spin_M1X0(cpu); break;
+    case 2: _r = WaitForNMI_D4EE_M1X0(cpu); break;
     case 3: _r = interp_tier_dispatch(cpu, 0x82d4eeu); break; /* exact M1X1 LLE */
     default: _r = interp_tier_dispatch(cpu, 0x82d4eeu); break;
   }
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "WaitForNMI_spin");
+      (int)_r, "WaitForNMI_D4EE");
     abort();
   }
 }
 
+/* decomp: JSL wrapper for Vram_Clear */
 void Vram_Clear_Long(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7083,6 +7124,7 @@ void Vram_Clear_Long(CpuState *cpu) {
   }
 }
 
+/* decomp: Fills all 64KB of VRAM with zero */
 void Vram_Clear(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7100,6 +7142,7 @@ void Vram_Clear(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Cgram_Clear */
 void Cgram_Clear_Long(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7117,6 +7160,7 @@ void Cgram_Clear_Long(CpuState *cpu) {
   }
 }
 
+/* decomp: Zeroes CGRAM from color 0 ($A0 writes) */
 void Cgram_Clear(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7134,6 +7178,7 @@ void Cgram_Clear(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Race_InitHdma */
 void Race_InitHdma_Long(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7151,6 +7196,7 @@ void Race_InitHdma_Long(CpuState *cpu) {
   }
 }
 
+/* decomp: Sets window regs and HDMA channels 1-7 and builds race HDMA tables at $7E2046-$7E2095 */
 void Race_InitHdma(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7168,6 +7214,7 @@ void Race_InitHdma(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Race_InitVideo */
 void Race_InitVideo_Long(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7185,6 +7232,7 @@ void Race_InitVideo_Long(CpuState *cpu) {
   }
 }
 
+/* decomp: Disables NMI, sets IRQ/NMI handler vectors and resource table $82B32F, clears VRAM and CGRAM */
 void Race_InitVideo(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7202,6 +7250,7 @@ void Race_InitVideo(CpuState *cpu) {
   }
 }
 
+/* decomp: Hides all sprites in OAM buffer, sets high table to $55, sets up reserved sprites 96-99; reached through the other ROM mirror bank */
 void Oam_InitBuffer_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

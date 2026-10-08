@@ -18,6 +18,8 @@
 RecompReturn Attract_Main_94EB_M1X0(CpuState *cpu);
 RecompReturn Attract_Main_M0X0(CpuState *cpu);
 RecompReturn Boot_91DC_M1X0(CpuState *cpu);
+RecompReturn Boot_ClearWRAM_92F7_FastRom_M1X0(CpuState *cpu);
+RecompReturn Boot_ClearWRAM_M1X0(CpuState *cpu);
 RecompReturn Boot_ShowLegalScreen_FastRom_M1X0(CpuState *cpu);
 RecompReturn Boot_ShowLogo_FastRom_M1X0(CpuState *cpu);
 RecompReturn DrawText_FastRom_M0X0(CpuState *cpu);
@@ -53,8 +55,6 @@ RecompReturn Player_GetTier_FastRom_M0X0(CpuState *cpu);
 RecompReturn Player_GetTier_FastRom_M1X0(CpuState *cpu);
 RecompReturn Res_LoadToCgram_M0X0(CpuState *cpu);
 RecompReturn Res_LoadToCgram_M1X0(CpuState *cpu);
-RecompReturn Reset_ClearWRAM_M1X0(CpuState *cpu);
-RecompReturn Reset_ClearWRAM_loop80_M1X0(CpuState *cpu);
 RecompReturn Results_DrawLapRace_FastRom_M0X0(CpuState *cpu);
 RecompReturn Results_ShowRaceResults_FastRom_M0X0(CpuState *cpu);
 RecompReturn Results_ShowRaceTable_FastRom_M0X0(CpuState *cpu);
@@ -76,6 +76,7 @@ RecompReturn Vram_UploadTilemapLong_M1X0(CpuState *cpu);
 RecompReturn Vram_UploadTilemap_FastRom_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_FastRom_M1X0(CpuState *cpu);
 
+/* decomp: entry point at $91DC inside Boot: reset continuation: native mode, hardware init, WRAM clear; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Boot_91DC_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Boot_91DC_M1X0";
@@ -1150,12 +1151,13 @@ RecompReturn Boot_91DC_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn Reset_ClearWRAM_M1X0(CpuState *cpu) {
+/* decomp: clears WRAM with the $0199 RAM block-move trampoline; compiled for 8-bit A, 16-bit X/Y */
+RecompReturn Boot_ClearWRAM_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "Reset_ClearWRAM_M1X0";
-  RecompStackPush("Reset_ClearWRAM_M1X0");
-  cpu_dbg_funcname("Reset_ClearWRAM_M1X0");
-  cpu_trace_func_entry(cpu, 0x8092F2, "Reset_ClearWRAM_M1X0");
+  g_last_recomp_func = "Boot_ClearWRAM_M1X0";
+  RecompStackPush("Boot_ClearWRAM_M1X0");
+  cpu_dbg_funcname("Boot_ClearWRAM_M1X0");
+  cpu_trace_func_entry(cpu, 0x8092F2, "Boot_ClearWRAM_M1X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0x92f2u));
@@ -1230,12 +1232,13 @@ RecompReturn Reset_ClearWRAM_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn Reset_ClearWRAM_loop80_M1X0(CpuState *cpu) {
+/* decomp: entry point at $92F7 inside Boot_ClearWRAM: clears WRAM with the $0199 RAM block-move trampoline; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
+RecompReturn Boot_ClearWRAM_92F7_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "Reset_ClearWRAM_loop80_M1X0";
-  RecompStackPush("Reset_ClearWRAM_loop80_M1X0");
-  cpu_dbg_funcname("Reset_ClearWRAM_loop80_M1X0");
-  cpu_trace_func_entry(cpu, 0x8092F7, "Reset_ClearWRAM_loop80_M1X0");
+  g_last_recomp_func = "Boot_ClearWRAM_92F7_FastRom_M1X0";
+  RecompStackPush("Boot_ClearWRAM_92F7_FastRom_M1X0");
+  cpu_dbg_funcname("Boot_ClearWRAM_92F7_FastRom_M1X0");
+  cpu_trace_func_entry(cpu, 0x8092F7, "Boot_ClearWRAM_92F7_FastRom_M1X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0x92f7u));
@@ -1289,6 +1292,7 @@ RecompReturn Reset_ClearWRAM_loop80_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Oam_Upload; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Oam_UploadLong_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Oam_UploadLong_M1X0";
@@ -1420,6 +1424,7 @@ RecompReturn Oam_UploadLong_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DMA ch1: copies the $0A00 OAM buffer ($220 bytes) to OAM; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Oam_Upload_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Oam_Upload_FastRom_M1X0";
@@ -1570,6 +1575,7 @@ RecompReturn Oam_Upload_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copies a string X->Y up to and including the first $FF, space or '_' terminator; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_CopyWord_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CopyWord_FastRom_M1X0";
@@ -1829,6 +1835,7 @@ RecompReturn Text_CopyWord_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copies a $FF-terminated string X->Y, dropping '_' characters; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CopyStripUnderscores_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CopyStripUnderscores_FastRom_M0X0";
@@ -2060,6 +2067,7 @@ RecompReturn Text_CopyStripUnderscores_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DMA ch7: copies the $0200 tilemap buffer ($800 bytes) to VRAM address in $A8; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Vram_UploadTilemapAtA8_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Vram_UploadTilemapAtA8_FastRom_M1X0";
@@ -2209,6 +2217,7 @@ RecompReturn Vram_UploadTilemapAtA8_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Vram_UploadTilemap; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Vram_UploadTilemapLong_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Vram_UploadTilemapLong_M1X0";
@@ -2340,6 +2349,7 @@ RecompReturn Vram_UploadTilemapLong_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DMA ch7: copies the $0200 tilemap buffer ($800 bytes) to VRAM address in $5A; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Vram_UploadTilemap_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Vram_UploadTilemap_FastRom_M1X0";
@@ -2489,6 +2499,7 @@ RecompReturn Vram_UploadTilemap_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DMA ch7: copies $0780.. ($1FF bytes) to VRAM $5A+$2C0 (bottom rows of the tilemap); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Vram_UploadTilemapBottom_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Vram_UploadTilemapBottom_FastRom_M1X0";
@@ -2694,6 +2705,7 @@ RecompReturn Vram_UploadTilemapBottom_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $94EB inside Attract_Main: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Attract_Main_94EB_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Attract_Main_94EB_M1X0";
@@ -2922,6 +2934,7 @@ RecompReturn Attract_Main_94EB_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Post-race results: loads both unis' palettes, dispatches by event type via table $95A5; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Results_Show_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_Show_FastRom_M1X0";
@@ -3668,6 +3681,7 @@ RecompReturn Results_Show_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Draws 16 track-name entries in two columns with DrawText (track picker); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawTrackNameGrid_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawTrackNameGrid_FastRom_M1X0";
@@ -4298,6 +4312,7 @@ RecompReturn Menu_DrawTrackNameGrid_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Builds OAM entries for the 16-slot track grid and its hi-table bits; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_SetupTrackGridSprites_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_SetupTrackGridSprites_FastRom_M1X0";
@@ -5027,6 +5042,7 @@ RecompReturn Menu_SetupTrackGridSprites_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Math_Div16by8; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Math_Div16by8Long_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_Div16by8Long_M0X0";
@@ -5158,6 +5174,7 @@ RecompReturn Math_Div16by8Long_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Hardware divide X / A: returns quotient in A, remainder in X; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Math_Div16by8_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_Div16by8_FastRom_M1X0";
@@ -5298,6 +5315,7 @@ RecompReturn Math_Div16by8_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Hardware divide X / A: returns quotient in A, remainder in X; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Math_Div16by8_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_Div16by8_FastRom_M0X0";
@@ -5438,6 +5456,7 @@ RecompReturn Math_Div16by8_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Math_Div16; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Math_Div16Long_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_Div16Long_M0X0";
@@ -5569,6 +5588,7 @@ RecompReturn Math_Div16Long_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Software 16-bit unsigned divide X / A, quotient in A (restoring shift-subtract); reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Math_Div16_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_Div16_FastRom_M0X0";
@@ -5875,6 +5895,7 @@ RecompReturn Math_Div16_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Tour select: loads palettes and places the 9 tour icons, tile depends on tour medal/unlock state; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Tour_DrawSelectIcons_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Tour_DrawSelectIcons_FastRom_M1X0";
@@ -6705,6 +6726,7 @@ RecompReturn Tour_DrawSelectIcons_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $91DC inside Boot: reset continuation: native mode, hardware init, WRAM clear */
 void Boot_91DC(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6722,40 +6744,43 @@ void Boot_91DC(CpuState *cpu) {
   }
 }
 
-void Reset_ClearWRAM(CpuState *cpu) {
+/* decomp: clears WRAM with the $0199 RAM block-move trampoline */
+void Boot_ClearWRAM(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
     case 0: _r = interp_tier_dispatch(cpu, 0x8092f2u); break; /* exact M0X0 LLE */
     case 1: _r = interp_tier_dispatch(cpu, 0x8092f2u); break; /* exact M0X1 LLE */
-    case 2: _r = Reset_ClearWRAM_M1X0(cpu); break;
+    case 2: _r = Boot_ClearWRAM_M1X0(cpu); break;
     case 3: _r = interp_tier_dispatch(cpu, 0x8092f2u); break; /* exact M1X1 LLE */
     default: _r = interp_tier_dispatch(cpu, 0x8092f2u); break;
   }
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "Reset_ClearWRAM");
+      (int)_r, "Boot_ClearWRAM");
     abort();
   }
 }
 
-void Reset_ClearWRAM_loop80(CpuState *cpu) {
+/* decomp: entry point at $92F7 inside Boot_ClearWRAM: clears WRAM with the $0199 RAM block-move trampoline; reached through the other ROM mirror bank */
+void Boot_ClearWRAM_92F7_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
     case 0: _r = interp_tier_dispatch(cpu, 0x8092f7u); break; /* exact M0X0 LLE */
     case 1: _r = interp_tier_dispatch(cpu, 0x8092f7u); break; /* exact M0X1 LLE */
-    case 2: _r = Reset_ClearWRAM_loop80_M1X0(cpu); break;
+    case 2: _r = Boot_ClearWRAM_92F7_FastRom_M1X0(cpu); break;
     case 3: _r = interp_tier_dispatch(cpu, 0x8092f7u); break; /* exact M1X1 LLE */
     default: _r = interp_tier_dispatch(cpu, 0x8092f7u); break;
   }
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "Reset_ClearWRAM_loop80");
+      (int)_r, "Boot_ClearWRAM_92F7_FastRom");
     abort();
   }
 }
 
+/* decomp: JSL wrapper for Oam_Upload */
 void Oam_UploadLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6773,6 +6798,7 @@ void Oam_UploadLong(CpuState *cpu) {
   }
 }
 
+/* decomp: DMA ch1: copies the $0A00 OAM buffer ($220 bytes) to OAM; reached through the other ROM mirror bank */
 void Oam_Upload_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6790,6 +6816,7 @@ void Oam_Upload_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Copies a string X->Y up to and including the first $FF, space or '_' terminator; reached through the other ROM mirror bank */
 void Text_CopyWord_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6807,6 +6834,7 @@ void Text_CopyWord_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Copies a $FF-terminated string X->Y, dropping '_' characters; reached through the other ROM mirror bank */
 void Text_CopyStripUnderscores_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6824,6 +6852,7 @@ void Text_CopyStripUnderscores_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: DMA ch7: copies the $0200 tilemap buffer ($800 bytes) to VRAM address in $A8; reached through the other ROM mirror bank */
 void Vram_UploadTilemapAtA8_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6841,6 +6870,7 @@ void Vram_UploadTilemapAtA8_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Vram_UploadTilemap */
 void Vram_UploadTilemapLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6858,6 +6888,7 @@ void Vram_UploadTilemapLong(CpuState *cpu) {
   }
 }
 
+/* decomp: DMA ch7: copies the $0200 tilemap buffer ($800 bytes) to VRAM address in $5A; reached through the other ROM mirror bank */
 void Vram_UploadTilemap_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6875,6 +6906,7 @@ void Vram_UploadTilemap_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: DMA ch7: copies $0780.. ($1FF bytes) to VRAM $5A+$2C0 (bottom rows of the tilemap); reached through the other ROM mirror bank */
 void Vram_UploadTilemapBottom_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6892,6 +6924,7 @@ void Vram_UploadTilemapBottom_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $94EB inside Attract_Main: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track */
 void Attract_Main_94EB(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6909,6 +6942,7 @@ void Attract_Main_94EB(CpuState *cpu) {
   }
 }
 
+/* decomp: Post-race results: loads both unis' palettes, dispatches by event type via table $95A5; reached through the other ROM mirror bank */
 void Results_Show_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6926,6 +6960,7 @@ void Results_Show_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Draws 16 track-name entries in two columns with DrawText (track picker); reached through the other ROM mirror bank */
 void Menu_DrawTrackNameGrid_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6943,6 +6978,7 @@ void Menu_DrawTrackNameGrid_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Builds OAM entries for the 16-slot track grid and its hi-table bits; reached through the other ROM mirror bank */
 void Menu_SetupTrackGridSprites_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6960,6 +6996,7 @@ void Menu_SetupTrackGridSprites_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Math_Div16by8 */
 void Math_Div16by8Long(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6977,6 +7014,7 @@ void Math_Div16by8Long(CpuState *cpu) {
   }
 }
 
+/* decomp: Hardware divide X / A: returns quotient in A, remainder in X; reached through the other ROM mirror bank */
 void Math_Div16by8_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6994,6 +7032,7 @@ void Math_Div16by8_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Math_Div16 */
 void Math_Div16Long(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7011,6 +7050,7 @@ void Math_Div16Long(CpuState *cpu) {
   }
 }
 
+/* decomp: Software 16-bit unsigned divide X / A, quotient in A (restoring shift-subtract); reached through the other ROM mirror bank */
 void Math_Div16_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7028,6 +7068,7 @@ void Math_Div16_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Tour select: loads palettes and places the 9 tour icons, tile depends on tour medal/unlock state; reached through the other ROM mirror bank */
 void Tour_DrawSelectIcons_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

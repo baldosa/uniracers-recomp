@@ -17,6 +17,7 @@
 
 RecompReturn Hud_UpdateFullScreenNmi_M1X0(CpuState *cpu);
 
+/* decomp: NMI HUD VRAM update for single full-screen view ($0DDB clear): same items as split-screen version; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Hud_UpdateFullScreenNmi_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Hud_UpdateFullScreenNmi_M1X0";
@@ -5671,6 +5672,7 @@ RecompReturn Hud_UpdateFullScreenNmi_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NMI HUD VRAM update for single full-screen view ($0DDB clear): same items as split-screen version */
 void Hud_UpdateFullScreenNmi(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

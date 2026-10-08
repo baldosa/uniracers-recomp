@@ -32,6 +32,7 @@ RecompReturn Hud_UpdateStuntNames_M0X0(CpuState *cpu);
 RecompReturn Race_GetEventQueueCount_M0X0(CpuState *cpu);
 RecompReturn Stunt_DequeueAndScore_M1X1(CpuState *cpu);
 
+/* decomp: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_M0X0";
@@ -1696,6 +1697,7 @@ RecompReturn Decomp_ToRam_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Decomp_ToRam: decodes one Huffman symbol plus extra bits; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_DecodeSymbol_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_DecodeSymbol_FastRom_M0X0";
@@ -2115,6 +2117,7 @@ RecompReturn Decomp_DecodeSymbol_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Decomp_ToRam: reads A bits from the bitstream at [$82]; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ReadBits_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ReadBits_FastRom_M0X0";
@@ -2540,6 +2543,7 @@ RecompReturn Decomp_ReadBits_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Decomp_ToRam: reads code lengths and builds a canonical Huffman table at [$88]+Y; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_BuildHuffTable_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_BuildHuffTable_FastRom_M0X0";
@@ -3408,6 +3412,7 @@ RecompReturn Decomp_BuildHuffTable_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Decomp_ToRam: loads next 16-bit word from [$82], handling bank crossing; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_FetchWord_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_FetchWord_FastRom_M0X0";
@@ -3612,6 +3617,7 @@ RecompReturn Decomp_FetchWord_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: same Huffman+LZ codec writing to VMDATA, history window in WRAM at $03A0; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToVram_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToVram_M0X0";
@@ -5885,6 +5891,7 @@ RecompReturn Decomp_ToVram_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Decomp_ToVram: decodes one Huffman symbol plus extra bits; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_DecodeSymbolVram_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_DecodeSymbolVram_M0X0";
@@ -6301,6 +6308,7 @@ RecompReturn Decomp_DecodeSymbolVram_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Decomp_ToVram: reads A bits from the bitstream; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ReadBitsVram_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ReadBitsVram_M0X0";
@@ -6726,6 +6734,7 @@ RecompReturn Decomp_ReadBitsVram_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Decomp_ToVram: builds a canonical Huffman table in bank 0 at Y; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_BuildHuffTableVram_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_BuildHuffTableVram_M0X0";
@@ -7589,6 +7598,7 @@ RecompReturn Decomp_BuildHuffTableVram_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Decomp_ToVram: loads next 16-bit word from [$82]; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_FetchWordVram_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_FetchWordVram_M0X0";
@@ -7793,6 +7803,7 @@ RecompReturn Decomp_FetchWordVram_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Hud_UpdateStuntNames (per-frame race update); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Hud_UpdateStuntNamesLong_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Hud_UpdateStuntNamesLong_M0X0";
@@ -7995,6 +8006,7 @@ RecompReturn Hud_UpdateStuntNamesLong_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: per player: when the name timer expires, shows the next queued stunt's name; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Hud_UpdateStuntNames_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Hud_UpdateStuntNames_M0X0";
@@ -8634,6 +8646,7 @@ RecompReturn Hud_UpdateStuntNames_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: copies the cached stunt name $1283 into the P1/P2 HUD text buffer; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Hud_ShowCachedStuntName_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Hud_ShowCachedStuntName_M0X0";
@@ -9330,6 +9343,7 @@ RecompReturn Hud_ShowCachedStuntName_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: converts a 16-char stunt name (DATA_97CA04) to tiles in the HUD buffer, sets display time; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Hud_LoadStuntName_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Hud_LoadStuntName_M0X0";
@@ -10351,6 +10365,7 @@ RecompReturn Hud_LoadStuntName_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10368,6 +10383,7 @@ void Decomp_ToRam(CpuState *cpu) {
   }
 }
 
+/* decomp: Decomp_ToRam: decodes one Huffman symbol plus extra bits; reached through the other ROM mirror bank */
 void Decomp_DecodeSymbol_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10385,6 +10401,7 @@ void Decomp_DecodeSymbol_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Decomp_ToRam: reads A bits from the bitstream at [$82]; reached through the other ROM mirror bank */
 void Decomp_ReadBits_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10402,6 +10419,7 @@ void Decomp_ReadBits_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Decomp_ToRam: reads code lengths and builds a canonical Huffman table at [$88]+Y; reached through the other ROM mirror bank */
 void Decomp_BuildHuffTable_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10419,6 +10437,7 @@ void Decomp_BuildHuffTable_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Decomp_ToRam: loads next 16-bit word from [$82], handling bank crossing; reached through the other ROM mirror bank */
 void Decomp_FetchWord_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10436,6 +10455,7 @@ void Decomp_FetchWord_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: same Huffman+LZ codec writing to VMDATA, history window in WRAM at $03A0 */
 void Decomp_ToVram(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10453,6 +10473,7 @@ void Decomp_ToVram(CpuState *cpu) {
   }
 }
 
+/* decomp: Decomp_ToVram: decodes one Huffman symbol plus extra bits */
 void Decomp_DecodeSymbolVram(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10470,6 +10491,7 @@ void Decomp_DecodeSymbolVram(CpuState *cpu) {
   }
 }
 
+/* decomp: Decomp_ToVram: reads A bits from the bitstream */
 void Decomp_ReadBitsVram(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10487,6 +10509,7 @@ void Decomp_ReadBitsVram(CpuState *cpu) {
   }
 }
 
+/* decomp: Decomp_ToVram: builds a canonical Huffman table in bank 0 at Y */
 void Decomp_BuildHuffTableVram(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10504,6 +10527,7 @@ void Decomp_BuildHuffTableVram(CpuState *cpu) {
   }
 }
 
+/* decomp: Decomp_ToVram: loads next 16-bit word from [$82] */
 void Decomp_FetchWordVram(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10521,6 +10545,7 @@ void Decomp_FetchWordVram(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Hud_UpdateStuntNames (per-frame race update) */
 void Hud_UpdateStuntNamesLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10538,6 +10563,7 @@ void Hud_UpdateStuntNamesLong(CpuState *cpu) {
   }
 }
 
+/* decomp: per player: when the name timer expires, shows the next queued stunt's name */
 void Hud_UpdateStuntNames(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10555,6 +10581,7 @@ void Hud_UpdateStuntNames(CpuState *cpu) {
   }
 }
 
+/* decomp: copies the cached stunt name $1283 into the P1/P2 HUD text buffer */
 void Hud_ShowCachedStuntName(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10572,6 +10599,7 @@ void Hud_ShowCachedStuntName(CpuState *cpu) {
   }
 }
 
+/* decomp: converts a 16-char stunt name (DATA_97CA04) to tiles in the HUD buffer, sets display time */
 void Hud_LoadStuntName(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

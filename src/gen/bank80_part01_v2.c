@@ -73,6 +73,7 @@ RecompReturn Vram_UploadTilemapAtA8_FastRom_M1X0(CpuState *cpu);
 RecompReturn Vram_UploadTilemap_FastRom_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_FastRom_M1X0(CpuState *cpu);
 
+/* decomp: If either player's total time is $EA62 (race exited) fades out and resets the screen; Z=0 if exited; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_CheckExited_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_CheckExited_FastRom_M1X0";
@@ -538,6 +539,7 @@ RecompReturn Race_CheckExited_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: POINT AWARDS screen: adds placing + bonus points (stunt/lap/wipeout bonus by event) to league table; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_ShowPointAwards_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_ShowPointAwards_FastRom_M1X0";
@@ -3056,6 +3058,7 @@ RecompReturn League_ShowPointAwards_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Looks up char A in table $C6F8 and tests bit 7 (N flag) for the text renderer; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_GetCharClass_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_GetCharClass_FastRom_M1X0";
@@ -3203,6 +3206,7 @@ RecompReturn Text_GetCharClass_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Boot: compares SRAM signature at $770000 with ROM $838000; on mismatch reinitialises all save data; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Sram_ValidateOrInit_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_ValidateOrInit_FastRom_M1X0";
@@ -4111,6 +4115,7 @@ RecompReturn Sram_ValidateOrInit_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Inserts score $12 / uni $B2 into the top-3 record table for track $CE (higher is better); reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Records_InsertHighScore_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_InsertHighScore_FastRom_M0X0";
@@ -4911,6 +4916,7 @@ RecompReturn Records_InsertHighScore_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Results screen for lap races: per-lap bars, totals, best lap; updates best-lap record (via table $95A5); reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Results_DrawLapRace_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_DrawLapRace_FastRom_M0X0";
@@ -8358,6 +8364,7 @@ RecompReturn Results_DrawLapRace_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: If either player's total time is $EA62 (race exited) fades out and resets the screen; Z=0 if exited; reached through the other ROM mirror bank */
 void Race_CheckExited_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8375,6 +8382,7 @@ void Race_CheckExited_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: POINT AWARDS screen: adds placing + bonus points (stunt/lap/wipeout bonus by event) to league table; reached through the other ROM mirror bank */
 void League_ShowPointAwards_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8392,6 +8400,7 @@ void League_ShowPointAwards_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Looks up char A in table $C6F8 and tests bit 7 (N flag) for the text renderer; reached through the other ROM mirror bank */
 void Text_GetCharClass_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8409,6 +8418,7 @@ void Text_GetCharClass_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Boot: compares SRAM signature at $770000 with ROM $838000; on mismatch reinitialises all save data; reached through the other ROM mirror bank */
 void Sram_ValidateOrInit_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8426,6 +8436,7 @@ void Sram_ValidateOrInit_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Inserts score $12 / uni $B2 into the top-3 record table for track $CE (higher is better); reached through the other ROM mirror bank */
 void Records_InsertHighScore_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8443,6 +8454,7 @@ void Records_InsertHighScore_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Results screen for lap races: per-lap bars, totals, best lap; updates best-lap record (via table $95A5); reached through the other ROM mirror bank */
 void Results_DrawLapRace_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

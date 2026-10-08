@@ -24,6 +24,7 @@ RecompReturn Math_MulFixed8p8_B6FC_M1X1(CpuState *cpu);
 RecompReturn Math_MulFixed8p8_M0X0(CpuState *cpu);
 RecompReturn Math_Multiply16_M0X0(CpuState *cpu);
 
+/* decomp: unsigned shift-add multiply X*Y, product in A and X; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Math_Multiply16_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_Multiply16_M0X0";
@@ -305,6 +306,7 @@ RecompReturn Math_Multiply16_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Math_MulFixed8p8; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Math_MulFixed8p8Long_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_MulFixed8p8Long_M0X0";
@@ -436,6 +438,7 @@ RecompReturn Math_MulFixed8p8Long_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B6C3 inside Math_MulFixed8p8Long: JSL wrapper for Math_MulFixed8p8; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Math_MulFixed8p8Long_B6C3_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_MulFixed8p8Long_B6C3_M0X0";
@@ -536,6 +539,7 @@ RecompReturn Math_MulFixed8p8Long_B6C3_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: signed 8.8 fixed-point multiply A*X using the PPU multiplier, 8.8 result in A; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Math_MulFixed8p8_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_MulFixed8p8_M0X0";
@@ -874,6 +878,7 @@ RecompReturn Math_MulFixed8p8_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B6E1 inside Math_MulFixed8p8: signed 8.8 fixed-point multiply A*X using the PPU multiplier, 8.8 result in A; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Math_MulFixed8p8_B6E1_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_MulFixed8p8_B6E1_M1X1";
@@ -1150,6 +1155,7 @@ RecompReturn Math_MulFixed8p8_B6E1_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B6E2 inside Math_MulFixed8p8: signed 8.8 fixed-point multiply A*X using the PPU multiplier, 8.8 result in A; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Math_MulFixed8p8_B6E2_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_MulFixed8p8_B6E2_M1X1";
@@ -1416,6 +1422,7 @@ RecompReturn Math_MulFixed8p8_B6E2_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B6EE inside Math_MulFixed8p8: signed 8.8 fixed-point multiply A*X using the PPU multiplier, 8.8 result in A; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Math_MulFixed8p8_B6EE_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_MulFixed8p8_B6EE_M1X1";
@@ -1626,6 +1633,7 @@ RecompReturn Math_MulFixed8p8_B6EE_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B6FC inside Math_MulFixed8p8: signed 8.8 fixed-point multiply A*X using the PPU multiplier, 8.8 result in A; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Math_MulFixed8p8_B6FC_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_MulFixed8p8_B6FC_M1X1";
@@ -1770,6 +1778,7 @@ RecompReturn Math_MulFixed8p8_B6FC_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: unsigned shift-add multiply X*Y, product in A and X */
 void Math_Multiply16(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -1787,6 +1796,7 @@ void Math_Multiply16(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Math_MulFixed8p8 */
 void Math_MulFixed8p8Long(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -1804,6 +1814,7 @@ void Math_MulFixed8p8Long(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B6C3 inside Math_MulFixed8p8Long: JSL wrapper for Math_MulFixed8p8 */
 void Math_MulFixed8p8Long_B6C3(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -1821,6 +1832,7 @@ void Math_MulFixed8p8Long_B6C3(CpuState *cpu) {
   }
 }
 
+/* decomp: signed 8.8 fixed-point multiply A*X using the PPU multiplier, 8.8 result in A */
 void Math_MulFixed8p8(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -1838,6 +1850,7 @@ void Math_MulFixed8p8(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B6E1 inside Math_MulFixed8p8: signed 8.8 fixed-point multiply A*X using the PPU multiplier, 8.8 result in A */
 void Math_MulFixed8p8_B6E1(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -1855,6 +1868,7 @@ void Math_MulFixed8p8_B6E1(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B6E2 inside Math_MulFixed8p8: signed 8.8 fixed-point multiply A*X using the PPU multiplier, 8.8 result in A */
 void Math_MulFixed8p8_B6E2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -1872,6 +1886,7 @@ void Math_MulFixed8p8_B6E2(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B6EE inside Math_MulFixed8p8: signed 8.8 fixed-point multiply A*X using the PPU multiplier, 8.8 result in A */
 void Math_MulFixed8p8_B6EE(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -1889,6 +1904,7 @@ void Math_MulFixed8p8_B6EE(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B6FC inside Math_MulFixed8p8: signed 8.8 fixed-point multiply A*X using the PPU multiplier, 8.8 result in A */
 void Math_MulFixed8p8_B6FC(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

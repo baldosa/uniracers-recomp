@@ -17,6 +17,7 @@
 
 RecompReturn Hud_InitRace_D860_M0X0(CpuState *cpu);
 
+/* decomp: entry point at $D860 inside Hud_InitRace: Reset race clock to start time, clear lap records, draw static HUD (player names from SRAM, lap/score labels); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Hud_InitRace_D860_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Hud_InitRace_D860_M0X0";
@@ -139,6 +140,7 @@ RecompReturn Hud_InitRace_D860_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $D860 inside Hud_InitRace: Reset race clock to start time, clear lap records, draw static HUD (player names from SRAM, lap/score labels) */
 void Hud_InitRace_D860(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

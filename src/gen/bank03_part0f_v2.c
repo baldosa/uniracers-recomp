@@ -21,6 +21,7 @@ RecompReturn Ppu_ResetAllRegisters_M1X0(CpuState *cpu);
 RecompReturn Sram_ClearAllL_FAC3_M0X0(CpuState *cpu);
 RecompReturn Sram_ClearAll_FACC_M0X0(CpuState *cpu);
 
+/* decomp: Force blank, disable NMI/IRQ/DMA and zero every PPU/CPU I/O register; returns A=1; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Ppu_ResetAllRegisters_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Ppu_ResetAllRegisters_M1X0";
@@ -366,6 +367,7 @@ RecompReturn Ppu_ResetAllRegisters_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Force blank, disable NMI/IRQ/DMA and zero every PPU/CPU I/O register; returns A=1; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Ppu_ResetAllRegisters_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Ppu_ResetAllRegisters_M0X0";
@@ -711,6 +713,7 @@ RecompReturn Ppu_ResetAllRegisters_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Force blank, disable NMI/IRQ/DMA and zero every PPU/CPU I/O register; returns A=1; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Ppu_ResetAllRegisters_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Ppu_ResetAllRegisters_M0X1";
@@ -1056,6 +1059,7 @@ RecompReturn Ppu_ResetAllRegisters_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $FAC3 inside Sram_ClearAllL: Long wrapper for Sram_ClearAll; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Sram_ClearAllL_FAC3_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_ClearAllL_FAC3_M0X0";
@@ -1156,6 +1160,7 @@ RecompReturn Sram_ClearAllL_FAC3_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $FACC inside Sram_ClearAll: Zeroes all 8KB of battery SRAM $770000-$771FFF; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Sram_ClearAll_FACC_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_ClearAll_FACC_M0X0";
@@ -1289,6 +1294,7 @@ RecompReturn Sram_ClearAll_FACC_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Force blank, disable NMI/IRQ/DMA and zero every PPU/CPU I/O register; returns A=1 */
 void Ppu_ResetAllRegisters(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -1306,6 +1312,7 @@ void Ppu_ResetAllRegisters(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $FAC3 inside Sram_ClearAllL: Long wrapper for Sram_ClearAll */
 void Sram_ClearAllL_FAC3(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -1323,6 +1330,7 @@ void Sram_ClearAllL_FAC3(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $FACC inside Sram_ClearAll: Zeroes all 8KB of battery SRAM $770000-$771FFF */
 void Sram_ClearAll_FACC(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

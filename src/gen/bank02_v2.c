@@ -329,6 +329,7 @@ RecompReturn Race_LoadTrackData_E340_M0X0(CpuState *cpu);
 RecompReturn Race_LoadTrackData_E342_M0X0(CpuState *cpu);
 RecompReturn Race_LoadTrackData_E376_M1X0(CpuState *cpu);
 
+/* decomp: entry point at $8045 inside Snd_SendQueuedCommand: sends one queued 16-bit sound command to APUIO2/3 when the SPC acknowledged; C set if nothing sent; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Snd_SendQueuedCommand_8045_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_SendQueuedCommand_8045_M1X1";
@@ -581,6 +582,7 @@ RecompReturn Snd_SendQueuedCommand_8045_M1X1(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $8050 inside Snd_SendQueuedCommand: sends one queued 16-bit sound command to APUIO2/3 when the SPC acknowledged; C set if nothing sent; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Snd_SendQueuedCommand_8050_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_SendQueuedCommand_8050_M1X1";
@@ -804,6 +806,7 @@ RecompReturn Snd_SendQueuedCommand_8050_M1X1(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $8077 inside Snd_SendQueuedCommand: sends one queued 16-bit sound command to APUIO2/3 when the SPC acknowledged; C set if nothing sent; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Snd_SendQueuedCommand_8077_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_SendQueuedCommand_8077_M1X1";
@@ -937,6 +940,7 @@ RecompReturn Snd_SendQueuedCommand_8077_M1X1(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $8081 inside Snd_UploadBlockLong: JSL wrapper for Snd_UploadBlock; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockLong_8081_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockLong_8081_M0X0";
@@ -1038,6 +1042,7 @@ RecompReturn Snd_UploadBlockLong_8081_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $8092 inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlock_8092_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlock_8092_M1X0";
@@ -1773,6 +1778,7 @@ RecompReturn Snd_UploadBlock_8092_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $8097 inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlock_8097_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlock_8097_M0X0";
@@ -2485,6 +2491,7 @@ RecompReturn Snd_UploadBlock_8097_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $809A inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlock_809A_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlock_809A_M0X0";
@@ -3191,6 +3198,7 @@ RecompReturn Snd_UploadBlock_809A_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $80C4 inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlock_80C4_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlock_80C4_M1X0";
@@ -3658,6 +3666,7 @@ RecompReturn Snd_UploadBlock_80C4_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $80CE inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlock_80CE_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlock_80CE_M1X0";
@@ -4100,6 +4109,7 @@ RecompReturn Snd_UploadBlock_80CE_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $80D1 inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlock_80D1_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlock_80D1_M1X0";
@@ -4511,6 +4521,7 @@ RecompReturn Snd_UploadBlock_80D1_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $80D3 inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlock_80D3_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlock_80D3_M1X0";
@@ -4916,6 +4927,7 @@ RecompReturn Snd_UploadBlock_80D3_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $80D6 inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlock_80D6_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlock_80D6_M1X0";
@@ -5319,6 +5331,7 @@ RecompReturn Snd_UploadBlock_80D6_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $80D8 inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlock_80D8_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlock_80D8_M1X0";
@@ -5716,6 +5729,7 @@ RecompReturn Snd_UploadBlock_80D8_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $80DB inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlock_80DB_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlock_80DB_M1X0";
@@ -6100,6 +6114,7 @@ RecompReturn Snd_UploadBlock_80DB_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $80DE inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlock_80DE_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlock_80DE_M1X0";
@@ -6478,6 +6493,7 @@ RecompReturn Snd_UploadBlock_80DE_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $80E0 inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlock_80E0_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlock_80E0_M1X0";
@@ -6844,6 +6860,7 @@ RecompReturn Snd_UploadBlock_80E0_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $80E2 inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlock_80E2_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlock_80E2_M1X0";
@@ -7202,6 +7219,7 @@ RecompReturn Snd_UploadBlock_80E2_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $80E3 inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlock_80E3_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlock_80E3_M1X0";
@@ -7550,6 +7568,7 @@ RecompReturn Snd_UploadBlock_80E3_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $80E5 inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlock_80E5_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlock_80E5_M1X0";
@@ -7886,6 +7905,7 @@ RecompReturn Snd_UploadBlock_80E5_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $80FB inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlock_80FB_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlock_80FB_M1X0";
@@ -8135,6 +8155,7 @@ RecompReturn Snd_UploadBlock_80FB_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $810A inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlock_810A_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlock_810A_M1X0";
@@ -8315,6 +8336,7 @@ RecompReturn Snd_UploadBlock_810A_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $810D inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlock_810D_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlock_810D_M1X0";
@@ -8485,6 +8507,7 @@ RecompReturn Snd_UploadBlock_810D_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $8123 inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlock_8123_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlock_8123_M0X0";
@@ -8623,6 +8646,7 @@ RecompReturn Snd_UploadBlock_8123_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: points $63-$65 at block X in the sound data directory at $108000 by summing block sizes; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_SeekDataBlock_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_SeekDataBlock_M1X0";
@@ -8929,6 +8953,7 @@ RecompReturn Snd_SeekDataBlock_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $813D inside Snd_SeekDataBlock: points $63-$65 at block X in the sound data directory at $108000 by summing block sizes; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Snd_SeekDataBlock_813D_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_SeekDataBlock_813D_M0X0";
@@ -9157,6 +9182,7 @@ RecompReturn Snd_SeekDataBlock_813D_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $8140 inside Snd_SeekDataBlock: points $63-$65 at block X in the sound data directory at $108000 by summing block sizes; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Snd_SeekDataBlock_8140_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_SeekDataBlock_8140_M0X0";
@@ -9290,6 +9316,7 @@ RecompReturn Snd_SeekDataBlock_8140_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $814B inside Snd_SeekDataBlock: points $63-$65 at block X in the sound data directory at $108000 by summing block sizes; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Snd_SeekDataBlock_814B_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_SeekDataBlock_814B_M0X0";
@@ -9338,6 +9365,7 @@ RecompReturn Snd_SeekDataBlock_814B_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: advances the long sound data pointer $63 by one, wrapping to the next LoROM bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Snd_IncDataPtr_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_IncDataPtr_M0X0";
@@ -9505,6 +9533,7 @@ RecompReturn Snd_IncDataPtr_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: advances the long sound data pointer $63 by one, wrapping to the next LoROM bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_IncDataPtr_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_IncDataPtr_M1X0";
@@ -9672,6 +9701,7 @@ RecompReturn Snd_IncDataPtr_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $815F inside Snd_IncDataPtr: advances the long sound data pointer $63 by one, wrapping to the next LoROM bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Snd_IncDataPtr_815F_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_IncDataPtr_815F_M0X0";
@@ -9779,6 +9809,7 @@ RecompReturn Snd_IncDataPtr_815F_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $8160 inside Snd_IncDataPtr: advances the long sound data pointer $63 by one, wrapping to the next LoROM bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_IncDataPtr_8160_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_IncDataPtr_8160_M1X0";
@@ -9879,6 +9910,7 @@ RecompReturn Snd_IncDataPtr_8160_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $82A8 inside Snd_UploadBlockListLong: JSL wrapper for Snd_UploadBlockList; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockListLong_82A8_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockListLong_82A8_M0X0";
@@ -9980,6 +10012,7 @@ RecompReturn Snd_UploadBlockListLong_82A8_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $82B4 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_82B4_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_82B4_M1X0";
@@ -10736,6 +10769,7 @@ RecompReturn Snd_UploadBlockList_82B4_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $82B5 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_82B5_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_82B5_M1X0";
@@ -11487,6 +11521,7 @@ RecompReturn Snd_UploadBlockList_82B5_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $82B8 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_82B8_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_82B8_M1X0";
@@ -12231,6 +12266,7 @@ RecompReturn Snd_UploadBlockList_82B8_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $82BD inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_82BD_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_82BD_M1X0";
@@ -12964,6 +13000,7 @@ RecompReturn Snd_UploadBlockList_82BD_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $82C0 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_82C0_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_82C0_M1X0";
@@ -13666,6 +13703,7 @@ RecompReturn Snd_UploadBlockList_82C0_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $82CC inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_82CC_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_82CC_M1X0";
@@ -14223,6 +14261,7 @@ RecompReturn Snd_UploadBlockList_82CC_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $82D2 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_82D2_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_82D2_M1X0";
@@ -14768,6 +14807,7 @@ RecompReturn Snd_UploadBlockList_82D2_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $82D4 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_82D4_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_82D4_M0X0";
@@ -15306,6 +15346,7 @@ RecompReturn Snd_UploadBlockList_82D4_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $82DE inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_82DE_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_82DE_M0X0";
@@ -15792,6 +15833,7 @@ RecompReturn Snd_UploadBlockList_82DE_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $82EA inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_82EA_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_82EA_M0X0";
@@ -16205,6 +16247,7 @@ RecompReturn Snd_UploadBlockList_82EA_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $82EF inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_82EF_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_82EF_M1X0";
@@ -16571,6 +16614,7 @@ RecompReturn Snd_UploadBlockList_82EF_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $82F0 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_82F0_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_82F0_M1X0";
@@ -16931,6 +16975,7 @@ RecompReturn Snd_UploadBlockList_82F0_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $82F2 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_82F2_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_82F2_M1X0";
@@ -17285,6 +17330,7 @@ RecompReturn Snd_UploadBlockList_82F2_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $82F5 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_82F5_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_82F5_M1X0";
@@ -17637,6 +17683,7 @@ RecompReturn Snd_UploadBlockList_82F5_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $82F6 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_82F6_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_82F6_M1X0";
@@ -17983,6 +18030,7 @@ RecompReturn Snd_UploadBlockList_82F6_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $82F9 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_82F9_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_82F9_M1X0";
@@ -18327,6 +18375,7 @@ RecompReturn Snd_UploadBlockList_82F9_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $82FA inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_82FA_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_82FA_M1X0";
@@ -18661,6 +18710,7 @@ RecompReturn Snd_UploadBlockList_82FA_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $8301 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_8301_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_8301_M1X0";
@@ -18959,6 +19009,7 @@ RecompReturn Snd_UploadBlockList_8301_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $8304 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_8304_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_8304_M1X0";
@@ -19251,6 +19302,7 @@ RecompReturn Snd_UploadBlockList_8304_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $8306 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_8306_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_8306_M1X0";
@@ -19531,6 +19583,7 @@ RecompReturn Snd_UploadBlockList_8306_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $8307 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_8307_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_8307_M1X0";
@@ -19801,6 +19854,7 @@ RecompReturn Snd_UploadBlockList_8307_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $8308 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_8308_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_8308_M1X0";
@@ -20061,6 +20115,7 @@ RecompReturn Snd_UploadBlockList_8308_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $8310 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_8310_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_8310_M1X0";
@@ -20274,6 +20329,7 @@ RecompReturn Snd_UploadBlockList_8310_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $8313 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_8313_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_8313_M1X0";
@@ -20481,6 +20537,7 @@ RecompReturn Snd_UploadBlockList_8313_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $8315 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_8315_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_8315_M1X0";
@@ -20676,6 +20733,7 @@ RecompReturn Snd_UploadBlockList_8315_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $8316 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_8316_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_8316_M1X0";
@@ -20861,6 +20919,7 @@ RecompReturn Snd_UploadBlockList_8316_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $8317 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_8317_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_8317_M1X0";
@@ -21038,6 +21097,7 @@ RecompReturn Snd_UploadBlockList_8317_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $8318 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_UploadBlockList_8318_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_UploadBlockList_8318_M1X0";
@@ -21205,6 +21265,7 @@ RecompReturn Snd_UploadBlockList_8318_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: sends byte A on APUIO3 with counter on APUIO2 and waits for the echo; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_SendByteWait_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_SendByteWait_M1X0";
@@ -21364,6 +21425,7 @@ RecompReturn Snd_SendByteWait_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $832F inside Snd_SendByteWait: sends byte A on APUIO3 with counter on APUIO2 and waits for the echo; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_SendByteWait_832F_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_SendByteWait_832F_M1X0";
@@ -21502,6 +21564,7 @@ RecompReturn Snd_SendByteWait_832F_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $B197 inside Res_LoadToCgram: Loads resource A (index into [$4F] table) to CGRAM starting at color X; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Res_LoadToCgram_B197_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_LoadToCgram_B197_M1X0";
@@ -21718,6 +21781,7 @@ RecompReturn Res_LoadToCgram_B197_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $B19A inside Res_LoadToCgram: Loads resource A (index into [$4F] table) to CGRAM starting at color X; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Res_LoadToCgram_B19A_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_LoadToCgram_B19A_M1X0";
@@ -21903,6 +21967,7 @@ RecompReturn Res_LoadToCgram_B19A_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $B1A0 inside Res_LoadToCgram: Loads resource A (index into [$4F] table) to CGRAM starting at color X; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Res_LoadToCgram_B1A0_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_LoadToCgram_B1A0_M1X0";
@@ -22055,6 +22120,7 @@ RecompReturn Res_LoadToCgram_B1A0_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $B1F2 inside Res_LoadToVram: Loads resource A to VRAM at X; flagged (compressed) resources go through sub_81BB89; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Res_LoadToVram_B1F2_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_LoadToVram_B1F2_M1X0";
@@ -22271,6 +22337,7 @@ RecompReturn Res_LoadToVram_B1F2_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $B1F5 inside Res_LoadToVram: Loads resource A to VRAM at X; flagged (compressed) resources go through sub_81BB89; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Res_LoadToVram_B1F5_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_LoadToVram_B1F5_M1X0";
@@ -22456,6 +22523,7 @@ RecompReturn Res_LoadToVram_B1F5_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $B1F9 inside Res_LoadToVram: Loads resource A to VRAM at X; flagged (compressed) resources go through sub_81BB89; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Res_LoadToVram_B1F9_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_LoadToVram_B1F9_M1X0";
@@ -22639,6 +22707,7 @@ RecompReturn Res_LoadToVram_B1F9_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $B1FC inside Res_LoadToVram: Loads resource A to VRAM at X; flagged (compressed) resources go through sub_81BB89; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Res_LoadToVram_B1FC_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_LoadToVram_B1FC_M1X0";
@@ -22791,6 +22860,7 @@ RecompReturn Res_LoadToVram_B1FC_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $B200 inside Res_LoadToVram: Loads resource A to VRAM at X; flagged (compressed) resources go through sub_81BB89; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Res_LoadToVram_B200_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_LoadToVram_B200_M1X0";
@@ -22941,6 +23011,7 @@ RecompReturn Res_LoadToVram_B200_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $B201 inside Res_LoadToVram: Loads resource A to VRAM at X; flagged (compressed) resources go through sub_81BB89; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Res_LoadToVram_B201_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_LoadToVram_B201_M1X0";
@@ -23081,6 +23152,7 @@ RecompReturn Res_LoadToVram_B201_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $B202 inside Res_LoadToVram: Loads resource A to VRAM at X; flagged (compressed) resources go through sub_81BB89; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Res_LoadToVram_B202_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_LoadToVram_B202_M1X0";
@@ -23211,6 +23283,7 @@ RecompReturn Res_LoadToVram_B202_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: Reads next source byte at DB:Y, wrapping to next bank at $8000 when Y overflows; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Res_ReadByte_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_ReadByte_M1X0";
@@ -23480,6 +23553,7 @@ RecompReturn Res_ReadByte_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $B299 inside Res_ReadByte: Reads next source byte at DB:Y, wrapping to next bank at $8000 when Y overflows; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Res_ReadByte_B299_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_ReadByte_B299_M1X0";
@@ -23586,6 +23660,7 @@ RecompReturn Res_ReadByte_B299_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: JSL wrapper for Res_Lookup; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Res_Lookup_Long_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_Lookup_Long_M1X0";
@@ -23718,6 +23793,7 @@ RecompReturn Res_Lookup_Long_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $B2AC inside Res_Lookup_Long: JSL wrapper for Res_Lookup; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Res_Lookup_Long_B2AC_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_Lookup_Long_B2AC_M1X0";
@@ -23819,6 +23895,7 @@ RecompReturn Res_Lookup_Long_B2AC_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: Looks up 5-byte resource entry A in [$4F]: returns bank in A, address in Y, size in $4B, flag in $4D; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Res_Lookup_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_Lookup_M1X0";
@@ -24134,6 +24211,7 @@ RecompReturn Res_Lookup_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $B2B9 inside Res_Lookup: Looks up 5-byte resource entry A in [$4F]: returns bank in A, address in Y, size in $4B, flag in $4D; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Res_Lookup_B2B9_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_Lookup_B2B9_M0X0";
@@ -24406,6 +24484,7 @@ RecompReturn Res_Lookup_B2B9_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $B2E5 inside Res_LoadToWram: Copies resource A to WRAM X (bank Y) via WMDATA; compressed resources go through sub_81B8F1; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Res_LoadToWram_B2E5_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_LoadToWram_B2E5_M1X0";
@@ -24898,6 +24977,7 @@ RecompReturn Res_LoadToWram_B2E5_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $B326 inside Res_LoadToWram: Copies resource A to WRAM X (bank Y) via WMDATA; compressed resources go through sub_81B8F1; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Res_LoadToWram_B326_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Res_LoadToWram_B326_M0X0";
@@ -25045,6 +25125,7 @@ RecompReturn Res_LoadToWram_B326_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $D4E8 inside WaitForNMI_Long: JSL wrapper for WaitForNMI; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn WaitForNMI_Long_D4E8_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "WaitForNMI_Long_D4E8_M1X0";
@@ -25146,6 +25227,7 @@ RecompReturn WaitForNMI_Long_D4E8_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $D4F9 inside Vram_Clear_Long: JSL wrapper for Vram_Clear; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Vram_Clear_Long_D4F9_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Vram_Clear_Long_D4F9_M1X0";
@@ -25247,6 +25329,7 @@ RecompReturn Vram_Clear_Long_D4F9_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $D506 inside Vram_Clear: Fills all 64KB of VRAM with zero; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Vram_Clear_D506_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Vram_Clear_D506_M0X0";
@@ -25378,6 +25461,7 @@ RecompReturn Vram_Clear_D506_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $D509 inside Vram_Clear: Fills all 64KB of VRAM with zero; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Vram_Clear_D509_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Vram_Clear_D509_M0X0";
@@ -25507,6 +25591,7 @@ RecompReturn Vram_Clear_D509_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $D50A inside Vram_Clear: Fills all 64KB of VRAM with zero; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Vram_Clear_D50A_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Vram_Clear_D50A_M0X0";
@@ -25626,6 +25711,7 @@ RecompReturn Vram_Clear_D50A_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $D529 inside Race_InitHdma_Long: JSL wrapper for Race_InitHdma; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_InitHdma_Long_D529_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_InitHdma_Long_D529_M1X0";
@@ -25727,6 +25813,7 @@ RecompReturn Race_InitHdma_Long_D529_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $D614 inside Race_InitHdma: Sets window regs and HDMA channels 1-7 and builds race HDMA tables at $7E2046-$7E2095; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Race_InitHdma_D614_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_InitHdma_D614_M1X1";
@@ -26188,6 +26275,7 @@ RecompReturn Race_InitHdma_D614_M1X1(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $D61A inside Race_InitHdma: Sets window regs and HDMA channels 1-7 and builds race HDMA tables at $7E2046-$7E2095; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Race_InitHdma_D61A_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_InitHdma_D61A_M1X1";
@@ -26638,6 +26726,7 @@ RecompReturn Race_InitHdma_D61A_M1X1(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $D6C8 inside Race_InitHdma: Sets window regs and HDMA channels 1-7 and builds race HDMA tables at $7E2046-$7E2095; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Race_InitHdma_D6C8_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_InitHdma_D6C8_M1X1";
@@ -26860,6 +26949,7 @@ RecompReturn Race_InitHdma_D6C8_M1X1(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $D734 inside Race_InitVideo_Long: JSL wrapper for Race_InitVideo; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_InitVideo_Long_D734_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_InitVideo_Long_D734_M1X0";
@@ -26961,6 +27051,7 @@ RecompReturn Race_InitVideo_Long_D734_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $D768 inside Race_InitVideo: Disables NMI, sets IRQ/NMI handler vectors and resource table $82B32F, clears VRAM and CGRAM; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_InitVideo_D768_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_InitVideo_D768_M1X0";
@@ -27098,6 +27189,7 @@ RecompReturn Race_InitVideo_D768_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: Hides all sprites in OAM buffer, sets high table to $55, sets up reserved sprites 96-99; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Oam_InitBuffer_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Oam_InitBuffer_M0X1";
@@ -27521,6 +27613,7 @@ RecompReturn Oam_InitBuffer_M0X1(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $D778 inside Oam_InitBuffer: Hides all sprites in OAM buffer, sets high table to $55, sets up reserved sprites 96-99; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Oam_InitBuffer_D778_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Oam_InitBuffer_D778_M0X0";
@@ -27914,6 +28007,7 @@ RecompReturn Oam_InitBuffer_D778_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: JSL wrapper for Race_InitState; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_InitState_Long_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_InitState_Long_M1X0";
@@ -28046,6 +28140,7 @@ RecompReturn Race_InitState_Long_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $D80F inside Race_InitState_Long: JSL wrapper for Race_InitState; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Race_InitState_Long_D80F_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_InitState_Long_D80F_M0X1";
@@ -28147,6 +28242,7 @@ RecompReturn Race_InitState_Long_D80F_M0X1(CpuState *cpu) {
 }
 
 
+/* decomp: JSL wrapper for Race_ClearRam; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_ClearRam_Long_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_ClearRam_Long_M1X0";
@@ -28279,6 +28375,7 @@ RecompReturn Race_ClearRam_Long_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $D813 inside Race_ClearRam_Long: JSL wrapper for Race_ClearRam; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_ClearRam_Long_D813_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_ClearRam_Long_D813_M1X0";
@@ -28380,6 +28477,7 @@ RecompReturn Race_ClearRam_Long_D813_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: Calls sub_81B76D then zeroes WRAM $0082-$00B2 and $0200-$178C; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_ClearRam_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_ClearRam_M1X0";
@@ -28740,6 +28838,7 @@ RecompReturn Race_ClearRam_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $D840 inside Race_ClearRam: Calls sub_81B76D then zeroes WRAM $0082-$00B2 and $0200-$178C; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_ClearRam_D840_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_ClearRam_D840_M1X0";
@@ -28875,6 +28974,7 @@ RecompReturn Race_ClearRam_D840_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $D843 inside Race_ClearRam: Calls sub_81B76D then zeroes WRAM $0082-$00B2 and $0200-$178C; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_ClearRam_D843_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_ClearRam_D843_M1X0";
@@ -28922,6 +29022,7 @@ RecompReturn Race_ClearRam_D843_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: Initializes race variables from track header at $7F0000, resets race SRAM stats, sets up OAM/objects; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_InitState_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_InitState_M1X0";
@@ -30810,6 +30911,7 @@ RecompReturn Race_InitState_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $DBCF inside Race_InitState: Initializes race variables from track header at $7F0000, resets race SRAM stats, sets up OAM/objects; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Race_InitState_DBCF_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_InitState_DBCF_M1X1";
@@ -31270,6 +31372,7 @@ RecompReturn Race_InitState_DBCF_M1X1(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $DC0B inside Race_InitState: Initializes race variables from track header at $7F0000, resets race SRAM stats, sets up OAM/objects; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_InitState_DC0B_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_InitState_DC0B_M0X0";
@@ -31549,6 +31652,7 @@ RecompReturn Race_InitState_DC0B_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $DC13 inside Race_InitState: Initializes race variables from track header at $7F0000, resets race SRAM stats, sets up OAM/objects; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_InitState_DC13_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_InitState_DC13_M0X0";
@@ -31754,6 +31858,7 @@ RecompReturn Race_InitState_DC13_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $DC1E inside Race_InitState: Initializes race variables from track header at $7F0000, resets race SRAM stats, sets up OAM/objects; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Race_InitState_DC1E_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_InitState_DC1E_M0X1";
@@ -31854,6 +31959,7 @@ RecompReturn Race_InitState_DC1E_M0X1(CpuState *cpu) {
 }
 
 
+/* decomp: Sets PPU modes for racing: OBSEL, BG mode 1 w/ BG3 prio, BG1-3 maps, char bases, TM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_SetPpuRegs_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_SetPpuRegs_M0X0";
@@ -32038,6 +32144,7 @@ RecompReturn Race_SetPpuRegs_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: JSL wrapper for Race_LoadTrackGraphics; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackGraphics_Long_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackGraphics_Long_M1X0";
@@ -32170,6 +32277,7 @@ RecompReturn Race_LoadTrackGraphics_Long_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $DC59 inside Race_LoadTrackGraphics_Long: JSL wrapper for Race_LoadTrackGraphics; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackGraphics_Long_DC59_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackGraphics_Long_DC59_M1X0";
@@ -32271,6 +32379,7 @@ RecompReturn Race_LoadTrackGraphics_Long_DC59_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: Loads track theme ($77074A mod 14) tiles/palettes, unicycle palettes, then track data; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackGraphics_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackGraphics_M1X0";
@@ -34313,6 +34422,7 @@ RecompReturn Race_LoadTrackGraphics_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $DCA3 inside Race_LoadTrackGraphics: Loads track theme ($77074A mod 14) tiles/palettes, unicycle palettes, then track data; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackGraphics_DCA3_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackGraphics_DCA3_M0X0";
@@ -36148,6 +36258,7 @@ RecompReturn Race_LoadTrackGraphics_DCA3_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $DCB1 inside Race_LoadTrackGraphics: Loads track theme ($77074A mod 14) tiles/palettes, unicycle palettes, then track data; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackGraphics_DCB1_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackGraphics_DCB1_M0X0";
@@ -37910,6 +38021,7 @@ RecompReturn Race_LoadTrackGraphics_DCB1_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $DD9A inside Race_LoadTrackGraphics: Loads track theme ($77074A mod 14) tiles/palettes, unicycle palettes, then track data; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackGraphics_DD9A_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackGraphics_DD9A_M0X0";
@@ -38610,6 +38722,7 @@ RecompReturn Race_LoadTrackGraphics_DD9A_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $DDD6 inside Race_LoadTrackGraphics: Loads track theme ($77074A mod 14) tiles/palettes, unicycle palettes, then track data; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackGraphics_DDD6_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackGraphics_DDD6_M0X0";
@@ -39028,6 +39141,7 @@ RecompReturn Race_LoadTrackGraphics_DDD6_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $DDE6 inside Race_LoadTrackGraphics: Loads track theme ($77074A mod 14) tiles/palettes, unicycle palettes, then track data; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackGraphics_DDE6_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackGraphics_DDE6_M1X0";
@@ -39370,6 +39484,7 @@ RecompReturn Race_LoadTrackGraphics_DDE6_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $DE12 inside Race_LoadTrackGraphics: Loads track theme ($77074A mod 14) tiles/palettes, unicycle palettes, then track data; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackGraphics_DE12_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackGraphics_DE12_M1X0";
@@ -39470,6 +39585,7 @@ RecompReturn Race_LoadTrackGraphics_DE12_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_M1X0";
@@ -40524,6 +40640,7 @@ RecompReturn Race_LoadTrackData_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E16D inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E16D_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E16D_M0X0";
@@ -41550,6 +41667,7 @@ RecompReturn Race_LoadTrackData_E16D_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E171 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E171_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E171_M0X0";
@@ -42574,6 +42692,7 @@ RecompReturn Race_LoadTrackData_E171_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E172 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E172_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E172_M0X0";
@@ -43588,6 +43707,7 @@ RecompReturn Race_LoadTrackData_E172_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E190 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E190_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E190_M1X0";
@@ -44494,6 +44614,7 @@ RecompReturn Race_LoadTrackData_E190_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E1FF inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E1FF_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E1FF_M1X0";
@@ -45057,6 +45178,7 @@ RecompReturn Race_LoadTrackData_E1FF_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E220 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E220_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E220_M1X0";
@@ -45531,6 +45653,7 @@ RecompReturn Race_LoadTrackData_E220_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E238 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E238_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E238_M1X0";
@@ -45968,6 +46091,7 @@ RecompReturn Race_LoadTrackData_E238_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E248 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E248_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E248_M0X0";
@@ -46379,6 +46503,7 @@ RecompReturn Race_LoadTrackData_E248_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E24B inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E24B_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E24B_M0X0";
@@ -46784,6 +46909,7 @@ RecompReturn Race_LoadTrackData_E24B_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E24D inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E24D_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E24D_M0X0";
@@ -47177,6 +47303,7 @@ RecompReturn Race_LoadTrackData_E24D_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E26D inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E26D_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E26D_M0X0";
@@ -47461,6 +47588,7 @@ RecompReturn Race_LoadTrackData_E26D_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E270 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E270_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E270_M0X0";
@@ -47740,6 +47868,7 @@ RecompReturn Race_LoadTrackData_E270_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E271 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E271_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E271_M0X0";
@@ -48017,6 +48146,7 @@ RecompReturn Race_LoadTrackData_E271_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E28C inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E28C_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E28C_M0X0";
@@ -48174,6 +48304,7 @@ RecompReturn Race_LoadTrackData_E28C_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E292 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E292_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E292_M0X0";
@@ -48324,6 +48455,7 @@ RecompReturn Race_LoadTrackData_E292_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E293 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E293_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E293_M0X0";
@@ -48472,6 +48604,7 @@ RecompReturn Race_LoadTrackData_E293_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E2A0 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E2A0_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E2A0_M1X0";
@@ -48580,6 +48713,7 @@ RecompReturn Race_LoadTrackData_E2A0_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E2A5 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E2A5_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E2A5_M0X0";
@@ -48675,6 +48809,7 @@ RecompReturn Race_LoadTrackData_E2A5_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E2A7 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E2A7_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E2A7_M0X0";
@@ -48758,6 +48893,7 @@ RecompReturn Race_LoadTrackData_E2A7_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E2B6 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E2B6_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E2B6_M0X0";
@@ -48965,6 +49101,7 @@ RecompReturn Race_LoadTrackData_E2B6_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E2CD inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E2CD_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E2CD_M0X0";
@@ -49066,6 +49203,7 @@ RecompReturn Race_LoadTrackData_E2CD_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E2D0 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E2D0_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E2D0_M0X0";
@@ -49162,6 +49300,7 @@ RecompReturn Race_LoadTrackData_E2D0_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E2D3 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E2D3_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E2D3_M0X0";
@@ -49252,6 +49391,7 @@ RecompReturn Race_LoadTrackData_E2D3_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E2E1 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E2E1_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E2E1_M0X0";
@@ -49825,6 +49965,7 @@ RecompReturn Race_LoadTrackData_E2E1_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E2E7 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E2E7_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E2E7_M0X0";
@@ -50386,6 +50527,7 @@ RecompReturn Race_LoadTrackData_E2E7_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E2EB inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E2EB_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E2EB_M0X0";
@@ -50921,6 +51063,7 @@ RecompReturn Race_LoadTrackData_E2EB_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E2FA inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E2FA_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E2FA_M0X0";
@@ -51092,6 +51235,7 @@ RecompReturn Race_LoadTrackData_E2FA_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E307 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E307_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E307_M0X0";
@@ -52439,6 +52583,7 @@ RecompReturn Race_LoadTrackData_E307_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E33A inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E33A_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E33A_M0X0";
@@ -53595,6 +53740,7 @@ RecompReturn Race_LoadTrackData_E33A_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E33E inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E33E_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E33E_M0X0";
@@ -54711,6 +54857,7 @@ RecompReturn Race_LoadTrackData_E33E_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E340 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E340_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E340_M0X0";
@@ -54764,6 +54911,7 @@ RecompReturn Race_LoadTrackData_E340_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E342 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E342_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E342_M0X0";
@@ -54811,6 +54959,7 @@ RecompReturn Race_LoadTrackData_E342_M0X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $E376 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_E376_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_E376_M1X0";
@@ -55656,6 +55805,7 @@ RecompReturn Race_LoadTrackData_E376_M1X0(CpuState *cpu) {
 }
 
 
+/* decomp: entry point at $8045 inside Snd_SendQueuedCommand: sends one queued 16-bit sound command to APUIO2/3 when the SPC acknowledged; C set if nothing sent */
 void Snd_SendQueuedCommand_8045(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -55672,6 +55822,7 @@ void Snd_SendQueuedCommand_8045(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $8050 inside Snd_SendQueuedCommand: sends one queued 16-bit sound command to APUIO2/3 when the SPC acknowledged; C set if nothing sent */
 void Snd_SendQueuedCommand_8050(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -55688,6 +55839,7 @@ void Snd_SendQueuedCommand_8050(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $8077 inside Snd_SendQueuedCommand: sends one queued 16-bit sound command to APUIO2/3 when the SPC acknowledged; C set if nothing sent */
 void Snd_SendQueuedCommand_8077(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -55704,6 +55856,7 @@ void Snd_SendQueuedCommand_8077(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $8081 inside Snd_UploadBlockLong: JSL wrapper for Snd_UploadBlock */
 void Snd_UploadBlockLong_8081(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -55720,6 +55873,7 @@ void Snd_UploadBlockLong_8081(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $8092 inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue */
 void Snd_UploadBlock_8092(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -55736,6 +55890,7 @@ void Snd_UploadBlock_8092(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $8097 inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue */
 void Snd_UploadBlock_8097(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -55752,6 +55907,7 @@ void Snd_UploadBlock_8097(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $809A inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue */
 void Snd_UploadBlock_809A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -55768,6 +55924,7 @@ void Snd_UploadBlock_809A(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $80C4 inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue */
 void Snd_UploadBlock_80C4(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -55784,6 +55941,7 @@ void Snd_UploadBlock_80C4(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $80CE inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue */
 void Snd_UploadBlock_80CE(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -55800,6 +55958,7 @@ void Snd_UploadBlock_80CE(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $80D1 inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue */
 void Snd_UploadBlock_80D1(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -55816,6 +55975,7 @@ void Snd_UploadBlock_80D1(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $80D3 inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue */
 void Snd_UploadBlock_80D3(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -55832,6 +55992,7 @@ void Snd_UploadBlock_80D3(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $80D6 inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue */
 void Snd_UploadBlock_80D6(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -55848,6 +56009,7 @@ void Snd_UploadBlock_80D6(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $80D8 inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue */
 void Snd_UploadBlock_80D8(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -55864,6 +56026,7 @@ void Snd_UploadBlock_80D8(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $80DB inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue */
 void Snd_UploadBlock_80DB(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -55880,6 +56043,7 @@ void Snd_UploadBlock_80DB(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $80DE inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue */
 void Snd_UploadBlock_80DE(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -55896,6 +56060,7 @@ void Snd_UploadBlock_80DE(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $80E0 inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue */
 void Snd_UploadBlock_80E0(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -55912,6 +56077,7 @@ void Snd_UploadBlock_80E0(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $80E2 inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue */
 void Snd_UploadBlock_80E2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -55928,6 +56094,7 @@ void Snd_UploadBlock_80E2(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $80E3 inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue */
 void Snd_UploadBlock_80E3(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -55944,6 +56111,7 @@ void Snd_UploadBlock_80E3(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $80E5 inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue */
 void Snd_UploadBlock_80E5(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -55960,6 +56128,7 @@ void Snd_UploadBlock_80E5(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $80FB inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue */
 void Snd_UploadBlock_80FB(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -55976,6 +56145,7 @@ void Snd_UploadBlock_80FB(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $810A inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue */
 void Snd_UploadBlock_810A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -55992,6 +56162,7 @@ void Snd_UploadBlock_810A(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $810D inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue */
 void Snd_UploadBlock_810D(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56008,6 +56179,7 @@ void Snd_UploadBlock_810D(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $8123 inside Snd_UploadBlock: uploads sound data block X (from the bank $10 directory) to the SPC via the IPL handshake, resets queue */
 void Snd_UploadBlock_8123(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56024,6 +56196,7 @@ void Snd_UploadBlock_8123(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: points $63-$65 at block X in the sound data directory at $108000 by summing block sizes */
 void Snd_SeekDataBlock(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56040,6 +56213,7 @@ void Snd_SeekDataBlock(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $813D inside Snd_SeekDataBlock: points $63-$65 at block X in the sound data directory at $108000 by summing block sizes */
 void Snd_SeekDataBlock_813D(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56056,6 +56230,7 @@ void Snd_SeekDataBlock_813D(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $8140 inside Snd_SeekDataBlock: points $63-$65 at block X in the sound data directory at $108000 by summing block sizes */
 void Snd_SeekDataBlock_8140(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56072,6 +56247,7 @@ void Snd_SeekDataBlock_8140(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $814B inside Snd_SeekDataBlock: points $63-$65 at block X in the sound data directory at $108000 by summing block sizes */
 void Snd_SeekDataBlock_814B(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56088,6 +56264,7 @@ void Snd_SeekDataBlock_814B(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: advances the long sound data pointer $63 by one, wrapping to the next LoROM bank */
 void Snd_IncDataPtr(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56104,6 +56281,7 @@ void Snd_IncDataPtr(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $815F inside Snd_IncDataPtr: advances the long sound data pointer $63 by one, wrapping to the next LoROM bank */
 void Snd_IncDataPtr_815F(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56120,6 +56298,7 @@ void Snd_IncDataPtr_815F(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $8160 inside Snd_IncDataPtr: advances the long sound data pointer $63 by one, wrapping to the next LoROM bank */
 void Snd_IncDataPtr_8160(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56136,6 +56315,7 @@ void Snd_IncDataPtr_8160(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $82A8 inside Snd_UploadBlockListLong: JSL wrapper for Snd_UploadBlockList */
 void Snd_UploadBlockListLong_82A8(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56152,6 +56332,7 @@ void Snd_UploadBlockListLong_82A8(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $82B4 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_82B4(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56168,6 +56349,7 @@ void Snd_UploadBlockList_82B4(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $82B5 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_82B5(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56184,6 +56366,7 @@ void Snd_UploadBlockList_82B5(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $82B8 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_82B8(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56200,6 +56383,7 @@ void Snd_UploadBlockList_82B8(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $82BD inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_82BD(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56216,6 +56400,7 @@ void Snd_UploadBlockList_82BD(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $82C0 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_82C0(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56232,6 +56417,7 @@ void Snd_UploadBlockList_82C0(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $82CC inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_82CC(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56248,6 +56434,7 @@ void Snd_UploadBlockList_82CC(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $82D2 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_82D2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56264,6 +56451,7 @@ void Snd_UploadBlockList_82D2(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $82D4 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_82D4(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56280,6 +56468,7 @@ void Snd_UploadBlockList_82D4(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $82DE inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_82DE(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56296,6 +56485,7 @@ void Snd_UploadBlockList_82DE(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $82EA inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_82EA(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56312,6 +56502,7 @@ void Snd_UploadBlockList_82EA(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $82EF inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_82EF(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56328,6 +56519,7 @@ void Snd_UploadBlockList_82EF(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $82F0 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_82F0(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56344,6 +56536,7 @@ void Snd_UploadBlockList_82F0(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $82F2 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_82F2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56360,6 +56553,7 @@ void Snd_UploadBlockList_82F2(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $82F5 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_82F5(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56376,6 +56570,7 @@ void Snd_UploadBlockList_82F5(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $82F6 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_82F6(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56392,6 +56587,7 @@ void Snd_UploadBlockList_82F6(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $82F9 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_82F9(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56408,6 +56604,7 @@ void Snd_UploadBlockList_82F9(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $82FA inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_82FA(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56424,6 +56621,7 @@ void Snd_UploadBlockList_82FA(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $8301 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_8301(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56440,6 +56638,7 @@ void Snd_UploadBlockList_8301(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $8304 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_8304(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56456,6 +56655,7 @@ void Snd_UploadBlockList_8304(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $8306 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_8306(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56472,6 +56672,7 @@ void Snd_UploadBlockList_8306(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $8307 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_8307(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56488,6 +56689,7 @@ void Snd_UploadBlockList_8307(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $8308 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_8308(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56504,6 +56706,7 @@ void Snd_UploadBlockList_8308(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $8310 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_8310(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56520,6 +56723,7 @@ void Snd_UploadBlockList_8310(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $8313 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_8313(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56536,6 +56740,7 @@ void Snd_UploadBlockList_8313(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $8315 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_8315(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56552,6 +56757,7 @@ void Snd_UploadBlockList_8315(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $8316 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_8316(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56568,6 +56774,7 @@ void Snd_UploadBlockList_8316(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $8317 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_8317(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56584,6 +56791,7 @@ void Snd_UploadBlockList_8317(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $8318 inside Snd_UploadBlockList: uploads up to $40 sound blocks whose IDs are listed in low WRAM at X ($FF = skip) via APUIO2/3 */
 void Snd_UploadBlockList_8318(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56600,6 +56808,7 @@ void Snd_UploadBlockList_8318(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: sends byte A on APUIO3 with counter on APUIO2 and waits for the echo */
 void Snd_SendByteWait(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56616,6 +56825,7 @@ void Snd_SendByteWait(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $832F inside Snd_SendByteWait: sends byte A on APUIO3 with counter on APUIO2 and waits for the echo */
 void Snd_SendByteWait_832F(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56632,6 +56842,7 @@ void Snd_SendByteWait_832F(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $B197 inside Res_LoadToCgram: Loads resource A (index into [$4F] table) to CGRAM starting at color X */
 void Res_LoadToCgram_B197(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56648,6 +56859,7 @@ void Res_LoadToCgram_B197(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $B19A inside Res_LoadToCgram: Loads resource A (index into [$4F] table) to CGRAM starting at color X */
 void Res_LoadToCgram_B19A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56664,6 +56876,7 @@ void Res_LoadToCgram_B19A(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $B1A0 inside Res_LoadToCgram: Loads resource A (index into [$4F] table) to CGRAM starting at color X */
 void Res_LoadToCgram_B1A0(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56680,6 +56893,7 @@ void Res_LoadToCgram_B1A0(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $B1F2 inside Res_LoadToVram: Loads resource A to VRAM at X; flagged (compressed) resources go through sub_81BB89 */
 void Res_LoadToVram_B1F2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56696,6 +56910,7 @@ void Res_LoadToVram_B1F2(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $B1F5 inside Res_LoadToVram: Loads resource A to VRAM at X; flagged (compressed) resources go through sub_81BB89 */
 void Res_LoadToVram_B1F5(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56712,6 +56927,7 @@ void Res_LoadToVram_B1F5(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $B1F9 inside Res_LoadToVram: Loads resource A to VRAM at X; flagged (compressed) resources go through sub_81BB89 */
 void Res_LoadToVram_B1F9(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56728,6 +56944,7 @@ void Res_LoadToVram_B1F9(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $B1FC inside Res_LoadToVram: Loads resource A to VRAM at X; flagged (compressed) resources go through sub_81BB89 */
 void Res_LoadToVram_B1FC(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56744,6 +56961,7 @@ void Res_LoadToVram_B1FC(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $B200 inside Res_LoadToVram: Loads resource A to VRAM at X; flagged (compressed) resources go through sub_81BB89 */
 void Res_LoadToVram_B200(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56760,6 +56978,7 @@ void Res_LoadToVram_B200(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $B201 inside Res_LoadToVram: Loads resource A to VRAM at X; flagged (compressed) resources go through sub_81BB89 */
 void Res_LoadToVram_B201(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56776,6 +56995,7 @@ void Res_LoadToVram_B201(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $B202 inside Res_LoadToVram: Loads resource A to VRAM at X; flagged (compressed) resources go through sub_81BB89 */
 void Res_LoadToVram_B202(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56792,6 +57012,7 @@ void Res_LoadToVram_B202(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: Reads next source byte at DB:Y, wrapping to next bank at $8000 when Y overflows */
 void Res_ReadByte(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56808,6 +57029,7 @@ void Res_ReadByte(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $B299 inside Res_ReadByte: Reads next source byte at DB:Y, wrapping to next bank at $8000 when Y overflows */
 void Res_ReadByte_B299(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56824,6 +57046,7 @@ void Res_ReadByte_B299(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: JSL wrapper for Res_Lookup */
 void Res_Lookup_Long(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56840,6 +57063,7 @@ void Res_Lookup_Long(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $B2AC inside Res_Lookup_Long: JSL wrapper for Res_Lookup */
 void Res_Lookup_Long_B2AC(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56856,6 +57080,7 @@ void Res_Lookup_Long_B2AC(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: Looks up 5-byte resource entry A in [$4F]: returns bank in A, address in Y, size in $4B, flag in $4D */
 void Res_Lookup(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56872,6 +57097,7 @@ void Res_Lookup(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $B2B9 inside Res_Lookup: Looks up 5-byte resource entry A in [$4F]: returns bank in A, address in Y, size in $4B, flag in $4D */
 void Res_Lookup_B2B9(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56888,6 +57114,7 @@ void Res_Lookup_B2B9(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $B2E5 inside Res_LoadToWram: Copies resource A to WRAM X (bank Y) via WMDATA; compressed resources go through sub_81B8F1 */
 void Res_LoadToWram_B2E5(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56904,6 +57131,7 @@ void Res_LoadToWram_B2E5(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $B326 inside Res_LoadToWram: Copies resource A to WRAM X (bank Y) via WMDATA; compressed resources go through sub_81B8F1 */
 void Res_LoadToWram_B326(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56920,6 +57148,7 @@ void Res_LoadToWram_B326(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $D4E8 inside WaitForNMI_Long: JSL wrapper for WaitForNMI */
 void WaitForNMI_Long_D4E8(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56936,6 +57165,7 @@ void WaitForNMI_Long_D4E8(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $D4F9 inside Vram_Clear_Long: JSL wrapper for Vram_Clear */
 void Vram_Clear_Long_D4F9(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56952,6 +57182,7 @@ void Vram_Clear_Long_D4F9(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $D506 inside Vram_Clear: Fills all 64KB of VRAM with zero */
 void Vram_Clear_D506(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56968,6 +57199,7 @@ void Vram_Clear_D506(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $D509 inside Vram_Clear: Fills all 64KB of VRAM with zero */
 void Vram_Clear_D509(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -56984,6 +57216,7 @@ void Vram_Clear_D509(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $D50A inside Vram_Clear: Fills all 64KB of VRAM with zero */
 void Vram_Clear_D50A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57000,6 +57233,7 @@ void Vram_Clear_D50A(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $D529 inside Race_InitHdma_Long: JSL wrapper for Race_InitHdma */
 void Race_InitHdma_Long_D529(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57016,6 +57250,7 @@ void Race_InitHdma_Long_D529(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $D614 inside Race_InitHdma: Sets window regs and HDMA channels 1-7 and builds race HDMA tables at $7E2046-$7E2095 */
 void Race_InitHdma_D614(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57032,6 +57267,7 @@ void Race_InitHdma_D614(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $D61A inside Race_InitHdma: Sets window regs and HDMA channels 1-7 and builds race HDMA tables at $7E2046-$7E2095 */
 void Race_InitHdma_D61A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57048,6 +57284,7 @@ void Race_InitHdma_D61A(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $D6C8 inside Race_InitHdma: Sets window regs and HDMA channels 1-7 and builds race HDMA tables at $7E2046-$7E2095 */
 void Race_InitHdma_D6C8(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57064,6 +57301,7 @@ void Race_InitHdma_D6C8(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $D734 inside Race_InitVideo_Long: JSL wrapper for Race_InitVideo */
 void Race_InitVideo_Long_D734(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57080,6 +57318,7 @@ void Race_InitVideo_Long_D734(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $D768 inside Race_InitVideo: Disables NMI, sets IRQ/NMI handler vectors and resource table $82B32F, clears VRAM and CGRAM */
 void Race_InitVideo_D768(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57096,6 +57335,7 @@ void Race_InitVideo_D768(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: Hides all sprites in OAM buffer, sets high table to $55, sets up reserved sprites 96-99 */
 void Oam_InitBuffer(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57112,6 +57352,7 @@ void Oam_InitBuffer(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $D778 inside Oam_InitBuffer: Hides all sprites in OAM buffer, sets high table to $55, sets up reserved sprites 96-99 */
 void Oam_InitBuffer_D778(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57128,6 +57369,7 @@ void Oam_InitBuffer_D778(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: JSL wrapper for Race_InitState */
 void Race_InitState_Long(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57144,6 +57386,7 @@ void Race_InitState_Long(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $D80F inside Race_InitState_Long: JSL wrapper for Race_InitState */
 void Race_InitState_Long_D80F(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57160,6 +57403,7 @@ void Race_InitState_Long_D80F(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: JSL wrapper for Race_ClearRam */
 void Race_ClearRam_Long(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57176,6 +57420,7 @@ void Race_ClearRam_Long(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $D813 inside Race_ClearRam_Long: JSL wrapper for Race_ClearRam */
 void Race_ClearRam_Long_D813(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57192,6 +57437,7 @@ void Race_ClearRam_Long_D813(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: Calls sub_81B76D then zeroes WRAM $0082-$00B2 and $0200-$178C */
 void Race_ClearRam(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57208,6 +57454,7 @@ void Race_ClearRam(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $D840 inside Race_ClearRam: Calls sub_81B76D then zeroes WRAM $0082-$00B2 and $0200-$178C */
 void Race_ClearRam_D840(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57224,6 +57471,7 @@ void Race_ClearRam_D840(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $D843 inside Race_ClearRam: Calls sub_81B76D then zeroes WRAM $0082-$00B2 and $0200-$178C */
 void Race_ClearRam_D843(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57240,6 +57488,7 @@ void Race_ClearRam_D843(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: Initializes race variables from track header at $7F0000, resets race SRAM stats, sets up OAM/objects */
 void Race_InitState(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57256,6 +57505,7 @@ void Race_InitState(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $DBCF inside Race_InitState: Initializes race variables from track header at $7F0000, resets race SRAM stats, sets up OAM/objects */
 void Race_InitState_DBCF(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57272,6 +57522,7 @@ void Race_InitState_DBCF(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $DC0B inside Race_InitState: Initializes race variables from track header at $7F0000, resets race SRAM stats, sets up OAM/objects */
 void Race_InitState_DC0B(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57288,6 +57539,7 @@ void Race_InitState_DC0B(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $DC13 inside Race_InitState: Initializes race variables from track header at $7F0000, resets race SRAM stats, sets up OAM/objects */
 void Race_InitState_DC13(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57304,6 +57556,7 @@ void Race_InitState_DC13(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $DC1E inside Race_InitState: Initializes race variables from track header at $7F0000, resets race SRAM stats, sets up OAM/objects */
 void Race_InitState_DC1E(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57320,6 +57573,7 @@ void Race_InitState_DC1E(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: Sets PPU modes for racing: OBSEL, BG mode 1 w/ BG3 prio, BG1-3 maps, char bases, TM */
 void Race_SetPpuRegs(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57336,6 +57590,7 @@ void Race_SetPpuRegs(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: JSL wrapper for Race_LoadTrackGraphics */
 void Race_LoadTrackGraphics_Long(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57352,6 +57607,7 @@ void Race_LoadTrackGraphics_Long(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $DC59 inside Race_LoadTrackGraphics_Long: JSL wrapper for Race_LoadTrackGraphics */
 void Race_LoadTrackGraphics_Long_DC59(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57368,6 +57624,7 @@ void Race_LoadTrackGraphics_Long_DC59(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: Loads track theme ($77074A mod 14) tiles/palettes, unicycle palettes, then track data */
 void Race_LoadTrackGraphics(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57384,6 +57641,7 @@ void Race_LoadTrackGraphics(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $DCA3 inside Race_LoadTrackGraphics: Loads track theme ($77074A mod 14) tiles/palettes, unicycle palettes, then track data */
 void Race_LoadTrackGraphics_DCA3(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57400,6 +57658,7 @@ void Race_LoadTrackGraphics_DCA3(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $DCB1 inside Race_LoadTrackGraphics: Loads track theme ($77074A mod 14) tiles/palettes, unicycle palettes, then track data */
 void Race_LoadTrackGraphics_DCB1(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57416,6 +57675,7 @@ void Race_LoadTrackGraphics_DCB1(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $DD9A inside Race_LoadTrackGraphics: Loads track theme ($77074A mod 14) tiles/palettes, unicycle palettes, then track data */
 void Race_LoadTrackGraphics_DD9A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57432,6 +57692,7 @@ void Race_LoadTrackGraphics_DD9A(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $DDD6 inside Race_LoadTrackGraphics: Loads track theme ($77074A mod 14) tiles/palettes, unicycle palettes, then track data */
 void Race_LoadTrackGraphics_DDD6(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57448,6 +57709,7 @@ void Race_LoadTrackGraphics_DDD6(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $DDE6 inside Race_LoadTrackGraphics: Loads track theme ($77074A mod 14) tiles/palettes, unicycle palettes, then track data */
 void Race_LoadTrackGraphics_DDE6(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57464,6 +57726,7 @@ void Race_LoadTrackGraphics_DDE6(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $DE12 inside Race_LoadTrackGraphics: Loads track theme ($77074A mod 14) tiles/palettes, unicycle palettes, then track data */
 void Race_LoadTrackGraphics_DE12(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57480,6 +57743,7 @@ void Race_LoadTrackGraphics_DE12(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57496,6 +57760,7 @@ void Race_LoadTrackData(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E16D inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E16D(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57512,6 +57777,7 @@ void Race_LoadTrackData_E16D(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E171 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E171(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57528,6 +57794,7 @@ void Race_LoadTrackData_E171(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E172 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E172(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57544,6 +57811,7 @@ void Race_LoadTrackData_E172(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E190 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E190(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57560,6 +57828,7 @@ void Race_LoadTrackData_E190(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E1FF inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E1FF(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57576,6 +57845,7 @@ void Race_LoadTrackData_E1FF(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E220 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E220(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57592,6 +57862,7 @@ void Race_LoadTrackData_E220(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E238 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E238(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57608,6 +57879,7 @@ void Race_LoadTrackData_E238(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E248 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E248(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57624,6 +57896,7 @@ void Race_LoadTrackData_E248(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E24B inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E24B(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57640,6 +57913,7 @@ void Race_LoadTrackData_E24B(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E24D inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E24D(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57656,6 +57930,7 @@ void Race_LoadTrackData_E24D(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E26D inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E26D(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57672,6 +57947,7 @@ void Race_LoadTrackData_E26D(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E270 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E270(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57688,6 +57964,7 @@ void Race_LoadTrackData_E270(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E271 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E271(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57704,6 +57981,7 @@ void Race_LoadTrackData_E271(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E28C inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E28C(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57720,6 +57998,7 @@ void Race_LoadTrackData_E28C(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E292 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E292(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57736,6 +58015,7 @@ void Race_LoadTrackData_E292(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E293 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E293(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57752,6 +58032,7 @@ void Race_LoadTrackData_E293(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E2A0 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E2A0(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57768,6 +58049,7 @@ void Race_LoadTrackData_E2A0(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E2A5 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E2A5(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57784,6 +58066,7 @@ void Race_LoadTrackData_E2A5(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E2A7 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E2A7(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57800,6 +58083,7 @@ void Race_LoadTrackData_E2A7(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E2B6 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E2B6(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57816,6 +58100,7 @@ void Race_LoadTrackData_E2B6(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E2CD inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E2CD(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57832,6 +58117,7 @@ void Race_LoadTrackData_E2CD(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E2D0 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E2D0(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57848,6 +58134,7 @@ void Race_LoadTrackData_E2D0(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E2D3 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E2D3(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57864,6 +58151,7 @@ void Race_LoadTrackData_E2D3(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E2E1 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E2E1(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57880,6 +58168,7 @@ void Race_LoadTrackData_E2E1(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E2E7 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E2E7(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57896,6 +58185,7 @@ void Race_LoadTrackData_E2E7(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E2EB inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E2EB(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57912,6 +58202,7 @@ void Race_LoadTrackData_E2EB(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E2FA inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E2FA(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57928,6 +58219,7 @@ void Race_LoadTrackData_E2FA(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E307 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E307(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57944,6 +58236,7 @@ void Race_LoadTrackData_E307(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E33A inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E33A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57960,6 +58253,7 @@ void Race_LoadTrackData_E33A(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E33E inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E33E(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57976,6 +58270,7 @@ void Race_LoadTrackData_E33E(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E340 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E340(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -57992,6 +58287,7 @@ void Race_LoadTrackData_E340(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E342 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E342(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -58008,6 +58304,7 @@ void Race_LoadTrackData_E342(CpuState *cpu) {
     abort();
   }
 }
+/* decomp: entry point at $E376 inside Race_LoadTrackData: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM */
 void Race_LoadTrackData_E376(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

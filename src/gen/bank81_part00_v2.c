@@ -36,6 +36,7 @@ RecompReturn Uni_TileNop_84DB_M0X0(CpuState *cpu);
 RecompReturn Uni_TileNop_8515_M0X0(CpuState *cpu);
 RecompReturn Uni_TileNop_857D_M0X0(CpuState *cpu);
 
+/* decomp: Per-frame for the current rider: on a lap-line contact cell (type 0, $1C00 bits clear) latch $wLapLineLatch once and record the lap split (min/10s/s/tenths/hundredths) from the race clock; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_CheckLapLine_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_CheckLapLine_M0X0";
@@ -2709,6 +2710,7 @@ RecompReturn Uni_CheckLapLine_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Uni_ApplyTileEffect; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Uni_ApplyTileEffectLong_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_ApplyTileEffectLong_M0X1";
@@ -2840,6 +2842,7 @@ RecompReturn Uni_ApplyTileEffectLong_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: If not pass-through, look up the contact tile type ($7EC000) and run its handler from table $8320; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Uni_ApplyTileEffect_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_ApplyTileEffect_M0X1";
@@ -3453,6 +3456,7 @@ RecompReturn Uni_ApplyTileEffect_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $8341 inside Uni_ApplyTileEffect: If not pass-through, look up the contact tile type ($7EC000) and run its handler from table $8320; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_ApplyTileEffect_8341_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_ApplyTileEffect_8341_M0X0";
@@ -3741,6 +3745,7 @@ RecompReturn Uni_ApplyTileEffect_8341_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $83A4 inside Uni_ApplyTileEffect: If not pass-through, look up the contact tile type ($7EC000) and run its handler from table $8320; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_ApplyTileEffect_83A4_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_ApplyTileEffect_83A4_M0X0";
@@ -4685,6 +4690,7 @@ RecompReturn Uni_ApplyTileEffect_83A4_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $84D2 inside Uni_ApplyTileEffect: If not pass-through, look up the contact tile type ($7EC000) and run its handler from table $8320; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_ApplyTileEffect_84D2_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_ApplyTileEffect_84D2_M0X0";
@@ -4787,6 +4793,7 @@ RecompReturn Uni_ApplyTileEffect_84D2_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $84DB inside Uni_TileNop: Lone RTS stub just before tile handler $8184DB; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_TileNop_84DB_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_TileNop_84DB_M0X0";
@@ -5070,6 +5077,7 @@ RecompReturn Uni_TileNop_84DB_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $8515 inside Uni_TileNop: Lone RTS stub just before tile handler $8184DB; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_TileNop_8515_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_TileNop_8515_M0X0";
@@ -5597,6 +5605,7 @@ RecompReturn Uni_TileNop_8515_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $857D inside Uni_TileNop: Lone RTS stub just before tile handler $8184DB; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_TileNop_857D_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_TileNop_857D_M0X0";
@@ -5852,6 +5861,7 @@ RecompReturn Uni_TileNop_857D_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Uni_EndFrameUpdate; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Uni_EndFrameUpdateLong_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_EndFrameUpdateLong_M0X1";
@@ -5983,6 +5993,7 @@ RecompReturn Uni_EndFrameUpdateLong_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Per-frame unicycle bookkeeping: count down timers, loop state, clear one-frame flags; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Uni_EndFrameUpdate_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_EndFrameUpdate_M0X1";
@@ -7290,6 +7301,7 @@ RecompReturn Uni_EndFrameUpdate_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Tile handler 1: push ground speed $0F9F by $80+$0DE7 in the tile's direction; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_TileBoost_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_TileBoost_M0X0";
@@ -7609,6 +7621,7 @@ RecompReturn Uni_TileBoost_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $8785 inside Uni_TileBoost: Tile handler 1: push ground speed $0F9F by $80+$0DE7 in the tile's direction; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_TileBoost_8785_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_TileBoost_8785_M0X0";
@@ -8104,6 +8117,7 @@ RecompReturn Uni_TileBoost_8785_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $87EB inside Uni_EmptyStub: REP #$30 / RTS stub before tile handler $8187EB; unreferenced; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_EmptyStub_87EB_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_EmptyStub_87EB_M0X0";
@@ -9415,6 +9429,7 @@ RecompReturn Uni_EmptyStub_87EB_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Per-frame for the current rider: on a lap-line contact cell (type 0, $1C00 bits clear) latch $wLapLineLatch once and record the lap split (min/10s/s/tenths/hundredths) from the race clock */
 void Uni_CheckLapLine(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9432,6 +9447,7 @@ void Uni_CheckLapLine(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Uni_ApplyTileEffect */
 void Uni_ApplyTileEffectLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9449,6 +9465,7 @@ void Uni_ApplyTileEffectLong(CpuState *cpu) {
   }
 }
 
+/* decomp: If not pass-through, look up the contact tile type ($7EC000) and run its handler from table $8320 */
 void Uni_ApplyTileEffect(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9466,6 +9483,7 @@ void Uni_ApplyTileEffect(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $8341 inside Uni_ApplyTileEffect: If not pass-through, look up the contact tile type ($7EC000) and run its handler from table $8320 */
 void Uni_ApplyTileEffect_8341(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9483,6 +9501,7 @@ void Uni_ApplyTileEffect_8341(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $83A4 inside Uni_ApplyTileEffect: If not pass-through, look up the contact tile type ($7EC000) and run its handler from table $8320 */
 void Uni_ApplyTileEffect_83A4(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9500,6 +9519,7 @@ void Uni_ApplyTileEffect_83A4(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $84D2 inside Uni_ApplyTileEffect: If not pass-through, look up the contact tile type ($7EC000) and run its handler from table $8320 */
 void Uni_ApplyTileEffect_84D2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9517,6 +9537,7 @@ void Uni_ApplyTileEffect_84D2(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $84DB inside Uni_TileNop: Lone RTS stub just before tile handler $8184DB */
 void Uni_TileNop_84DB(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9534,6 +9555,7 @@ void Uni_TileNop_84DB(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $8515 inside Uni_TileNop: Lone RTS stub just before tile handler $8184DB */
 void Uni_TileNop_8515(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9551,6 +9573,7 @@ void Uni_TileNop_8515(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $857D inside Uni_TileNop: Lone RTS stub just before tile handler $8184DB */
 void Uni_TileNop_857D(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9568,6 +9591,7 @@ void Uni_TileNop_857D(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Uni_EndFrameUpdate */
 void Uni_EndFrameUpdateLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9585,6 +9609,7 @@ void Uni_EndFrameUpdateLong(CpuState *cpu) {
   }
 }
 
+/* decomp: Per-frame unicycle bookkeeping: count down timers, loop state, clear one-frame flags */
 void Uni_EndFrameUpdate(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9602,6 +9627,7 @@ void Uni_EndFrameUpdate(CpuState *cpu) {
   }
 }
 
+/* decomp: Tile handler 1: push ground speed $0F9F by $80+$0DE7 in the tile's direction */
 void Uni_TileBoost(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9619,6 +9645,7 @@ void Uni_TileBoost(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $8785 inside Uni_TileBoost: Tile handler 1: push ground speed $0F9F by $80+$0DE7 in the tile's direction */
 void Uni_TileBoost_8785(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9636,6 +9663,7 @@ void Uni_TileBoost_8785(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $87EB inside Uni_EmptyStub: REP #$30 / RTS stub before tile handler $8187EB; unreferenced */
 void Uni_EmptyStub_87EB(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

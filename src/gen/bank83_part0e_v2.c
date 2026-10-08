@@ -25,6 +25,7 @@ RecompReturn Snd_QueueCommand_M0X1(CpuState *cpu);
 RecompReturn Snd_SendQueuedCommand_M0X0(CpuState *cpu);
 RecompReturn Snd_SendQueuedCommand_M1X0(CpuState *cpu);
 
+/* decomp: Long wrapper for Gfx_QueueRiderTileDma; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Gfx_QueueRiderTileDmaL_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Gfx_QueueRiderTileDmaL_M0X0";
@@ -156,6 +157,7 @@ RecompReturn Gfx_QueueRiderTileDmaL_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Builds VRAM tile DMA list ($1645 src/$15A1 bank/$16E9 dest from $6000) for both riders' body+overlay frames; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Gfx_QueueRiderTileDma_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Gfx_QueueRiderTileDma_FastRom_M0X0";
@@ -1964,6 +1966,7 @@ RecompReturn Gfx_QueueRiderTileDma_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Looks up 3-byte entry A in frame table at $20:8000; returns A=address, X=bank+$23; reached through the other ROM mirror bank; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Gfx_GetRiderFramePtr_FastRom_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Gfx_GetRiderFramePtr_FastRom_M0X1";
@@ -2236,6 +2239,7 @@ RecompReturn Gfx_GetRiderFramePtr_FastRom_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Decodes the four rider frame headers into tile-presence masks and tile counts in DP $00-$13/$18-$2E; reached through the other ROM mirror bank; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Gfx_DecodeRiderFrameHeaders_FastRom_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Gfx_DecodeRiderFrameHeaders_FastRom_M0X1";
@@ -5107,6 +5111,7 @@ RecompReturn Gfx_DecodeRiderFrameHeaders_FastRom_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Pause screen: dims screen, draws random pause phrase and continue/quit, handles cursor; A=0 resume,1 quit,FF none; reached through the other ROM mirror bank; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Race_UpdatePauseMenu_FastRom_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdatePauseMenu_FastRom_M1X1";
@@ -8008,6 +8013,7 @@ RecompReturn Race_UpdatePauseMenu_FastRom_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for Gfx_QueueRiderTileDma */
 void Gfx_QueueRiderTileDmaL(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8025,6 +8031,7 @@ void Gfx_QueueRiderTileDmaL(CpuState *cpu) {
   }
 }
 
+/* decomp: Builds VRAM tile DMA list ($1645 src/$15A1 bank/$16E9 dest from $6000) for both riders' body+overlay frames; reached through the other ROM mirror bank */
 void Gfx_QueueRiderTileDma_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8042,6 +8049,7 @@ void Gfx_QueueRiderTileDma_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Looks up 3-byte entry A in frame table at $20:8000; returns A=address, X=bank+$23; reached through the other ROM mirror bank */
 void Gfx_GetRiderFramePtr_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8059,6 +8067,7 @@ void Gfx_GetRiderFramePtr_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Decodes the four rider frame headers into tile-presence masks and tile counts in DP $00-$13/$18-$2E; reached through the other ROM mirror bank */
 void Gfx_DecodeRiderFrameHeaders_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8076,6 +8085,7 @@ void Gfx_DecodeRiderFrameHeaders_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Pause screen: dims screen, draws random pause phrase and continue/quit, handles cursor; A=0 resume,1 quit,FF none; reached through the other ROM mirror bank */
 void Race_UpdatePauseMenu_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

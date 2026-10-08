@@ -19,6 +19,7 @@ RecompReturn Hud_InitRaceLong_FastRom_M1X1(CpuState *cpu);
 RecompReturn Hud_InitRace_FastRom_M1X1(CpuState *cpu);
 RecompReturn Race_UpdateLapSplits_M1X0(CpuState *cpu);
 
+/* decomp: Per player: on lap split trigger compute time vs stored lap time, build split digit/sign tiles, store new time; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_UpdateLapSplits_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateLapSplits_M1X0";
@@ -2132,6 +2133,7 @@ RecompReturn Race_UpdateLapSplits_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Hud_InitRace (called from race setup); reached through the other ROM mirror bank; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Hud_InitRaceLong_FastRom_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Hud_InitRaceLong_FastRom_M1X1";
@@ -2263,6 +2265,7 @@ RecompReturn Hud_InitRaceLong_FastRom_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Reset race clock to start time, clear lap records, draw static HUD (player names from SRAM, lap/score labels); reached through the other ROM mirror bank; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Hud_InitRace_FastRom_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Hud_InitRace_FastRom_M1X1";
@@ -8649,6 +8652,7 @@ RecompReturn Hud_InitRace_FastRom_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Per player: on lap split trigger compute time vs stored lap time, build split digit/sign tiles, store new time */
 void Race_UpdateLapSplits(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8666,6 +8670,7 @@ void Race_UpdateLapSplits(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Hud_InitRace (called from race setup); reached through the other ROM mirror bank */
 void Hud_InitRaceLong_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8683,6 +8688,7 @@ void Hud_InitRaceLong_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Reset race clock to start time, clear lap records, draw static HUD (player names from SRAM, lap/score labels); reached through the other ROM mirror bank */
 void Hud_InitRace_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

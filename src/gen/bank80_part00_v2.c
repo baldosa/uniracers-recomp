@@ -28,6 +28,7 @@ RecompReturn Pal_CycleRaceColors_Long_M1X0(CpuState *cpu);
 RecompReturn Unused_NmiEntryDB80_B0E1_M1X0(CpuState *cpu);
 RecompReturn Unused_NmiEntryDB80_B0E1_M1X1(CpuState *cpu);
 
+/* decomp: NMI handler installed in $0053 at boot; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn NmiHandler_Default_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "NmiHandler_Default_M1X0";
@@ -346,6 +347,7 @@ RecompReturn NmiHandler_Default_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NMI handler while racing ($0053 = $8610); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn NmiHandler_Race_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "NmiHandler_Race_FastRom_M1X0";
@@ -2027,6 +2029,7 @@ RecompReturn NmiHandler_Race_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NMI handler installed in $0053 at boot */
 void NmiHandler_Default(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -2044,6 +2047,7 @@ void NmiHandler_Default(CpuState *cpu) {
   }
 }
 
+/* decomp: NMI handler while racing ($0053 = $8610); reached through the other ROM mirror bank */
 void NmiHandler_Race_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

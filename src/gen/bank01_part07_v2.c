@@ -102,6 +102,7 @@ RecompReturn Decomp_ToRam_BA16_M0X0(CpuState *cpu);
 RecompReturn Decomp_ToRam_BA18_M0X0(CpuState *cpu);
 RecompReturn Decomp_ToRam_BA1A_M0X0(CpuState *cpu);
 
+/* decomp: entry point at $B93D inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B93D_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B93D_M0X0";
@@ -293,6 +294,7 @@ RecompReturn Decomp_ToRam_B93D_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B943 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B943_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B943_M0X0";
@@ -448,6 +450,7 @@ RecompReturn Decomp_ToRam_B943_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B949 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B949_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B949_M0X0";
@@ -567,6 +570,7 @@ RecompReturn Decomp_ToRam_B949_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B94F inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B94F_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B94F_M0X0";
@@ -650,6 +654,7 @@ RecompReturn Decomp_ToRam_B94F_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B95A inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B95A_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B95A_M0X0";
@@ -954,6 +959,7 @@ RecompReturn Decomp_ToRam_B95A_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B960 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B960_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B960_M0X0";
@@ -1222,6 +1228,7 @@ RecompReturn Decomp_ToRam_B960_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B962 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B962_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B962_M0X0";
@@ -1487,6 +1494,7 @@ RecompReturn Decomp_ToRam_B962_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B965 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B965_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B965_M0X0";
@@ -1744,6 +1752,7 @@ RecompReturn Decomp_ToRam_B965_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B96F inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B96F_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B96F_M0X0";
@@ -1936,6 +1945,7 @@ RecompReturn Decomp_ToRam_B96F_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B970 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B970_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B970_M0X0";
@@ -2118,6 +2128,7 @@ RecompReturn Decomp_ToRam_B970_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B973 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B973_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B973_M0X0";
@@ -2273,6 +2284,7 @@ RecompReturn Decomp_ToRam_B973_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B976 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B976_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B976_M0X0";
@@ -2423,6 +2435,7 @@ RecompReturn Decomp_ToRam_B976_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B978 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B978_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B978_M0X0";
@@ -2567,6 +2580,7 @@ RecompReturn Decomp_ToRam_B978_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B983 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B983_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B983_M0X0";
@@ -2656,6 +2670,7 @@ RecompReturn Decomp_ToRam_B983_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B985 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B985_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B985_M0X0";
@@ -2742,6 +2757,7 @@ RecompReturn Decomp_ToRam_B985_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B986 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B986_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B986_M0X0";
@@ -2818,6 +2834,7 @@ RecompReturn Decomp_ToRam_B986_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B987 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B987_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B987_M0X0";
@@ -2884,6 +2901,7 @@ RecompReturn Decomp_ToRam_B987_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B988 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B988_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B988_M0X0";
@@ -2940,6 +2958,7 @@ RecompReturn Decomp_ToRam_B988_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B98C inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B98C_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B98C_M0X0";
@@ -3189,6 +3208,7 @@ RecompReturn Decomp_ToRam_B98C_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B98E inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B98E_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B98E_M0X0";
@@ -3432,6 +3452,7 @@ RecompReturn Decomp_ToRam_B98E_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B990 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B990_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B990_M0X0";
@@ -3672,6 +3693,7 @@ RecompReturn Decomp_ToRam_B990_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B991 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B991_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B991_M0X0";
@@ -3902,6 +3924,7 @@ RecompReturn Decomp_ToRam_B991_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B992 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B992_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B992_M0X0";
@@ -4122,6 +4145,7 @@ RecompReturn Decomp_ToRam_B992_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B993 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B993_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B993_M0X0";
@@ -4332,6 +4356,7 @@ RecompReturn Decomp_ToRam_B993_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B995 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B995_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B995_M0X0";
@@ -4530,6 +4555,7 @@ RecompReturn Decomp_ToRam_B995_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B997 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B997_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B997_M0X0";
@@ -4705,6 +4731,7 @@ RecompReturn Decomp_ToRam_B997_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B99D inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B99D_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B99D_M1X0";
@@ -4864,6 +4891,7 @@ RecompReturn Decomp_ToRam_B99D_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B9A0 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B9A0_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B9A0_M0X0";
@@ -5006,6 +5034,7 @@ RecompReturn Decomp_ToRam_B9A0_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B9A5 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B9A5_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B9A5_M0X0";
@@ -5109,6 +5138,7 @@ RecompReturn Decomp_ToRam_B9A5_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B9AB inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B9AB_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B9AB_M0X0";
@@ -5176,6 +5206,7 @@ RecompReturn Decomp_ToRam_B9AB_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B9AC inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B9AC_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B9AC_M0X0";
@@ -5232,6 +5263,7 @@ RecompReturn Decomp_ToRam_B9AC_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B9AE inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B9AE_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B9AE_M0X0";
@@ -5276,6 +5308,7 @@ RecompReturn Decomp_ToRam_B9AE_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B9B1 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B9B1_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B9B1_M0X0";
@@ -5982,6 +6015,7 @@ RecompReturn Decomp_ToRam_B9B1_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B9BD inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B9BD_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B9BD_M0X0";
@@ -6622,6 +6656,7 @@ RecompReturn Decomp_ToRam_B9BD_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B9BF inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B9BF_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B9BF_M0X0";
@@ -7256,6 +7291,7 @@ RecompReturn Decomp_ToRam_B9BF_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B9C3 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B9C3_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B9C3_M0X0";
@@ -7879,6 +7915,7 @@ RecompReturn Decomp_ToRam_B9C3_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B9C5 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B9C5_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B9C5_M0X0";
@@ -8490,6 +8527,7 @@ RecompReturn Decomp_ToRam_B9C5_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B9C8 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B9C8_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B9C8_M0X0";
@@ -9090,6 +9128,7 @@ RecompReturn Decomp_ToRam_B9C8_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B9CA inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B9CA_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B9CA_M0X0";
@@ -9690,6 +9729,7 @@ RecompReturn Decomp_ToRam_B9CA_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B9CC inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B9CC_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B9CC_M0X0";
@@ -10290,6 +10330,7 @@ RecompReturn Decomp_ToRam_B9CC_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B9CF inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B9CF_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B9CF_M0X0";
@@ -10828,6 +10869,7 @@ RecompReturn Decomp_ToRam_B9CF_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B9D5 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B9D5_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B9D5_M1X0";
@@ -11330,6 +11372,7 @@ RecompReturn Decomp_ToRam_B9D5_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B9DA inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B9DA_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B9DA_M0X0";
@@ -11812,6 +11855,7 @@ RecompReturn Decomp_ToRam_B9DA_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B9E5 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B9E5_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B9E5_M0X0";
@@ -12219,6 +12263,7 @@ RecompReturn Decomp_ToRam_B9E5_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B9F3 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B9F3_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B9F3_M0X0";
@@ -12547,6 +12592,7 @@ RecompReturn Decomp_ToRam_B9F3_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B9F5 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B9F5_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B9F5_M0X0";
@@ -12863,6 +12909,7 @@ RecompReturn Decomp_ToRam_B9F5_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B9F7 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B9F7_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B9F7_M0X0";
@@ -13176,6 +13223,7 @@ RecompReturn Decomp_ToRam_B9F7_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B9FF inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_B9FF_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_B9FF_M0X0";
@@ -13424,6 +13472,7 @@ RecompReturn Decomp_ToRam_B9FF_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BA04 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_BA04_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_BA04_M0X0";
@@ -13654,6 +13703,7 @@ RecompReturn Decomp_ToRam_BA04_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BA05 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_BA05_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_BA05_M0X0";
@@ -13878,6 +13928,7 @@ RecompReturn Decomp_ToRam_BA05_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BA07 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_BA07_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_BA07_M0X0";
@@ -14095,6 +14146,7 @@ RecompReturn Decomp_ToRam_BA07_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BA08 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_BA08_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_BA08_M0X0";
@@ -14302,6 +14354,7 @@ RecompReturn Decomp_ToRam_BA08_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BA0A inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_BA0A_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_BA0A_M0X0";
@@ -14497,6 +14550,7 @@ RecompReturn Decomp_ToRam_BA0A_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BA16 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_BA16_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_BA16_M0X0";
@@ -14667,6 +14721,7 @@ RecompReturn Decomp_ToRam_BA16_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BA18 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_BA18_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_BA18_M0X0";
@@ -14829,6 +14884,7 @@ RecompReturn Decomp_ToRam_BA18_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BA1A inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ToRam_BA1A_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ToRam_BA1A_M0X0";
@@ -14873,6 +14929,7 @@ RecompReturn Decomp_ToRam_BA1A_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Decomp_ToRam: decodes one Huffman symbol plus extra bits; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_DecodeSymbol_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_DecodeSymbol_M0X0";
@@ -14923,6 +14980,7 @@ RecompReturn Decomp_DecodeSymbol_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BA2A inside Decomp_DecodeSymbol: Decomp_ToRam: decodes one Huffman symbol plus extra bits; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_DecodeSymbol_BA2A_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_DecodeSymbol_BA2A_M0X0";
@@ -15314,6 +15372,7 @@ RecompReturn Decomp_DecodeSymbol_BA2A_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BA2C inside Decomp_DecodeSymbol: Decomp_ToRam: decodes one Huffman symbol plus extra bits; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_DecodeSymbol_BA2C_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_DecodeSymbol_BA2C_M0X0";
@@ -15685,6 +15744,7 @@ RecompReturn Decomp_DecodeSymbol_BA2C_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BA35 inside Decomp_DecodeSymbol: Decomp_ToRam: decodes one Huffman symbol plus extra bits; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_DecodeSymbol_BA35_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_DecodeSymbol_BA35_M0X0";
@@ -15999,6 +16059,7 @@ RecompReturn Decomp_DecodeSymbol_BA35_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BA44 inside Decomp_DecodeSymbol: Decomp_ToRam: decodes one Huffman symbol plus extra bits; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_DecodeSymbol_BA44_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_DecodeSymbol_BA44_M0X0";
@@ -16213,6 +16274,7 @@ RecompReturn Decomp_DecodeSymbol_BA44_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BA4D inside Decomp_DecodeSymbol: Decomp_ToRam: decodes one Huffman symbol plus extra bits; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_DecodeSymbol_BA4D_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_DecodeSymbol_BA4D_M0X0";
@@ -16384,6 +16446,7 @@ RecompReturn Decomp_DecodeSymbol_BA4D_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BA54 inside Decomp_DecodeSymbol: Decomp_ToRam: decodes one Huffman symbol plus extra bits; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_DecodeSymbol_BA54_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_DecodeSymbol_BA54_M0X0";
@@ -16497,6 +16560,7 @@ RecompReturn Decomp_DecodeSymbol_BA54_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BA59 inside Decomp_DecodeSymbol: Decomp_ToRam: decodes one Huffman symbol plus extra bits; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_DecodeSymbol_BA59_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_DecodeSymbol_BA59_M0X0";
@@ -16596,6 +16660,7 @@ RecompReturn Decomp_DecodeSymbol_BA59_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Decomp_ToRam: reads A bits from the bitstream at [$82]; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ReadBits_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ReadBits_M0X0";
@@ -16931,6 +16996,7 @@ RecompReturn Decomp_ReadBits_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BA8A inside Decomp_ReadBits: Decomp_ToRam: reads A bits from the bitstream at [$82]; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ReadBits_BA8A_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ReadBits_BA8A_M0X0";
@@ -17197,6 +17263,7 @@ RecompReturn Decomp_ReadBits_BA8A_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BA90 inside Decomp_ReadBits: Decomp_ToRam: reads A bits from the bitstream at [$82]; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ReadBits_BA90_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ReadBits_BA90_M0X0";
@@ -17428,6 +17495,7 @@ RecompReturn Decomp_ReadBits_BA90_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BA93 inside Decomp_ReadBits: Decomp_ToRam: reads A bits from the bitstream at [$82]; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ReadBits_BA93_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ReadBits_BA93_M0X0";
@@ -17637,6 +17705,7 @@ RecompReturn Decomp_ReadBits_BA93_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BA99 inside Decomp_ReadBits: Decomp_ToRam: reads A bits from the bitstream at [$82]; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ReadBits_BA99_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ReadBits_BA99_M0X0";
@@ -17811,6 +17880,7 @@ RecompReturn Decomp_ReadBits_BA99_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BA9C inside Decomp_ReadBits: Decomp_ToRam: reads A bits from the bitstream at [$82]; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ReadBits_BA9C_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ReadBits_BA9C_M0X0";
@@ -17963,6 +18033,7 @@ RecompReturn Decomp_ReadBits_BA9C_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BAA9 inside Decomp_ReadBits: Decomp_ToRam: reads A bits from the bitstream at [$82]; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ReadBits_BAA9_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ReadBits_BAA9_M0X0";
@@ -18046,6 +18117,7 @@ RecompReturn Decomp_ReadBits_BAA9_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BAAE inside Decomp_ReadBits: Decomp_ToRam: reads A bits from the bitstream at [$82]; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ReadBits_BAAE_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ReadBits_BAAE_M0X0";
@@ -18095,6 +18167,7 @@ RecompReturn Decomp_ReadBits_BAAE_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BAB3 inside Decomp_ReadBits: Decomp_ToRam: reads A bits from the bitstream at [$82]; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_ReadBits_BAB3_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_ReadBits_BAB3_M0X0";
@@ -18218,6 +18291,7 @@ RecompReturn Decomp_ReadBits_BAB3_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Decomp_ToRam: reads code lengths and builds a canonical Huffman table at [$88]+Y; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_BuildHuffTable_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_BuildHuffTable_M0X0";
@@ -19086,6 +19160,7 @@ RecompReturn Decomp_BuildHuffTable_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BAED inside Decomp_BuildHuffTable: Decomp_ToRam: reads code lengths and builds a canonical Huffman table at [$88]+Y; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_BuildHuffTable_BAED_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_BuildHuffTable_BAED_M0X0";
@@ -19815,6 +19890,7 @@ RecompReturn Decomp_BuildHuffTable_BAED_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BAF4 inside Decomp_BuildHuffTable: Decomp_ToRam: reads code lengths and builds a canonical Huffman table at [$88]+Y; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_BuildHuffTable_BAF4_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_BuildHuffTable_BAF4_M0X0";
@@ -20503,6 +20579,7 @@ RecompReturn Decomp_BuildHuffTable_BAF4_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BB09 inside Decomp_BuildHuffTable: Decomp_ToRam: reads code lengths and builds a canonical Huffman table at [$88]+Y; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_BuildHuffTable_BB09_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_BuildHuffTable_BB09_M0X0";
@@ -21110,6 +21187,7 @@ RecompReturn Decomp_BuildHuffTable_BB09_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BB10 inside Decomp_BuildHuffTable: Decomp_ToRam: reads code lengths and builds a canonical Huffman table at [$88]+Y; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_BuildHuffTable_BB10_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_BuildHuffTable_BB10_M0X0";
@@ -21689,6 +21767,7 @@ RecompReturn Decomp_BuildHuffTable_BB10_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BB14 inside Decomp_BuildHuffTable: Decomp_ToRam: reads code lengths and builds a canonical Huffman table at [$88]+Y; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_BuildHuffTable_BB14_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_BuildHuffTable_BB14_M0X0";
@@ -22238,6 +22317,7 @@ RecompReturn Decomp_BuildHuffTable_BB14_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BB30 inside Decomp_BuildHuffTable: Decomp_ToRam: reads code lengths and builds a canonical Huffman table at [$88]+Y; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_BuildHuffTable_BB30_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_BuildHuffTable_BB30_M0X0";
@@ -22664,6 +22744,7 @@ RecompReturn Decomp_BuildHuffTable_BB30_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BB36 inside Decomp_BuildHuffTable: Decomp_ToRam: reads code lengths and builds a canonical Huffman table at [$88]+Y; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_BuildHuffTable_BB36_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_BuildHuffTable_BB36_M0X0";
@@ -23055,6 +23136,7 @@ RecompReturn Decomp_BuildHuffTable_BB36_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BB39 inside Decomp_BuildHuffTable: Decomp_ToRam: reads code lengths and builds a canonical Huffman table at [$88]+Y; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_BuildHuffTable_BB39_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_BuildHuffTable_BB39_M0X0";
@@ -23426,6 +23508,7 @@ RecompReturn Decomp_BuildHuffTable_BB39_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BB60 inside Decomp_BuildHuffTable: Decomp_ToRam: reads code lengths and builds a canonical Huffman table at [$88]+Y; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_BuildHuffTable_BB60_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_BuildHuffTable_BB60_M0X0";
@@ -23600,6 +23683,7 @@ RecompReturn Decomp_BuildHuffTable_BB60_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BB65 inside Decomp_BuildHuffTable: Decomp_ToRam: reads code lengths and builds a canonical Huffman table at [$88]+Y; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_BuildHuffTable_BB65_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_BuildHuffTable_BB65_M0X0";
@@ -23732,6 +23816,7 @@ RecompReturn Decomp_BuildHuffTable_BB65_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Decomp_ToRam: loads next 16-bit word from [$82], handling bank crossing; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_FetchWord_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_FetchWord_M0X0";
@@ -23936,6 +24021,7 @@ RecompReturn Decomp_FetchWord_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BB86 inside Decomp_FetchWord: Decomp_ToRam: loads next 16-bit word from [$82], handling bank crossing; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Decomp_FetchWord_BB86_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Decomp_FetchWord_BB86_M0X0";
@@ -24043,6 +24129,7 @@ RecompReturn Decomp_FetchWord_BB86_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B93D inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B93D(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24060,6 +24147,7 @@ void Decomp_ToRam_B93D(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B943 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B943(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24077,6 +24165,7 @@ void Decomp_ToRam_B943(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B949 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B949(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24094,6 +24183,7 @@ void Decomp_ToRam_B949(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B94F inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B94F(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24111,6 +24201,7 @@ void Decomp_ToRam_B94F(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B95A inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B95A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24128,6 +24219,7 @@ void Decomp_ToRam_B95A(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B960 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B960(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24145,6 +24237,7 @@ void Decomp_ToRam_B960(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B962 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B962(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24162,6 +24255,7 @@ void Decomp_ToRam_B962(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B965 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B965(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24179,6 +24273,7 @@ void Decomp_ToRam_B965(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B96F inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B96F(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24196,6 +24291,7 @@ void Decomp_ToRam_B96F(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B970 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B970(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24213,6 +24309,7 @@ void Decomp_ToRam_B970(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B973 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B973(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24230,6 +24327,7 @@ void Decomp_ToRam_B973(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B976 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B976(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24247,6 +24345,7 @@ void Decomp_ToRam_B976(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B978 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B978(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24264,6 +24363,7 @@ void Decomp_ToRam_B978(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B983 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B983(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24281,6 +24381,7 @@ void Decomp_ToRam_B983(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B985 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B985(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24298,6 +24399,7 @@ void Decomp_ToRam_B985(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B986 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B986(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24315,6 +24417,7 @@ void Decomp_ToRam_B986(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B987 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B987(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24332,6 +24435,7 @@ void Decomp_ToRam_B987(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B988 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B988(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24349,6 +24453,7 @@ void Decomp_ToRam_B988(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B98C inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B98C(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24366,6 +24471,7 @@ void Decomp_ToRam_B98C(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B98E inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B98E(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24383,6 +24489,7 @@ void Decomp_ToRam_B98E(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B990 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B990(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24400,6 +24507,7 @@ void Decomp_ToRam_B990(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B991 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B991(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24417,6 +24525,7 @@ void Decomp_ToRam_B991(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B992 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B992(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24434,6 +24543,7 @@ void Decomp_ToRam_B992(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B993 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B993(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24451,6 +24561,7 @@ void Decomp_ToRam_B993(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B995 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B995(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24468,6 +24579,7 @@ void Decomp_ToRam_B995(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B997 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B997(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24485,6 +24597,7 @@ void Decomp_ToRam_B997(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B99D inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B99D(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24502,6 +24615,7 @@ void Decomp_ToRam_B99D(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B9A0 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B9A0(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24519,6 +24633,7 @@ void Decomp_ToRam_B9A0(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B9A5 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B9A5(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24536,6 +24651,7 @@ void Decomp_ToRam_B9A5(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B9AB inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B9AB(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24553,6 +24669,7 @@ void Decomp_ToRam_B9AB(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B9AC inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B9AC(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24570,6 +24687,7 @@ void Decomp_ToRam_B9AC(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B9AE inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B9AE(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24587,6 +24705,7 @@ void Decomp_ToRam_B9AE(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B9B1 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B9B1(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24604,6 +24723,7 @@ void Decomp_ToRam_B9B1(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B9BD inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B9BD(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24621,6 +24741,7 @@ void Decomp_ToRam_B9BD(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B9BF inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B9BF(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24638,6 +24759,7 @@ void Decomp_ToRam_B9BF(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B9C3 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B9C3(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24655,6 +24777,7 @@ void Decomp_ToRam_B9C3(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B9C5 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B9C5(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24672,6 +24795,7 @@ void Decomp_ToRam_B9C5(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B9C8 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B9C8(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24689,6 +24813,7 @@ void Decomp_ToRam_B9C8(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B9CA inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B9CA(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24706,6 +24831,7 @@ void Decomp_ToRam_B9CA(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B9CC inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B9CC(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24723,6 +24849,7 @@ void Decomp_ToRam_B9CC(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B9CF inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B9CF(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24740,6 +24867,7 @@ void Decomp_ToRam_B9CF(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B9D5 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B9D5(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24757,6 +24885,7 @@ void Decomp_ToRam_B9D5(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B9DA inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B9DA(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24774,6 +24903,7 @@ void Decomp_ToRam_B9DA(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B9E5 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B9E5(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24791,6 +24921,7 @@ void Decomp_ToRam_B9E5(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B9F3 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B9F3(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24808,6 +24939,7 @@ void Decomp_ToRam_B9F3(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B9F5 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B9F5(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24825,6 +24957,7 @@ void Decomp_ToRam_B9F5(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B9F7 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B9F7(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24842,6 +24975,7 @@ void Decomp_ToRam_B9F7(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B9FF inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_B9FF(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24859,6 +24993,7 @@ void Decomp_ToRam_B9FF(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BA04 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_BA04(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24876,6 +25011,7 @@ void Decomp_ToRam_BA04(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BA05 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_BA05(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24893,6 +25029,7 @@ void Decomp_ToRam_BA05(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BA07 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_BA07(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24910,6 +25047,7 @@ void Decomp_ToRam_BA07(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BA08 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_BA08(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24927,6 +25065,7 @@ void Decomp_ToRam_BA08(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BA0A inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_BA0A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24944,6 +25083,7 @@ void Decomp_ToRam_BA0A(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BA16 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_BA16(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24961,6 +25101,7 @@ void Decomp_ToRam_BA16(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BA18 inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_BA18(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24978,6 +25119,7 @@ void Decomp_ToRam_BA18(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BA1A inside Decomp_ToRam: decompresses Huffman+LZ data (stack args: src long, dest) to RAM */
 void Decomp_ToRam_BA1A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24995,6 +25137,7 @@ void Decomp_ToRam_BA1A(CpuState *cpu) {
   }
 }
 
+/* decomp: Decomp_ToRam: decodes one Huffman symbol plus extra bits */
 void Decomp_DecodeSymbol(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25012,6 +25155,7 @@ void Decomp_DecodeSymbol(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BA2A inside Decomp_DecodeSymbol: Decomp_ToRam: decodes one Huffman symbol plus extra bits */
 void Decomp_DecodeSymbol_BA2A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25029,6 +25173,7 @@ void Decomp_DecodeSymbol_BA2A(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BA2C inside Decomp_DecodeSymbol: Decomp_ToRam: decodes one Huffman symbol plus extra bits */
 void Decomp_DecodeSymbol_BA2C(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25046,6 +25191,7 @@ void Decomp_DecodeSymbol_BA2C(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BA35 inside Decomp_DecodeSymbol: Decomp_ToRam: decodes one Huffman symbol plus extra bits */
 void Decomp_DecodeSymbol_BA35(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25063,6 +25209,7 @@ void Decomp_DecodeSymbol_BA35(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BA44 inside Decomp_DecodeSymbol: Decomp_ToRam: decodes one Huffman symbol plus extra bits */
 void Decomp_DecodeSymbol_BA44(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25080,6 +25227,7 @@ void Decomp_DecodeSymbol_BA44(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BA4D inside Decomp_DecodeSymbol: Decomp_ToRam: decodes one Huffman symbol plus extra bits */
 void Decomp_DecodeSymbol_BA4D(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25097,6 +25245,7 @@ void Decomp_DecodeSymbol_BA4D(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BA54 inside Decomp_DecodeSymbol: Decomp_ToRam: decodes one Huffman symbol plus extra bits */
 void Decomp_DecodeSymbol_BA54(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25114,6 +25263,7 @@ void Decomp_DecodeSymbol_BA54(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BA59 inside Decomp_DecodeSymbol: Decomp_ToRam: decodes one Huffman symbol plus extra bits */
 void Decomp_DecodeSymbol_BA59(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25131,6 +25281,7 @@ void Decomp_DecodeSymbol_BA59(CpuState *cpu) {
   }
 }
 
+/* decomp: Decomp_ToRam: reads A bits from the bitstream at [$82] */
 void Decomp_ReadBits(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25148,6 +25299,7 @@ void Decomp_ReadBits(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BA8A inside Decomp_ReadBits: Decomp_ToRam: reads A bits from the bitstream at [$82] */
 void Decomp_ReadBits_BA8A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25165,6 +25317,7 @@ void Decomp_ReadBits_BA8A(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BA90 inside Decomp_ReadBits: Decomp_ToRam: reads A bits from the bitstream at [$82] */
 void Decomp_ReadBits_BA90(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25182,6 +25335,7 @@ void Decomp_ReadBits_BA90(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BA93 inside Decomp_ReadBits: Decomp_ToRam: reads A bits from the bitstream at [$82] */
 void Decomp_ReadBits_BA93(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25199,6 +25353,7 @@ void Decomp_ReadBits_BA93(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BA99 inside Decomp_ReadBits: Decomp_ToRam: reads A bits from the bitstream at [$82] */
 void Decomp_ReadBits_BA99(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25216,6 +25371,7 @@ void Decomp_ReadBits_BA99(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BA9C inside Decomp_ReadBits: Decomp_ToRam: reads A bits from the bitstream at [$82] */
 void Decomp_ReadBits_BA9C(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25233,6 +25389,7 @@ void Decomp_ReadBits_BA9C(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BAA9 inside Decomp_ReadBits: Decomp_ToRam: reads A bits from the bitstream at [$82] */
 void Decomp_ReadBits_BAA9(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25250,6 +25407,7 @@ void Decomp_ReadBits_BAA9(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BAAE inside Decomp_ReadBits: Decomp_ToRam: reads A bits from the bitstream at [$82] */
 void Decomp_ReadBits_BAAE(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25267,6 +25425,7 @@ void Decomp_ReadBits_BAAE(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BAB3 inside Decomp_ReadBits: Decomp_ToRam: reads A bits from the bitstream at [$82] */
 void Decomp_ReadBits_BAB3(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25284,6 +25443,7 @@ void Decomp_ReadBits_BAB3(CpuState *cpu) {
   }
 }
 
+/* decomp: Decomp_ToRam: reads code lengths and builds a canonical Huffman table at [$88]+Y */
 void Decomp_BuildHuffTable(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25301,6 +25461,7 @@ void Decomp_BuildHuffTable(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BAED inside Decomp_BuildHuffTable: Decomp_ToRam: reads code lengths and builds a canonical Huffman table at [$88]+Y */
 void Decomp_BuildHuffTable_BAED(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25318,6 +25479,7 @@ void Decomp_BuildHuffTable_BAED(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BAF4 inside Decomp_BuildHuffTable: Decomp_ToRam: reads code lengths and builds a canonical Huffman table at [$88]+Y */
 void Decomp_BuildHuffTable_BAF4(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25335,6 +25497,7 @@ void Decomp_BuildHuffTable_BAF4(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BB09 inside Decomp_BuildHuffTable: Decomp_ToRam: reads code lengths and builds a canonical Huffman table at [$88]+Y */
 void Decomp_BuildHuffTable_BB09(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25352,6 +25515,7 @@ void Decomp_BuildHuffTable_BB09(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BB10 inside Decomp_BuildHuffTable: Decomp_ToRam: reads code lengths and builds a canonical Huffman table at [$88]+Y */
 void Decomp_BuildHuffTable_BB10(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25369,6 +25533,7 @@ void Decomp_BuildHuffTable_BB10(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BB14 inside Decomp_BuildHuffTable: Decomp_ToRam: reads code lengths and builds a canonical Huffman table at [$88]+Y */
 void Decomp_BuildHuffTable_BB14(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25386,6 +25551,7 @@ void Decomp_BuildHuffTable_BB14(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BB30 inside Decomp_BuildHuffTable: Decomp_ToRam: reads code lengths and builds a canonical Huffman table at [$88]+Y */
 void Decomp_BuildHuffTable_BB30(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25403,6 +25569,7 @@ void Decomp_BuildHuffTable_BB30(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BB36 inside Decomp_BuildHuffTable: Decomp_ToRam: reads code lengths and builds a canonical Huffman table at [$88]+Y */
 void Decomp_BuildHuffTable_BB36(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25420,6 +25587,7 @@ void Decomp_BuildHuffTable_BB36(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BB39 inside Decomp_BuildHuffTable: Decomp_ToRam: reads code lengths and builds a canonical Huffman table at [$88]+Y */
 void Decomp_BuildHuffTable_BB39(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25437,6 +25605,7 @@ void Decomp_BuildHuffTable_BB39(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BB60 inside Decomp_BuildHuffTable: Decomp_ToRam: reads code lengths and builds a canonical Huffman table at [$88]+Y */
 void Decomp_BuildHuffTable_BB60(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25454,6 +25623,7 @@ void Decomp_BuildHuffTable_BB60(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BB65 inside Decomp_BuildHuffTable: Decomp_ToRam: reads code lengths and builds a canonical Huffman table at [$88]+Y */
 void Decomp_BuildHuffTable_BB65(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25471,6 +25641,7 @@ void Decomp_BuildHuffTable_BB65(CpuState *cpu) {
   }
 }
 
+/* decomp: Decomp_ToRam: loads next 16-bit word from [$82], handling bank crossing */
 void Decomp_FetchWord(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25488,6 +25659,7 @@ void Decomp_FetchWord(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BB86 inside Decomp_FetchWord: Decomp_ToRam: loads next 16-bit word from [$82], handling bank crossing */
 void Decomp_FetchWord_BB86(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

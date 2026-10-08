@@ -83,6 +83,7 @@ RecompReturn WaitForNMI_Long_M0X0(CpuState *cpu);
 RecompReturn WaitForNMI_Long_M1X0(CpuState *cpu);
 RecompReturn WaitForNMI_Long_M1X1(CpuState *cpu);
 
+/* decomp: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_Main_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_FastRom_M1X0";
@@ -4292,6 +4293,7 @@ RecompReturn Race_Main_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CA07 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Main_CA07_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_CA07_FastRom_M0X0";
@@ -7865,6 +7867,7 @@ RecompReturn Race_Main_CA07_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CA4C inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Main_CA4C_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_CA4C_FastRom_M0X0";
@@ -11438,6 +11441,7 @@ RecompReturn Race_Main_CA4C_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CA91 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Main_CA91_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_CA91_FastRom_M0X0";
@@ -15011,6 +15015,7 @@ RecompReturn Race_Main_CA91_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CAD6 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Main_CAD6_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_CAD6_FastRom_M0X0";
@@ -18584,6 +18589,7 @@ RecompReturn Race_Main_CAD6_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CB1B inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Main_CB1B_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_CB1B_FastRom_M0X0";
@@ -22157,6 +22163,7 @@ RecompReturn Race_Main_CB1B_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CB60 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Main_CB60_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_CB60_FastRom_M0X0";
@@ -25719,6 +25726,7 @@ RecompReturn Race_Main_CB60_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: While $12D9/$12DB set, every 360 frames queue next of 8 per-player messages; then mark colour seen; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_UpdateColorHints_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateColorHints_FastRom_M0X0";
@@ -26877,6 +26885,7 @@ RecompReturn Race_UpdateColorHints_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: While $12D9/$12DB set, every 360 frames queue next of 8 per-player messages; then mark colour seen; reached through the other ROM mirror bank; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Race_UpdateColorHints_FastRom_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateColorHints_FastRom_M0X1";
@@ -28035,6 +28044,7 @@ RecompReturn Race_UpdateColorHints_FastRom_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: While $12D9/$12DB set, every 360 frames queue next of 8 per-player messages; then mark colour seen; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_UpdateColorHints_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateColorHints_FastRom_M1X0";
@@ -29193,6 +29203,7 @@ RecompReturn Race_UpdateColorHints_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: While $12D9/$12DB set, every 360 frames queue next of 8 per-player messages; then mark colour seen; reached through the other ROM mirror bank; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Race_UpdateColorHints_FastRom_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateColorHints_FastRom_M1X1";
@@ -30351,6 +30362,7 @@ RecompReturn Race_UpdateColorHints_FastRom_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Special-track (>= $28) handler: run the active one of 8 timed race effects ($131D-$132B); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_UpdateSpecialFx_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateSpecialFx_FastRom_M1X0";
@@ -32527,6 +32539,7 @@ RecompReturn Race_UpdateSpecialFx_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Special-track (>= $28) handler: run the active one of 8 timed race effects ($131D-$132B); reached through the other ROM mirror bank; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Race_UpdateSpecialFx_FastRom_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateSpecialFx_FastRom_M1X1";
@@ -34703,6 +34716,7 @@ RecompReturn Race_UpdateSpecialFx_FastRom_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; reached through the other ROM mirror bank */
 void Race_Main_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -34720,6 +34734,7 @@ void Race_Main_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CA07 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; reached through the other ROM mirror bank */
 void Race_Main_CA07_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -34737,6 +34752,7 @@ void Race_Main_CA07_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CA4C inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; reached through the other ROM mirror bank */
 void Race_Main_CA4C_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -34754,6 +34770,7 @@ void Race_Main_CA4C_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CA91 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; reached through the other ROM mirror bank */
 void Race_Main_CA91_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -34771,6 +34788,7 @@ void Race_Main_CA91_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CAD6 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; reached through the other ROM mirror bank */
 void Race_Main_CAD6_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -34788,6 +34806,7 @@ void Race_Main_CAD6_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CB1B inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; reached through the other ROM mirror bank */
 void Race_Main_CB1B_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -34805,6 +34824,7 @@ void Race_Main_CB1B_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CB60 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; reached through the other ROM mirror bank */
 void Race_Main_CB60_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -34822,6 +34842,7 @@ void Race_Main_CB60_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: While $12D9/$12DB set, every 360 frames queue next of 8 per-player messages; then mark colour seen; reached through the other ROM mirror bank */
 void Race_UpdateColorHints_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -34839,6 +34860,7 @@ void Race_UpdateColorHints_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Special-track (>= $28) handler: run the active one of 8 timed race effects ($131D-$132B); reached through the other ROM mirror bank */
 void Race_UpdateSpecialFx_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

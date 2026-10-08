@@ -44,6 +44,7 @@ RecompReturn Uni_UpdateTrackProgress_M1X0(CpuState *cpu);
 RecompReturn Uni_UpdateTurnAround_M0X0(CpuState *cpu);
 RecompReturn Uni_UpdateTurnFlag_M0X1(CpuState *cpu);
 
+/* decomp: advances to the next of 6 idle look sequences (tables $97C606/$97C608); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_StartIdleLookSeq_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_StartIdleLookSeq_M0X0";
@@ -239,6 +240,7 @@ RecompReturn Uni_StartIdleLookSeq_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Uni_StepAnimScript; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_StepAnimScriptLong_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_StepAnimScriptLong_M0X0";
@@ -370,6 +372,7 @@ RecompReturn Uni_StepAnimScriptLong_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: steps uni Y's animation script A (pointer table $17:C7C8) and writes the frame to $0DE9,Y; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_StepAnimScript_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_StepAnimScript_M0X0";
@@ -794,6 +797,7 @@ RecompReturn Uni_StepAnimScript_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Race_UpdateUnis; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_UpdateUnisLong_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateUnisLong_M0X0";
@@ -925,6 +929,7 @@ RecompReturn Race_UpdateUnisLong_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: per uni: copies state into the $0F09 context block, runs physics/stunt routines, copies back; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_UpdateUnis_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateUnis_M0X0";
@@ -5490,6 +5495,7 @@ RecompReturn Race_UpdateUnis_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: advances to the next of 6 idle look sequences (tables $97C606/$97C608) */
 void Uni_StartIdleLookSeq(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5507,6 +5513,7 @@ void Uni_StartIdleLookSeq(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Uni_StepAnimScript */
 void Uni_StepAnimScriptLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5524,6 +5531,7 @@ void Uni_StepAnimScriptLong(CpuState *cpu) {
   }
 }
 
+/* decomp: steps uni Y's animation script A (pointer table $17:C7C8) and writes the frame to $0DE9,Y */
 void Uni_StepAnimScript(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5541,6 +5549,7 @@ void Uni_StepAnimScript(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Race_UpdateUnis */
 void Race_UpdateUnisLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5558,6 +5567,7 @@ void Race_UpdateUnisLong(CpuState *cpu) {
   }
 }
 
+/* decomp: per uni: copies state into the $0F09 context block, runs physics/stunt routines, copies back */
 void Race_UpdateUnis(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

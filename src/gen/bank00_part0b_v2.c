@@ -51,6 +51,7 @@ RecompReturn Vram_UploadTilemapAtA8_M1X0(CpuState *cpu);
 RecompReturn Vram_UploadTilemap_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_M1X0(CpuState *cpu);
 
+/* decomp: Player scores screen: per-player races/wins/score bars, browse with up/down; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Records_PlayerScores_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_PlayerScores_M0X0";
@@ -2273,6 +2274,7 @@ RecompReturn Records_PlayerScores_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Group tables screen: per-league member scores with bars, browse leagues; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Records_GroupTables_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_GroupTables_M0X0";
@@ -4334,6 +4336,7 @@ RecompReturn Records_GroupTables_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Player scores screen: per-player races/wins/score bars, browse with up/down */
 void Records_PlayerScores(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -4351,6 +4354,7 @@ void Records_PlayerScores(CpuState *cpu) {
   }
 }
 
+/* decomp: Group tables screen: per-league member scores with bars, browse leagues */
 void Records_GroupTables(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

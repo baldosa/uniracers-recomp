@@ -29,6 +29,7 @@ RecompReturn Snd_SendQueuedCommand_M0X0(CpuState *cpu);
 RecompReturn Snd_SendQueuedCommand_M1X0(CpuState *cpu);
 RecompReturn Uni_StepAnimScriptLong_M0X0(CpuState *cpu);
 
+/* decomp: 1-player CPU rival AI: generate virtual joypad inputs ($0313-$032F) from rival state; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Race_UpdateCpuRival_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateCpuRival_M1X1";
@@ -1467,6 +1468,7 @@ RecompReturn Race_UpdateCpuRival_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: 1-player CPU rival AI: generate virtual joypad inputs ($0313-$032F) from rival state; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_UpdateCpuRival_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateCpuRival_M0X0";
@@ -2905,6 +2907,7 @@ RecompReturn Race_UpdateCpuRival_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: 1-player CPU rival AI: generate virtual joypad inputs ($0313-$032F) from rival state; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_UpdateCpuRival_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateCpuRival_M1X0";
@@ -4343,6 +4346,7 @@ RecompReturn Race_UpdateCpuRival_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Attract demo: ticks demo timer, aborts demo on any keypress ($12A9), synthesizes AI pad input for both riders; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Demo_UpdateCpuInput_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Demo_UpdateCpuInput_M1X0";
@@ -6587,6 +6591,7 @@ RecompReturn Demo_UpdateCpuInput_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Attract demo: ticks demo timer, aborts demo on any keypress ($12A9), synthesizes AI pad input for both riders; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Demo_UpdateCpuInput_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Demo_UpdateCpuInput_M1X1";
@@ -8831,6 +8836,7 @@ RecompReturn Demo_UpdateCpuInput_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Pre-race 3-2-1-GO countdown: beeps, flashes HDMA6 colour table, start-boost bookkeeping, holds pads neutral; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_UpdateCountdown_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateCountdown_M0X0";
@@ -10597,6 +10603,7 @@ RecompReturn Race_UpdateCountdown_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: After finish: end timer/music fade, stunt-mode landing lock, queues win/lose/draw messages, brakes rider, result flash; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_UpdateFinish_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateFinish_M0X0";
@@ -14417,6 +14424,7 @@ RecompReturn Race_UpdateFinish_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: 1-player CPU rival AI: generate virtual joypad inputs ($0313-$032F) from rival state */
 void Race_UpdateCpuRival(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -14434,6 +14442,7 @@ void Race_UpdateCpuRival(CpuState *cpu) {
   }
 }
 
+/* decomp: Attract demo: ticks demo timer, aborts demo on any keypress ($12A9), synthesizes AI pad input for both riders */
 void Demo_UpdateCpuInput(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -14451,6 +14460,7 @@ void Demo_UpdateCpuInput(CpuState *cpu) {
   }
 }
 
+/* decomp: Pre-race 3-2-1-GO countdown: beeps, flashes HDMA6 colour table, start-boost bookkeeping, holds pads neutral */
 void Race_UpdateCountdown(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -14468,6 +14478,7 @@ void Race_UpdateCountdown(CpuState *cpu) {
   }
 }
 
+/* decomp: After finish: end timer/music fade, stunt-mode landing lock, queues win/lose/draw messages, brakes rider, result flash */
 void Race_UpdateFinish(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

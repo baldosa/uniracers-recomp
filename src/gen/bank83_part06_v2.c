@@ -21,6 +21,7 @@ RecompReturn Cutscene_DrawLoopFrameA_M0X0(CpuState *cpu);
 RecompReturn Snd_Play12_M0X0(CpuState *cpu);
 RecompReturn Snd_Play13_M0X0(CpuState *cpu);
 
+/* decomp: Draw BG animation frame (frame counter/2 mod 23) into $0CF0, SFX on frames 0 and 11; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Cutscene_DrawLoopFrameA_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Cutscene_DrawLoopFrameA_M0X0";
@@ -419,6 +420,7 @@ RecompReturn Cutscene_DrawLoopFrameA_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Draw BG animation frame (frame counter/2 mod 23) into $0CF0, SFX on frames 0 and 11 */
 void Cutscene_DrawLoopFrameA(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

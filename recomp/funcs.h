@@ -137,11 +137,11 @@ RecompReturn Results_DrawLapRace_910E_M0X0(CpuState *cpu);
 RecompReturn Results_DrawLapRace_910E_M0X1(CpuState *cpu);
 RecompReturn Results_DrawLapRace_910E_M1X0(CpuState *cpu);
 RecompReturn Results_DrawLapRace_910E_M1X1(CpuState *cpu);
-void Reset_ClearWRAM_loop00(CpuState *cpu);  /* $00:92F7 alias */
-RecompReturn Reset_ClearWRAM_loop00_M0X0(CpuState *cpu);
-RecompReturn Reset_ClearWRAM_loop00_M0X1(CpuState *cpu);
-RecompReturn Reset_ClearWRAM_loop00_M1X0(CpuState *cpu);
-RecompReturn Reset_ClearWRAM_loop00_M1X1(CpuState *cpu);
+void Boot_ClearWRAM_92F7(CpuState *cpu);  /* $00:92F7 alias */
+RecompReturn Boot_ClearWRAM_92F7_M0X0(CpuState *cpu);
+RecompReturn Boot_ClearWRAM_92F7_M0X1(CpuState *cpu);
+RecompReturn Boot_ClearWRAM_92F7_M1X0(CpuState *cpu);
+RecompReturn Boot_ClearWRAM_92F7_M1X1(CpuState *cpu);
 void Boot_ClearWRAM_92FF(CpuState *cpu);  /* $00:92FF alias */
 RecompReturn Boot_ClearWRAM_92FF_M0X0(CpuState *cpu);
 RecompReturn Boot_ClearWRAM_92FF_M0X1(CpuState *cpu);
@@ -4017,21 +4017,21 @@ RecompReturn Sram_ClearAll_FACC_M0X0(CpuState *cpu);
 RecompReturn Sram_ClearAll_FACC_M0X1(CpuState *cpu);
 RecompReturn Sram_ClearAll_FACC_M1X0(CpuState *cpu);
 RecompReturn Sram_ClearAll_FACC_M1X1(CpuState *cpu);
-void Reset_ClearWRAM(CpuState *cpu);  /* $80:92F2 alias */
-RecompReturn Reset_ClearWRAM_M0X0(CpuState *cpu);
-RecompReturn Reset_ClearWRAM_M0X1(CpuState *cpu);
-RecompReturn Reset_ClearWRAM_M1X0(CpuState *cpu);
-RecompReturn Reset_ClearWRAM_M1X1(CpuState *cpu);
-void Reset_ClearWRAM_loop80(CpuState *cpu);  /* $80:92F7 alias */
-RecompReturn Reset_ClearWRAM_loop80_M0X0(CpuState *cpu);
-RecompReturn Reset_ClearWRAM_loop80_M0X1(CpuState *cpu);
-RecompReturn Reset_ClearWRAM_loop80_M1X0(CpuState *cpu);
-RecompReturn Reset_ClearWRAM_loop80_M1X1(CpuState *cpu);
-void WaitForNMI_spin(CpuState *cpu);  /* $82:D4EE alias */
-RecompReturn WaitForNMI_spin_M0X0(CpuState *cpu);
-RecompReturn WaitForNMI_spin_M0X1(CpuState *cpu);
-RecompReturn WaitForNMI_spin_M1X0(CpuState *cpu);
-RecompReturn WaitForNMI_spin_M1X1(CpuState *cpu);
+void Boot_ClearWRAM(CpuState *cpu);  /* $80:92F2 alias */
+RecompReturn Boot_ClearWRAM_M0X0(CpuState *cpu);
+RecompReturn Boot_ClearWRAM_M0X1(CpuState *cpu);
+RecompReturn Boot_ClearWRAM_M1X0(CpuState *cpu);
+RecompReturn Boot_ClearWRAM_M1X1(CpuState *cpu);
+void Boot_ClearWRAM_92F7_FastRom(CpuState *cpu);  /* $80:92F7 alias */
+RecompReturn Boot_ClearWRAM_92F7_FastRom_M0X0(CpuState *cpu);
+RecompReturn Boot_ClearWRAM_92F7_FastRom_M0X1(CpuState *cpu);
+RecompReturn Boot_ClearWRAM_92F7_FastRom_M1X0(CpuState *cpu);
+RecompReturn Boot_ClearWRAM_92F7_FastRom_M1X1(CpuState *cpu);
+void WaitForNMI_D4EE(CpuState *cpu);  /* $82:D4EE alias */
+RecompReturn WaitForNMI_D4EE_M0X0(CpuState *cpu);
+RecompReturn WaitForNMI_D4EE_M0X1(CpuState *cpu);
+RecompReturn WaitForNMI_D4EE_M1X0(CpuState *cpu);
+RecompReturn WaitForNMI_D4EE_M1X1(CpuState *cpu);
 
 /* Hand-written non-recompiled bodies still declared here.
  * These are not produced by the v2 emit pipeline but are

@@ -107,6 +107,7 @@ RecompReturn Vram_UploadTilemapAtA8_M1X0(CpuState *cpu);
 RecompReturn Vram_UploadTilemap_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_M1X0(CpuState *cpu);
 
+/* decomp: reset vector (emulation mode): jumps to the boot code; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn I_RESET_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "I_RESET_M1X1";
@@ -189,6 +190,7 @@ RecompReturn I_RESET_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $885E inside I_RESET: reset vector (emulation mode): jumps to the boot code; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn I_RESET_885E_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "I_RESET_885E_M1X0";
@@ -891,6 +893,7 @@ RecompReturn I_RESET_885E_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $8861 inside I_RESET: reset vector (emulation mode): jumps to the boot code; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn I_RESET_8861_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "I_RESET_8861_M1X0";
@@ -1562,6 +1565,7 @@ RecompReturn I_RESET_8861_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $8864 inside I_RESET: reset vector (emulation mode): jumps to the boot code; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn I_RESET_8864_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "I_RESET_8864_M1X0";
@@ -2202,6 +2206,7 @@ RecompReturn I_RESET_8864_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $886A inside I_RESET: reset vector (emulation mode): jumps to the boot code; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn I_RESET_886A_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "I_RESET_886A_M1X0";
@@ -2780,6 +2785,7 @@ RecompReturn I_RESET_886A_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $886D inside I_RESET: reset vector (emulation mode): jumps to the boot code; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn I_RESET_886D_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "I_RESET_886D_M1X0";
@@ -3327,6 +3333,7 @@ RecompReturn I_RESET_886D_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $8874 inside I_RESET: reset vector (emulation mode): jumps to the boot code; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn I_RESET_8874_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "I_RESET_8874_M1X0";
@@ -3806,6 +3813,7 @@ RecompReturn I_RESET_8874_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $887B inside I_RESET: reset vector (emulation mode): jumps to the boot code; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn I_RESET_887B_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "I_RESET_887B_M1X0";
@@ -4217,6 +4225,7 @@ RecompReturn I_RESET_887B_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $887E inside I_RESET: reset vector (emulation mode): jumps to the boot code; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn I_RESET_887E_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "I_RESET_887E_M1X0";
@@ -4597,6 +4606,7 @@ RecompReturn I_RESET_887E_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: per-frame loop: dispatches through ModeHandlerTable by $9B; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn MainLoop_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "MainLoop_M1X0";
@@ -4946,6 +4956,7 @@ RecompReturn MainLoop_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $8884 inside MainLoop: per-frame loop: dispatches through ModeHandlerTable by $9B; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn MainLoop_8884_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "MainLoop_8884_M1X0";
@@ -5264,6 +5275,7 @@ RecompReturn MainLoop_8884_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $889D inside MainLoop: per-frame loop: dispatches through ModeHandlerTable by $9B; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn MainLoop_889D_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "MainLoop_889D_M1X0";
@@ -5482,6 +5494,7 @@ RecompReturn MainLoop_889D_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $88AE inside MainLoop: per-frame loop: dispatches through ModeHandlerTable by $9B; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn MainLoop_88AE_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "MainLoop_88AE_M1X0";
@@ -5533,6 +5546,7 @@ RecompReturn MainLoop_88AE_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: If either player's total time is $EA62 (race exited) fades out and resets the screen; Z=0 if exited; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_CheckExited_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_CheckExited_M1X0";
@@ -5998,6 +6012,7 @@ RecompReturn Race_CheckExited_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: POINT AWARDS screen: adds placing + bonus points (stunt/lap/wipeout bonus by event) to league table; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_ShowPointAwards_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_ShowPointAwards_M1X0";
@@ -8516,6 +8531,7 @@ RecompReturn League_ShowPointAwards_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Looks up char A in table $C6F8 and tests bit 7 (N flag) for the text renderer; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_GetCharClass_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_GetCharClass_M1X0";
@@ -8663,6 +8679,7 @@ RecompReturn Text_GetCharClass_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Boot: compares SRAM signature at $770000 with ROM $838000; on mismatch reinitialises all save data; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Sram_ValidateOrInit_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_ValidateOrInit_M1X0";
@@ -9571,6 +9588,7 @@ RecompReturn Sram_ValidateOrInit_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $8C78 inside Sram_ValidateOrInit: Boot: compares SRAM signature at $770000 with ROM $838000; on mismatch reinitialises all save data; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Sram_ValidateOrInit_8C78_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_ValidateOrInit_8C78_M0X0";
@@ -10209,6 +10227,7 @@ RecompReturn Sram_ValidateOrInit_8C78_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $8CAD inside Sram_ValidateOrInit: Boot: compares SRAM signature at $770000 with ROM $838000; on mismatch reinitialises all save data; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Sram_ValidateOrInit_8CAD_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_ValidateOrInit_8CAD_M0X0";
@@ -10485,6 +10504,7 @@ RecompReturn Sram_ValidateOrInit_8CAD_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $8CC6 inside Sram_ValidateOrInit: Boot: compares SRAM signature at $770000 with ROM $838000; on mismatch reinitialises all save data; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Sram_ValidateOrInit_8CC6_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_ValidateOrInit_8CC6_M0X0";
@@ -10596,6 +10616,7 @@ RecompReturn Sram_ValidateOrInit_8CC6_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Inserts score $12 / uni $B2 into the top-3 record table for track $CE (higher is better); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Records_InsertHighScore_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_InsertHighScore_M0X0";
@@ -11396,6 +11417,7 @@ RecompReturn Records_InsertHighScore_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Results screen for lap races: per-lap bars, totals, best lap; updates best-lap record (via table $95A5); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Results_DrawLapRace_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_DrawLapRace_M0X0";
@@ -14843,6 +14865,7 @@ RecompReturn Results_DrawLapRace_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $8FFD inside Results_DrawLapRace: Results screen for lap races: per-lap bars, totals, best lap; updates best-lap record (via table $95A5); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Results_DrawLapRace_8FFD_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_DrawLapRace_8FFD_M1X0";
@@ -15977,6 +16000,7 @@ RecompReturn Results_DrawLapRace_8FFD_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: reset vector (emulation mode): jumps to the boot code */
 void I_RESET(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -15994,6 +16018,7 @@ void I_RESET(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $885E inside I_RESET: reset vector (emulation mode): jumps to the boot code */
 void I_RESET_885E(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16011,6 +16036,7 @@ void I_RESET_885E(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $8861 inside I_RESET: reset vector (emulation mode): jumps to the boot code */
 void I_RESET_8861(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16028,6 +16054,7 @@ void I_RESET_8861(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $8864 inside I_RESET: reset vector (emulation mode): jumps to the boot code */
 void I_RESET_8864(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16045,6 +16072,7 @@ void I_RESET_8864(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $886A inside I_RESET: reset vector (emulation mode): jumps to the boot code */
 void I_RESET_886A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16062,6 +16090,7 @@ void I_RESET_886A(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $886D inside I_RESET: reset vector (emulation mode): jumps to the boot code */
 void I_RESET_886D(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16079,6 +16108,7 @@ void I_RESET_886D(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $8874 inside I_RESET: reset vector (emulation mode): jumps to the boot code */
 void I_RESET_8874(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16096,6 +16126,7 @@ void I_RESET_8874(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $887B inside I_RESET: reset vector (emulation mode): jumps to the boot code */
 void I_RESET_887B(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16113,6 +16144,7 @@ void I_RESET_887B(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $887E inside I_RESET: reset vector (emulation mode): jumps to the boot code */
 void I_RESET_887E(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16130,6 +16162,7 @@ void I_RESET_887E(CpuState *cpu) {
   }
 }
 
+/* decomp: per-frame loop: dispatches through ModeHandlerTable by $9B */
 void MainLoop(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16147,6 +16180,7 @@ void MainLoop(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $8884 inside MainLoop: per-frame loop: dispatches through ModeHandlerTable by $9B */
 void MainLoop_8884(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16164,6 +16198,7 @@ void MainLoop_8884(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $889D inside MainLoop: per-frame loop: dispatches through ModeHandlerTable by $9B */
 void MainLoop_889D(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16181,6 +16216,7 @@ void MainLoop_889D(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $88AE inside MainLoop: per-frame loop: dispatches through ModeHandlerTable by $9B */
 void MainLoop_88AE(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16198,6 +16234,7 @@ void MainLoop_88AE(CpuState *cpu) {
   }
 }
 
+/* decomp: If either player's total time is $EA62 (race exited) fades out and resets the screen; Z=0 if exited */
 void Race_CheckExited(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16215,6 +16252,7 @@ void Race_CheckExited(CpuState *cpu) {
   }
 }
 
+/* decomp: POINT AWARDS screen: adds placing + bonus points (stunt/lap/wipeout bonus by event) to league table */
 void League_ShowPointAwards(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16232,6 +16270,7 @@ void League_ShowPointAwards(CpuState *cpu) {
   }
 }
 
+/* decomp: Looks up char A in table $C6F8 and tests bit 7 (N flag) for the text renderer */
 void Text_GetCharClass(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16249,6 +16288,7 @@ void Text_GetCharClass(CpuState *cpu) {
   }
 }
 
+/* decomp: Boot: compares SRAM signature at $770000 with ROM $838000; on mismatch reinitialises all save data */
 void Sram_ValidateOrInit(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16266,6 +16306,7 @@ void Sram_ValidateOrInit(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $8C78 inside Sram_ValidateOrInit: Boot: compares SRAM signature at $770000 with ROM $838000; on mismatch reinitialises all save data */
 void Sram_ValidateOrInit_8C78(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16283,6 +16324,7 @@ void Sram_ValidateOrInit_8C78(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $8CAD inside Sram_ValidateOrInit: Boot: compares SRAM signature at $770000 with ROM $838000; on mismatch reinitialises all save data */
 void Sram_ValidateOrInit_8CAD(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16300,6 +16342,7 @@ void Sram_ValidateOrInit_8CAD(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $8CC6 inside Sram_ValidateOrInit: Boot: compares SRAM signature at $770000 with ROM $838000; on mismatch reinitialises all save data */
 void Sram_ValidateOrInit_8CC6(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16317,6 +16360,7 @@ void Sram_ValidateOrInit_8CC6(CpuState *cpu) {
   }
 }
 
+/* decomp: Inserts score $12 / uni $B2 into the top-3 record table for track $CE (higher is better) */
 void Records_InsertHighScore(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16334,6 +16378,7 @@ void Records_InsertHighScore(CpuState *cpu) {
   }
 }
 
+/* decomp: Results screen for lap races: per-lap bars, totals, best lap; updates best-lap record (via table $95A5) */
 void Results_DrawLapRace(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16351,6 +16396,7 @@ void Results_DrawLapRace(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $8FFD inside Results_DrawLapRace: Results screen for lap races: per-lap bars, totals, best lap; updates best-lap record (via table $95A5) */
 void Results_DrawLapRace_8FFD(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

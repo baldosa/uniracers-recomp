@@ -59,6 +59,7 @@ RecompReturn Video_FadeOut_FastRom_M1X0(CpuState *cpu);
 RecompReturn Vram_ClearAll_FastRom_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_FastRom_M1X0(CpuState *cpu);
 
+/* decomp: Boot: loads logo gfx, fades in, holds ~110 frames, fades out; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Boot_ShowLogo_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Boot_ShowLogo_FastRom_M1X0";
@@ -573,6 +574,7 @@ RecompReturn Boot_ShowLogo_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B0E1 inside Unused_NmiEntryDB80: Copy of I_NMI with DB=$80 that JMLs [$0053]; unreferenced; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Unused_NmiEntryDB80_B0E1_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Unused_NmiEntryDB80_B0E1_M1X0";
@@ -679,6 +681,7 @@ RecompReturn Unused_NmiEntryDB80_B0E1_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B0E1 inside Unused_NmiEntryDB80: Copy of I_NMI with DB=$80 that JMLs [$0053]; unreferenced; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Unused_NmiEntryDB80_B0E1_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Unused_NmiEntryDB80_B0E1_M1X1";
@@ -785,6 +788,7 @@ RecompReturn Unused_NmiEntryDB80_B0E1_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Queues sound command $087F/$0203 (same as Snd_PlayCursor); used for refusals; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_PlayError_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_PlayError_FastRom_M1X0";
@@ -1004,6 +1008,7 @@ RecompReturn Snd_PlayError_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Queues sound command $083F/$0206 (letter typed, item toggled); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_PlayToggle_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_PlayToggle_FastRom_M1X0";
@@ -1223,6 +1228,7 @@ RecompReturn Snd_PlayToggle_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Queues sound command $083F/$0204 (menu confirm); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_PlayConfirm_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_PlayConfirm_FastRom_M1X0";
@@ -1442,6 +1448,7 @@ RecompReturn Snd_PlayConfirm_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Queues sound command $084F/$0202 (screen wipe/transition); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_PlayWipe_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_PlayWipe_FastRom_M1X0";
@@ -1661,6 +1668,7 @@ RecompReturn Snd_PlayWipe_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Queues sound command $084F/$0201; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_PlayWipeAlt_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_PlayWipeAlt_FastRom_M1X0";
@@ -1880,6 +1888,7 @@ RecompReturn Snd_PlayWipeAlt_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Queues sound command $087F/$0203 (cursor move); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_PlayCursor_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_PlayCursor_FastRom_M1X0";
@@ -2099,6 +2108,7 @@ RecompReturn Snd_PlayCursor_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Builds a text line with player name A, slot $9A and that uni's record for this track; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn PreRace_BuildPlayerLine_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PreRace_BuildPlayerLine_FastRom_M1X0";
@@ -2795,6 +2805,7 @@ RecompReturn PreRace_BuildPlayerLine_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Zero all 64KB of VRAM (32K word writes from address 0); used at boot; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Vram_ClearAll_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Vram_ClearAll_FastRom_M1X0";
@@ -2964,6 +2975,7 @@ RecompReturn Vram_ClearAll_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for Input_IsAnyButtonHeld; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsAnyButtonHeldL_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsAnyButtonHeldL_M1X0";
@@ -3095,6 +3107,7 @@ RecompReturn Input_IsAnyButtonHeldL_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if any button (mask FFF0) held on an enabled pad ($72/$74; $770742 bits 9/10 disable pads); reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Input_IsAnyButtonHeld_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsAnyButtonHeld_FastRom_M0X0";
@@ -3416,6 +3429,7 @@ RecompReturn Input_IsAnyButtonHeld_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if any button (mask FFF0) held on an enabled pad ($72/$74; $770742 bits 9/10 disable pads); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsAnyButtonHeld_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsAnyButtonHeld_FastRom_M1X0";
@@ -3737,6 +3751,7 @@ RecompReturn Input_IsAnyButtonHeld_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if any button except Up/Down/Left held (mask F1F0) on an enabled pad; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsNonUDLButtonHeld_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsNonUDLButtonHeld_FastRom_M1X0";
@@ -4058,6 +4073,7 @@ RecompReturn Input_IsNonUDLButtonHeld_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if B, A or Start held (mask 9080) on an enabled pad: menu confirm; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsConfirmHeld_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsConfirmHeld_FastRom_M1X0";
@@ -4379,6 +4395,7 @@ RecompReturn Input_IsConfirmHeld_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if X or Y held (mask 4040) on an enabled pad: menu back/cancel; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsCancelHeld_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsCancelHeld_FastRom_M1X0";
@@ -4700,6 +4717,7 @@ RecompReturn Input_IsCancelHeld_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if X or Y held (mask 4040) on an enabled pad: menu back/cancel; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Input_IsCancelHeld_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsCancelHeld_FastRom_M0X0";
@@ -5021,6 +5039,7 @@ RecompReturn Input_IsCancelHeld_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if Up held on an enabled pad; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsUpHeld_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsUpHeld_FastRom_M1X0";
@@ -5342,6 +5361,7 @@ RecompReturn Input_IsUpHeld_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if Down or Select held (mask 2400) on an enabled pad: menu next; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsDownOrSelectHeld_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsDownOrSelectHeld_FastRom_M1X0";
@@ -5663,6 +5683,7 @@ RecompReturn Input_IsDownOrSelectHeld_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if Left held on an enabled pad; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsLeftHeld_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsLeftHeld_FastRom_M1X0";
@@ -5984,6 +6005,7 @@ RecompReturn Input_IsLeftHeld_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if Right held on an enabled pad; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsRightHeld_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsRightHeld_FastRom_M1X0";
@@ -6305,6 +6327,7 @@ RecompReturn Input_IsRightHeld_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if Up held on an enabled pad (duplicate of Input_IsUpHeld); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsUpHeld2_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsUpHeld2_FastRom_M1X0";
@@ -6626,6 +6649,7 @@ RecompReturn Input_IsUpHeld2_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Boot: loads logo gfx, fades in, holds ~110 frames, fades out; reached through the other ROM mirror bank */
 void Boot_ShowLogo_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6643,6 +6667,7 @@ void Boot_ShowLogo_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B0E1 inside Unused_NmiEntryDB80: Copy of I_NMI with DB=$80 that JMLs [$0053]; unreferenced */
 void Unused_NmiEntryDB80_B0E1(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6660,6 +6685,7 @@ void Unused_NmiEntryDB80_B0E1(CpuState *cpu) {
   }
 }
 
+/* decomp: Queues sound command $087F/$0203 (same as Snd_PlayCursor); used for refusals; reached through the other ROM mirror bank */
 void Snd_PlayError_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6677,6 +6703,7 @@ void Snd_PlayError_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Queues sound command $083F/$0206 (letter typed, item toggled); reached through the other ROM mirror bank */
 void Snd_PlayToggle_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6694,6 +6721,7 @@ void Snd_PlayToggle_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Queues sound command $083F/$0204 (menu confirm); reached through the other ROM mirror bank */
 void Snd_PlayConfirm_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6711,6 +6739,7 @@ void Snd_PlayConfirm_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Queues sound command $084F/$0202 (screen wipe/transition); reached through the other ROM mirror bank */
 void Snd_PlayWipe_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6728,6 +6757,7 @@ void Snd_PlayWipe_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Queues sound command $084F/$0201; reached through the other ROM mirror bank */
 void Snd_PlayWipeAlt_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6745,6 +6775,7 @@ void Snd_PlayWipeAlt_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Queues sound command $087F/$0203 (cursor move); reached through the other ROM mirror bank */
 void Snd_PlayCursor_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6762,6 +6793,7 @@ void Snd_PlayCursor_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Builds a text line with player name A, slot $9A and that uni's record for this track; reached through the other ROM mirror bank */
 void PreRace_BuildPlayerLine_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6779,6 +6811,7 @@ void PreRace_BuildPlayerLine_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Zero all 64KB of VRAM (32K word writes from address 0); used at boot; reached through the other ROM mirror bank */
 void Vram_ClearAll_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6796,6 +6829,7 @@ void Vram_ClearAll_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Long wrapper for Input_IsAnyButtonHeld */
 void Input_IsAnyButtonHeldL(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6813,6 +6847,7 @@ void Input_IsAnyButtonHeldL(CpuState *cpu) {
   }
 }
 
+/* decomp: NE if any button (mask FFF0) held on an enabled pad ($72/$74; $770742 bits 9/10 disable pads); reached through the other ROM mirror bank */
 void Input_IsAnyButtonHeld_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6830,6 +6865,7 @@ void Input_IsAnyButtonHeld_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: NE if any button except Up/Down/Left held (mask F1F0) on an enabled pad; reached through the other ROM mirror bank */
 void Input_IsNonUDLButtonHeld_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6847,6 +6883,7 @@ void Input_IsNonUDLButtonHeld_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: NE if B, A or Start held (mask 9080) on an enabled pad: menu confirm; reached through the other ROM mirror bank */
 void Input_IsConfirmHeld_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6864,6 +6901,7 @@ void Input_IsConfirmHeld_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: NE if X or Y held (mask 4040) on an enabled pad: menu back/cancel; reached through the other ROM mirror bank */
 void Input_IsCancelHeld_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6881,6 +6919,7 @@ void Input_IsCancelHeld_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: NE if Up held on an enabled pad; reached through the other ROM mirror bank */
 void Input_IsUpHeld_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6898,6 +6937,7 @@ void Input_IsUpHeld_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: NE if Down or Select held (mask 2400) on an enabled pad: menu next; reached through the other ROM mirror bank */
 void Input_IsDownOrSelectHeld_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6915,6 +6955,7 @@ void Input_IsDownOrSelectHeld_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: NE if Left held on an enabled pad; reached through the other ROM mirror bank */
 void Input_IsLeftHeld_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6932,6 +6973,7 @@ void Input_IsLeftHeld_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: NE if Right held on an enabled pad; reached through the other ROM mirror bank */
 void Input_IsRightHeld_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6949,6 +6991,7 @@ void Input_IsRightHeld_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: NE if Up held on an enabled pad (duplicate of Input_IsUpHeld); reached through the other ROM mirror bank */
 void Input_IsUpHeld2_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

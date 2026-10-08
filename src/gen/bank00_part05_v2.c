@@ -122,6 +122,7 @@ RecompReturn Vram_UploadTilemapAtA8_M1X0(CpuState *cpu);
 RecompReturn Vram_UploadTilemap_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_M1X0(CpuState *cpu);
 
+/* decomp: DMA ch7: $84A378 ($780 bytes) to VRAM $3D80 (race/league variant); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Gfx_UploadOverlayTilesA_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Gfx_UploadOverlayTilesA_M1X0";
@@ -332,6 +333,7 @@ RecompReturn Gfx_UploadOverlayTilesA_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $A840 inside Gfx_UploadOverlayTilesA: DMA ch7: $84A378 ($780 bytes) to VRAM $3D80 (race/league variant); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Gfx_UploadOverlayTilesA_A840_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Gfx_UploadOverlayTilesA_A840_M1X0";
@@ -469,6 +471,7 @@ RecompReturn Gfx_UploadOverlayTilesA_A840_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Loads sprite palettes $23 and $24 to CGRAM $00/$40, one per frame; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Pal_LoadMenuSpritePalettes_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Pal_LoadMenuSpritePalettes_M1X0";
@@ -786,6 +789,7 @@ RecompReturn Pal_LoadMenuSpritePalettes_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $A84C inside Pal_LoadMenuSpritePalettes: Loads sprite palettes $23 and $24 to CGRAM $00/$40, one per frame; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Pal_LoadMenuSpritePalettes_A84C_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Pal_LoadMenuSpritePalettes_A84C_M1X0";
@@ -1072,6 +1076,7 @@ RecompReturn Pal_LoadMenuSpritePalettes_A84C_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $A85B inside Pal_LoadMenuSpritePalettes: Loads sprite palettes $23 and $24 to CGRAM $00/$40, one per frame; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Pal_LoadMenuSpritePalettes_A85B_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Pal_LoadMenuSpritePalettes_A85B_M1X0";
@@ -1249,6 +1254,7 @@ RecompReturn Pal_LoadMenuSpritePalettes_A85B_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DMA ch7: $84AAF8 ($780 bytes) to VRAM $3D80 (menu variant); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Gfx_UploadOverlayTilesB_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Gfx_UploadOverlayTilesB_M1X0";
@@ -1459,6 +1465,7 @@ RecompReturn Gfx_UploadOverlayTilesB_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $A88C inside Gfx_UploadOverlayTilesB: DMA ch7: $84AAF8 ($780 bytes) to VRAM $3D80 (menu variant); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Gfx_UploadOverlayTilesB_A88C_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Gfx_UploadOverlayTilesB_A88C_M1X0";
@@ -1596,6 +1603,7 @@ RecompReturn Gfx_UploadOverlayTilesB_A88C_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Waits a frame, uploads OAM, then falls into Pal_UploadBgPalettesNow; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Pal_UploadBgPalettes_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Pal_UploadBgPalettes_M1X0";
@@ -1806,6 +1814,7 @@ RecompReturn Pal_UploadBgPalettes_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $A89C inside Pal_UploadBgPalettes: Waits a frame, uploads OAM, then falls into Pal_UploadBgPalettesNow; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Pal_UploadBgPalettes_A89C_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Pal_UploadBgPalettes_A89C_M1X0";
@@ -1985,6 +1994,7 @@ RecompReturn Pal_UploadBgPalettes_A89C_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: WIPE RAM: warning screen; Select+Y+A reinitialises battery RAM, else 'nothing done'; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Options_WipeRam_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Options_WipeRam_M0X0";
@@ -3647,6 +3657,7 @@ RecompReturn Options_WipeRam_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Main menu input (1P/2P/VS/LEAGUE/OPTIONS), idle timeout to attract demo, secret button combos; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn MainMenu_Run_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "MainMenu_Run_M1X0";
@@ -5383,6 +5394,7 @@ RecompReturn MainMenu_Run_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $ABD7 inside MainMenu_Run: Main menu input (1P/2P/VS/LEAGUE/OPTIONS), idle timeout to attract demo, secret button combos; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn MainMenu_Run_ABD7_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "MainMenu_Run_ABD7_M1X0";
@@ -7040,6 +7052,7 @@ RecompReturn MainMenu_Run_ABD7_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Draws the main menu once, uploads tilemap/palettes, resets play mode $7710AD; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn MainMenu_Draw_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "MainMenu_Draw_M1X0";
@@ -7580,6 +7593,7 @@ RecompReturn MainMenu_Draw_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $ACE8 inside MainMenu_Draw: Draws the main menu once, uploads tilemap/palettes, resets play mode $7710AD; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn MainMenu_Draw_ACE8_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "MainMenu_Draw_ACE8_M1X0";
@@ -7926,6 +7940,7 @@ RecompReturn MainMenu_Draw_ACE8_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $ACEB inside MainMenu_Draw: Draws the main menu once, uploads tilemap/palettes, resets play mode $7710AD; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn MainMenu_Draw_ACEB_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "MainMenu_Draw_ACEB_M1X0";
@@ -8241,6 +8256,7 @@ RecompReturn MainMenu_Draw_ACEB_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $ACFE inside MainMenu_Draw: Draws the main menu once, uploads tilemap/palettes, resets play mode $7710AD; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn MainMenu_Draw_ACFE_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "MainMenu_Draw_ACFE_M1X0";
@@ -8443,6 +8459,7 @@ RecompReturn MainMenu_Draw_ACFE_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $AD06 inside MainMenu_Draw: Draws the main menu once, uploads tilemap/palettes, resets play mode $7710AD; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn MainMenu_Draw_AD06_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "MainMenu_Draw_AD06_M1X0";
@@ -8580,6 +8597,7 @@ RecompReturn MainMenu_Draw_AD06_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $AD09 inside MainMenu_Draw: Draws the main menu once, uploads tilemap/palettes, resets play mode $7710AD; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn MainMenu_Draw_AD09_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "MainMenu_Draw_AD09_M1X0";
@@ -8686,6 +8704,7 @@ RecompReturn MainMenu_Draw_AD09_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for League_SortStandings; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn League_SortStandingsLong_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_SortStandingsLong_M0X0";
@@ -8817,6 +8836,7 @@ RecompReturn League_SortStandingsLong_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $AD37 inside League_SortStandingsLong: JSL wrapper for League_SortStandings; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn League_SortStandingsLong_AD37_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_SortStandingsLong_AD37_M0X0";
@@ -8917,6 +8937,7 @@ RecompReturn League_SortStandingsLong_AD37_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Sorts league $CC table and stores standings order to $7705E8+league*8 and leader to $770686; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn League_SortStandings_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_SortStandings_M0X0";
@@ -9702,6 +9723,7 @@ RecompReturn League_SortStandings_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Sorts league $CC table and stores standings order to $7705E8+league*8 and leader to $770686; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_SortStandings_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_SortStandings_M1X0";
@@ -10486,6 +10508,7 @@ RecompReturn League_SortStandings_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $AD44 inside League_SortStandings: Sorts league $CC table and stores standings order to $7705E8+league*8 and leader to $770686; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_SortStandings_AD44_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_SortStandings_AD44_M1X0";
@@ -11197,6 +11220,7 @@ RecompReturn League_SortStandings_AD44_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $AD81 inside League_SortStandings: Sorts league $CC table and stores standings order to $7705E8+league*8 and leader to $770686; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn League_SortStandings_AD81_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_SortStandings_AD81_M0X0";
@@ -11624,6 +11648,7 @@ RecompReturn League_SortStandings_AD81_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Post-race menu: NEXT TRACK / SAME TRACK / SELECT TRACK / SELECT TOUR / QUIT (table $AE77); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn PostRace_Menu_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PostRace_Menu_M1X0";
@@ -12283,6 +12308,7 @@ RecompReturn PostRace_Menu_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Advances $CE to the next playable track (wraps at 45) and shows the pre-race screen; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn PostRace_NextTrack_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PostRace_NextTrack_M0X0";
@@ -13269,6 +13295,7 @@ RecompReturn PostRace_NextTrack_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Shows the pre-race screen for the same track again; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn PostRace_SameTrack_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PostRace_SameTrack_M0X0";
@@ -13950,6 +13977,7 @@ RecompReturn PostRace_SameTrack_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Quit choice: restores tilemap base, returns $00=$FF; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn PostRace_Quit_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PostRace_Quit_M0X0";
@@ -14078,6 +14106,7 @@ RecompReturn PostRace_Quit_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Track select then pre-race screen; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn PostRace_SelectTrack_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PostRace_SelectTrack_M0X0";
@@ -14868,6 +14897,7 @@ RecompReturn PostRace_SelectTrack_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Tour select, track select, then pre-race screen; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn PostRace_SelectTour_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PostRace_SelectTour_M0X0";
@@ -15767,6 +15797,7 @@ RecompReturn PostRace_SelectTour_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Counts races played, after the last race shows awards and table, advances league track; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_AdvanceAfterRace_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_AdvanceAfterRace_M1X0";
@@ -17261,6 +17292,7 @@ RecompReturn League_AdvanceAfterRace_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DMA ch7: $84A378 ($780 bytes) to VRAM $3D80 (race/league variant) */
 void Gfx_UploadOverlayTilesA(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17278,6 +17310,7 @@ void Gfx_UploadOverlayTilesA(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $A840 inside Gfx_UploadOverlayTilesA: DMA ch7: $84A378 ($780 bytes) to VRAM $3D80 (race/league variant) */
 void Gfx_UploadOverlayTilesA_A840(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17295,6 +17328,7 @@ void Gfx_UploadOverlayTilesA_A840(CpuState *cpu) {
   }
 }
 
+/* decomp: Loads sprite palettes $23 and $24 to CGRAM $00/$40, one per frame */
 void Pal_LoadMenuSpritePalettes(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17312,6 +17346,7 @@ void Pal_LoadMenuSpritePalettes(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $A84C inside Pal_LoadMenuSpritePalettes: Loads sprite palettes $23 and $24 to CGRAM $00/$40, one per frame */
 void Pal_LoadMenuSpritePalettes_A84C(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17329,6 +17364,7 @@ void Pal_LoadMenuSpritePalettes_A84C(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $A85B inside Pal_LoadMenuSpritePalettes: Loads sprite palettes $23 and $24 to CGRAM $00/$40, one per frame */
 void Pal_LoadMenuSpritePalettes_A85B(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17346,6 +17382,7 @@ void Pal_LoadMenuSpritePalettes_A85B(CpuState *cpu) {
   }
 }
 
+/* decomp: DMA ch7: $84AAF8 ($780 bytes) to VRAM $3D80 (menu variant) */
 void Gfx_UploadOverlayTilesB(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17363,6 +17400,7 @@ void Gfx_UploadOverlayTilesB(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $A88C inside Gfx_UploadOverlayTilesB: DMA ch7: $84AAF8 ($780 bytes) to VRAM $3D80 (menu variant) */
 void Gfx_UploadOverlayTilesB_A88C(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17380,6 +17418,7 @@ void Gfx_UploadOverlayTilesB_A88C(CpuState *cpu) {
   }
 }
 
+/* decomp: Waits a frame, uploads OAM, then falls into Pal_UploadBgPalettesNow */
 void Pal_UploadBgPalettes(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17397,6 +17436,7 @@ void Pal_UploadBgPalettes(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $A89C inside Pal_UploadBgPalettes: Waits a frame, uploads OAM, then falls into Pal_UploadBgPalettesNow */
 void Pal_UploadBgPalettes_A89C(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17414,6 +17454,7 @@ void Pal_UploadBgPalettes_A89C(CpuState *cpu) {
   }
 }
 
+/* decomp: WIPE RAM: warning screen; Select+Y+A reinitialises battery RAM, else 'nothing done' */
 void Options_WipeRam(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17431,6 +17472,7 @@ void Options_WipeRam(CpuState *cpu) {
   }
 }
 
+/* decomp: Main menu input (1P/2P/VS/LEAGUE/OPTIONS), idle timeout to attract demo, secret button combos */
 void MainMenu_Run(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17448,6 +17490,7 @@ void MainMenu_Run(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $ABD7 inside MainMenu_Run: Main menu input (1P/2P/VS/LEAGUE/OPTIONS), idle timeout to attract demo, secret button combos */
 void MainMenu_Run_ABD7(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17465,6 +17508,7 @@ void MainMenu_Run_ABD7(CpuState *cpu) {
   }
 }
 
+/* decomp: Draws the main menu once, uploads tilemap/palettes, resets play mode $7710AD */
 void MainMenu_Draw(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17482,6 +17526,7 @@ void MainMenu_Draw(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $ACE8 inside MainMenu_Draw: Draws the main menu once, uploads tilemap/palettes, resets play mode $7710AD */
 void MainMenu_Draw_ACE8(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17499,6 +17544,7 @@ void MainMenu_Draw_ACE8(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $ACEB inside MainMenu_Draw: Draws the main menu once, uploads tilemap/palettes, resets play mode $7710AD */
 void MainMenu_Draw_ACEB(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17516,6 +17562,7 @@ void MainMenu_Draw_ACEB(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $ACFE inside MainMenu_Draw: Draws the main menu once, uploads tilemap/palettes, resets play mode $7710AD */
 void MainMenu_Draw_ACFE(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17533,6 +17580,7 @@ void MainMenu_Draw_ACFE(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $AD06 inside MainMenu_Draw: Draws the main menu once, uploads tilemap/palettes, resets play mode $7710AD */
 void MainMenu_Draw_AD06(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17550,6 +17598,7 @@ void MainMenu_Draw_AD06(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $AD09 inside MainMenu_Draw: Draws the main menu once, uploads tilemap/palettes, resets play mode $7710AD */
 void MainMenu_Draw_AD09(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17567,6 +17616,7 @@ void MainMenu_Draw_AD09(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for League_SortStandings */
 void League_SortStandingsLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17584,6 +17634,7 @@ void League_SortStandingsLong(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $AD37 inside League_SortStandingsLong: JSL wrapper for League_SortStandings */
 void League_SortStandingsLong_AD37(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17601,6 +17652,7 @@ void League_SortStandingsLong_AD37(CpuState *cpu) {
   }
 }
 
+/* decomp: Sorts league $CC table and stores standings order to $7705E8+league*8 and leader to $770686 */
 void League_SortStandings(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17618,6 +17670,7 @@ void League_SortStandings(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $AD44 inside League_SortStandings: Sorts league $CC table and stores standings order to $7705E8+league*8 and leader to $770686 */
 void League_SortStandings_AD44(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17635,6 +17688,7 @@ void League_SortStandings_AD44(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $AD81 inside League_SortStandings: Sorts league $CC table and stores standings order to $7705E8+league*8 and leader to $770686 */
 void League_SortStandings_AD81(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17652,6 +17706,7 @@ void League_SortStandings_AD81(CpuState *cpu) {
   }
 }
 
+/* decomp: Post-race menu: NEXT TRACK / SAME TRACK / SELECT TRACK / SELECT TOUR / QUIT (table $AE77) */
 void PostRace_Menu(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17669,6 +17724,7 @@ void PostRace_Menu(CpuState *cpu) {
   }
 }
 
+/* decomp: Advances $CE to the next playable track (wraps at 45) and shows the pre-race screen */
 void PostRace_NextTrack(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17686,6 +17742,7 @@ void PostRace_NextTrack(CpuState *cpu) {
   }
 }
 
+/* decomp: Shows the pre-race screen for the same track again */
 void PostRace_SameTrack(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17703,6 +17760,7 @@ void PostRace_SameTrack(CpuState *cpu) {
   }
 }
 
+/* decomp: Quit choice: restores tilemap base, returns $00=$FF */
 void PostRace_Quit(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17720,6 +17778,7 @@ void PostRace_Quit(CpuState *cpu) {
   }
 }
 
+/* decomp: Track select then pre-race screen */
 void PostRace_SelectTrack(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17737,6 +17796,7 @@ void PostRace_SelectTrack(CpuState *cpu) {
   }
 }
 
+/* decomp: Tour select, track select, then pre-race screen */
 void PostRace_SelectTour(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17754,6 +17814,7 @@ void PostRace_SelectTour(CpuState *cpu) {
   }
 }
 
+/* decomp: Counts races played, after the last race shows awards and table, advances league track */
 void League_AdvanceAfterRace(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

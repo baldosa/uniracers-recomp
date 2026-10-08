@@ -56,6 +56,7 @@ RecompReturn WaitVBlank_FAD6_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_FADB_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_M1X0(CpuState *cpu);
 
+/* decomp: DMA five $C0-byte buffers ($0CF0,$0EF0,..$14F0) to VRAM at $0A + n*$100 via channel 7; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Dma_UploadTilemapRows_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Dma_UploadTilemapRows_M1X0";
@@ -603,6 +604,7 @@ RecompReturn Dma_UploadTilemapRows_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DMA $C0 bytes from bank 0 (A1T7 preset) to VRAM address X on channel 7; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Dma_UploadVramC0_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Dma_UploadVramC0_M0X0";
@@ -741,6 +743,7 @@ RecompReturn Dma_UploadVramC0_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Store X (and Y unless $FFFF) into player $CC's SRAM result slot $770618, then re-checksum; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Scores_StoreResult_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Scores_StoreResult_M0X0";
@@ -1061,6 +1064,7 @@ RecompReturn Scores_StoreResult_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $F8A2 inside Scores_StoreResult: Store X (and Y unless $FFFF) into player $CC's SRAM result slot $770618, then re-checksum; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Scores_StoreResult_F8A2_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Scores_StoreResult_F8A2_M0X0";
@@ -1160,6 +1164,7 @@ RecompReturn Scores_StoreResult_F8A2_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Convert scratch text $DC..$FB: lowercase letters and digits remapped to the alternate font tiles; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_ConvertBufferCase_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_ConvertBufferCase_M0X0";
@@ -1493,6 +1498,7 @@ RecompReturn Text_ConvertBufferCase_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: VS CHAMPIONS screen: sort 16 players by wins ($770400) and list top 8 with name, unis, wins, %; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Vs_ShowChampions_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Vs_ShowChampions_M1X0";
@@ -2749,6 +2755,7 @@ RecompReturn Vs_ShowChampions_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for WaitVBlank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn WaitVBlankLong_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "WaitVBlankLong_M1X0";
@@ -2880,6 +2887,7 @@ RecompReturn WaitVBlankLong_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $FAC8 inside WaitVBlankLong: JSL wrapper for WaitVBlank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn WaitVBlankLong_FAC8_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "WaitVBlankLong_FAC8_M1X0";
@@ -2980,6 +2988,7 @@ RecompReturn WaitVBlankLong_FAC8_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Poll sound comms until the next vblank (HVBJOY), then run the menu cursor update; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn WaitVBlank_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "WaitVBlank_M1X0";
@@ -3218,6 +3227,7 @@ RecompReturn WaitVBlank_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $FACD inside WaitVBlank: Poll sound comms until the next vblank (HVBJOY), then run the menu cursor update; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn WaitVBlank_FACD_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "WaitVBlank_FACD_M1X0";
@@ -3419,6 +3429,7 @@ RecompReturn WaitVBlank_FACD_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $FAD2 inside WaitVBlank: Poll sound comms until the next vblank (HVBJOY), then run the menu cursor update; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn WaitVBlank_FAD2_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "WaitVBlank_FAD2_M1X0";
@@ -3603,6 +3614,7 @@ RecompReturn WaitVBlank_FAD2_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $FAD6 inside WaitVBlank: Poll sound comms until the next vblank (HVBJOY), then run the menu cursor update; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn WaitVBlank_FAD6_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "WaitVBlank_FAD6_M1X0";
@@ -3750,6 +3762,7 @@ RecompReturn WaitVBlank_FAD6_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $FADB inside WaitVBlank: Poll sound comms until the next vblank (HVBJOY), then run the menu cursor update; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn WaitVBlank_FADB_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "WaitVBlank_FADB_M1X0";
@@ -3880,6 +3893,7 @@ RecompReturn WaitVBlank_FADB_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Animate the cursor sprite tile and ease cursor X/Y ($0C60/$0C68) toward targets ($0C62/$0C6A); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_UpdateCursor_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_UpdateCursor_M1X0";
@@ -4762,6 +4776,7 @@ RecompReturn Menu_UpdateCursor_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: KEEP SCORES / RESET SCORES / EXIT menu; jumps through table $FC13; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_KeepResetScores_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_KeepResetScores_M1X0";
@@ -5018,6 +5033,7 @@ RecompReturn Menu_KeepResetScores_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Clear player $CC's 16 score words at SRAM $7702C0 and return Z clear (jump-table target); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Scores_ResetPlayer_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Scores_ResetPlayer_M0X0";
@@ -5256,6 +5272,7 @@ RecompReturn Scores_ResetPlayer_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Return with Z clear (KEEP SCORES jump-table target); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Menu_ReturnContinue_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ReturnContinue_M0X0";
@@ -5369,6 +5386,7 @@ RecompReturn Menu_ReturnContinue_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Return with Z set (EXIT jump-table target); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Menu_ReturnExit_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ReturnExit_M0X0";
@@ -5482,6 +5500,7 @@ RecompReturn Menu_ReturnExit_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DMA five $C0-byte buffers ($0CF0,$0EF0,..$14F0) to VRAM at $0A + n*$100 via channel 7 */
 void Dma_UploadTilemapRows(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5499,6 +5518,7 @@ void Dma_UploadTilemapRows(CpuState *cpu) {
   }
 }
 
+/* decomp: DMA $C0 bytes from bank 0 (A1T7 preset) to VRAM address X on channel 7 */
 void Dma_UploadVramC0(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5516,6 +5536,7 @@ void Dma_UploadVramC0(CpuState *cpu) {
   }
 }
 
+/* decomp: Store X (and Y unless $FFFF) into player $CC's SRAM result slot $770618, then re-checksum */
 void Scores_StoreResult(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5533,6 +5554,7 @@ void Scores_StoreResult(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $F8A2 inside Scores_StoreResult: Store X (and Y unless $FFFF) into player $CC's SRAM result slot $770618, then re-checksum */
 void Scores_StoreResult_F8A2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5550,6 +5572,7 @@ void Scores_StoreResult_F8A2(CpuState *cpu) {
   }
 }
 
+/* decomp: Convert scratch text $DC..$FB: lowercase letters and digits remapped to the alternate font tiles */
 void Text_ConvertBufferCase(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5567,6 +5590,7 @@ void Text_ConvertBufferCase(CpuState *cpu) {
   }
 }
 
+/* decomp: VS CHAMPIONS screen: sort 16 players by wins ($770400) and list top 8 with name, unis, wins, % */
 void Vs_ShowChampions(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5584,6 +5608,7 @@ void Vs_ShowChampions(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for WaitVBlank */
 void WaitVBlankLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5601,6 +5626,7 @@ void WaitVBlankLong(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $FAC8 inside WaitVBlankLong: JSL wrapper for WaitVBlank */
 void WaitVBlankLong_FAC8(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5618,6 +5644,7 @@ void WaitVBlankLong_FAC8(CpuState *cpu) {
   }
 }
 
+/* decomp: Poll sound comms until the next vblank (HVBJOY), then run the menu cursor update */
 void WaitVBlank(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5635,6 +5662,7 @@ void WaitVBlank(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $FACD inside WaitVBlank: Poll sound comms until the next vblank (HVBJOY), then run the menu cursor update */
 void WaitVBlank_FACD(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5652,6 +5680,7 @@ void WaitVBlank_FACD(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $FAD2 inside WaitVBlank: Poll sound comms until the next vblank (HVBJOY), then run the menu cursor update */
 void WaitVBlank_FAD2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5669,6 +5698,7 @@ void WaitVBlank_FAD2(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $FAD6 inside WaitVBlank: Poll sound comms until the next vblank (HVBJOY), then run the menu cursor update */
 void WaitVBlank_FAD6(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5686,6 +5716,7 @@ void WaitVBlank_FAD6(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $FADB inside WaitVBlank: Poll sound comms until the next vblank (HVBJOY), then run the menu cursor update */
 void WaitVBlank_FADB(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5703,6 +5734,7 @@ void WaitVBlank_FADB(CpuState *cpu) {
   }
 }
 
+/* decomp: Animate the cursor sprite tile and ease cursor X/Y ($0C60/$0C68) toward targets ($0C62/$0C6A) */
 void Menu_UpdateCursor(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5720,6 +5752,7 @@ void Menu_UpdateCursor(CpuState *cpu) {
   }
 }
 
+/* decomp: KEEP SCORES / RESET SCORES / EXIT menu; jumps through table $FC13 */
 void Menu_KeepResetScores(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5737,6 +5770,7 @@ void Menu_KeepResetScores(CpuState *cpu) {
   }
 }
 
+/* decomp: Clear player $CC's 16 score words at SRAM $7702C0 and return Z clear (jump-table target) */
 void Scores_ResetPlayer(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5754,6 +5788,7 @@ void Scores_ResetPlayer(CpuState *cpu) {
   }
 }
 
+/* decomp: Return with Z clear (KEEP SCORES jump-table target) */
 void Menu_ReturnContinue(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5771,6 +5806,7 @@ void Menu_ReturnContinue(CpuState *cpu) {
   }
 }
 
+/* decomp: Return with Z set (EXIT jump-table target) */
 void Menu_ReturnExit(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

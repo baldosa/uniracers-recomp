@@ -32,6 +32,7 @@ RecompReturn Race_FadeUnlessKind1_M1X0(CpuState *cpu);
 RecompReturn Records_PercentOfRaces_M0X0(CpuState *cpu);
 RecompReturn Sram_RestoreDirectPage_M1X0(CpuState *cpu);
 
+/* decomp: Return value A as percent of player's race count; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Records_PercentOfRaces_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_PercentOfRaces_M0X0";
@@ -189,6 +190,7 @@ RecompReturn Records_PercentOfRaces_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Restore WRAM $0000-$019D from SRAM copy $770E6B; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Sram_RestoreDirectPage_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_RestoreDirectPage_M1X0";
@@ -382,6 +384,7 @@ RecompReturn Sram_RestoreDirectPage_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Call $80C1F1 unless race kind $77074B is 1; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_FadeUnlessKind1_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_FadeUnlessKind1_M1X0";
@@ -565,6 +568,7 @@ RecompReturn Race_FadeUnlessKind1_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9981 inside Race_FadeUnlessKind1: Call $80C1F1 unless race kind $77074B is 1; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_FadeUnlessKind1_9981_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_FadeUnlessKind1_9981_M1X0";
@@ -672,6 +676,7 @@ RecompReturn Race_FadeUnlessKind1_9981_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Per-frame menu sprite animation: cycle tiles/colours of OAM buffer entries; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Menu_AnimateSprites_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_AnimateSprites_M0X0";
@@ -1504,6 +1509,7 @@ RecompReturn Menu_AnimateSprites_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: X = $CE*2; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Index_TrackX2_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Index_TrackX2_M0X0";
@@ -1669,6 +1675,7 @@ RecompReturn Index_TrackX2_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: X = $CE; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Index_Track_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Index_Track_M1X0";
@@ -1827,6 +1834,7 @@ RecompReturn Index_Track_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: X = $CE; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Index_Track_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Index_Track_M0X0";
@@ -1986,6 +1994,7 @@ RecompReturn Index_Track_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: X = ($CA*50 + $CE)*2 into personal bests; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Index_PlayerBest_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Index_PlayerBest_M0X0";
@@ -2300,6 +2309,7 @@ RecompReturn Index_PlayerBest_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: X = $D0*16 + $CA into medals $77069C; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Index_TierMedal_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Index_TierMedal_M1X0";
@@ -2510,6 +2520,7 @@ RecompReturn Index_TierMedal_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: X = $D0*5; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Index_TierX5_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Index_TierX5_M0X0";
@@ -2718,6 +2729,7 @@ RecompReturn Index_TierX5_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Return unlocked tier of player $CA (mode 1) or highest of all players; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Player_GetTier_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Player_GetTier_M1X0";
@@ -3022,6 +3034,7 @@ RecompReturn Player_GetTier_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Return unlocked tier of player $CA (mode 1) or highest of all players; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Player_GetTier_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Player_GetTier_M0X0";
@@ -3326,6 +3339,7 @@ RecompReturn Player_GetTier_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Return promotion flag of player $CA in mode 1, else 0; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Player_GetPromoted_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Player_GetPromoted_M1X0";
@@ -3614,6 +3628,7 @@ RecompReturn Player_GetPromoted_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Return value A as percent of player's race count */
 void Records_PercentOfRaces(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3631,6 +3646,7 @@ void Records_PercentOfRaces(CpuState *cpu) {
   }
 }
 
+/* decomp: Restore WRAM $0000-$019D from SRAM copy $770E6B */
 void Sram_RestoreDirectPage(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3648,6 +3664,7 @@ void Sram_RestoreDirectPage(CpuState *cpu) {
   }
 }
 
+/* decomp: Call $80C1F1 unless race kind $77074B is 1 */
 void Race_FadeUnlessKind1(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3665,6 +3682,7 @@ void Race_FadeUnlessKind1(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9981 inside Race_FadeUnlessKind1: Call $80C1F1 unless race kind $77074B is 1 */
 void Race_FadeUnlessKind1_9981(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3682,6 +3700,7 @@ void Race_FadeUnlessKind1_9981(CpuState *cpu) {
   }
 }
 
+/* decomp: Per-frame menu sprite animation: cycle tiles/colours of OAM buffer entries */
 void Menu_AnimateSprites(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3699,6 +3718,7 @@ void Menu_AnimateSprites(CpuState *cpu) {
   }
 }
 
+/* decomp: X = $CE*2 */
 void Index_TrackX2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3716,6 +3736,7 @@ void Index_TrackX2(CpuState *cpu) {
   }
 }
 
+/* decomp: X = $CE */
 void Index_Track(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3733,6 +3754,7 @@ void Index_Track(CpuState *cpu) {
   }
 }
 
+/* decomp: X = ($CA*50 + $CE)*2 into personal bests */
 void Index_PlayerBest(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3750,6 +3772,7 @@ void Index_PlayerBest(CpuState *cpu) {
   }
 }
 
+/* decomp: X = $D0*16 + $CA into medals $77069C */
 void Index_TierMedal(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3767,6 +3790,7 @@ void Index_TierMedal(CpuState *cpu) {
   }
 }
 
+/* decomp: X = $D0*5 */
 void Index_TierX5(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3784,6 +3808,7 @@ void Index_TierX5(CpuState *cpu) {
   }
 }
 
+/* decomp: Return unlocked tier of player $CA (mode 1) or highest of all players */
 void Player_GetTier(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3801,6 +3826,7 @@ void Player_GetTier(CpuState *cpu) {
   }
 }
 
+/* decomp: Return promotion flag of player $CA in mode 1, else 0 */
 void Player_GetPromoted(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

@@ -25,6 +25,7 @@ RecompReturn Bg_UpdateScroll2P_M0X0(CpuState *cpu);
 RecompReturn Dma_QueueVramEntry_M0X0(CpuState *cpu);
 RecompReturn Math_Multiply16_FastRom_M0X0(CpuState *cpu);
 
+/* decomp: queues VRAM DMA for the built row/column strip buffers ($0433 P1, $0475 P2); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Bg_QueueEdgeStripDma_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Bg_QueueEdgeStripDma_M0X0";
@@ -1431,6 +1432,7 @@ RecompReturn Bg_QueueEdgeStripDma_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: fills VRAM DMA queue slot X: dest A, length Y, src $0230-$0232, VMAIN $80/$81; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Dma_QueueVramEntry_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Dma_QueueVramEntry_M0X0";
@@ -1719,6 +1721,7 @@ RecompReturn Dma_QueueVramEntry_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: computes track-map index and reads a metatile row (Y!=0) or column into $00-$09; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Bg_FetchMapStrip_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Bg_FetchMapStrip_M0X0";
@@ -2046,6 +2049,7 @@ RecompReturn Bg_FetchMapStrip_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: reads 5 metatile ids of a track-map row from $7F000F with wrap, zero when off-map; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Bg_FetchMapRow_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Bg_FetchMapRow_M0X0";
@@ -2469,6 +2473,7 @@ RecompReturn Bg_FetchMapRow_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: reads 5 metatile ids of a track-map column from $7F000F, zero above/below map; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Bg_FetchMapColumn_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Bg_FetchMapColumn_M0X0";
@@ -2817,6 +2822,7 @@ RecompReturn Bg_FetchMapColumn_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: splits pixel coords $0260/$0262 into metatile col/row ($0405/$0407) and subtile ($0409/$040B); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Bg_SplitCoordToMetatile_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Bg_SplitCoordToMetatile_M0X0";
@@ -3129,6 +3135,7 @@ RecompReturn Bg_SplitCoordToMetatile_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: 1-player: advances tile accumulators, BG1/BG2 parallax scroll shadows, picks row/column to refresh; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Bg_UpdateScroll1P_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Bg_UpdateScroll1P_M0X0";
@@ -4256,6 +4263,7 @@ RecompReturn Bg_UpdateScroll1P_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: split-screen version of Bg_UpdateScroll1P for both views; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Bg_UpdateScroll2P_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Bg_UpdateScroll2P_M0X0";
@@ -6365,6 +6373,7 @@ RecompReturn Bg_UpdateScroll2P_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: queues VRAM DMA for the built row/column strip buffers ($0433 P1, $0475 P2) */
 void Bg_QueueEdgeStripDma(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6382,6 +6391,7 @@ void Bg_QueueEdgeStripDma(CpuState *cpu) {
   }
 }
 
+/* decomp: fills VRAM DMA queue slot X: dest A, length Y, src $0230-$0232, VMAIN $80/$81 */
 void Dma_QueueVramEntry(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6399,6 +6409,7 @@ void Dma_QueueVramEntry(CpuState *cpu) {
   }
 }
 
+/* decomp: computes track-map index and reads a metatile row (Y!=0) or column into $00-$09 */
 void Bg_FetchMapStrip(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6416,6 +6427,7 @@ void Bg_FetchMapStrip(CpuState *cpu) {
   }
 }
 
+/* decomp: reads 5 metatile ids of a track-map row from $7F000F with wrap, zero when off-map */
 void Bg_FetchMapRow(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6433,6 +6445,7 @@ void Bg_FetchMapRow(CpuState *cpu) {
   }
 }
 
+/* decomp: reads 5 metatile ids of a track-map column from $7F000F, zero above/below map */
 void Bg_FetchMapColumn(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6450,6 +6463,7 @@ void Bg_FetchMapColumn(CpuState *cpu) {
   }
 }
 
+/* decomp: splits pixel coords $0260/$0262 into metatile col/row ($0405/$0407) and subtile ($0409/$040B) */
 void Bg_SplitCoordToMetatile(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6467,6 +6481,7 @@ void Bg_SplitCoordToMetatile(CpuState *cpu) {
   }
 }
 
+/* decomp: 1-player: advances tile accumulators, BG1/BG2 parallax scroll shadows, picks row/column to refresh */
 void Bg_UpdateScroll1P(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -6484,6 +6499,7 @@ void Bg_UpdateScroll1P(CpuState *cpu) {
   }
 }
 
+/* decomp: split-screen version of Bg_UpdateScroll1P for both views */
 void Bg_UpdateScroll2P(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

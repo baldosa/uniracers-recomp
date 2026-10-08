@@ -92,6 +92,7 @@ RecompReturn Vram_UploadTilemapAtA8_FastRom_M1X0(CpuState *cpu);
 RecompReturn Vram_UploadTilemap_FastRom_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_FastRom_M1X0(CpuState *cpu);
 
+/* decomp: Once per results (flag $0100 in $770742): parks 30 marker objects and sprites, sets OAM hi bits; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Results_ResetMarkerSpritesOnce_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_ResetMarkerSpritesOnce_FastRom_M1X0";
@@ -474,6 +475,7 @@ RecompReturn Results_ResetMarkerSpritesOnce_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Fades INIDISP brightness up over 7 frames, uploading OAM each frame; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Video_FadeIn_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Video_FadeIn_FastRom_M1X0";
@@ -700,6 +702,7 @@ RecompReturn Video_FadeIn_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Fades INIDISP brightness down over 7 frames then forces blank; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Video_FadeOut_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Video_FadeOut_FastRom_M1X0";
@@ -938,6 +941,7 @@ RecompReturn Video_FadeOut_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Moves the menu cursor object off-screen ($0C62=$FD00, $0C6A=$0700); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_HideCursor_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_HideCursor_FastRom_M1X0";
@@ -1064,6 +1068,7 @@ RecompReturn Menu_HideCursor_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Lap-race results: eases 20 marker sprites toward their targets until a button is pressed; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Results_AnimateLapMarkers_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_AnimateLapMarkers_FastRom_M1X0";
@@ -1997,6 +2002,7 @@ RecompReturn Results_AnimateLapMarkers_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Signed >>3 of A, clamped to -40..+40 (marker easing speed); reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Math_ScaleClampVelocity_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_ScaleClampVelocity_FastRom_M0X0";
@@ -2381,6 +2387,7 @@ RecompReturn Math_ScaleClampVelocity_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Race_Start entry that keeps $77074D unchanged; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_StartKeepParam_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_StartKeepParam_FastRom_M1X0";
@@ -3444,6 +3451,7 @@ RecompReturn Race_StartKeepParam_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Clears lap times, stores unis/track/flags to SRAM, runs the race, updates win counters after; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_Start_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Start_FastRom_M1X0";
@@ -4503,6 +4511,7 @@ RecompReturn Race_Start_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Computes 8 bar lengths at $0175 as each entry's points relative to the leader's; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn League_CalcPointBars_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_CalcPointBars_FastRom_M0X0";
@@ -5164,6 +5173,7 @@ RecompReturn League_CalcPointBars_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copies 16-byte player name A from SRAM $77000C+A*16 to Y (MVN trampoline); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Sram_CopyPlayerName_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_CopyPlayerName_FastRom_M1X0";
@@ -5431,6 +5441,7 @@ RecompReturn Sram_CopyPlayerName_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copies 16-byte player name A from SRAM $77000C+A*16 to Y (MVN trampoline); reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Sram_CopyPlayerName_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_CopyPlayerName_FastRom_M0X0";
@@ -5698,6 +5709,7 @@ RecompReturn Sram_CopyPlayerName_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copies 16-byte track name A (pointer table $839F96) to Y; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CopyTrackName_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CopyTrackName_FastRom_M0X0";
@@ -5937,6 +5949,7 @@ RecompReturn Text_CopyTrackName_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copies 16-byte track name A (pointer table $839F96) to Y; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_CopyTrackName_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CopyTrackName_FastRom_M1X0";
@@ -6176,6 +6189,7 @@ RecompReturn Text_CopyTrackName_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copies 32-byte league name record A from SRAM $77016E+A*32 to Y; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Sram_CopyLeagueName_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_CopyLeagueName_FastRom_M0X0";
@@ -6449,6 +6463,7 @@ RecompReturn Sram_CopyLeagueName_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copies 18-byte name A (pointer table $83A1B4) to Y; used by track select, likely tour name; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_CopyTourName_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CopyTourName_FastRom_M1X0";
@@ -6688,6 +6703,7 @@ RecompReturn Text_CopyTourName_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Options DEFINE LEAGUE: pick slot, warn/confirm overwrite, pick tracks, enter league name; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_Main_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_Main_FastRom_M0X0";
@@ -8228,6 +8244,7 @@ RecompReturn DefineLeague_Main_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: PICK YOUR LEAGUE: toggle tracks in a 16-bit mask (2 min, 8 max), saved to $7702B2+league*2; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_PickTracks_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_PickTracks_FastRom_M1X0";
@@ -10136,6 +10153,7 @@ RecompReturn DefineLeague_PickTracks_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Sets text row/column ($E0/$DF) for track-grid item A; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_CalcItemPos_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_CalcItemPos_FastRom_M1X0";
@@ -10364,6 +10382,7 @@ RecompReturn DefineLeague_CalcItemPos_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Menu to choose league slot ONE..SIX; result in $CC; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_SelectSlot_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_SelectSlot_FastRom_M1X0";
@@ -10636,6 +10655,7 @@ RecompReturn DefineLeague_SelectSlot_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Uploads both tilemaps/palettes then runs a 57-frame HDMA window wipe, ends with HDMA off; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Fx_HdmaWipeReveal_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Fx_HdmaWipeReveal_FastRom_M1X0";
@@ -11581,6 +11601,7 @@ RecompReturn Fx_HdmaWipeReveal_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Once per results (flag $0100 in $770742): parks 30 marker objects and sprites, sets OAM hi bits; reached through the other ROM mirror bank */
 void Results_ResetMarkerSpritesOnce_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11598,6 +11619,7 @@ void Results_ResetMarkerSpritesOnce_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Fades INIDISP brightness up over 7 frames, uploading OAM each frame; reached through the other ROM mirror bank */
 void Video_FadeIn_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11615,6 +11637,7 @@ void Video_FadeIn_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Fades INIDISP brightness down over 7 frames then forces blank; reached through the other ROM mirror bank */
 void Video_FadeOut_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11632,6 +11655,7 @@ void Video_FadeOut_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Moves the menu cursor object off-screen ($0C62=$FD00, $0C6A=$0700); reached through the other ROM mirror bank */
 void Menu_HideCursor_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11649,6 +11673,7 @@ void Menu_HideCursor_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Lap-race results: eases 20 marker sprites toward their targets until a button is pressed; reached through the other ROM mirror bank */
 void Results_AnimateLapMarkers_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11666,6 +11691,7 @@ void Results_AnimateLapMarkers_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Signed >>3 of A, clamped to -40..+40 (marker easing speed); reached through the other ROM mirror bank */
 void Math_ScaleClampVelocity_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11683,6 +11709,7 @@ void Math_ScaleClampVelocity_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Race_Start entry that keeps $77074D unchanged; reached through the other ROM mirror bank */
 void Race_StartKeepParam_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11700,6 +11727,7 @@ void Race_StartKeepParam_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Clears lap times, stores unis/track/flags to SRAM, runs the race, updates win counters after; reached through the other ROM mirror bank */
 void Race_Start_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11717,6 +11745,7 @@ void Race_Start_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Computes 8 bar lengths at $0175 as each entry's points relative to the leader's; reached through the other ROM mirror bank */
 void League_CalcPointBars_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11734,6 +11763,7 @@ void League_CalcPointBars_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Copies 16-byte player name A from SRAM $77000C+A*16 to Y (MVN trampoline); reached through the other ROM mirror bank */
 void Sram_CopyPlayerName_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11751,6 +11781,7 @@ void Sram_CopyPlayerName_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Copies 16-byte track name A (pointer table $839F96) to Y; reached through the other ROM mirror bank */
 void Text_CopyTrackName_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11768,6 +11799,7 @@ void Text_CopyTrackName_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Copies 32-byte league name record A from SRAM $77016E+A*32 to Y; reached through the other ROM mirror bank */
 void Sram_CopyLeagueName_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11785,6 +11817,7 @@ void Sram_CopyLeagueName_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Copies 18-byte name A (pointer table $83A1B4) to Y; used by track select, likely tour name; reached through the other ROM mirror bank */
 void Text_CopyTourName_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11802,6 +11835,7 @@ void Text_CopyTourName_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Options DEFINE LEAGUE: pick slot, warn/confirm overwrite, pick tracks, enter league name; reached through the other ROM mirror bank */
 void DefineLeague_Main_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11819,6 +11853,7 @@ void DefineLeague_Main_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: PICK YOUR LEAGUE: toggle tracks in a 16-bit mask (2 min, 8 max), saved to $7702B2+league*2; reached through the other ROM mirror bank */
 void DefineLeague_PickTracks_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11836,6 +11871,7 @@ void DefineLeague_PickTracks_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Sets text row/column ($E0/$DF) for track-grid item A; reached through the other ROM mirror bank */
 void DefineLeague_CalcItemPos_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11853,6 +11889,7 @@ void DefineLeague_CalcItemPos_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Menu to choose league slot ONE..SIX; result in $CC; reached through the other ROM mirror bank */
 void DefineLeague_SelectSlot_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11870,6 +11907,7 @@ void DefineLeague_SelectSlot_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Uploads both tilemaps/palettes then runs a 57-frame HDMA window wipe, ends with HDMA off; reached through the other ROM mirror bank */
 void Fx_HdmaWipeReveal_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

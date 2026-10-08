@@ -67,6 +67,7 @@ RecompReturn Rider_BuildRotationTables_9E0F_M0X0(CpuState *cpu);
 RecompReturn Rider_BuildRotationTables_9E11_M0X0(CpuState *cpu);
 RecompReturn Rider_BuildRotationTables_M1X0(CpuState *cpu);
 
+/* decomp: JSL wrapper for Rider_BuildRotationTables (called during race/track init); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTablesLong_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTablesLong_M1X0";
@@ -198,6 +199,7 @@ RecompReturn Rider_BuildRotationTablesLong_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $99D9 inside Rider_BuildRotationTablesLong: JSL wrapper for Rider_BuildRotationTables (called during race/track init); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTablesLong_99D9_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTablesLong_99D9_M0X0";
@@ -298,6 +300,7 @@ RecompReturn Rider_BuildRotationTablesLong_99D9_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_M1X0";
@@ -3326,6 +3329,7 @@ RecompReturn Rider_BuildRotationTables_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9A6D inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9A6D_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9A6D_M0X0";
@@ -6332,6 +6336,7 @@ RecompReturn Rider_BuildRotationTables_9A6D_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9A88 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9A88_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9A88_M0X0";
@@ -6637,6 +6642,7 @@ RecompReturn Rider_BuildRotationTables_9A88_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9A93 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9A93_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9A93_M1X0";
@@ -6737,6 +6743,7 @@ RecompReturn Rider_BuildRotationTables_9A93_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9ACE inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9ACE_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9ACE_M0X0";
@@ -7097,6 +7104,7 @@ RecompReturn Rider_BuildRotationTables_9ACE_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9AD4 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9AD4_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9AD4_M0X0";
@@ -7450,6 +7458,7 @@ RecompReturn Rider_BuildRotationTables_9AD4_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9B19 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9B19_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9B19_M1X0";
@@ -7533,6 +7542,7 @@ RecompReturn Rider_BuildRotationTables_9B19_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9B2A inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9B2A_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9B2A_M0X0";
@@ -7649,6 +7659,7 @@ RecompReturn Rider_BuildRotationTables_9B2A_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9B30 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9B30_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9B30_M0X0";
@@ -7758,6 +7769,7 @@ RecompReturn Rider_BuildRotationTables_9B30_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9B46 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9B46_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9B46_M0X0";
@@ -10764,6 +10776,7 @@ RecompReturn Rider_BuildRotationTables_9B46_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9B53 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9B53_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9B53_M0X0";
@@ -13770,6 +13783,7 @@ RecompReturn Rider_BuildRotationTables_9B53_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9B55 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9B55_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9B55_M0X0";
@@ -14047,6 +14061,7 @@ RecompReturn Rider_BuildRotationTables_9B55_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9B57 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9B57_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9B57_M0X0";
@@ -14260,6 +14275,7 @@ RecompReturn Rider_BuildRotationTables_9B57_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9B83 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9B83_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9B83_M1X0";
@@ -14313,6 +14329,7 @@ RecompReturn Rider_BuildRotationTables_9B83_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9B83 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9B83_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9B83_M0X0";
@@ -14366,6 +14383,7 @@ RecompReturn Rider_BuildRotationTables_9B83_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9B97 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9B97_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9B97_M0X0";
@@ -14474,6 +14492,7 @@ RecompReturn Rider_BuildRotationTables_9B97_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9BB3 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9BB3_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9BB3_M0X0";
@@ -17469,6 +17488,7 @@ RecompReturn Rider_BuildRotationTables_9BB3_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9BC3 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9BC3_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9BC3_M0X0";
@@ -17739,6 +17759,7 @@ RecompReturn Rider_BuildRotationTables_9BC3_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9BD3 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9BD3_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9BD3_M1X0";
@@ -17822,6 +17843,7 @@ RecompReturn Rider_BuildRotationTables_9BD3_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9BF2 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9BF2_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9BF2_M1X0";
@@ -17929,6 +17951,7 @@ RecompReturn Rider_BuildRotationTables_9BF2_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9C0F inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9C0F_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9C0F_M0X0";
@@ -20924,6 +20947,7 @@ RecompReturn Rider_BuildRotationTables_9C0F_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9C7F inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9C7F_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9C7F_M0X0";
@@ -23919,6 +23943,7 @@ RecompReturn Rider_BuildRotationTables_9C7F_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9C96 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9C96_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9C96_M0X0";
@@ -26914,6 +26939,7 @@ RecompReturn Rider_BuildRotationTables_9C96_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9CB2 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9CB2_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9CB2_M0X0";
@@ -29909,6 +29935,7 @@ RecompReturn Rider_BuildRotationTables_9CB2_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9CBB inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9CBB_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9CBB_M1X1";
@@ -32915,6 +32942,7 @@ RecompReturn Rider_BuildRotationTables_9CBB_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9CCC inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9CCC_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9CCC_M1X1";
@@ -35910,6 +35938,7 @@ RecompReturn Rider_BuildRotationTables_9CCC_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9CD1 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9CD1_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9CD1_M1X1";
@@ -38916,6 +38945,7 @@ RecompReturn Rider_BuildRotationTables_9CD1_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9CE0 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9CE0_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9CE0_M0X0";
@@ -41911,6 +41941,7 @@ RecompReturn Rider_BuildRotationTables_9CE0_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9CFC inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9CFC_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9CFC_M0X0";
@@ -44906,6 +44937,7 @@ RecompReturn Rider_BuildRotationTables_9CFC_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9CFD inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9CFD_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9CFD_M0X0";
@@ -47912,6 +47944,7 @@ RecompReturn Rider_BuildRotationTables_9CFD_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9D00 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9D00_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9D00_M1X1";
@@ -50918,6 +50951,7 @@ RecompReturn Rider_BuildRotationTables_9D00_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9D08 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9D08_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9D08_M1X1";
@@ -53924,6 +53958,7 @@ RecompReturn Rider_BuildRotationTables_9D08_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9D16 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9D16_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9D16_M1X1";
@@ -56919,6 +56954,7 @@ RecompReturn Rider_BuildRotationTables_9D16_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9D37 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9D37_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9D37_M0X0";
@@ -59914,6 +59950,7 @@ RecompReturn Rider_BuildRotationTables_9D37_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9D47 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9D47_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9D47_M0X0";
@@ -62909,6 +62946,7 @@ RecompReturn Rider_BuildRotationTables_9D47_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9D61 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9D61_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9D61_M1X1";
@@ -65904,6 +65942,7 @@ RecompReturn Rider_BuildRotationTables_9D61_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9D75 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9D75_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9D75_M0X0";
@@ -68899,6 +68938,7 @@ RecompReturn Rider_BuildRotationTables_9D75_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9D85 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9D85_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9D85_M0X0";
@@ -71894,6 +71934,7 @@ RecompReturn Rider_BuildRotationTables_9D85_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9D9F inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9D9F_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9D9F_M1X1";
@@ -74889,6 +74930,7 @@ RecompReturn Rider_BuildRotationTables_9D9F_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9DA1 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9DA1_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9DA1_M1X1";
@@ -77895,6 +77937,7 @@ RecompReturn Rider_BuildRotationTables_9DA1_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9DA4 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9DA4_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9DA4_M1X1";
@@ -80901,6 +80944,7 @@ RecompReturn Rider_BuildRotationTables_9DA4_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9DB6 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9DB6_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9DB6_M0X0";
@@ -83896,6 +83940,7 @@ RecompReturn Rider_BuildRotationTables_9DB6_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9DB8 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9DB8_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9DB8_M0X0";
@@ -83968,6 +84013,7 @@ RecompReturn Rider_BuildRotationTables_9DB8_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9DD2 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9DD2_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9DD2_M0X0";
@@ -84040,6 +84086,7 @@ RecompReturn Rider_BuildRotationTables_9DD2_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9E04 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9E04_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9E04_M0X0";
@@ -87035,6 +87082,7 @@ RecompReturn Rider_BuildRotationTables_9E04_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9E08 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9E08_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9E08_M0X0";
@@ -90041,6 +90089,7 @@ RecompReturn Rider_BuildRotationTables_9E08_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9E0F inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9E0F_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9E0F_M0X0";
@@ -93047,6 +93096,7 @@ RecompReturn Rider_BuildRotationTables_9E0F_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9E11 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_9E11_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_9E11_M0X0";
@@ -96042,6 +96092,7 @@ RecompReturn Rider_BuildRotationTables_9E11_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Rider_BuildRotationTables (called during race/track init) */
 void Rider_BuildRotationTablesLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96059,6 +96110,7 @@ void Rider_BuildRotationTablesLong(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $99D9 inside Rider_BuildRotationTablesLong: JSL wrapper for Rider_BuildRotationTables (called during race/track init) */
 void Rider_BuildRotationTablesLong_99D9(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96076,6 +96128,7 @@ void Rider_BuildRotationTablesLong_99D9(CpuState *cpu) {
   }
 }
 
+/* decomp: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96093,6 +96146,7 @@ void Rider_BuildRotationTables(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9A6D inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9A6D(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96110,6 +96164,7 @@ void Rider_BuildRotationTables_9A6D(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9A88 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9A88(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96127,6 +96182,7 @@ void Rider_BuildRotationTables_9A88(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9A93 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9A93(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96144,6 +96200,7 @@ void Rider_BuildRotationTables_9A93(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9ACE inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9ACE(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96161,6 +96218,7 @@ void Rider_BuildRotationTables_9ACE(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9AD4 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9AD4(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96178,6 +96236,7 @@ void Rider_BuildRotationTables_9AD4(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9B19 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9B19(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96195,6 +96254,7 @@ void Rider_BuildRotationTables_9B19(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9B2A inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9B2A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96212,6 +96272,7 @@ void Rider_BuildRotationTables_9B2A(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9B30 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9B30(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96229,6 +96290,7 @@ void Rider_BuildRotationTables_9B30(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9B46 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9B46(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96246,6 +96308,7 @@ void Rider_BuildRotationTables_9B46(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9B53 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9B53(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96263,6 +96326,7 @@ void Rider_BuildRotationTables_9B53(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9B55 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9B55(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96280,6 +96344,7 @@ void Rider_BuildRotationTables_9B55(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9B57 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9B57(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96297,6 +96362,7 @@ void Rider_BuildRotationTables_9B57(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9B83 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9B83(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96314,6 +96380,7 @@ void Rider_BuildRotationTables_9B83(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9B97 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9B97(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96331,6 +96398,7 @@ void Rider_BuildRotationTables_9B97(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9BB3 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9BB3(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96348,6 +96416,7 @@ void Rider_BuildRotationTables_9BB3(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9BC3 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9BC3(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96365,6 +96434,7 @@ void Rider_BuildRotationTables_9BC3(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9BD3 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9BD3(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96382,6 +96452,7 @@ void Rider_BuildRotationTables_9BD3(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9BF2 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9BF2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96399,6 +96470,7 @@ void Rider_BuildRotationTables_9BF2(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9C0F inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9C0F(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96416,6 +96488,7 @@ void Rider_BuildRotationTables_9C0F(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9C7F inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9C7F(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96433,6 +96506,7 @@ void Rider_BuildRotationTables_9C7F(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9C96 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9C96(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96450,6 +96524,7 @@ void Rider_BuildRotationTables_9C96(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9CB2 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9CB2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96467,6 +96542,7 @@ void Rider_BuildRotationTables_9CB2(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9CBB inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9CBB(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96484,6 +96560,7 @@ void Rider_BuildRotationTables_9CBB(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9CCC inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9CCC(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96501,6 +96578,7 @@ void Rider_BuildRotationTables_9CCC(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9CD1 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9CD1(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96518,6 +96596,7 @@ void Rider_BuildRotationTables_9CD1(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9CE0 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9CE0(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96535,6 +96614,7 @@ void Rider_BuildRotationTables_9CE0(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9CFC inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9CFC(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96552,6 +96632,7 @@ void Rider_BuildRotationTables_9CFC(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9CFD inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9CFD(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96569,6 +96650,7 @@ void Rider_BuildRotationTables_9CFD(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9D00 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9D00(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96586,6 +96668,7 @@ void Rider_BuildRotationTables_9D00(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9D08 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9D08(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96603,6 +96686,7 @@ void Rider_BuildRotationTables_9D08(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9D16 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9D16(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96620,6 +96704,7 @@ void Rider_BuildRotationTables_9D16(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9D37 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9D37(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96637,6 +96722,7 @@ void Rider_BuildRotationTables_9D37(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9D47 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9D47(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96654,6 +96740,7 @@ void Rider_BuildRotationTables_9D47(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9D61 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9D61(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96671,6 +96758,7 @@ void Rider_BuildRotationTables_9D61(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9D75 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9D75(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96688,6 +96776,7 @@ void Rider_BuildRotationTables_9D75(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9D85 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9D85(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96705,6 +96794,7 @@ void Rider_BuildRotationTables_9D85(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9D9F inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9D9F(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96722,6 +96812,7 @@ void Rider_BuildRotationTables_9D9F(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9DA1 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9DA1(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96739,6 +96830,7 @@ void Rider_BuildRotationTables_9DA1(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9DA4 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9DA4(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96756,6 +96848,7 @@ void Rider_BuildRotationTables_9DA4(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9DB6 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9DB6(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96773,6 +96866,7 @@ void Rider_BuildRotationTables_9DB6(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9DB8 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9DB8(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96790,6 +96884,7 @@ void Rider_BuildRotationTables_9DB8(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9DD2 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9DD2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96807,6 +96902,7 @@ void Rider_BuildRotationTables_9DD2(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9E04 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9E04(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96824,6 +96920,7 @@ void Rider_BuildRotationTables_9E04(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9E08 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9E08(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96841,6 +96938,7 @@ void Rider_BuildRotationTables_9E08(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9E0F inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9E0F(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -96858,6 +96956,7 @@ void Rider_BuildRotationTables_9E0F(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9E11 inside Rider_BuildRotationTables: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C */
 void Rider_BuildRotationTables_9E11(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

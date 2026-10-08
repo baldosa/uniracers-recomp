@@ -23,6 +23,7 @@ RecompReturn Rider_BuildRotationTables_FastRom_M1X0(CpuState *cpu);
 RecompReturn Rider_CalcMotionAngle_M0X1(CpuState *cpu);
 RecompReturn Rider_LoadPoseOffsets_M0X0(CpuState *cpu);
 
+/* decomp: from rider position delta ($A5/$A7 vs $0EE3/$0EE5) derives target tilt $0254 and picks a rotation table into $A3; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Rider_CalcMotionAngle_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_CalcMotionAngle_M0X1";
@@ -1688,6 +1689,7 @@ RecompReturn Rider_CalcMotionAngle_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Rider_BuildRotationTables (called during race/track init); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTablesLong_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTablesLong_FastRom_M1X0";
@@ -1819,6 +1821,7 @@ RecompReturn Rider_BuildRotationTablesLong_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Rider_BuildRotationTables_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_BuildRotationTables_FastRom_M1X0";
@@ -5455,6 +5458,7 @@ RecompReturn Rider_BuildRotationTables_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: reads pose frame $0F7B from ROM banks $21+, adds part offsets, mirrors by $0F47, stores at $125B; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Rider_LoadPoseOffsets_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Rider_LoadPoseOffsets_M0X0";
@@ -7507,6 +7511,7 @@ RecompReturn Rider_LoadPoseOffsets_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: computes camera scroll velocities ($04F5/$04F9, P2 $04F7/$04FB) easing toward the rider; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Cam_UpdateFollowSpeed_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Cam_UpdateFollowSpeed_M0X0";
@@ -11453,6 +11458,7 @@ RecompReturn Cam_UpdateFollowSpeed_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: from rider position delta ($A5/$A7 vs $0EE3/$0EE5) derives target tilt $0254 and picks a rotation table into $A3 */
 void Rider_CalcMotionAngle(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11470,6 +11476,7 @@ void Rider_CalcMotionAngle(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Rider_BuildRotationTables (called during race/track init); reached through the other ROM mirror bank */
 void Rider_BuildRotationTablesLong_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11487,6 +11494,7 @@ void Rider_BuildRotationTablesLong_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: builds 3 tables of 63 2x2 rotation matrices (full, 7/8, 1/2 scale) at $056C/$0764/$095C; reached through the other ROM mirror bank */
 void Rider_BuildRotationTables_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11504,6 +11512,7 @@ void Rider_BuildRotationTables_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: reads pose frame $0F7B from ROM banks $21+, adds part offsets, mirrors by $0F47, stores at $125B */
 void Rider_LoadPoseOffsets(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11521,6 +11530,7 @@ void Rider_LoadPoseOffsets(CpuState *cpu) {
   }
 }
 
+/* decomp: computes camera scroll velocities ($04F5/$04F9, P2 $04F7/$04FB) easing toward the rider */
 void Cam_UpdateFollowSpeed(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

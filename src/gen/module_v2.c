@@ -20,7 +20,7 @@ SNES_PROGRAM_MODULE_CONSTRUCTOR(snes_program_module_register_generated) {
   g_program_module.id = "main";
   g_program_module.symbol_prefix = "";
   g_program_module.program_digest = "3686668a9d42a4a14296bca9578f72a3312d0833278bf1377072e2f40c253036";
-  g_program_module.build_digest = "b6063d54213c7ad8f20924d5ca7967b75a13bdc3b8688b4b738c6a94bebc6701";
+  g_program_module.build_digest = "b8eb7e64e91c287aa33e19a74af2395d4a4490b1efffdb2d8bef5ada6e2e11ad";
   g_program_module.dispatch = g_dispatch_table;
   g_program_module.dispatch_count = g_dispatch_table_count;
   g_program_module.guards = g_ram_routine_guards;

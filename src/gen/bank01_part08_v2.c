@@ -18,6 +18,7 @@
 RecompReturn Race_ResetEventQueuesLong_M0X0(CpuState *cpu);
 RecompReturn Race_ResetEventQueues_M0X0(CpuState *cpu);
 
+/* decomp: JSL wrapper for Race_ResetEventQueues; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_ResetEventQueuesLong_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_ResetEventQueuesLong_M0X0";
@@ -149,6 +150,7 @@ RecompReturn Race_ResetEventQueuesLong_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Clear both players' race event rings and reset read/write indices (read=0, write=1 = empty); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_ResetEventQueues_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_ResetEventQueues_M0X0";
@@ -294,6 +296,7 @@ RecompReturn Race_ResetEventQueues_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Race_ResetEventQueues */
 void Race_ResetEventQueuesLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -311,6 +314,7 @@ void Race_ResetEventQueuesLong(CpuState *cpu) {
   }
 }
 
+/* decomp: Clear both players' race event rings and reset read/write indices (read=0, write=1 = empty) */
 void Race_ResetEventQueues(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

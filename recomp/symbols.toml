@@ -1479,7 +1479,7 @@ entry_x = 1
 note = "coverage discovery"
 
 [[func]]
-name = "WaitForNMI_spin"
+name = "WaitForNMI_D4EE"
 addr = "D4EE"
 bank = 130
 emit = true

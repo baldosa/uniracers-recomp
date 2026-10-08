@@ -20,6 +20,7 @@ RecompReturn Uni_UpdateLoop_M1X0(CpuState *cpu);
 RecompReturn Uni_UpdateTrackProgress_M0X0(CpuState *cpu);
 RecompReturn Uni_UpdateTrackProgress_M1X0(CpuState *cpu);
 
+/* decomp: handles loop/flip-around motion: rotation counter $123F, override frame $0F4F, landing resets; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Uni_UpdateLoop_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_UpdateLoop_M1X0";
@@ -2974,6 +2975,7 @@ RecompReturn Uni_UpdateLoop_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: stuck-input hint timer (msg $16) and track-sector progress counter from the tile attribute; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_UpdateTrackProgress_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_UpdateTrackProgress_M0X0";
@@ -3994,6 +3996,7 @@ RecompReturn Uni_UpdateTrackProgress_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: stuck-input hint timer (msg $16) and track-sector progress counter from the tile attribute; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Uni_UpdateTrackProgress_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_UpdateTrackProgress_M1X0";
@@ -5014,6 +5017,7 @@ RecompReturn Uni_UpdateTrackProgress_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: handles loop/flip-around motion: rotation counter $123F, override frame $0F4F, landing resets */
 void Uni_UpdateLoop(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5031,6 +5035,7 @@ void Uni_UpdateLoop(CpuState *cpu) {
   }
 }
 
+/* decomp: stuck-input hint timer (msg $16) and track-sector progress counter from the tile attribute */
 void Uni_UpdateTrackProgress(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

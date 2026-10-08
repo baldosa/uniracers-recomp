@@ -19,6 +19,7 @@ RecompReturn Math_Multiply16_M0X0(CpuState *cpu);
 RecompReturn Track_SetupSizeParamsLong_M0X0(CpuState *cpu);
 RecompReturn Track_SetupSizeParams_M0X0(CpuState *cpu);
 
+/* decomp: JSL wrapper for Track_SetupSizeParams; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Track_SetupSizeParamsLong_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Track_SetupSizeParamsLong_M0X0";
@@ -150,6 +151,7 @@ RecompReturn Track_SetupSizeParamsLong_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: sets map wrap masks, row stride and camera limits from track size code $7F000D; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Track_SetupSizeParams_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Track_SetupSizeParams_M0X0";
@@ -1160,6 +1162,7 @@ RecompReturn Track_SetupSizeParams_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Track_SetupSizeParams */
 void Track_SetupSizeParamsLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -1177,6 +1180,7 @@ void Track_SetupSizeParamsLong(CpuState *cpu) {
   }
 }
 
+/* decomp: sets map wrap masks, row stride and camera limits from track size code $7F000D */
 void Track_SetupSizeParams(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

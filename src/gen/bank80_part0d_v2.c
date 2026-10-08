@@ -72,6 +72,7 @@ RecompReturn Vram_UploadTilemapAtA8_FastRom_M1X0(CpuState *cpu);
 RecompReturn Vram_UploadTilemap_FastRom_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_FastRom_M1X0(CpuState *cpu);
 
+/* decomp: PICK TRACK menu for the chosen tour: shows class medal, skips done tracks, stores choice to $CE/$77074A; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_PickTrack_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_PickTrack_FastRom_M1X0";
@@ -2437,6 +2438,7 @@ RecompReturn Menu_PickTrack_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: On PICK TRACK with no tracks done, cycle league class bronze/silver/gold up to the unlocked one; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_CycleLeagueClass_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_CycleLeagueClass_FastRom_M1X0";
@@ -3149,6 +3151,7 @@ RecompReturn Menu_CycleLeagueClass_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Step the $7710A7 animation index (13..0) and write tile numbers into OAM entries 0-4; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_CycleSpriteTiles_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_CycleSpriteTiles_FastRom_M1X0";
@@ -3443,6 +3446,7 @@ RecompReturn Menu_CycleSpriteTiles_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_ShowTourTables_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ShowTourTables_FastRom_M1X0";
@@ -5318,6 +5322,7 @@ RecompReturn Menu_ShowTourTables_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Draw one page of tours: name plus gold/silver/bronze rows of 5 track numbers ($1E=page); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawTourTrackTable_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawTourTrackTable_FastRom_M1X0";
@@ -7275,6 +7280,7 @@ RecompReturn Menu_DrawTourTrackTable_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Draw one track-number icon (2 tiles) from value A at text scratch buffer $DC, coloured by group; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawTrackNumber_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawTrackNumber_FastRom_M1X0";
@@ -7658,6 +7664,7 @@ RecompReturn Menu_DrawTrackNumber_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Draw $9D+1 option strings from pointer list X, then slide the menu panel in; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawOptionList_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawOptionList_FastRom_M1X0";
@@ -8201,6 +8208,7 @@ RecompReturn Menu_DrawOptionList_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copy player $CC's 8 score entries from SRAM $7702C0 into $0151, tag ids 0-7, sort descending; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Scores_LoadPlayerSorted_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Scores_LoadPlayerSorted_FastRom_M1X0";
@@ -8705,6 +8713,7 @@ RecompReturn Scores_LoadPlayerSorted_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Selection-sort the 8 four-byte {id,value} entries at $0151 by value, highest first; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Util_SortTable8Descending_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Util_SortTable8Descending_FastRom_M0X0";
@@ -9142,6 +9151,7 @@ RecompReturn Util_SortTable8Descending_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: PICK TRACK menu for the chosen tour: shows class medal, skips done tracks, stores choice to $CE/$77074A; reached through the other ROM mirror bank */
 void Menu_PickTrack_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9159,6 +9169,7 @@ void Menu_PickTrack_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: On PICK TRACK with no tracks done, cycle league class bronze/silver/gold up to the unlocked one; reached through the other ROM mirror bank */
 void Menu_CycleLeagueClass_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9176,6 +9187,7 @@ void Menu_CycleLeagueClass_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Step the $7710A7 animation index (13..0) and write tile numbers into OAM entries 0-4; reached through the other ROM mirror bank */
 void Menu_CycleSpriteTiles_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9193,6 +9205,7 @@ void Menu_CycleSpriteTiles_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Set up BG2 scroll HDMA and scroll in two pages listing every tour's class rows and tracks; reached through the other ROM mirror bank */
 void Menu_ShowTourTables_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9210,6 +9223,7 @@ void Menu_ShowTourTables_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Draw one page of tours: name plus gold/silver/bronze rows of 5 track numbers ($1E=page); reached through the other ROM mirror bank */
 void Menu_DrawTourTrackTable_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9227,6 +9241,7 @@ void Menu_DrawTourTrackTable_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Draw one track-number icon (2 tiles) from value A at text scratch buffer $DC, coloured by group; reached through the other ROM mirror bank */
 void Menu_DrawTrackNumber_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9244,6 +9259,7 @@ void Menu_DrawTrackNumber_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Draw $9D+1 option strings from pointer list X, then slide the menu panel in; reached through the other ROM mirror bank */
 void Menu_DrawOptionList_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9261,6 +9277,7 @@ void Menu_DrawOptionList_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Copy player $CC's 8 score entries from SRAM $7702C0 into $0151, tag ids 0-7, sort descending; reached through the other ROM mirror bank */
 void Scores_LoadPlayerSorted_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9278,6 +9295,7 @@ void Scores_LoadPlayerSorted_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Selection-sort the 8 four-byte {id,value} entries at $0151 by value, highest first; reached through the other ROM mirror bank */
 void Util_SortTable8Descending_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

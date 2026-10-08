@@ -28,6 +28,7 @@ RecompReturn Uni_AccelerateRight_M0X1(CpuState *cpu);
 RecompReturn Uni_ApplyGravity_M0X0(CpuState *cpu);
 RecompReturn Uni_HandleJump_M0X1(CpuState *cpu);
 
+/* decomp: B button jump: starts jump and applies upward velocity for up to 8 frames; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Uni_HandleJump_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_HandleJump_M0X1";
@@ -679,6 +680,7 @@ RecompReturn Uni_HandleJump_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: adds gravity to Y velocity up to $0200 unless disabled; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_ApplyGravity_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_ApplyGravity_M0X0";
@@ -1060,6 +1062,7 @@ RecompReturn Uni_ApplyGravity_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: adds acceleration to X velocity (or boost charge) toward the right; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Uni_AccelerateRight_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_AccelerateRight_M0X1";
@@ -1572,6 +1575,7 @@ RecompReturn Uni_AccelerateRight_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: adds acceleration to X velocity (or boost charge) toward the left; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Uni_AccelerateLeft_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_AccelerateLeft_M0X1";
@@ -2102,6 +2106,7 @@ RecompReturn Uni_AccelerateLeft_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Input_MapJoypads; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Input_MapJoypadsLong_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_MapJoypadsLong_M0X0";
@@ -2233,6 +2238,7 @@ RecompReturn Input_MapJoypadsLong_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Input_MapJoypads; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_MapJoypadsLong_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_MapJoypadsLong_M1X0";
@@ -2364,6 +2370,7 @@ RecompReturn Input_MapJoypadsLong_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Input_MapJoypads; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Input_MapJoypadsLong_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_MapJoypadsLong_M1X1";
@@ -2495,6 +2502,7 @@ RecompReturn Input_MapJoypadsLong_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: splits raw joypad bytes into per-uni button flags and d-pad dirs; handles disabled/CPU/swap; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Input_MapJoypads_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_MapJoypads_M0X0";
@@ -4185,6 +4193,7 @@ RecompReturn Input_MapJoypads_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: splits raw joypad bytes into per-uni button flags and d-pad dirs; handles disabled/CPU/swap; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_MapJoypads_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_MapJoypads_M1X0";
@@ -5875,6 +5884,7 @@ RecompReturn Input_MapJoypads_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: splits raw joypad bytes into per-uni button flags and d-pad dirs; handles disabled/CPU/swap; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Input_MapJoypads_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_MapJoypads_M1X1";
@@ -7565,6 +7575,7 @@ RecompReturn Input_MapJoypads_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Race_UpdateUniScreenPos; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_UpdateUniScreenPosLong_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateUniScreenPosLong_M0X0";
@@ -7696,6 +7707,7 @@ RecompReturn Race_UpdateUniScreenPosLong_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: computes uni sprite screen positions from the camera and off-screen indicators; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_UpdateUniScreenPos_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateUniScreenPos_M0X0";
@@ -11888,6 +11900,7 @@ RecompReturn Race_UpdateUniScreenPos_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: B button jump: starts jump and applies upward velocity for up to 8 frames */
 void Uni_HandleJump(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11905,6 +11918,7 @@ void Uni_HandleJump(CpuState *cpu) {
   }
 }
 
+/* decomp: adds gravity to Y velocity up to $0200 unless disabled */
 void Uni_ApplyGravity(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11922,6 +11936,7 @@ void Uni_ApplyGravity(CpuState *cpu) {
   }
 }
 
+/* decomp: adds acceleration to X velocity (or boost charge) toward the right */
 void Uni_AccelerateRight(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11939,6 +11954,7 @@ void Uni_AccelerateRight(CpuState *cpu) {
   }
 }
 
+/* decomp: adds acceleration to X velocity (or boost charge) toward the left */
 void Uni_AccelerateLeft(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11956,6 +11972,7 @@ void Uni_AccelerateLeft(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Input_MapJoypads */
 void Input_MapJoypadsLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11973,6 +11990,7 @@ void Input_MapJoypadsLong(CpuState *cpu) {
   }
 }
 
+/* decomp: splits raw joypad bytes into per-uni button flags and d-pad dirs; handles disabled/CPU/swap */
 void Input_MapJoypads(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11990,6 +12008,7 @@ void Input_MapJoypads(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Race_UpdateUniScreenPos */
 void Race_UpdateUniScreenPosLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -12007,6 +12026,7 @@ void Race_UpdateUniScreenPosLong(CpuState *cpu) {
   }
 }
 
+/* decomp: computes uni sprite screen positions from the camera and off-screen indicators */
 void Race_UpdateUniScreenPos(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

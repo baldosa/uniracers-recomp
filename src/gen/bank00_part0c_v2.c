@@ -77,6 +77,7 @@ RecompReturn Vram_UploadTilemapAtA8_M1X0(CpuState *cpu);
 RecompReturn Vram_UploadTilemap_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_M1X0(CpuState *cpu);
 
+/* decomp: Slide transition forward: ease BG2 scroll via hook $56, then swap front/back tilemaps; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Slide_Forward_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Slide_Forward_M1X0";
@@ -269,6 +270,7 @@ RecompReturn Slide_Forward_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Default forward slide step: wait frame, add speed to BG2 HOFS; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Slide_DefaultFwdStep_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Slide_DefaultFwdStep_M1X0";
@@ -703,6 +705,7 @@ RecompReturn Slide_DefaultFwdStep_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $E242 inside Slide_DefaultFwdStep: Default forward slide step: wait frame, add speed to BG2 HOFS; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Slide_DefaultFwdStep_E242_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Slide_DefaultFwdStep_E242_M1X0";
@@ -1069,6 +1072,7 @@ RecompReturn Slide_DefaultFwdStep_E242_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Slide transition backward: ease BG2 scroll via hook $58, then swap front/back tilemaps; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Slide_Back_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Slide_Back_M1X0";
@@ -1261,6 +1265,7 @@ RecompReturn Slide_Back_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Default backward slide step: wait frame, update window, subtract speed from BG2 HOFS; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Slide_DefaultBackStep_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Slide_DefaultBackStep_M1X0";
@@ -1675,6 +1680,7 @@ RecompReturn Slide_DefaultBackStep_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $E289 inside Slide_DefaultBackStep: Default backward slide step: wait frame, update window, subtract speed from BG2 HOFS; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Slide_DefaultBackStep_E289_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Slide_DefaultBackStep_E289_M1X0";
@@ -2058,6 +2064,7 @@ RecompReturn Slide_DefaultBackStep_E289_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: HDMA wipe effect (BG1VOFS + brightness tables) opening the screen over ~75 frames; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Screen_OpenWipe_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Screen_OpenWipe_M1X0";
@@ -2760,6 +2767,7 @@ RecompReturn Screen_OpenWipe_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $E30F inside Screen_OpenWipe: HDMA wipe effect (BG1VOFS + brightness tables) opening the screen over ~75 frames; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Screen_OpenWipe_E30F_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Screen_OpenWipe_E30F_M1X0";
@@ -3217,6 +3225,7 @@ RecompReturn Screen_OpenWipe_E30F_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $E31F inside Screen_OpenWipe: HDMA wipe effect (BG1VOFS + brightness tables) opening the screen over ~75 frames; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Screen_OpenWipe_E31F_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Screen_OpenWipe_E31F_M1X0";
@@ -3646,6 +3655,7 @@ RecompReturn Screen_OpenWipe_E31F_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $E356 inside Screen_OpenWipe: HDMA wipe effect (BG1VOFS + brightness tables) opening the screen over ~75 frames; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Screen_OpenWipe_E356_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Screen_OpenWipe_E356_M1X0";
@@ -3758,6 +3768,7 @@ RecompReturn Screen_OpenWipe_E356_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Track records cursor: move over track grid with d-pad, update cursor sprite; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn TrackRecords_HandleInput_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "TrackRecords_HandleInput_M1X0";
@@ -5455,6 +5466,7 @@ RecompReturn TrackRecords_HandleInput_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: PICK TOUR menu: list unlocked tours, move cursor, returns $01 on select ($D0=tour) or $FF on cancel; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_PickTour_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_PickTour_M1X0";
@@ -7847,6 +7859,7 @@ RecompReturn Menu_PickTour_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $E551 inside Menu_PickTour: PICK TOUR menu: list unlocked tours, move cursor, returns $01 on select ($D0=tour) or $FF on cancel; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_PickTour_E551_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_PickTour_E551_M1X0";
@@ -10053,6 +10066,7 @@ RecompReturn Menu_PickTour_E551_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $E554 inside Menu_PickTour: PICK TOUR menu: list unlocked tours, move cursor, returns $01 on select ($D0=tour) or $FF on cancel; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_PickTour_E554_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_PickTour_E554_M1X0";
@@ -12228,6 +12242,7 @@ RecompReturn Menu_PickTour_E554_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $E563 inside Menu_PickTour: PICK TOUR menu: list unlocked tours, move cursor, returns $01 on select ($D0=tour) or $FF on cancel; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_PickTour_E563_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_PickTour_E563_M1X0";
@@ -14255,6 +14270,7 @@ RecompReturn Menu_PickTour_E563_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $E59A inside Menu_PickTour: PICK TOUR menu: list unlocked tours, move cursor, returns $01 on select ($D0=tour) or $FF on cancel; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_PickTour_E59A_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_PickTour_E59A_M1X0";
@@ -15912,6 +15928,7 @@ RecompReturn Menu_PickTour_E59A_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $E5ED inside Menu_PickTour: PICK TOUR menu: list unlocked tours, move cursor, returns $01 on select ($D0=tour) or $FF on cancel; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_PickTour_E5ED_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_PickTour_E5ED_M1X0";
@@ -17549,6 +17566,7 @@ RecompReturn Menu_PickTour_E5ED_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copy colour-cycle attribute (DATA_839B27[$0191]) into the 9 menu sprites at $0A02..; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_ApplyCycledSpriteColor_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ApplyCycledSpriteColor_M1X0";
@@ -17707,6 +17725,7 @@ RecompReturn Menu_ApplyCycledSpriteColor_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Draw the PICK TOUR screen: title, tour names (crawler..hunter) per unlocked level; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawTourList_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawTourList_M1X0";
@@ -18531,6 +18550,7 @@ RecompReturn Menu_DrawTourList_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $E725 inside Menu_DrawTourList: Draw the PICK TOUR screen: title, tour names (crawler..hunter) per unlocked level; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawTourList_E725_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawTourList_E725_M1X0";
@@ -19265,6 +19285,7 @@ RecompReturn Menu_DrawTourList_E725_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $E728 inside Menu_DrawTourList: Draw the PICK TOUR screen: title, tour names (crawler..hunter) per unlocked level; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawTourList_E728_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawTourList_E728_M1X0";
@@ -19968,6 +19989,7 @@ RecompReturn Menu_DrawTourList_E728_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Z set if tour A (low nibble) is unlocked (league level >= table $E82C), Z clear otherwise; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_CheckTourUnlocked_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_CheckTourUnlocked_M1X0";
@@ -20332,6 +20354,7 @@ RecompReturn Menu_CheckTourUnlocked_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Slide transition forward: ease BG2 scroll via hook $56, then swap front/back tilemaps */
 void Slide_Forward(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20349,6 +20372,7 @@ void Slide_Forward(CpuState *cpu) {
   }
 }
 
+/* decomp: Default forward slide step: wait frame, add speed to BG2 HOFS */
 void Slide_DefaultFwdStep(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20366,6 +20390,7 @@ void Slide_DefaultFwdStep(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $E242 inside Slide_DefaultFwdStep: Default forward slide step: wait frame, add speed to BG2 HOFS */
 void Slide_DefaultFwdStep_E242(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20383,6 +20408,7 @@ void Slide_DefaultFwdStep_E242(CpuState *cpu) {
   }
 }
 
+/* decomp: Slide transition backward: ease BG2 scroll via hook $58, then swap front/back tilemaps */
 void Slide_Back(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20400,6 +20426,7 @@ void Slide_Back(CpuState *cpu) {
   }
 }
 
+/* decomp: Default backward slide step: wait frame, update window, subtract speed from BG2 HOFS */
 void Slide_DefaultBackStep(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20417,6 +20444,7 @@ void Slide_DefaultBackStep(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $E289 inside Slide_DefaultBackStep: Default backward slide step: wait frame, update window, subtract speed from BG2 HOFS */
 void Slide_DefaultBackStep_E289(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20434,6 +20462,7 @@ void Slide_DefaultBackStep_E289(CpuState *cpu) {
   }
 }
 
+/* decomp: HDMA wipe effect (BG1VOFS + brightness tables) opening the screen over ~75 frames */
 void Screen_OpenWipe(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20451,6 +20480,7 @@ void Screen_OpenWipe(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $E30F inside Screen_OpenWipe: HDMA wipe effect (BG1VOFS + brightness tables) opening the screen over ~75 frames */
 void Screen_OpenWipe_E30F(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20468,6 +20498,7 @@ void Screen_OpenWipe_E30F(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $E31F inside Screen_OpenWipe: HDMA wipe effect (BG1VOFS + brightness tables) opening the screen over ~75 frames */
 void Screen_OpenWipe_E31F(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20485,6 +20516,7 @@ void Screen_OpenWipe_E31F(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $E356 inside Screen_OpenWipe: HDMA wipe effect (BG1VOFS + brightness tables) opening the screen over ~75 frames */
 void Screen_OpenWipe_E356(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20502,6 +20534,7 @@ void Screen_OpenWipe_E356(CpuState *cpu) {
   }
 }
 
+/* decomp: Track records cursor: move over track grid with d-pad, update cursor sprite */
 void TrackRecords_HandleInput(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20519,6 +20552,7 @@ void TrackRecords_HandleInput(CpuState *cpu) {
   }
 }
 
+/* decomp: PICK TOUR menu: list unlocked tours, move cursor, returns $01 on select ($D0=tour) or $FF on cancel */
 void Menu_PickTour(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20536,6 +20570,7 @@ void Menu_PickTour(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $E551 inside Menu_PickTour: PICK TOUR menu: list unlocked tours, move cursor, returns $01 on select ($D0=tour) or $FF on cancel */
 void Menu_PickTour_E551(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20553,6 +20588,7 @@ void Menu_PickTour_E551(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $E554 inside Menu_PickTour: PICK TOUR menu: list unlocked tours, move cursor, returns $01 on select ($D0=tour) or $FF on cancel */
 void Menu_PickTour_E554(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20570,6 +20606,7 @@ void Menu_PickTour_E554(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $E563 inside Menu_PickTour: PICK TOUR menu: list unlocked tours, move cursor, returns $01 on select ($D0=tour) or $FF on cancel */
 void Menu_PickTour_E563(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20587,6 +20624,7 @@ void Menu_PickTour_E563(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $E59A inside Menu_PickTour: PICK TOUR menu: list unlocked tours, move cursor, returns $01 on select ($D0=tour) or $FF on cancel */
 void Menu_PickTour_E59A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20604,6 +20642,7 @@ void Menu_PickTour_E59A(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $E5ED inside Menu_PickTour: PICK TOUR menu: list unlocked tours, move cursor, returns $01 on select ($D0=tour) or $FF on cancel */
 void Menu_PickTour_E5ED(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20621,6 +20660,7 @@ void Menu_PickTour_E5ED(CpuState *cpu) {
   }
 }
 
+/* decomp: Copy colour-cycle attribute (DATA_839B27[$0191]) into the 9 menu sprites at $0A02.. */
 void Menu_ApplyCycledSpriteColor(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20638,6 +20678,7 @@ void Menu_ApplyCycledSpriteColor(CpuState *cpu) {
   }
 }
 
+/* decomp: Draw the PICK TOUR screen: title, tour names (crawler..hunter) per unlocked level */
 void Menu_DrawTourList(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20655,6 +20696,7 @@ void Menu_DrawTourList(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $E725 inside Menu_DrawTourList: Draw the PICK TOUR screen: title, tour names (crawler..hunter) per unlocked level */
 void Menu_DrawTourList_E725(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20672,6 +20714,7 @@ void Menu_DrawTourList_E725(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $E728 inside Menu_DrawTourList: Draw the PICK TOUR screen: title, tour names (crawler..hunter) per unlocked level */
 void Menu_DrawTourList_E728(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20689,6 +20732,7 @@ void Menu_DrawTourList_E728(CpuState *cpu) {
   }
 }
 
+/* decomp: Z set if tour A (low nibble) is unlocked (league level >= table $E82C), Z clear otherwise */
 void Menu_CheckTourUnlocked(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

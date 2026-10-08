@@ -17,6 +17,7 @@
 
 RecompReturn Race_UpdateRiderOverlayFrames_M0X0(CpuState *cpu);
 
+/* decomp: Computes P1/P2 overlay graphics frame ($0D3F/$0D41) and enable flags from overlay type and anim counter; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_UpdateRiderOverlayFrames_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateRiderOverlayFrames_M0X0";
@@ -1074,6 +1075,7 @@ RecompReturn Race_UpdateRiderOverlayFrames_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Computes P1/P2 overlay graphics frame ($0D3F/$0D41) and enable flags from overlay type and anim counter */
 void Race_UpdateRiderOverlayFrames(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

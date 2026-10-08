@@ -107,6 +107,7 @@ RecompReturn Vram_UploadTilemapAtA8_M1X0(CpuState *cpu);
 RecompReturn Vram_UploadTilemapBottom_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_M1X0(CpuState *cpu);
 
+/* decomp: Results row: track record 1st place; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Results_RowRecord1_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_RowRecord1_M0X0";
@@ -386,6 +387,7 @@ RecompReturn Results_RowRecord1_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Results row: track record 2nd place; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Results_RowRecord2_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_RowRecord2_M0X0";
@@ -665,6 +667,7 @@ RecompReturn Results_RowRecord2_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Results row: track record 3rd place; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Results_RowRecord3_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_RowRecord3_M0X0";
@@ -944,6 +947,7 @@ RecompReturn Results_RowRecord3_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $D102 inside Results_RowRecord3: Results row: track record 3rd place; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Results_RowRecord3_D102_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_RowRecord3_D102_M1X0";
@@ -1447,6 +1451,7 @@ RecompReturn Results_RowRecord3_D102_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Load the palette for a results row's player (id+6) into the next CGRAM slot; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Results_LoadRowPalette_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_LoadRowPalette_M0X0";
@@ -1695,6 +1700,7 @@ RecompReturn Results_LoadRowPalette_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Read JOY1/JOY2 into $72/$74; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_ReadPads_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_ReadPads_M1X0";
@@ -1841,6 +1847,7 @@ RecompReturn Input_ReadPads_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Point text VRAM target at $0200 and clear the text buffer; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_ClearBuffer_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_ClearBuffer_M1X0";
@@ -2013,6 +2020,7 @@ RecompReturn Text_ClearBuffer_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Force blank, set PPU regs (mode 3) and load menu graphics/palettes, then reset OAM; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_InitScreen_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_InitScreen_M1X0";
@@ -3293,6 +3301,7 @@ RecompReturn Menu_InitScreen_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $D200 inside Menu_InitScreen: Force blank, set PPU regs (mode 3) and load menu graphics/palettes, then reset OAM; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_InitScreen_D200_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_InitScreen_D200_M1X0";
@@ -4542,6 +4551,7 @@ RecompReturn Menu_InitScreen_D200_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $D203 inside Menu_InitScreen: Force blank, set PPU regs (mode 3) and load menu graphics/palettes, then reset OAM; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_InitScreen_D203_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_InitScreen_D203_M1X0";
@@ -5760,6 +5770,7 @@ RecompReturn Menu_InitScreen_D203_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $D26A inside Menu_InitScreen: Force blank, set PPU regs (mode 3) and load menu graphics/palettes, then reset OAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Menu_InitScreen_D26A_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_InitScreen_D26A_M0X0";
@@ -6679,6 +6690,7 @@ RecompReturn Menu_InitScreen_D26A_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $D274 inside Menu_InitScreen: Force blank, set PPU regs (mode 3) and load menu graphics/palettes, then reset OAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Menu_InitScreen_D274_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_InitScreen_D274_M0X0";
@@ -7551,6 +7563,7 @@ RecompReturn Menu_InitScreen_D274_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $D27E inside Menu_InitScreen: Force blank, set PPU regs (mode 3) and load menu graphics/palettes, then reset OAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Menu_InitScreen_D27E_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_InitScreen_D27E_M0X0";
@@ -8376,6 +8389,7 @@ RecompReturn Menu_InitScreen_D27E_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $D288 inside Menu_InitScreen: Force blank, set PPU regs (mode 3) and load menu graphics/palettes, then reset OAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Menu_InitScreen_D288_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_InitScreen_D288_M0X0";
@@ -9154,6 +9168,7 @@ RecompReturn Menu_InitScreen_D288_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $D292 inside Menu_InitScreen: Force blank, set PPU regs (mode 3) and load menu graphics/palettes, then reset OAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Menu_InitScreen_D292_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_InitScreen_D292_M0X0";
@@ -9885,6 +9900,7 @@ RecompReturn Menu_InitScreen_D292_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $D29C inside Menu_InitScreen: Force blank, set PPU regs (mode 3) and load menu graphics/palettes, then reset OAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Menu_InitScreen_D29C_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_InitScreen_D29C_M0X0";
@@ -10569,6 +10585,7 @@ RecompReturn Menu_InitScreen_D29C_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Hide all sprites, reset OAM high table and set up the default menu sprites; enable NMI; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Oam_ResetMenuSprites_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Oam_ResetMenuSprites_M1X0";
@@ -11228,6 +11245,7 @@ RecompReturn Oam_ResetMenuSprites_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $D2BA inside Oam_ResetMenuSprites: Hide all sprites, reset OAM high table and set up the default menu sprites; enable NMI; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Oam_ResetMenuSprites_D2BA_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Oam_ResetMenuSprites_D2BA_M1X0";
@@ -11854,6 +11872,7 @@ RecompReturn Oam_ResetMenuSprites_D2BA_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $D361 inside Oam_ResetMenuSprites: Hide all sprites, reset OAM high table and set up the default menu sprites; enable NMI; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Oam_ResetMenuSprites_D361_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Oam_ResetMenuSprites_D361_M1X0";
@@ -11991,6 +12010,7 @@ RecompReturn Oam_ResetMenuSprites_D361_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Erase league $CC: name, members, progress and stats; save checksum; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_Clear_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_Clear_M1X0";
@@ -12660,6 +12680,7 @@ RecompReturn League_Clear_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $D40E inside League_Clear: Erase league $CC: name, members, progress and stats; save checksum; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_Clear_D40E_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_Clear_D40E_M1X0";
@@ -12759,6 +12780,7 @@ RecompReturn League_Clear_D40E_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Hide sprites $68-$6F (row markers); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Oam_HideRowSprites_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Oam_HideRowSprites_M1X0";
@@ -13020,6 +13042,7 @@ RecompReturn Oam_HideRowSprites_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Options 'rename player': pick player, enter name, write to SRAM; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Options_RenamePlayer_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Options_RenamePlayer_M0X0";
@@ -13878,6 +13901,7 @@ RecompReturn Options_RenamePlayer_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Hide sprites 4-11 and restore default slide hooks ($56/$58); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_ResetSlideHooks_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ResetSlideHooks_M1X0";
@@ -14073,6 +14097,7 @@ RecompReturn Menu_ResetSlideHooks_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Records submenu: track records, high scores, player scores, group tables; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Records_Menu_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_Menu_M0X0";
@@ -14649,6 +14674,7 @@ RecompReturn Records_Menu_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $D532 inside Records_Menu: Records submenu: track records, high scores, player scores, group tables; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Records_Menu_D532_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_Menu_D532_M1X0";
@@ -15121,6 +15147,7 @@ RecompReturn Records_Menu_D532_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $D535 inside Records_Menu: Records submenu: track records, high scores, player scores, group tables; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Records_Menu_D535_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_Menu_D535_M1X0";
@@ -15562,6 +15589,7 @@ RecompReturn Records_Menu_D535_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $D552 inside Records_Menu: Records submenu: track records, high scores, player scores, group tables; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Records_Menu_D552_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_Menu_D552_M1X0";
@@ -15644,6 +15672,7 @@ RecompReturn Records_Menu_D552_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Track records screen: browse tracks, show top-3 times/scores; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Records_TrackRecords_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_TrackRecords_M0X0";
@@ -17316,6 +17345,7 @@ RecompReturn Records_TrackRecords_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $D5DE inside Records_TrackRecords: Track records screen: browse tracks, show top-3 times/scores; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Records_TrackRecords_D5DE_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_TrackRecords_D5DE_M1X0";
@@ -18950,6 +18980,7 @@ RecompReturn Records_TrackRecords_D5DE_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $D601 inside Records_TrackRecords: Track records screen: browse tracks, show top-3 times/scores; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Records_TrackRecords_D601_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_TrackRecords_D601_M1X0";
@@ -20404,6 +20435,7 @@ RecompReturn Records_TrackRecords_D601_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $D6CF inside Records_TrackRecords: Track records screen: browse tracks, show top-3 times/scores; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Records_TrackRecords_D6CF_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_TrackRecords_D6CF_M1X0";
@@ -21573,6 +21605,7 @@ RecompReturn Records_TrackRecords_D6CF_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $D71B inside Records_TrackRecords: Track records screen: browse tracks, show top-3 times/scores; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Records_TrackRecords_D71B_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_TrackRecords_D71B_M1X0";
@@ -21672,6 +21705,7 @@ RecompReturn Records_TrackRecords_D71B_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: High scores screen: most wins/losses/races, best/worst ratios, top scorers; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Records_HighScores_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_HighScores_M0X0";
@@ -24281,6 +24315,7 @@ RecompReturn Records_HighScores_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Results row: track record 1st place */
 void Results_RowRecord1(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24298,6 +24333,7 @@ void Results_RowRecord1(CpuState *cpu) {
   }
 }
 
+/* decomp: Results row: track record 2nd place */
 void Results_RowRecord2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24315,6 +24351,7 @@ void Results_RowRecord2(CpuState *cpu) {
   }
 }
 
+/* decomp: Results row: track record 3rd place */
 void Results_RowRecord3(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24332,6 +24369,7 @@ void Results_RowRecord3(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $D102 inside Results_RowRecord3: Results row: track record 3rd place */
 void Results_RowRecord3_D102(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24349,6 +24387,7 @@ void Results_RowRecord3_D102(CpuState *cpu) {
   }
 }
 
+/* decomp: Load the palette for a results row's player (id+6) into the next CGRAM slot */
 void Results_LoadRowPalette(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24366,6 +24405,7 @@ void Results_LoadRowPalette(CpuState *cpu) {
   }
 }
 
+/* decomp: Read JOY1/JOY2 into $72/$74 */
 void Input_ReadPads(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24383,6 +24423,7 @@ void Input_ReadPads(CpuState *cpu) {
   }
 }
 
+/* decomp: Point text VRAM target at $0200 and clear the text buffer */
 void Text_ClearBuffer(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24400,6 +24441,7 @@ void Text_ClearBuffer(CpuState *cpu) {
   }
 }
 
+/* decomp: Force blank, set PPU regs (mode 3) and load menu graphics/palettes, then reset OAM */
 void Menu_InitScreen(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24417,6 +24459,7 @@ void Menu_InitScreen(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $D200 inside Menu_InitScreen: Force blank, set PPU regs (mode 3) and load menu graphics/palettes, then reset OAM */
 void Menu_InitScreen_D200(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24434,6 +24477,7 @@ void Menu_InitScreen_D200(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $D203 inside Menu_InitScreen: Force blank, set PPU regs (mode 3) and load menu graphics/palettes, then reset OAM */
 void Menu_InitScreen_D203(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24451,6 +24495,7 @@ void Menu_InitScreen_D203(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $D26A inside Menu_InitScreen: Force blank, set PPU regs (mode 3) and load menu graphics/palettes, then reset OAM */
 void Menu_InitScreen_D26A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24468,6 +24513,7 @@ void Menu_InitScreen_D26A(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $D274 inside Menu_InitScreen: Force blank, set PPU regs (mode 3) and load menu graphics/palettes, then reset OAM */
 void Menu_InitScreen_D274(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24485,6 +24531,7 @@ void Menu_InitScreen_D274(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $D27E inside Menu_InitScreen: Force blank, set PPU regs (mode 3) and load menu graphics/palettes, then reset OAM */
 void Menu_InitScreen_D27E(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24502,6 +24549,7 @@ void Menu_InitScreen_D27E(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $D288 inside Menu_InitScreen: Force blank, set PPU regs (mode 3) and load menu graphics/palettes, then reset OAM */
 void Menu_InitScreen_D288(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24519,6 +24567,7 @@ void Menu_InitScreen_D288(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $D292 inside Menu_InitScreen: Force blank, set PPU regs (mode 3) and load menu graphics/palettes, then reset OAM */
 void Menu_InitScreen_D292(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24536,6 +24585,7 @@ void Menu_InitScreen_D292(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $D29C inside Menu_InitScreen: Force blank, set PPU regs (mode 3) and load menu graphics/palettes, then reset OAM */
 void Menu_InitScreen_D29C(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24553,6 +24603,7 @@ void Menu_InitScreen_D29C(CpuState *cpu) {
   }
 }
 
+/* decomp: Hide all sprites, reset OAM high table and set up the default menu sprites; enable NMI */
 void Oam_ResetMenuSprites(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24570,6 +24621,7 @@ void Oam_ResetMenuSprites(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $D2BA inside Oam_ResetMenuSprites: Hide all sprites, reset OAM high table and set up the default menu sprites; enable NMI */
 void Oam_ResetMenuSprites_D2BA(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24587,6 +24639,7 @@ void Oam_ResetMenuSprites_D2BA(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $D361 inside Oam_ResetMenuSprites: Hide all sprites, reset OAM high table and set up the default menu sprites; enable NMI */
 void Oam_ResetMenuSprites_D361(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24604,6 +24657,7 @@ void Oam_ResetMenuSprites_D361(CpuState *cpu) {
   }
 }
 
+/* decomp: Erase league $CC: name, members, progress and stats; save checksum */
 void League_Clear(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24621,6 +24675,7 @@ void League_Clear(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $D40E inside League_Clear: Erase league $CC: name, members, progress and stats; save checksum */
 void League_Clear_D40E(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24638,6 +24693,7 @@ void League_Clear_D40E(CpuState *cpu) {
   }
 }
 
+/* decomp: Hide sprites $68-$6F (row markers) */
 void Oam_HideRowSprites(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24655,6 +24711,7 @@ void Oam_HideRowSprites(CpuState *cpu) {
   }
 }
 
+/* decomp: Options 'rename player': pick player, enter name, write to SRAM */
 void Options_RenamePlayer(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24672,6 +24729,7 @@ void Options_RenamePlayer(CpuState *cpu) {
   }
 }
 
+/* decomp: Hide sprites 4-11 and restore default slide hooks ($56/$58) */
 void Menu_ResetSlideHooks(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24689,6 +24747,7 @@ void Menu_ResetSlideHooks(CpuState *cpu) {
   }
 }
 
+/* decomp: Records submenu: track records, high scores, player scores, group tables */
 void Records_Menu(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24706,6 +24765,7 @@ void Records_Menu(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $D532 inside Records_Menu: Records submenu: track records, high scores, player scores, group tables */
 void Records_Menu_D532(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24723,6 +24783,7 @@ void Records_Menu_D532(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $D535 inside Records_Menu: Records submenu: track records, high scores, player scores, group tables */
 void Records_Menu_D535(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24740,6 +24801,7 @@ void Records_Menu_D535(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $D552 inside Records_Menu: Records submenu: track records, high scores, player scores, group tables */
 void Records_Menu_D552(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24757,6 +24819,7 @@ void Records_Menu_D552(CpuState *cpu) {
   }
 }
 
+/* decomp: Track records screen: browse tracks, show top-3 times/scores */
 void Records_TrackRecords(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24774,6 +24837,7 @@ void Records_TrackRecords(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $D5DE inside Records_TrackRecords: Track records screen: browse tracks, show top-3 times/scores */
 void Records_TrackRecords_D5DE(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24791,6 +24855,7 @@ void Records_TrackRecords_D5DE(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $D601 inside Records_TrackRecords: Track records screen: browse tracks, show top-3 times/scores */
 void Records_TrackRecords_D601(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24808,6 +24873,7 @@ void Records_TrackRecords_D601(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $D6CF inside Records_TrackRecords: Track records screen: browse tracks, show top-3 times/scores */
 void Records_TrackRecords_D6CF(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24825,6 +24891,7 @@ void Records_TrackRecords_D6CF(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $D71B inside Records_TrackRecords: Track records screen: browse tracks, show top-3 times/scores */
 void Records_TrackRecords_D71B(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -24842,6 +24909,7 @@ void Records_TrackRecords_D71B(CpuState *cpu) {
   }
 }
 
+/* decomp: High scores screen: most wins/losses/races, best/worst ratios, top scorers */
 void Records_HighScores(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

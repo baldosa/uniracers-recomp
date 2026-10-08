@@ -102,6 +102,7 @@ RecompReturn Vram_UploadTilemapAtA8_FastRom_M1X0(CpuState *cpu);
 RecompReturn Vram_UploadTilemap_FastRom_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_FastRom_M1X0(CpuState *cpu);
 
+/* decomp: DMA ch7: $84A378 ($780 bytes) to VRAM $3D80 (race/league variant); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Gfx_UploadOverlayTilesA_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Gfx_UploadOverlayTilesA_FastRom_M1X0";
@@ -312,6 +313,7 @@ RecompReturn Gfx_UploadOverlayTilesA_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Loads sprite palettes $23 and $24 to CGRAM $00/$40, one per frame; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Pal_LoadMenuSpritePalettes_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Pal_LoadMenuSpritePalettes_FastRom_M1X0";
@@ -629,6 +631,7 @@ RecompReturn Pal_LoadMenuSpritePalettes_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DMA ch7: $84AAF8 ($780 bytes) to VRAM $3D80 (menu variant); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Gfx_UploadOverlayTilesB_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Gfx_UploadOverlayTilesB_FastRom_M1X0";
@@ -839,6 +842,7 @@ RecompReturn Gfx_UploadOverlayTilesB_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Waits a frame, uploads OAM, then falls into Pal_UploadBgPalettesNow; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Pal_UploadBgPalettes_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Pal_UploadBgPalettes_FastRom_M1X0";
@@ -1049,6 +1053,7 @@ RecompReturn Pal_UploadBgPalettes_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: WIPE RAM: warning screen; Select+Y+A reinitialises battery RAM, else 'nothing done'; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Options_WipeRam_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Options_WipeRam_FastRom_M0X0";
@@ -2711,6 +2716,7 @@ RecompReturn Options_WipeRam_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Draws the main menu once, uploads tilemap/palettes, resets play mode $7710AD; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn MainMenu_Draw_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "MainMenu_Draw_FastRom_M1X0";
@@ -3251,6 +3257,7 @@ RecompReturn MainMenu_Draw_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for League_SortStandings; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn League_SortStandingsLong_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_SortStandingsLong_FastRom_M0X0";
@@ -3382,6 +3389,7 @@ RecompReturn League_SortStandingsLong_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Sorts league $CC table and stores standings order to $7705E8+league*8 and leader to $770686; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn League_SortStandings_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_SortStandings_FastRom_M0X0";
@@ -4167,6 +4175,7 @@ RecompReturn League_SortStandings_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Sorts league $CC table and stores standings order to $7705E8+league*8 and leader to $770686; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_SortStandings_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_SortStandings_FastRom_M1X0";
@@ -4951,6 +4960,7 @@ RecompReturn League_SortStandings_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Post-race menu: NEXT TRACK / SAME TRACK / SELECT TRACK / SELECT TOUR / QUIT (table $AE77); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn PostRace_Menu_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PostRace_Menu_FastRom_M1X0";
@@ -5610,6 +5620,7 @@ RecompReturn PostRace_Menu_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Advances $CE to the next playable track (wraps at 45) and shows the pre-race screen; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn PostRace_NextTrack_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PostRace_NextTrack_FastRom_M0X0";
@@ -6596,6 +6607,7 @@ RecompReturn PostRace_NextTrack_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Shows the pre-race screen for the same track again; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn PostRace_SameTrack_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PostRace_SameTrack_FastRom_M0X0";
@@ -7277,6 +7289,7 @@ RecompReturn PostRace_SameTrack_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Quit choice: restores tilemap base, returns $00=$FF; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn PostRace_Quit_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PostRace_Quit_FastRom_M0X0";
@@ -7405,6 +7418,7 @@ RecompReturn PostRace_Quit_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Track select then pre-race screen; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn PostRace_SelectTrack_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PostRace_SelectTrack_FastRom_M0X0";
@@ -8195,6 +8209,7 @@ RecompReturn PostRace_SelectTrack_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Tour select, track select, then pre-race screen; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn PostRace_SelectTour_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PostRace_SelectTour_FastRom_M0X0";
@@ -9094,6 +9109,7 @@ RecompReturn PostRace_SelectTour_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Counts races played, after the last race shows awards and table, advances league track; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_AdvanceAfterRace_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_AdvanceAfterRace_FastRom_M1X0";
@@ -10588,6 +10604,7 @@ RecompReturn League_AdvanceAfterRace_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DMA ch7: $84A378 ($780 bytes) to VRAM $3D80 (race/league variant); reached through the other ROM mirror bank */
 void Gfx_UploadOverlayTilesA_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10605,6 +10622,7 @@ void Gfx_UploadOverlayTilesA_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Loads sprite palettes $23 and $24 to CGRAM $00/$40, one per frame; reached through the other ROM mirror bank */
 void Pal_LoadMenuSpritePalettes_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10622,6 +10640,7 @@ void Pal_LoadMenuSpritePalettes_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: DMA ch7: $84AAF8 ($780 bytes) to VRAM $3D80 (menu variant); reached through the other ROM mirror bank */
 void Gfx_UploadOverlayTilesB_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10639,6 +10658,7 @@ void Gfx_UploadOverlayTilesB_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Waits a frame, uploads OAM, then falls into Pal_UploadBgPalettesNow; reached through the other ROM mirror bank */
 void Pal_UploadBgPalettes_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10656,6 +10676,7 @@ void Pal_UploadBgPalettes_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: WIPE RAM: warning screen; Select+Y+A reinitialises battery RAM, else 'nothing done'; reached through the other ROM mirror bank */
 void Options_WipeRam_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10673,6 +10694,7 @@ void Options_WipeRam_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Draws the main menu once, uploads tilemap/palettes, resets play mode $7710AD; reached through the other ROM mirror bank */
 void MainMenu_Draw_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10690,6 +10712,7 @@ void MainMenu_Draw_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for League_SortStandings; reached through the other ROM mirror bank */
 void League_SortStandingsLong_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10707,6 +10730,7 @@ void League_SortStandingsLong_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Sorts league $CC table and stores standings order to $7705E8+league*8 and leader to $770686; reached through the other ROM mirror bank */
 void League_SortStandings_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10724,6 +10748,7 @@ void League_SortStandings_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Post-race menu: NEXT TRACK / SAME TRACK / SELECT TRACK / SELECT TOUR / QUIT (table $AE77); reached through the other ROM mirror bank */
 void PostRace_Menu_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10741,6 +10766,7 @@ void PostRace_Menu_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Advances $CE to the next playable track (wraps at 45) and shows the pre-race screen; reached through the other ROM mirror bank */
 void PostRace_NextTrack_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10758,6 +10784,7 @@ void PostRace_NextTrack_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Shows the pre-race screen for the same track again; reached through the other ROM mirror bank */
 void PostRace_SameTrack_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10775,6 +10802,7 @@ void PostRace_SameTrack_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Quit choice: restores tilemap base, returns $00=$FF; reached through the other ROM mirror bank */
 void PostRace_Quit_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10792,6 +10820,7 @@ void PostRace_Quit_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Track select then pre-race screen; reached through the other ROM mirror bank */
 void PostRace_SelectTrack_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10809,6 +10838,7 @@ void PostRace_SelectTrack_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Tour select, track select, then pre-race screen; reached through the other ROM mirror bank */
 void PostRace_SelectTour_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10826,6 +10856,7 @@ void PostRace_SelectTour_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Counts races played, after the last race shows awards and table, advances league track; reached through the other ROM mirror bank */
 void League_AdvanceAfterRace_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

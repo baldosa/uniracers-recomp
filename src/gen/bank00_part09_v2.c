@@ -87,6 +87,7 @@ RecompReturn Vram_UploadTilemapAtA8_M1X0(CpuState *cpu);
 RecompReturn Vram_UploadTilemap_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_M1X0(CpuState *cpu);
 
+/* decomp: Insert p1 total time into the track records; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_RecordP1Time_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_RecordP1Time_M0X0";
@@ -239,6 +240,7 @@ RecompReturn Race_RecordP1Time_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Insert p2 time (human only) into records, or count a non-finish; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_RecordP2TimeOrDnf_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_RecordP2TimeOrDnf_M0X0";
@@ -524,6 +526,7 @@ RecompReturn Race_RecordP2TimeOrDnf_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Insert p2 total time (human only) into the track records; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_RecordP2Time_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_RecordP2Time_M0X0";
@@ -760,6 +763,7 @@ RecompReturn Race_RecordP2Time_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Race type 1: find best laps, decide winner by time, record best laps; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_RecordLapRace_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_RecordLapRace_M0X0";
@@ -1625,6 +1629,7 @@ RecompReturn Race_RecordLapRace_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Insert p1 best lap into records, or count a non-finish; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_RecordP1LapOrDnf_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_RecordP1LapOrDnf_M0X0";
@@ -1893,6 +1898,7 @@ RecompReturn Race_RecordP1LapOrDnf_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Insert p1 best lap into the track records; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_RecordP1Lap_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_RecordP1Lap_M0X0";
@@ -2046,6 +2052,7 @@ RecompReturn Race_RecordP1Lap_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Insert p2 best lap (human only) into records, or count a non-finish; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_RecordP2LapOrDnf_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_RecordP2LapOrDnf_M0X0";
@@ -2398,6 +2405,7 @@ RecompReturn Race_RecordP2LapOrDnf_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Insert p2 best lap (human only) into the track records; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_RecordP2Lap_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_RecordP2Lap_M0X0";
@@ -2569,6 +2577,7 @@ RecompReturn Race_RecordP2Lap_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Race type 2: decide winner by stunt score, add scores to player totals; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_RecordStuntRace_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_RecordStuntRace_M0X0";
@@ -3148,6 +3157,7 @@ RecompReturn Race_RecordStuntRace_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Add p1 stunt score to p1 total and insert into the track records; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_AddP1StuntScore_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_AddP1StuntScore_M0X0";
@@ -3361,6 +3371,7 @@ RecompReturn Race_AddP1StuntScore_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Add p2 stunt score (human only) to p2 total and insert into records; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_AddP2StuntScore_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_AddP2StuntScore_M0X0";
@@ -3658,6 +3669,7 @@ RecompReturn Race_AddP2StuntScore_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Insert value $12 by player $B2 into track $CE's top-3 table, shifting lower entries; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Records_InsertTime_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_InsertTime_M0X0";
@@ -4422,6 +4434,7 @@ RecompReturn Records_InsertTime_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Increment p1 races-played count; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Stats_IncP1Races_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Stats_IncP1Races_M0X0";
@@ -4554,6 +4567,7 @@ RecompReturn Stats_IncP1Races_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Increment p1 wins and the session p1 win counter; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Stats_IncP1Wins_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Stats_IncP1Wins_M0X0";
@@ -4703,6 +4717,7 @@ RecompReturn Stats_IncP1Wins_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Increment p1 non-finish count; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Stats_IncP1Dnf_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Stats_IncP1Dnf_M0X0";
@@ -4835,6 +4850,7 @@ RecompReturn Stats_IncP1Dnf_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Increment p2 races-played count (human only); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Stats_IncP2Races_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Stats_IncP2Races_M0X0";
@@ -5007,6 +5023,7 @@ RecompReturn Stats_IncP2Races_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Increment p2 wins (human only) and the session p2 win counter; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Stats_IncP2Wins_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Stats_IncP2Wins_M0X0";
@@ -5196,6 +5213,7 @@ RecompReturn Stats_IncP2Wins_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Increment p2 non-finish count (human only); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Stats_IncP2Dnf_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Stats_IncP2Dnf_M0X0";
@@ -5368,6 +5386,7 @@ RecompReturn Stats_IncP2Dnf_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Set up the uni/player picker screen with a title string (X), slide in, then run PickUni_Loop; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn PickUni_Open_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PickUni_Open_M1X0";
@@ -7943,6 +7962,7 @@ RecompReturn PickUni_Open_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CB00 inside PickUni_Open: Set up the uni/player picker screen with a title string (X), slide in, then run PickUni_Loop; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn PickUni_Open_CB00_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PickUni_Open_CB00_M1X0";
@@ -10464,6 +10484,7 @@ RecompReturn PickUni_Open_CB00_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CB06 inside PickUni_Open: Set up the uni/player picker screen with a title string (X), slide in, then run PickUni_Loop; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn PickUni_Open_CB06_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PickUni_Open_CB06_M1X0";
@@ -12923,6 +12944,7 @@ RecompReturn PickUni_Open_CB06_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CB0E inside PickUni_Open: Set up the uni/player picker screen with a title string (X), slide in, then run PickUni_Loop; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn PickUni_Open_CB0E_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PickUni_Open_CB0E_M1X0";
@@ -15334,6 +15356,7 @@ RecompReturn PickUni_Open_CB0E_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CB11 inside PickUni_Open: Set up the uni/player picker screen with a title string (X), slide in, then run PickUni_Loop; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn PickUni_Open_CB11_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PickUni_Open_CB11_M1X0";
@@ -17714,6 +17737,7 @@ RecompReturn PickUni_Open_CB11_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CB29 inside PickUni_Open: Set up the uni/player picker screen with a title string (X), slide in, then run PickUni_Loop; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn PickUni_Open_CB29_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PickUni_Open_CB29_M1X0";
@@ -19920,6 +19944,7 @@ RecompReturn PickUni_Open_CB29_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CB3F inside PickUni_Open: Set up the uni/player picker screen with a title string (X), slide in, then run PickUni_Loop; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn PickUni_Open_CB3F_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PickUni_Open_CB3F_M1X0";
@@ -21990,6 +22015,7 @@ RecompReturn PickUni_Open_CB3F_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Player picker loop: animate unis, 2x8 grid cursor, returns choice in $9B (bit7 = cancelled); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn PickUni_Loop_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PickUni_Loop_M1X0";
@@ -23713,6 +23739,7 @@ RecompReturn PickUni_Loop_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Player picker loop: animate unis, 2x8 grid cursor, returns choice in $9B (bit7 = cancelled); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn PickUni_Loop_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PickUni_Loop_M0X0";
@@ -25454,6 +25481,7 @@ RecompReturn PickUni_Loop_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CBFB inside PickUni_Loop: Player picker loop: animate unis, 2x8 grid cursor, returns choice in $9B (bit7 = cancelled); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn PickUni_Loop_CBFB_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "PickUni_Loop_CBFB_M1X0";
@@ -27151,6 +27179,7 @@ RecompReturn PickUni_Loop_CBFB_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Race results screen: build p1/p2/record rows, draw the 'COMPLETE' table and times; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Results_ShowRaceTable_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_ShowRaceTable_M0X0";
@@ -28578,6 +28607,7 @@ RecompReturn Results_ShowRaceTable_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CF48 inside Results_ShowRaceTable: Race results screen: build p1/p2/record rows, draw the 'COMPLETE' table and times; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Results_ShowRaceTable_CF48_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_ShowRaceTable_CF48_M1X0";
@@ -29660,6 +29690,7 @@ RecompReturn Results_ShowRaceTable_CF48_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CF76 inside Results_ShowRaceTable: Race results screen: build p1/p2/record rows, draw the 'COMPLETE' table and times; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Results_ShowRaceTable_CF76_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_ShowRaceTable_CF76_M0X0";
@@ -30622,6 +30653,7 @@ RecompReturn Results_ShowRaceTable_CF76_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Results row type 0: nothing; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Results_RowNone_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_RowNone_M0X0";
@@ -30726,6 +30758,7 @@ RecompReturn Results_RowNone_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Results row: player 1 (update personal best, place sprite, store id/time); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Results_RowP1_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_RowP1_M0X0";
@@ -31161,6 +31194,7 @@ RecompReturn Results_RowP1_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Results row: player 2 if human (update personal best, place sprite); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Results_RowP2_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_RowP2_M0X0";
@@ -31625,6 +31659,7 @@ RecompReturn Results_RowP2_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Insert p1 total time into the track records */
 void Race_RecordP1Time(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -31642,6 +31677,7 @@ void Race_RecordP1Time(CpuState *cpu) {
   }
 }
 
+/* decomp: Insert p2 time (human only) into records, or count a non-finish */
 void Race_RecordP2TimeOrDnf(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -31659,6 +31695,7 @@ void Race_RecordP2TimeOrDnf(CpuState *cpu) {
   }
 }
 
+/* decomp: Insert p2 total time (human only) into the track records */
 void Race_RecordP2Time(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -31676,6 +31713,7 @@ void Race_RecordP2Time(CpuState *cpu) {
   }
 }
 
+/* decomp: Race type 1: find best laps, decide winner by time, record best laps */
 void Race_RecordLapRace(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -31693,6 +31731,7 @@ void Race_RecordLapRace(CpuState *cpu) {
   }
 }
 
+/* decomp: Insert p1 best lap into records, or count a non-finish */
 void Race_RecordP1LapOrDnf(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -31710,6 +31749,7 @@ void Race_RecordP1LapOrDnf(CpuState *cpu) {
   }
 }
 
+/* decomp: Insert p1 best lap into the track records */
 void Race_RecordP1Lap(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -31727,6 +31767,7 @@ void Race_RecordP1Lap(CpuState *cpu) {
   }
 }
 
+/* decomp: Insert p2 best lap (human only) into records, or count a non-finish */
 void Race_RecordP2LapOrDnf(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -31744,6 +31785,7 @@ void Race_RecordP2LapOrDnf(CpuState *cpu) {
   }
 }
 
+/* decomp: Insert p2 best lap (human only) into the track records */
 void Race_RecordP2Lap(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -31761,6 +31803,7 @@ void Race_RecordP2Lap(CpuState *cpu) {
   }
 }
 
+/* decomp: Race type 2: decide winner by stunt score, add scores to player totals */
 void Race_RecordStuntRace(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -31778,6 +31821,7 @@ void Race_RecordStuntRace(CpuState *cpu) {
   }
 }
 
+/* decomp: Add p1 stunt score to p1 total and insert into the track records */
 void Race_AddP1StuntScore(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -31795,6 +31839,7 @@ void Race_AddP1StuntScore(CpuState *cpu) {
   }
 }
 
+/* decomp: Add p2 stunt score (human only) to p2 total and insert into records */
 void Race_AddP2StuntScore(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -31812,6 +31857,7 @@ void Race_AddP2StuntScore(CpuState *cpu) {
   }
 }
 
+/* decomp: Insert value $12 by player $B2 into track $CE's top-3 table, shifting lower entries */
 void Records_InsertTime(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -31829,6 +31875,7 @@ void Records_InsertTime(CpuState *cpu) {
   }
 }
 
+/* decomp: Increment p1 races-played count */
 void Stats_IncP1Races(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -31846,6 +31893,7 @@ void Stats_IncP1Races(CpuState *cpu) {
   }
 }
 
+/* decomp: Increment p1 wins and the session p1 win counter */
 void Stats_IncP1Wins(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -31863,6 +31911,7 @@ void Stats_IncP1Wins(CpuState *cpu) {
   }
 }
 
+/* decomp: Increment p1 non-finish count */
 void Stats_IncP1Dnf(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -31880,6 +31929,7 @@ void Stats_IncP1Dnf(CpuState *cpu) {
   }
 }
 
+/* decomp: Increment p2 races-played count (human only) */
 void Stats_IncP2Races(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -31897,6 +31947,7 @@ void Stats_IncP2Races(CpuState *cpu) {
   }
 }
 
+/* decomp: Increment p2 wins (human only) and the session p2 win counter */
 void Stats_IncP2Wins(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -31914,6 +31965,7 @@ void Stats_IncP2Wins(CpuState *cpu) {
   }
 }
 
+/* decomp: Increment p2 non-finish count (human only) */
 void Stats_IncP2Dnf(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -31931,6 +31983,7 @@ void Stats_IncP2Dnf(CpuState *cpu) {
   }
 }
 
+/* decomp: Set up the uni/player picker screen with a title string (X), slide in, then run PickUni_Loop */
 void PickUni_Open(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -31948,6 +32001,7 @@ void PickUni_Open(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CB00 inside PickUni_Open: Set up the uni/player picker screen with a title string (X), slide in, then run PickUni_Loop */
 void PickUni_Open_CB00(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -31965,6 +32019,7 @@ void PickUni_Open_CB00(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CB06 inside PickUni_Open: Set up the uni/player picker screen with a title string (X), slide in, then run PickUni_Loop */
 void PickUni_Open_CB06(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -31982,6 +32037,7 @@ void PickUni_Open_CB06(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CB0E inside PickUni_Open: Set up the uni/player picker screen with a title string (X), slide in, then run PickUni_Loop */
 void PickUni_Open_CB0E(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -31999,6 +32055,7 @@ void PickUni_Open_CB0E(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CB11 inside PickUni_Open: Set up the uni/player picker screen with a title string (X), slide in, then run PickUni_Loop */
 void PickUni_Open_CB11(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -32016,6 +32073,7 @@ void PickUni_Open_CB11(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CB29 inside PickUni_Open: Set up the uni/player picker screen with a title string (X), slide in, then run PickUni_Loop */
 void PickUni_Open_CB29(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -32033,6 +32091,7 @@ void PickUni_Open_CB29(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CB3F inside PickUni_Open: Set up the uni/player picker screen with a title string (X), slide in, then run PickUni_Loop */
 void PickUni_Open_CB3F(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -32050,6 +32109,7 @@ void PickUni_Open_CB3F(CpuState *cpu) {
   }
 }
 
+/* decomp: Player picker loop: animate unis, 2x8 grid cursor, returns choice in $9B (bit7 = cancelled) */
 void PickUni_Loop(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -32067,6 +32127,7 @@ void PickUni_Loop(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CBFB inside PickUni_Loop: Player picker loop: animate unis, 2x8 grid cursor, returns choice in $9B (bit7 = cancelled) */
 void PickUni_Loop_CBFB(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -32084,6 +32145,7 @@ void PickUni_Loop_CBFB(CpuState *cpu) {
   }
 }
 
+/* decomp: Race results screen: build p1/p2/record rows, draw the 'COMPLETE' table and times */
 void Results_ShowRaceTable(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -32101,6 +32163,7 @@ void Results_ShowRaceTable(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CF48 inside Results_ShowRaceTable: Race results screen: build p1/p2/record rows, draw the 'COMPLETE' table and times */
 void Results_ShowRaceTable_CF48(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -32118,6 +32181,7 @@ void Results_ShowRaceTable_CF48(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CF76 inside Results_ShowRaceTable: Race results screen: build p1/p2/record rows, draw the 'COMPLETE' table and times */
 void Results_ShowRaceTable_CF76(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -32135,6 +32199,7 @@ void Results_ShowRaceTable_CF76(CpuState *cpu) {
   }
 }
 
+/* decomp: Results row type 0: nothing */
 void Results_RowNone(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -32152,6 +32217,7 @@ void Results_RowNone(CpuState *cpu) {
   }
 }
 
+/* decomp: Results row: player 1 (update personal best, place sprite, store id/time) */
 void Results_RowP1(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -32169,6 +32235,7 @@ void Results_RowP1(CpuState *cpu) {
   }
 }
 
+/* decomp: Results row: player 2 if human (update personal best, place sprite) */
 void Results_RowP2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

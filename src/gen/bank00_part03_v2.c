@@ -131,6 +131,7 @@ RecompReturn Vram_UploadTilemapAtA8_M1X0(CpuState *cpu);
 RecompReturn Vram_UploadTilemap_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_M1X0(CpuState *cpu);
 
+/* decomp: Once per results (flag $0100 in $770742): parks 30 marker objects and sprites, sets OAM hi bits; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Results_ResetMarkerSpritesOnce_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_ResetMarkerSpritesOnce_M1X0";
@@ -513,6 +514,7 @@ RecompReturn Results_ResetMarkerSpritesOnce_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Fades INIDISP brightness up over 7 frames, uploading OAM each frame; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Video_FadeIn_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Video_FadeIn_M1X0";
@@ -739,6 +741,7 @@ RecompReturn Video_FadeIn_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9871 inside Video_FadeIn: Fades INIDISP brightness up over 7 frames, uploading OAM each frame; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Video_FadeIn_9871_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Video_FadeIn_9871_M1X0";
@@ -946,6 +949,7 @@ RecompReturn Video_FadeIn_9871_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Fades INIDISP brightness down over 7 frames then forces blank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Video_FadeOut_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Video_FadeOut_M1X0";
@@ -1184,6 +1188,7 @@ RecompReturn Video_FadeOut_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $988F inside Video_FadeOut: Fades INIDISP brightness down over 7 frames then forces blank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Video_FadeOut_988F_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Video_FadeOut_988F_M1X0";
@@ -1398,6 +1403,7 @@ RecompReturn Video_FadeOut_988F_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Moves the menu cursor object off-screen ($0C62=$FD00, $0C6A=$0700); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_HideCursor_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_HideCursor_M1X0";
@@ -1524,6 +1530,7 @@ RecompReturn Menu_HideCursor_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Lap-race results: eases 20 marker sprites toward their targets until a button is pressed; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Results_AnimateLapMarkers_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_AnimateLapMarkers_M1X0";
@@ -2457,6 +2464,7 @@ RecompReturn Results_AnimateLapMarkers_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9971 inside Results_AnimateLapMarkers: Lap-race results: eases 20 marker sprites toward their targets until a button is pressed; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Results_AnimateLapMarkers_9971_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_AnimateLapMarkers_9971_M1X0";
@@ -3326,6 +3334,7 @@ RecompReturn Results_AnimateLapMarkers_9971_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Signed >>3 of A, clamped to -40..+40 (marker easing speed); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Math_ScaleClampVelocity_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_ScaleClampVelocity_M0X0";
@@ -3710,6 +3719,7 @@ RecompReturn Math_ScaleClampVelocity_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Race_Start entry that keeps $77074D unchanged; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_StartKeepParam_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_StartKeepParam_M1X0";
@@ -4773,6 +4783,7 @@ RecompReturn Race_StartKeepParam_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Clears lap times, stores unis/track/flags to SRAM, runs the race, updates win counters after; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_Start_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Start_M1X0";
@@ -5832,6 +5843,7 @@ RecompReturn Race_Start_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9A2F inside Race_Start: Clears lap times, stores unis/track/flags to SRAM, runs the race, updates win counters after; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Race_Start_9A2F_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Start_9A2F_M1X1";
@@ -6403,6 +6415,7 @@ RecompReturn Race_Start_9A2F_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9A3A inside Race_Start: Clears lap times, stores unis/track/flags to SRAM, runs the race, updates win counters after; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_Start_9A3A_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Start_9A3A_M1X0";
@@ -6912,6 +6925,7 @@ RecompReturn Race_Start_9A3A_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9A3D inside Race_Start: Clears lap times, stores unis/track/flags to SRAM, runs the race, updates win counters after; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_Start_9A3D_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Start_9A3D_M1X0";
@@ -7390,6 +7404,7 @@ RecompReturn Race_Start_9A3D_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9A49 inside Race_Start: Clears lap times, stores unis/track/flags to SRAM, runs the race, updates win counters after; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_Start_9A49_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Start_9A49_M1X0";
@@ -7762,6 +7777,7 @@ RecompReturn Race_Start_9A49_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9A4C inside Race_Start: Clears lap times, stores unis/track/flags to SRAM, runs the race, updates win counters after; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_Start_9A4C_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Start_9A4C_M1X0";
@@ -8103,6 +8119,7 @@ RecompReturn Race_Start_9A4C_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Computes 8 bar lengths at $0175 as each entry's points relative to the leader's; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn League_CalcPointBars_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_CalcPointBars_M0X0";
@@ -8764,6 +8781,7 @@ RecompReturn League_CalcPointBars_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copies 16-byte player name A from SRAM $77000C+A*16 to Y (MVN trampoline); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Sram_CopyPlayerName_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_CopyPlayerName_M1X0";
@@ -9031,6 +9049,7 @@ RecompReturn Sram_CopyPlayerName_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copies 16-byte player name A from SRAM $77000C+A*16 to Y (MVN trampoline); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Sram_CopyPlayerName_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_CopyPlayerName_M0X0";
@@ -9298,6 +9317,7 @@ RecompReturn Sram_CopyPlayerName_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copies 16-byte track name A (pointer table $839F96) to Y; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CopyTrackName_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CopyTrackName_M0X0";
@@ -9537,6 +9557,7 @@ RecompReturn Text_CopyTrackName_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copies 16-byte track name A (pointer table $839F96) to Y; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_CopyTrackName_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CopyTrackName_M1X0";
@@ -9776,6 +9797,7 @@ RecompReturn Text_CopyTrackName_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copies 32-byte league name record A from SRAM $77016E+A*32 to Y; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Sram_CopyLeagueName_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_CopyLeagueName_M0X0";
@@ -10049,6 +10071,7 @@ RecompReturn Sram_CopyLeagueName_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copies 18-byte name A (pointer table $83A1B4) to Y; used by track select, likely tour name; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_CopyTourName_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CopyTourName_M1X0";
@@ -10288,6 +10311,7 @@ RecompReturn Text_CopyTourName_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Options DEFINE LEAGUE: pick slot, warn/confirm overwrite, pick tracks, enter league name; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_Main_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_Main_M0X0";
@@ -11828,6 +11852,7 @@ RecompReturn DefineLeague_Main_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9BD1 inside DefineLeague_Main: Options DEFINE LEAGUE: pick slot, warn/confirm overwrite, pick tracks, enter league name; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_Main_9BD1_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_Main_9BD1_M1X0";
@@ -13313,6 +13338,7 @@ RecompReturn DefineLeague_Main_9BD1_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9BE2 inside DefineLeague_Main: Options DEFINE LEAGUE: pick slot, warn/confirm overwrite, pick tracks, enter league name; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_Main_9BE2_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_Main_9BE2_M1X0";
@@ -14648,6 +14674,7 @@ RecompReturn DefineLeague_Main_9BE2_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9BE8 inside DefineLeague_Main: Options DEFINE LEAGUE: pick slot, warn/confirm overwrite, pick tracks, enter league name; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_Main_9BE8_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_Main_9BE8_M1X0";
@@ -15947,6 +15974,7 @@ RecompReturn DefineLeague_Main_9BE8_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9BEB inside DefineLeague_Main: Options DEFINE LEAGUE: pick slot, warn/confirm overwrite, pick tracks, enter league name; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_Main_9BEB_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_Main_9BEB_M1X0";
@@ -17215,6 +17243,7 @@ RecompReturn DefineLeague_Main_9BEB_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9BF1 inside DefineLeague_Main: Options DEFINE LEAGUE: pick slot, warn/confirm overwrite, pick tracks, enter league name; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_Main_9BF1_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_Main_9BF1_M1X0";
@@ -18421,6 +18450,7 @@ RecompReturn DefineLeague_Main_9BF1_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9C04 inside DefineLeague_Main: Options DEFINE LEAGUE: pick slot, warn/confirm overwrite, pick tracks, enter league name; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_Main_9C04_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_Main_9C04_M1X0";
@@ -19581,6 +19611,7 @@ RecompReturn DefineLeague_Main_9C04_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9C2E inside DefineLeague_Main: Options DEFINE LEAGUE: pick slot, warn/confirm overwrite, pick tracks, enter league name; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_Main_9C2E_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_Main_9C2E_M1X0";
@@ -20446,6 +20477,7 @@ RecompReturn DefineLeague_Main_9C2E_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9C3A inside DefineLeague_Main: Options DEFINE LEAGUE: pick slot, warn/confirm overwrite, pick tracks, enter league name; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_Main_9C3A_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_Main_9C3A_M1X0";
@@ -21207,6 +21239,7 @@ RecompReturn DefineLeague_Main_9C3A_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9C3D inside DefineLeague_Main: Options DEFINE LEAGUE: pick slot, warn/confirm overwrite, pick tracks, enter league name; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_Main_9C3D_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_Main_9C3D_M1X0";
@@ -21937,6 +21970,7 @@ RecompReturn DefineLeague_Main_9C3D_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: PICK YOUR LEAGUE: toggle tracks in a 16-bit mask (2 min, 8 max), saved to $7702B2+league*2; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_PickTracks_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_PickTracks_M1X0";
@@ -23845,6 +23879,7 @@ RecompReturn DefineLeague_PickTracks_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9CA2 inside DefineLeague_PickTracks: PICK YOUR LEAGUE: toggle tracks in a 16-bit mask (2 min, 8 max), saved to $7702B2+league*2; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_PickTracks_9CA2_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_PickTracks_9CA2_M1X0";
@@ -25663,6 +25698,7 @@ RecompReturn DefineLeague_PickTracks_9CA2_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9CAC inside DefineLeague_PickTracks: PICK YOUR LEAGUE: toggle tracks in a 16-bit mask (2 min, 8 max), saved to $7702B2+league*2; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_PickTracks_9CAC_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_PickTracks_9CAC_M1X0";
@@ -27410,6 +27446,7 @@ RecompReturn DefineLeague_PickTracks_9CAC_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9CB2 inside DefineLeague_PickTracks: PICK YOUR LEAGUE: toggle tracks in a 16-bit mask (2 min, 8 max), saved to $7702B2+league*2; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_PickTracks_9CB2_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_PickTracks_9CB2_M1X0";
@@ -29121,6 +29158,7 @@ RecompReturn DefineLeague_PickTracks_9CB2_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9CE9 inside DefineLeague_PickTracks: PICK YOUR LEAGUE: toggle tracks in a 16-bit mask (2 min, 8 max), saved to $7702B2+league*2; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_PickTracks_9CE9_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_PickTracks_9CE9_M1X0";
@@ -30555,6 +30593,7 @@ RecompReturn DefineLeague_PickTracks_9CE9_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9CFE inside DefineLeague_PickTracks: PICK YOUR LEAGUE: toggle tracks in a 16-bit mask (2 min, 8 max), saved to $7702B2+league*2; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_PickTracks_9CFE_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_PickTracks_9CFE_M1X0";
@@ -31882,6 +31921,7 @@ RecompReturn DefineLeague_PickTracks_9CFE_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9D22 inside DefineLeague_PickTracks: PICK YOUR LEAGUE: toggle tracks in a 16-bit mask (2 min, 8 max), saved to $7702B2+league*2; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_PickTracks_9D22_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_PickTracks_9D22_M1X0";
@@ -33097,6 +33137,7 @@ RecompReturn DefineLeague_PickTracks_9D22_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9D96 inside DefineLeague_PickTracks: PICK YOUR LEAGUE: toggle tracks in a 16-bit mask (2 min, 8 max), saved to $7702B2+league*2; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_PickTracks_9D96_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_PickTracks_9D96_M1X0";
@@ -33187,6 +33228,7 @@ RecompReturn DefineLeague_PickTracks_9D96_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9D9F inside DefineLeague_PickTracks: PICK YOUR LEAGUE: toggle tracks in a 16-bit mask (2 min, 8 max), saved to $7702B2+league*2; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_PickTracks_9D9F_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_PickTracks_9D9F_M1X0";
@@ -33231,6 +33273,7 @@ RecompReturn DefineLeague_PickTracks_9D9F_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9DD2 inside DefineLeague_PickTracks: PICK YOUR LEAGUE: toggle tracks in a 16-bit mask (2 min, 8 max), saved to $7702B2+league*2; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_PickTracks_9DD2_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_PickTracks_9DD2_M1X0";
@@ -33335,6 +33378,7 @@ RecompReturn DefineLeague_PickTracks_9DD2_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Sets text row/column ($E0/$DF) for track-grid item A; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_CalcItemPos_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_CalcItemPos_M1X0";
@@ -33563,6 +33607,7 @@ RecompReturn DefineLeague_CalcItemPos_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9E62 inside DefineLeague_CalcItemPos: Sets text row/column ($E0/$DF) for track-grid item A; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_CalcItemPos_9E62_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_CalcItemPos_9E62_M1X0";
@@ -34146,6 +34191,7 @@ RecompReturn DefineLeague_CalcItemPos_9E62_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9E68 inside DefineLeague_CalcItemPos: Sets text row/column ($E0/$DF) for track-grid item A; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_CalcItemPos_9E68_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_CalcItemPos_9E68_M1X0";
@@ -34693,6 +34739,7 @@ RecompReturn DefineLeague_CalcItemPos_9E68_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9E6B inside DefineLeague_CalcItemPos: Sets text row/column ($E0/$DF) for track-grid item A; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_CalcItemPos_9E6B_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_CalcItemPos_9E6B_M1X0";
@@ -35209,6 +35256,7 @@ RecompReturn DefineLeague_CalcItemPos_9E6B_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9E71 inside DefineLeague_CalcItemPos: Sets text row/column ($E0/$DF) for track-grid item A; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_CalcItemPos_9E71_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_CalcItemPos_9E71_M1X0";
@@ -35663,6 +35711,7 @@ RecompReturn DefineLeague_CalcItemPos_9E71_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9E7F inside DefineLeague_CalcItemPos: Sets text row/column ($E0/$DF) for track-grid item A; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_CalcItemPos_9E7F_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_CalcItemPos_9E7F_M1X0";
@@ -36064,6 +36113,7 @@ RecompReturn DefineLeague_CalcItemPos_9E7F_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9EBA inside DefineLeague_CalcItemPos: Sets text row/column ($E0/$DF) for track-grid item A; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_CalcItemPos_9EBA_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_CalcItemPos_9EBA_M1X0";
@@ -36168,6 +36218,7 @@ RecompReturn DefineLeague_CalcItemPos_9EBA_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Menu to choose league slot ONE..SIX; result in $CC; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_SelectSlot_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_SelectSlot_M1X0";
@@ -36440,6 +36491,7 @@ RecompReturn DefineLeague_SelectSlot_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9F09 inside DefineLeague_SelectSlot: Menu to choose league slot ONE..SIX; result in $CC; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_SelectSlot_9F09_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_SelectSlot_9F09_M1X0";
@@ -36653,6 +36705,7 @@ RecompReturn DefineLeague_SelectSlot_9F09_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9F0C inside DefineLeague_SelectSlot: Menu to choose league slot ONE..SIX; result in $CC; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DefineLeague_SelectSlot_9F0C_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DefineLeague_SelectSlot_9F0C_M1X0";
@@ -36835,6 +36888,7 @@ RecompReturn DefineLeague_SelectSlot_9F0C_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Uploads both tilemaps/palettes then runs a 57-frame HDMA window wipe, ends with HDMA off; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Fx_HdmaWipeReveal_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Fx_HdmaWipeReveal_M1X0";
@@ -37780,6 +37834,7 @@ RecompReturn Fx_HdmaWipeReveal_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9F7C inside Fx_HdmaWipeReveal: Uploads both tilemaps/palettes then runs a 57-frame HDMA window wipe, ends with HDMA off; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Fx_HdmaWipeReveal_9F7C_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Fx_HdmaWipeReveal_9F7C_M1X0";
@@ -38614,6 +38669,7 @@ RecompReturn Fx_HdmaWipeReveal_9F7C_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9F95 inside Fx_HdmaWipeReveal: Uploads both tilemaps/palettes then runs a 57-frame HDMA window wipe, ends with HDMA off; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Fx_HdmaWipeReveal_9F95_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Fx_HdmaWipeReveal_9F95_M1X0";
@@ -39297,6 +39353,7 @@ RecompReturn Fx_HdmaWipeReveal_9F95_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9F98 inside Fx_HdmaWipeReveal: Uploads both tilemaps/palettes then runs a 57-frame HDMA window wipe, ends with HDMA off; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Fx_HdmaWipeReveal_9F98_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Fx_HdmaWipeReveal_9F98_M1X0";
@@ -39949,6 +40006,7 @@ RecompReturn Fx_HdmaWipeReveal_9F98_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9FB0 inside Fx_HdmaWipeReveal: Uploads both tilemaps/palettes then runs a 57-frame HDMA window wipe, ends with HDMA off; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Fx_HdmaWipeReveal_9FB0_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Fx_HdmaWipeReveal_9FB0_M1X0";
@@ -40486,6 +40544,7 @@ RecompReturn Fx_HdmaWipeReveal_9FB0_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9FCB inside Fx_HdmaWipeReveal: Uploads both tilemaps/palettes then runs a 57-frame HDMA window wipe, ends with HDMA off; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Fx_HdmaWipeReveal_9FCB_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Fx_HdmaWipeReveal_9FCB_M1X0";
@@ -40996,6 +41055,7 @@ RecompReturn Fx_HdmaWipeReveal_9FCB_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Once per results (flag $0100 in $770742): parks 30 marker objects and sprites, sets OAM hi bits */
 void Results_ResetMarkerSpritesOnce(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41013,6 +41073,7 @@ void Results_ResetMarkerSpritesOnce(CpuState *cpu) {
   }
 }
 
+/* decomp: Fades INIDISP brightness up over 7 frames, uploading OAM each frame */
 void Video_FadeIn(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41030,6 +41091,7 @@ void Video_FadeIn(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9871 inside Video_FadeIn: Fades INIDISP brightness up over 7 frames, uploading OAM each frame */
 void Video_FadeIn_9871(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41047,6 +41109,7 @@ void Video_FadeIn_9871(CpuState *cpu) {
   }
 }
 
+/* decomp: Fades INIDISP brightness down over 7 frames then forces blank */
 void Video_FadeOut(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41064,6 +41127,7 @@ void Video_FadeOut(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $988F inside Video_FadeOut: Fades INIDISP brightness down over 7 frames then forces blank */
 void Video_FadeOut_988F(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41081,6 +41145,7 @@ void Video_FadeOut_988F(CpuState *cpu) {
   }
 }
 
+/* decomp: Moves the menu cursor object off-screen ($0C62=$FD00, $0C6A=$0700) */
 void Menu_HideCursor(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41098,6 +41163,7 @@ void Menu_HideCursor(CpuState *cpu) {
   }
 }
 
+/* decomp: Lap-race results: eases 20 marker sprites toward their targets until a button is pressed */
 void Results_AnimateLapMarkers(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41115,6 +41181,7 @@ void Results_AnimateLapMarkers(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9971 inside Results_AnimateLapMarkers: Lap-race results: eases 20 marker sprites toward their targets until a button is pressed */
 void Results_AnimateLapMarkers_9971(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41132,6 +41199,7 @@ void Results_AnimateLapMarkers_9971(CpuState *cpu) {
   }
 }
 
+/* decomp: Signed >>3 of A, clamped to -40..+40 (marker easing speed) */
 void Math_ScaleClampVelocity(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41149,6 +41217,7 @@ void Math_ScaleClampVelocity(CpuState *cpu) {
   }
 }
 
+/* decomp: Race_Start entry that keeps $77074D unchanged */
 void Race_StartKeepParam(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41166,6 +41235,7 @@ void Race_StartKeepParam(CpuState *cpu) {
   }
 }
 
+/* decomp: Clears lap times, stores unis/track/flags to SRAM, runs the race, updates win counters after */
 void Race_Start(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41183,6 +41253,7 @@ void Race_Start(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9A2F inside Race_Start: Clears lap times, stores unis/track/flags to SRAM, runs the race, updates win counters after */
 void Race_Start_9A2F(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41200,6 +41271,7 @@ void Race_Start_9A2F(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9A3A inside Race_Start: Clears lap times, stores unis/track/flags to SRAM, runs the race, updates win counters after */
 void Race_Start_9A3A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41217,6 +41289,7 @@ void Race_Start_9A3A(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9A3D inside Race_Start: Clears lap times, stores unis/track/flags to SRAM, runs the race, updates win counters after */
 void Race_Start_9A3D(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41234,6 +41307,7 @@ void Race_Start_9A3D(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9A49 inside Race_Start: Clears lap times, stores unis/track/flags to SRAM, runs the race, updates win counters after */
 void Race_Start_9A49(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41251,6 +41325,7 @@ void Race_Start_9A49(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9A4C inside Race_Start: Clears lap times, stores unis/track/flags to SRAM, runs the race, updates win counters after */
 void Race_Start_9A4C(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41268,6 +41343,7 @@ void Race_Start_9A4C(CpuState *cpu) {
   }
 }
 
+/* decomp: Computes 8 bar lengths at $0175 as each entry's points relative to the leader's */
 void League_CalcPointBars(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41285,6 +41361,7 @@ void League_CalcPointBars(CpuState *cpu) {
   }
 }
 
+/* decomp: Copies 16-byte player name A from SRAM $77000C+A*16 to Y (MVN trampoline) */
 void Sram_CopyPlayerName(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41302,6 +41379,7 @@ void Sram_CopyPlayerName(CpuState *cpu) {
   }
 }
 
+/* decomp: Copies 16-byte track name A (pointer table $839F96) to Y */
 void Text_CopyTrackName(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41319,6 +41397,7 @@ void Text_CopyTrackName(CpuState *cpu) {
   }
 }
 
+/* decomp: Copies 32-byte league name record A from SRAM $77016E+A*32 to Y */
 void Sram_CopyLeagueName(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41336,6 +41415,7 @@ void Sram_CopyLeagueName(CpuState *cpu) {
   }
 }
 
+/* decomp: Copies 18-byte name A (pointer table $83A1B4) to Y; used by track select, likely tour name */
 void Text_CopyTourName(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41353,6 +41433,7 @@ void Text_CopyTourName(CpuState *cpu) {
   }
 }
 
+/* decomp: Options DEFINE LEAGUE: pick slot, warn/confirm overwrite, pick tracks, enter league name */
 void DefineLeague_Main(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41370,6 +41451,7 @@ void DefineLeague_Main(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9BD1 inside DefineLeague_Main: Options DEFINE LEAGUE: pick slot, warn/confirm overwrite, pick tracks, enter league name */
 void DefineLeague_Main_9BD1(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41387,6 +41469,7 @@ void DefineLeague_Main_9BD1(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9BE2 inside DefineLeague_Main: Options DEFINE LEAGUE: pick slot, warn/confirm overwrite, pick tracks, enter league name */
 void DefineLeague_Main_9BE2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41404,6 +41487,7 @@ void DefineLeague_Main_9BE2(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9BE8 inside DefineLeague_Main: Options DEFINE LEAGUE: pick slot, warn/confirm overwrite, pick tracks, enter league name */
 void DefineLeague_Main_9BE8(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41421,6 +41505,7 @@ void DefineLeague_Main_9BE8(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9BEB inside DefineLeague_Main: Options DEFINE LEAGUE: pick slot, warn/confirm overwrite, pick tracks, enter league name */
 void DefineLeague_Main_9BEB(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41438,6 +41523,7 @@ void DefineLeague_Main_9BEB(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9BF1 inside DefineLeague_Main: Options DEFINE LEAGUE: pick slot, warn/confirm overwrite, pick tracks, enter league name */
 void DefineLeague_Main_9BF1(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41455,6 +41541,7 @@ void DefineLeague_Main_9BF1(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9C04 inside DefineLeague_Main: Options DEFINE LEAGUE: pick slot, warn/confirm overwrite, pick tracks, enter league name */
 void DefineLeague_Main_9C04(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41472,6 +41559,7 @@ void DefineLeague_Main_9C04(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9C2E inside DefineLeague_Main: Options DEFINE LEAGUE: pick slot, warn/confirm overwrite, pick tracks, enter league name */
 void DefineLeague_Main_9C2E(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41489,6 +41577,7 @@ void DefineLeague_Main_9C2E(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9C3A inside DefineLeague_Main: Options DEFINE LEAGUE: pick slot, warn/confirm overwrite, pick tracks, enter league name */
 void DefineLeague_Main_9C3A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41506,6 +41595,7 @@ void DefineLeague_Main_9C3A(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9C3D inside DefineLeague_Main: Options DEFINE LEAGUE: pick slot, warn/confirm overwrite, pick tracks, enter league name */
 void DefineLeague_Main_9C3D(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41523,6 +41613,7 @@ void DefineLeague_Main_9C3D(CpuState *cpu) {
   }
 }
 
+/* decomp: PICK YOUR LEAGUE: toggle tracks in a 16-bit mask (2 min, 8 max), saved to $7702B2+league*2 */
 void DefineLeague_PickTracks(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41540,6 +41631,7 @@ void DefineLeague_PickTracks(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9CA2 inside DefineLeague_PickTracks: PICK YOUR LEAGUE: toggle tracks in a 16-bit mask (2 min, 8 max), saved to $7702B2+league*2 */
 void DefineLeague_PickTracks_9CA2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41557,6 +41649,7 @@ void DefineLeague_PickTracks_9CA2(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9CAC inside DefineLeague_PickTracks: PICK YOUR LEAGUE: toggle tracks in a 16-bit mask (2 min, 8 max), saved to $7702B2+league*2 */
 void DefineLeague_PickTracks_9CAC(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41574,6 +41667,7 @@ void DefineLeague_PickTracks_9CAC(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9CB2 inside DefineLeague_PickTracks: PICK YOUR LEAGUE: toggle tracks in a 16-bit mask (2 min, 8 max), saved to $7702B2+league*2 */
 void DefineLeague_PickTracks_9CB2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41591,6 +41685,7 @@ void DefineLeague_PickTracks_9CB2(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9CE9 inside DefineLeague_PickTracks: PICK YOUR LEAGUE: toggle tracks in a 16-bit mask (2 min, 8 max), saved to $7702B2+league*2 */
 void DefineLeague_PickTracks_9CE9(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41608,6 +41703,7 @@ void DefineLeague_PickTracks_9CE9(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9CFE inside DefineLeague_PickTracks: PICK YOUR LEAGUE: toggle tracks in a 16-bit mask (2 min, 8 max), saved to $7702B2+league*2 */
 void DefineLeague_PickTracks_9CFE(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41625,6 +41721,7 @@ void DefineLeague_PickTracks_9CFE(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9D22 inside DefineLeague_PickTracks: PICK YOUR LEAGUE: toggle tracks in a 16-bit mask (2 min, 8 max), saved to $7702B2+league*2 */
 void DefineLeague_PickTracks_9D22(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41642,6 +41739,7 @@ void DefineLeague_PickTracks_9D22(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9D96 inside DefineLeague_PickTracks: PICK YOUR LEAGUE: toggle tracks in a 16-bit mask (2 min, 8 max), saved to $7702B2+league*2 */
 void DefineLeague_PickTracks_9D96(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41659,6 +41757,7 @@ void DefineLeague_PickTracks_9D96(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9D9F inside DefineLeague_PickTracks: PICK YOUR LEAGUE: toggle tracks in a 16-bit mask (2 min, 8 max), saved to $7702B2+league*2 */
 void DefineLeague_PickTracks_9D9F(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41676,6 +41775,7 @@ void DefineLeague_PickTracks_9D9F(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9DD2 inside DefineLeague_PickTracks: PICK YOUR LEAGUE: toggle tracks in a 16-bit mask (2 min, 8 max), saved to $7702B2+league*2 */
 void DefineLeague_PickTracks_9DD2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41693,6 +41793,7 @@ void DefineLeague_PickTracks_9DD2(CpuState *cpu) {
   }
 }
 
+/* decomp: Sets text row/column ($E0/$DF) for track-grid item A */
 void DefineLeague_CalcItemPos(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41710,6 +41811,7 @@ void DefineLeague_CalcItemPos(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9E62 inside DefineLeague_CalcItemPos: Sets text row/column ($E0/$DF) for track-grid item A */
 void DefineLeague_CalcItemPos_9E62(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41727,6 +41829,7 @@ void DefineLeague_CalcItemPos_9E62(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9E68 inside DefineLeague_CalcItemPos: Sets text row/column ($E0/$DF) for track-grid item A */
 void DefineLeague_CalcItemPos_9E68(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41744,6 +41847,7 @@ void DefineLeague_CalcItemPos_9E68(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9E6B inside DefineLeague_CalcItemPos: Sets text row/column ($E0/$DF) for track-grid item A */
 void DefineLeague_CalcItemPos_9E6B(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41761,6 +41865,7 @@ void DefineLeague_CalcItemPos_9E6B(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9E71 inside DefineLeague_CalcItemPos: Sets text row/column ($E0/$DF) for track-grid item A */
 void DefineLeague_CalcItemPos_9E71(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41778,6 +41883,7 @@ void DefineLeague_CalcItemPos_9E71(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9E7F inside DefineLeague_CalcItemPos: Sets text row/column ($E0/$DF) for track-grid item A */
 void DefineLeague_CalcItemPos_9E7F(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41795,6 +41901,7 @@ void DefineLeague_CalcItemPos_9E7F(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9EBA inside DefineLeague_CalcItemPos: Sets text row/column ($E0/$DF) for track-grid item A */
 void DefineLeague_CalcItemPos_9EBA(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41812,6 +41919,7 @@ void DefineLeague_CalcItemPos_9EBA(CpuState *cpu) {
   }
 }
 
+/* decomp: Menu to choose league slot ONE..SIX; result in $CC */
 void DefineLeague_SelectSlot(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41829,6 +41937,7 @@ void DefineLeague_SelectSlot(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9F09 inside DefineLeague_SelectSlot: Menu to choose league slot ONE..SIX; result in $CC */
 void DefineLeague_SelectSlot_9F09(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41846,6 +41955,7 @@ void DefineLeague_SelectSlot_9F09(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9F0C inside DefineLeague_SelectSlot: Menu to choose league slot ONE..SIX; result in $CC */
 void DefineLeague_SelectSlot_9F0C(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41863,6 +41973,7 @@ void DefineLeague_SelectSlot_9F0C(CpuState *cpu) {
   }
 }
 
+/* decomp: Uploads both tilemaps/palettes then runs a 57-frame HDMA window wipe, ends with HDMA off */
 void Fx_HdmaWipeReveal(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41880,6 +41991,7 @@ void Fx_HdmaWipeReveal(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9F7C inside Fx_HdmaWipeReveal: Uploads both tilemaps/palettes then runs a 57-frame HDMA window wipe, ends with HDMA off */
 void Fx_HdmaWipeReveal_9F7C(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41897,6 +42009,7 @@ void Fx_HdmaWipeReveal_9F7C(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9F95 inside Fx_HdmaWipeReveal: Uploads both tilemaps/palettes then runs a 57-frame HDMA window wipe, ends with HDMA off */
 void Fx_HdmaWipeReveal_9F95(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41914,6 +42027,7 @@ void Fx_HdmaWipeReveal_9F95(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9F98 inside Fx_HdmaWipeReveal: Uploads both tilemaps/palettes then runs a 57-frame HDMA window wipe, ends with HDMA off */
 void Fx_HdmaWipeReveal_9F98(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41931,6 +42045,7 @@ void Fx_HdmaWipeReveal_9F98(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9FB0 inside Fx_HdmaWipeReveal: Uploads both tilemaps/palettes then runs a 57-frame HDMA window wipe, ends with HDMA off */
 void Fx_HdmaWipeReveal_9FB0(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -41948,6 +42063,7 @@ void Fx_HdmaWipeReveal_9FB0(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9FCB inside Fx_HdmaWipeReveal: Uploads both tilemaps/palettes then runs a 57-frame HDMA window wipe, ends with HDMA off */
 void Fx_HdmaWipeReveal_9FCB(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

@@ -29,6 +29,7 @@ RecompReturn Race_Fx7Tick_M0X0(CpuState *cpu);
 RecompReturn Race_PushEventFrontLong_M0X0(CpuState *cpu);
 RecompReturn Race_UpdateBackdropFade_M0X0(CpuState *cpu);
 
+/* decomp: Racer bounding-box overlap test; on contact start effect (P1 x & 7) unless one is active; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_CheckFxTrigger_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_CheckFxTrigger_M0X0";
@@ -817,6 +818,7 @@ RecompReturn Race_CheckFxTrigger_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Track $2A 1P: ease colour $12C9 toward DATA_83D1A7 target, build BGR word $12CB; 2P starts fx 4; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_UpdateBackdropFade_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateBackdropFade_M0X0";
@@ -1545,6 +1547,7 @@ RecompReturn Race_UpdateBackdropFade_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Fill $1283 and $1294 16-byte tables with $80; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_ClearFxTables_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_ClearFxTables_M1X0";
@@ -1712,6 +1715,7 @@ RecompReturn Race_ClearFxTables_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Effect 7: 600-frame timer, on expiry announce message $23 and clear; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Fx7Tick_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Fx7Tick_M0X0";
@@ -2020,6 +2024,7 @@ RecompReturn Race_Fx7Tick_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Effect 3 (screen flip): 600-frame timer with blink in/out, builds flip HDMA table when on; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Fx3Tick_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Fx3Tick_M0X0";
@@ -2607,6 +2612,7 @@ RecompReturn Race_Fx3Tick_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Effect 6: 600-frame timer, sets $0559 active with blink at start/end; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Fx6Tick_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Fx6Tick_M0X0";
@@ -3078,6 +3084,7 @@ RecompReturn Race_Fx6Tick_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Effect 4: 600-frame timer, sets $0557 active with blink at start/end; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Fx4Tick_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Fx4Tick_M0X0";
@@ -3551,6 +3558,7 @@ RecompReturn Race_Fx4Tick_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Effect 0: 600-frame timer, on expiry announce message $23 and clear; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Fx0Tick_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Fx0Tick_M0X0";
@@ -3846,6 +3854,7 @@ RecompReturn Race_Fx0Tick_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Effect 2: 600-frame timer, on expiry announce message $23 and clear; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Fx2Tick_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Fx2Tick_M0X0";
@@ -4141,6 +4150,7 @@ RecompReturn Race_Fx2Tick_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Effect 5 (slow motion): 600-frame timer, skips game update 3 of 4 frames via $1281; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Fx5Tick_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Fx5Tick_M0X0";
@@ -4478,6 +4488,7 @@ RecompReturn Race_Fx5Tick_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Effect 1 (stutter): ramping pause counter $127B/$127F, freezes updates via $1281; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Fx1Tick_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Fx1Tick_M0X0";
@@ -4813,6 +4824,7 @@ RecompReturn Race_Fx1Tick_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Write reversed line table (double-buffered $7E2332/$7E24F8) and flip racer sprites vertically; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_BuildFlipHdmaTable_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_BuildFlipHdmaTable_M0X0";
@@ -15123,6 +15135,7 @@ RecompReturn Race_BuildFlipHdmaTable_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Racer bounding-box overlap test; on contact start effect (P1 x & 7) unless one is active */
 void Race_CheckFxTrigger(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -15140,6 +15153,7 @@ void Race_CheckFxTrigger(CpuState *cpu) {
   }
 }
 
+/* decomp: Track $2A 1P: ease colour $12C9 toward DATA_83D1A7 target, build BGR word $12CB; 2P starts fx 4 */
 void Race_UpdateBackdropFade(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -15157,6 +15171,7 @@ void Race_UpdateBackdropFade(CpuState *cpu) {
   }
 }
 
+/* decomp: Fill $1283 and $1294 16-byte tables with $80 */
 void Race_ClearFxTables(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -15174,6 +15189,7 @@ void Race_ClearFxTables(CpuState *cpu) {
   }
 }
 
+/* decomp: Effect 7: 600-frame timer, on expiry announce message $23 and clear */
 void Race_Fx7Tick(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -15191,6 +15207,7 @@ void Race_Fx7Tick(CpuState *cpu) {
   }
 }
 
+/* decomp: Effect 3 (screen flip): 600-frame timer with blink in/out, builds flip HDMA table when on */
 void Race_Fx3Tick(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -15208,6 +15225,7 @@ void Race_Fx3Tick(CpuState *cpu) {
   }
 }
 
+/* decomp: Effect 6: 600-frame timer, sets $0559 active with blink at start/end */
 void Race_Fx6Tick(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -15225,6 +15243,7 @@ void Race_Fx6Tick(CpuState *cpu) {
   }
 }
 
+/* decomp: Effect 4: 600-frame timer, sets $0557 active with blink at start/end */
 void Race_Fx4Tick(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -15242,6 +15261,7 @@ void Race_Fx4Tick(CpuState *cpu) {
   }
 }
 
+/* decomp: Effect 0: 600-frame timer, on expiry announce message $23 and clear */
 void Race_Fx0Tick(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -15259,6 +15279,7 @@ void Race_Fx0Tick(CpuState *cpu) {
   }
 }
 
+/* decomp: Effect 2: 600-frame timer, on expiry announce message $23 and clear */
 void Race_Fx2Tick(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -15276,6 +15297,7 @@ void Race_Fx2Tick(CpuState *cpu) {
   }
 }
 
+/* decomp: Effect 5 (slow motion): 600-frame timer, skips game update 3 of 4 frames via $1281 */
 void Race_Fx5Tick(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -15293,6 +15315,7 @@ void Race_Fx5Tick(CpuState *cpu) {
   }
 }
 
+/* decomp: Effect 1 (stutter): ramping pause counter $127B/$127F, freezes updates via $1281 */
 void Race_Fx1Tick(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -15310,6 +15333,7 @@ void Race_Fx1Tick(CpuState *cpu) {
   }
 }
 
+/* decomp: Write reversed line table (double-buffered $7E2332/$7E24F8) and flip racer sprites vertically */
 void Race_BuildFlipHdmaTable(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

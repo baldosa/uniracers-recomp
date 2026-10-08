@@ -44,6 +44,7 @@ RecompReturn Snd_UploadBlockLong_M0X0(CpuState *cpu);
 RecompReturn Vram_ClearRegions_M1X0(CpuState *cpu);
 RecompReturn Vram_UploadTilemapLong_M1X0(CpuState *cpu);
 
+/* decomp: Queue sound commands $087F and $0201; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Snd_Play01_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_Play01_M0X0";
@@ -263,6 +264,7 @@ RecompReturn Snd_Play01_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Queue sound commands $087F and $0212; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Snd_Play12_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_Play12_M0X0";
@@ -482,6 +484,7 @@ RecompReturn Snd_Play12_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Queue sound commands $087F and $0213; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Snd_Play13_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_Play13_M0X0";
@@ -701,6 +704,7 @@ RecompReturn Snd_Play13_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Queue sound commands $087F and $021A; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Snd_Play1A_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Snd_Play1A_M1X0";
@@ -920,6 +924,7 @@ RecompReturn Snd_Play1A_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Raise INIDISP brightness 0->15, one step per vblank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Ppu_FadeIn_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Ppu_FadeIn_M1X0";
@@ -1130,6 +1135,7 @@ RecompReturn Ppu_FadeIn_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Lower brightness 15->0 one step per vblank, then force blank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Ppu_FadeOut_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Ppu_FadeOut_M1X0";
@@ -1352,6 +1358,7 @@ RecompReturn Ppu_FadeOut_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Load sound sets $33/$37/$3C and music, clear VRAM/OAM, set up tier cutscene screen; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Cutscene_InitScreenA_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Cutscene_InitScreenA_M1X0";
@@ -2467,6 +2474,7 @@ RecompReturn Cutscene_InitScreenA_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Load sound sets $32/$34/$3A and music, clear VRAM/OAM, set up medal award screen; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Cutscene_InitScreenB_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Cutscene_InitScreenB_M1X0";
@@ -3582,6 +3590,7 @@ RecompReturn Cutscene_InitScreenB_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Force blank, reload menu sounds, PPU regs (mode 3), palettes, gfx and sprites; enable NMI; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_InitScreenFull_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_InitScreenFull_M1X0";
@@ -5377,6 +5386,7 @@ RecompReturn Menu_InitScreenFull_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Queue sound commands $087F and $0201 */
 void Snd_Play01(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5394,6 +5404,7 @@ void Snd_Play01(CpuState *cpu) {
   }
 }
 
+/* decomp: Queue sound commands $087F and $0212 */
 void Snd_Play12(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5411,6 +5422,7 @@ void Snd_Play12(CpuState *cpu) {
   }
 }
 
+/* decomp: Queue sound commands $087F and $0213 */
 void Snd_Play13(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5428,6 +5440,7 @@ void Snd_Play13(CpuState *cpu) {
   }
 }
 
+/* decomp: Queue sound commands $087F and $021A */
 void Snd_Play1A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5445,6 +5458,7 @@ void Snd_Play1A(CpuState *cpu) {
   }
 }
 
+/* decomp: Raise INIDISP brightness 0->15, one step per vblank */
 void Ppu_FadeIn(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5462,6 +5476,7 @@ void Ppu_FadeIn(CpuState *cpu) {
   }
 }
 
+/* decomp: Lower brightness 15->0 one step per vblank, then force blank */
 void Ppu_FadeOut(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5479,6 +5494,7 @@ void Ppu_FadeOut(CpuState *cpu) {
   }
 }
 
+/* decomp: Load sound sets $33/$37/$3C and music, clear VRAM/OAM, set up tier cutscene screen */
 void Cutscene_InitScreenA(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5496,6 +5512,7 @@ void Cutscene_InitScreenA(CpuState *cpu) {
   }
 }
 
+/* decomp: Load sound sets $32/$34/$3A and music, clear VRAM/OAM, set up medal award screen */
 void Cutscene_InitScreenB(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5513,6 +5530,7 @@ void Cutscene_InitScreenB(CpuState *cpu) {
   }
 }
 
+/* decomp: Force blank, reload menu sounds, PPU regs (mode 3), palettes, gfx and sprites; enable NMI */
 void Menu_InitScreenFull(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

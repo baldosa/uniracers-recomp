@@ -27,6 +27,7 @@ RecompReturn Math_Multiply16Long_M0X0(CpuState *cpu);
 RecompReturn Math_Multiply16_FastRom_M0X0(CpuState *cpu);
 RecompReturn Ppu_ForceBlank_M1X0(CpuState *cpu);
 
+/* decomp: expands fetched metatiles into tilemap words in the strip buffer (via Bg_CopyMetatileTiles); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Bg_BuildStripTiles_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Bg_BuildStripTiles_M0X0";
@@ -1138,6 +1139,7 @@ RecompReturn Bg_BuildStripTiles_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: copies Y+1 tile words of a metatile from $7F000F,x into the buffer at $0339 with stride $0236; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Bg_CopyMetatileTiles_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Bg_CopyMetatileTiles_M0X0";
@@ -1706,6 +1708,7 @@ RecompReturn Bg_CopyMetatileTiles_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Math_Multiply16; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Math_Multiply16Long_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_Multiply16Long_M0X0";
@@ -1837,6 +1840,7 @@ RecompReturn Math_Multiply16Long_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: unsigned shift-add multiply X*Y, product in A and X; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Math_Multiply16_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_Multiply16_FastRom_M0X0";
@@ -2118,6 +2122,7 @@ RecompReturn Math_Multiply16_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Math_MulS16x8; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Math_MulS16x8Long_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_MulS16x8Long_M0X1";
@@ -2249,6 +2254,7 @@ RecompReturn Math_MulS16x8Long_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: signed A(16) * X(8) via M7A/M7B multiplier, 24-bit result at $055F; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Math_MulS16x8_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_MulS16x8_M0X1";
@@ -2395,6 +2401,7 @@ RecompReturn Math_MulS16x8_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Math_MulFixed8p8; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Math_MulFixed8p8Long_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_MulFixed8p8Long_FastRom_M0X0";
@@ -2526,6 +2533,7 @@ RecompReturn Math_MulFixed8p8Long_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: signed 8.8 fixed-point multiply A*X using the PPU multiplier, 8.8 result in A; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Math_MulFixed8p8_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_MulFixed8p8_FastRom_M0X0";
@@ -2864,6 +2872,7 @@ RecompReturn Math_MulFixed8p8_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: INIDISP = $80 (forced blank); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Ppu_ForceBlank_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Ppu_ForceBlank_M1X0";
@@ -2971,6 +2980,7 @@ RecompReturn Ppu_ForceBlank_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Math_Distance; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Math_DistanceLong_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_DistanceLong_M0X0";
@@ -3102,6 +3112,7 @@ RecompReturn Math_DistanceLong_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: sqrt(x^2+y^2) of low bytes of |A| and |X| via square table $81DD74 and Math_Sqrt16; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Math_Distance_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_Distance_M0X0";
@@ -3650,6 +3661,7 @@ RecompReturn Math_Distance_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: expands fetched metatiles into tilemap words in the strip buffer (via Bg_CopyMetatileTiles) */
 void Bg_BuildStripTiles(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3667,6 +3679,7 @@ void Bg_BuildStripTiles(CpuState *cpu) {
   }
 }
 
+/* decomp: copies Y+1 tile words of a metatile from $7F000F,x into the buffer at $0339 with stride $0236 */
 void Bg_CopyMetatileTiles(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3684,6 +3697,7 @@ void Bg_CopyMetatileTiles(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Math_Multiply16 */
 void Math_Multiply16Long(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3701,6 +3715,7 @@ void Math_Multiply16Long(CpuState *cpu) {
   }
 }
 
+/* decomp: unsigned shift-add multiply X*Y, product in A and X; reached through the other ROM mirror bank */
 void Math_Multiply16_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3718,6 +3733,7 @@ void Math_Multiply16_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Math_MulS16x8 */
 void Math_MulS16x8Long(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3735,6 +3751,7 @@ void Math_MulS16x8Long(CpuState *cpu) {
   }
 }
 
+/* decomp: signed A(16) * X(8) via M7A/M7B multiplier, 24-bit result at $055F */
 void Math_MulS16x8(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3752,6 +3769,7 @@ void Math_MulS16x8(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Math_MulFixed8p8; reached through the other ROM mirror bank */
 void Math_MulFixed8p8Long_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3769,6 +3787,7 @@ void Math_MulFixed8p8Long_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: signed 8.8 fixed-point multiply A*X using the PPU multiplier, 8.8 result in A; reached through the other ROM mirror bank */
 void Math_MulFixed8p8_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3786,6 +3805,7 @@ void Math_MulFixed8p8_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: INIDISP = $80 (forced blank) */
 void Ppu_ForceBlank(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3803,6 +3823,7 @@ void Ppu_ForceBlank(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Math_Distance */
 void Math_DistanceLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -3820,6 +3841,7 @@ void Math_DistanceLong(CpuState *cpu) {
   }
 }
 
+/* decomp: sqrt(x^2+y^2) of low bytes of |A| and |X| via square table $81DD74 and Math_Sqrt16 */
 void Math_Distance(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

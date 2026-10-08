@@ -56,6 +56,7 @@ RecompReturn Vs_SortPlayersForRace_M1X0(CpuState *cpu);
 RecompReturn Vs_UnswapPlayers_M1X0(CpuState *cpu);
 RecompReturn WaitVBlankLong_FastRom_M1X0(CpuState *cpu);
 
+/* decomp: Find slowest ($78) and fastest ($77106F) times for track $CE, min 2 s spread; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Records_CalcTrackTimeRange_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_CalcTrackTimeRange_M1X0";
@@ -789,6 +790,7 @@ RecompReturn Records_CalcTrackTimeRange_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for Sram_UpdateChecksums; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Sram_UpdateChecksumsLong_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_UpdateChecksumsLong_M1X0";
@@ -920,6 +922,7 @@ RecompReturn Sram_UpdateChecksumsLong_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $90F7 inside Sram_UpdateChecksumsLong: Long wrapper for Sram_UpdateChecksums; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Sram_UpdateChecksumsLong_90F7_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_UpdateChecksumsLong_90F7_M0X0";
@@ -1020,6 +1023,7 @@ RecompReturn Sram_UpdateChecksumsLong_90F7_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $90F7 inside Sram_UpdateChecksumsLong: Long wrapper for Sram_UpdateChecksums; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Sram_UpdateChecksumsLong_90F7_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_UpdateChecksumsLong_90F7_M1X0";
@@ -1120,6 +1124,7 @@ RecompReturn Sram_UpdateChecksumsLong_90F7_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Recompute and store all nine SRAM block checksums; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Sram_UpdateChecksums_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_UpdateChecksums_M1X0";
@@ -2106,6 +2111,7 @@ RecompReturn Sram_UpdateChecksums_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9149 inside Sram_UpdateChecksums: Recompute and store all nine SRAM block checksums; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Sram_UpdateChecksums_9149_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_UpdateChecksums_9149_M0X0";
@@ -2762,6 +2768,7 @@ RecompReturn Sram_UpdateChecksums_9149_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9177 inside Sram_UpdateChecksums: Recompute and store all nine SRAM block checksums; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Sram_UpdateChecksums_9177_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_UpdateChecksums_9177_M0X0";
@@ -3226,6 +3233,7 @@ RecompReturn Sram_UpdateChecksums_9177_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $91A5 inside Sram_UpdateChecksums: Recompute and store all nine SRAM block checksums; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Sram_UpdateChecksums_91A5_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_UpdateChecksums_91A5_M0X0";
@@ -3498,6 +3506,7 @@ RecompReturn Sram_UpdateChecksums_91A5_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $91AF inside Sram_UpdateChecksums: Recompute and store all nine SRAM block checksums; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Sram_UpdateChecksums_91AF_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_UpdateChecksums_91AF_M0X0";
@@ -3702,6 +3711,7 @@ RecompReturn Sram_UpdateChecksums_91AF_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $91BC inside Sram_UpdateChecksums: Recompute and store all nine SRAM block checksums; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Sram_UpdateChecksums_91BC_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_UpdateChecksums_91BC_M0X0";
@@ -3878,6 +3888,7 @@ RecompReturn Sram_UpdateChecksums_91BC_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for Pal_LoadPlayerColor; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Pal_LoadPlayerColorLong_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Pal_LoadPlayerColorLong_M1X0";
@@ -4009,6 +4020,7 @@ RecompReturn Pal_LoadPlayerColorLong_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Load sprite palette $F0: player 1 unicycle colour ($017D+6) in mode 1, else palette 2; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Pal_LoadPlayerColor_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Pal_LoadPlayerColor_M1X0";
@@ -4359,6 +4371,7 @@ RecompReturn Pal_LoadPlayerColor_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Reset all personal-best entries at $770829 to $EA5F times; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Sram_ClearPlayerBests_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_ClearPlayerBests_M0X0";
@@ -4593,6 +4606,7 @@ RecompReturn Sram_ClearPlayerBests_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Reset league rosters, points, counts, medals $77069C, $77071C and player tiers $7710D3; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Sram_InitLeagues_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_InitLeagues_M0X0";
@@ -5261,6 +5275,7 @@ RecompReturn Sram_InitLeagues_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9413 inside Sram_InitLeagues: Reset league rosters, points, counts, medals $77069C, $77071C and player tiers $7710D3; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Sram_InitLeagues_9413_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_InitLeagues_9413_M0X0";
@@ -5830,6 +5845,7 @@ RecompReturn Sram_InitLeagues_9413_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copy defaults (DATA_838472, 20 bytes) to $77073E and clear $771116; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Sram_InitOptions_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_InitOptions_M0X0";
@@ -6030,6 +6046,7 @@ RecompReturn Sram_InitOptions_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Write SRAM signature bytes to $770000 (12) and $771118 (8); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Sram_WriteSignature_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_WriteSignature_M0X0";
@@ -6293,6 +6310,7 @@ RecompReturn Sram_WriteSignature_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DMA 0xC00 bytes from $07F1D8 to VRAM $7A00; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Gfx_UploadTiles7A00A_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Gfx_UploadTiles7A00A_M1X0";
@@ -6502,6 +6520,7 @@ RecompReturn Gfx_UploadTiles7A00A_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $94D7 inside Gfx_UploadTiles7A00A: DMA 0xC00 bytes from $07F1D8 to VRAM $7A00; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Gfx_UploadTiles7A00A_94D7_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Gfx_UploadTiles7A00A_94D7_M1X0";
@@ -6658,6 +6677,7 @@ RecompReturn Gfx_UploadTiles7A00A_94D7_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DMA 0xC00 bytes from $07E5D8 to VRAM $7A00; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Gfx_UploadTiles7A00B_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Gfx_UploadTiles7A00B_M1X0";
@@ -6867,6 +6887,7 @@ RecompReturn Gfx_UploadTiles7A00B_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9506 inside Gfx_UploadTiles7A00B: DMA 0xC00 bytes from $07E5D8 to VRAM $7A00; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Gfx_UploadTiles7A00B_9506_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Gfx_UploadTiles7A00B_9506_M1X0";
@@ -7023,6 +7044,7 @@ RecompReturn Gfx_UploadTiles7A00B_9506_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Set save flag $0200 (ignore joypad 1) and clear $0400; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_DisablePad1_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_DisablePad1_M1X0";
@@ -7178,6 +7200,7 @@ RecompReturn Input_DisablePad1_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Set save flag $0400 (ignore joypad 2) and clear $0200; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_DisablePad2_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_DisablePad2_M1X0";
@@ -7333,6 +7356,7 @@ RecompReturn Input_DisablePad2_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: In mode 4 swap P1/P2 profiles so lower index is P1; sets $7710CF if swapped; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Vs_SortPlayersForRace_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Vs_SortPlayersForRace_M1X0";
@@ -7619,6 +7643,7 @@ RecompReturn Vs_SortPlayersForRace_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Undo Vs_SortPlayersForRace: swap profiles and race result blocks back; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Vs_UnswapPlayers_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Vs_UnswapPlayers_M1X0";
@@ -7948,6 +7973,7 @@ RecompReturn Vs_UnswapPlayers_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Set X bit 8 for sprite A in OAM high table $0C00; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Oam_SetXHighBit_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Oam_SetXHighBit_M1X0";
@@ -8179,6 +8205,7 @@ RecompReturn Oam_SetXHighBit_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9661 inside League_BuildMemberList: Build up to 8 player indices of league A (mask $7702B2) into $00D4, $10 = empty; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn League_BuildMemberList_9661_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_BuildMemberList_9661_M0X0";
@@ -8439,6 +8466,7 @@ RecompReturn League_BuildMemberList_9661_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $966F inside League_BuildMemberList: Build up to 8 player indices of league A (mask $7702B2) into $00D4, $10 = empty; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn League_BuildMemberList_966F_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_BuildMemberList_966F_M0X0";
@@ -8621,6 +8649,7 @@ RecompReturn League_BuildMemberList_966F_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Build reverse lookup $7710B6[player] = slot from $00D4 list; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn League_IndexRoster_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_IndexRoster_M0X0";
@@ -8794,6 +8823,7 @@ RecompReturn League_IndexRoster_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Map 8 menu entries via $0151 table through $00D4 and copy to $00D4 via MVN; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn League_CopyMenuOrder_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_CopyMenuOrder_M0X0";
@@ -9163,6 +9193,7 @@ RecompReturn League_CopyMenuOrder_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Compute per-field maxima of player stats into $013F-$014F for graph scaling; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Records_CalcMaxima_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_CalcMaxima_M1X0";
@@ -9838,6 +9869,7 @@ RecompReturn Records_CalcMaxima_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Find slowest ($78) and fastest ($77106F) times for track $CE, min 2 s spread */
 void Records_CalcTrackTimeRange(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9855,6 +9887,7 @@ void Records_CalcTrackTimeRange(CpuState *cpu) {
   }
 }
 
+/* decomp: Long wrapper for Sram_UpdateChecksums */
 void Sram_UpdateChecksumsLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9872,6 +9905,7 @@ void Sram_UpdateChecksumsLong(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $90F7 inside Sram_UpdateChecksumsLong: Long wrapper for Sram_UpdateChecksums */
 void Sram_UpdateChecksumsLong_90F7(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9889,6 +9923,7 @@ void Sram_UpdateChecksumsLong_90F7(CpuState *cpu) {
   }
 }
 
+/* decomp: Recompute and store all nine SRAM block checksums */
 void Sram_UpdateChecksums(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9906,6 +9941,7 @@ void Sram_UpdateChecksums(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9149 inside Sram_UpdateChecksums: Recompute and store all nine SRAM block checksums */
 void Sram_UpdateChecksums_9149(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9923,6 +9959,7 @@ void Sram_UpdateChecksums_9149(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9177 inside Sram_UpdateChecksums: Recompute and store all nine SRAM block checksums */
 void Sram_UpdateChecksums_9177(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9940,6 +9977,7 @@ void Sram_UpdateChecksums_9177(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $91A5 inside Sram_UpdateChecksums: Recompute and store all nine SRAM block checksums */
 void Sram_UpdateChecksums_91A5(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9957,6 +9995,7 @@ void Sram_UpdateChecksums_91A5(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $91AF inside Sram_UpdateChecksums: Recompute and store all nine SRAM block checksums */
 void Sram_UpdateChecksums_91AF(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9974,6 +10013,7 @@ void Sram_UpdateChecksums_91AF(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $91BC inside Sram_UpdateChecksums: Recompute and store all nine SRAM block checksums */
 void Sram_UpdateChecksums_91BC(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9991,6 +10031,7 @@ void Sram_UpdateChecksums_91BC(CpuState *cpu) {
   }
 }
 
+/* decomp: Long wrapper for Pal_LoadPlayerColor */
 void Pal_LoadPlayerColorLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10008,6 +10049,7 @@ void Pal_LoadPlayerColorLong(CpuState *cpu) {
   }
 }
 
+/* decomp: Load sprite palette $F0: player 1 unicycle colour ($017D+6) in mode 1, else palette 2 */
 void Pal_LoadPlayerColor(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10025,6 +10067,7 @@ void Pal_LoadPlayerColor(CpuState *cpu) {
   }
 }
 
+/* decomp: Reset all personal-best entries at $770829 to $EA5F times */
 void Sram_ClearPlayerBests(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10042,6 +10085,7 @@ void Sram_ClearPlayerBests(CpuState *cpu) {
   }
 }
 
+/* decomp: Reset league rosters, points, counts, medals $77069C, $77071C and player tiers $7710D3 */
 void Sram_InitLeagues(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10059,6 +10103,7 @@ void Sram_InitLeagues(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9413 inside Sram_InitLeagues: Reset league rosters, points, counts, medals $77069C, $77071C and player tiers $7710D3 */
 void Sram_InitLeagues_9413(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10076,6 +10121,7 @@ void Sram_InitLeagues_9413(CpuState *cpu) {
   }
 }
 
+/* decomp: Copy defaults (DATA_838472, 20 bytes) to $77073E and clear $771116 */
 void Sram_InitOptions(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10093,6 +10139,7 @@ void Sram_InitOptions(CpuState *cpu) {
   }
 }
 
+/* decomp: Write SRAM signature bytes to $770000 (12) and $771118 (8) */
 void Sram_WriteSignature(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10110,6 +10157,7 @@ void Sram_WriteSignature(CpuState *cpu) {
   }
 }
 
+/* decomp: DMA 0xC00 bytes from $07F1D8 to VRAM $7A00 */
 void Gfx_UploadTiles7A00A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10127,6 +10175,7 @@ void Gfx_UploadTiles7A00A(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $94D7 inside Gfx_UploadTiles7A00A: DMA 0xC00 bytes from $07F1D8 to VRAM $7A00 */
 void Gfx_UploadTiles7A00A_94D7(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10144,6 +10193,7 @@ void Gfx_UploadTiles7A00A_94D7(CpuState *cpu) {
   }
 }
 
+/* decomp: DMA 0xC00 bytes from $07E5D8 to VRAM $7A00 */
 void Gfx_UploadTiles7A00B(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10161,6 +10211,7 @@ void Gfx_UploadTiles7A00B(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9506 inside Gfx_UploadTiles7A00B: DMA 0xC00 bytes from $07E5D8 to VRAM $7A00 */
 void Gfx_UploadTiles7A00B_9506(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10178,6 +10229,7 @@ void Gfx_UploadTiles7A00B_9506(CpuState *cpu) {
   }
 }
 
+/* decomp: Set save flag $0200 (ignore joypad 1) and clear $0400 */
 void Input_DisablePad1(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10195,6 +10247,7 @@ void Input_DisablePad1(CpuState *cpu) {
   }
 }
 
+/* decomp: Set save flag $0400 (ignore joypad 2) and clear $0200 */
 void Input_DisablePad2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10212,6 +10265,7 @@ void Input_DisablePad2(CpuState *cpu) {
   }
 }
 
+/* decomp: In mode 4 swap P1/P2 profiles so lower index is P1; sets $7710CF if swapped */
 void Vs_SortPlayersForRace(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10229,6 +10283,7 @@ void Vs_SortPlayersForRace(CpuState *cpu) {
   }
 }
 
+/* decomp: Undo Vs_SortPlayersForRace: swap profiles and race result blocks back */
 void Vs_UnswapPlayers(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10246,6 +10301,7 @@ void Vs_UnswapPlayers(CpuState *cpu) {
   }
 }
 
+/* decomp: Set X bit 8 for sprite A in OAM high table $0C00 */
 void Oam_SetXHighBit(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10263,6 +10319,7 @@ void Oam_SetXHighBit(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9661 inside League_BuildMemberList: Build up to 8 player indices of league A (mask $7702B2) into $00D4, $10 = empty */
 void League_BuildMemberList_9661(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10280,6 +10337,7 @@ void League_BuildMemberList_9661(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $966F inside League_BuildMemberList: Build up to 8 player indices of league A (mask $7702B2) into $00D4, $10 = empty */
 void League_BuildMemberList_966F(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10297,6 +10355,7 @@ void League_BuildMemberList_966F(CpuState *cpu) {
   }
 }
 
+/* decomp: Build reverse lookup $7710B6[player] = slot from $00D4 list */
 void League_IndexRoster(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10314,6 +10373,7 @@ void League_IndexRoster(CpuState *cpu) {
   }
 }
 
+/* decomp: Map 8 menu entries via $0151 table through $00D4 and copy to $00D4 via MVN */
 void League_CopyMenuOrder(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10331,6 +10391,7 @@ void League_CopyMenuOrder(CpuState *cpu) {
   }
 }
 
+/* decomp: Compute per-field maxima of player stats into $013F-$014F for graph scaling */
 void Records_CalcMaxima(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

@@ -31,6 +31,7 @@ RecompReturn Snd_QueueCommand_M0X0(CpuState *cpu);
 RecompReturn Snd_QueueCommand_M0X1(CpuState *cpu);
 RecompReturn Stunt_DequeueAndScore_M1X1(CpuState *cpu);
 
+/* decomp: pops next stunt from the player's queue, bumps SRAM stunt counters, adds score; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Stunt_DequeueAndScore_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Stunt_DequeueAndScore_M1X1";
@@ -3640,6 +3641,7 @@ RecompReturn Stunt_DequeueAndScore_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Race_PushEventFront; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_PushEventFrontLong_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_PushEventFrontLong_M0X0";
@@ -3771,6 +3773,7 @@ RecompReturn Race_PushEventFrontLong_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Insert event A at the head of P1 event queue (and P2 queue in 2P mode, $770750 bit3) so it runs next; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_PushEventFront_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_PushEventFront_M0X0";
@@ -4033,6 +4036,7 @@ RecompReturn Race_PushEventFront_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Race_QueueEvent (A=event code, Y=player 0/nonzero); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_QueueEventLong_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_QueueEventLong_M0X0";
@@ -4164,6 +4168,7 @@ RecompReturn Race_QueueEventLong_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Append stunt/announcer event A to player Y's 32-entry ring; codes < $16 cancel pending $0C9F/$12D9 state; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_QueueEvent_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_QueueEvent_M0X0";
@@ -4524,6 +4529,7 @@ RecompReturn Race_QueueEvent_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Race_ResetEventQueues; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_ResetEventQueuesLong_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_ResetEventQueuesLong_FastRom_M0X0";
@@ -4655,6 +4661,7 @@ RecompReturn Race_ResetEventQueuesLong_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Clear both players' race event rings and reset read/write indices (read=0, write=1 = empty); reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_ResetEventQueues_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_ResetEventQueues_FastRom_M0X0";
@@ -4800,6 +4807,7 @@ RecompReturn Race_ResetEventQueues_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Return number of pending events in player Y's ring (31 when read==write, i.e. full); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_GetEventQueueCount_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_GetEventQueueCount_M0X0";
@@ -5264,6 +5272,7 @@ RecompReturn Race_GetEventQueueCount_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Race_UpdateClock; called once per race frame; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_UpdateClockLong_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateClockLong_M0X0";
@@ -5395,6 +5404,7 @@ RecompReturn Race_UpdateClockLong_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Update lap split displays, then tick the race clock up or down according to $0E23; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_UpdateClock_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateClock_M0X0";
@@ -5768,6 +5778,7 @@ RecompReturn Race_UpdateClock_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Advance race clock one frame (6 frames per tenth), cap at 9:59.9, refresh digit tiles, warn sfx $021A near cap; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_TickClockUp_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_TickClockUp_M0X0";
@@ -6608,6 +6619,7 @@ RecompReturn Race_TickClockUp_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Count race clock down; beeps ($021A) in last 5 s, at 0:00.0 sets time-up flag and marks racers finished; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_TickClockDown_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_TickClockDown_M0X0";
@@ -7773,6 +7785,7 @@ RecompReturn Race_TickClockDown_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: pops next stunt from the player's queue, bumps SRAM stunt counters, adds score */
 void Stunt_DequeueAndScore(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7790,6 +7803,7 @@ void Stunt_DequeueAndScore(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Race_PushEventFront */
 void Race_PushEventFrontLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7807,6 +7821,7 @@ void Race_PushEventFrontLong(CpuState *cpu) {
   }
 }
 
+/* decomp: Insert event A at the head of P1 event queue (and P2 queue in 2P mode, $770750 bit3) so it runs next */
 void Race_PushEventFront(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7824,6 +7839,7 @@ void Race_PushEventFront(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Race_QueueEvent (A=event code, Y=player 0/nonzero) */
 void Race_QueueEventLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7841,6 +7857,7 @@ void Race_QueueEventLong(CpuState *cpu) {
   }
 }
 
+/* decomp: Append stunt/announcer event A to player Y's 32-entry ring; codes < $16 cancel pending $0C9F/$12D9 state */
 void Race_QueueEvent(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7858,6 +7875,7 @@ void Race_QueueEvent(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Race_ResetEventQueues; reached through the other ROM mirror bank */
 void Race_ResetEventQueuesLong_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7875,6 +7893,7 @@ void Race_ResetEventQueuesLong_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Clear both players' race event rings and reset read/write indices (read=0, write=1 = empty); reached through the other ROM mirror bank */
 void Race_ResetEventQueues_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7892,6 +7911,7 @@ void Race_ResetEventQueues_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Return number of pending events in player Y's ring (31 when read==write, i.e. full) */
 void Race_GetEventQueueCount(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7909,6 +7929,7 @@ void Race_GetEventQueueCount(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Race_UpdateClock; called once per race frame */
 void Race_UpdateClockLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7926,6 +7947,7 @@ void Race_UpdateClockLong(CpuState *cpu) {
   }
 }
 
+/* decomp: Update lap split displays, then tick the race clock up or down according to $0E23 */
 void Race_UpdateClock(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7943,6 +7965,7 @@ void Race_UpdateClock(CpuState *cpu) {
   }
 }
 
+/* decomp: Advance race clock one frame (6 frames per tenth), cap at 9:59.9, refresh digit tiles, warn sfx $021A near cap */
 void Race_TickClockUp(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7960,6 +7983,7 @@ void Race_TickClockUp(CpuState *cpu) {
   }
 }
 
+/* decomp: Count race clock down; beeps ($021A) in last 5 s, at 0:00.0 sets time-up flag and marks racers finished */
 void Race_TickClockDown(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

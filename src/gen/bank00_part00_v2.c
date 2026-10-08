@@ -42,6 +42,7 @@ RecompReturn Ram_MvnTrampoline_M1X1(CpuState *cpu);
 RecompReturn Unused_NmiEntryDB80_B0E1_M1X0(CpuState *cpu);
 RecompReturn Unused_NmiEntryDB80_B0E1_M1X1(CpuState *cpu);
 
+/* decomp: code the game copies to WRAM $0199 and runs there; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Ram_MvnTrampoline_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   extern RecompReturn HleRamBlockMove(CpuState *cpu);
@@ -57,6 +58,7 @@ RecompReturn Ram_MvnTrampoline_M0X0(CpuState *cpu) {
   return _r;
 }
 
+/* decomp: code the game copies to WRAM $0199 and runs there; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Ram_MvnTrampoline_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   extern RecompReturn HleRamBlockMove(CpuState *cpu);
@@ -72,6 +74,7 @@ RecompReturn Ram_MvnTrampoline_M0X1(CpuState *cpu) {
   return _r;
 }
 
+/* decomp: code the game copies to WRAM $0199 and runs there; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Ram_MvnTrampoline_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   extern RecompReturn HleRamBlockMove(CpuState *cpu);
@@ -87,6 +90,7 @@ RecompReturn Ram_MvnTrampoline_M1X0(CpuState *cpu) {
   return _r;
 }
 
+/* decomp: code the game copies to WRAM $0199 and runs there; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Ram_MvnTrampoline_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   extern RecompReturn HleRamBlockMove(CpuState *cpu);
@@ -102,6 +106,7 @@ RecompReturn Ram_MvnTrampoline_M1X1(CpuState *cpu) {
   return _r;
 }
 
+/* decomp: native/emulation IRQ vector; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn I_IRQ_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "I_IRQ_M1X1";
@@ -148,6 +153,7 @@ RecompReturn I_IRQ_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: native/emulation IRQ vector; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn I_IRQ_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "I_IRQ_M0X0";
@@ -194,6 +200,7 @@ RecompReturn I_IRQ_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: native/emulation IRQ vector; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn I_IRQ_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "I_IRQ_M0X1";
@@ -240,6 +247,7 @@ RecompReturn I_IRQ_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: native/emulation IRQ vector; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn I_IRQ_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "I_IRQ_M1X0";
@@ -286,6 +294,7 @@ RecompReturn I_IRQ_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: native NMI vector: saves state, JML [$0053] to the current NMI handler; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn I_NMI_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "I_NMI_M1X1";
@@ -455,6 +464,7 @@ RecompReturn I_NMI_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: native NMI vector: saves state, JML [$0053] to the current NMI handler; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn I_NMI_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "I_NMI_M0X0";
@@ -624,6 +634,7 @@ RecompReturn I_NMI_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: native NMI vector: saves state, JML [$0053] to the current NMI handler; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn I_NMI_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "I_NMI_M0X1";
@@ -793,6 +804,7 @@ RecompReturn I_NMI_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: native NMI vector: saves state, JML [$0053] to the current NMI handler; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn I_NMI_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "I_NMI_M1X0";
@@ -962,6 +974,7 @@ RecompReturn I_NMI_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NMI handler while racing ($0053 = $8610); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn NmiHandler_Race_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "NmiHandler_Race_M1X0";
@@ -2643,6 +2656,7 @@ RecompReturn NmiHandler_Race_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: code the game copies to WRAM $0199 and runs there */
 void Ram_MvnTrampoline(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -2660,6 +2674,7 @@ void Ram_MvnTrampoline(CpuState *cpu) {
   }
 }
 
+/* decomp: native/emulation IRQ vector */
 void I_IRQ(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -2677,6 +2692,7 @@ void I_IRQ(CpuState *cpu) {
   }
 }
 
+/* decomp: native NMI vector: saves state, JML [$0053] to the current NMI handler */
 void I_NMI(CpuState *cpu) {
   RecompReturn _r;
   uint8 _interrupted_hrv = cpu->host_return_valid;
@@ -2699,6 +2715,7 @@ void I_NMI(CpuState *cpu) {
   }
 }
 
+/* decomp: NMI handler while racing ($0053 = $8610) */
 void NmiHandler_Race(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

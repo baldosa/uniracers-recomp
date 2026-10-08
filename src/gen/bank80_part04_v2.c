@@ -62,6 +62,7 @@ RecompReturn Vram_UploadTilemapAtA8_FastRom_M1X0(CpuState *cpu);
 RecompReturn Vram_UploadTilemap_FastRom_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_FastRom_M1X0(CpuState *cpu);
 
+/* decomp: Reverse of Fx_HdmaWipeReveal: 57-frame HDMA window wipe closing; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Fx_HdmaWipeCover_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Fx_HdmaWipeCover_FastRom_M1X0";
@@ -575,6 +576,7 @@ RecompReturn Fx_HdmaWipeCover_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Forced blank, clears OAM, loads menu gfx/palettes and music, sets BG mode 3 registers; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_InitVideo_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_InitVideo_FastRom_M1X0";
@@ -1368,6 +1370,7 @@ RecompReturn Menu_InitVideo_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Sets tilemap VRAM bases, menu NMI handler, MVN trampoline at $0199, zeroes DP work vars; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Sys_InitVars_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sys_InitVars_FastRom_M1X0";
@@ -1675,6 +1678,7 @@ RecompReturn Sys_InitVars_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: On-screen keyboard name entry into buffer X (max length $4B); result flag in $94; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_NameEntry_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_NameEntry_FastRom_M1X0";
@@ -4845,6 +4849,7 @@ RecompReturn Text_NameEntry_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: LEAGUE TABLE screen for league A: rank, player, played, points; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn League_DrawTable_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_DrawTable_FastRom_M0X0";
@@ -6411,6 +6416,7 @@ RecompReturn League_DrawTable_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: LEAGUE TABLE screen for league A: rank, player, played, points; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_DrawTable_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_DrawTable_FastRom_M1X0";
@@ -7977,6 +7983,7 @@ RecompReturn League_DrawTable_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DMA ch7: $80A71C ($FF bytes) to CGRAM from colour $80; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Pal_UploadSpritePalettes_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Pal_UploadSpritePalettes_FastRom_M1X0";
@@ -8125,6 +8132,7 @@ RecompReturn Pal_UploadSpritePalettes_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Reverse of Fx_HdmaWipeReveal: 57-frame HDMA window wipe closing; reached through the other ROM mirror bank */
 void Fx_HdmaWipeCover_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8142,6 +8150,7 @@ void Fx_HdmaWipeCover_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Forced blank, clears OAM, loads menu gfx/palettes and music, sets BG mode 3 registers; reached through the other ROM mirror bank */
 void Menu_InitVideo_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8159,6 +8168,7 @@ void Menu_InitVideo_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Sets tilemap VRAM bases, menu NMI handler, MVN trampoline at $0199, zeroes DP work vars; reached through the other ROM mirror bank */
 void Sys_InitVars_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8176,6 +8186,7 @@ void Sys_InitVars_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: On-screen keyboard name entry into buffer X (max length $4B); result flag in $94; reached through the other ROM mirror bank */
 void Text_NameEntry_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8193,6 +8204,7 @@ void Text_NameEntry_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: LEAGUE TABLE screen for league A: rank, player, played, points; reached through the other ROM mirror bank */
 void League_DrawTable_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8210,6 +8222,7 @@ void League_DrawTable_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: DMA ch7: $80A71C ($FF bytes) to CGRAM from colour $80; reached through the other ROM mirror bank */
 void Pal_UploadSpritePalettes_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

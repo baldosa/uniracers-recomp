@@ -81,6 +81,7 @@ RecompReturn Vram_UploadTilemapAtA8_FastRom_M1X0(CpuState *cpu);
 RecompReturn Vram_UploadTilemapBottom_FastRom_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_FastRom_M1X0(CpuState *cpu);
 
+/* decomp: Results row: track record 1st place; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Results_RowRecord1_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_RowRecord1_FastRom_M0X0";
@@ -360,6 +361,7 @@ RecompReturn Results_RowRecord1_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Results row: track record 2nd place; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Results_RowRecord2_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_RowRecord2_FastRom_M0X0";
@@ -639,6 +641,7 @@ RecompReturn Results_RowRecord2_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Results row: track record 3rd place; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Results_RowRecord3_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_RowRecord3_FastRom_M0X0";
@@ -918,6 +921,7 @@ RecompReturn Results_RowRecord3_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Load the palette for a results row's player (id+6) into the next CGRAM slot; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Results_LoadRowPalette_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_LoadRowPalette_FastRom_M0X0";
@@ -1166,6 +1170,7 @@ RecompReturn Results_LoadRowPalette_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for Input_ReadPads; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_ReadPadsL_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_ReadPadsL_M1X0";
@@ -1297,6 +1302,7 @@ RecompReturn Input_ReadPadsL_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Read JOY1/JOY2 into $72/$74; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_ReadPads_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_ReadPads_FastRom_M1X0";
@@ -1443,6 +1449,7 @@ RecompReturn Input_ReadPads_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Point text VRAM target at $0200 and clear the text buffer; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_ClearBuffer_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_ClearBuffer_FastRom_M1X0";
@@ -1615,6 +1622,7 @@ RecompReturn Text_ClearBuffer_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Force blank, set PPU regs (mode 3) and load menu graphics/palettes, then reset OAM; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_InitScreen_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_InitScreen_FastRom_M1X0";
@@ -2895,6 +2903,7 @@ RecompReturn Menu_InitScreen_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Hide all sprites, reset OAM high table and set up the default menu sprites; enable NMI; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Oam_ResetMenuSprites_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Oam_ResetMenuSprites_FastRom_M1X0";
@@ -3554,6 +3563,7 @@ RecompReturn Oam_ResetMenuSprites_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Erase league $CC: name, members, progress and stats; save checksum; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_Clear_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_Clear_FastRom_M1X0";
@@ -4223,6 +4233,7 @@ RecompReturn League_Clear_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Hide sprites $68-$6F (row markers); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Oam_HideRowSprites_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Oam_HideRowSprites_FastRom_M1X0";
@@ -4484,6 +4495,7 @@ RecompReturn Oam_HideRowSprites_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Options 'rename player': pick player, enter name, write to SRAM; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Options_RenamePlayer_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Options_RenamePlayer_FastRom_M0X0";
@@ -5342,6 +5354,7 @@ RecompReturn Options_RenamePlayer_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Hide sprites 4-11 and restore default slide hooks ($56/$58); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_ResetSlideHooks_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ResetSlideHooks_FastRom_M1X0";
@@ -5537,6 +5550,7 @@ RecompReturn Menu_ResetSlideHooks_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Track records screen: browse tracks, show top-3 times/scores; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Records_TrackRecords_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_TrackRecords_FastRom_M0X0";
@@ -7209,6 +7223,7 @@ RecompReturn Records_TrackRecords_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: High scores screen: most wins/losses/races, best/worst ratios, top scorers; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Records_HighScores_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_HighScores_FastRom_M0X0";
@@ -9818,6 +9833,7 @@ RecompReturn Records_HighScores_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Results row: track record 1st place; reached through the other ROM mirror bank */
 void Results_RowRecord1_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9835,6 +9851,7 @@ void Results_RowRecord1_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Results row: track record 2nd place; reached through the other ROM mirror bank */
 void Results_RowRecord2_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9852,6 +9869,7 @@ void Results_RowRecord2_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Results row: track record 3rd place; reached through the other ROM mirror bank */
 void Results_RowRecord3_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9869,6 +9887,7 @@ void Results_RowRecord3_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Load the palette for a results row's player (id+6) into the next CGRAM slot; reached through the other ROM mirror bank */
 void Results_LoadRowPalette_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9886,6 +9905,7 @@ void Results_LoadRowPalette_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Long wrapper for Input_ReadPads */
 void Input_ReadPadsL(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9903,6 +9923,7 @@ void Input_ReadPadsL(CpuState *cpu) {
   }
 }
 
+/* decomp: Read JOY1/JOY2 into $72/$74; reached through the other ROM mirror bank */
 void Input_ReadPads_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9920,6 +9941,7 @@ void Input_ReadPads_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Point text VRAM target at $0200 and clear the text buffer; reached through the other ROM mirror bank */
 void Text_ClearBuffer_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9937,6 +9959,7 @@ void Text_ClearBuffer_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Force blank, set PPU regs (mode 3) and load menu graphics/palettes, then reset OAM; reached through the other ROM mirror bank */
 void Menu_InitScreen_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9954,6 +9977,7 @@ void Menu_InitScreen_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Hide all sprites, reset OAM high table and set up the default menu sprites; enable NMI; reached through the other ROM mirror bank */
 void Oam_ResetMenuSprites_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9971,6 +9995,7 @@ void Oam_ResetMenuSprites_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Erase league $CC: name, members, progress and stats; save checksum; reached through the other ROM mirror bank */
 void League_Clear_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9988,6 +10013,7 @@ void League_Clear_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Hide sprites $68-$6F (row markers); reached through the other ROM mirror bank */
 void Oam_HideRowSprites_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10005,6 +10031,7 @@ void Oam_HideRowSprites_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Options 'rename player': pick player, enter name, write to SRAM; reached through the other ROM mirror bank */
 void Options_RenamePlayer_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10022,6 +10049,7 @@ void Options_RenamePlayer_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Hide sprites 4-11 and restore default slide hooks ($56/$58); reached through the other ROM mirror bank */
 void Menu_ResetSlideHooks_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10039,6 +10067,7 @@ void Menu_ResetSlideHooks_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Track records screen: browse tracks, show top-3 times/scores; reached through the other ROM mirror bank */
 void Records_TrackRecords_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10056,6 +10085,7 @@ void Records_TrackRecords_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: High scores screen: most wins/losses/races, best/worst ratios, top scorers; reached through the other ROM mirror bank */
 void Records_HighScores_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

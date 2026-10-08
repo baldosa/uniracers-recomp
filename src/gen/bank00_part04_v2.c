@@ -78,6 +78,7 @@ RecompReturn Vram_UploadTilemapAtA8_M1X0(CpuState *cpu);
 RecompReturn Vram_UploadTilemap_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_M1X0(CpuState *cpu);
 
+/* decomp: entry point at $A01A inside Fx_HdmaWipeReveal: Uploads both tilemaps/palettes then runs a 57-frame HDMA window wipe, ends with HDMA off; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Fx_HdmaWipeReveal_A01A_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Fx_HdmaWipeReveal_A01A_M1X0";
@@ -179,6 +180,7 @@ RecompReturn Fx_HdmaWipeReveal_A01A_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Reverse of Fx_HdmaWipeReveal: 57-frame HDMA window wipe closing; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Fx_HdmaWipeCover_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Fx_HdmaWipeCover_M1X0";
@@ -692,6 +694,7 @@ RecompReturn Fx_HdmaWipeCover_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $A03D inside Fx_HdmaWipeCover: Reverse of Fx_HdmaWipeReveal: 57-frame HDMA window wipe closing; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Fx_HdmaWipeCover_A03D_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Fx_HdmaWipeCover_A03D_M1X0";
@@ -1178,6 +1181,7 @@ RecompReturn Fx_HdmaWipeCover_A03D_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Forced blank, clears OAM, loads menu gfx/palettes and music, sets BG mode 3 registers; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_InitVideo_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_InitVideo_M1X0";
@@ -1971,6 +1975,7 @@ RecompReturn Menu_InitVideo_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $A0A7 inside Menu_InitVideo: Forced blank, clears OAM, loads menu gfx/palettes and music, sets BG mode 3 registers; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_InitVideo_A0A7_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_InitVideo_A0A7_M1X0";
@@ -2711,6 +2716,7 @@ RecompReturn Menu_InitVideo_A0A7_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $A0DA inside Menu_InitVideo: Forced blank, clears OAM, loads menu gfx/palettes and music, sets BG mode 3 registers; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_InitVideo_A0DA_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_InitVideo_A0DA_M1X0";
@@ -3224,6 +3230,7 @@ RecompReturn Menu_InitVideo_A0DA_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $A0F1 inside Menu_InitVideo: Forced blank, clears OAM, loads menu gfx/palettes and music, sets BG mode 3 registers; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Menu_InitVideo_A0F1_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_InitVideo_A0F1_M0X0";
@@ -3667,6 +3674,7 @@ RecompReturn Menu_InitVideo_A0F1_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $A0FA inside Menu_InitVideo: Forced blank, clears OAM, loads menu gfx/palettes and music, sets BG mode 3 registers; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Menu_InitVideo_A0FA_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_InitVideo_A0FA_M0X0";
@@ -4061,6 +4069,7 @@ RecompReturn Menu_InitVideo_A0FA_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $A103 inside Menu_InitVideo: Forced blank, clears OAM, loads menu gfx/palettes and music, sets BG mode 3 registers; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Menu_InitVideo_A103_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_InitVideo_A103_M0X0";
@@ -4406,6 +4415,7 @@ RecompReturn Menu_InitVideo_A103_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $A10A inside Menu_InitVideo: Forced blank, clears OAM, loads menu gfx/palettes and music, sets BG mode 3 registers; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Menu_InitVideo_A10A_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_InitVideo_A10A_M0X0";
@@ -4709,6 +4719,7 @@ RecompReturn Menu_InitVideo_A10A_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $A118 inside Menu_InitVideo: Forced blank, clears OAM, loads menu gfx/palettes and music, sets BG mode 3 registers; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Menu_InitVideo_A118_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_InitVideo_A118_M0X0";
@@ -4928,6 +4939,7 @@ RecompReturn Menu_InitVideo_A118_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Sets tilemap VRAM bases, menu NMI handler, MVN trampoline at $0199, zeroes DP work vars; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Sys_InitVars_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sys_InitVars_M1X0";
@@ -5235,6 +5247,7 @@ RecompReturn Sys_InitVars_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: On-screen keyboard name entry into buffer X (max length $4B); result flag in $94; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_NameEntry_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_NameEntry_M1X0";
@@ -8405,6 +8418,7 @@ RecompReturn Text_NameEntry_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $A203 inside Text_NameEntry: On-screen keyboard name entry into buffer X (max length $4B); result flag in $94; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_NameEntry_A203_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_NameEntry_A203_M1X0";
@@ -11497,6 +11511,7 @@ RecompReturn Text_NameEntry_A203_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $A225 inside Text_NameEntry: On-screen keyboard name entry into buffer X (max length $4B); result flag in $94; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_NameEntry_A225_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_NameEntry_A225_M1X0";
@@ -14517,6 +14532,7 @@ RecompReturn Text_NameEntry_A225_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: LEAGUE TABLE screen for league A: rank, player, played, points; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn League_DrawTable_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_DrawTable_M0X0";
@@ -16083,6 +16099,7 @@ RecompReturn League_DrawTable_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: LEAGUE TABLE screen for league A: rank, player, played, points; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_DrawTable_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_DrawTable_M1X0";
@@ -17649,6 +17666,7 @@ RecompReturn League_DrawTable_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $A54C inside League_DrawTable: LEAGUE TABLE screen for league A: rank, player, played, points; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_DrawTable_A54C_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_DrawTable_A54C_M1X0";
@@ -19090,6 +19108,7 @@ RecompReturn League_DrawTable_A54C_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $A62B inside League_DrawTable: LEAGUE TABLE screen for league A: rank, player, played, points; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_DrawTable_A62B_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_DrawTable_A62B_M1X0";
@@ -20020,6 +20039,7 @@ RecompReturn League_DrawTable_A62B_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $A65D inside League_DrawTable: LEAGUE TABLE screen for league A: rank, player, played, points; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_DrawTable_A65D_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_DrawTable_A65D_M1X0";
@@ -20292,6 +20312,7 @@ RecompReturn League_DrawTable_A65D_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $A66E inside League_DrawTable: LEAGUE TABLE screen for league A: rank, player, played, points; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_DrawTable_A66E_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_DrawTable_A66E_M1X0";
@@ -20436,6 +20457,7 @@ RecompReturn League_DrawTable_A66E_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $A67D inside League_DrawTable: LEAGUE TABLE screen for league A: rank, player, played, points; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_DrawTable_A67D_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_DrawTable_A67D_M1X0";
@@ -20535,6 +20557,7 @@ RecompReturn League_DrawTable_A67D_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DMA ch7: $80A71C ($FF bytes) to CGRAM from colour $80; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Pal_UploadSpritePalettes_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Pal_UploadSpritePalettes_M1X0";
@@ -20683,6 +20706,7 @@ RecompReturn Pal_UploadSpritePalettes_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $A01A inside Fx_HdmaWipeReveal: Uploads both tilemaps/palettes then runs a 57-frame HDMA window wipe, ends with HDMA off */
 void Fx_HdmaWipeReveal_A01A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20700,6 +20724,7 @@ void Fx_HdmaWipeReveal_A01A(CpuState *cpu) {
   }
 }
 
+/* decomp: Reverse of Fx_HdmaWipeReveal: 57-frame HDMA window wipe closing */
 void Fx_HdmaWipeCover(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20717,6 +20742,7 @@ void Fx_HdmaWipeCover(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $A03D inside Fx_HdmaWipeCover: Reverse of Fx_HdmaWipeReveal: 57-frame HDMA window wipe closing */
 void Fx_HdmaWipeCover_A03D(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20734,6 +20760,7 @@ void Fx_HdmaWipeCover_A03D(CpuState *cpu) {
   }
 }
 
+/* decomp: Forced blank, clears OAM, loads menu gfx/palettes and music, sets BG mode 3 registers */
 void Menu_InitVideo(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20751,6 +20778,7 @@ void Menu_InitVideo(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $A0A7 inside Menu_InitVideo: Forced blank, clears OAM, loads menu gfx/palettes and music, sets BG mode 3 registers */
 void Menu_InitVideo_A0A7(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20768,6 +20796,7 @@ void Menu_InitVideo_A0A7(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $A0DA inside Menu_InitVideo: Forced blank, clears OAM, loads menu gfx/palettes and music, sets BG mode 3 registers */
 void Menu_InitVideo_A0DA(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20785,6 +20814,7 @@ void Menu_InitVideo_A0DA(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $A0F1 inside Menu_InitVideo: Forced blank, clears OAM, loads menu gfx/palettes and music, sets BG mode 3 registers */
 void Menu_InitVideo_A0F1(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20802,6 +20832,7 @@ void Menu_InitVideo_A0F1(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $A0FA inside Menu_InitVideo: Forced blank, clears OAM, loads menu gfx/palettes and music, sets BG mode 3 registers */
 void Menu_InitVideo_A0FA(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20819,6 +20850,7 @@ void Menu_InitVideo_A0FA(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $A103 inside Menu_InitVideo: Forced blank, clears OAM, loads menu gfx/palettes and music, sets BG mode 3 registers */
 void Menu_InitVideo_A103(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20836,6 +20868,7 @@ void Menu_InitVideo_A103(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $A10A inside Menu_InitVideo: Forced blank, clears OAM, loads menu gfx/palettes and music, sets BG mode 3 registers */
 void Menu_InitVideo_A10A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20853,6 +20886,7 @@ void Menu_InitVideo_A10A(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $A118 inside Menu_InitVideo: Forced blank, clears OAM, loads menu gfx/palettes and music, sets BG mode 3 registers */
 void Menu_InitVideo_A118(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20870,6 +20904,7 @@ void Menu_InitVideo_A118(CpuState *cpu) {
   }
 }
 
+/* decomp: Sets tilemap VRAM bases, menu NMI handler, MVN trampoline at $0199, zeroes DP work vars */
 void Sys_InitVars(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20887,6 +20922,7 @@ void Sys_InitVars(CpuState *cpu) {
   }
 }
 
+/* decomp: On-screen keyboard name entry into buffer X (max length $4B); result flag in $94 */
 void Text_NameEntry(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20904,6 +20940,7 @@ void Text_NameEntry(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $A203 inside Text_NameEntry: On-screen keyboard name entry into buffer X (max length $4B); result flag in $94 */
 void Text_NameEntry_A203(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20921,6 +20958,7 @@ void Text_NameEntry_A203(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $A225 inside Text_NameEntry: On-screen keyboard name entry into buffer X (max length $4B); result flag in $94 */
 void Text_NameEntry_A225(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20938,6 +20976,7 @@ void Text_NameEntry_A225(CpuState *cpu) {
   }
 }
 
+/* decomp: LEAGUE TABLE screen for league A: rank, player, played, points */
 void League_DrawTable(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20955,6 +20994,7 @@ void League_DrawTable(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $A54C inside League_DrawTable: LEAGUE TABLE screen for league A: rank, player, played, points */
 void League_DrawTable_A54C(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20972,6 +21012,7 @@ void League_DrawTable_A54C(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $A62B inside League_DrawTable: LEAGUE TABLE screen for league A: rank, player, played, points */
 void League_DrawTable_A62B(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -20989,6 +21030,7 @@ void League_DrawTable_A62B(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $A65D inside League_DrawTable: LEAGUE TABLE screen for league A: rank, player, played, points */
 void League_DrawTable_A65D(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -21006,6 +21048,7 @@ void League_DrawTable_A65D(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $A66E inside League_DrawTable: LEAGUE TABLE screen for league A: rank, player, played, points */
 void League_DrawTable_A66E(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -21023,6 +21066,7 @@ void League_DrawTable_A66E(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $A67D inside League_DrawTable: LEAGUE TABLE screen for league A: rank, player, played, points */
 void League_DrawTable_A67D(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -21040,6 +21084,7 @@ void League_DrawTable_A67D(CpuState *cpu) {
   }
 }
 
+/* decomp: DMA ch7: $80A71C ($FF bytes) to CGRAM from colour $80 */
 void Pal_UploadSpritePalettes(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

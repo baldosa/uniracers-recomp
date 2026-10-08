@@ -28,6 +28,7 @@ RecompReturn Uni_TrackStunts_M0X0(CpuState *cpu);
 RecompReturn Uni_TrackStunts_M1X0(CpuState *cpu);
 RecompReturn Uni_UpdateDriveAndCharge_M0X0(CpuState *cpu);
 
+/* decomp: JSL wrapper for Race_UpdateHintArrows; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_UpdateHintArrowsLong_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateHintArrowsLong_M0X0";
@@ -159,6 +160,7 @@ RecompReturn Race_UpdateHintArrowsLong_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Race_UpdateHintArrows; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Race_UpdateHintArrowsLong_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateHintArrowsLong_M1X1";
@@ -290,6 +292,7 @@ RecompReturn Race_UpdateHintArrowsLong_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: picks a hint arrow (0-3) for the trailing uni from its tile flags; $FFFF = none; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_UpdateHintArrows_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateHintArrows_M0X0";
@@ -894,6 +897,7 @@ RecompReturn Race_UpdateHintArrows_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: picks a hint arrow (0-3) for the trailing uni from its tile flags; $FFFF = none; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Race_UpdateHintArrows_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateHintArrows_M1X1";
@@ -1498,6 +1502,7 @@ RecompReturn Race_UpdateHintArrows_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: applies d-pad acceleration; Y held charges a boost that is released as speed, with charge sfx; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_UpdateDriveAndCharge_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_UpdateDriveAndCharge_M0X0";
@@ -3462,6 +3467,7 @@ RecompReturn Uni_UpdateDriveAndCharge_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: counts quarter turns/flips while airborne; on landing queues stunt and wipeout messages; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_TrackStunts_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_TrackStunts_M0X0";
@@ -6574,6 +6580,7 @@ RecompReturn Uni_TrackStunts_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: counts quarter turns/flips while airborne; on landing queues stunt and wipeout messages; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Uni_TrackStunts_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_TrackStunts_M1X0";
@@ -9686,6 +9693,7 @@ RecompReturn Uni_TrackStunts_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Race_UpdateHintArrows */
 void Race_UpdateHintArrowsLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9703,6 +9711,7 @@ void Race_UpdateHintArrowsLong(CpuState *cpu) {
   }
 }
 
+/* decomp: picks a hint arrow (0-3) for the trailing uni from its tile flags; $FFFF = none */
 void Race_UpdateHintArrows(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9720,6 +9729,7 @@ void Race_UpdateHintArrows(CpuState *cpu) {
   }
 }
 
+/* decomp: applies d-pad acceleration; Y held charges a boost that is released as speed, with charge sfx */
 void Uni_UpdateDriveAndCharge(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -9737,6 +9747,7 @@ void Uni_UpdateDriveAndCharge(CpuState *cpu) {
   }
 }
 
+/* decomp: counts quarter turns/flips while airborne; on landing queues stunt and wipeout messages */
 void Uni_TrackStunts(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

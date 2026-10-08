@@ -19,6 +19,7 @@ RecompReturn Ppu_ResetAllRegisters_FastRom_M0X1(CpuState *cpu);
 RecompReturn Sram_ClearAllL_M0X0(CpuState *cpu);
 RecompReturn Sram_ClearAll_M0X0(CpuState *cpu);
 
+/* decomp: Force blank, disable NMI/IRQ/DMA and zero every PPU/CPU I/O register; returns A=1; reached through the other ROM mirror bank; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Ppu_ResetAllRegisters_FastRom_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Ppu_ResetAllRegisters_FastRom_M0X1";
@@ -364,6 +365,7 @@ RecompReturn Ppu_ResetAllRegisters_FastRom_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for Sram_ClearAll; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Sram_ClearAllL_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_ClearAllL_M0X0";
@@ -495,6 +497,7 @@ RecompReturn Sram_ClearAllL_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Zeroes all 8KB of battery SRAM $770000-$771FFF; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Sram_ClearAll_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_ClearAll_M0X0";
@@ -656,6 +659,7 @@ RecompReturn Sram_ClearAll_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Force blank, disable NMI/IRQ/DMA and zero every PPU/CPU I/O register; returns A=1; reached through the other ROM mirror bank */
 void Ppu_ResetAllRegisters_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -673,6 +677,7 @@ void Ppu_ResetAllRegisters_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Long wrapper for Sram_ClearAll */
 void Sram_ClearAllL(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -690,6 +695,7 @@ void Sram_ClearAllL(CpuState *cpu) {
   }
 }
 
+/* decomp: Zeroes all 8KB of battery SRAM $770000-$771FFF */
 void Sram_ClearAll(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

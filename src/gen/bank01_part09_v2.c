@@ -22,6 +22,7 @@ RecompReturn Hud_InitRace_CF1D_M0X0(CpuState *cpu);
 RecompReturn Hud_InitRace_D860_M0X0(CpuState *cpu);
 RecompReturn Hud_InitRace_M1X1(CpuState *cpu);
 
+/* decomp: JSL wrapper for Hud_InitRace (called from race setup); compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Hud_InitRaceLong_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Hud_InitRaceLong_M1X1";
@@ -153,6 +154,7 @@ RecompReturn Hud_InitRaceLong_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CCE9 inside Hud_InitRaceLong: JSL wrapper for Hud_InitRace (called from race setup); compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Hud_InitRaceLong_CCE9_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Hud_InitRaceLong_CCE9_M0X1";
@@ -253,6 +255,7 @@ RecompReturn Hud_InitRaceLong_CCE9_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Reset race clock to start time, clear lap records, draw static HUD (player names from SRAM, lap/score labels); compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Hud_InitRace_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Hud_InitRace_M1X1";
@@ -6498,6 +6501,7 @@ RecompReturn Hud_InitRace_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CED1 inside Hud_InitRace: Reset race clock to start time, clear lap records, draw static HUD (player names from SRAM, lap/score labels); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Hud_InitRace_CED1_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Hud_InitRace_CED1_M0X0";
@@ -9946,6 +9950,7 @@ RecompReturn Hud_InitRace_CED1_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CF1D inside Hud_InitRace: Reset race clock to start time, clear lap records, draw static HUD (player names from SRAM, lap/score labels); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Hud_InitRace_CF1D_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Hud_InitRace_CF1D_M0X0";
@@ -13535,6 +13540,7 @@ RecompReturn Hud_InitRace_CF1D_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Hud_InitRace (called from race setup) */
 void Hud_InitRaceLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -13552,6 +13558,7 @@ void Hud_InitRaceLong(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CCE9 inside Hud_InitRaceLong: JSL wrapper for Hud_InitRace (called from race setup) */
 void Hud_InitRaceLong_CCE9(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -13569,6 +13576,7 @@ void Hud_InitRaceLong_CCE9(CpuState *cpu) {
   }
 }
 
+/* decomp: Reset race clock to start time, clear lap records, draw static HUD (player names from SRAM, lap/score labels) */
 void Hud_InitRace(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -13586,6 +13594,7 @@ void Hud_InitRace(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CED1 inside Hud_InitRace: Reset race clock to start time, clear lap records, draw static HUD (player names from SRAM, lap/score labels) */
 void Hud_InitRace_CED1(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -13603,6 +13612,7 @@ void Hud_InitRace_CED1(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CF1D inside Hud_InitRace: Reset race clock to start time, clear lap records, draw static HUD (player names from SRAM, lap/score labels) */
 void Hud_InitRace_CF1D(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

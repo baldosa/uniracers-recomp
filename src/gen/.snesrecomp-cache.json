@@ -1,5 +1,5 @@
 {
-  "analysis_input_digest": "bd7a8cb3881d85a931376054463af3b65c4024f7c3e918f1ae669ccbb191d643",
+  "analysis_input_digest": "03d180ea4ed143754d3c3bd728c17352582fa339d93accf141847b46d10bed69",
   "bank_outputs": {
     "00": [
       "bank00_part00_v2.c",
@@ -121,6 +121,7 @@
       "Attract_Main_947A",
       "Attract_Main_9481",
       "Attract_Main_94BC",
+      "Boot_ClearWRAM_92F7",
       "Boot_ClearWRAM_92FF",
       "Boot_ClearWRAM_9300",
       "Boot_ClearWRAM_9302",
@@ -491,7 +492,6 @@
       "Records_TrackRecords_D601",
       "Records_TrackRecords_D6CF",
       "Records_TrackRecords_D71B",
-      "Reset_ClearWRAM_loop00",
       "Results_AnimateLapMarkers",
       "Results_AnimateLapMarkers_9971",
       "Results_AnimateTally",
@@ -1056,6 +1056,8 @@
     "80": [
       "Attract_Main_94EB",
       "Boot_91DC",
+      "Boot_ClearWRAM",
+      "Boot_ClearWRAM_92F7_FastRom",
       "Boot_ShowLegalScreen_FastRom",
       "Boot_ShowLogo_FastRom",
       "DefineLeague_CalcItemPos_FastRom",
@@ -1188,8 +1190,6 @@
       "Records_InsertTime_FastRom",
       "Records_PlayerScores_FastRom",
       "Records_TrackRecords_FastRom",
-      "Reset_ClearWRAM",
-      "Reset_ClearWRAM_loop80",
       "Results_AnimateLapMarkers_FastRom",
       "Results_AnimateTally_FastRom",
       "Results_DrawLapRace_FastRom",
@@ -1444,8 +1444,8 @@
       "Vram_Clear",
       "Vram_Clear_Long",
       "WaitForNMI",
-      "WaitForNMI_Long",
-      "WaitForNMI_spin"
+      "WaitForNMI_D4EE",
+      "WaitForNMI_Long"
     ],
     "83": [
       "Anim_DecodeFrame_FastRom",
@@ -1590,16 +1590,16 @@
     ]
   },
   "banks": {
-    "00": "15a96008c61ad21af45a3f7b61a4d3f5e2b333b2cf2ad8c6545f8fac276833d3",
-    "01": "467c758ae73175db99af05c80a3e0c9d6769c37c1f81cad103910a4e98038b91",
-    "02": "de6babf6b8a6a3da558afb393da49a114001131697b4ca93a59c1e9f1f35f2f5",
-    "03": "6d122dbaf5f3a809d1ceed1066e93aa148c59a86f0a316703e6ba2bb1327a777",
-    "80": "9837778a94ffe17e0d89457714087c8c91fab39ae5ea3f57b402fd41306d7837",
-    "81": "6ce1b70ceaf331db2d69aaf935ae039f990bbf4a8ab47587cb4ad0f26afcd20d",
-    "82": "5817d614f48db07def70b788ea41733e69969a403375ba3f8dec1d9d0a19941f",
-    "83": "a6c0f5823f62df0caaa167605fb02d4998d60b794f9cde33740a94ddc066274d"
+    "00": "ad0fcccba85218e0017d461d4b40c2449a159a1caa4a5ef2aee048a1af98f693",
+    "01": "71e1a891fba0c48e5ee8cbdf10b39d4dfa38eb84a3581c763bb93f819c3c096c",
+    "02": "9bbdb7c61bb1a1886c8aaee5b1d850e61145e15bf36c30e9603880961f2c8bfd",
+    "03": "1d8d47e85ccc96e3fbe2b716278a59257eca2b0e8a23566f062d1d8f60773cca",
+    "80": "54df60237d3c7d5315dd5b9c308cb93c2351ffa5a0ae1c077b9e3b4baec20137",
+    "81": "7ebd0ee9f16633ce448b074d8cdbcc56c2570369584136eda1dade220b4063f5",
+    "82": "65d98efd7d78f40c8d815bbd4385dd6b10a3bade8c32e9c35aa498ab6e928dd9",
+    "83": "01f9629e6e5c3a3a3c9a37f3025e5cbc9d2a53662bda77381813ef8ca8f6bc1a"
   },
-  "config_digest": "7803c913eba0ab029a3383fc3b252442c99d4a6aacfef4542274a143edbceb55",
+  "config_digest": "900fedb3fea7cb2e999f93ba7bd0844df68bce86688ea4aac58b5cd52cc36dc2",
   "format_version": 5,
   "generator_digest": "1ab8bc12a845053865217d7b1f046173c5b13dfddc9b84dfc1c8c5e1bf89003a",
   "module": {
@@ -1609,7 +1609,7 @@
   "outputs": {
     "bank00_part00_v2.c": "e81b3911ae6bcc219ae56cd13fe4a50f3f653b80d75854141dbf0a6469141da5",
     "bank00_part01_v2.c": "fbd23806fa18bd2c9e0d0ca44736b65c1d0677ec3e6914e3b5b896197ff02e0d",
-    "bank00_part02_v2.c": "c644483bc2d8887e99e8c57014fa6cf8a276cecf55b1c5fc885c6488611f1a4b",
+    "bank00_part02_v2.c": "9648d147cbe75ae7b9e0c609d9d9842eedbfabf596f04998270e1a1070aa2db6",
     "bank00_part03_v2.c": "a567a2c5ee34c08ff2b15a2793811b70adf7736b83b65d32438f8b125bb617ed",
     "bank00_part04_v2.c": "fc72cc46f582b0ccea025303ddfa2fad8558e1abfff7125c1937953d3d41e599",
     "bank00_part05_v2.c": "5c085739dfe49300fb1f97536a92999a794bfaf28d4a7ab7665f71caf2ccbcdc",
@@ -1646,7 +1646,7 @@
     "bank03_part0f_v2.c": "9cba332efa3fe9308b2c9c4fe40be922713c286fd26a198ef3f35b8b43eb6055",
     "bank80_part00_v2.c": "1e6b6d832c0a39570e51c607dc076e062700844df2f45ec87c5fcc3efe6dac0c",
     "bank80_part01_v2.c": "9d44237771ee611ee9ed11900380bf3b7e1dc0f9a370388b51cb55cf22f9b942",
-    "bank80_part02_v2.c": "99412c93b20880948773b7929500f80b0f946510563b6bf4ca3ebd42dc9ed23c",
+    "bank80_part02_v2.c": "1751fc874f402f95952d1fa768131a64b65a6952bae6e81e3ac8b290c232d44c",
     "bank80_part03_v2.c": "28909fb41699586d6fcd194d228fb541cb989141d7a8fa02f820453aa859bd5a",
     "bank80_part04_v2.c": "d74947060e3355e53b6961fc0e93e9bd969a7d3edb4dca1d9f200a545aa76ac8",
     "bank80_part05_v2.c": "8b10a3e50c0c54b98f04fc76053df81f0fe7e54e7d79782e7f912bf9a5f0520f",
@@ -1679,7 +1679,7 @@
     "bank82_part05_v2.c": "9275bf0c53dfaa4af653fb6fd9701e27fd7e0b423c48057be46197457e847535",
     "bank82_part06_v2.c": "a8028991fc894382f9c9f33d2ee3e439d5f40c63cbb7ea568bb0953e9dfa28e1",
     "bank82_part07_v2.c": "3bb7ff955243ba62e358a716c8ebbd1165b7c4799dd54fff31e8b7b975c7bb47",
-    "bank82_part0a_v2.c": "116d8c494d0abd259172ba48b368944fec2bfbc41fb3f5c1fc714d7f736732d2",
+    "bank82_part0a_v2.c": "9f438ea0d76352024e7bf4269ee478f886977eb6eb299f84c0925bcedcfe8e89",
     "bank82_part0b_v2.c": "786f82be069e374562b566cd9157337edf955ecef800ffc42a8a05eed219e41a",
     "bank82_part0c_v2.c": "f09a35f9c845c7392b81e0c331d4a54aa9b9cc24f7a93edca0cac5df6513cdd6",
     "bank83_part00_v2.c": "057d06d8a753b7abb8db294095f3d59de6fc9050b15b018c9b0a7f9729539eef",
@@ -1696,8 +1696,8 @@
     "bank83_part0d_v2.c": "103b1fe16299c59bb9b2f691c7184c360421a56bd4c85a654bd84399a42509b4",
     "bank83_part0e_v2.c": "89cbbd2563031ef14799f66308466f695efbcf29cdf235074dd31d2d2010cb75",
     "bank83_part0f_v2.c": "ae0f85f4f8e048455a99ecc7a60dc1d25589ec92d7b56e8c9ddafd608a850aa1",
-    "dispatch_v2.c": "08138318254e028482d6a4a3a3ed8fc7b648dd365bd0138eef3e5e51ab3dc103",
-    "module_v2.c": "d0a97e4d6b4b2a260e6c826fcd7f160a66b52dc5aa55fc8dde1799724e03f59c",
+    "dispatch_v2.c": "2ade49aeb232c6fa6d46d8b1ba97990ff67f8cf5fb6bb100ef814f247b867e7f",
+    "module_v2.c": "fd0b8545becebf45e390771aeddac0b1587f6db268cccbf0b5e4160f7130684f",
     "program_manifest.json": "3686668a9d42a4a14296bca9578f72a3312d0833278bf1377072e2f40c253036",
     "unresolved_stubs_v2.c": "47085f485c3e8d488d105e0aa641f1300af226efabf3dd2147b09c137edb49b7"
   },

@@ -99,6 +99,8 @@ if [ "$VERIFY" -eq 1 ]; then GEN_ARGS+=("${VERIFY_ARGS[@]}"); fi
 
 echo "== Generating src/gen =="
 "$PYTHON" "$CLI" generate "${GEN_ARGS[@]}"
+# Each function gets the decomp's description as a comment.
+"$PYTHON" "$ROOT/tools/decomp/annotate_gen.py"
 
 echo
 echo "Done. Build with:"

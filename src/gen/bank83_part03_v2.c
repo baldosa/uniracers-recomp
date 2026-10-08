@@ -56,6 +56,7 @@ RecompReturn Track_SetCurrentLong_M1X0(CpuState *cpu);
 RecompReturn Track_SetCurrent_M0X0(CpuState *cpu);
 RecompReturn Track_SetCurrent_M1X0(CpuState *cpu);
 
+/* decomp: Return value A as percent of player's race count; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Records_PercentOfRaces_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_PercentOfRaces_FastRom_M0X0";
@@ -213,6 +214,7 @@ RecompReturn Records_PercentOfRaces_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Restore WRAM $0000-$019D from SRAM copy $770E6B; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Sram_RestoreDirectPage_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_RestoreDirectPage_FastRom_M1X0";
@@ -406,6 +408,7 @@ RecompReturn Sram_RestoreDirectPage_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Save WRAM $0000-$019D to SRAM $770E6B; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Sram_SaveDirectPage_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_SaveDirectPage_M1X0";
@@ -599,6 +602,7 @@ RecompReturn Sram_SaveDirectPage_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Load league $CC next track and the two next racers into $017D/$017F; Z clear if none; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_SetupNextRace_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_SetupNextRace_M1X0";
@@ -1133,6 +1137,7 @@ RecompReturn League_SetupNextRace_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Call $80C1F1 unless race kind $77074B is 1; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_FadeUnlessKind1_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_FadeUnlessKind1_FastRom_M1X0";
@@ -1316,6 +1321,7 @@ RecompReturn Race_FadeUnlessKind1_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for Track_SetCurrent; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Track_SetCurrentLong_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Track_SetCurrentLong_M0X0";
@@ -1447,6 +1453,7 @@ RecompReturn Track_SetCurrentLong_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for Track_SetCurrent; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Track_SetCurrentLong_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Track_SetCurrentLong_M1X0";
@@ -1578,6 +1585,7 @@ RecompReturn Track_SetCurrentLong_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: From track $CE set tier $D0, track slot $77074C, race kind $77074B, music $770744; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Track_SetCurrent_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Track_SetCurrent_M0X0";
@@ -1897,6 +1905,7 @@ RecompReturn Track_SetCurrent_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: From track $CE set tier $D0, track slot $77074C, race kind $77074B, music $770744; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Track_SetCurrent_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Track_SetCurrent_M1X0";
@@ -2216,6 +2225,7 @@ RecompReturn Track_SetCurrent_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Z set if P1 and P2 results are equal (time or stunt score by race kind); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_CheckTie_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_CheckTie_M1X0";
@@ -2544,6 +2554,7 @@ RecompReturn Race_CheckTie_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for Oam_InitCursorSprites; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Oam_InitCursorSpritesLong_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Oam_InitCursorSpritesLong_M1X0";
@@ -2675,6 +2686,7 @@ RecompReturn Oam_InitCursorSpritesLong_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Initialise sprite position/attribute words at $0C60-$0C6E; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Oam_InitCursorSprites_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Oam_InitCursorSprites_M1X0";
@@ -2818,6 +2830,7 @@ RecompReturn Oam_InitCursorSprites_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Per-frame menu sprite animation: cycle tiles/colours of OAM buffer entries; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Menu_AnimateSprites_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_AnimateSprites_FastRom_M0X0";
@@ -3650,6 +3663,7 @@ RecompReturn Menu_AnimateSprites_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Per-frame menu sprite animation: cycle tiles/colours of OAM buffer entries; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_AnimateSprites_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_AnimateSprites_FastRom_M1X0";
@@ -4481,6 +4495,7 @@ RecompReturn Menu_AnimateSprites_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for Player_Delete; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Player_DeleteLong_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Player_DeleteLong_M1X0";
@@ -4612,6 +4627,7 @@ RecompReturn Player_DeleteLong_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Erase profile $CA: name, stats, bests, VS counts, records, leagues; update checksums; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Player_Delete_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Player_Delete_M1X0";
@@ -5673,6 +5689,7 @@ RecompReturn Player_Delete_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Remove player $CA from league $0C roster, points and results, shifting entries; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn League_RemovePlayer_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_RemovePlayer_M0X0";
@@ -6924,6 +6941,7 @@ RecompReturn League_RemovePlayer_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Return $7710FB*100/$7710F9, halving both first to avoid overflow; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Math_Percent_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_Percent_M0X0";
@@ -7234,6 +7252,7 @@ RecompReturn Math_Percent_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: X = $CE*2; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Index_TrackX2_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Index_TrackX2_FastRom_M0X0";
@@ -7399,6 +7418,7 @@ RecompReturn Index_TrackX2_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: X = $CE; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Index_Track_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Index_Track_FastRom_M1X0";
@@ -7557,6 +7577,7 @@ RecompReturn Index_Track_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: X = $CE; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Index_Track_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Index_Track_FastRom_M0X0";
@@ -7716,6 +7737,7 @@ RecompReturn Index_Track_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: X = ($CA*50 + $CE)*2 into personal bests; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Index_PlayerBest_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Index_PlayerBest_FastRom_M0X0";
@@ -8030,6 +8052,7 @@ RecompReturn Index_PlayerBest_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: X = $CC*32 + 4*(rank of $00D4[A] among the 8 entries); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn League_IndexRankSlot_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_IndexRankSlot_M0X0";
@@ -8409,6 +8432,7 @@ RecompReturn League_IndexRankSlot_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: X = $D0*16 + $CA into medals $77069C; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Index_TierMedal_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Index_TierMedal_FastRom_M1X0";
@@ -8619,6 +8643,7 @@ RecompReturn Index_TierMedal_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: X = $D0*16 + $CA into medals $77069C; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Index_TierMedal_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Index_TierMedal_FastRom_M0X0";
@@ -8829,6 +8854,7 @@ RecompReturn Index_TierMedal_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: X = $CE & $3F; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Index_Track6_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Index_Track6_M1X0";
@@ -8988,6 +9014,7 @@ RecompReturn Index_Track6_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: X = $D0*5; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Index_TierX5_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Index_TierX5_FastRom_M0X0";
@@ -9196,6 +9223,7 @@ RecompReturn Index_TierX5_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: X = $D0*5; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Index_TierX5_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Index_TierX5_FastRom_M1X0";
@@ -9404,6 +9432,7 @@ RecompReturn Index_TierX5_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Return stunt score target for tier $D0 and current medal level (DATA_83A218); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn League_GetStuntTarget_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_GetStuntTarget_M0X0";
@@ -9718,6 +9747,7 @@ RecompReturn League_GetStuntTarget_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Return unlocked tier of player $CA (mode 1) or highest of all players; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Player_GetTier_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Player_GetTier_FastRom_M1X0";
@@ -10022,6 +10052,7 @@ RecompReturn Player_GetTier_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Return unlocked tier of player $CA (mode 1) or highest of all players; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Player_GetTier_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Player_GetTier_FastRom_M0X0";
@@ -10326,6 +10357,7 @@ RecompReturn Player_GetTier_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Store A as unlocked tier of player $CA ($7710D3); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Player_SetTier_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Player_SetTier_M1X0";
@@ -10507,6 +10539,7 @@ RecompReturn Player_SetTier_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Return promotion flag of player $CA in mode 1, else 0; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Player_GetPromoted_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Player_GetPromoted_FastRom_M1X0";
@@ -10795,6 +10828,7 @@ RecompReturn Player_GetPromoted_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Store A as promotion flag of player $CA ($7710FD); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Player_SetPromoted_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Player_SetPromoted_M1X0";
@@ -10976,6 +11010,7 @@ RecompReturn Player_SetPromoted_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Return value A as percent of player's race count; reached through the other ROM mirror bank */
 void Records_PercentOfRaces_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10993,6 +11028,7 @@ void Records_PercentOfRaces_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Restore WRAM $0000-$019D from SRAM copy $770E6B; reached through the other ROM mirror bank */
 void Sram_RestoreDirectPage_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11010,6 +11046,7 @@ void Sram_RestoreDirectPage_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Save WRAM $0000-$019D to SRAM $770E6B */
 void Sram_SaveDirectPage(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11027,6 +11064,7 @@ void Sram_SaveDirectPage(CpuState *cpu) {
   }
 }
 
+/* decomp: Load league $CC next track and the two next racers into $017D/$017F; Z clear if none */
 void League_SetupNextRace(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11044,6 +11082,7 @@ void League_SetupNextRace(CpuState *cpu) {
   }
 }
 
+/* decomp: Call $80C1F1 unless race kind $77074B is 1; reached through the other ROM mirror bank */
 void Race_FadeUnlessKind1_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11061,6 +11100,7 @@ void Race_FadeUnlessKind1_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Long wrapper for Track_SetCurrent */
 void Track_SetCurrentLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11078,6 +11118,7 @@ void Track_SetCurrentLong(CpuState *cpu) {
   }
 }
 
+/* decomp: From track $CE set tier $D0, track slot $77074C, race kind $77074B, music $770744 */
 void Track_SetCurrent(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11095,6 +11136,7 @@ void Track_SetCurrent(CpuState *cpu) {
   }
 }
 
+/* decomp: Z set if P1 and P2 results are equal (time or stunt score by race kind) */
 void Race_CheckTie(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11112,6 +11154,7 @@ void Race_CheckTie(CpuState *cpu) {
   }
 }
 
+/* decomp: Long wrapper for Oam_InitCursorSprites */
 void Oam_InitCursorSpritesLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11129,6 +11172,7 @@ void Oam_InitCursorSpritesLong(CpuState *cpu) {
   }
 }
 
+/* decomp: Initialise sprite position/attribute words at $0C60-$0C6E */
 void Oam_InitCursorSprites(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11146,6 +11190,7 @@ void Oam_InitCursorSprites(CpuState *cpu) {
   }
 }
 
+/* decomp: Per-frame menu sprite animation: cycle tiles/colours of OAM buffer entries; reached through the other ROM mirror bank */
 void Menu_AnimateSprites_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11163,6 +11208,7 @@ void Menu_AnimateSprites_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Long wrapper for Player_Delete */
 void Player_DeleteLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11180,6 +11226,7 @@ void Player_DeleteLong(CpuState *cpu) {
   }
 }
 
+/* decomp: Erase profile $CA: name, stats, bests, VS counts, records, leagues; update checksums */
 void Player_Delete(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11197,6 +11244,7 @@ void Player_Delete(CpuState *cpu) {
   }
 }
 
+/* decomp: Remove player $CA from league $0C roster, points and results, shifting entries */
 void League_RemovePlayer(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11214,6 +11262,7 @@ void League_RemovePlayer(CpuState *cpu) {
   }
 }
 
+/* decomp: Return $7710FB*100/$7710F9, halving both first to avoid overflow */
 void Math_Percent(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11231,6 +11280,7 @@ void Math_Percent(CpuState *cpu) {
   }
 }
 
+/* decomp: X = $CE*2; reached through the other ROM mirror bank */
 void Index_TrackX2_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11248,6 +11298,7 @@ void Index_TrackX2_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: X = $CE; reached through the other ROM mirror bank */
 void Index_Track_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11265,6 +11316,7 @@ void Index_Track_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: X = ($CA*50 + $CE)*2 into personal bests; reached through the other ROM mirror bank */
 void Index_PlayerBest_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11282,6 +11334,7 @@ void Index_PlayerBest_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: X = $CC*32 + 4*(rank of $00D4[A] among the 8 entries) */
 void League_IndexRankSlot(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11299,6 +11352,7 @@ void League_IndexRankSlot(CpuState *cpu) {
   }
 }
 
+/* decomp: X = $D0*16 + $CA into medals $77069C; reached through the other ROM mirror bank */
 void Index_TierMedal_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11316,6 +11370,7 @@ void Index_TierMedal_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: X = $CE & $3F */
 void Index_Track6(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11333,6 +11388,7 @@ void Index_Track6(CpuState *cpu) {
   }
 }
 
+/* decomp: X = $D0*5; reached through the other ROM mirror bank */
 void Index_TierX5_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11350,6 +11406,7 @@ void Index_TierX5_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Return stunt score target for tier $D0 and current medal level (DATA_83A218) */
 void League_GetStuntTarget(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11367,6 +11424,7 @@ void League_GetStuntTarget(CpuState *cpu) {
   }
 }
 
+/* decomp: Return unlocked tier of player $CA (mode 1) or highest of all players; reached through the other ROM mirror bank */
 void Player_GetTier_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11384,6 +11442,7 @@ void Player_GetTier_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Store A as unlocked tier of player $CA ($7710D3) */
 void Player_SetTier(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11401,6 +11460,7 @@ void Player_SetTier(CpuState *cpu) {
   }
 }
 
+/* decomp: Return promotion flag of player $CA in mode 1, else 0; reached through the other ROM mirror bank */
 void Player_GetPromoted_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -11418,6 +11478,7 @@ void Player_GetPromoted_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Store A as promotion flag of player $CA ($7710FD) */
 void Player_SetPromoted(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

@@ -30,6 +30,7 @@ RecompReturn Race_UpdateCamera_M0X0(CpuState *cpu);
 RecompReturn Track_SetupSizeParamsLong_FastRom_M0X0(CpuState *cpu);
 RecompReturn Track_SetupSizeParams_FastRom_M0X0(CpuState *cpu);
 
+/* decomp: moves lead value $02 one step toward 2-(velocity $00 / 8); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Cam_StepLeadTowardVelocity_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Cam_StepLeadTowardVelocity_M0X0";
@@ -348,6 +349,7 @@ RecompReturn Cam_StepLeadTowardVelocity_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Track_SetupSizeParams; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Track_SetupSizeParamsLong_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Track_SetupSizeParamsLong_FastRom_M0X0";
@@ -479,6 +481,7 @@ RecompReturn Track_SetupSizeParamsLong_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: sets map wrap masks, row stride and camera limits from track size code $7F000D; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Track_SetupSizeParams_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Track_SetupSizeParams_FastRom_M0X0";
@@ -1489,6 +1492,7 @@ RecompReturn Track_SetupSizeParams_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Race_UpdateCamera (per-frame race update); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_UpdateCameraLong_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateCameraLong_M0X0";
@@ -1691,6 +1695,7 @@ RecompReturn Race_UpdateCameraLong_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: applies camera velocities to view scroll ($0419/$041D, P2 $041B/$041F), streams BG edges; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_UpdateCamera_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateCamera_M0X0";
@@ -2301,6 +2306,7 @@ RecompReturn Race_UpdateCamera_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: decides scroll edges and builds new tilemap row/column strips for each view; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Bg_StreamTilemapEdges_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Bg_StreamTilemapEdges_M0X0";
@@ -4139,6 +4145,7 @@ RecompReturn Bg_StreamTilemapEdges_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: moves lead value $02 one step toward 2-(velocity $00 / 8) */
 void Cam_StepLeadTowardVelocity(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -4156,6 +4163,7 @@ void Cam_StepLeadTowardVelocity(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Track_SetupSizeParams; reached through the other ROM mirror bank */
 void Track_SetupSizeParamsLong_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -4173,6 +4181,7 @@ void Track_SetupSizeParamsLong_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: sets map wrap masks, row stride and camera limits from track size code $7F000D; reached through the other ROM mirror bank */
 void Track_SetupSizeParams_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -4190,6 +4199,7 @@ void Track_SetupSizeParams_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Race_UpdateCamera (per-frame race update) */
 void Race_UpdateCameraLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -4207,6 +4217,7 @@ void Race_UpdateCameraLong(CpuState *cpu) {
   }
 }
 
+/* decomp: applies camera velocities to view scroll ($0419/$041D, P2 $041B/$041F), streams BG edges */
 void Race_UpdateCamera(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -4224,6 +4235,7 @@ void Race_UpdateCamera(CpuState *cpu) {
   }
 }
 
+/* decomp: decides scroll edges and builds new tilemap row/column strips for each view */
 void Bg_StreamTilemapEdges(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

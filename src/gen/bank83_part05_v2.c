@@ -39,6 +39,7 @@ RecompReturn Snd_Play01_M0X0(CpuState *cpu);
 RecompReturn Snd_SendQueuedCommand_M0X0(CpuState *cpu);
 RecompReturn Snd_SendQueuedCommand_M1X0(CpuState *cpu);
 
+/* decomp: Wait for start of next vblank via HVBJOY while pumping the sound queue; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Ppu_WaitVBlank_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Ppu_WaitVBlank_FastRom_M0X0";
@@ -280,6 +281,7 @@ RecompReturn Ppu_WaitVBlank_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Wait for start of next vblank via HVBJOY while pumping the sound queue; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Ppu_WaitVBlank_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Ppu_WaitVBlank_FastRom_M1X0";
@@ -521,6 +523,7 @@ RecompReturn Ppu_WaitVBlank_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Medal award cutscene for player's tier medal, then rebuild menu screen; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Award_ShowMedal_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Award_ShowMedal_M1X0";
@@ -2913,6 +2916,7 @@ RecompReturn Award_ShowMedal_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Wait for start of next vblank via HVBJOY while pumping the sound queue; reached through the other ROM mirror bank */
 void Ppu_WaitVBlank_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -2930,6 +2934,7 @@ void Ppu_WaitVBlank_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Medal award cutscene for player's tier medal, then rebuild menu screen */
 void Award_ShowMedal(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

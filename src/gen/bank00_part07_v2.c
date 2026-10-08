@@ -143,6 +143,7 @@ RecompReturn Vs_SortPlayersForRace_FastRom_M1X0(CpuState *cpu);
 RecompReturn Vs_UnswapPlayers_FastRom_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_M1X0(CpuState *cpu);
 
+/* decomp: NE if Down held on an enabled pad; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsDownHeld_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsDownHeld_M1X0";
@@ -464,6 +465,7 @@ RecompReturn Input_IsDownHeld_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if Start or A held (mask 1080) on an enabled pad; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsStartOrAHeld_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsStartOrAHeld_M1X0";
@@ -785,6 +787,7 @@ RecompReturn Input_IsStartOrAHeld_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if Select held on an enabled pad; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsSelectHeld_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsSelectHeld_M1X0";
@@ -1106,6 +1109,7 @@ RecompReturn Input_IsSelectHeld_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if Start held on an enabled pad; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsStartHeld_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsStartHeld_M1X0";
@@ -1427,6 +1431,7 @@ RecompReturn Input_IsStartHeld_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Reset menu cursor $9B to 0, then run the vertical text menu; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_RunVerticalFromTop_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_RunVerticalFromTop_M1X0";
@@ -3001,6 +3006,7 @@ RecompReturn Menu_RunVerticalFromTop_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Place cursor sprite at item $9B (x from table [$AE]) and run the vertical menu loop; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_RunVertical_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_RunVertical_M1X0";
@@ -4572,6 +4578,7 @@ RecompReturn Menu_RunVertical_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Vertical menu loop: up/down moves cursor with sound, confirm/cancel set $A6 and return choice; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_VerticalLoop_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_VerticalLoop_M1X0";
@@ -5875,6 +5882,7 @@ RecompReturn Menu_VerticalLoop_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $B96B inside Menu_VerticalLoop: Vertical menu loop: up/down moves cursor with sound, confirm/cancel set $A6 and return choice; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_VerticalLoop_B96B_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_VerticalLoop_B96B_M1X0";
@@ -7116,6 +7124,7 @@ RecompReturn Menu_VerticalLoop_B96B_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Variant of Menu_RunVertical with a different row base (cursor Y base $48); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_RunVerticalAlt_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_RunVerticalAlt_M1X0";
@@ -8683,6 +8692,7 @@ RecompReturn Menu_RunVerticalAlt_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Variant vertical menu loop (also clears $7710D2 each frame); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_VerticalLoopAlt_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_VerticalLoopAlt_M1X0";
@@ -10000,6 +10010,7 @@ RecompReturn Menu_VerticalLoopAlt_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BA97 inside Menu_VerticalLoopAlt: Variant vertical menu loop (also clears $7710D2 each frame); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_VerticalLoopAlt_BA97_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_VerticalLoopAlt_BA97_M1X0";
@@ -11248,6 +11259,7 @@ RecompReturn Menu_VerticalLoopAlt_BA97_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Mode_OnePlayerRace_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_OnePlayerRace_M0X0";
@@ -12860,6 +12872,7 @@ RecompReturn Mode_OnePlayerRace_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BB9A inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_OnePlayerRace_BB9A_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_OnePlayerRace_BB9A_M1X0";
@@ -14418,6 +14431,7 @@ RecompReturn Mode_OnePlayerRace_BB9A_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BBE2 inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_OnePlayerRace_BBE2_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_OnePlayerRace_BBE2_M1X0";
@@ -15976,6 +15990,7 @@ RecompReturn Mode_OnePlayerRace_BBE2_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BBE5 inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_OnePlayerRace_BBE5_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_OnePlayerRace_BBE5_M1X0";
@@ -17534,6 +17549,7 @@ RecompReturn Mode_OnePlayerRace_BBE5_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BBE8 inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_OnePlayerRace_BBE8_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_OnePlayerRace_BBE8_M1X0";
@@ -19092,6 +19108,7 @@ RecompReturn Mode_OnePlayerRace_BBE8_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BBF9 inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_OnePlayerRace_BBF9_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_OnePlayerRace_BBF9_M1X0";
@@ -20650,6 +20667,7 @@ RecompReturn Mode_OnePlayerRace_BBF9_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BC08 inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_OnePlayerRace_BC08_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_OnePlayerRace_BC08_M1X0";
@@ -22208,6 +22226,7 @@ RecompReturn Mode_OnePlayerRace_BC08_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BC33 inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_OnePlayerRace_BC33_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_OnePlayerRace_BC33_M1X0";
@@ -23766,6 +23785,7 @@ RecompReturn Mode_OnePlayerRace_BC33_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BC41 inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_OnePlayerRace_BC41_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_OnePlayerRace_BC41_M1X0";
@@ -25324,6 +25344,7 @@ RecompReturn Mode_OnePlayerRace_BC41_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BC44 inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_OnePlayerRace_BC44_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_OnePlayerRace_BC44_M1X0";
@@ -26882,6 +26903,7 @@ RecompReturn Mode_OnePlayerRace_BC44_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BC4C inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_OnePlayerRace_BC4C_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_OnePlayerRace_BC4C_M1X0";
@@ -28440,6 +28462,7 @@ RecompReturn Mode_OnePlayerRace_BC4C_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BC53 inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_OnePlayerRace_BC53_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_OnePlayerRace_BC53_M1X0";
@@ -29998,6 +30021,7 @@ RecompReturn Mode_OnePlayerRace_BC53_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BC59 inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_OnePlayerRace_BC59_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_OnePlayerRace_BC59_M1X0";
@@ -31556,6 +31580,7 @@ RecompReturn Mode_OnePlayerRace_BC59_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BC5C inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_OnePlayerRace_BC5C_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_OnePlayerRace_BC5C_M1X0";
@@ -33114,6 +33139,7 @@ RecompReturn Mode_OnePlayerRace_BC5C_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BC66 inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_OnePlayerRace_BC66_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_OnePlayerRace_BC66_M1X0";
@@ -34672,6 +34698,7 @@ RecompReturn Mode_OnePlayerRace_BC66_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BC69 inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_OnePlayerRace_BC69_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_OnePlayerRace_BC69_M1X0";
@@ -36230,6 +36257,7 @@ RecompReturn Mode_OnePlayerRace_BC69_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Mode_TwoPlayerRace_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_TwoPlayerRace_M0X0";
@@ -37742,6 +37770,7 @@ RecompReturn Mode_TwoPlayerRace_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BCBD inside Mode_TwoPlayerRace: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_TwoPlayerRace_BCBD_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_TwoPlayerRace_BCBD_M1X0";
@@ -39200,6 +39229,7 @@ RecompReturn Mode_TwoPlayerRace_BCBD_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BCD6 inside Mode_TwoPlayerRace: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_TwoPlayerRace_BCD6_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_TwoPlayerRace_BCD6_M1X0";
@@ -40658,6 +40688,7 @@ RecompReturn Mode_TwoPlayerRace_BCD6_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BCDD inside Mode_TwoPlayerRace: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_TwoPlayerRace_BCDD_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_TwoPlayerRace_BCDD_M1X0";
@@ -42116,6 +42147,7 @@ RecompReturn Mode_TwoPlayerRace_BCDD_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BD21 inside Mode_TwoPlayerRace: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_TwoPlayerRace_BD21_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_TwoPlayerRace_BD21_M1X0";
@@ -43574,6 +43606,7 @@ RecompReturn Mode_TwoPlayerRace_BD21_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BD24 inside Mode_TwoPlayerRace: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_TwoPlayerRace_BD24_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_TwoPlayerRace_BD24_M1X0";
@@ -45032,6 +45065,7 @@ RecompReturn Mode_TwoPlayerRace_BD24_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BD27 inside Mode_TwoPlayerRace: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_TwoPlayerRace_BD27_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_TwoPlayerRace_BD27_M1X0";
@@ -46490,6 +46524,7 @@ RecompReturn Mode_TwoPlayerRace_BD27_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BD34 inside Mode_TwoPlayerRace: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_TwoPlayerRace_BD34_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_TwoPlayerRace_BD34_M1X0";
@@ -47948,6 +47983,7 @@ RecompReturn Mode_TwoPlayerRace_BD34_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BD43 inside Mode_TwoPlayerRace: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_TwoPlayerRace_BD43_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_TwoPlayerRace_BD43_M1X0";
@@ -49406,6 +49442,7 @@ RecompReturn Mode_TwoPlayerRace_BD43_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BD4B inside Mode_TwoPlayerRace: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_TwoPlayerRace_BD4B_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_TwoPlayerRace_BD4B_M1X0";
@@ -50864,6 +50901,7 @@ RecompReturn Mode_TwoPlayerRace_BD4B_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BD68 inside Mode_TwoPlayerRace: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_TwoPlayerRace_BD68_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_TwoPlayerRace_BD68_M1X0";
@@ -52322,6 +52360,7 @@ RecompReturn Mode_TwoPlayerRace_BD68_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BD6B inside Mode_TwoPlayerRace: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_TwoPlayerRace_BD6B_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_TwoPlayerRace_BD6B_M1X0";
@@ -53780,6 +53819,7 @@ RecompReturn Mode_TwoPlayerRace_BD6B_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BD73 inside Mode_TwoPlayerRace: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_TwoPlayerRace_BD73_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_TwoPlayerRace_BD73_M1X0";
@@ -55238,6 +55278,7 @@ RecompReturn Mode_TwoPlayerRace_BD73_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Main-menu mode 3: pick league, tour selection and league race loop; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Mode_League_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_League_M0X0";
@@ -57469,6 +57510,7 @@ RecompReturn Mode_League_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BDCF inside Mode_League: Main-menu mode 3: pick league, tour selection and league race loop; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_League_BDCF_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_League_BDCF_M1X0";
@@ -59646,6 +59688,7 @@ RecompReturn Mode_League_BDCF_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BE06 inside Mode_League: Main-menu mode 3: pick league, tour selection and league race loop; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_League_BE06_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_League_BE06_M1X0";
@@ -61823,6 +61866,7 @@ RecompReturn Mode_League_BE06_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BE09 inside Mode_League: Main-menu mode 3: pick league, tour selection and league race loop; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_League_BE09_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_League_BE09_M1X0";
@@ -64000,6 +64044,7 @@ RecompReturn Mode_League_BE09_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BE1C inside Mode_League: Main-menu mode 3: pick league, tour selection and league race loop; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_League_BE1C_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_League_BE1C_M1X0";
@@ -66177,6 +66222,7 @@ RecompReturn Mode_League_BE1C_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BE45 inside Mode_League: Main-menu mode 3: pick league, tour selection and league race loop; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_League_BE45_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_League_BE45_M1X0";
@@ -68354,6 +68400,7 @@ RecompReturn Mode_League_BE45_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BEEB inside Mode_League: Main-menu mode 3: pick league, tour selection and league race loop; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_League_BEEB_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_League_BEEB_M1X0";
@@ -70531,6 +70578,7 @@ RecompReturn Mode_League_BEEB_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BEFA inside Mode_League: Main-menu mode 3: pick league, tour selection and league race loop; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_League_BEFA_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_League_BEFA_M1X0";
@@ -72708,6 +72756,7 @@ RecompReturn Mode_League_BEFA_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BEFD inside Mode_League: Main-menu mode 3: pick league, tour selection and league race loop; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_League_BEFD_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_League_BEFD_M1X0";
@@ -74885,6 +74934,7 @@ RecompReturn Mode_League_BEFD_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BF0D inside Mode_League: Main-menu mode 3: pick league, tour selection and league race loop; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_League_BF0D_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_League_BF0D_M1X0";
@@ -77062,6 +77112,7 @@ RecompReturn Mode_League_BF0D_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Main-menu mode 2: pick players one/two, winner stays, 'PICK CHALLENGER'/'REMATCH'; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Mode_ChallengeRace_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_ChallengeRace_M0X0";
@@ -79559,6 +79610,7 @@ RecompReturn Mode_ChallengeRace_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BF47 inside Mode_ChallengeRace: Main-menu mode 2: pick players one/two, winner stays, 'PICK CHALLENGER'/'REMATCH'; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_ChallengeRace_BF47_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_ChallengeRace_BF47_M1X0";
@@ -81965,6 +82017,7 @@ RecompReturn Mode_ChallengeRace_BF47_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BF64 inside Mode_ChallengeRace: Main-menu mode 2: pick players one/two, winner stays, 'PICK CHALLENGER'/'REMATCH'; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_ChallengeRace_BF64_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_ChallengeRace_BF64_M1X0";
@@ -84371,6 +84424,7 @@ RecompReturn Mode_ChallengeRace_BF64_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BF67 inside Mode_ChallengeRace: Main-menu mode 2: pick players one/two, winner stays, 'PICK CHALLENGER'/'REMATCH'; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_ChallengeRace_BF67_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_ChallengeRace_BF67_M1X0";
@@ -86777,6 +86831,7 @@ RecompReturn Mode_ChallengeRace_BF67_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BF9C inside Mode_ChallengeRace: Main-menu mode 2: pick players one/two, winner stays, 'PICK CHALLENGER'/'REMATCH'; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_ChallengeRace_BF9C_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_ChallengeRace_BF9C_M1X0";
@@ -89183,6 +89238,7 @@ RecompReturn Mode_ChallengeRace_BF9C_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BF9F inside Mode_ChallengeRace: Main-menu mode 2: pick players one/two, winner stays, 'PICK CHALLENGER'/'REMATCH'; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_ChallengeRace_BF9F_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_ChallengeRace_BF9F_M1X0";
@@ -91589,6 +91645,7 @@ RecompReturn Mode_ChallengeRace_BF9F_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BFA2 inside Mode_ChallengeRace: Main-menu mode 2: pick players one/two, winner stays, 'PICK CHALLENGER'/'REMATCH'; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_ChallengeRace_BFA2_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_ChallengeRace_BFA2_M1X0";
@@ -93995,6 +94052,7 @@ RecompReturn Mode_ChallengeRace_BFA2_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BFB7 inside Mode_ChallengeRace: Main-menu mode 2: pick players one/two, winner stays, 'PICK CHALLENGER'/'REMATCH'; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_ChallengeRace_BFB7_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_ChallengeRace_BFB7_M1X0";
@@ -96401,6 +96459,7 @@ RecompReturn Mode_ChallengeRace_BFB7_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BFC6 inside Mode_ChallengeRace: Main-menu mode 2: pick players one/two, winner stays, 'PICK CHALLENGER'/'REMATCH'; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_ChallengeRace_BFC6_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_ChallengeRace_BFC6_M1X0";
@@ -98807,6 +98866,7 @@ RecompReturn Mode_ChallengeRace_BFC6_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BFCE inside Mode_ChallengeRace: Main-menu mode 2: pick players one/two, winner stays, 'PICK CHALLENGER'/'REMATCH'; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Mode_ChallengeRace_BFCE_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_ChallengeRace_BFCE_M1X0";
@@ -101213,6 +101273,7 @@ RecompReturn Mode_ChallengeRace_BFCE_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BFF5 inside Challenge_ExitIfDone: Fragment inside Mode_ChallengeRace (exit if $00 set); unreferenced as a function; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Challenge_ExitIfDone_BFF5_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Challenge_ExitIfDone_BFF5_M1X0";
@@ -103619,6 +103680,7 @@ RecompReturn Challenge_ExitIfDone_BFF5_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $BFF8 inside Challenge_ExitIfDone: Fragment inside Mode_ChallengeRace (exit if $00 set); unreferenced as a function; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Challenge_ExitIfDone_BFF8_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Challenge_ExitIfDone_BFF8_M1X0";
@@ -106025,6 +106087,7 @@ RecompReturn Challenge_ExitIfDone_BFF8_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if Down held on an enabled pad */
 void Input_IsDownHeld(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106042,6 +106105,7 @@ void Input_IsDownHeld(CpuState *cpu) {
   }
 }
 
+/* decomp: NE if Start or A held (mask 1080) on an enabled pad */
 void Input_IsStartOrAHeld(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106059,6 +106123,7 @@ void Input_IsStartOrAHeld(CpuState *cpu) {
   }
 }
 
+/* decomp: NE if Select held on an enabled pad */
 void Input_IsSelectHeld(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106076,6 +106141,7 @@ void Input_IsSelectHeld(CpuState *cpu) {
   }
 }
 
+/* decomp: NE if Start held on an enabled pad */
 void Input_IsStartHeld(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106093,6 +106159,7 @@ void Input_IsStartHeld(CpuState *cpu) {
   }
 }
 
+/* decomp: Reset menu cursor $9B to 0, then run the vertical text menu */
 void Menu_RunVerticalFromTop(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106110,6 +106177,7 @@ void Menu_RunVerticalFromTop(CpuState *cpu) {
   }
 }
 
+/* decomp: Place cursor sprite at item $9B (x from table [$AE]) and run the vertical menu loop */
 void Menu_RunVertical(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106127,6 +106195,7 @@ void Menu_RunVertical(CpuState *cpu) {
   }
 }
 
+/* decomp: Vertical menu loop: up/down moves cursor with sound, confirm/cancel set $A6 and return choice */
 void Menu_VerticalLoop(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106144,6 +106213,7 @@ void Menu_VerticalLoop(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $B96B inside Menu_VerticalLoop: Vertical menu loop: up/down moves cursor with sound, confirm/cancel set $A6 and return choice */
 void Menu_VerticalLoop_B96B(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106161,6 +106231,7 @@ void Menu_VerticalLoop_B96B(CpuState *cpu) {
   }
 }
 
+/* decomp: Variant of Menu_RunVertical with a different row base (cursor Y base $48) */
 void Menu_RunVerticalAlt(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106178,6 +106249,7 @@ void Menu_RunVerticalAlt(CpuState *cpu) {
   }
 }
 
+/* decomp: Variant vertical menu loop (also clears $7710D2 each frame) */
 void Menu_VerticalLoopAlt(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106195,6 +106267,7 @@ void Menu_VerticalLoopAlt(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BA97 inside Menu_VerticalLoopAlt: Variant vertical menu loop (also clears $7710D2 each frame) */
 void Menu_VerticalLoopAlt_BA97(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106212,6 +106285,7 @@ void Menu_VerticalLoopAlt_BA97(CpuState *cpu) {
   }
 }
 
+/* decomp: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results */
 void Mode_OnePlayerRace(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106229,6 +106303,7 @@ void Mode_OnePlayerRace(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BB9A inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results */
 void Mode_OnePlayerRace_BB9A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106246,6 +106321,7 @@ void Mode_OnePlayerRace_BB9A(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BBE2 inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results */
 void Mode_OnePlayerRace_BBE2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106263,6 +106339,7 @@ void Mode_OnePlayerRace_BBE2(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BBE5 inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results */
 void Mode_OnePlayerRace_BBE5(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106280,6 +106357,7 @@ void Mode_OnePlayerRace_BBE5(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BBE8 inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results */
 void Mode_OnePlayerRace_BBE8(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106297,6 +106375,7 @@ void Mode_OnePlayerRace_BBE8(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BBF9 inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results */
 void Mode_OnePlayerRace_BBF9(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106314,6 +106393,7 @@ void Mode_OnePlayerRace_BBF9(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BC08 inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results */
 void Mode_OnePlayerRace_BC08(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106331,6 +106411,7 @@ void Mode_OnePlayerRace_BC08(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BC33 inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results */
 void Mode_OnePlayerRace_BC33(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106348,6 +106429,7 @@ void Mode_OnePlayerRace_BC33(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BC41 inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results */
 void Mode_OnePlayerRace_BC41(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106365,6 +106447,7 @@ void Mode_OnePlayerRace_BC41(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BC44 inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results */
 void Mode_OnePlayerRace_BC44(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106382,6 +106465,7 @@ void Mode_OnePlayerRace_BC44(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BC4C inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results */
 void Mode_OnePlayerRace_BC4C(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106399,6 +106483,7 @@ void Mode_OnePlayerRace_BC4C(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BC53 inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results */
 void Mode_OnePlayerRace_BC53(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106416,6 +106501,7 @@ void Mode_OnePlayerRace_BC53(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BC59 inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results */
 void Mode_OnePlayerRace_BC59(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106433,6 +106519,7 @@ void Mode_OnePlayerRace_BC59(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BC5C inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results */
 void Mode_OnePlayerRace_BC5C(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106450,6 +106537,7 @@ void Mode_OnePlayerRace_BC5C(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BC66 inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results */
 void Mode_OnePlayerRace_BC66(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106467,6 +106555,7 @@ void Mode_OnePlayerRace_BC66(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BC69 inside Mode_OnePlayerRace: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results */
 void Mode_OnePlayerRace_BC69(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106484,6 +106573,7 @@ void Mode_OnePlayerRace_BC69(CpuState *cpu) {
   }
 }
 
+/* decomp: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts */
 void Mode_TwoPlayerRace(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106501,6 +106591,7 @@ void Mode_TwoPlayerRace(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BCBD inside Mode_TwoPlayerRace: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts */
 void Mode_TwoPlayerRace_BCBD(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106518,6 +106609,7 @@ void Mode_TwoPlayerRace_BCBD(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BCD6 inside Mode_TwoPlayerRace: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts */
 void Mode_TwoPlayerRace_BCD6(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106535,6 +106627,7 @@ void Mode_TwoPlayerRace_BCD6(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BCDD inside Mode_TwoPlayerRace: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts */
 void Mode_TwoPlayerRace_BCDD(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106552,6 +106645,7 @@ void Mode_TwoPlayerRace_BCDD(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BD21 inside Mode_TwoPlayerRace: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts */
 void Mode_TwoPlayerRace_BD21(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106569,6 +106663,7 @@ void Mode_TwoPlayerRace_BD21(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BD24 inside Mode_TwoPlayerRace: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts */
 void Mode_TwoPlayerRace_BD24(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106586,6 +106681,7 @@ void Mode_TwoPlayerRace_BD24(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BD27 inside Mode_TwoPlayerRace: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts */
 void Mode_TwoPlayerRace_BD27(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106603,6 +106699,7 @@ void Mode_TwoPlayerRace_BD27(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BD34 inside Mode_TwoPlayerRace: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts */
 void Mode_TwoPlayerRace_BD34(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106620,6 +106717,7 @@ void Mode_TwoPlayerRace_BD34(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BD43 inside Mode_TwoPlayerRace: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts */
 void Mode_TwoPlayerRace_BD43(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106637,6 +106735,7 @@ void Mode_TwoPlayerRace_BD43(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BD4B inside Mode_TwoPlayerRace: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts */
 void Mode_TwoPlayerRace_BD4B(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106654,6 +106753,7 @@ void Mode_TwoPlayerRace_BD4B(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BD68 inside Mode_TwoPlayerRace: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts */
 void Mode_TwoPlayerRace_BD68(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106671,6 +106771,7 @@ void Mode_TwoPlayerRace_BD68(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BD6B inside Mode_TwoPlayerRace: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts */
 void Mode_TwoPlayerRace_BD6B(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106688,6 +106789,7 @@ void Mode_TwoPlayerRace_BD6B(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BD73 inside Mode_TwoPlayerRace: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts */
 void Mode_TwoPlayerRace_BD73(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106705,6 +106807,7 @@ void Mode_TwoPlayerRace_BD73(CpuState *cpu) {
   }
 }
 
+/* decomp: Main-menu mode 3: pick league, tour selection and league race loop */
 void Mode_League(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106722,6 +106825,7 @@ void Mode_League(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BDCF inside Mode_League: Main-menu mode 3: pick league, tour selection and league race loop */
 void Mode_League_BDCF(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106739,6 +106843,7 @@ void Mode_League_BDCF(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BE06 inside Mode_League: Main-menu mode 3: pick league, tour selection and league race loop */
 void Mode_League_BE06(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106756,6 +106861,7 @@ void Mode_League_BE06(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BE09 inside Mode_League: Main-menu mode 3: pick league, tour selection and league race loop */
 void Mode_League_BE09(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106773,6 +106879,7 @@ void Mode_League_BE09(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BE1C inside Mode_League: Main-menu mode 3: pick league, tour selection and league race loop */
 void Mode_League_BE1C(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106790,6 +106897,7 @@ void Mode_League_BE1C(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BE45 inside Mode_League: Main-menu mode 3: pick league, tour selection and league race loop */
 void Mode_League_BE45(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106807,6 +106915,7 @@ void Mode_League_BE45(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BEEB inside Mode_League: Main-menu mode 3: pick league, tour selection and league race loop */
 void Mode_League_BEEB(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106824,6 +106933,7 @@ void Mode_League_BEEB(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BEFA inside Mode_League: Main-menu mode 3: pick league, tour selection and league race loop */
 void Mode_League_BEFA(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106841,6 +106951,7 @@ void Mode_League_BEFA(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BEFD inside Mode_League: Main-menu mode 3: pick league, tour selection and league race loop */
 void Mode_League_BEFD(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106858,6 +106969,7 @@ void Mode_League_BEFD(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BF0D inside Mode_League: Main-menu mode 3: pick league, tour selection and league race loop */
 void Mode_League_BF0D(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106875,6 +106987,7 @@ void Mode_League_BF0D(CpuState *cpu) {
   }
 }
 
+/* decomp: Main-menu mode 2: pick players one/two, winner stays, 'PICK CHALLENGER'/'REMATCH' */
 void Mode_ChallengeRace(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106892,6 +107005,7 @@ void Mode_ChallengeRace(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BF47 inside Mode_ChallengeRace: Main-menu mode 2: pick players one/two, winner stays, 'PICK CHALLENGER'/'REMATCH' */
 void Mode_ChallengeRace_BF47(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106909,6 +107023,7 @@ void Mode_ChallengeRace_BF47(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BF64 inside Mode_ChallengeRace: Main-menu mode 2: pick players one/two, winner stays, 'PICK CHALLENGER'/'REMATCH' */
 void Mode_ChallengeRace_BF64(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106926,6 +107041,7 @@ void Mode_ChallengeRace_BF64(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BF67 inside Mode_ChallengeRace: Main-menu mode 2: pick players one/two, winner stays, 'PICK CHALLENGER'/'REMATCH' */
 void Mode_ChallengeRace_BF67(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106943,6 +107059,7 @@ void Mode_ChallengeRace_BF67(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BF9C inside Mode_ChallengeRace: Main-menu mode 2: pick players one/two, winner stays, 'PICK CHALLENGER'/'REMATCH' */
 void Mode_ChallengeRace_BF9C(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106960,6 +107077,7 @@ void Mode_ChallengeRace_BF9C(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BF9F inside Mode_ChallengeRace: Main-menu mode 2: pick players one/two, winner stays, 'PICK CHALLENGER'/'REMATCH' */
 void Mode_ChallengeRace_BF9F(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106977,6 +107095,7 @@ void Mode_ChallengeRace_BF9F(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BFA2 inside Mode_ChallengeRace: Main-menu mode 2: pick players one/two, winner stays, 'PICK CHALLENGER'/'REMATCH' */
 void Mode_ChallengeRace_BFA2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -106994,6 +107113,7 @@ void Mode_ChallengeRace_BFA2(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BFB7 inside Mode_ChallengeRace: Main-menu mode 2: pick players one/two, winner stays, 'PICK CHALLENGER'/'REMATCH' */
 void Mode_ChallengeRace_BFB7(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -107011,6 +107131,7 @@ void Mode_ChallengeRace_BFB7(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BFC6 inside Mode_ChallengeRace: Main-menu mode 2: pick players one/two, winner stays, 'PICK CHALLENGER'/'REMATCH' */
 void Mode_ChallengeRace_BFC6(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -107028,6 +107149,7 @@ void Mode_ChallengeRace_BFC6(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BFCE inside Mode_ChallengeRace: Main-menu mode 2: pick players one/two, winner stays, 'PICK CHALLENGER'/'REMATCH' */
 void Mode_ChallengeRace_BFCE(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -107045,6 +107167,7 @@ void Mode_ChallengeRace_BFCE(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BFF5 inside Challenge_ExitIfDone: Fragment inside Mode_ChallengeRace (exit if $00 set); unreferenced as a function */
 void Challenge_ExitIfDone_BFF5(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -107062,6 +107185,7 @@ void Challenge_ExitIfDone_BFF5(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $BFF8 inside Challenge_ExitIfDone: Fragment inside Mode_ChallengeRace (exit if $00 set); unreferenced as a function */
 void Challenge_ExitIfDone_BFF8(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

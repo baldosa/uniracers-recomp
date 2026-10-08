@@ -50,6 +50,7 @@ RecompReturn Text_FormatDecimal5_M0X0(CpuState *cpu);
 RecompReturn Text_FormatRaceTimeLong_M0X0(CpuState *cpu);
 RecompReturn Text_FormatRaceTime_M0X0(CpuState *cpu);
 
+/* decomp: Result check (race kinds 0/1): Z set if P1 total time beats P2 (via table $88F7); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn League_CheckRaceWin_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_CheckRaceWin_M0X0";
@@ -270,6 +271,7 @@ RecompReturn League_CheckRaceWin_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Result check (stunt kind): Z set if P1 stunt score reaches the tier/medal target; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn League_CheckStuntWin_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_CheckStuntWin_M0X0";
@@ -520,6 +522,7 @@ RecompReturn League_CheckStuntWin_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Tier-complete cutscene thunk (table $88FD entry 0) -> $83C49C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Award_Tier0Cutscene_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Award_Tier0Cutscene_M0X0";
@@ -656,6 +659,7 @@ RecompReturn Award_Tier0Cutscene_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for League_RoundTrackToTier; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_RoundTrackToTierLong_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_RoundTrackToTierLong_M1X0";
@@ -787,6 +791,7 @@ RecompReturn League_RoundTrackToTierLong_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Round track index $CE down to the first track of its tier ((CE/5)*5); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_RoundTrackToTier_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_RoundTrackToTier_M1X0";
@@ -1002,6 +1007,7 @@ RecompReturn League_RoundTrackToTier_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Zero the 5 per-track result bytes at $771075 for current tier $D0; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_ClearTierResults_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_ClearTierResults_M1X0";
@@ -1216,6 +1222,7 @@ RecompReturn League_ClearTierResults_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Reset BG1/BG2 H scroll and tilemap buffer pointers $AA=$1000, $A8=$1400; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Ppu_ResetBgScroll_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Ppu_ResetBgScroll_M1X0";
@@ -1360,6 +1367,7 @@ RecompReturn Ppu_ResetBgScroll_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copy-protection check: SRAM must be 8KB (write at $772000 mirrors $770000) else jump to $8094EB; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Sram_CheckSizeMirror_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_CheckSizeMirror_M1X0";
@@ -1565,6 +1573,7 @@ RecompReturn Sram_CheckSizeMirror_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Clear session win counts $770400, $7710AD and per-player flags $7710FD at boot; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Sram_ClearSessionData_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_ClearSessionData_M1X0";
@@ -1827,6 +1836,7 @@ RecompReturn Sram_ClearSessionData_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for Str_Copy; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Str_CopyLong_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Str_CopyLong_M0X0";
@@ -1958,6 +1968,7 @@ RecompReturn Str_CopyLong_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for Str_Copy; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Str_CopyLong_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Str_CopyLong_M1X0";
@@ -2089,6 +2100,7 @@ RecompReturn Str_CopyLong_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copy $FF-terminated string from X to Y (including terminator); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Str_Copy_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Str_Copy_M0X0";
@@ -2209,6 +2221,7 @@ RecompReturn Str_Copy_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copy $FF-terminated string from X to Y (including terminator); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Str_Copy_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Str_Copy_M1X0";
@@ -2329,6 +2342,7 @@ RecompReturn Str_Copy_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $8BD1 inside Str_Copy: Copy $FF-terminated string from X to Y (including terminator); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Str_Copy_8BD1_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Str_Copy_8BD1_M1X0";
@@ -2418,6 +2432,7 @@ RecompReturn Str_Copy_8BD1_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $8BDF inside Str_Copy: Copy $FF-terminated string from X to Y (including terminator); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Str_Copy_8BDF_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Str_Copy_8BDF_M1X0";
@@ -2554,6 +2569,7 @@ RecompReturn Str_Copy_8BDF_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Convert A to 5 ASCII digits at $02-$06 + $FF, leading zeros as '_'; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_FormatDecimal5_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_FormatDecimal5_M0X0";
@@ -3389,6 +3405,7 @@ RecompReturn Text_FormatDecimal5_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for Text_FormatRaceTime; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_FormatRaceTimeLong_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_FormatRaceTimeLong_M0X0";
@@ -3520,6 +3537,7 @@ RecompReturn Text_FormatRaceTimeLong_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Format time A (1/100 s) as m:ss.hh string at $00FF; $EA60='no time', $EA61='quit'; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_FormatRaceTime_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_FormatRaceTime_M0X0";
@@ -4668,6 +4686,7 @@ RecompReturn Text_FormatRaceTime_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for Math_Divide32By16; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Math_Divide32By16Long_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_Divide32By16Long_M0X0";
@@ -4799,6 +4818,7 @@ RecompReturn Math_Divide32By16Long_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Divide 32-bit Y:X by 16-bit A (shift-subtract); 16-bit quotient in A/$0C; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Math_Divide32By16_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_Divide32By16_M0X0";
@@ -5105,6 +5125,7 @@ RecompReturn Math_Divide32By16_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Draw 5x5-tile tier icon A into tilemap buffer $0200 at X; shows lock icon if tier not unlocked; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawTierBadge_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawTierBadge_M0X0";
@@ -5756,6 +5777,7 @@ RecompReturn Menu_DrawTierBadge_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Draw 5x5-tile tier icon A into tilemap buffer $0200 at X; shows lock icon if tier not unlocked; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawTierBadge_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawTierBadge_M1X0";
@@ -6406,6 +6428,7 @@ RecompReturn Menu_DrawTierBadge_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Decode animation frame X from table $A08000 (bitmask of 6x5 tiles) into buffer at $87; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Anim_DecodeFrame_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Anim_DecodeFrame_M1X0";
@@ -7296,6 +7319,7 @@ RecompReturn Anim_DecodeFrame_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Result check (race kinds 0/1): Z set if P1 total time beats P2 (via table $88F7) */
 void League_CheckRaceWin(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7313,6 +7337,7 @@ void League_CheckRaceWin(CpuState *cpu) {
   }
 }
 
+/* decomp: Result check (stunt kind): Z set if P1 stunt score reaches the tier/medal target */
 void League_CheckStuntWin(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7330,6 +7355,7 @@ void League_CheckStuntWin(CpuState *cpu) {
   }
 }
 
+/* decomp: Tier-complete cutscene thunk (table $88FD entry 0) -> $83C49C */
 void Award_Tier0Cutscene(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7347,6 +7373,7 @@ void Award_Tier0Cutscene(CpuState *cpu) {
   }
 }
 
+/* decomp: Long wrapper for League_RoundTrackToTier */
 void League_RoundTrackToTierLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7364,6 +7391,7 @@ void League_RoundTrackToTierLong(CpuState *cpu) {
   }
 }
 
+/* decomp: Round track index $CE down to the first track of its tier ((CE/5)*5) */
 void League_RoundTrackToTier(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7381,6 +7409,7 @@ void League_RoundTrackToTier(CpuState *cpu) {
   }
 }
 
+/* decomp: Zero the 5 per-track result bytes at $771075 for current tier $D0 */
 void League_ClearTierResults(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7398,6 +7427,7 @@ void League_ClearTierResults(CpuState *cpu) {
   }
 }
 
+/* decomp: Reset BG1/BG2 H scroll and tilemap buffer pointers $AA=$1000, $A8=$1400 */
 void Ppu_ResetBgScroll(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7415,6 +7445,7 @@ void Ppu_ResetBgScroll(CpuState *cpu) {
   }
 }
 
+/* decomp: Copy-protection check: SRAM must be 8KB (write at $772000 mirrors $770000) else jump to $8094EB */
 void Sram_CheckSizeMirror(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7432,6 +7463,7 @@ void Sram_CheckSizeMirror(CpuState *cpu) {
   }
 }
 
+/* decomp: Clear session win counts $770400, $7710AD and per-player flags $7710FD at boot */
 void Sram_ClearSessionData(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7449,6 +7481,7 @@ void Sram_ClearSessionData(CpuState *cpu) {
   }
 }
 
+/* decomp: Long wrapper for Str_Copy */
 void Str_CopyLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7466,6 +7499,7 @@ void Str_CopyLong(CpuState *cpu) {
   }
 }
 
+/* decomp: Copy $FF-terminated string from X to Y (including terminator) */
 void Str_Copy(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7483,6 +7517,7 @@ void Str_Copy(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $8BD1 inside Str_Copy: Copy $FF-terminated string from X to Y (including terminator) */
 void Str_Copy_8BD1(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7500,6 +7535,7 @@ void Str_Copy_8BD1(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $8BDF inside Str_Copy: Copy $FF-terminated string from X to Y (including terminator) */
 void Str_Copy_8BDF(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7517,6 +7553,7 @@ void Str_Copy_8BDF(CpuState *cpu) {
   }
 }
 
+/* decomp: Convert A to 5 ASCII digits at $02-$06 + $FF, leading zeros as '_' */
 void Text_FormatDecimal5(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7534,6 +7571,7 @@ void Text_FormatDecimal5(CpuState *cpu) {
   }
 }
 
+/* decomp: Long wrapper for Text_FormatRaceTime */
 void Text_FormatRaceTimeLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7551,6 +7589,7 @@ void Text_FormatRaceTimeLong(CpuState *cpu) {
   }
 }
 
+/* decomp: Format time A (1/100 s) as m:ss.hh string at $00FF; $EA60='no time', $EA61='quit' */
 void Text_FormatRaceTime(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7568,6 +7607,7 @@ void Text_FormatRaceTime(CpuState *cpu) {
   }
 }
 
+/* decomp: Long wrapper for Math_Divide32By16 */
 void Math_Divide32By16Long(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7585,6 +7625,7 @@ void Math_Divide32By16Long(CpuState *cpu) {
   }
 }
 
+/* decomp: Divide 32-bit Y:X by 16-bit A (shift-subtract); 16-bit quotient in A/$0C */
 void Math_Divide32By16(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7602,6 +7643,7 @@ void Math_Divide32By16(CpuState *cpu) {
   }
 }
 
+/* decomp: Draw 5x5-tile tier icon A into tilemap buffer $0200 at X; shows lock icon if tier not unlocked */
 void Menu_DrawTierBadge(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7619,6 +7661,7 @@ void Menu_DrawTierBadge(CpuState *cpu) {
   }
 }
 
+/* decomp: Decode animation frame X from table $A08000 (bitmask of 6x5 tiles) into buffer at $87 */
 void Anim_DecodeFrame(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

@@ -98,6 +98,7 @@ RecompReturn WaitForNMI_Long_M0X0(CpuState *cpu);
 RecompReturn WaitForNMI_Long_M1X0(CpuState *cpu);
 RecompReturn WaitForNMI_Long_M1X1(CpuState *cpu);
 
+/* decomp: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_Main_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_M1X0";
@@ -4307,6 +4308,7 @@ RecompReturn Race_Main_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C905 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_Main_C905_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_C905_M1X0";
@@ -8382,6 +8384,7 @@ RecompReturn Race_Main_C905_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C98F inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_Main_C98F_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_C98F_M1X0";
@@ -12012,6 +12015,7 @@ RecompReturn Race_Main_C98F_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C9A9 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_Main_C9A9_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_C9A9_M1X0";
@@ -15427,6 +15431,7 @@ RecompReturn Race_Main_C9A9_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C9AD inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_Main_C9AD_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_C9AD_M1X0";
@@ -18805,6 +18810,7 @@ RecompReturn Race_Main_C9AD_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C9B1 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Race_Main_C9B1_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_C9B1_M0X1";
@@ -22146,6 +22152,7 @@ RecompReturn Race_Main_C9B1_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CA07 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Main_CA07_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_CA07_M0X0";
@@ -25719,6 +25726,7 @@ RecompReturn Race_Main_CA07_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CA4C inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Main_CA4C_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_CA4C_M0X0";
@@ -29292,6 +29300,7 @@ RecompReturn Race_Main_CA4C_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CA55 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Main_CA55_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_CA55_M0X0";
@@ -32816,6 +32825,7 @@ RecompReturn Race_Main_CA55_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CA5E inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Main_CA5E_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_CA5E_M0X0";
@@ -36291,6 +36301,7 @@ RecompReturn Race_Main_CA5E_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CA67 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Main_CA67_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_CA67_M0X0";
@@ -39717,6 +39728,7 @@ RecompReturn Race_Main_CA67_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CA6E inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Main_CA6E_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_CA6E_M0X0";
@@ -43101,6 +43113,7 @@ RecompReturn Race_Main_CA6E_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CA7C inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Main_CA7C_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_CA7C_M0X0";
@@ -46401,6 +46414,7 @@ RecompReturn Race_Main_CA7C_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CA91 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Main_CA91_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_CA91_M0X0";
@@ -49974,6 +49988,7 @@ RecompReturn Race_Main_CA91_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CAD6 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Main_CAD6_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_CAD6_M0X0";
@@ -53547,6 +53562,7 @@ RecompReturn Race_Main_CAD6_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CB1B inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Main_CB1B_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_CB1B_M0X0";
@@ -57120,6 +57136,7 @@ RecompReturn Race_Main_CB1B_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CB60 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Main_CB60_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_CB60_M0X0";
@@ -60682,6 +60699,7 @@ RecompReturn Race_Main_CB60_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CBBC inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_Main_CBBC_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_CBBC_M0X0";
@@ -63850,6 +63868,7 @@ RecompReturn Race_Main_CBBC_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CC5D inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_Main_CC5D_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_CC5D_M1X0";
@@ -66305,6 +66324,7 @@ RecompReturn Race_Main_CC5D_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $CC66 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_Main_CC66_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_Main_CC66_M1X0";
@@ -68742,6 +68762,7 @@ RecompReturn Race_Main_CC66_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: While $12D9/$12DB set, every 360 frames queue next of 8 per-player messages; then mark colour seen; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_UpdateColorHints_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateColorHints_M0X0";
@@ -69900,6 +69921,7 @@ RecompReturn Race_UpdateColorHints_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: While $12D9/$12DB set, every 360 frames queue next of 8 per-player messages; then mark colour seen; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Race_UpdateColorHints_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateColorHints_M0X1";
@@ -71058,6 +71080,7 @@ RecompReturn Race_UpdateColorHints_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: While $12D9/$12DB set, every 360 frames queue next of 8 per-player messages; then mark colour seen; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_UpdateColorHints_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateColorHints_M1X0";
@@ -72216,6 +72239,7 @@ RecompReturn Race_UpdateColorHints_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: While $12D9/$12DB set, every 360 frames queue next of 8 per-player messages; then mark colour seen; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Race_UpdateColorHints_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateColorHints_M1X1";
@@ -73374,6 +73398,7 @@ RecompReturn Race_UpdateColorHints_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Special-track (>= $28) handler: run the active one of 8 timed race effects ($131D-$132B); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_UpdateSpecialFx_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateSpecialFx_M1X0";
@@ -75550,6 +75575,7 @@ RecompReturn Race_UpdateSpecialFx_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Special-track (>= $28) handler: run the active one of 8 timed race effects ($131D-$132B); compiled for 8-bit A, 8-bit X/Y */
 RecompReturn Race_UpdateSpecialFx_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_UpdateSpecialFx_M1X1";
@@ -77726,6 +77752,7 @@ RecompReturn Race_UpdateSpecialFx_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit */
 void Race_Main(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -77743,6 +77770,7 @@ void Race_Main(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C905 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit */
 void Race_Main_C905(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -77760,6 +77788,7 @@ void Race_Main_C905(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C98F inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit */
 void Race_Main_C98F(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -77777,6 +77806,7 @@ void Race_Main_C98F(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C9A9 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit */
 void Race_Main_C9A9(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -77794,6 +77824,7 @@ void Race_Main_C9A9(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C9AD inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit */
 void Race_Main_C9AD(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -77811,6 +77842,7 @@ void Race_Main_C9AD(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C9B1 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit */
 void Race_Main_C9B1(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -77828,6 +77860,7 @@ void Race_Main_C9B1(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CA07 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit */
 void Race_Main_CA07(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -77845,6 +77878,7 @@ void Race_Main_CA07(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CA4C inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit */
 void Race_Main_CA4C(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -77862,6 +77896,7 @@ void Race_Main_CA4C(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CA55 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit */
 void Race_Main_CA55(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -77879,6 +77914,7 @@ void Race_Main_CA55(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CA5E inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit */
 void Race_Main_CA5E(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -77896,6 +77932,7 @@ void Race_Main_CA5E(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CA67 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit */
 void Race_Main_CA67(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -77913,6 +77950,7 @@ void Race_Main_CA67(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CA6E inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit */
 void Race_Main_CA6E(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -77930,6 +77968,7 @@ void Race_Main_CA6E(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CA7C inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit */
 void Race_Main_CA7C(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -77947,6 +77986,7 @@ void Race_Main_CA7C(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CA91 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit */
 void Race_Main_CA91(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -77964,6 +78004,7 @@ void Race_Main_CA91(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CAD6 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit */
 void Race_Main_CAD6(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -77981,6 +78022,7 @@ void Race_Main_CAD6(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CB1B inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit */
 void Race_Main_CB1B(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -77998,6 +78040,7 @@ void Race_Main_CB1B(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CB60 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit */
 void Race_Main_CB60(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -78015,6 +78058,7 @@ void Race_Main_CB60(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CBBC inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit */
 void Race_Main_CBBC(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -78032,6 +78076,7 @@ void Race_Main_CBBC(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CC5D inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit */
 void Race_Main_CC5D(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -78049,6 +78094,7 @@ void Race_Main_CC5D(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $CC66 inside Race_Main: Race entry + loop: pick demo racers/music, set CPU rival params, run per-frame race update until exit */
 void Race_Main_CC66(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -78066,6 +78112,7 @@ void Race_Main_CC66(CpuState *cpu) {
   }
 }
 
+/* decomp: While $12D9/$12DB set, every 360 frames queue next of 8 per-player messages; then mark colour seen */
 void Race_UpdateColorHints(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -78083,6 +78130,7 @@ void Race_UpdateColorHints(CpuState *cpu) {
   }
 }
 
+/* decomp: Special-track (>= $28) handler: run the active one of 8 timed race effects ($131D-$132B) */
 void Race_UpdateSpecialFx(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

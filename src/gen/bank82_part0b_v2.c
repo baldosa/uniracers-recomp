@@ -55,6 +55,7 @@ RecompReturn WaitForNMI_Long_M0X0(CpuState *cpu);
 RecompReturn WaitForNMI_Long_M1X0(CpuState *cpu);
 RecompReturn WaitForNMI_Long_M1X1(CpuState *cpu);
 
+/* decomp: JSL wrapper for Race_InitState; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_InitState_Long_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_InitState_Long_FastRom_M1X0";
@@ -186,6 +187,7 @@ RecompReturn Race_InitState_Long_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Race_ClearRam; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_ClearRam_Long_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_ClearRam_Long_FastRom_M1X0";
@@ -317,6 +319,7 @@ RecompReturn Race_ClearRam_Long_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Race_ClearRam; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_ClearRam_Long_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_ClearRam_Long_FastRom_M0X0";
@@ -448,6 +451,7 @@ RecompReturn Race_ClearRam_Long_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Calls sub_81B76D then zeroes WRAM $0082-$00B2 and $0200-$178C; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_ClearRam_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_ClearRam_FastRom_M1X0";
@@ -807,6 +811,7 @@ RecompReturn Race_ClearRam_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Calls sub_81B76D then zeroes WRAM $0082-$00B2 and $0200-$178C; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_ClearRam_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_ClearRam_FastRom_M0X0";
@@ -1166,6 +1171,7 @@ RecompReturn Race_ClearRam_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Initializes race variables from track header at $7F0000, resets race SRAM stats, sets up OAM/objects; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_InitState_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_InitState_FastRom_M1X0";
@@ -3053,6 +3059,7 @@ RecompReturn Race_InitState_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Sets PPU modes for racing: OBSEL, BG mode 1 w/ BG3 prio, BG1-3 maps, char bases, TM; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_SetPpuRegs_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_SetPpuRegs_FastRom_M0X0";
@@ -3236,6 +3243,7 @@ RecompReturn Race_SetPpuRegs_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Race_LoadTrackGraphics; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackGraphics_Long_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackGraphics_Long_FastRom_M1X0";
@@ -3367,6 +3375,7 @@ RecompReturn Race_LoadTrackGraphics_Long_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Loads track theme ($77074A mod 14) tiles/palettes, unicycle palettes, then track data; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackGraphics_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackGraphics_FastRom_M1X0";
@@ -5408,6 +5417,7 @@ RecompReturn Race_LoadTrackGraphics_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for League_RunPodium; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_RunPodium_Long_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_RunPodium_Long_M1X0";
@@ -5539,6 +5549,7 @@ RecompReturn League_RunPodium_Long_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: League award podium screen: loads gfx/sprites/music, animates until exit condition; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_RunPodium_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_RunPodium_M1X0";
@@ -6915,6 +6926,7 @@ RecompReturn League_RunPodium_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Steps podium animation phase $0300 (0-3), cycling frame ids $0A45-$0A5C and swapping $0C75 sets; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn League_AnimatePodium_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_AnimatePodium_M0X1";
@@ -7351,6 +7363,7 @@ RecompReturn League_AnimatePodium_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Positions podium sprites 96-99 and sets starting animation frame ids; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn League_InitPodiumSprites_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_InitPodiumSprites_M0X0";
@@ -7602,6 +7615,7 @@ RecompReturn League_InitPodiumSprites_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Race_InitState; reached through the other ROM mirror bank */
 void Race_InitState_Long_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7619,6 +7633,7 @@ void Race_InitState_Long_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Race_ClearRam; reached through the other ROM mirror bank */
 void Race_ClearRam_Long_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7636,6 +7651,7 @@ void Race_ClearRam_Long_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Calls sub_81B76D then zeroes WRAM $0082-$00B2 and $0200-$178C; reached through the other ROM mirror bank */
 void Race_ClearRam_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7653,6 +7669,7 @@ void Race_ClearRam_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Initializes race variables from track header at $7F0000, resets race SRAM stats, sets up OAM/objects; reached through the other ROM mirror bank */
 void Race_InitState_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7670,6 +7687,7 @@ void Race_InitState_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Sets PPU modes for racing: OBSEL, BG mode 1 w/ BG3 prio, BG1-3 maps, char bases, TM; reached through the other ROM mirror bank */
 void Race_SetPpuRegs_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7687,6 +7705,7 @@ void Race_SetPpuRegs_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Race_LoadTrackGraphics; reached through the other ROM mirror bank */
 void Race_LoadTrackGraphics_Long_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7704,6 +7723,7 @@ void Race_LoadTrackGraphics_Long_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Loads track theme ($77074A mod 14) tiles/palettes, unicycle palettes, then track data; reached through the other ROM mirror bank */
 void Race_LoadTrackGraphics_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7721,6 +7741,7 @@ void Race_LoadTrackGraphics_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for League_RunPodium */
 void League_RunPodium_Long(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7738,6 +7759,7 @@ void League_RunPodium_Long(CpuState *cpu) {
   }
 }
 
+/* decomp: League award podium screen: loads gfx/sprites/music, animates until exit condition */
 void League_RunPodium(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7755,6 +7777,7 @@ void League_RunPodium(CpuState *cpu) {
   }
 }
 
+/* decomp: Steps podium animation phase $0300 (0-3), cycling frame ids $0A45-$0A5C and swapping $0C75 sets */
 void League_AnimatePodium(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -7772,6 +7795,7 @@ void League_AnimatePodium(CpuState *cpu) {
   }
 }
 
+/* decomp: Positions podium sprites 96-99 and sets starting animation frame ids */
 void League_InitPodiumSprites(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

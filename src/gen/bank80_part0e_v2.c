@@ -59,6 +59,7 @@ RecompReturn Vram_UploadTilemap_FastRom_M1X0(CpuState *cpu);
 RecompReturn Vs_ShowChampions_FA4A_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_FastRom_M1X0(CpuState *cpu);
 
+/* decomp: Selection-sort the 16 four-byte {id,value} entries at $0C20 by value, highest first; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Util_SortTable16Descending_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Util_SortTable16Descending_FastRom_M0X0";
@@ -496,6 +497,7 @@ RecompReturn Util_SortTable16Descending_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Selection-sort the 8 four-byte {id,value} entries at $0151 by value, lowest first; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Util_SortTable8Ascending_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Util_SortTable8Ascending_FastRom_M0X0";
@@ -928,6 +930,7 @@ RecompReturn Util_SortTable8Ascending_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: End-of-race results screen: tally, totals, best-score update, qualify line; no direct JSR (pointer at ROM $8095A9); reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Results_ShowRaceResults_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_ShowRaceResults_FastRom_M0X0";
@@ -3014,6 +3017,7 @@ RecompReturn Results_ShowRaceResults_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Hide menu sprites (OAM hi = $55), wait a frame, reload menu sprite graphics, set OBSEL; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_HideSpritesAndReloadGfx_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_HideSpritesAndReloadGfx_FastRom_M1X0";
@@ -3306,6 +3310,7 @@ RecompReturn Menu_HideSpritesAndReloadGfx_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Disable HDMA, clear screen, reload menu sprite and font graphics, set OBSEL; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_ResetScreenGfx_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_ResetScreenGfx_FastRom_M1X0";
@@ -3723,6 +3728,7 @@ RecompReturn Menu_ResetScreenGfx_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Set SRAM flag $770742 bit 1 (menu panel slides open); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_RequestPanelOpen_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_RequestPanelOpen_FastRom_M1X0";
@@ -3858,6 +3864,7 @@ RecompReturn Menu_RequestPanelOpen_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Clear SRAM flag $770742 bit 1 (menu panel slides closed); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_RequestPanelClose_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_RequestPanelClose_FastRom_M1X0";
@@ -3993,6 +4000,7 @@ RecompReturn Menu_RequestPanelClose_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Menu_SnapPanelOpen; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_SnapPanelOpenLong_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_SnapPanelOpenLong_M1X0";
@@ -4124,6 +4132,7 @@ RecompReturn Menu_SnapPanelOpenLong_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Set panel-open flag and immediately set BG1 vertical scroll ($AD) to fully open ($4F); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_SnapPanelOpen_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_SnapPanelOpen_FastRom_M1X0";
@@ -4278,6 +4287,7 @@ RecompReturn Menu_SnapPanelOpen_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Boot screen (110 frames); restores unlocks after cheat; pad code Up,Left,Up,R,A unlocks all tours; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Boot_ShowLegalScreen_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Boot_ShowLegalScreen_FastRom_M1X0";
@@ -5106,6 +5116,7 @@ RecompReturn Boot_ShowLegalScreen_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NMI handler for menus and the title ($0053 = $F60C); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn NmiHandler_Menu_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "NmiHandler_Menu_FastRom_M1X0";
@@ -5291,6 +5302,7 @@ RecompReturn NmiHandler_Menu_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Count up 4 rows x 5 columns of result tallies with sound/frame waits, accumulate total in $C0; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Results_AnimateTally_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_AnimateTally_FastRom_M1X0";
@@ -7456,6 +7468,7 @@ RecompReturn Results_AnimateTally_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Advance tally draw position $96/$9F by $40 (next column); reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Results_NextTallyColumn_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_NextTallyColumn_FastRom_M0X0";
@@ -7593,6 +7606,7 @@ RecompReturn Results_NextTallyColumn_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Wait Y frames (with palette/sprite updates), returning early if a button is pressed; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Menu_WaitFramesOrButton_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_WaitFramesOrButton_FastRom_M0X0";
@@ -7903,6 +7917,7 @@ RecompReturn Menu_WaitFramesOrButton_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Dma_UploadTilemapRows; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Dma_UploadTilemapRowsLong_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Dma_UploadTilemapRowsLong_M0X0";
@@ -8034,6 +8049,7 @@ RecompReturn Dma_UploadTilemapRowsLong_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Dma_UploadTilemapRows; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Dma_UploadTilemapRowsLong_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Dma_UploadTilemapRowsLong_M1X0";
@@ -8165,6 +8181,7 @@ RecompReturn Dma_UploadTilemapRowsLong_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Selection-sort the 16 four-byte {id,value} entries at $0C20 by value, highest first; reached through the other ROM mirror bank */
 void Util_SortTable16Descending_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8182,6 +8199,7 @@ void Util_SortTable16Descending_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Selection-sort the 8 four-byte {id,value} entries at $0151 by value, lowest first; reached through the other ROM mirror bank */
 void Util_SortTable8Ascending_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8199,6 +8217,7 @@ void Util_SortTable8Ascending_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: End-of-race results screen: tally, totals, best-score update, qualify line; no direct JSR (pointer at ROM $8095A9); reached through the other ROM mirror bank */
 void Results_ShowRaceResults_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8216,6 +8235,7 @@ void Results_ShowRaceResults_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Hide menu sprites (OAM hi = $55), wait a frame, reload menu sprite graphics, set OBSEL; reached through the other ROM mirror bank */
 void Menu_HideSpritesAndReloadGfx_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8233,6 +8253,7 @@ void Menu_HideSpritesAndReloadGfx_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Disable HDMA, clear screen, reload menu sprite and font graphics, set OBSEL; reached through the other ROM mirror bank */
 void Menu_ResetScreenGfx_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8250,6 +8271,7 @@ void Menu_ResetScreenGfx_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Set SRAM flag $770742 bit 1 (menu panel slides open); reached through the other ROM mirror bank */
 void Menu_RequestPanelOpen_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8267,6 +8289,7 @@ void Menu_RequestPanelOpen_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Clear SRAM flag $770742 bit 1 (menu panel slides closed); reached through the other ROM mirror bank */
 void Menu_RequestPanelClose_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8284,6 +8307,7 @@ void Menu_RequestPanelClose_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Menu_SnapPanelOpen */
 void Menu_SnapPanelOpenLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8301,6 +8325,7 @@ void Menu_SnapPanelOpenLong(CpuState *cpu) {
   }
 }
 
+/* decomp: Set panel-open flag and immediately set BG1 vertical scroll ($AD) to fully open ($4F); reached through the other ROM mirror bank */
 void Menu_SnapPanelOpen_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8318,6 +8343,7 @@ void Menu_SnapPanelOpen_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Boot screen (110 frames); restores unlocks after cheat; pad code Up,Left,Up,R,A unlocks all tours; reached through the other ROM mirror bank */
 void Boot_ShowLegalScreen_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8335,6 +8361,7 @@ void Boot_ShowLegalScreen_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: NMI handler for menus and the title ($0053 = $F60C); reached through the other ROM mirror bank */
 void NmiHandler_Menu_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8352,6 +8379,7 @@ void NmiHandler_Menu_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Count up 4 rows x 5 columns of result tallies with sound/frame waits, accumulate total in $C0; reached through the other ROM mirror bank */
 void Results_AnimateTally_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8369,6 +8397,7 @@ void Results_AnimateTally_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Advance tally draw position $96/$9F by $40 (next column); reached through the other ROM mirror bank */
 void Results_NextTallyColumn_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8386,6 +8415,7 @@ void Results_NextTallyColumn_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Wait Y frames (with palette/sprite updates), returning early if a button is pressed; reached through the other ROM mirror bank */
 void Menu_WaitFramesOrButton_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -8403,6 +8433,7 @@ void Menu_WaitFramesOrButton_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Dma_UploadTilemapRows */
 void Dma_UploadTilemapRowsLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

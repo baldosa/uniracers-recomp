@@ -27,6 +27,7 @@ RecompReturn Attract_Main_947A_M1X0(CpuState *cpu);
 RecompReturn Attract_Main_9481_M1X0(CpuState *cpu);
 RecompReturn Attract_Main_94BC_M1X0(CpuState *cpu);
 RecompReturn Attract_Main_M0X0(CpuState *cpu);
+RecompReturn Boot_ClearWRAM_92F7_M1X0(CpuState *cpu);
 RecompReturn Boot_ClearWRAM_92FF_M1X0(CpuState *cpu);
 RecompReturn Boot_ClearWRAM_9300_M1X0(CpuState *cpu);
 RecompReturn Boot_ClearWRAM_9302_M1X0(CpuState *cpu);
@@ -71,7 +72,6 @@ RecompReturn Res_LoadToCgram_M0X0(CpuState *cpu);
 RecompReturn Res_LoadToCgram_M1X0(CpuState *cpu);
 RecompReturn Res_LoadToVram_M0X0(CpuState *cpu);
 RecompReturn Res_LoadToVram_M1X0(CpuState *cpu);
-RecompReturn Reset_ClearWRAM_loop00_M1X0(CpuState *cpu);
 RecompReturn Results_DrawLapRace_910A_M0X0(CpuState *cpu);
 RecompReturn Results_DrawLapRace_910E_M0X0(CpuState *cpu);
 RecompReturn Results_DrawLapRace_M0X0(CpuState *cpu);
@@ -111,6 +111,7 @@ RecompReturn Vram_UploadTilemapBottom_M1X0(CpuState *cpu);
 RecompReturn Vram_UploadTilemap_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_M1X0(CpuState *cpu);
 
+/* decomp: entry point at $910A inside Results_DrawLapRace: Results screen for lap races: per-lap bars, totals, best lap; updates best-lap record (via table $95A5); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Results_DrawLapRace_910A_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_DrawLapRace_910A_M0X0";
@@ -247,6 +248,7 @@ RecompReturn Results_DrawLapRace_910A_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $910E inside Results_DrawLapRace: Results screen for lap races: per-lap bars, totals, best lap; updates best-lap record (via table $95A5); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Results_DrawLapRace_910E_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_DrawLapRace_910E_M0X0";
@@ -346,12 +348,13 @@ RecompReturn Results_DrawLapRace_910E_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn Reset_ClearWRAM_loop00_M1X0(CpuState *cpu) {
+/* decomp: entry point at $92F7 inside Boot_ClearWRAM: clears WRAM with the $0199 RAM block-move trampoline; compiled for 8-bit A, 16-bit X/Y */
+RecompReturn Boot_ClearWRAM_92F7_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "Reset_ClearWRAM_loop00_M1X0";
-  RecompStackPush("Reset_ClearWRAM_loop00_M1X0");
-  cpu_dbg_funcname("Reset_ClearWRAM_loop00_M1X0");
-  cpu_trace_func_entry(cpu, 0x0092F7, "Reset_ClearWRAM_loop00_M1X0");
+  g_last_recomp_func = "Boot_ClearWRAM_92F7_M1X0";
+  RecompStackPush("Boot_ClearWRAM_92F7_M1X0");
+  cpu_dbg_funcname("Boot_ClearWRAM_92F7_M1X0");
+  cpu_trace_func_entry(cpu, 0x0092F7, "Boot_ClearWRAM_92F7_M1X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0x92f7u));
@@ -405,6 +408,7 @@ RecompReturn Reset_ClearWRAM_loop00_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $92FF inside Boot_ClearWRAM: clears WRAM with the $0199 RAM block-move trampoline; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Boot_ClearWRAM_92FF_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Boot_ClearWRAM_92FF_M1X0";
@@ -454,7 +458,7 @@ RecompReturn Boot_ClearWRAM_92FF_M1X0(CpuState *cpu) {
       cpu->_flag_Z = ((cpu->X) == 0) ? 1 : 0;
       cpu->_flag_N = (((cpu->X) & 0x8000) != 0) ? 1 : 0;
     }
-    if (cpu->_flag_Z == 0) { cpu->cycles += 1; cpu->master_cycles += 6; { extern RecompReturn Reset_ClearWRAM_loop00_M1X0(CpuState *cpu); cpu->host_return_valid = _hrv; cpu_tailcall_inherit_return_context(_entry_s, _hrv); RecompReturn _tc = Reset_ClearWRAM_loop00_M1X0(cpu); RecompStackPop(); return _tc; }  /* tail-call past end: into Reset_ClearWRAM_loop00_M1X0 at $92F7 */ }
+    if (cpu->_flag_Z == 0) { cpu->cycles += 1; cpu->master_cycles += 6; { extern RecompReturn Boot_ClearWRAM_92F7_M1X0(CpuState *cpu); cpu->host_return_valid = _hrv; cpu_tailcall_inherit_return_context(_entry_s, _hrv); RecompReturn _tc = Boot_ClearWRAM_92F7_M1X0(cpu); RecompStackPop(); return _tc; }  /* tail-call past end: into Boot_ClearWRAM_92F7_M1X0 at $92F7 */ }
     goto L_9302_M1X0; /* fall-through */
   L_9302_M1X0:
     cpu_trace_block(cpu, 0x009302);
@@ -1191,6 +1195,7 @@ RecompReturn Boot_ClearWRAM_92FF_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9300 inside Boot_ClearWRAM: clears WRAM with the $0199 RAM block-move trampoline; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Boot_ClearWRAM_9300_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Boot_ClearWRAM_9300_M1X0";
@@ -1230,7 +1235,7 @@ RecompReturn Boot_ClearWRAM_9300_M1X0(CpuState *cpu) {
     cpu->coprocessor_master_cycles = cpu->master_cycles;
     cpu->cycles += 2;
     cpu->master_cycles += 2 * ((g_memsel && (cpu->PB & 0x80)) ? 6 : 8) + 0;
-    if (cpu->_flag_Z == 0) { cpu->cycles += 1; cpu->master_cycles += 6; { extern RecompReturn Reset_ClearWRAM_loop00_M1X0(CpuState *cpu); cpu->host_return_valid = _hrv; cpu_tailcall_inherit_return_context(_entry_s, _hrv); RecompReturn _tc = Reset_ClearWRAM_loop00_M1X0(cpu); RecompStackPop(); return _tc; }  /* tail-call past end: into Reset_ClearWRAM_loop00_M1X0 at $92F7 */ }
+    if (cpu->_flag_Z == 0) { cpu->cycles += 1; cpu->master_cycles += 6; { extern RecompReturn Boot_ClearWRAM_92F7_M1X0(CpuState *cpu); cpu->host_return_valid = _hrv; cpu_tailcall_inherit_return_context(_entry_s, _hrv); RecompReturn _tc = Boot_ClearWRAM_92F7_M1X0(cpu); RecompStackPop(); return _tc; }  /* tail-call past end: into Boot_ClearWRAM_92F7_M1X0 at $92F7 */ }
     goto L_9302_M1X0; /* fall-through */
   L_9302_M1X0:
     cpu_trace_block(cpu, 0x009302);
@@ -1967,6 +1972,7 @@ RecompReturn Boot_ClearWRAM_9300_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9302 inside Boot_ClearWRAM: clears WRAM with the $0199 RAM block-move trampoline; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Boot_ClearWRAM_9302_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Boot_ClearWRAM_9302_M1X0";
@@ -2731,6 +2737,7 @@ RecompReturn Boot_ClearWRAM_9302_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DMA ch1: copies the $0A00 OAM buffer ($220 bytes) to OAM; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Oam_Upload_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Oam_Upload_M1X0";
@@ -2881,6 +2888,7 @@ RecompReturn Oam_Upload_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copies a string X->Y up to and including the first $FF, space or '_' terminator; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_CopyWord_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CopyWord_M1X0";
@@ -3140,6 +3148,7 @@ RecompReturn Text_CopyWord_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copies a $FF-terminated string X->Y, dropping '_' characters; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CopyStripUnderscores_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CopyStripUnderscores_M0X0";
@@ -3371,6 +3380,7 @@ RecompReturn Text_CopyStripUnderscores_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DMA ch7: copies the $0200 tilemap buffer ($800 bytes) to VRAM address in $A8; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Vram_UploadTilemapAtA8_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Vram_UploadTilemapAtA8_M1X0";
@@ -3520,6 +3530,7 @@ RecompReturn Vram_UploadTilemapAtA8_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DMA ch7: copies the $0200 tilemap buffer ($800 bytes) to VRAM address in $5A; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Vram_UploadTilemap_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Vram_UploadTilemap_M1X0";
@@ -3669,6 +3680,7 @@ RecompReturn Vram_UploadTilemap_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DMA ch7: copies $0780.. ($1FF bytes) to VRAM $5A+$2C0 (bottom rows of the tilemap); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Vram_UploadTilemapBottom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Vram_UploadTilemapBottom_M1X0";
@@ -3874,6 +3886,7 @@ RecompReturn Vram_UploadTilemapBottom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Attract_Main_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Attract_Main_M0X0";
@@ -5474,6 +5487,7 @@ RecompReturn Attract_Main_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9400 inside Attract_Main: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Attract_Main_9400_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Attract_Main_9400_M1X0";
@@ -7036,6 +7050,7 @@ RecompReturn Attract_Main_9400_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9408 inside Attract_Main: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Attract_Main_9408_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Attract_Main_9408_M1X0";
@@ -8560,6 +8575,7 @@ RecompReturn Attract_Main_9408_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $941F inside Attract_Main: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Attract_Main_941F_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Attract_Main_941F_M1X0";
@@ -9983,6 +9999,7 @@ RecompReturn Attract_Main_941F_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9428 inside Attract_Main: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Attract_Main_9428_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Attract_Main_9428_M1X0";
@@ -11359,6 +11376,7 @@ RecompReturn Attract_Main_9428_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9447 inside Attract_Main: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Attract_Main_9447_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Attract_Main_9447_M0X0";
@@ -12656,6 +12674,7 @@ RecompReturn Attract_Main_9447_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9450 inside Attract_Main: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Attract_Main_9450_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Attract_Main_9450_M0X0";
@@ -13904,6 +13923,7 @@ RecompReturn Attract_Main_9450_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9459 inside Attract_Main: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Attract_Main_9459_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Attract_Main_9459_M0X0";
@@ -15103,6 +15123,7 @@ RecompReturn Attract_Main_9459_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9460 inside Attract_Main: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Attract_Main_9460_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Attract_Main_9460_M0X0";
@@ -16260,6 +16281,7 @@ RecompReturn Attract_Main_9460_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $947A inside Attract_Main: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Attract_Main_947A_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Attract_Main_947A_M1X0";
@@ -17253,6 +17275,7 @@ RecompReturn Attract_Main_947A_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9481 inside Attract_Main: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Attract_Main_9481_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Attract_Main_9481_M1X0";
@@ -18230,6 +18253,7 @@ RecompReturn Attract_Main_9481_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $94BC inside Attract_Main: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Attract_Main_94BC_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Attract_Main_94BC_M1X0";
@@ -18809,6 +18833,7 @@ RecompReturn Attract_Main_94BC_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Post-race results: loads both unis' palettes, dispatches by event type via table $95A5; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Results_Show_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_Show_M1X0";
@@ -19555,6 +19580,7 @@ RecompReturn Results_Show_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9522 inside Results_Show: Post-race results: loads both unis' palettes, dispatches by event type via table $95A5; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Results_Show_9522_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_Show_9522_M1X0";
@@ -20257,6 +20283,7 @@ RecompReturn Results_Show_9522_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9575 inside Results_Show: Post-race results: loads both unis' palettes, dispatches by event type via table $95A5; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Results_Show_9575_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_Show_9575_M0X0";
@@ -20594,6 +20621,7 @@ RecompReturn Results_Show_9575_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9596 inside Results_Show: Post-race results: loads both unis' palettes, dispatches by event type via table $95A5; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Results_Show_9596_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_Show_9596_M1X0";
@@ -20778,6 +20806,7 @@ RecompReturn Results_Show_9596_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $95A4 inside Results_Show: Post-race results: loads both unis' palettes, dispatches by event type via table $95A5; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Results_Show_95A4_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Results_Show_95A4_M1X0";
@@ -20877,6 +20906,7 @@ RecompReturn Results_Show_95A4_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Draws 16 track-name entries in two columns with DrawText (track picker); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawTrackNameGrid_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawTrackNameGrid_M1X0";
@@ -21507,6 +21537,7 @@ RecompReturn Menu_DrawTrackNameGrid_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $95E0 inside Menu_DrawTrackNameGrid: Draws 16 track-name entries in two columns with DrawText (track picker); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawTrackNameGrid_95E0_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawTrackNameGrid_95E0_M1X0";
@@ -21990,6 +22021,7 @@ RecompReturn Menu_DrawTrackNameGrid_95E0_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $960B inside Menu_DrawTrackNameGrid: Draws 16 track-name entries in two columns with DrawText (track picker); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawTrackNameGrid_960B_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawTrackNameGrid_960B_M1X0";
@@ -22294,6 +22326,7 @@ RecompReturn Menu_DrawTrackNameGrid_960B_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Builds OAM entries for the 16-slot track grid and its hi-table bits; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_SetupTrackGridSprites_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_SetupTrackGridSprites_M1X0";
@@ -23023,6 +23056,7 @@ RecompReturn Menu_SetupTrackGridSprites_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Hardware divide X / A: returns quotient in A, remainder in X; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Math_Div16by8_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_Div16by8_M1X0";
@@ -23163,6 +23197,7 @@ RecompReturn Math_Div16by8_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Hardware divide X / A: returns quotient in A, remainder in X; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Math_Div16by8_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_Div16by8_M0X0";
@@ -23303,6 +23338,7 @@ RecompReturn Math_Div16by8_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Software 16-bit unsigned divide X / A, quotient in A (restoring shift-subtract); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Math_Div16_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_Div16_M0X0";
@@ -23609,6 +23645,7 @@ RecompReturn Math_Div16_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Tour select: loads palettes and places the 9 tour icons, tile depends on tour medal/unlock state; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Tour_DrawSelectIcons_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Tour_DrawSelectIcons_M1X0";
@@ -24439,6 +24476,7 @@ RecompReturn Tour_DrawSelectIcons_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9764 inside Tour_DrawSelectIcons: Tour select: loads palettes and places the 9 tour icons, tile depends on tour medal/unlock state; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Tour_DrawSelectIcons_9764_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Tour_DrawSelectIcons_9764_M1X0";
@@ -25192,6 +25230,7 @@ RecompReturn Tour_DrawSelectIcons_9764_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $9782 inside Tour_DrawSelectIcons: Tour select: loads palettes and places the 9 tour icons, tile depends on tour medal/unlock state; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Tour_DrawSelectIcons_9782_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Tour_DrawSelectIcons_9782_M1X0";
@@ -25773,6 +25812,7 @@ RecompReturn Tour_DrawSelectIcons_9782_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $97D9 inside Tour_DrawSelectIcons: Tour select: loads palettes and places the 9 tour icons, tile depends on tour medal/unlock state; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Tour_DrawSelectIcons_97D9_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Tour_DrawSelectIcons_97D9_M1X0";
@@ -25903,6 +25943,7 @@ RecompReturn Tour_DrawSelectIcons_97D9_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $910A inside Results_DrawLapRace: Results screen for lap races: per-lap bars, totals, best lap; updates best-lap record (via table $95A5) */
 void Results_DrawLapRace_910A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25920,6 +25961,7 @@ void Results_DrawLapRace_910A(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $910E inside Results_DrawLapRace: Results screen for lap races: per-lap bars, totals, best lap; updates best-lap record (via table $95A5) */
 void Results_DrawLapRace_910E(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25937,23 +25979,25 @@ void Results_DrawLapRace_910E(CpuState *cpu) {
   }
 }
 
-void Reset_ClearWRAM_loop00(CpuState *cpu) {
+/* decomp: entry point at $92F7 inside Boot_ClearWRAM: clears WRAM with the $0199 RAM block-move trampoline */
+void Boot_ClearWRAM_92F7(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
     case 0: _r = interp_tier_dispatch(cpu, 0x0092f7u); break; /* exact M0X0 LLE */
     case 1: _r = interp_tier_dispatch(cpu, 0x0092f7u); break; /* exact M0X1 LLE */
-    case 2: _r = Reset_ClearWRAM_loop00_M1X0(cpu); break;
+    case 2: _r = Boot_ClearWRAM_92F7_M1X0(cpu); break;
     case 3: _r = interp_tier_dispatch(cpu, 0x0092f7u); break; /* exact M1X1 LLE */
     default: _r = interp_tier_dispatch(cpu, 0x0092f7u); break;
   }
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "Reset_ClearWRAM_loop00");
+      (int)_r, "Boot_ClearWRAM_92F7");
     abort();
   }
 }
 
+/* decomp: entry point at $92FF inside Boot_ClearWRAM: clears WRAM with the $0199 RAM block-move trampoline */
 void Boot_ClearWRAM_92FF(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25971,6 +26015,7 @@ void Boot_ClearWRAM_92FF(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9300 inside Boot_ClearWRAM: clears WRAM with the $0199 RAM block-move trampoline */
 void Boot_ClearWRAM_9300(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -25988,6 +26033,7 @@ void Boot_ClearWRAM_9300(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9302 inside Boot_ClearWRAM: clears WRAM with the $0199 RAM block-move trampoline */
 void Boot_ClearWRAM_9302(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26005,6 +26051,7 @@ void Boot_ClearWRAM_9302(CpuState *cpu) {
   }
 }
 
+/* decomp: DMA ch1: copies the $0A00 OAM buffer ($220 bytes) to OAM */
 void Oam_Upload(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26022,6 +26069,7 @@ void Oam_Upload(CpuState *cpu) {
   }
 }
 
+/* decomp: Copies a string X->Y up to and including the first $FF, space or '_' terminator */
 void Text_CopyWord(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26039,6 +26087,7 @@ void Text_CopyWord(CpuState *cpu) {
   }
 }
 
+/* decomp: Copies a $FF-terminated string X->Y, dropping '_' characters */
 void Text_CopyStripUnderscores(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26056,6 +26105,7 @@ void Text_CopyStripUnderscores(CpuState *cpu) {
   }
 }
 
+/* decomp: DMA ch7: copies the $0200 tilemap buffer ($800 bytes) to VRAM address in $A8 */
 void Vram_UploadTilemapAtA8(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26073,6 +26123,7 @@ void Vram_UploadTilemapAtA8(CpuState *cpu) {
   }
 }
 
+/* decomp: DMA ch7: copies the $0200 tilemap buffer ($800 bytes) to VRAM address in $5A */
 void Vram_UploadTilemap(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26090,6 +26141,7 @@ void Vram_UploadTilemap(CpuState *cpu) {
   }
 }
 
+/* decomp: DMA ch7: copies $0780.. ($1FF bytes) to VRAM $5A+$2C0 (bottom rows of the tilemap) */
 void Vram_UploadTilemapBottom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26107,6 +26159,7 @@ void Vram_UploadTilemapBottom(CpuState *cpu) {
   }
 }
 
+/* decomp: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track */
 void Attract_Main(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26124,6 +26177,7 @@ void Attract_Main(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9400 inside Attract_Main: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track */
 void Attract_Main_9400(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26141,6 +26195,7 @@ void Attract_Main_9400(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9408 inside Attract_Main: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track */
 void Attract_Main_9408(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26158,6 +26213,7 @@ void Attract_Main_9408(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $941F inside Attract_Main: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track */
 void Attract_Main_941F(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26175,6 +26231,7 @@ void Attract_Main_941F(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9428 inside Attract_Main: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track */
 void Attract_Main_9428(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26192,6 +26249,7 @@ void Attract_Main_9428(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9447 inside Attract_Main: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track */
 void Attract_Main_9447(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26209,6 +26267,7 @@ void Attract_Main_9447(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9450 inside Attract_Main: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track */
 void Attract_Main_9450(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26226,6 +26285,7 @@ void Attract_Main_9450(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9459 inside Attract_Main: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track */
 void Attract_Main_9459(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26243,6 +26303,7 @@ void Attract_Main_9459(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9460 inside Attract_Main: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track */
 void Attract_Main_9460(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26260,6 +26321,7 @@ void Attract_Main_9460(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $947A inside Attract_Main: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track */
 void Attract_Main_947A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26277,6 +26339,7 @@ void Attract_Main_947A(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9481 inside Attract_Main: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track */
 void Attract_Main_9481(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26294,6 +26357,7 @@ void Attract_Main_9481(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $94BC inside Attract_Main: Game mode 5: logo screen, waits ~240 frames for a button, else runs a demo race on a non-stunt track */
 void Attract_Main_94BC(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26311,6 +26375,7 @@ void Attract_Main_94BC(CpuState *cpu) {
   }
 }
 
+/* decomp: Post-race results: loads both unis' palettes, dispatches by event type via table $95A5 */
 void Results_Show(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26328,6 +26393,7 @@ void Results_Show(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9522 inside Results_Show: Post-race results: loads both unis' palettes, dispatches by event type via table $95A5 */
 void Results_Show_9522(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26345,6 +26411,7 @@ void Results_Show_9522(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9575 inside Results_Show: Post-race results: loads both unis' palettes, dispatches by event type via table $95A5 */
 void Results_Show_9575(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26362,6 +26429,7 @@ void Results_Show_9575(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9596 inside Results_Show: Post-race results: loads both unis' palettes, dispatches by event type via table $95A5 */
 void Results_Show_9596(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26379,6 +26447,7 @@ void Results_Show_9596(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $95A4 inside Results_Show: Post-race results: loads both unis' palettes, dispatches by event type via table $95A5 */
 void Results_Show_95A4(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26396,6 +26465,7 @@ void Results_Show_95A4(CpuState *cpu) {
   }
 }
 
+/* decomp: Draws 16 track-name entries in two columns with DrawText (track picker) */
 void Menu_DrawTrackNameGrid(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26413,6 +26483,7 @@ void Menu_DrawTrackNameGrid(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $95E0 inside Menu_DrawTrackNameGrid: Draws 16 track-name entries in two columns with DrawText (track picker) */
 void Menu_DrawTrackNameGrid_95E0(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26430,6 +26501,7 @@ void Menu_DrawTrackNameGrid_95E0(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $960B inside Menu_DrawTrackNameGrid: Draws 16 track-name entries in two columns with DrawText (track picker) */
 void Menu_DrawTrackNameGrid_960B(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26447,6 +26519,7 @@ void Menu_DrawTrackNameGrid_960B(CpuState *cpu) {
   }
 }
 
+/* decomp: Builds OAM entries for the 16-slot track grid and its hi-table bits */
 void Menu_SetupTrackGridSprites(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26464,6 +26537,7 @@ void Menu_SetupTrackGridSprites(CpuState *cpu) {
   }
 }
 
+/* decomp: Hardware divide X / A: returns quotient in A, remainder in X */
 void Math_Div16by8(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26481,6 +26555,7 @@ void Math_Div16by8(CpuState *cpu) {
   }
 }
 
+/* decomp: Software 16-bit unsigned divide X / A, quotient in A (restoring shift-subtract) */
 void Math_Div16(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26498,6 +26573,7 @@ void Math_Div16(CpuState *cpu) {
   }
 }
 
+/* decomp: Tour select: loads palettes and places the 9 tour icons, tile depends on tour medal/unlock state */
 void Tour_DrawSelectIcons(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26515,6 +26591,7 @@ void Tour_DrawSelectIcons(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9764 inside Tour_DrawSelectIcons: Tour select: loads palettes and places the 9 tour icons, tile depends on tour medal/unlock state */
 void Tour_DrawSelectIcons_9764(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26532,6 +26609,7 @@ void Tour_DrawSelectIcons_9764(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $9782 inside Tour_DrawSelectIcons: Tour select: loads palettes and places the 9 tour icons, tile depends on tour medal/unlock state */
 void Tour_DrawSelectIcons_9782(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -26549,6 +26627,7 @@ void Tour_DrawSelectIcons_9782(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $97D9 inside Tour_DrawSelectIcons: Tour select: loads palettes and places the 9 tour icons, tile depends on tour medal/unlock state */
 void Tour_DrawSelectIcons_97D9(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

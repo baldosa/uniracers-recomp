@@ -153,6 +153,7 @@ RecompReturn Vs_SortPlayersForRace_FastRom_M1X0(CpuState *cpu);
 RecompReturn Vs_UnswapPlayers_FastRom_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_M1X0(CpuState *cpu);
 
+/* decomp: entry point at $C004 inside Challenge_ExitIfDone: Fragment inside Mode_ChallengeRace (exit if $00 set); unreferenced as a function; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Challenge_ExitIfDone_C004_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Challenge_ExitIfDone_C004_M1X0";
@@ -2559,6 +2560,7 @@ RecompReturn Challenge_ExitIfDone_C004_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Options 'define player': pick player, warn, Y+Select+A wipes the player then renames; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Options_DefinePlayer_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Options_DefinePlayer_M0X0";
@@ -4041,6 +4043,7 @@ RecompReturn Options_DefinePlayer_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C124 inside Options_DefinePlayer: Options 'define player': pick player, warn, Y+Select+A wipes the player then renames; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Options_DefinePlayer_C124_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Options_DefinePlayer_C124_M1X0";
@@ -5441,6 +5444,7 @@ RecompReturn Options_DefinePlayer_C124_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C12B inside Options_DefinePlayer: Options 'define player': pick player, warn, Y+Select+A wipes the player then renames; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Options_DefinePlayer_C12B_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Options_DefinePlayer_C12B_M1X0";
@@ -6801,6 +6805,7 @@ RecompReturn Options_DefinePlayer_C12B_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C145 inside Options_DefinePlayer: Options 'define player': pick player, warn, Y+Select+A wipes the player then renames; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Options_DefinePlayer_C145_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Options_DefinePlayer_C145_M1X0";
@@ -7953,6 +7958,7 @@ RecompReturn Options_DefinePlayer_C145_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C14B inside Options_DefinePlayer: Options 'define player': pick player, warn, Y+Select+A wipes the player then renames; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Options_DefinePlayer_C14B_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Options_DefinePlayer_C14B_M1X0";
@@ -9069,6 +9075,7 @@ RecompReturn Options_DefinePlayer_C14B_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C14E inside Options_DefinePlayer: Options 'define player': pick player, warn, Y+Select+A wipes the player then renames; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Options_DefinePlayer_C14E_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Options_DefinePlayer_C14E_M1X0";
@@ -10154,6 +10161,7 @@ RecompReturn Options_DefinePlayer_C14E_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C154 inside Options_DefinePlayer: Options 'define player': pick player, warn, Y+Select+A wipes the player then renames; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Options_DefinePlayer_C154_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Options_DefinePlayer_C154_M1X0";
@@ -11177,6 +11185,7 @@ RecompReturn Options_DefinePlayer_C154_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C167 inside Options_DefinePlayer: Options 'define player': pick player, warn, Y+Select+A wipes the player then renames; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Options_DefinePlayer_C167_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Options_DefinePlayer_C167_M1X0";
@@ -12154,6 +12163,7 @@ RecompReturn Options_DefinePlayer_C167_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Clear the H-flip bit on sprites $77 and $7F (attr bytes $0BDF/$0BFF); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Oam_ClearCursorHFlip_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Oam_ClearCursorHFlip_M1X0";
@@ -12314,6 +12324,7 @@ RecompReturn Oam_ClearCursorHFlip_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C1F4 inside Input_WaitAnyButtonL: Long wrapper for Input_WaitAnyButton; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_WaitAnyButtonL_C1F4_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_WaitAnyButtonL_C1F4_M1X0";
@@ -12414,6 +12425,7 @@ RecompReturn Input_WaitAnyButtonL_C1F4_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Wait frames until a button is pressed on either pad (2-frame confirm), then hide sprites; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_WaitAnyButton_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_WaitAnyButton_M1X0";
@@ -12898,6 +12910,7 @@ RecompReturn Input_WaitAnyButton_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C1FE inside Input_WaitAnyButton: Wait frames until a button is pressed on either pad (2-frame confirm), then hide sprites; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_WaitAnyButton_C1FE_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_WaitAnyButton_C1FE_M1X0";
@@ -13350,6 +13363,7 @@ RecompReturn Input_WaitAnyButton_C1FE_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C214 inside Input_WaitAnyButton: Wait frames until a button is pressed on either pad (2-frame confirm), then hide sprites; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_WaitAnyButton_C214_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_WaitAnyButton_C214_M1X0";
@@ -13802,6 +13816,7 @@ RecompReturn Input_WaitAnyButton_C214_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Wait frames until no buttons are held on either pad; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_WaitAllReleased_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_WaitAllReleased_M1X0";
@@ -14097,6 +14112,7 @@ RecompReturn Input_WaitAllReleased_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C244 inside Input_WaitAllReleased: Wait frames until no buttons are held on either pad; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_WaitAllReleased_C244_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_WaitAllReleased_C244_M1X0";
@@ -14360,6 +14376,7 @@ RecompReturn Input_WaitAllReleased_C244_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Draw a track's top-3 records as numbers with holder names (stunt scores); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Records_DrawTopScores_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_DrawTopScores_M1X0";
@@ -15017,6 +15034,7 @@ RecompReturn Records_DrawTopScores_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Draw a track's top-3 record times with holder names; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Records_DrawTopTimes_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_DrawTopTimes_M1X0";
@@ -15884,6 +15902,7 @@ RecompReturn Records_DrawTopTimes_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: text renderer; control codes dispatched through the table at $C3CB; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn DrawText_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DrawText_M0X0";
@@ -16241,6 +16260,7 @@ RecompReturn DrawText_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: text renderer; control codes dispatched through the table at $C3CB; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn DrawText_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "DrawText_M1X0";
@@ -16598,6 +16618,7 @@ RecompReturn DrawText_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_DrawLoop_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_DrawLoop_M0X0";
@@ -16939,6 +16960,7 @@ RecompReturn Text_DrawLoop_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_DrawLoop_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_DrawLoop_M1X0";
@@ -17309,6 +17331,7 @@ RecompReturn Text_DrawLoop_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C3B1 inside Text_DrawLoop: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_DrawLoop_C3B1_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_DrawLoop_C3B1_M1X0";
@@ -17643,6 +17666,7 @@ RecompReturn Text_DrawLoop_C3B1_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C3B9 inside Text_DrawLoop: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_DrawLoop_C3B9_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_DrawLoop_C3B9_M1X0";
@@ -17944,6 +17968,7 @@ RecompReturn Text_DrawLoop_C3B9_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C3C8 inside Text_DrawLoop: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_DrawLoop_C3C8_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_DrawLoop_C3C8_M0X0";
@@ -18201,6 +18226,7 @@ RecompReturn Text_DrawLoop_C3C8_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C3ED inside Text_DrawLoop: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_DrawLoop_C3ED_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_DrawLoop_C3ED_M1X0";
@@ -18275,6 +18301,7 @@ RecompReturn Text_DrawLoop_C3ED_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C3F7 inside Text_DrawLoop: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_DrawLoop_C3F7_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_DrawLoop_C3F7_M1X0";
@@ -18785,6 +18812,7 @@ RecompReturn Text_DrawLoop_C3F7_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C3F9 inside Text_DrawLoop: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_DrawLoop_C3F9_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_DrawLoop_C3F9_M1X0";
@@ -19289,6 +19317,7 @@ RecompReturn Text_DrawLoop_C3F9_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C3FB inside Text_DrawLoop: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_DrawLoop_C3FB_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_DrawLoop_C3FB_M1X0";
@@ -19765,6 +19794,7 @@ RecompReturn Text_DrawLoop_C3FB_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C403 inside Text_DrawLoop: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_DrawLoop_C403_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_DrawLoop_C403_M1X0";
@@ -20210,6 +20240,7 @@ RecompReturn Text_DrawLoop_C403_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C406 inside Text_DrawLoop: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_DrawLoop_C406_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_DrawLoop_C406_M1X0";
@@ -20650,6 +20681,7 @@ RecompReturn Text_DrawLoop_C406_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C40A inside Text_DrawLoop: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_DrawLoop_C40A_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_DrawLoop_C40A_M1X0";
@@ -21073,6 +21105,7 @@ RecompReturn Text_DrawLoop_C40A_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C40D inside Text_DrawLoop: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_DrawLoop_C40D_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_DrawLoop_C40D_M1X0";
@@ -21304,6 +21337,7 @@ RecompReturn Text_DrawLoop_C40D_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $FF: end of string, return from DrawText; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdEnd_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdEnd_M0X0";
@@ -21426,6 +21460,7 @@ RecompReturn Text_CmdEnd_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $FD: print word at pointer as 5-digit decimal; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdPrintNum5_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdPrintNum5_M0X0";
@@ -21624,6 +21659,7 @@ RecompReturn Text_CmdPrintNum5_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $F0: print word at pointer as decimal, last digits only; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdPrintNum2_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdPrintNum2_M0X0";
@@ -21822,6 +21858,7 @@ RecompReturn Text_CmdPrintNum2_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $FE x y: set text cursor $9F; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdSetPos_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdSetPos_M0X0";
@@ -22022,6 +22059,7 @@ RecompReturn Text_CmdSetPos_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $FC row: center the rest of the line on that row; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdCenterLine_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdCenterLine_M0X0";
@@ -22328,6 +22366,7 @@ RecompReturn Text_CmdCenterLine_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C4C4 inside Text_CmdCenterLine: Text code $FC row: center the rest of the line on that row; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_CmdCenterLine_C4C4_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdCenterLine_C4C4_M1X0";
@@ -22567,6 +22606,7 @@ RecompReturn Text_CmdCenterLine_C4C4_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C4CB inside Text_CmdCenterLine: Text code $FC row: center the rest of the line on that row; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_CmdCenterLine_C4CB_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdCenterLine_C4CB_M1X0";
@@ -22887,6 +22927,7 @@ RecompReturn Text_CmdCenterLine_C4CB_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C4CE inside Text_CmdCenterLine: Text code $FC row: center the rest of the line on that row; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_CmdCenterLine_C4CE_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdCenterLine_C4CE_M1X0";
@@ -23176,6 +23217,7 @@ RecompReturn Text_CmdCenterLine_C4CE_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C4D2 inside Text_CmdCenterLine: Text code $FC row: center the rest of the line on that row; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_CmdCenterLine_C4D2_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdCenterLine_C4D2_M1X0";
@@ -23434,6 +23476,7 @@ RecompReturn Text_CmdCenterLine_C4D2_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $F2 row: center the next word (up to '_') on that row; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdCenterWord_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdCenterWord_M0X0";
@@ -23800,6 +23843,7 @@ RecompReturn Text_CmdCenterWord_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $FA ptr: draw a nested string, then continue; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdCallString_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdCallString_M0X0";
@@ -23938,6 +23982,7 @@ RecompReturn Text_CmdCallString_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $F9 n: set tile palette bits $B0; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdSetPalette_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdSetPalette_M0X0";
@@ -24045,6 +24090,7 @@ RecompReturn Text_CmdSetPalette_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C570 inside Text_CmdSetPalette: Text code $F9 n: set tile palette bits $B0; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdSetPalette_C570_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdSetPalette_C570_M0X0";
@@ -24267,6 +24313,7 @@ RecompReturn Text_CmdSetPalette_C570_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C575 inside Text_CmdSetPalette: Text code $F9 n: set tile palette bits $B0; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdSetPalette_C575_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdSetPalette_C575_M0X0";
@@ -24380,6 +24427,7 @@ RecompReturn Text_CmdSetPalette_C575_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C581 inside Text_CmdSetPalette: Text code $F9 n: set tile palette bits $B0; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdSetPalette_C581_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdSetPalette_C581_M0X0";
@@ -24452,6 +24500,7 @@ RecompReturn Text_CmdSetPalette_C581_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C5B2 inside Text_CmdSetPalette: Text code $F9 n: set tile palette bits $B0; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdSetPalette_C5B2_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdSetPalette_C5B2_M0X0";
@@ -24519,6 +24568,7 @@ RecompReturn Text_CmdSetPalette_C5B2_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C5B4 inside Text_CmdSetPalette: Text code $F9 n: set tile palette bits $B0; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdSetPalette_C5B4_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdSetPalette_C5B4_M0X0";
@@ -24578,6 +24628,7 @@ RecompReturn Text_CmdSetPalette_C5B4_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $F5 id: draw player name (SRAM $77000C+id*16) for an immediate id; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdPlayerNameImm_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdPlayerNameImm_M0X0";
@@ -24942,6 +24993,7 @@ RecompReturn Text_CmdPlayerNameImm_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $F8 ptr: draw player name for the id stored at ptr; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdPlayerNameVar_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdPlayerNameVar_M0X0";
@@ -25321,6 +25373,7 @@ RecompReturn Text_CmdPlayerNameVar_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C60B inside Text_CmdPlayerNameVar: Text code $F8 ptr: draw player name for the id stored at ptr; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Text_CmdPlayerNameVar_C60B_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdPlayerNameVar_C60B_M1X0";
@@ -25373,6 +25426,7 @@ RecompReturn Text_CmdPlayerNameVar_C60B_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $F4 id: draw name from ROM table DATA_839F96 (CPU/uni names), immediate id; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdRomNameImm_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdRomNameImm_M0X0";
@@ -25737,6 +25791,7 @@ RecompReturn Text_CmdRomNameImm_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $F7 ptr: draw name from ROM table DATA_839F96, id at ptr; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdRomNameVar_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdRomNameVar_M0X0";
@@ -26116,6 +26171,7 @@ RecompReturn Text_CmdRomNameVar_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $F3 id: draw league name (SRAM $77016E+id*32), immediate id; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdLeagueNameImm_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdLeagueNameImm_M0X0";
@@ -26410,6 +26466,7 @@ RecompReturn Text_CmdLeagueNameImm_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $F6 ptr: draw league name, id at ptr; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdLeagueNameVar_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdLeagueNameVar_M0X0";
@@ -26719,6 +26776,7 @@ RecompReturn Text_CmdLeagueNameVar_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $F1 ptr: print direct-page word as a race time; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdPrintTime_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdPrintTime_M0X0";
@@ -26906,6 +26964,7 @@ RecompReturn Text_CmdPrintTime_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Text code $EF n: move OAM sprite $68+n to the text cursor position; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_CmdPlaceSprite_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_CmdPlaceSprite_M0X0";
@@ -27146,6 +27205,7 @@ RecompReturn Text_CmdPlaceSprite_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: After a race: set stats offsets, dispatch on race type $77074B to update stats/records; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_RecordResults_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_RecordResults_M1X0";
@@ -27372,6 +27432,7 @@ RecompReturn Race_RecordResults_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Race type 0: decide winner by total time, update stats and track records; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_RecordTimeRace_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_RecordTimeRace_M0X0";
@@ -27951,6 +28012,7 @@ RecompReturn Race_RecordTimeRace_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C7ED inside Race_RecordTimeRace: Race type 0: decide winner by total time, update stats and track records; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_RecordTimeRace_C7ED_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_RecordTimeRace_C7ED_M0X0";
@@ -28057,6 +28119,7 @@ RecompReturn Race_RecordTimeRace_C7ED_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Insert p1 time into records, or count a non-finish if time >= 10:00.00; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Race_RecordP1TimeOrDnf_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_RecordP1TimeOrDnf_M0X0";
@@ -28324,6 +28387,7 @@ RecompReturn Race_RecordP1TimeOrDnf_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $C004 inside Challenge_ExitIfDone: Fragment inside Mode_ChallengeRace (exit if $00 set); unreferenced as a function */
 void Challenge_ExitIfDone_C004(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28341,6 +28405,7 @@ void Challenge_ExitIfDone_C004(CpuState *cpu) {
   }
 }
 
+/* decomp: Options 'define player': pick player, warn, Y+Select+A wipes the player then renames */
 void Options_DefinePlayer(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28358,6 +28423,7 @@ void Options_DefinePlayer(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C124 inside Options_DefinePlayer: Options 'define player': pick player, warn, Y+Select+A wipes the player then renames */
 void Options_DefinePlayer_C124(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28375,6 +28441,7 @@ void Options_DefinePlayer_C124(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C12B inside Options_DefinePlayer: Options 'define player': pick player, warn, Y+Select+A wipes the player then renames */
 void Options_DefinePlayer_C12B(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28392,6 +28459,7 @@ void Options_DefinePlayer_C12B(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C145 inside Options_DefinePlayer: Options 'define player': pick player, warn, Y+Select+A wipes the player then renames */
 void Options_DefinePlayer_C145(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28409,6 +28477,7 @@ void Options_DefinePlayer_C145(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C14B inside Options_DefinePlayer: Options 'define player': pick player, warn, Y+Select+A wipes the player then renames */
 void Options_DefinePlayer_C14B(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28426,6 +28495,7 @@ void Options_DefinePlayer_C14B(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C14E inside Options_DefinePlayer: Options 'define player': pick player, warn, Y+Select+A wipes the player then renames */
 void Options_DefinePlayer_C14E(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28443,6 +28513,7 @@ void Options_DefinePlayer_C14E(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C154 inside Options_DefinePlayer: Options 'define player': pick player, warn, Y+Select+A wipes the player then renames */
 void Options_DefinePlayer_C154(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28460,6 +28531,7 @@ void Options_DefinePlayer_C154(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C167 inside Options_DefinePlayer: Options 'define player': pick player, warn, Y+Select+A wipes the player then renames */
 void Options_DefinePlayer_C167(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28477,6 +28549,7 @@ void Options_DefinePlayer_C167(CpuState *cpu) {
   }
 }
 
+/* decomp: Clear the H-flip bit on sprites $77 and $7F (attr bytes $0BDF/$0BFF) */
 void Oam_ClearCursorHFlip(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28494,6 +28567,7 @@ void Oam_ClearCursorHFlip(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C1F4 inside Input_WaitAnyButtonL: Long wrapper for Input_WaitAnyButton */
 void Input_WaitAnyButtonL_C1F4(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28511,6 +28585,7 @@ void Input_WaitAnyButtonL_C1F4(CpuState *cpu) {
   }
 }
 
+/* decomp: Wait frames until a button is pressed on either pad (2-frame confirm), then hide sprites */
 void Input_WaitAnyButton(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28528,6 +28603,7 @@ void Input_WaitAnyButton(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C1FE inside Input_WaitAnyButton: Wait frames until a button is pressed on either pad (2-frame confirm), then hide sprites */
 void Input_WaitAnyButton_C1FE(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28545,6 +28621,7 @@ void Input_WaitAnyButton_C1FE(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C214 inside Input_WaitAnyButton: Wait frames until a button is pressed on either pad (2-frame confirm), then hide sprites */
 void Input_WaitAnyButton_C214(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28562,6 +28639,7 @@ void Input_WaitAnyButton_C214(CpuState *cpu) {
   }
 }
 
+/* decomp: Wait frames until no buttons are held on either pad */
 void Input_WaitAllReleased(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28579,6 +28657,7 @@ void Input_WaitAllReleased(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C244 inside Input_WaitAllReleased: Wait frames until no buttons are held on either pad */
 void Input_WaitAllReleased_C244(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28596,6 +28675,7 @@ void Input_WaitAllReleased_C244(CpuState *cpu) {
   }
 }
 
+/* decomp: Draw a track's top-3 records as numbers with holder names (stunt scores) */
 void Records_DrawTopScores(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28613,6 +28693,7 @@ void Records_DrawTopScores(CpuState *cpu) {
   }
 }
 
+/* decomp: Draw a track's top-3 record times with holder names */
 void Records_DrawTopTimes(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28630,6 +28711,7 @@ void Records_DrawTopTimes(CpuState *cpu) {
   }
 }
 
+/* decomp: text renderer; control codes dispatched through the table at $C3CB */
 void DrawText(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28647,6 +28729,7 @@ void DrawText(CpuState *cpu) {
   }
 }
 
+/* decomp: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer */
 void Text_DrawLoop(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28664,6 +28747,7 @@ void Text_DrawLoop(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C3B1 inside Text_DrawLoop: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer */
 void Text_DrawLoop_C3B1(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28681,6 +28765,7 @@ void Text_DrawLoop_C3B1(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C3B9 inside Text_DrawLoop: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer */
 void Text_DrawLoop_C3B9(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28698,6 +28783,7 @@ void Text_DrawLoop_C3B9(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C3C8 inside Text_DrawLoop: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer */
 void Text_DrawLoop_C3C8(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28715,6 +28801,7 @@ void Text_DrawLoop_C3C8(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C3ED inside Text_DrawLoop: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer */
 void Text_DrawLoop_C3ED(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28732,6 +28819,7 @@ void Text_DrawLoop_C3ED(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C3F7 inside Text_DrawLoop: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer */
 void Text_DrawLoop_C3F7(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28749,6 +28837,7 @@ void Text_DrawLoop_C3F7(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C3F9 inside Text_DrawLoop: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer */
 void Text_DrawLoop_C3F9(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28766,6 +28855,7 @@ void Text_DrawLoop_C3F9(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C3FB inside Text_DrawLoop: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer */
 void Text_DrawLoop_C3FB(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28783,6 +28873,7 @@ void Text_DrawLoop_C3FB(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C403 inside Text_DrawLoop: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer */
 void Text_DrawLoop_C403(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28800,6 +28891,7 @@ void Text_DrawLoop_C403(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C406 inside Text_DrawLoop: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer */
 void Text_DrawLoop_C406(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28817,6 +28909,7 @@ void Text_DrawLoop_C406(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C40A inside Text_DrawLoop: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer */
 void Text_DrawLoop_C40A(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28834,6 +28927,7 @@ void Text_DrawLoop_C40A(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C40D inside Text_DrawLoop: DrawText main loop: fetch byte, dispatch control codes >= $EE, else draw 16x16 glyph to $0200 buffer */
 void Text_DrawLoop_C40D(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28851,6 +28945,7 @@ void Text_DrawLoop_C40D(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $FF: end of string, return from DrawText */
 void Text_CmdEnd(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28868,6 +28963,7 @@ void Text_CmdEnd(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $FD: print word at pointer as 5-digit decimal */
 void Text_CmdPrintNum5(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28885,6 +28981,7 @@ void Text_CmdPrintNum5(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $F0: print word at pointer as decimal, last digits only */
 void Text_CmdPrintNum2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28902,6 +28999,7 @@ void Text_CmdPrintNum2(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $FE x y: set text cursor $9F */
 void Text_CmdSetPos(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28919,6 +29017,7 @@ void Text_CmdSetPos(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $FC row: center the rest of the line on that row */
 void Text_CmdCenterLine(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28936,6 +29035,7 @@ void Text_CmdCenterLine(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C4C4 inside Text_CmdCenterLine: Text code $FC row: center the rest of the line on that row */
 void Text_CmdCenterLine_C4C4(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28953,6 +29053,7 @@ void Text_CmdCenterLine_C4C4(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C4CB inside Text_CmdCenterLine: Text code $FC row: center the rest of the line on that row */
 void Text_CmdCenterLine_C4CB(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28970,6 +29071,7 @@ void Text_CmdCenterLine_C4CB(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C4CE inside Text_CmdCenterLine: Text code $FC row: center the rest of the line on that row */
 void Text_CmdCenterLine_C4CE(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -28987,6 +29089,7 @@ void Text_CmdCenterLine_C4CE(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C4D2 inside Text_CmdCenterLine: Text code $FC row: center the rest of the line on that row */
 void Text_CmdCenterLine_C4D2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -29004,6 +29107,7 @@ void Text_CmdCenterLine_C4D2(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $F2 row: center the next word (up to '_') on that row */
 void Text_CmdCenterWord(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -29021,6 +29125,7 @@ void Text_CmdCenterWord(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $FA ptr: draw a nested string, then continue */
 void Text_CmdCallString(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -29038,6 +29143,7 @@ void Text_CmdCallString(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $F9 n: set tile palette bits $B0 */
 void Text_CmdSetPalette(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -29055,6 +29161,7 @@ void Text_CmdSetPalette(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C570 inside Text_CmdSetPalette: Text code $F9 n: set tile palette bits $B0 */
 void Text_CmdSetPalette_C570(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -29072,6 +29179,7 @@ void Text_CmdSetPalette_C570(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C575 inside Text_CmdSetPalette: Text code $F9 n: set tile palette bits $B0 */
 void Text_CmdSetPalette_C575(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -29089,6 +29197,7 @@ void Text_CmdSetPalette_C575(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C581 inside Text_CmdSetPalette: Text code $F9 n: set tile palette bits $B0 */
 void Text_CmdSetPalette_C581(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -29106,6 +29215,7 @@ void Text_CmdSetPalette_C581(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C5B2 inside Text_CmdSetPalette: Text code $F9 n: set tile palette bits $B0 */
 void Text_CmdSetPalette_C5B2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -29123,6 +29233,7 @@ void Text_CmdSetPalette_C5B2(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C5B4 inside Text_CmdSetPalette: Text code $F9 n: set tile palette bits $B0 */
 void Text_CmdSetPalette_C5B4(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -29140,6 +29251,7 @@ void Text_CmdSetPalette_C5B4(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $F5 id: draw player name (SRAM $77000C+id*16) for an immediate id */
 void Text_CmdPlayerNameImm(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -29157,6 +29269,7 @@ void Text_CmdPlayerNameImm(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $F8 ptr: draw player name for the id stored at ptr */
 void Text_CmdPlayerNameVar(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -29174,6 +29287,7 @@ void Text_CmdPlayerNameVar(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C60B inside Text_CmdPlayerNameVar: Text code $F8 ptr: draw player name for the id stored at ptr */
 void Text_CmdPlayerNameVar_C60B(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -29191,6 +29305,7 @@ void Text_CmdPlayerNameVar_C60B(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $F4 id: draw name from ROM table DATA_839F96 (CPU/uni names), immediate id */
 void Text_CmdRomNameImm(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -29208,6 +29323,7 @@ void Text_CmdRomNameImm(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $F7 ptr: draw name from ROM table DATA_839F96, id at ptr */
 void Text_CmdRomNameVar(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -29225,6 +29341,7 @@ void Text_CmdRomNameVar(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $F3 id: draw league name (SRAM $77016E+id*32), immediate id */
 void Text_CmdLeagueNameImm(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -29242,6 +29359,7 @@ void Text_CmdLeagueNameImm(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $F6 ptr: draw league name, id at ptr */
 void Text_CmdLeagueNameVar(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -29259,6 +29377,7 @@ void Text_CmdLeagueNameVar(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $F1 ptr: print direct-page word as a race time */
 void Text_CmdPrintTime(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -29276,6 +29395,7 @@ void Text_CmdPrintTime(CpuState *cpu) {
   }
 }
 
+/* decomp: Text code $EF n: move OAM sprite $68+n to the text cursor position */
 void Text_CmdPlaceSprite(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -29293,6 +29413,7 @@ void Text_CmdPlaceSprite(CpuState *cpu) {
   }
 }
 
+/* decomp: After a race: set stats offsets, dispatch on race type $77074B to update stats/records */
 void Race_RecordResults(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -29310,6 +29431,7 @@ void Race_RecordResults(CpuState *cpu) {
   }
 }
 
+/* decomp: Race type 0: decide winner by total time, update stats and track records */
 void Race_RecordTimeRace(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -29327,6 +29449,7 @@ void Race_RecordTimeRace(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $C7ED inside Race_RecordTimeRace: Race type 0: decide winner by total time, update stats and track records */
 void Race_RecordTimeRace_C7ED(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -29344,6 +29467,7 @@ void Race_RecordTimeRace_C7ED(CpuState *cpu) {
   }
 }
 
+/* decomp: Insert p1 time into records, or count a non-finish if time >= 10:00.00 */
 void Race_RecordP1TimeOrDnf(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

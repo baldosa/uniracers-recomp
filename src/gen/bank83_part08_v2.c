@@ -35,6 +35,7 @@ RecompReturn Res_LoadToVram_M0X0(CpuState *cpu);
 RecompReturn Res_LoadToVram_M1X0(CpuState *cpu);
 RecompReturn Snd_Play1A_M1X0(CpuState *cpu);
 
+/* decomp: League-win cutscene 0 (DATA_8388FD idx 0): setup and scripted animation; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Cutscene0_Main_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Cutscene0_Main_M0X0";
@@ -2082,6 +2083,7 @@ RecompReturn Cutscene0_Main_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: League-win cutscene 0 (DATA_8388FD idx 0): setup and scripted animation */
 void Cutscene0_Main(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

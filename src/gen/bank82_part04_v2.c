@@ -30,6 +30,7 @@ RecompReturn Uni_UpdateSkidTimer_M0X0(CpuState *cpu);
 RecompReturn Uni_UpdateTurnAround_M0X0(CpuState *cpu);
 RecompReturn Uni_UpdateTurnFlag_M0X1(CpuState *cpu);
 
+/* decomp: starts skid timer $11ED when the d-pad opposes the current velocity; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_UpdateSkidTimer_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_UpdateSkidTimer_M0X0";
@@ -362,6 +363,7 @@ RecompReturn Uni_UpdateSkidTimer_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: sets $0F33 to +/-2 from d-pad direction and facing when airborne or idle; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_SetPushDir_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_SetPushDir_M0X0";
@@ -720,6 +722,7 @@ RecompReturn Uni_SetPushDir_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: on ground: idle timer/idle anim flag and lean angle $0F2D adjustment; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_UpdateGroundLean_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_UpdateGroundLean_M0X0";
@@ -2056,6 +2059,7 @@ RecompReturn Uni_UpdateGroundLean_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: on ground: idle timer/idle anim flag and lean angle $0F2D adjustment; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Uni_UpdateGroundLean_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_UpdateGroundLean_M0X1";
@@ -3392,6 +3396,7 @@ RecompReturn Uni_UpdateGroundLean_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: maintains post-turn flags $0F7D/$0F8D/$0F39 (purpose unclear); compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Uni_UpdateTurnFlag_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_UpdateTurnFlag_M0X1";
@@ -3701,6 +3706,7 @@ RecompReturn Uni_UpdateTurnFlag_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: sets context flag $0F0B when speed/angle conditions are met (purpose unclear); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_UpdateFastFlag_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_UpdateFastFlag_M0X0";
@@ -4065,6 +4071,7 @@ RecompReturn Uni_UpdateFastFlag_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: sets context flag $0F0B when speed/angle conditions are met (purpose unclear); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Uni_UpdateFastFlag_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_UpdateFastFlag_M1X0";
@@ -4429,6 +4436,7 @@ RecompReturn Uni_UpdateFastFlag_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: starts/advances the turn-around animation when steering against facing; flips facing at end; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_UpdateTurnAround_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_UpdateTurnAround_M0X0";
@@ -5510,6 +5518,7 @@ RecompReturn Uni_UpdateTurnAround_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: L or R alone sets twist tilt $0F4D and starts/stops the per-uni twist loop sfx; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Uni_HandleTwistInput_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_HandleTwistInput_M0X1";
@@ -7050,6 +7059,7 @@ RecompReturn Uni_HandleTwistInput_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: slowly decays X velocity toward zero when no drive and no slope; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Uni_DecayVelocityX_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_DecayVelocityX_M0X1";
@@ -7310,6 +7320,7 @@ RecompReturn Uni_DecayVelocityX_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: applies X/Y velocity with subpixel accumulators to the current position ($A5/$A7); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_ApplyVelocity_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_ApplyVelocity_M0X0";
@@ -8393,6 +8404,7 @@ RecompReturn Uni_ApplyVelocity_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: computes max speed (base, boosts, CPU catch-up) and clamps X/Y velocity; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_ClampSpeed_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_ClampSpeed_M0X0";
@@ -10208,6 +10220,7 @@ RecompReturn Uni_ClampSpeed_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: starts skid timer $11ED when the d-pad opposes the current velocity */
 void Uni_UpdateSkidTimer(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10225,6 +10238,7 @@ void Uni_UpdateSkidTimer(CpuState *cpu) {
   }
 }
 
+/* decomp: sets $0F33 to +/-2 from d-pad direction and facing when airborne or idle */
 void Uni_SetPushDir(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10242,6 +10256,7 @@ void Uni_SetPushDir(CpuState *cpu) {
   }
 }
 
+/* decomp: on ground: idle timer/idle anim flag and lean angle $0F2D adjustment */
 void Uni_UpdateGroundLean(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10259,6 +10274,7 @@ void Uni_UpdateGroundLean(CpuState *cpu) {
   }
 }
 
+/* decomp: maintains post-turn flags $0F7D/$0F8D/$0F39 (purpose unclear) */
 void Uni_UpdateTurnFlag(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10276,6 +10292,7 @@ void Uni_UpdateTurnFlag(CpuState *cpu) {
   }
 }
 
+/* decomp: sets context flag $0F0B when speed/angle conditions are met (purpose unclear) */
 void Uni_UpdateFastFlag(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10293,6 +10310,7 @@ void Uni_UpdateFastFlag(CpuState *cpu) {
   }
 }
 
+/* decomp: starts/advances the turn-around animation when steering against facing; flips facing at end */
 void Uni_UpdateTurnAround(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10310,6 +10328,7 @@ void Uni_UpdateTurnAround(CpuState *cpu) {
   }
 }
 
+/* decomp: L or R alone sets twist tilt $0F4D and starts/stops the per-uni twist loop sfx */
 void Uni_HandleTwistInput(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10327,6 +10346,7 @@ void Uni_HandleTwistInput(CpuState *cpu) {
   }
 }
 
+/* decomp: slowly decays X velocity toward zero when no drive and no slope */
 void Uni_DecayVelocityX(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10344,6 +10364,7 @@ void Uni_DecayVelocityX(CpuState *cpu) {
   }
 }
 
+/* decomp: applies X/Y velocity with subpixel accumulators to the current position ($A5/$A7) */
 void Uni_ApplyVelocity(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10361,6 +10382,7 @@ void Uni_ApplyVelocity(CpuState *cpu) {
   }
 }
 
+/* decomp: computes max speed (base, boosts, CPU catch-up) and clamps X/Y velocity */
 void Uni_ClampSpeed(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

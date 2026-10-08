@@ -33,6 +33,7 @@ RecompReturn Snd_StopStreamLong_M0X0(CpuState *cpu);
 RecompReturn Snd_UploadBlockListLong_M0X0(CpuState *cpu);
 RecompReturn Snd_UploadBlockLong_M0X0(CpuState *cpu);
 
+/* decomp: Loads podium tiles/palettes and the palettes of the 1st-3rd unicycles ($77074D-$77074F); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_LoadPodiumGraphics_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_LoadPodiumGraphics_M1X0";
@@ -679,6 +680,7 @@ RecompReturn League_LoadPodiumGraphics_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Resets sound state, loads sound banks $32/$34/$3A, sends song data and start commands; compiled for 8-bit A, 8-bit X/Y */
 RecompReturn League_StartPodiumMusic_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_StartPodiumMusic_M1X1";
@@ -1955,6 +1957,7 @@ RecompReturn League_StartPodiumMusic_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Sets PPU modes for the podium screen (BG mode 1, BG1/BG2 maps, TM); compiled for 16-bit A, 16-bit X/Y */
 RecompReturn League_SetPodiumPpuRegs_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_SetPodiumPpuRegs_M0X0";
@@ -2117,6 +2120,7 @@ RecompReturn League_SetPodiumPpuRegs_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Race_LoadTrackData_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Race_LoadTrackData_FastRom_M1X0";
@@ -4183,6 +4187,7 @@ RecompReturn Race_LoadTrackData_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Loads podium tiles/palettes and the palettes of the 1st-3rd unicycles ($77074D-$77074F) */
 void League_LoadPodiumGraphics(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -4200,6 +4205,7 @@ void League_LoadPodiumGraphics(CpuState *cpu) {
   }
 }
 
+/* decomp: Resets sound state, loads sound banks $32/$34/$3A, sends song data and start commands */
 void League_StartPodiumMusic(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -4217,6 +4223,7 @@ void League_StartPodiumMusic(CpuState *cpu) {
   }
 }
 
+/* decomp: Sets PPU modes for the podium screen (BG mode 1, BG1/BG2 maps, TM) */
 void League_SetPodiumPpuRegs(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -4234,6 +4241,7 @@ void League_SetPodiumPpuRegs(CpuState *cpu) {
   }
 }
 
+/* decomp: Clears $7E20A8-$7EFFFF, unpacks track ($C2+track) to $7F0000, streams its tile blocks to VRAM; reached through the other ROM mirror bank */
 void Race_LoadTrackData_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

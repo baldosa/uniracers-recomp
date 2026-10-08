@@ -21,6 +21,7 @@ RecompReturn Ppu_WaitVBlank_M1X0(CpuState *cpu);
 RecompReturn Snd_SendQueuedCommand_M0X0(CpuState *cpu);
 RecompReturn Snd_SendQueuedCommand_M1X0(CpuState *cpu);
 
+/* decomp: Wait for start of next vblank via HVBJOY while pumping the sound queue; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Ppu_WaitVBlank_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Ppu_WaitVBlank_M1X0";
@@ -262,6 +263,7 @@ RecompReturn Ppu_WaitVBlank_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $A933 inside Ppu_WaitVBlank: Wait for start of next vblank via HVBJOY while pumping the sound queue; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Ppu_WaitVBlank_A933_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Ppu_WaitVBlank_A933_M1X0";
@@ -422,6 +424,7 @@ RecompReturn Ppu_WaitVBlank_A933_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $A938 inside Ppu_WaitVBlank: Wait for start of next vblank via HVBJOY while pumping the sound queue; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Ppu_WaitVBlank_A938_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Ppu_WaitVBlank_A938_M1X0";
@@ -528,6 +531,7 @@ RecompReturn Ppu_WaitVBlank_A938_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Wait for start of next vblank via HVBJOY while pumping the sound queue */
 void Ppu_WaitVBlank(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -545,6 +549,7 @@ void Ppu_WaitVBlank(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $A933 inside Ppu_WaitVBlank: Wait for start of next vblank via HVBJOY while pumping the sound queue */
 void Ppu_WaitVBlank_A933(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -562,6 +567,7 @@ void Ppu_WaitVBlank_A933(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $A938 inside Ppu_WaitVBlank: Wait for start of next vblank via HVBJOY while pumping the sound queue */
 void Ppu_WaitVBlank_A938(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

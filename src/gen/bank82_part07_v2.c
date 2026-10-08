@@ -18,6 +18,7 @@
 RecompReturn Nmi_FlushTileDmaList_Long_M1X0(CpuState *cpu);
 RecompReturn Nmi_FlushTileDmaList_M1X0(CpuState *cpu);
 
+/* decomp: JSL wrapper for Nmi_FlushTileDmaList (called from NMI handlers); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Nmi_FlushTileDmaList_Long_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Nmi_FlushTileDmaList_Long_M1X0";
@@ -149,6 +150,7 @@ RecompReturn Nmi_FlushTileDmaList_Long_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: If $0306 set, unrolled DMA of 32-byte tiles listed in $15A1/$1645/$16E9 to VRAM until bank<0; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Nmi_FlushTileDmaList_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Nmi_FlushTileDmaList_M1X0";
@@ -17430,6 +17432,7 @@ RecompReturn Nmi_FlushTileDmaList_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Nmi_FlushTileDmaList (called from NMI handlers) */
 void Nmi_FlushTileDmaList_Long(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -17447,6 +17450,7 @@ void Nmi_FlushTileDmaList_Long(CpuState *cpu) {
   }
 }
 
+/* decomp: If $0306 set, unrolled DMA of 32-byte tiles listed in $15A1/$1645/$16E9 to VRAM until bank<0 */
 void Nmi_FlushTileDmaList(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

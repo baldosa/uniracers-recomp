@@ -54,6 +54,7 @@ RecompReturn Vram_ClearRegions_M1X0(CpuState *cpu);
 RecompReturn Vram_FillBlank2K_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_FastRom_M1X0(CpuState *cpu);
 
+/* decomp: Result check (race kinds 0/1): Z set if P1 total time beats P2 (via table $88F7); reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn League_CheckRaceWin_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_CheckRaceWin_FastRom_M0X0";
@@ -274,6 +275,7 @@ RecompReturn League_CheckRaceWin_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Result check (stunt kind): Z set if P1 stunt score reaches the tier/medal target; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn League_CheckStuntWin_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_CheckStuntWin_FastRom_M0X0";
@@ -524,6 +526,7 @@ RecompReturn League_CheckStuntWin_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Tier-complete cutscene thunk (table $88FD entry 0) -> $83C49C; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Award_Tier0Cutscene_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Award_Tier0Cutscene_FastRom_M0X0";
@@ -660,6 +663,7 @@ RecompReturn Award_Tier0Cutscene_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for League_RoundTrackToTier; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_RoundTrackToTierLong_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_RoundTrackToTierLong_FastRom_M1X0";
@@ -791,6 +795,7 @@ RecompReturn League_RoundTrackToTierLong_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Round track index $CE down to the first track of its tier ((CE/5)*5); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_RoundTrackToTier_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_RoundTrackToTier_FastRom_M1X0";
@@ -1006,6 +1011,7 @@ RecompReturn League_RoundTrackToTier_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for League_ClearTierResults; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_ClearTierResultsLong_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_ClearTierResultsLong_M1X0";
@@ -1137,6 +1143,7 @@ RecompReturn League_ClearTierResultsLong_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Zero the 5 per-track result bytes at $771075 for current tier $D0; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_ClearTierResults_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_ClearTierResults_FastRom_M1X0";
@@ -1351,6 +1358,7 @@ RecompReturn League_ClearTierResults_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Reset BG1/BG2 H scroll and tilemap buffer pointers $AA=$1000, $A8=$1400; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Ppu_ResetBgScroll_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Ppu_ResetBgScroll_FastRom_M1X0";
@@ -1495,6 +1503,7 @@ RecompReturn Ppu_ResetBgScroll_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copy-protection check: SRAM must be 8KB (write at $772000 mirrors $770000) else jump to $8094EB; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Sram_CheckSizeMirror_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_CheckSizeMirror_FastRom_M1X0";
@@ -1700,6 +1709,7 @@ RecompReturn Sram_CheckSizeMirror_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Clear session win counts $770400, $7710AD and per-player flags $7710FD at boot; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Sram_ClearSessionData_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Sram_ClearSessionData_FastRom_M1X0";
@@ -1962,6 +1972,7 @@ RecompReturn Sram_ClearSessionData_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Clear by bitmask: b0 VRAM $0000, b1 VRAM $1000, b2 WRAM tilemap $0200-$09FF, b5 VRAM $1400; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Vram_ClearRegions_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Vram_ClearRegions_M1X0";
@@ -2467,6 +2478,7 @@ RecompReturn Vram_ClearRegions_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Fixed-source DMA ch7: fill 2KB of VRAM at VMADD with blank tile word $004C; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Vram_FillBlank2K_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Vram_FillBlank2K_M1X0";
@@ -2665,6 +2677,7 @@ RecompReturn Vram_FillBlank2K_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for Str_Copy; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Str_CopyLong_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Str_CopyLong_FastRom_M0X0";
@@ -2796,6 +2809,7 @@ RecompReturn Str_CopyLong_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for Str_Copy; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Str_CopyLong_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Str_CopyLong_FastRom_M1X0";
@@ -2927,6 +2941,7 @@ RecompReturn Str_CopyLong_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copy $FF-terminated string from X to Y (including terminator); reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Str_Copy_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Str_Copy_FastRom_M0X0";
@@ -3150,6 +3165,7 @@ RecompReturn Str_Copy_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copy $FF-terminated string from X to Y (including terminator); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Str_Copy_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Str_Copy_FastRom_M1X0";
@@ -3373,6 +3389,7 @@ RecompReturn Str_Copy_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Convert A to 5 ASCII digits at $02-$06 + $FF, leading zeros as '_'; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_FormatDecimal5_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_FormatDecimal5_FastRom_M0X0";
@@ -4208,6 +4225,7 @@ RecompReturn Text_FormatDecimal5_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for Text_FormatRaceTime; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_FormatRaceTimeLong_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_FormatRaceTimeLong_FastRom_M0X0";
@@ -4339,6 +4357,7 @@ RecompReturn Text_FormatRaceTimeLong_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Format time A (1/100 s) as m:ss.hh string at $00FF; $EA60='no time', $EA61='quit'; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Text_FormatRaceTime_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Text_FormatRaceTime_FastRom_M0X0";
@@ -5487,6 +5506,7 @@ RecompReturn Text_FormatRaceTime_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Long wrapper for Math_Divide32By16; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Math_Divide32By16Long_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_Divide32By16Long_FastRom_M0X0";
@@ -5618,6 +5638,7 @@ RecompReturn Math_Divide32By16Long_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Divide 32-bit Y:X by 16-bit A (shift-subtract); 16-bit quotient in A/$0C; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Math_Divide32By16_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Math_Divide32By16_FastRom_M0X0";
@@ -5924,6 +5945,7 @@ RecompReturn Math_Divide32By16_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Draw 5x5-tile tier icon A into tilemap buffer $0200 at X; shows lock icon if tier not unlocked; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawTierBadge_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawTierBadge_FastRom_M0X0";
@@ -6575,6 +6597,7 @@ RecompReturn Menu_DrawTierBadge_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Draw 5x5-tile tier icon A into tilemap buffer $0200 at X; shows lock icon if tier not unlocked; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_DrawTierBadge_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_DrawTierBadge_FastRom_M1X0";
@@ -7225,6 +7248,7 @@ RecompReturn Menu_DrawTierBadge_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Decode animation frame X from table $A08000 (bitmask of 6x5 tiles) into buffer at $87; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Anim_DecodeFrame_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Anim_DecodeFrame_FastRom_M1X0";
@@ -8115,6 +8139,7 @@ RecompReturn Anim_DecodeFrame_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Decode animation frame X from table $A08000 (bitmask of 6x5 tiles) into buffer at $87; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Anim_DecodeFrame_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Anim_DecodeFrame_FastRom_M0X0";
@@ -9005,6 +9030,7 @@ RecompReturn Anim_DecodeFrame_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Compute stats-screen bar lengths/percentages ($0A-$0E, $B4-$B8) for player $CA; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Records_CalcPlayerBars_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Records_CalcPlayerBars_M1X0";
@@ -10360,6 +10386,7 @@ RecompReturn Records_CalcPlayerBars_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Result check (race kinds 0/1): Z set if P1 total time beats P2 (via table $88F7); reached through the other ROM mirror bank */
 void League_CheckRaceWin_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10377,6 +10404,7 @@ void League_CheckRaceWin_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Result check (stunt kind): Z set if P1 stunt score reaches the tier/medal target; reached through the other ROM mirror bank */
 void League_CheckStuntWin_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10394,6 +10422,7 @@ void League_CheckStuntWin_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Tier-complete cutscene thunk (table $88FD entry 0) -> $83C49C; reached through the other ROM mirror bank */
 void Award_Tier0Cutscene_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10411,6 +10440,7 @@ void Award_Tier0Cutscene_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Long wrapper for League_RoundTrackToTier; reached through the other ROM mirror bank */
 void League_RoundTrackToTierLong_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10428,6 +10458,7 @@ void League_RoundTrackToTierLong_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Round track index $CE down to the first track of its tier ((CE/5)*5); reached through the other ROM mirror bank */
 void League_RoundTrackToTier_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10445,6 +10476,7 @@ void League_RoundTrackToTier_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Long wrapper for League_ClearTierResults */
 void League_ClearTierResultsLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10462,6 +10494,7 @@ void League_ClearTierResultsLong(CpuState *cpu) {
   }
 }
 
+/* decomp: Zero the 5 per-track result bytes at $771075 for current tier $D0; reached through the other ROM mirror bank */
 void League_ClearTierResults_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10479,6 +10512,7 @@ void League_ClearTierResults_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Reset BG1/BG2 H scroll and tilemap buffer pointers $AA=$1000, $A8=$1400; reached through the other ROM mirror bank */
 void Ppu_ResetBgScroll_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10496,6 +10530,7 @@ void Ppu_ResetBgScroll_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Copy-protection check: SRAM must be 8KB (write at $772000 mirrors $770000) else jump to $8094EB; reached through the other ROM mirror bank */
 void Sram_CheckSizeMirror_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10513,6 +10548,7 @@ void Sram_CheckSizeMirror_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Clear session win counts $770400, $7710AD and per-player flags $7710FD at boot; reached through the other ROM mirror bank */
 void Sram_ClearSessionData_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10530,6 +10566,7 @@ void Sram_ClearSessionData_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Clear by bitmask: b0 VRAM $0000, b1 VRAM $1000, b2 WRAM tilemap $0200-$09FF, b5 VRAM $1400 */
 void Vram_ClearRegions(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10547,6 +10584,7 @@ void Vram_ClearRegions(CpuState *cpu) {
   }
 }
 
+/* decomp: Fixed-source DMA ch7: fill 2KB of VRAM at VMADD with blank tile word $004C */
 void Vram_FillBlank2K(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10564,6 +10602,7 @@ void Vram_FillBlank2K(CpuState *cpu) {
   }
 }
 
+/* decomp: Long wrapper for Str_Copy; reached through the other ROM mirror bank */
 void Str_CopyLong_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10581,6 +10620,7 @@ void Str_CopyLong_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Copy $FF-terminated string from X to Y (including terminator); reached through the other ROM mirror bank */
 void Str_Copy_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10598,6 +10638,7 @@ void Str_Copy_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Convert A to 5 ASCII digits at $02-$06 + $FF, leading zeros as '_'; reached through the other ROM mirror bank */
 void Text_FormatDecimal5_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10615,6 +10656,7 @@ void Text_FormatDecimal5_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Long wrapper for Text_FormatRaceTime; reached through the other ROM mirror bank */
 void Text_FormatRaceTimeLong_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10632,6 +10674,7 @@ void Text_FormatRaceTimeLong_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Format time A (1/100 s) as m:ss.hh string at $00FF; $EA60='no time', $EA61='quit'; reached through the other ROM mirror bank */
 void Text_FormatRaceTime_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10649,6 +10692,7 @@ void Text_FormatRaceTime_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Long wrapper for Math_Divide32By16; reached through the other ROM mirror bank */
 void Math_Divide32By16Long_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10666,6 +10710,7 @@ void Math_Divide32By16Long_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Divide 32-bit Y:X by 16-bit A (shift-subtract); 16-bit quotient in A/$0C; reached through the other ROM mirror bank */
 void Math_Divide32By16_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10683,6 +10728,7 @@ void Math_Divide32By16_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Draw 5x5-tile tier icon A into tilemap buffer $0200 at X; shows lock icon if tier not unlocked; reached through the other ROM mirror bank */
 void Menu_DrawTierBadge_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10700,6 +10746,7 @@ void Menu_DrawTierBadge_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Decode animation frame X from table $A08000 (bitmask of 6x5 tiles) into buffer at $87; reached through the other ROM mirror bank */
 void Anim_DecodeFrame_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -10717,6 +10764,7 @@ void Anim_DecodeFrame_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Compute stats-screen bar lengths/percentages ($0A-$0E, $B4-$B8) for player $CA */
 void Records_CalcPlayerBars(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

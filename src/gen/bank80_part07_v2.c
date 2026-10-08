@@ -94,6 +94,7 @@ RecompReturn Vs_SortPlayersForRace_FastRom_M1X0(CpuState *cpu);
 RecompReturn Vs_UnswapPlayers_FastRom_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_FastRom_M1X0(CpuState *cpu);
 
+/* decomp: NE if Down held on an enabled pad; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsDownHeld_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsDownHeld_FastRom_M1X0";
@@ -415,6 +416,7 @@ RecompReturn Input_IsDownHeld_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if Start or A held (mask 1080) on an enabled pad; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsStartOrAHeld_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsStartOrAHeld_FastRom_M1X0";
@@ -736,6 +738,7 @@ RecompReturn Input_IsStartOrAHeld_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if Select held on an enabled pad; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsSelectHeld_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsSelectHeld_FastRom_M1X0";
@@ -1057,6 +1060,7 @@ RecompReturn Input_IsSelectHeld_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if Start held on an enabled pad; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Input_IsStartHeld_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Input_IsStartHeld_FastRom_M1X0";
@@ -1378,6 +1382,7 @@ RecompReturn Input_IsStartHeld_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Reset menu cursor $9B to 0, then run the vertical text menu; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_RunVerticalFromTop_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_RunVerticalFromTop_FastRom_M1X0";
@@ -2952,6 +2957,7 @@ RecompReturn Menu_RunVerticalFromTop_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Place cursor sprite at item $9B (x from table [$AE]) and run the vertical menu loop; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_RunVertical_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_RunVertical_FastRom_M1X0";
@@ -4523,6 +4529,7 @@ RecompReturn Menu_RunVertical_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Vertical menu loop: up/down moves cursor with sound, confirm/cancel set $A6 and return choice; reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_VerticalLoop_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_VerticalLoop_FastRom_M1X0";
@@ -5826,6 +5833,7 @@ RecompReturn Menu_VerticalLoop_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Variant of Menu_RunVertical with a different row base (cursor Y base $48); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_RunVerticalAlt_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_RunVerticalAlt_FastRom_M1X0";
@@ -7393,6 +7401,7 @@ RecompReturn Menu_RunVerticalAlt_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Variant vertical menu loop (also clears $7710D2 each frame); reached through the other ROM mirror bank; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Menu_VerticalLoopAlt_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Menu_VerticalLoopAlt_FastRom_M1X0";
@@ -8710,6 +8719,7 @@ RecompReturn Menu_VerticalLoopAlt_FastRom_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Mode_OnePlayerRace_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_OnePlayerRace_FastRom_M0X0";
@@ -10322,6 +10332,7 @@ RecompReturn Mode_OnePlayerRace_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Mode_TwoPlayerRace_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_TwoPlayerRace_FastRom_M0X0";
@@ -11834,6 +11845,7 @@ RecompReturn Mode_TwoPlayerRace_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Main-menu mode 3: pick league, tour selection and league race loop; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Mode_League_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_League_FastRom_M0X0";
@@ -14065,6 +14077,7 @@ RecompReturn Mode_League_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Main-menu mode 2: pick players one/two, winner stays, 'PICK CHALLENGER'/'REMATCH'; reached through the other ROM mirror bank; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Mode_ChallengeRace_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Mode_ChallengeRace_FastRom_M0X0";
@@ -16562,6 +16575,7 @@ RecompReturn Mode_ChallengeRace_FastRom_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: NE if Down held on an enabled pad; reached through the other ROM mirror bank */
 void Input_IsDownHeld_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16579,6 +16593,7 @@ void Input_IsDownHeld_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: NE if Start or A held (mask 1080) on an enabled pad; reached through the other ROM mirror bank */
 void Input_IsStartOrAHeld_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16596,6 +16611,7 @@ void Input_IsStartOrAHeld_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: NE if Select held on an enabled pad; reached through the other ROM mirror bank */
 void Input_IsSelectHeld_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16613,6 +16629,7 @@ void Input_IsSelectHeld_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: NE if Start held on an enabled pad; reached through the other ROM mirror bank */
 void Input_IsStartHeld_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16630,6 +16647,7 @@ void Input_IsStartHeld_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Reset menu cursor $9B to 0, then run the vertical text menu; reached through the other ROM mirror bank */
 void Menu_RunVerticalFromTop_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16647,6 +16665,7 @@ void Menu_RunVerticalFromTop_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Place cursor sprite at item $9B (x from table [$AE]) and run the vertical menu loop; reached through the other ROM mirror bank */
 void Menu_RunVertical_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16664,6 +16683,7 @@ void Menu_RunVertical_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Vertical menu loop: up/down moves cursor with sound, confirm/cancel set $A6 and return choice; reached through the other ROM mirror bank */
 void Menu_VerticalLoop_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16681,6 +16701,7 @@ void Menu_VerticalLoop_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Variant of Menu_RunVertical with a different row base (cursor Y base $48); reached through the other ROM mirror bank */
 void Menu_RunVerticalAlt_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16698,6 +16719,7 @@ void Menu_RunVerticalAlt_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Variant vertical menu loop (also clears $7710D2 each frame); reached through the other ROM mirror bank */
 void Menu_VerticalLoopAlt_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16715,6 +16737,7 @@ void Menu_VerticalLoopAlt_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Main-menu mode 0: 'PICK YOUR UNI', race vs CPU, record results; reached through the other ROM mirror bank */
 void Mode_OnePlayerRace_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16732,6 +16755,7 @@ void Mode_OnePlayerRace_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Main-menu mode 1: 'PICK A PLAYER/ANOTHER', 2-player VS races, resets session win counts; reached through the other ROM mirror bank */
 void Mode_TwoPlayerRace_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16749,6 +16773,7 @@ void Mode_TwoPlayerRace_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Main-menu mode 3: pick league, tour selection and league race loop; reached through the other ROM mirror bank */
 void Mode_League_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -16766,6 +16791,7 @@ void Mode_League_FastRom(CpuState *cpu) {
   }
 }
 
+/* decomp: Main-menu mode 2: pick players one/two, winner stays, 'PICK CHALLENGER'/'REMATCH'; reached through the other ROM mirror bank */
 void Mode_ChallengeRace_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

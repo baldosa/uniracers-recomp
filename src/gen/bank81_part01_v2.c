@@ -32,6 +32,7 @@ RecompReturn Uni_UpdatePhysicsBothLong_M0X1(CpuState *cpu);
 RecompReturn Uni_UpdatePhysicsBoth_M0X0(CpuState *cpu);
 RecompReturn Uni_UpdatePhysicsBoth_M0X1(CpuState *cpu);
 
+/* decomp: entry point at $8970 inside Uni_EmptyStub: REP #$30 / RTS stub before tile handler $8187EB; unreferenced; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_EmptyStub_8970_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_EmptyStub_8970_M0X0";
@@ -329,6 +330,7 @@ RecompReturn Uni_EmptyStub_8970_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $89B9 inside Uni_EmptyStub: REP #$30 / RTS stub before tile handler $8187EB; unreferenced; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_EmptyStub_89B9_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_EmptyStub_89B9_M0X0";
@@ -733,6 +735,7 @@ RecompReturn Uni_EmptyStub_89B9_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $8A17 inside Uni_EmptyStub: REP #$30 / RTS stub before tile handler $8187EB; unreferenced; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_EmptyStub_8A17_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_EmptyStub_8A17_M0X0";
@@ -1004,6 +1007,7 @@ RecompReturn Uni_EmptyStub_8A17_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Fetch the 4 track-map cells ($7F000F) around the unicycle position $A5/$A7; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Uni_FetchMapCells_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_FetchMapCells_M1X0";
@@ -2364,6 +2368,7 @@ RecompReturn Uni_FetchMapCells_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Sample 10 probe points against track tiles; fill $0230 (height/angle) and $0290 (side); compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Uni_ProbeCollision_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_ProbeCollision_M1X0";
@@ -3741,6 +3746,7 @@ RecompReturn Uni_ProbeCollision_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Uni_UpdatePhysicsBoth; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_UpdatePhysicsBothLong_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_UpdatePhysicsBothLong_M0X0";
@@ -3872,6 +3878,7 @@ RecompReturn Uni_UpdatePhysicsBothLong_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: JSL wrapper for Uni_UpdatePhysicsBoth; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Uni_UpdatePhysicsBothLong_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_UpdatePhysicsBothLong_M0X1";
@@ -4003,6 +4010,7 @@ RecompReturn Uni_UpdatePhysicsBothLong_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: For each active player: load state into $0Fxx work vars, probe and resolve collision, save back; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn Uni_UpdatePhysicsBoth_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_UpdatePhysicsBoth_M0X0";
@@ -5221,6 +5229,7 @@ RecompReturn Uni_UpdatePhysicsBoth_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: For each active player: load state into $0Fxx work vars, probe and resolve collision, save back; compiled for 16-bit A, 8-bit X/Y */
 RecompReturn Uni_UpdatePhysicsBoth_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_UpdatePhysicsBoth_M0X1";
@@ -6439,6 +6448,7 @@ RecompReturn Uni_UpdatePhysicsBoth_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Evaluate collision probes: ground contact, slope, airtime, landing, speed changes; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Uni_ResolveTrackContact_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Uni_ResolveTrackContact_M1X0";
@@ -14753,6 +14763,7 @@ RecompReturn Uni_ResolveTrackContact_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $8970 inside Uni_EmptyStub: REP #$30 / RTS stub before tile handler $8187EB; unreferenced */
 void Uni_EmptyStub_8970(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -14770,6 +14781,7 @@ void Uni_EmptyStub_8970(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $89B9 inside Uni_EmptyStub: REP #$30 / RTS stub before tile handler $8187EB; unreferenced */
 void Uni_EmptyStub_89B9(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -14787,6 +14799,7 @@ void Uni_EmptyStub_89B9(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $8A17 inside Uni_EmptyStub: REP #$30 / RTS stub before tile handler $8187EB; unreferenced */
 void Uni_EmptyStub_8A17(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -14804,6 +14817,7 @@ void Uni_EmptyStub_8A17(CpuState *cpu) {
   }
 }
 
+/* decomp: Fetch the 4 track-map cells ($7F000F) around the unicycle position $A5/$A7 */
 void Uni_FetchMapCells(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -14821,6 +14835,7 @@ void Uni_FetchMapCells(CpuState *cpu) {
   }
 }
 
+/* decomp: Sample 10 probe points against track tiles; fill $0230 (height/angle) and $0290 (side) */
 void Uni_ProbeCollision(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -14838,6 +14853,7 @@ void Uni_ProbeCollision(CpuState *cpu) {
   }
 }
 
+/* decomp: JSL wrapper for Uni_UpdatePhysicsBoth */
 void Uni_UpdatePhysicsBothLong(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -14855,6 +14871,7 @@ void Uni_UpdatePhysicsBothLong(CpuState *cpu) {
   }
 }
 
+/* decomp: For each active player: load state into $0Fxx work vars, probe and resolve collision, save back */
 void Uni_UpdatePhysicsBoth(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -14872,6 +14889,7 @@ void Uni_UpdatePhysicsBoth(CpuState *cpu) {
   }
 }
 
+/* decomp: Evaluate collision probes: ground contact, slope, airtime, landing, speed changes */
 void Uni_ResolveTrackContact(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {

@@ -44,6 +44,7 @@ RecompReturn Ram_MvnTrampoline_M1X1(CpuState *cpu);
 RecompReturn Sram_UpdateChecksumsLong_FastRom_M0X0(CpuState *cpu);
 RecompReturn Sram_UpdateChecksumsLong_FastRom_M1X0(CpuState *cpu);
 
+/* decomp: Copies one 32-byte ROM tile (A=tile id) into WRAM buffer at cell ($80,$82)+$87 via MVN trampoline; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn Gfx_CopyRomTileToWram_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "Gfx_CopyRomTileToWram_M1X0";
@@ -524,6 +525,7 @@ RecompReturn Gfx_CopyRomTileToWram_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: League race result: PHP/PLP wrapper that updates standings and dispatches via $87CF; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_ApplyRaceResult_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_ApplyRaceResult_M1X0";
@@ -2364,6 +2366,7 @@ RecompReturn League_ApplyRaceResult_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $87B0 inside League_ApplyRaceResult: League race result: PHP/PLP wrapper that updates standings and dispatches via $87CF; compiled for 8-bit A, 16-bit X/Y */
 RecompReturn League_ApplyRaceResult_87B0_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_ApplyRaceResult_87B0_M1X0";
@@ -4128,6 +4131,7 @@ RecompReturn League_ApplyRaceResult_87B0_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: entry point at $87D2 inside League_ApplyRaceResult: League race result: PHP/PLP wrapper that updates standings and dispatches via $87CF; compiled for 16-bit A, 16-bit X/Y */
 RecompReturn League_ApplyRaceResult_87D2_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   g_last_recomp_func = "League_ApplyRaceResult_87D2_M0X0";
@@ -5668,6 +5672,7 @@ RecompReturn League_ApplyRaceResult_87D2_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
+/* decomp: Copies one 32-byte ROM tile (A=tile id) into WRAM buffer at cell ($80,$82)+$87 via MVN trampoline */
 void Gfx_CopyRomTileToWram(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5685,6 +5690,7 @@ void Gfx_CopyRomTileToWram(CpuState *cpu) {
   }
 }
 
+/* decomp: League race result: PHP/PLP wrapper that updates standings and dispatches via $87CF */
 void League_ApplyRaceResult(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5702,6 +5708,7 @@ void League_ApplyRaceResult(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $87B0 inside League_ApplyRaceResult: League race result: PHP/PLP wrapper that updates standings and dispatches via $87CF */
 void League_ApplyRaceResult_87B0(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
@@ -5719,6 +5726,7 @@ void League_ApplyRaceResult_87B0(CpuState *cpu) {
   }
 }
 
+/* decomp: entry point at $87D2 inside League_ApplyRaceResult: League race result: PHP/PLP wrapper that updates standings and dispatches via $87CF */
 void League_ApplyRaceResult_87D2(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
