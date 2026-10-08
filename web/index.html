@@ -5,45 +5,95 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Uniracers Web</title>
 <style>
-  :root { --bg: #14161c; --panel: #1e2129; --fg: #e8e8ec; --muted: #9a9cab; --accent: #f2c14e; }
+  :root { --bg: #14161c; --panel: #1e2129; --panel2: #262a35; --line: #343947; --fg: #e8e8ec;
+          --muted: #9a9cab; --accent: #f2c14e; --warn: #ffb454; --err: #ff7b72; }
   * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
   body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.5 system-ui, sans-serif;
          display: flex; flex-direction: column; align-items: center; min-height: 100vh; padding: 16px; }
   h1 { font-size: 22px; margin: 8px 0 4px; letter-spacing: .02em; }
   .note { color: var(--muted); max-width: 640px; text-align: center; margin: 0 0 16px; }
-  #picker { background: var(--panel); border-radius: 10px; padding: 24px; max-width: 640px; width: 100%; text-align: center; }
-  label.btn { display: inline-block; background: var(--accent); color: #1a1a1a; font-weight: 600;
-              padding: 10px 18px; border-radius: 8px; cursor: pointer; }
+  .card { background: var(--panel); border-radius: 10px; padding: 24px; max-width: 640px; width: 100%; text-align: center; }
+  .btn, label.btn { display: inline-block; background: var(--accent); color: #1a1a1a; font: 600 15px/1.2 system-ui, sans-serif;
+         padding: 10px 18px; border-radius: 8px; cursor: pointer; border: 0; margin: 4px; }
+  .btn.alt { background: #3a3f4d; color: var(--fg); }
+  .btn.small { padding: 6px 12px; font-size: 14px; }
+  .btn:disabled { opacity: .5; cursor: default; }
+  .link { background: none; border: 0; color: var(--muted); font: inherit; text-decoration: underline; cursor: pointer; padding: 2px 6px; }
+  .link:hover { color: var(--fg); }
   input[type=file] { display: none; }
   #status { color: var(--muted); margin-top: 12px; min-height: 1.5em; }
-  button.btn { border: 0; font: inherit; margin: 4px; }
-  button.alt { background: #3a3f4d; color: var(--fg); }
+  #status.err { color: var(--err); }
   #code { font: 600 22px monospace; width: 7.5em; text-align: center; text-transform: uppercase;
-          padding: 6px; border-radius: 8px; border: 1px solid #3a3f4d; background: #111318; color: var(--fg); }
+          padding: 6px; border-radius: 8px; border: 1px solid var(--line); background: #111318; color: var(--fg); }
   #join-row, #host-row { margin-top: 14px; }
   #hostcode { font: 700 30px monospace; letter-spacing: .2em; color: var(--accent); }
-  #banner { position: fixed; top: 12px; left: 50%; transform: translateX(-50%); z-index: 1;
-            padding: 6px 12px; border-radius: 6px; background: #3a3f4d; }
-  #status.err { color: #ff7b72; }
-  canvas { display: none; width: 100%; max-width: 768px; aspect-ratio: 8 / 7; image-rendering: pixelated;
+  #romline { color: var(--muted); margin: 0 0 12px; }
+  .sub { margin-top: 14px; color: var(--muted); }
+  #banner { position: fixed; top: 12px; left: 50%; transform: translateX(-50%); z-index: 2;
+            padding: 6px 12px; border-radius: 6px; background: #3a3f4d; max-width: calc(100% - 32px); }
+  body.playing .note, body.playing > footer { display: none; }
+  #stage { width: 100%; display: flex; flex-direction: column; align-items: center; }
+  canvas { width: 100%; max-width: 768px; aspect-ratio: 4 / 3; image-rendering: pixelated;
            background: #000; outline: none; border-radius: 6px; }
-  details { max-width: 640px; width: 100%; margin-top: 16px; color: var(--muted); }
+  #stage:fullscreen { background: #000; justify-content: center; }
+  #stage:fullscreen canvas { max-width: none !important; width: 100vw; height: 100vh; aspect-ratio: auto !important;
+                             object-fit: contain; border-radius: 0; }
+  #stage:fullscreen #toolbar { display: none; }
+  #toolbar { display: flex; gap: 4px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
+  #restart { background: var(--accent); }
+  footer { color: var(--muted); font-size: 13px; margin-top: 16px; text-align: center; max-width: 640px; }
   kbd { background: var(--panel); border-radius: 4px; padding: 1px 6px; color: var(--fg); }
-  table { margin: 8px auto; border-collapse: collapse; }
-  td { padding: 2px 10px; }
+
+  /* settings dialog */
+  dialog { background: var(--panel); color: var(--fg); border: 1px solid var(--line); border-radius: 12px;
+           padding: 0; width: min(640px, calc(100% - 32px)); max-height: calc(100vh - 32px); }
+  dialog::backdrop { background: rgba(0, 0, 0, .6); }
+  .dlg { display: flex; flex-direction: column; max-height: calc(100vh - 34px); }
+  .dlg header { display: flex; align-items: center; gap: 12px; padding: 14px 18px 0; flex-wrap: wrap; }
+  .dlg h2 { font-size: 18px; margin: 0 auto 0 0; }
+  .tabs { display: flex; gap: 2px; background: var(--bg); padding: 3px; border-radius: 8px; }
+  .tabs button { background: none; border: 0; color: var(--muted); font: 600 14px system-ui, sans-serif;
+                 padding: 6px 12px; border-radius: 6px; cursor: pointer; white-space: nowrap; }
+  .tabs button.on { background: var(--panel2); color: var(--fg); }
+  .body { padding: 16px 18px; overflow-y: auto; min-height: min(600px, 70vh); }
+  .set-pane h3 { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 8px; }
+  .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 0;
+         border-bottom: 1px solid var(--line); }
+  .row:last-child { border-bottom: 0; }
+  .row small { display: block; color: var(--muted); }
+  select, input[type=range] { background: var(--panel2); color: var(--fg); border: 1px solid var(--line);
+                              border-radius: 6px; padding: 5px 8px; font: inherit; }
+  input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--accent); }
+  .bindhead, .bindrow { display: grid; grid-template-columns: 5em 1fr 1fr; gap: 6px; align-items: center; }
+  .bindhead { color: var(--muted); font-size: 13px; margin: 10px 0 4px; }
+  .bindrow { margin-bottom: 4px; }
+  .bind { background: var(--panel2); color: var(--fg); border: 1px solid var(--line); border-radius: 6px;
+          padding: 6px 8px; font: 14px system-ui, sans-serif; cursor: pointer; min-height: 34px;
+          overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .bind:hover { border-color: var(--muted); }
+  .bind.listening { border-color: var(--accent); color: var(--accent); }
+  .bind.warn { border-color: var(--warn); }
+  .hint { color: var(--muted); font-size: 13px; margin: 8px 0 0; }
+  .dlg footer { display: flex; justify-content: flex-end; gap: 4px; padding: 10px 14px; margin: 0;
+                border-top: 1px solid var(--line); max-width: none; }
+  .danger { color: var(--err); }
+  @media (max-width: 480px) { .card { padding: 16px; } .bindrow, .bindhead { grid-template-columns: 4em 1fr 1fr; } }
 </style>
 </head>
 <body>
 <h1>Uniracers Web</h1>
-<p class="note">Runs in your browser on the snesrecomp interpreter. No game is included:
+<p class="note">The recompiled game, running in your browser. No game is included:
 pick your own <b>Uniracers (USA)</b> ROM. It stays on your machine; saves and settings are kept in this browser.
 Play alone or two players on one keyboard, or online: one player creates a game and shares the code.</p>
 
-<div id="picker">
+<div id="picker" class="card">
   <div id="step-rom">
     <label class="btn">Choose ROM&hellip;<input id="rom" type="file" accept=".sfc,.smc"></label>
+    <div class="sub"><label><input type="checkbox" id="remember" checked> Remember it in this browser</label></div>
   </div>
   <div id="step-mode" hidden>
+    <p id="romline"></p>
     <button class="btn" id="solo">Play</button>
     <button class="btn alt" id="create">Create online game</button>
     <button class="btn alt" id="joinbtn">Join online game</button>
@@ -53,72 +103,185 @@ Play alone or two players on one keyboard, or online: one player creates a game 
     </div>
     <div id="host-row" hidden>
       Share this code with player 2:
-      <div><span id="hostcode"></span> <button class="btn alt" id="copy">Copy</button></div>
+      <div><span id="hostcode"></span> <button class="btn alt small" id="copy">Copy</button></div>
     </div>
   </div>
+  <div class="sub"><button class="btn alt small" id="open-settings" disabled>&#9881; Settings</button></div>
   <div id="status"></div>
 </div>
-<div id="banner" hidden></div>
-<canvas id="canvas" tabindex="-1" oncontextmenu="event.preventDefault()"></canvas>
 
-<details>
-  <summary>Controls</summary>
-  <table>
-    <tr><td>D-pad</td><td><kbd>Arrows</kbd></td><td>Start</td><td><kbd>Enter</kbd></td></tr>
-    <tr><td>B / A</td><td><kbd>Z</kbd> / <kbd>X</kbd></td><td>Select</td><td><kbd>Right Shift</kbd></td></tr>
-    <tr><td>Y / X</td><td><kbd>A</kbd> / <kbd>S</kbd></td><td>L / R</td><td><kbd>C</kbd> / <kbd>V</kbd></td></tr>
-  </table>
-  Gamepads work through the browser. Two players on one keyboard: edit
-  <code>keybinds.ini</code> (desktop builds) &mdash; the web build uses the defaults above.
-</details>
+<div id="banner" hidden></div>
+<div id="stage" hidden>
+  <canvas id="canvas" tabindex="-1" oncontextmenu="event.preventDefault()"></canvas>
+  <div id="toolbar">
+    <button class="btn alt small" id="fullscreen">Fullscreen</button>
+    <button class="btn alt small" id="ingame-settings">&#9881; Settings</button>
+    <button class="btn small" id="restart" hidden>Restart to apply</button>
+  </div>
+</div>
+
+<footer>Default keys: <kbd>Arrows</kbd> move, <kbd>X</kbd> A, <kbd>Z</kbd> B, <kbd>S</kbd> X, <kbd>A</kbd> Y,
+<kbd>C</kbd> / <kbd>V</kbd> L / R, <kbd>Enter</kbd> Start, <kbd>Right Shift</kbd> Select, <kbd>Tab</kbd> turbo.
+Player 2, a gamepad, other keys: Settings.</footer>
+
+<dialog id="settings">
+  <div class="dlg">
+    <header>
+      <h2>Settings</h2>
+      <div class="tabs" id="set-tabs" role="tablist">
+        <button type="button" data-tab="controls">Controls</button>
+        <button type="button" data-tab="video">Video</button>
+        <button type="button" data-tab="audio">Audio</button>
+        <button type="button" data-tab="saves">Saves</button>
+      </div>
+    </header>
+    <div class="body">
+      <section class="set-pane" data-tab="controls">
+        <div class="row">
+          <div class="tabs" id="set-players">
+            <button type="button" data-p="0">Player 1</button>
+            <button type="button" data-p="1">Player 2</button>
+          </div>
+          <label>Plays with <select id="set-src">
+            <option value="1">Keyboard</option>
+            <option value="2">Gamepad</option>
+            <option value="0">Nothing</option>
+          </select></label>
+        </div>
+        <p class="hint" id="set-src-note" hidden>On Gamepad, the keyboard does nothing for this player: plug the gamepad in and press a button on it.</p>
+        <div class="bindhead"><span>SNES</span><span>Keyboard</span><span>Gamepad</span></div>
+        <div id="set-binds"></div>
+        <p class="hint">Click a button, then press the key or gamepad button. <kbd>Backspace</kbd> unbinds a key,
+          <kbd>Esc</kbd> cancels. Two players on one keyboard: set player 2 to Keyboard and it gets its own keys
+          (I J K L to move). An orange outline means the key is also a hotkey.</p>
+        <p class="hint" id="set-hotkeys"></p>
+        <button type="button" class="link" id="set-reset-binds">Reset this player&rsquo;s controls</button>
+      </section>
+
+      <section class="set-pane" data-tab="video" hidden>
+        <div class="row"><label for="set-aspect">Shape<small>4:3 is how the game looked on a TV</small></label>
+          <select id="set-aspect">
+            <option value="4:3">4:3 TV</option>
+            <option value="8:7">8:7 square pixels</option>
+            <option value="1:1">1:1 square</option>
+          </select></div>
+        <div class="row"><label for="set-size">Size on the page</label>
+          <select id="set-size">
+            <option value="fit">Fit the window</option>
+            <option value="512">Small</option>
+            <option value="768">Medium</option>
+            <option value="1024">Large</option>
+          </select></div>
+        <div class="row"><label for="set-linear">Smooth pixels<small>Soft scaling instead of sharp pixels</small></label>
+          <input type="checkbox" id="set-linear"></div>
+        <div class="row"><label for="set-blend">Frame blending<small>Blends flickering sprites, like an old TV</small></label>
+          <input type="checkbox" id="set-blend"></div>
+        <div class="row"><label for="set-sprites">No sprite limit<small>Draws every sprite on busy lines (the console hid some)</small></label>
+          <input type="checkbox" id="set-sprites"></div>
+        <div class="row"><label for="set-fps">Show frame rate</label>
+          <input type="checkbox" id="set-fps"></div>
+      </section>
+
+      <section class="set-pane" data-tab="audio" hidden>
+        <div class="row"><label for="set-audio">Sound</label><input type="checkbox" id="set-audio"></div>
+        <div class="row"><label for="set-volume">Volume</label>
+          <span><input type="range" id="set-volume" min="0" max="100" step="5"> <span id="set-volume-v"></span></span></div>
+      </section>
+
+      <section class="set-pane" data-tab="saves" hidden>
+        <p class="hint" id="set-sram-info"></p>
+        <div class="row"><span>Keep a copy, or move your save to another browser or the desktop build</span>
+          <span><button type="button" class="btn alt small" id="set-sram-down">Download</button>
+          <label class="btn alt small">Import&hellip;<input type="file" id="set-sram-up" accept=".srm,.sav"></label></span></div>
+        <div class="row"><span>Start over: records, league progress and rider names</span>
+          <button type="button" class="link danger" id="set-sram-del">Delete save</button></div>
+        <div class="row"><span>The ROM this browser remembers</span>
+          <button type="button" class="link" id="set-forget">Forget ROM</button></div>
+        <div class="row"><span>Every setting and control (saves are kept)</span>
+          <button type="button" class="link danger" id="set-reset-all">Reset settings</button></div>
+      </section>
+    </div>
+    <footer>
+      <button type="button" class="btn alt small" id="set-cancel">Cancel</button>
+      <button type="button" class="btn small" id="set-save">Save</button>
+    </footer>
+  </div>
+</dialog>
 
 <script>
-  const status = (msg, err) => { const s = document.getElementById('status'); s.textContent = msg; s.className = err ? 'err' : ''; };
-  const canvas = document.getElementById('canvas');
+  const $ = (id) => document.getElementById(id);
+  const status = (msg, err) => { const s = $('status'); s.textContent = msg; s.className = err ? 'err' : ''; };
+  const banner = (msg) => { $('banner').textContent = msg || ''; $('banner').hidden = !msg; };
+  const canvas = $('canvas');
+  const ROM = '/persist/rom.sfc';
+  const fpsOn = () => { try { return localStorage.getItem('uni.fps') === '1' || new URLSearchParams(location.search).has('fps'); } catch (e) { return false; } };
+  let romBytes = null, running = false, settings = null;
+
   var Module = {
     canvas,
     noInitialRun: true,
     print: (t) => console.log(t),
     printErr: (t) => console.warn(t),
     onAbort: (what) => status('The game stopped: ' + what, true),
-    onRuntimeInitialized: () => status('Ready. Choose your ROM to start.'),
-    // ?fps shows the frame-rate overlay.
-    preRun: [() => { if (new URLSearchParams(location.search).has('fps')) ENV.SNESRECOMP_OSD_FPS = '1'; }],
+    onRuntimeInitialized: () => mountPersist().then(ready),
+    preRun: [() => { if (fpsOn()) ENV.SNESRECOMP_OSD_FPS = '1'; }],
   };
 
-  // Saves, config.ini and keybinds.ini live in IndexedDB-backed /persist.
-  function mountPersist() {
-    return new Promise((resolve) => {
-      FS.mkdir('/persist');
-      FS.mount(IDBFS, {}, '/persist');
-      FS.syncfs(true, () => resolve());
-    });
-  }
-  const flush = () => { try { FS.syncfs(false, () => {}); } catch (e) {} };
+  // Saves, config.ini, keybinds.ini and (if asked) the ROM live in IndexedDB-backed /persist.
+  const mountPersist = () => new Promise((resolve) => {
+    FS.mkdir('/persist');
+    FS.mount(IDBFS, {}, '/persist');
+    FS.syncfs(true, () => resolve());
+  });
+  const flush = (done) => { try { FS.syncfs(false, () => done && done()); } catch (e) { done && done(); } };
+  const readFile = (p) => { try { return FS.readFile(p); } catch (e) { return null; } };
 
-  const $ = (id) => document.getElementById(id);
-  const banner = (msg) => { $('banner').textContent = msg || ''; $('banner').hidden = !msg; };
-  let romBytes = null;
+  function ready() {
+    settings = UniSettings.init({
+      canvas,
+      running: () => running,
+      hasRom: () => !!readFile(ROM),
+      onForgetRom: () => { try { FS.unlink(ROM); } catch (e) {} flush(); },
+      onSaved: (needRestart) => {
+        if (!needRestart) return;
+        $('restart').hidden = false;
+        banner('Saved. Restart the game to apply.');
+        setTimeout(() => { if ($('banner').textContent.startsWith('Saved')) banner(''); }, 4000);
+      },
+    });
+    $('open-settings').disabled = false;
+    const saved = readFile(ROM);
+    if (saved) useRom(saved, 'Uniracers ROM remembered by this browser.');
+    else status('Ready. Choose your ROM to start.');
+  }
+
+  function useRom(bytes, line) {
+    romBytes = bytes;
+    FS.writeFile('/uni.sfc', romBytes);
+    $('romline').textContent = line;
+    $('step-rom').hidden = true;
+    $('step-mode').hidden = false;
+    status('');
+  }
 
   $('rom').addEventListener('change', async (ev) => {
     const file = ev.target.files[0];
     if (!file) return;
-    if (!Module.callMain) { status('Still loading, try again in a moment.'); return; }
-    romBytes = new Uint8Array(await file.arrayBuffer());
-    await mountPersist();
-    FS.writeFile('/uni.sfc', romBytes);
-    $('step-rom').hidden = true;
-    $('step-mode').hidden = false;
-    status('');
+    if (!settings) { status('Still loading, try again in a moment.'); return; }
+    const bytes = new Uint8Array(await file.arrayBuffer());
+    if ($('remember').checked) { FS.writeFile(ROM, bytes); flush(); }
+    useRom(bytes, file.name);
   });
 
   function startGame(dir) {
     FS.chdir(dir);
     setInterval(flush, 5000);
     document.addEventListener('visibilitychange', () => { if (document.hidden) flush(); });
-    window.addEventListener('pagehide', flush);
-    $('picker').style.display = 'none';
-    canvas.style.display = 'block';
+    window.addEventListener('pagehide', () => flush());
+    $('picker').hidden = true;
+    $('stage').hidden = false;
+    document.body.classList.add('playing');
+    running = true;
     canvas.focus();
     try {
       Module.callMain(['--no-launcher', '/uni.sfc']);
@@ -128,8 +291,18 @@ Play alone or two players on one keyboard, or online: one player creates a game 
   }
   $('solo').onclick = () => startGame('/persist');
 
+  $('open-settings').onclick = () => settings.open();
+  $('ingame-settings').onclick = () => settings.open();
+  $('settings').addEventListener('close', () => { if (running) canvas.focus(); });
+    // The page's container goes fullscreen, not the canvas: SDL resizes a canvas that does.
+  $('fullscreen').onclick = () => { $('stage').requestFullscreen && $('stage').requestFullscreen(); canvas.focus(); };
+  // The game reads its settings at power-on: reload, and the remembered ROM comes straight back.
+  $('restart').onclick = () => {
+    if (!readFile(ROM) && !confirm('This browser does not remember the ROM, so you will pick it again. Restart?')) return;
+    flush(() => location.reload());
+  };
+
   // ---- online two-player (web/netplay.js; lockstep in src/web_netplay.c) ----
-  const readFile = (p) => { try { return FS.readFile(p); } catch (e) { return null; } };
   const toB64 = (u8) => u8 ? btoa(String.fromCharCode(...u8)) : null;
   const fromB64 = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
   async function romHash() {
@@ -154,7 +327,7 @@ Play alone or two players on one keyboard, or online: one player creates a game 
     // Only a real stall is worth saying: inputs routinely arrive a few ms late.
     onWait: (on) => {
       clearTimeout(waitTimer);
-      if (on) waitTimer = setTimeout(() => banner('Waiting for the other player\u2026'), 300);
+      if (on) waitTimer = setTimeout(() => banner('Waiting for the other player…'), 300);
       else if ($('banner').textContent.startsWith('Waiting')) banner('');
     },
     onLeft: (why) => banner(why + ' You are playing alone now.'),
@@ -170,11 +343,11 @@ Play alone or two players on one keyboard, or online: one player creates a game 
 
   $('create').onclick = async () => {
     lockModes();
-    status('Opening a lobby\u2026');
+    status('Opening a lobby…');
     const sram = toB64(readFile('/persist/saves/save.srm'));
     UniNet.host({
       romHash: await romHash(), sram, events,
-      onCode: (code) => { $('hostcode').textContent = code; $('host-row').hidden = false; status('Waiting for player 2 to join\u2026'); },
+      onCode: (code) => { $('hostcode').textContent = code; $('host-row').hidden = false; status('Waiting for player 2 to join…'); },
       onReady: (net) => online(net, sram),
       onError: (e) => status(e, true),
     });
@@ -186,7 +359,7 @@ Play alone or two players on one keyboard, or online: one player creates a game 
     if (code.length !== 6) { status('Codes are 6 characters.', true); return; }
     lockModes();
     $('join').disabled = true;
-    status('Joining ' + code + '\u2026');
+    status('Joining ' + code + '…');
     UniNet.join({
       code, romHash: await romHash(), events,
       onReady: (net, sram) => online(net, sram),
@@ -194,6 +367,7 @@ Play alone or two players on one keyboard, or online: one player creates a game 
     });
   };
 </script>
+<script src="settings.js"></script>
 <script src="https://unpkg.com/peerjs@1.5.5/dist/peerjs.min.js"></script>
 <script src="netplay.js"></script>
 <script src="uniracers.js"></script>

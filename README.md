@@ -43,7 +43,11 @@ HVBJOY beam sync, native entry hand-off, `[[variant]]` roots,
 ## Play
 
 - **In the browser:** https://baldosa.github.io/uniracers-recomp/ — pick your
-  own ROM; it never leaves your machine.
+  own ROM; it never leaves your machine (the page can remember it in the
+  browser). **Settings** rebinds keyboard and gamepad per player (two players
+  on one keyboard included), picks the screen shape, size, smoothing and
+  sound, and downloads or imports your battery save. Online two-player:
+  *Create online game* shows a code, the friend *Join*s with it.
 - **Downloads** (Linux x64, Linux arm64 / Raspberry Pi, Windows x64): the
   [Releases](https://github.com/baldosa/uniracers-recomp/releases) page, or
   the latest *Builds* workflow run's artifacts.
