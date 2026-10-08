@@ -1,4 +1,6 @@
 # Native player builds: Linux x64, Linux arm64 (Raspberry Pi), Windows x64.
+# Linux builds on 22.04 so the binaries need only glibc 2.35: they run on
+# Raspberry Pi OS bookworm, Debian 12 and Ubuntu 22.04+.
 #
 # The full recomp, built from the committed src/gen/ (no assets: each build
 # plays the player's own ROM). Every push uploads the zips as workflow
@@ -26,9 +28,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os: ubuntu-24.04
+          - os: ubuntu-22.04
             artifact: linux-x64
-          - os: ubuntu-24.04-arm
+          - os: ubuntu-22.04-arm
             artifact: linux-arm64
           - os: windows-2022
             artifact: windows-x64
