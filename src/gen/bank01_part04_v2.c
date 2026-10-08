@@ -15,9 +15,9 @@
 
 /* Split translation unit: bank $01, part 04; entry PCs $A000-$A7FF. */
 
+RecompReturn Math_Multiply16_M0X0(CpuState *cpu);
 RecompReturn Track_SetupSizeParamsLong_M0X0(CpuState *cpu);
 RecompReturn Track_SetupSizeParams_M0X0(CpuState *cpu);
-RecompReturn bank_01_B668_M0X0(CpuState *cpu);
 
 RecompReturn Track_SetupSizeParamsLong_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
@@ -323,7 +323,7 @@ RecompReturn Track_SetupSizeParams_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_B668_M0X0(cpu); break;
+        case 0: _r = Math_Multiply16_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xb668u), 0x01a511u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xb668u), 0x01a511u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xb668u), 0x01a511u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */

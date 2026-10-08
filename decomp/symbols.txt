@@ -260,6 +260,7 @@
 80FC1C Scores_ResetPlayer         ; Clear player $CC's 16 score words at SRAM $7702C0 and return Z clear (jump-table target)
 80FC38 Menu_ReturnContinue        ; Return with Z clear (KEEP SCORES jump-table target)
 80FC3D Menu_ReturnExit            ; Return with Z set (EXIT jump-table target)
+818050 Uni_CheckLapLine           ; Per-frame for the current rider: on a lap-line contact cell (type 0, $1C00 bits clear) latch $wLapLineLatch once and record the lap split (min/10s/s/tenths/hundredths) from the race clock
 8182E2 Uni_ApplyTileEffectLong    ; JSL wrapper for Uni_ApplyTileEffect
 8182E6 Uni_ApplyTileEffect        ; If not pass-through, look up the contact tile type ($7EC000) and run its handler from table $8320
 8184D6 Uni_TileNopLong            ; JSL wrapper for an empty RTS stub; unreferenced

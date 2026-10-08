@@ -15,18 +15,18 @@
 
 /* Split translation unit: bank $83, part 06; entry PCs $B000-$B7FF. */
 
-RecompReturn bank_83_8E3A_M0X0(CpuState *cpu);
-RecompReturn bank_83_8E3A_M1X0(CpuState *cpu);
-RecompReturn bank_83_A3EB_M0X0(CpuState *cpu);
-RecompReturn bank_83_A400_M0X0(CpuState *cpu);
-RecompReturn bank_83_B79C_M0X0(CpuState *cpu);
+RecompReturn Anim_DecodeFrame_FastRom_M0X0(CpuState *cpu);
+RecompReturn Anim_DecodeFrame_FastRom_M1X0(CpuState *cpu);
+RecompReturn Cutscene_DrawLoopFrameA_M0X0(CpuState *cpu);
+RecompReturn Snd_Play12_M0X0(CpuState *cpu);
+RecompReturn Snd_Play13_M0X0(CpuState *cpu);
 
-RecompReturn bank_83_B79C_M0X0(CpuState *cpu) {
+RecompReturn Cutscene_DrawLoopFrameA_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_83_B79C_M0X0";
-  RecompStackPush("bank_83_B79C_M0X0");
-  cpu_dbg_funcname("bank_83_B79C_M0X0");
-  cpu_trace_func_entry(cpu, 0x83B79C, "bank_83_B79C_M0X0");
+  g_last_recomp_func = "Cutscene_DrawLoopFrameA_M0X0";
+  RecompStackPush("Cutscene_DrawLoopFrameA_M0X0");
+  cpu_dbg_funcname("Cutscene_DrawLoopFrameA_M0X0");
+  cpu_trace_func_entry(cpu, 0x83B79C, "Cutscene_DrawLoopFrameA_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xb79cu));
@@ -182,7 +182,7 @@ RecompReturn bank_83_B79C_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_83_A3EB_M0X0(cpu); break;
+        case 0: _r = Snd_Play12_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xa3ebu), 0x83b7b6u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xa3ebu), 0x83b7b6u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xa3ebu), 0x83b7b6u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -231,7 +231,7 @@ RecompReturn bank_83_B79C_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_83_A400_M0X0(cpu); break;
+        case 0: _r = Snd_Play13_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xa400u), 0x83b7beu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xa400u), 0x83b7beu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xa400u), 0x83b7beu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -326,9 +326,9 @@ RecompReturn bank_83_B79C_M0X0(CpuState *cpu) {
       cpu->PB = 0x83;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_83_8E3A_M0X0(cpu); break;
+        case 0: _r = Anim_DecodeFrame_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x838e3au, 0x83b7ccu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
-        case 2: _r = bank_83_8E3A_M1X0(cpu); break;
+        case 2: _r = Anim_DecodeFrame_FastRom_M1X0(cpu); break;
         case 3: _r = interp_tier_run_call_frame(cpu, 0x838e3au, 0x83b7ccu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
         default: _r = interp_tier_run_call_frame(cpu, 0x838e3au, 0x83b7ccu, 3, NULL); break;  /* masked M/X index should make this unreachable */
       }
@@ -419,10 +419,10 @@ RecompReturn bank_83_B79C_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-void bank_83_B79C(CpuState *cpu) {
+void Cutscene_DrawLoopFrameA(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_83_B79C_M0X0(cpu); break;
+    case 0: _r = Cutscene_DrawLoopFrameA_M0X0(cpu); break;
     case 1: _r = interp_tier_dispatch(cpu, 0x83b79cu); break; /* exact M0X1 LLE */
     case 2: _r = interp_tier_dispatch(cpu, 0x83b79cu); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x83b79cu); break; /* exact M1X1 LLE */
@@ -431,7 +431,7 @@ void bank_83_B79C(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_83_B79C");
+      (int)_r, "Cutscene_DrawLoopFrameA");
     abort();
   }
 }

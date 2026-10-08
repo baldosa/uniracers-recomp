@@ -15,17 +15,17 @@
 
 /* Split translation unit: bank $82, part 02; entry PCs $9000-$97FF. */
 
-RecompReturn bank_81_C5AF_M0X0(CpuState *cpu);
-RecompReturn bank_82_9385_M1X0(CpuState *cpu);
-RecompReturn bank_82_9704_M0X0(CpuState *cpu);
-RecompReturn bank_82_9704_M1X0(CpuState *cpu);
+RecompReturn Race_QueueEventLong_M0X0(CpuState *cpu);
+RecompReturn Uni_UpdateLoop_M1X0(CpuState *cpu);
+RecompReturn Uni_UpdateTrackProgress_M0X0(CpuState *cpu);
+RecompReturn Uni_UpdateTrackProgress_M1X0(CpuState *cpu);
 
-RecompReturn bank_82_9385_M1X0(CpuState *cpu) {
+RecompReturn Uni_UpdateLoop_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_82_9385_M1X0";
-  RecompStackPush("bank_82_9385_M1X0");
-  cpu_dbg_funcname("bank_82_9385_M1X0");
-  cpu_trace_func_entry(cpu, 0x829385, "bank_82_9385_M1X0");
+  g_last_recomp_func = "Uni_UpdateLoop_M1X0";
+  RecompStackPush("Uni_UpdateLoop_M1X0");
+  cpu_dbg_funcname("Uni_UpdateLoop_M1X0");
+  cpu_trace_func_entry(cpu, 0x829385, "Uni_UpdateLoop_M1X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0x9385u));
@@ -1070,7 +1070,7 @@ RecompReturn bank_82_9385_M1X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_C5AF_M0X0(cpu); break;
+        case 0: _r = Race_QueueEventLong_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81c5afu, 0x82948du, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81c5afu, 0x82948du, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81c5afu, 0x82948du, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -2974,12 +2974,12 @@ RecompReturn bank_82_9385_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_82_9704_M0X0(CpuState *cpu) {
+RecompReturn Uni_UpdateTrackProgress_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_82_9704_M0X0";
-  RecompStackPush("bank_82_9704_M0X0");
-  cpu_dbg_funcname("bank_82_9704_M0X0");
-  cpu_trace_func_entry(cpu, 0x829704, "bank_82_9704_M0X0");
+  g_last_recomp_func = "Uni_UpdateTrackProgress_M0X0";
+  RecompStackPush("Uni_UpdateTrackProgress_M0X0");
+  cpu_dbg_funcname("Uni_UpdateTrackProgress_M0X0");
+  cpu_trace_func_entry(cpu, 0x829704, "Uni_UpdateTrackProgress_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0x9704u));
@@ -3738,7 +3738,7 @@ RecompReturn bank_82_9704_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_C5AF_M0X0(cpu); break;
+        case 0: _r = Race_QueueEventLong_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81c5afu, 0x829751u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81c5afu, 0x829751u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81c5afu, 0x829751u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -3927,7 +3927,7 @@ RecompReturn bank_82_9704_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_C5AF_M0X0(cpu); break;
+        case 0: _r = Race_QueueEventLong_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81c5afu, 0x829781u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81c5afu, 0x829781u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81c5afu, 0x829781u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -3994,12 +3994,12 @@ RecompReturn bank_82_9704_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_82_9704_M1X0(CpuState *cpu) {
+RecompReturn Uni_UpdateTrackProgress_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_82_9704_M1X0";
-  RecompStackPush("bank_82_9704_M1X0");
-  cpu_dbg_funcname("bank_82_9704_M1X0");
-  cpu_trace_func_entry(cpu, 0x829704, "bank_82_9704_M1X0");
+  g_last_recomp_func = "Uni_UpdateTrackProgress_M1X0";
+  RecompStackPush("Uni_UpdateTrackProgress_M1X0");
+  cpu_dbg_funcname("Uni_UpdateTrackProgress_M1X0");
+  cpu_trace_func_entry(cpu, 0x829704, "Uni_UpdateTrackProgress_M1X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0x9704u));
@@ -4758,7 +4758,7 @@ RecompReturn bank_82_9704_M1X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_C5AF_M0X0(cpu); break;
+        case 0: _r = Race_QueueEventLong_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81c5afu, 0x829751u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81c5afu, 0x829751u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81c5afu, 0x829751u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -4947,7 +4947,7 @@ RecompReturn bank_82_9704_M1X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_C5AF_M0X0(cpu); break;
+        case 0: _r = Race_QueueEventLong_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81c5afu, 0x829781u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81c5afu, 0x829781u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81c5afu, 0x829781u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -5014,36 +5014,36 @@ RecompReturn bank_82_9704_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-void bank_82_9385(CpuState *cpu) {
+void Uni_UpdateLoop(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
     case 0: _r = interp_tier_dispatch(cpu, 0x829385u); break; /* exact M0X0 LLE */
     case 1: _r = interp_tier_dispatch(cpu, 0x829385u); break; /* exact M0X1 LLE */
-    case 2: _r = bank_82_9385_M1X0(cpu); break;
+    case 2: _r = Uni_UpdateLoop_M1X0(cpu); break;
     case 3: _r = interp_tier_dispatch(cpu, 0x829385u); break; /* exact M1X1 LLE */
     default: _r = interp_tier_dispatch(cpu, 0x829385u); break;
   }
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_82_9385");
+      (int)_r, "Uni_UpdateLoop");
     abort();
   }
 }
 
-void bank_82_9704(CpuState *cpu) {
+void Uni_UpdateTrackProgress(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_82_9704_M0X0(cpu); break;
+    case 0: _r = Uni_UpdateTrackProgress_M0X0(cpu); break;
     case 1: _r = interp_tier_dispatch(cpu, 0x829704u); break; /* exact M0X1 LLE */
-    case 2: _r = bank_82_9704_M1X0(cpu); break;
+    case 2: _r = Uni_UpdateTrackProgress_M1X0(cpu); break;
     case 3: _r = interp_tier_dispatch(cpu, 0x829704u); break; /* exact M1X1 LLE */
     default: _r = interp_tier_dispatch(cpu, 0x829704u); break;
   }
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_82_9704");
+      (int)_r, "Uni_UpdateTrackProgress");
     abort();
   }
 }

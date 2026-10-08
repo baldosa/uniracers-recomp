@@ -15,6 +15,8 @@
 
 /* Split translation unit: bank $00, part 00; entry PCs $8000-$87FF. */
 
+RecompReturn Hud_UpdateFullScreenNmi_FastRom_M1X0(CpuState *cpu);
+RecompReturn Hud_UpdateSplitScreenNmi_M1X0(CpuState *cpu);
 RecompReturn I_IRQ_M0X0(CpuState *cpu);
 RecompReturn I_IRQ_M0X1(CpuState *cpu);
 RecompReturn I_IRQ_M1X0(CpuState *cpu);
@@ -23,33 +25,31 @@ RecompReturn I_NMI_M0X0(CpuState *cpu);
 RecompReturn I_NMI_M0X1(CpuState *cpu);
 RecompReturn I_NMI_M1X0(CpuState *cpu);
 RecompReturn I_NMI_M1X1(CpuState *cpu);
+RecompReturn NmiHandler_Default_M1X0(CpuState *cpu);
+RecompReturn NmiHandler_Menu_FastRom_M1X0(CpuState *cpu);
+RecompReturn NmiHandler_Race_FastRom_M1X0(CpuState *cpu);
 RecompReturn NmiHandler_Race_M1X0(CpuState *cpu);
-RecompReturn bank_00_0199_M0X0(CpuState *cpu);
-RecompReturn bank_00_0199_M0X1(CpuState *cpu);
-RecompReturn bank_00_0199_M1X0(CpuState *cpu);
-RecompReturn bank_00_0199_M1X1(CpuState *cpu);
-RecompReturn bank_80_85A5_M1X0(CpuState *cpu);
-RecompReturn bank_80_8610_M1X0(CpuState *cpu);
-RecompReturn bank_80_B0E1_M1X0(CpuState *cpu);
-RecompReturn bank_80_B0E1_M1X1(CpuState *cpu);
-RecompReturn bank_80_F60C_M1X0(CpuState *cpu);
-RecompReturn bank_81_D86E_M1X0(CpuState *cpu);
-RecompReturn bank_81_E8D9_M1X0(CpuState *cpu);
-RecompReturn bank_82_B8A7_M1X0(CpuState *cpu);
-RecompReturn bank_82_D197_M1X0(CpuState *cpu);
-RecompReturn bank_82_D2D4_M1X0(CpuState *cpu);
-RecompReturn bank_82_D353_M0X0(CpuState *cpu);
-RecompReturn bank_82_D353_M1X0(CpuState *cpu);
-RecompReturn bank_82_D3CC_M1X0(CpuState *cpu);
+RecompReturn Nmi_DmaOamBuffer_Long_M0X0(CpuState *cpu);
+RecompReturn Nmi_DmaOamBuffer_Long_M1X0(CpuState *cpu);
+RecompReturn Nmi_FlushTileDmaList_Long_M1X0(CpuState *cpu);
+RecompReturn Nmi_FlushVramDmaSlots_Long_M1X0(CpuState *cpu);
+RecompReturn Nmi_UploadReservedSprites_Long_M1X0(CpuState *cpu);
+RecompReturn Pal_CycleRaceColors_Long_M1X0(CpuState *cpu);
+RecompReturn Ram_MvnTrampoline_M0X0(CpuState *cpu);
+RecompReturn Ram_MvnTrampoline_M0X1(CpuState *cpu);
+RecompReturn Ram_MvnTrampoline_M1X0(CpuState *cpu);
+RecompReturn Ram_MvnTrampoline_M1X1(CpuState *cpu);
+RecompReturn Unused_NmiEntryDB80_B0E1_M1X0(CpuState *cpu);
+RecompReturn Unused_NmiEntryDB80_B0E1_M1X1(CpuState *cpu);
 
-RecompReturn bank_00_0199_M0X0(CpuState *cpu) {
+RecompReturn Ram_MvnTrampoline_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   extern RecompReturn HleRamBlockMove(CpuState *cpu);
-  g_last_recomp_func = "bank_00_0199_M0X0";
-  RecompStackPush("bank_00_0199_M0X0");
+  g_last_recomp_func = "Ram_MvnTrampoline_M0X0";
+  RecompStackPush("Ram_MvnTrampoline_M0X0");
   cpu_take_tailcall_return_context(NULL, NULL);
-  cpu_dbg_funcname("bank_00_0199_M0X0");
-  cpu_trace_func_entry(cpu, 0x000199, "bank_00_0199_M0X0");
+  cpu_dbg_funcname("Ram_MvnTrampoline_M0X0");
+  cpu_trace_func_entry(cpu, 0x000199, "Ram_MvnTrampoline_M0X0");
   cpu_trace_block(cpu, 0x000199);
   WatchdogCheck();
   RecompReturn _r = HleRamBlockMove(cpu);
@@ -57,14 +57,14 @@ RecompReturn bank_00_0199_M0X0(CpuState *cpu) {
   return _r;
 }
 
-RecompReturn bank_00_0199_M0X1(CpuState *cpu) {
+RecompReturn Ram_MvnTrampoline_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   extern RecompReturn HleRamBlockMove(CpuState *cpu);
-  g_last_recomp_func = "bank_00_0199_M0X1";
-  RecompStackPush("bank_00_0199_M0X1");
+  g_last_recomp_func = "Ram_MvnTrampoline_M0X1";
+  RecompStackPush("Ram_MvnTrampoline_M0X1");
   cpu_take_tailcall_return_context(NULL, NULL);
-  cpu_dbg_funcname("bank_00_0199_M0X1");
-  cpu_trace_func_entry(cpu, 0x000199, "bank_00_0199_M0X1");
+  cpu_dbg_funcname("Ram_MvnTrampoline_M0X1");
+  cpu_trace_func_entry(cpu, 0x000199, "Ram_MvnTrampoline_M0X1");
   cpu_trace_block(cpu, 0x000199);
   WatchdogCheck();
   RecompReturn _r = HleRamBlockMove(cpu);
@@ -72,14 +72,14 @@ RecompReturn bank_00_0199_M0X1(CpuState *cpu) {
   return _r;
 }
 
-RecompReturn bank_00_0199_M1X0(CpuState *cpu) {
+RecompReturn Ram_MvnTrampoline_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   extern RecompReturn HleRamBlockMove(CpuState *cpu);
-  g_last_recomp_func = "bank_00_0199_M1X0";
-  RecompStackPush("bank_00_0199_M1X0");
+  g_last_recomp_func = "Ram_MvnTrampoline_M1X0";
+  RecompStackPush("Ram_MvnTrampoline_M1X0");
   cpu_take_tailcall_return_context(NULL, NULL);
-  cpu_dbg_funcname("bank_00_0199_M1X0");
-  cpu_trace_func_entry(cpu, 0x000199, "bank_00_0199_M1X0");
+  cpu_dbg_funcname("Ram_MvnTrampoline_M1X0");
+  cpu_trace_func_entry(cpu, 0x000199, "Ram_MvnTrampoline_M1X0");
   cpu_trace_block(cpu, 0x000199);
   WatchdogCheck();
   RecompReturn _r = HleRamBlockMove(cpu);
@@ -87,14 +87,14 @@ RecompReturn bank_00_0199_M1X0(CpuState *cpu) {
   return _r;
 }
 
-RecompReturn bank_00_0199_M1X1(CpuState *cpu) {
+RecompReturn Ram_MvnTrampoline_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
   extern RecompReturn HleRamBlockMove(CpuState *cpu);
-  g_last_recomp_func = "bank_00_0199_M1X1";
-  RecompStackPush("bank_00_0199_M1X1");
+  g_last_recomp_func = "Ram_MvnTrampoline_M1X1";
+  RecompStackPush("Ram_MvnTrampoline_M1X1");
   cpu_take_tailcall_return_context(NULL, NULL);
-  cpu_dbg_funcname("bank_00_0199_M1X1");
-  cpu_trace_func_entry(cpu, 0x000199, "bank_00_0199_M1X1");
+  cpu_dbg_funcname("Ram_MvnTrampoline_M1X1");
+  cpu_trace_func_entry(cpu, 0x000199, "Ram_MvnTrampoline_M1X1");
   cpu_trace_block(cpu, 0x000199);
   WatchdogCheck();
   RecompReturn _r = HleRamBlockMove(cpu);
@@ -412,7 +412,7 @@ RecompReturn I_NMI_M1X1(CpuState *cpu) {
           switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
             case 0: _r = interp_tier_dispatch_tail(cpu, 0x80f60cu, 0x008599u, _entry_s, _hrv); break;  /* exact M0X0 -> authoritative LLE */
             case 1: _r = interp_tier_dispatch_tail(cpu, 0x80f60cu, 0x008599u, _entry_s, _hrv); break;  /* exact M0X1 -> authoritative LLE */
-            case 2: cpu_tailcall_inherit_return_context(_entry_s, _hrv); _r = bank_80_F60C_M1X0(cpu); break;
+            case 2: cpu_tailcall_inherit_return_context(_entry_s, _hrv); _r = NmiHandler_Menu_FastRom_M1X0(cpu); break;
             case 3: _r = interp_tier_dispatch_tail(cpu, 0x80f60cu, 0x008599u, _entry_s, _hrv); break;  /* exact M1X1 -> authoritative LLE */
             default: _r = interp_tier_dispatch_tail(cpu, 0x80f60cu, 0x008599u, _entry_s, _hrv); break;  /* masked M/X index should make this unreachable */
           }
@@ -425,7 +425,7 @@ RecompReturn I_NMI_M1X1(CpuState *cpu) {
           switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
             case 0: _r = interp_tier_dispatch_tail(cpu, 0x808610u, 0x008599u, _entry_s, _hrv); break;  /* exact M0X0 -> authoritative LLE */
             case 1: _r = interp_tier_dispatch_tail(cpu, 0x808610u, 0x008599u, _entry_s, _hrv); break;  /* exact M0X1 -> authoritative LLE */
-            case 2: cpu_tailcall_inherit_return_context(_entry_s, _hrv); _r = bank_80_8610_M1X0(cpu); break;
+            case 2: cpu_tailcall_inherit_return_context(_entry_s, _hrv); _r = NmiHandler_Race_FastRom_M1X0(cpu); break;
             case 3: _r = interp_tier_dispatch_tail(cpu, 0x808610u, 0x008599u, _entry_s, _hrv); break;  /* exact M1X1 -> authoritative LLE */
             default: _r = interp_tier_dispatch_tail(cpu, 0x808610u, 0x008599u, _entry_s, _hrv); break;  /* masked M/X index should make this unreachable */
           }
@@ -438,7 +438,7 @@ RecompReturn I_NMI_M1X1(CpuState *cpu) {
           switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
             case 0: _r = interp_tier_dispatch_tail(cpu, 0x8085a5u, 0x008599u, _entry_s, _hrv); break;  /* exact M0X0 -> authoritative LLE */
             case 1: _r = interp_tier_dispatch_tail(cpu, 0x8085a5u, 0x008599u, _entry_s, _hrv); break;  /* exact M0X1 -> authoritative LLE */
-            case 2: cpu_tailcall_inherit_return_context(_entry_s, _hrv); _r = bank_80_85A5_M1X0(cpu); break;
+            case 2: cpu_tailcall_inherit_return_context(_entry_s, _hrv); _r = NmiHandler_Default_M1X0(cpu); break;
             case 3: _r = interp_tier_dispatch_tail(cpu, 0x8085a5u, 0x008599u, _entry_s, _hrv); break;  /* exact M1X1 -> authoritative LLE */
             default: _r = interp_tier_dispatch_tail(cpu, 0x8085a5u, 0x008599u, _entry_s, _hrv); break;  /* masked M/X index should make this unreachable */
           }
@@ -581,7 +581,7 @@ RecompReturn I_NMI_M0X0(CpuState *cpu) {
           switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
             case 0: _r = interp_tier_dispatch_tail(cpu, 0x80f60cu, 0x008599u, _entry_s, _hrv); break;  /* exact M0X0 -> authoritative LLE */
             case 1: _r = interp_tier_dispatch_tail(cpu, 0x80f60cu, 0x008599u, _entry_s, _hrv); break;  /* exact M0X1 -> authoritative LLE */
-            case 2: cpu_tailcall_inherit_return_context(_entry_s, _hrv); _r = bank_80_F60C_M1X0(cpu); break;
+            case 2: cpu_tailcall_inherit_return_context(_entry_s, _hrv); _r = NmiHandler_Menu_FastRom_M1X0(cpu); break;
             case 3: _r = interp_tier_dispatch_tail(cpu, 0x80f60cu, 0x008599u, _entry_s, _hrv); break;  /* exact M1X1 -> authoritative LLE */
             default: _r = interp_tier_dispatch_tail(cpu, 0x80f60cu, 0x008599u, _entry_s, _hrv); break;  /* masked M/X index should make this unreachable */
           }
@@ -594,7 +594,7 @@ RecompReturn I_NMI_M0X0(CpuState *cpu) {
           switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
             case 0: _r = interp_tier_dispatch_tail(cpu, 0x808610u, 0x008599u, _entry_s, _hrv); break;  /* exact M0X0 -> authoritative LLE */
             case 1: _r = interp_tier_dispatch_tail(cpu, 0x808610u, 0x008599u, _entry_s, _hrv); break;  /* exact M0X1 -> authoritative LLE */
-            case 2: cpu_tailcall_inherit_return_context(_entry_s, _hrv); _r = bank_80_8610_M1X0(cpu); break;
+            case 2: cpu_tailcall_inherit_return_context(_entry_s, _hrv); _r = NmiHandler_Race_FastRom_M1X0(cpu); break;
             case 3: _r = interp_tier_dispatch_tail(cpu, 0x808610u, 0x008599u, _entry_s, _hrv); break;  /* exact M1X1 -> authoritative LLE */
             default: _r = interp_tier_dispatch_tail(cpu, 0x808610u, 0x008599u, _entry_s, _hrv); break;  /* masked M/X index should make this unreachable */
           }
@@ -607,7 +607,7 @@ RecompReturn I_NMI_M0X0(CpuState *cpu) {
           switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
             case 0: _r = interp_tier_dispatch_tail(cpu, 0x8085a5u, 0x008599u, _entry_s, _hrv); break;  /* exact M0X0 -> authoritative LLE */
             case 1: _r = interp_tier_dispatch_tail(cpu, 0x8085a5u, 0x008599u, _entry_s, _hrv); break;  /* exact M0X1 -> authoritative LLE */
-            case 2: cpu_tailcall_inherit_return_context(_entry_s, _hrv); _r = bank_80_85A5_M1X0(cpu); break;
+            case 2: cpu_tailcall_inherit_return_context(_entry_s, _hrv); _r = NmiHandler_Default_M1X0(cpu); break;
             case 3: _r = interp_tier_dispatch_tail(cpu, 0x8085a5u, 0x008599u, _entry_s, _hrv); break;  /* exact M1X1 -> authoritative LLE */
             default: _r = interp_tier_dispatch_tail(cpu, 0x8085a5u, 0x008599u, _entry_s, _hrv); break;  /* masked M/X index should make this unreachable */
           }
@@ -750,7 +750,7 @@ RecompReturn I_NMI_M0X1(CpuState *cpu) {
           switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
             case 0: _r = interp_tier_dispatch_tail(cpu, 0x80f60cu, 0x008599u, _entry_s, _hrv); break;  /* exact M0X0 -> authoritative LLE */
             case 1: _r = interp_tier_dispatch_tail(cpu, 0x80f60cu, 0x008599u, _entry_s, _hrv); break;  /* exact M0X1 -> authoritative LLE */
-            case 2: cpu_tailcall_inherit_return_context(_entry_s, _hrv); _r = bank_80_F60C_M1X0(cpu); break;
+            case 2: cpu_tailcall_inherit_return_context(_entry_s, _hrv); _r = NmiHandler_Menu_FastRom_M1X0(cpu); break;
             case 3: _r = interp_tier_dispatch_tail(cpu, 0x80f60cu, 0x008599u, _entry_s, _hrv); break;  /* exact M1X1 -> authoritative LLE */
             default: _r = interp_tier_dispatch_tail(cpu, 0x80f60cu, 0x008599u, _entry_s, _hrv); break;  /* masked M/X index should make this unreachable */
           }
@@ -763,7 +763,7 @@ RecompReturn I_NMI_M0X1(CpuState *cpu) {
           switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
             case 0: _r = interp_tier_dispatch_tail(cpu, 0x808610u, 0x008599u, _entry_s, _hrv); break;  /* exact M0X0 -> authoritative LLE */
             case 1: _r = interp_tier_dispatch_tail(cpu, 0x808610u, 0x008599u, _entry_s, _hrv); break;  /* exact M0X1 -> authoritative LLE */
-            case 2: cpu_tailcall_inherit_return_context(_entry_s, _hrv); _r = bank_80_8610_M1X0(cpu); break;
+            case 2: cpu_tailcall_inherit_return_context(_entry_s, _hrv); _r = NmiHandler_Race_FastRom_M1X0(cpu); break;
             case 3: _r = interp_tier_dispatch_tail(cpu, 0x808610u, 0x008599u, _entry_s, _hrv); break;  /* exact M1X1 -> authoritative LLE */
             default: _r = interp_tier_dispatch_tail(cpu, 0x808610u, 0x008599u, _entry_s, _hrv); break;  /* masked M/X index should make this unreachable */
           }
@@ -776,7 +776,7 @@ RecompReturn I_NMI_M0X1(CpuState *cpu) {
           switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
             case 0: _r = interp_tier_dispatch_tail(cpu, 0x8085a5u, 0x008599u, _entry_s, _hrv); break;  /* exact M0X0 -> authoritative LLE */
             case 1: _r = interp_tier_dispatch_tail(cpu, 0x8085a5u, 0x008599u, _entry_s, _hrv); break;  /* exact M0X1 -> authoritative LLE */
-            case 2: cpu_tailcall_inherit_return_context(_entry_s, _hrv); _r = bank_80_85A5_M1X0(cpu); break;
+            case 2: cpu_tailcall_inherit_return_context(_entry_s, _hrv); _r = NmiHandler_Default_M1X0(cpu); break;
             case 3: _r = interp_tier_dispatch_tail(cpu, 0x8085a5u, 0x008599u, _entry_s, _hrv); break;  /* exact M1X1 -> authoritative LLE */
             default: _r = interp_tier_dispatch_tail(cpu, 0x8085a5u, 0x008599u, _entry_s, _hrv); break;  /* masked M/X index should make this unreachable */
           }
@@ -919,7 +919,7 @@ RecompReturn I_NMI_M1X0(CpuState *cpu) {
           switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
             case 0: _r = interp_tier_dispatch_tail(cpu, 0x80f60cu, 0x008599u, _entry_s, _hrv); break;  /* exact M0X0 -> authoritative LLE */
             case 1: _r = interp_tier_dispatch_tail(cpu, 0x80f60cu, 0x008599u, _entry_s, _hrv); break;  /* exact M0X1 -> authoritative LLE */
-            case 2: cpu_tailcall_inherit_return_context(_entry_s, _hrv); _r = bank_80_F60C_M1X0(cpu); break;
+            case 2: cpu_tailcall_inherit_return_context(_entry_s, _hrv); _r = NmiHandler_Menu_FastRom_M1X0(cpu); break;
             case 3: _r = interp_tier_dispatch_tail(cpu, 0x80f60cu, 0x008599u, _entry_s, _hrv); break;  /* exact M1X1 -> authoritative LLE */
             default: _r = interp_tier_dispatch_tail(cpu, 0x80f60cu, 0x008599u, _entry_s, _hrv); break;  /* masked M/X index should make this unreachable */
           }
@@ -932,7 +932,7 @@ RecompReturn I_NMI_M1X0(CpuState *cpu) {
           switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
             case 0: _r = interp_tier_dispatch_tail(cpu, 0x808610u, 0x008599u, _entry_s, _hrv); break;  /* exact M0X0 -> authoritative LLE */
             case 1: _r = interp_tier_dispatch_tail(cpu, 0x808610u, 0x008599u, _entry_s, _hrv); break;  /* exact M0X1 -> authoritative LLE */
-            case 2: cpu_tailcall_inherit_return_context(_entry_s, _hrv); _r = bank_80_8610_M1X0(cpu); break;
+            case 2: cpu_tailcall_inherit_return_context(_entry_s, _hrv); _r = NmiHandler_Race_FastRom_M1X0(cpu); break;
             case 3: _r = interp_tier_dispatch_tail(cpu, 0x808610u, 0x008599u, _entry_s, _hrv); break;  /* exact M1X1 -> authoritative LLE */
             default: _r = interp_tier_dispatch_tail(cpu, 0x808610u, 0x008599u, _entry_s, _hrv); break;  /* masked M/X index should make this unreachable */
           }
@@ -945,7 +945,7 @@ RecompReturn I_NMI_M1X0(CpuState *cpu) {
           switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
             case 0: _r = interp_tier_dispatch_tail(cpu, 0x8085a5u, 0x008599u, _entry_s, _hrv); break;  /* exact M0X0 -> authoritative LLE */
             case 1: _r = interp_tier_dispatch_tail(cpu, 0x8085a5u, 0x008599u, _entry_s, _hrv); break;  /* exact M0X1 -> authoritative LLE */
-            case 2: cpu_tailcall_inherit_return_context(_entry_s, _hrv); _r = bank_80_85A5_M1X0(cpu); break;
+            case 2: cpu_tailcall_inherit_return_context(_entry_s, _hrv); _r = NmiHandler_Default_M1X0(cpu); break;
             case 3: _r = interp_tier_dispatch_tail(cpu, 0x8085a5u, 0x008599u, _entry_s, _hrv); break;  /* exact M1X1 -> authoritative LLE */
             default: _r = interp_tier_dispatch_tail(cpu, 0x8085a5u, 0x008599u, _entry_s, _hrv); break;  /* masked M/X index should make this unreachable */
           }
@@ -1325,7 +1325,7 @@ RecompReturn NmiHandler_Race_M1X0(CpuState *cpu) {
     uint16 _v45 = cpu_read_a16(cpu);
     cpu_write8_paced(cpu, 0x7e, (uint16)(0x2069), _v45);
     cpu->PB = 0x80; /* JML into bank $80 */
-    { extern RecompReturn bank_80_B0E1_M1X0(CpuState *cpu); cpu->host_return_valid = _hrv; cpu_tailcall_inherit_return_context(_entry_s, _hrv); RecompReturn _tc = bank_80_B0E1_M1X0(cpu); RecompStackPop(); return _tc; }  /* tail-call cross-bank into bank_80_B0E1_M1X0 at $80B0E1 (JML unresolved successor) */
+    { extern RecompReturn Unused_NmiEntryDB80_B0E1_M1X0(CpuState *cpu); cpu->host_return_valid = _hrv; cpu_tailcall_inherit_return_context(_entry_s, _hrv); RecompReturn _tc = Unused_NmiEntryDB80_B0E1_M1X0(cpu); RecompStackPop(); return _tc; }  /* tail-call cross-bank into Unused_NmiEntryDB80_B0E1_M1X0 at $80B0E1 (JML unresolved successor) */
   L_883A_M1X0:
     cpu_trace_block(cpu, 0x00883A);
     WatchdogCheck();
@@ -1372,9 +1372,9 @@ RecompReturn NmiHandler_Race_M1X0(CpuState *cpu) {
       cpu->PB = 0x82;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_82_D353_M0X0(cpu); break;
+        case 0: _r = Nmi_DmaOamBuffer_Long_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x82d353u, 0x00864eu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
-        case 2: _r = bank_82_D353_M1X0(cpu); break;
+        case 2: _r = Nmi_DmaOamBuffer_Long_M1X0(cpu); break;
         case 3: _r = interp_tier_run_call_frame(cpu, 0x82d353u, 0x00864eu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
         default: _r = interp_tier_run_call_frame(cpu, 0x82d353u, 0x00864eu, 3, NULL); break;  /* masked M/X index should make this unreachable */
       }
@@ -1429,7 +1429,7 @@ RecompReturn NmiHandler_Race_M1X0(CpuState *cpu) {
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
         case 0: _r = interp_tier_run_call_frame(cpu, 0x82d2d4u, 0x008657u, 3, NULL); break;  /* exact M0X0 -> authoritative LLE */
         case 1: _r = interp_tier_run_call_frame(cpu, 0x82d2d4u, 0x008657u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
-        case 2: _r = bank_82_D2D4_M1X0(cpu); break;
+        case 2: _r = Nmi_UploadReservedSprites_Long_M1X0(cpu); break;
         case 3: _r = interp_tier_run_call_frame(cpu, 0x82d2d4u, 0x008657u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
         default: _r = interp_tier_run_call_frame(cpu, 0x82d2d4u, 0x008657u, 3, NULL); break;  /* masked M/X index should make this unreachable */
       }
@@ -1466,7 +1466,7 @@ RecompReturn NmiHandler_Race_M1X0(CpuState *cpu) {
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
         case 0: _r = interp_tier_run_call_frame(cpu, 0x82b8a7u, 0x00865bu, 3, NULL); break;  /* exact M0X0 -> authoritative LLE */
         case 1: _r = interp_tier_run_call_frame(cpu, 0x82b8a7u, 0x00865bu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
-        case 2: _r = bank_82_B8A7_M1X0(cpu); break;
+        case 2: _r = Nmi_FlushTileDmaList_Long_M1X0(cpu); break;
         case 3: _r = interp_tier_run_call_frame(cpu, 0x82b8a7u, 0x00865bu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
         default: _r = interp_tier_run_call_frame(cpu, 0x82b8a7u, 0x00865bu, 3, NULL); break;  /* masked M/X index should make this unreachable */
       }
@@ -1859,7 +1859,7 @@ RecompReturn NmiHandler_Race_M1X0(CpuState *cpu) {
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
         case 0: _r = interp_tier_run_call_frame(cpu, 0x82d197u, 0x0087e1u, 3, NULL); break;  /* exact M0X0 -> authoritative LLE */
         case 1: _r = interp_tier_run_call_frame(cpu, 0x82d197u, 0x0087e1u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
-        case 2: _r = bank_82_D197_M1X0(cpu); break;
+        case 2: _r = Nmi_FlushVramDmaSlots_Long_M1X0(cpu); break;
         case 3: _r = interp_tier_run_call_frame(cpu, 0x82d197u, 0x0087e1u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
         default: _r = interp_tier_run_call_frame(cpu, 0x82d197u, 0x0087e1u, 3, NULL); break;  /* masked M/X index should make this unreachable */
       }
@@ -1962,7 +1962,7 @@ RecompReturn NmiHandler_Race_M1X0(CpuState *cpu) {
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
         case 0: _r = interp_tier_run_call_frame(cpu, 0x81d86eu, 0x008808u, 3, NULL); break;  /* exact M0X0 -> authoritative LLE */
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81d86eu, 0x008808u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
-        case 2: _r = bank_81_D86E_M1X0(cpu); break;
+        case 2: _r = Hud_UpdateSplitScreenNmi_M1X0(cpu); break;
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81d86eu, 0x008808u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
         default: _r = interp_tier_run_call_frame(cpu, 0x81d86eu, 0x008808u, 3, NULL); break;  /* masked M/X index should make this unreachable */
       }
@@ -2041,7 +2041,7 @@ RecompReturn NmiHandler_Race_M1X0(CpuState *cpu) {
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
         case 0: _r = interp_tier_run_call_frame(cpu, 0x82d3ccu, 0x00881bu, 3, NULL); break;  /* exact M0X0 -> authoritative LLE */
         case 1: _r = interp_tier_run_call_frame(cpu, 0x82d3ccu, 0x00881bu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
-        case 2: _r = bank_82_D3CC_M1X0(cpu); break;
+        case 2: _r = Pal_CycleRaceColors_Long_M1X0(cpu); break;
         case 3: _r = interp_tier_run_call_frame(cpu, 0x82d3ccu, 0x00881bu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
         default: _r = interp_tier_run_call_frame(cpu, 0x82d3ccu, 0x00881bu, 3, NULL); break;  /* masked M/X index should make this unreachable */
       }
@@ -2218,7 +2218,7 @@ RecompReturn NmiHandler_Race_M1X0(CpuState *cpu) {
     uint16 _v145 = cpu_read_a16(cpu);
     cpu_write8_paced(cpu, 0x7e, (uint16)(0x2069), _v145);
     cpu->PB = 0x80; /* JML into bank $80 */
-    { extern RecompReturn bank_80_B0E1_M1X1(CpuState *cpu); cpu->host_return_valid = _hrv; cpu_tailcall_inherit_return_context(_entry_s, _hrv); RecompReturn _tc = bank_80_B0E1_M1X1(cpu); RecompStackPop(); return _tc; }  /* tail-call cross-bank into bank_80_B0E1_M1X1 at $80B0E1 (JML unresolved successor) */
+    { extern RecompReturn Unused_NmiEntryDB80_B0E1_M1X1(CpuState *cpu); cpu->host_return_valid = _hrv; cpu_tailcall_inherit_return_context(_entry_s, _hrv); RecompReturn _tc = Unused_NmiEntryDB80_B0E1_M1X1(cpu); RecompStackPop(); return _tc; }  /* tail-call cross-bank into Unused_NmiEntryDB80_B0E1_M1X1 at $80B0E1 (JML unresolved successor) */
   L_883A_M1X1:
     cpu_trace_block(cpu, 0x00883A);
     WatchdogCheck();
@@ -2260,7 +2260,7 @@ RecompReturn NmiHandler_Race_M1X0(CpuState *cpu) {
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
         case 0: _r = interp_tier_run_call_frame(cpu, 0x81e8d9u, 0x00880eu, 3, NULL); break;  /* exact M0X0 -> authoritative LLE */
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81e8d9u, 0x00880eu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
-        case 2: _r = bank_81_E8D9_M1X0(cpu); break;
+        case 2: _r = Hud_UpdateFullScreenNmi_FastRom_M1X0(cpu); break;
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81e8d9u, 0x00880eu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
         default: _r = interp_tier_run_call_frame(cpu, 0x81e8d9u, 0x00880eu, 3, NULL); break;  /* masked M/X index should make this unreachable */
       }
@@ -2643,19 +2643,19 @@ RecompReturn NmiHandler_Race_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-void bank_00_0199(CpuState *cpu) {
+void Ram_MvnTrampoline(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_00_0199_M0X0(cpu); break;
-    case 1: _r = bank_00_0199_M0X1(cpu); break;
-    case 2: _r = bank_00_0199_M1X0(cpu); break;
-    case 3: _r = bank_00_0199_M1X1(cpu); break;
+    case 0: _r = Ram_MvnTrampoline_M0X0(cpu); break;
+    case 1: _r = Ram_MvnTrampoline_M0X1(cpu); break;
+    case 2: _r = Ram_MvnTrampoline_M1X0(cpu); break;
+    case 3: _r = Ram_MvnTrampoline_M1X1(cpu); break;
     default: _r = interp_tier_dispatch(cpu, 0x000199u); break;
   }
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_00_0199");
+      (int)_r, "Ram_MvnTrampoline");
     abort();
   }
 }

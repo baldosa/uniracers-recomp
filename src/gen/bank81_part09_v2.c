@@ -15,16 +15,16 @@
 
 /* Split translation unit: bank $81, part 09; entry PCs $C800-$CFFF. */
 
-RecompReturn bank_81_C907_M1X0(CpuState *cpu);
-RecompReturn bank_81_CCE6_M1X1(CpuState *cpu);
-RecompReturn bank_81_CD07_M1X1(CpuState *cpu);
+RecompReturn Hud_InitRaceLong_FastRom_M1X1(CpuState *cpu);
+RecompReturn Hud_InitRace_FastRom_M1X1(CpuState *cpu);
+RecompReturn Race_UpdateLapSplits_M1X0(CpuState *cpu);
 
-RecompReturn bank_81_C907_M1X0(CpuState *cpu) {
+RecompReturn Race_UpdateLapSplits_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_81_C907_M1X0";
-  RecompStackPush("bank_81_C907_M1X0");
-  cpu_dbg_funcname("bank_81_C907_M1X0");
-  cpu_trace_func_entry(cpu, 0x81C907, "bank_81_C907_M1X0");
+  g_last_recomp_func = "Race_UpdateLapSplits_M1X0";
+  RecompStackPush("Race_UpdateLapSplits_M1X0");
+  cpu_dbg_funcname("Race_UpdateLapSplits_M1X0");
+  cpu_trace_func_entry(cpu, 0x81C907, "Race_UpdateLapSplits_M1X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xc907u));
@@ -2132,12 +2132,12 @@ RecompReturn bank_81_C907_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_81_CCE6_M1X1(CpuState *cpu) {
+RecompReturn Hud_InitRaceLong_FastRom_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_81_CCE6_M1X1";
-  RecompStackPush("bank_81_CCE6_M1X1");
-  cpu_dbg_funcname("bank_81_CCE6_M1X1");
-  cpu_trace_func_entry(cpu, 0x81CCE6, "bank_81_CCE6_M1X1");
+  g_last_recomp_func = "Hud_InitRaceLong_FastRom_M1X1";
+  RecompStackPush("Hud_InitRaceLong_FastRom_M1X1");
+  cpu_dbg_funcname("Hud_InitRaceLong_FastRom_M1X1");
+  cpu_trace_func_entry(cpu, 0x81CCE6, "Hud_InitRaceLong_FastRom_M1X1");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xcce6u));
@@ -2181,7 +2181,7 @@ RecompReturn bank_81_CCE6_M1X1(CpuState *cpu) {
         case 0: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xcd07u), 0x81cce6u, 2, NULL); break;  /* exact M0X0 -> authoritative LLE */
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xcd07u), 0x81cce6u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xcd07u), 0x81cce6u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
-        case 3: _r = bank_81_CD07_M1X1(cpu); break;
+        case 3: _r = Hud_InitRace_FastRom_M1X1(cpu); break;
         default: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xcd07u), 0x81cce6u, 2, NULL); break;  /* masked M/X index should make this unreachable */
       }
       if (_r != RECOMP_RETURN_NORMAL) {
@@ -2263,12 +2263,12 @@ RecompReturn bank_81_CCE6_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_81_CD07_M1X1(CpuState *cpu) {
+RecompReturn Hud_InitRace_FastRom_M1X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_81_CD07_M1X1";
-  RecompStackPush("bank_81_CD07_M1X1");
-  cpu_dbg_funcname("bank_81_CD07_M1X1");
-  cpu_trace_func_entry(cpu, 0x81CD07, "bank_81_CD07_M1X1");
+  g_last_recomp_func = "Hud_InitRace_FastRom_M1X1";
+  RecompStackPush("Hud_InitRace_FastRom_M1X1");
+  cpu_dbg_funcname("Hud_InitRace_FastRom_M1X1");
+  cpu_trace_func_entry(cpu, 0x81CD07, "Hud_InitRace_FastRom_M1X1");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xcd07u));
@@ -8649,53 +8649,53 @@ RecompReturn bank_81_CD07_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-void bank_81_C907(CpuState *cpu) {
+void Race_UpdateLapSplits(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
     case 0: _r = interp_tier_dispatch(cpu, 0x81c907u); break; /* exact M0X0 LLE */
     case 1: _r = interp_tier_dispatch(cpu, 0x81c907u); break; /* exact M0X1 LLE */
-    case 2: _r = bank_81_C907_M1X0(cpu); break;
+    case 2: _r = Race_UpdateLapSplits_M1X0(cpu); break;
     case 3: _r = interp_tier_dispatch(cpu, 0x81c907u); break; /* exact M1X1 LLE */
     default: _r = interp_tier_dispatch(cpu, 0x81c907u); break;
   }
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_81_C907");
+      (int)_r, "Race_UpdateLapSplits");
     abort();
   }
 }
 
-void bank_81_CCE6(CpuState *cpu) {
+void Hud_InitRaceLong_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
     case 0: _r = interp_tier_dispatch(cpu, 0x81cce6u); break; /* exact M0X0 LLE */
     case 1: _r = interp_tier_dispatch(cpu, 0x81cce6u); break; /* exact M0X1 LLE */
     case 2: _r = interp_tier_dispatch(cpu, 0x81cce6u); break; /* exact M1X0 LLE */
-    case 3: _r = bank_81_CCE6_M1X1(cpu); break;
+    case 3: _r = Hud_InitRaceLong_FastRom_M1X1(cpu); break;
     default: _r = interp_tier_dispatch(cpu, 0x81cce6u); break;
   }
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_81_CCE6");
+      (int)_r, "Hud_InitRaceLong_FastRom");
     abort();
   }
 }
 
-void bank_81_CD07(CpuState *cpu) {
+void Hud_InitRace_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
     case 0: _r = interp_tier_dispatch(cpu, 0x81cd07u); break; /* exact M0X0 LLE */
     case 1: _r = interp_tier_dispatch(cpu, 0x81cd07u); break; /* exact M0X1 LLE */
     case 2: _r = interp_tier_dispatch(cpu, 0x81cd07u); break; /* exact M1X0 LLE */
-    case 3: _r = bank_81_CD07_M1X1(cpu); break;
+    case 3: _r = Hud_InitRace_FastRom_M1X1(cpu); break;
     default: _r = interp_tier_dispatch(cpu, 0x81cd07u); break;
   }
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_81_CD07");
+      (int)_r, "Hud_InitRace_FastRom");
     abort();
   }
 }

@@ -15,22 +15,22 @@
 
 /* Split translation unit: bank $81, part 05; entry PCs $A800-$AFFF. */
 
-RecompReturn bank_81_AB88_M0X0(CpuState *cpu);
-RecompReturn bank_81_ACB1_M0X0(CpuState *cpu);
-RecompReturn bank_81_ACFB_M0X0(CpuState *cpu);
-RecompReturn bank_81_AD2C_M0X0(CpuState *cpu);
-RecompReturn bank_81_AD7A_M0X0(CpuState *cpu);
-RecompReturn bank_81_ADB6_M0X0(CpuState *cpu);
-RecompReturn bank_81_AE59_M0X0(CpuState *cpu);
-RecompReturn bank_81_AFC3_M0X0(CpuState *cpu);
-RecompReturn bank_81_B668_M0X0(CpuState *cpu);
+RecompReturn Bg_FetchMapColumn_M0X0(CpuState *cpu);
+RecompReturn Bg_FetchMapRow_M0X0(CpuState *cpu);
+RecompReturn Bg_FetchMapStrip_M0X0(CpuState *cpu);
+RecompReturn Bg_QueueEdgeStripDma_M0X0(CpuState *cpu);
+RecompReturn Bg_SplitCoordToMetatile_M0X0(CpuState *cpu);
+RecompReturn Bg_UpdateScroll1P_M0X0(CpuState *cpu);
+RecompReturn Bg_UpdateScroll2P_M0X0(CpuState *cpu);
+RecompReturn Dma_QueueVramEntry_M0X0(CpuState *cpu);
+RecompReturn Math_Multiply16_FastRom_M0X0(CpuState *cpu);
 
-RecompReturn bank_81_AB88_M0X0(CpuState *cpu) {
+RecompReturn Bg_QueueEdgeStripDma_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_81_AB88_M0X0";
-  RecompStackPush("bank_81_AB88_M0X0");
-  cpu_dbg_funcname("bank_81_AB88_M0X0");
-  cpu_trace_func_entry(cpu, 0x81AB88, "bank_81_AB88_M0X0");
+  g_last_recomp_func = "Bg_QueueEdgeStripDma_M0X0";
+  RecompStackPush("Bg_QueueEdgeStripDma_M0X0");
+  cpu_dbg_funcname("Bg_QueueEdgeStripDma_M0X0");
+  cpu_trace_func_entry(cpu, 0x81AB88, "Bg_QueueEdgeStripDma_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xab88u));
@@ -171,7 +171,7 @@ RecompReturn bank_81_AB88_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_ACB1_M0X0(cpu); break;
+        case 0: _r = Dma_QueueVramEntry_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xacb1u), 0x81ababu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xacb1u), 0x81ababu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xacb1u), 0x81ababu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -314,7 +314,7 @@ RecompReturn bank_81_AB88_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_ACB1_M0X0(cpu); break;
+        case 0: _r = Dma_QueueVramEntry_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xacb1u), 0x81abceu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xacb1u), 0x81abceu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xacb1u), 0x81abceu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -468,7 +468,7 @@ RecompReturn bank_81_AB88_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_ACB1_M0X0(cpu); break;
+        case 0: _r = Dma_QueueVramEntry_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xacb1u), 0x81abf1u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xacb1u), 0x81abf1u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xacb1u), 0x81abf1u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -611,7 +611,7 @@ RecompReturn bank_81_AB88_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_ACB1_M0X0(cpu); break;
+        case 0: _r = Dma_QueueVramEntry_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xacb1u), 0x81ac14u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xacb1u), 0x81ac14u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xacb1u), 0x81ac14u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -854,7 +854,7 @@ RecompReturn bank_81_AB88_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_ACB1_M0X0(cpu); break;
+        case 0: _r = Dma_QueueVramEntry_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xacb1u), 0x81ac44u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xacb1u), 0x81ac44u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xacb1u), 0x81ac44u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -997,7 +997,7 @@ RecompReturn bank_81_AB88_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_ACB1_M0X0(cpu); break;
+        case 0: _r = Dma_QueueVramEntry_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xacb1u), 0x81ac67u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xacb1u), 0x81ac67u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xacb1u), 0x81ac67u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -1151,7 +1151,7 @@ RecompReturn bank_81_AB88_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_ACB1_M0X0(cpu); break;
+        case 0: _r = Dma_QueueVramEntry_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xacb1u), 0x81ac8au, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xacb1u), 0x81ac8au, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xacb1u), 0x81ac8au, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -1294,7 +1294,7 @@ RecompReturn bank_81_AB88_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_ACB1_M0X0(cpu); break;
+        case 0: _r = Dma_QueueVramEntry_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xacb1u), 0x81acadu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xacb1u), 0x81acadu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xacb1u), 0x81acadu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -1431,12 +1431,12 @@ RecompReturn bank_81_AB88_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_81_ACB1_M0X0(CpuState *cpu) {
+RecompReturn Dma_QueueVramEntry_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_81_ACB1_M0X0";
-  RecompStackPush("bank_81_ACB1_M0X0");
-  cpu_dbg_funcname("bank_81_ACB1_M0X0");
-  cpu_trace_func_entry(cpu, 0x81ACB1, "bank_81_ACB1_M0X0");
+  g_last_recomp_func = "Dma_QueueVramEntry_M0X0";
+  RecompStackPush("Dma_QueueVramEntry_M0X0");
+  cpu_dbg_funcname("Dma_QueueVramEntry_M0X0");
+  cpu_trace_func_entry(cpu, 0x81ACB1, "Dma_QueueVramEntry_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xacb1u));
@@ -1719,12 +1719,12 @@ RecompReturn bank_81_ACB1_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_81_ACFB_M0X0(CpuState *cpu) {
+RecompReturn Bg_FetchMapStrip_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_81_ACFB_M0X0";
-  RecompStackPush("bank_81_ACFB_M0X0");
-  cpu_dbg_funcname("bank_81_ACFB_M0X0");
-  cpu_trace_func_entry(cpu, 0x81ACFB, "bank_81_ACFB_M0X0");
+  g_last_recomp_func = "Bg_FetchMapStrip_M0X0";
+  RecompStackPush("Bg_FetchMapStrip_M0X0");
+  cpu_dbg_funcname("Bg_FetchMapStrip_M0X0");
+  cpu_trace_func_entry(cpu, 0x81ACFB, "Bg_FetchMapStrip_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xacfbu));
@@ -1778,7 +1778,7 @@ RecompReturn bank_81_ACFB_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B668_M0X0(cpu); break;
+        case 0: _r = Math_Multiply16_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xb668u), 0x81ad03u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xb668u), 0x81ad03u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xb668u), 0x81ad03u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -1920,7 +1920,7 @@ RecompReturn bank_81_ACFB_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_AD7A_M0X0(cpu); break;
+        case 0: _r = Bg_FetchMapColumn_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xad7au), 0x81ad23u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xad7au), 0x81ad23u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xad7au), 0x81ad23u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -2028,7 +2028,7 @@ RecompReturn bank_81_ACFB_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_AD2C_M0X0(cpu); break;
+        case 0: _r = Bg_FetchMapRow_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xad2cu), 0x81ad28u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xad2cu), 0x81ad28u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xad2cu), 0x81ad28u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -2046,12 +2046,12 @@ RecompReturn bank_81_ACFB_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_81_AD2C_M0X0(CpuState *cpu) {
+RecompReturn Bg_FetchMapRow_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_81_AD2C_M0X0";
-  RecompStackPush("bank_81_AD2C_M0X0");
-  cpu_dbg_funcname("bank_81_AD2C_M0X0");
-  cpu_trace_func_entry(cpu, 0x81AD2C, "bank_81_AD2C_M0X0");
+  g_last_recomp_func = "Bg_FetchMapRow_M0X0";
+  RecompStackPush("Bg_FetchMapRow_M0X0");
+  cpu_dbg_funcname("Bg_FetchMapRow_M0X0");
+  cpu_trace_func_entry(cpu, 0x81AD2C, "Bg_FetchMapRow_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xad2cu));
@@ -2469,12 +2469,12 @@ RecompReturn bank_81_AD2C_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_81_AD7A_M0X0(CpuState *cpu) {
+RecompReturn Bg_FetchMapColumn_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_81_AD7A_M0X0";
-  RecompStackPush("bank_81_AD7A_M0X0");
-  cpu_dbg_funcname("bank_81_AD7A_M0X0");
-  cpu_trace_func_entry(cpu, 0x81AD7A, "bank_81_AD7A_M0X0");
+  g_last_recomp_func = "Bg_FetchMapColumn_M0X0";
+  RecompStackPush("Bg_FetchMapColumn_M0X0");
+  cpu_dbg_funcname("Bg_FetchMapColumn_M0X0");
+  cpu_trace_func_entry(cpu, 0x81AD7A, "Bg_FetchMapColumn_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xad7au));
@@ -2817,12 +2817,12 @@ RecompReturn bank_81_AD7A_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_81_ADB6_M0X0(CpuState *cpu) {
+RecompReturn Bg_SplitCoordToMetatile_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_81_ADB6_M0X0";
-  RecompStackPush("bank_81_ADB6_M0X0");
-  cpu_dbg_funcname("bank_81_ADB6_M0X0");
-  cpu_trace_func_entry(cpu, 0x81ADB6, "bank_81_ADB6_M0X0");
+  g_last_recomp_func = "Bg_SplitCoordToMetatile_M0X0";
+  RecompStackPush("Bg_SplitCoordToMetatile_M0X0");
+  cpu_dbg_funcname("Bg_SplitCoordToMetatile_M0X0");
+  cpu_trace_func_entry(cpu, 0x81ADB6, "Bg_SplitCoordToMetatile_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xadb6u));
@@ -3129,12 +3129,12 @@ RecompReturn bank_81_ADB6_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_81_AE59_M0X0(CpuState *cpu) {
+RecompReturn Bg_UpdateScroll1P_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_81_AE59_M0X0";
-  RecompStackPush("bank_81_AE59_M0X0");
-  cpu_dbg_funcname("bank_81_AE59_M0X0");
-  cpu_trace_func_entry(cpu, 0x81AE59, "bank_81_AE59_M0X0");
+  g_last_recomp_func = "Bg_UpdateScroll1P_M0X0";
+  RecompStackPush("Bg_UpdateScroll1P_M0X0");
+  cpu_dbg_funcname("Bg_UpdateScroll1P_M0X0");
+  cpu_trace_func_entry(cpu, 0x81AE59, "Bg_UpdateScroll1P_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xae59u));
@@ -4256,12 +4256,12 @@ RecompReturn bank_81_AE59_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_81_AFC3_M0X0(CpuState *cpu) {
+RecompReturn Bg_UpdateScroll2P_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_81_AFC3_M0X0";
-  RecompStackPush("bank_81_AFC3_M0X0");
-  cpu_dbg_funcname("bank_81_AFC3_M0X0");
-  cpu_trace_func_entry(cpu, 0x81AFC3, "bank_81_AFC3_M0X0");
+  g_last_recomp_func = "Bg_UpdateScroll2P_M0X0";
+  RecompStackPush("Bg_UpdateScroll2P_M0X0");
+  cpu_dbg_funcname("Bg_UpdateScroll2P_M0X0");
+  cpu_trace_func_entry(cpu, 0x81AFC3, "Bg_UpdateScroll2P_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xafc3u));
@@ -6365,10 +6365,10 @@ RecompReturn bank_81_AFC3_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-void bank_81_AB88(CpuState *cpu) {
+void Bg_QueueEdgeStripDma(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_81_AB88_M0X0(cpu); break;
+    case 0: _r = Bg_QueueEdgeStripDma_M0X0(cpu); break;
     case 1: _r = interp_tier_dispatch(cpu, 0x81ab88u); break; /* exact M0X1 LLE */
     case 2: _r = interp_tier_dispatch(cpu, 0x81ab88u); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x81ab88u); break; /* exact M1X1 LLE */
@@ -6377,15 +6377,15 @@ void bank_81_AB88(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_81_AB88");
+      (int)_r, "Bg_QueueEdgeStripDma");
     abort();
   }
 }
 
-void bank_81_ACB1(CpuState *cpu) {
+void Dma_QueueVramEntry(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_81_ACB1_M0X0(cpu); break;
+    case 0: _r = Dma_QueueVramEntry_M0X0(cpu); break;
     case 1: _r = interp_tier_dispatch(cpu, 0x81acb1u); break; /* exact M0X1 LLE */
     case 2: _r = interp_tier_dispatch(cpu, 0x81acb1u); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x81acb1u); break; /* exact M1X1 LLE */
@@ -6394,15 +6394,15 @@ void bank_81_ACB1(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_81_ACB1");
+      (int)_r, "Dma_QueueVramEntry");
     abort();
   }
 }
 
-void bank_81_ACFB(CpuState *cpu) {
+void Bg_FetchMapStrip(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_81_ACFB_M0X0(cpu); break;
+    case 0: _r = Bg_FetchMapStrip_M0X0(cpu); break;
     case 1: _r = interp_tier_dispatch(cpu, 0x81acfbu); break; /* exact M0X1 LLE */
     case 2: _r = interp_tier_dispatch(cpu, 0x81acfbu); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x81acfbu); break; /* exact M1X1 LLE */
@@ -6411,15 +6411,15 @@ void bank_81_ACFB(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_81_ACFB");
+      (int)_r, "Bg_FetchMapStrip");
     abort();
   }
 }
 
-void bank_81_AD2C(CpuState *cpu) {
+void Bg_FetchMapRow(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_81_AD2C_M0X0(cpu); break;
+    case 0: _r = Bg_FetchMapRow_M0X0(cpu); break;
     case 1: _r = interp_tier_dispatch(cpu, 0x81ad2cu); break; /* exact M0X1 LLE */
     case 2: _r = interp_tier_dispatch(cpu, 0x81ad2cu); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x81ad2cu); break; /* exact M1X1 LLE */
@@ -6428,15 +6428,15 @@ void bank_81_AD2C(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_81_AD2C");
+      (int)_r, "Bg_FetchMapRow");
     abort();
   }
 }
 
-void bank_81_AD7A(CpuState *cpu) {
+void Bg_FetchMapColumn(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_81_AD7A_M0X0(cpu); break;
+    case 0: _r = Bg_FetchMapColumn_M0X0(cpu); break;
     case 1: _r = interp_tier_dispatch(cpu, 0x81ad7au); break; /* exact M0X1 LLE */
     case 2: _r = interp_tier_dispatch(cpu, 0x81ad7au); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x81ad7au); break; /* exact M1X1 LLE */
@@ -6445,15 +6445,15 @@ void bank_81_AD7A(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_81_AD7A");
+      (int)_r, "Bg_FetchMapColumn");
     abort();
   }
 }
 
-void bank_81_ADB6(CpuState *cpu) {
+void Bg_SplitCoordToMetatile(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_81_ADB6_M0X0(cpu); break;
+    case 0: _r = Bg_SplitCoordToMetatile_M0X0(cpu); break;
     case 1: _r = interp_tier_dispatch(cpu, 0x81adb6u); break; /* exact M0X1 LLE */
     case 2: _r = interp_tier_dispatch(cpu, 0x81adb6u); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x81adb6u); break; /* exact M1X1 LLE */
@@ -6462,15 +6462,15 @@ void bank_81_ADB6(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_81_ADB6");
+      (int)_r, "Bg_SplitCoordToMetatile");
     abort();
   }
 }
 
-void bank_81_AE59(CpuState *cpu) {
+void Bg_UpdateScroll1P(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_81_AE59_M0X0(cpu); break;
+    case 0: _r = Bg_UpdateScroll1P_M0X0(cpu); break;
     case 1: _r = interp_tier_dispatch(cpu, 0x81ae59u); break; /* exact M0X1 LLE */
     case 2: _r = interp_tier_dispatch(cpu, 0x81ae59u); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x81ae59u); break; /* exact M1X1 LLE */
@@ -6479,15 +6479,15 @@ void bank_81_AE59(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_81_AE59");
+      (int)_r, "Bg_UpdateScroll1P");
     abort();
   }
 }
 
-void bank_81_AFC3(CpuState *cpu) {
+void Bg_UpdateScroll2P(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_81_AFC3_M0X0(cpu); break;
+    case 0: _r = Bg_UpdateScroll2P_M0X0(cpu); break;
     case 1: _r = interp_tier_dispatch(cpu, 0x81afc3u); break; /* exact M0X1 LLE */
     case 2: _r = interp_tier_dispatch(cpu, 0x81afc3u); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x81afc3u); break; /* exact M1X1 LLE */
@@ -6496,7 +6496,7 @@ void bank_81_AFC3(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_81_AFC3");
+      (int)_r, "Bg_UpdateScroll2P");
     abort();
   }
 }

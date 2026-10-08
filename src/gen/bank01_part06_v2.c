@@ -22,14 +22,14 @@ RecompReturn Math_MulFixed8p8_B6E2_M1X1(CpuState *cpu);
 RecompReturn Math_MulFixed8p8_B6EE_M1X1(CpuState *cpu);
 RecompReturn Math_MulFixed8p8_B6FC_M1X1(CpuState *cpu);
 RecompReturn Math_MulFixed8p8_M0X0(CpuState *cpu);
-RecompReturn bank_01_B668_M0X0(CpuState *cpu);
+RecompReturn Math_Multiply16_M0X0(CpuState *cpu);
 
-RecompReturn bank_01_B668_M0X0(CpuState *cpu) {
+RecompReturn Math_Multiply16_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_01_B668_M0X0";
-  RecompStackPush("bank_01_B668_M0X0");
-  cpu_dbg_funcname("bank_01_B668_M0X0");
-  cpu_trace_func_entry(cpu, 0x01B668, "bank_01_B668_M0X0");
+  g_last_recomp_func = "Math_Multiply16_M0X0";
+  RecompStackPush("Math_Multiply16_M0X0");
+  cpu_dbg_funcname("Math_Multiply16_M0X0");
+  cpu_trace_func_entry(cpu, 0x01B668, "Math_Multiply16_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xb668u));
@@ -1770,10 +1770,10 @@ RecompReturn Math_MulFixed8p8_B6FC_M1X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-void bank_01_B668(CpuState *cpu) {
+void Math_Multiply16(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_01_B668_M0X0(cpu); break;
+    case 0: _r = Math_Multiply16_M0X0(cpu); break;
     case 1: _r = interp_tier_dispatch(cpu, 0x01b668u); break; /* exact M0X1 LLE */
     case 2: _r = interp_tier_dispatch(cpu, 0x01b668u); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x01b668u); break; /* exact M1X1 LLE */
@@ -1782,7 +1782,7 @@ void bank_01_B668(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_01_B668");
+      (int)_r, "Math_Multiply16");
     abort();
   }
 }

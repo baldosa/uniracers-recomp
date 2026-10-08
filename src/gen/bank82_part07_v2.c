@@ -15,15 +15,15 @@
 
 /* Split translation unit: bank $82, part 07; entry PCs $B800-$BFFF. */
 
-RecompReturn bank_82_B8A7_M1X0(CpuState *cpu);
-RecompReturn bank_82_B8AB_M1X0(CpuState *cpu);
+RecompReturn Nmi_FlushTileDmaList_Long_M1X0(CpuState *cpu);
+RecompReturn Nmi_FlushTileDmaList_M1X0(CpuState *cpu);
 
-RecompReturn bank_82_B8A7_M1X0(CpuState *cpu) {
+RecompReturn Nmi_FlushTileDmaList_Long_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_82_B8A7_M1X0";
-  RecompStackPush("bank_82_B8A7_M1X0");
-  cpu_dbg_funcname("bank_82_B8A7_M1X0");
-  cpu_trace_func_entry(cpu, 0x82B8A7, "bank_82_B8A7_M1X0");
+  g_last_recomp_func = "Nmi_FlushTileDmaList_Long_M1X0";
+  RecompStackPush("Nmi_FlushTileDmaList_Long_M1X0");
+  cpu_dbg_funcname("Nmi_FlushTileDmaList_Long_M1X0");
+  cpu_trace_func_entry(cpu, 0x82B8A7, "Nmi_FlushTileDmaList_Long_M1X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xb8a7u));
@@ -66,7 +66,7 @@ RecompReturn bank_82_B8A7_M1X0(CpuState *cpu) {
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
         case 0: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xb8abu), 0x82b8a7u, 2, NULL); break;  /* exact M0X0 -> authoritative LLE */
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xb8abu), 0x82b8a7u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
-        case 2: _r = bank_82_B8AB_M1X0(cpu); break;
+        case 2: _r = Nmi_FlushTileDmaList_M1X0(cpu); break;
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xb8abu), 0x82b8a7u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
         default: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xb8abu), 0x82b8a7u, 2, NULL); break;  /* masked M/X index should make this unreachable */
       }
@@ -149,12 +149,12 @@ RecompReturn bank_82_B8A7_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_82_B8AB_M1X0(CpuState *cpu) {
+RecompReturn Nmi_FlushTileDmaList_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_82_B8AB_M1X0";
-  RecompStackPush("bank_82_B8AB_M1X0");
-  cpu_dbg_funcname("bank_82_B8AB_M1X0");
-  cpu_trace_func_entry(cpu, 0x82B8AB, "bank_82_B8AB_M1X0");
+  g_last_recomp_func = "Nmi_FlushTileDmaList_M1X0";
+  RecompStackPush("Nmi_FlushTileDmaList_M1X0");
+  cpu_dbg_funcname("Nmi_FlushTileDmaList_M1X0");
+  cpu_trace_func_entry(cpu, 0x82B8AB, "Nmi_FlushTileDmaList_M1X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xb8abu));
@@ -17430,36 +17430,36 @@ RecompReturn bank_82_B8AB_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-void bank_82_B8A7(CpuState *cpu) {
+void Nmi_FlushTileDmaList_Long(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
     case 0: _r = interp_tier_dispatch(cpu, 0x82b8a7u); break; /* exact M0X0 LLE */
     case 1: _r = interp_tier_dispatch(cpu, 0x82b8a7u); break; /* exact M0X1 LLE */
-    case 2: _r = bank_82_B8A7_M1X0(cpu); break;
+    case 2: _r = Nmi_FlushTileDmaList_Long_M1X0(cpu); break;
     case 3: _r = interp_tier_dispatch(cpu, 0x82b8a7u); break; /* exact M1X1 LLE */
     default: _r = interp_tier_dispatch(cpu, 0x82b8a7u); break;
   }
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_82_B8A7");
+      (int)_r, "Nmi_FlushTileDmaList_Long");
     abort();
   }
 }
 
-void bank_82_B8AB(CpuState *cpu) {
+void Nmi_FlushTileDmaList(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
     case 0: _r = interp_tier_dispatch(cpu, 0x82b8abu); break; /* exact M0X0 LLE */
     case 1: _r = interp_tier_dispatch(cpu, 0x82b8abu); break; /* exact M0X1 LLE */
-    case 2: _r = bank_82_B8AB_M1X0(cpu); break;
+    case 2: _r = Nmi_FlushTileDmaList_M1X0(cpu); break;
     case 3: _r = interp_tier_dispatch(cpu, 0x82b8abu); break; /* exact M1X1 LLE */
     default: _r = interp_tier_dispatch(cpu, 0x82b8abu); break;
   }
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_82_B8AB");
+      (int)_r, "Nmi_FlushTileDmaList");
     abort();
   }
 }

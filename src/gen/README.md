@@ -19,6 +19,19 @@ generated the same way.
   (the only byte array in these files is that hash). **The code here does
   nothing without your own copy of the game.**
 
+## Reading the names
+
+Every function carries the name the decomp gave the routine
+(`decomp/symbols.txt`, where each one also has a one-line description):
+
+| Name | Meaning |
+|---|---|
+| `Sram_ValidateOrInit` | `Subsystem_WhatItDoes`: the routine itself |
+| `MainMenu_Draw_ACE8` | an entry point inside `MainMenu_Draw`, at `$ACE8` |
+| `..._M1X0` | compiled for one CPU state: M=1 8-bit / 0 16-bit accumulator, X likewise for X/Y. A routine entered in several states has one copy per state |
+| `..._FastRom` / `_SlowRom` | the same routine reached through the other ROM mirror ($80-$83 vs $00-$03), which the hardware times differently |
+| `Ram_MvnTrampoline` | code the game copies into RAM and runs there |
+
 ## Don't edit these files
 
 They are build output. Change `recomp/*.cfg` or `recomp/symbols.toml` and

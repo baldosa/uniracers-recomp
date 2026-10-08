@@ -16,16 +16,30 @@
 /* Split translation unit: bank $03, part 01; entry PCs $8800-$8FFF. */
 
 RecompReturn Anim_DecodeFrame_M1X0(CpuState *cpu);
+RecompReturn Attract_Main_94EB_M1X0(CpuState *cpu);
+RecompReturn Award_Tier0Cutscene_M0X0(CpuState *cpu);
+RecompReturn Cutscene0_Main_M0X0(CpuState *cpu);
+RecompReturn Gfx_CopyRomTileToWram_FastRom_M1X0(CpuState *cpu);
+RecompReturn Index_TierX5_FastRom_M0X0(CpuState *cpu);
+RecompReturn Index_TierX5_FastRom_M1X0(CpuState *cpu);
 RecompReturn League_CheckRaceWin_M0X0(CpuState *cpu);
+RecompReturn League_CheckStuntWin_M0X0(CpuState *cpu);
+RecompReturn League_ClearTierResults_M1X0(CpuState *cpu);
+RecompReturn League_GetStuntTarget_M0X0(CpuState *cpu);
 RecompReturn League_RoundTrackToTierLong_M1X0(CpuState *cpu);
 RecompReturn League_RoundTrackToTier_M1X0(CpuState *cpu);
+RecompReturn Math_Div16by8Long_M0X0(CpuState *cpu);
 RecompReturn Math_Divide32By16Long_M0X0(CpuState *cpu);
 RecompReturn Math_Divide32By16_M0X0(CpuState *cpu);
 RecompReturn Menu_DrawTierBadge_M0X0(CpuState *cpu);
 RecompReturn Menu_DrawTierBadge_M1X0(CpuState *cpu);
+RecompReturn Player_GetTier_FastRom_M0X0(CpuState *cpu);
+RecompReturn Player_GetTier_FastRom_M1X0(CpuState *cpu);
 RecompReturn Ppu_ResetBgScroll_M1X0(CpuState *cpu);
 RecompReturn Sram_CheckSizeMirror_M1X0(CpuState *cpu);
 RecompReturn Sram_ClearSessionData_M1X0(CpuState *cpu);
+RecompReturn Str_CopyLong_FastRom_M0X0(CpuState *cpu);
+RecompReturn Str_CopyLong_FastRom_M1X0(CpuState *cpu);
 RecompReturn Str_CopyLong_M0X0(CpuState *cpu);
 RecompReturn Str_CopyLong_M1X0(CpuState *cpu);
 RecompReturn Str_Copy_8BD1_M1X0(CpuState *cpu);
@@ -35,20 +49,6 @@ RecompReturn Str_Copy_M1X0(CpuState *cpu);
 RecompReturn Text_FormatDecimal5_M0X0(CpuState *cpu);
 RecompReturn Text_FormatRaceTimeLong_M0X0(CpuState *cpu);
 RecompReturn Text_FormatRaceTime_M0X0(CpuState *cpu);
-RecompReturn bank_03_88E1_M0X0(CpuState *cpu);
-RecompReturn bank_03_890F_M0X0(CpuState *cpu);
-RecompReturn bank_03_895B_M1X0(CpuState *cpu);
-RecompReturn bank_80_94EB_M1X0(CpuState *cpu);
-RecompReturn bank_80_96FD_M0X0(CpuState *cpu);
-RecompReturn bank_83_8484_M1X0(CpuState *cpu);
-RecompReturn bank_83_8BC9_M0X0(CpuState *cpu);
-RecompReturn bank_83_8BC9_M1X0(CpuState *cpu);
-RecompReturn bank_83_9ED5_M0X0(CpuState *cpu);
-RecompReturn bank_83_9ED5_M1X0(CpuState *cpu);
-RecompReturn bank_83_9EEB_M0X0(CpuState *cpu);
-RecompReturn bank_83_9F14_M0X0(CpuState *cpu);
-RecompReturn bank_83_9F14_M1X0(CpuState *cpu);
-RecompReturn bank_83_C49C_M0X0(CpuState *cpu);
 
 RecompReturn League_CheckRaceWin_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
@@ -270,12 +270,12 @@ RecompReturn League_CheckRaceWin_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_03_88E1_M0X0(CpuState *cpu) {
+RecompReturn League_CheckStuntWin_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_03_88E1_M0X0";
-  RecompStackPush("bank_03_88E1_M0X0");
-  cpu_dbg_funcname("bank_03_88E1_M0X0");
-  cpu_trace_func_entry(cpu, 0x0388E1, "bank_03_88E1_M0X0");
+  g_last_recomp_func = "League_CheckStuntWin_M0X0";
+  RecompStackPush("League_CheckStuntWin_M0X0");
+  cpu_dbg_funcname("League_CheckStuntWin_M0X0");
+  cpu_trace_func_entry(cpu, 0x0388E1, "League_CheckStuntWin_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0x88e1u));
@@ -327,7 +327,7 @@ RecompReturn bank_03_88E1_M0X0(CpuState *cpu) {
       cpu->PB = 0x83;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_83_9EEB_M0X0(cpu); break;
+        case 0: _r = League_GetStuntTarget_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x839eebu, 0x0388e3u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x839eebu, 0x0388e3u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x839eebu, 0x0388e3u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -520,12 +520,12 @@ RecompReturn bank_03_88E1_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_03_890F_M0X0(CpuState *cpu) {
+RecompReturn Award_Tier0Cutscene_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_03_890F_M0X0";
-  RecompStackPush("bank_03_890F_M0X0");
-  cpu_dbg_funcname("bank_03_890F_M0X0");
-  cpu_trace_func_entry(cpu, 0x03890F, "bank_03_890F_M0X0");
+  g_last_recomp_func = "Award_Tier0Cutscene_M0X0";
+  RecompStackPush("Award_Tier0Cutscene_M0X0");
+  cpu_dbg_funcname("Award_Tier0Cutscene_M0X0");
+  cpu_trace_func_entry(cpu, 0x03890F, "Award_Tier0Cutscene_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0x890fu));
@@ -570,7 +570,7 @@ RecompReturn bank_03_890F_M0X0(CpuState *cpu) {
       cpu->PB = 0x83;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_83_C49C_M0X0(cpu); break;
+        case 0: _r = Cutscene0_Main_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x83c49cu, 0x03890fu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x83c49cu, 0x03890fu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x83c49cu, 0x03890fu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -864,7 +864,7 @@ RecompReturn League_RoundTrackToTier_M1X0(CpuState *cpu) {
       cpu->PB = 0x80;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_80_96FD_M0X0(cpu); break;
+        case 0: _r = Math_Div16by8Long_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x8096fdu, 0x038948u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x8096fdu, 0x038948u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x8096fdu, 0x038948u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -1002,12 +1002,12 @@ RecompReturn League_RoundTrackToTier_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_03_895B_M1X0(CpuState *cpu) {
+RecompReturn League_ClearTierResults_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_03_895B_M1X0";
-  RecompStackPush("bank_03_895B_M1X0");
-  cpu_dbg_funcname("bank_03_895B_M1X0");
-  cpu_trace_func_entry(cpu, 0x03895B, "bank_03_895B_M1X0");
+  g_last_recomp_func = "League_ClearTierResults_M1X0";
+  RecompStackPush("League_ClearTierResults_M1X0");
+  cpu_dbg_funcname("League_ClearTierResults_M1X0");
+  cpu_trace_func_entry(cpu, 0x03895B, "League_ClearTierResults_M1X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0x895bu));
@@ -1073,9 +1073,9 @@ RecompReturn bank_03_895B_M1X0(CpuState *cpu) {
       cpu->PB = 0x83;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_83_9ED5_M0X0(cpu); break;
+        case 0: _r = Index_TierX5_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x839ed5u, 0x038960u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
-        case 2: _r = bank_83_9ED5_M1X0(cpu); break;
+        case 2: _r = Index_TierX5_FastRom_M1X0(cpu); break;
         case 3: _r = interp_tier_run_call_frame(cpu, 0x839ed5u, 0x038960u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
         default: _r = interp_tier_run_call_frame(cpu, 0x839ed5u, 0x038960u, 3, NULL); break;  /* masked M/X index should make this unreachable */
       }
@@ -1476,7 +1476,7 @@ RecompReturn Sram_CheckSizeMirror_M1X0(CpuState *cpu) {
     cpu->cycles += 4;
     cpu->master_cycles += 4 * ((g_memsel && (cpu->PB & 0x80)) ? 6 : 8) + 0;
     cpu->PB = 0x80; /* JML into bank $80 */
-    { extern RecompReturn bank_80_94EB_M1X0(CpuState *cpu); cpu->host_return_valid = _hrv; cpu_tailcall_inherit_return_context(_entry_s, _hrv); RecompReturn _tc = bank_80_94EB_M1X0(cpu); RecompStackPop(); return _tc; }  /* tail-call cross-bank into bank_80_94EB_M1X0 at $8094EB (JML unresolved successor) */
+    { extern RecompReturn Attract_Main_94EB_M1X0(CpuState *cpu); cpu->host_return_valid = _hrv; cpu_tailcall_inherit_return_context(_entry_s, _hrv); RecompReturn _tc = Attract_Main_94EB_M1X0(cpu); RecompStackPop(); return _tc; }  /* tail-call cross-bank into Attract_Main_94EB_M1X0 at $8094EB (JML unresolved successor) */
   L_8B1C_M1X0:
     cpu_trace_block(cpu, 0x038B1C);
     WatchdogCheck();
@@ -3624,9 +3624,9 @@ RecompReturn Text_FormatRaceTime_M0X0(CpuState *cpu) {
       cpu->PB = 0x83;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_83_8BC9_M0X0(cpu); break;
+        case 0: _r = Str_CopyLong_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x838bc9u, 0x038c8fu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
-        case 2: _r = bank_83_8BC9_M1X0(cpu); break;
+        case 2: _r = Str_CopyLong_FastRom_M1X0(cpu); break;
         case 3: _r = interp_tier_run_call_frame(cpu, 0x838bc9u, 0x038c8fu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
         default: _r = interp_tier_run_call_frame(cpu, 0x838bc9u, 0x038c8fu, 3, NULL); break;  /* masked M/X index should make this unreachable */
       }
@@ -3778,9 +3778,9 @@ RecompReturn Text_FormatRaceTime_M0X0(CpuState *cpu) {
       cpu->PB = 0x83;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_83_8BC9_M0X0(cpu); break;
+        case 0: _r = Str_CopyLong_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x838bc9u, 0x038ca2u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
-        case 2: _r = bank_83_8BC9_M1X0(cpu); break;
+        case 2: _r = Str_CopyLong_FastRom_M1X0(cpu); break;
         case 3: _r = interp_tier_run_call_frame(cpu, 0x838bc9u, 0x038ca2u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
         default: _r = interp_tier_run_call_frame(cpu, 0x838bc9u, 0x038ca2u, 3, NULL); break;  /* masked M/X index should make this unreachable */
       }
@@ -5242,9 +5242,9 @@ RecompReturn Menu_DrawTierBadge_M0X0(CpuState *cpu) {
       cpu->PB = 0x83;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_83_9F14_M0X0(cpu); break;
+        case 0: _r = Player_GetTier_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x839f14u, 0x038da4u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
-        case 2: _r = bank_83_9F14_M1X0(cpu); break;
+        case 2: _r = Player_GetTier_FastRom_M1X0(cpu); break;
         case 3: _r = interp_tier_run_call_frame(cpu, 0x839f14u, 0x038da4u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
         default: _r = interp_tier_run_call_frame(cpu, 0x839f14u, 0x038da4u, 3, NULL); break;  /* masked M/X index should make this unreachable */
       }
@@ -5892,9 +5892,9 @@ RecompReturn Menu_DrawTierBadge_M1X0(CpuState *cpu) {
       cpu->PB = 0x83;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_83_9F14_M0X0(cpu); break;
+        case 0: _r = Player_GetTier_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x839f14u, 0x038da4u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
-        case 2: _r = bank_83_9F14_M1X0(cpu); break;
+        case 2: _r = Player_GetTier_FastRom_M1X0(cpu); break;
         case 3: _r = interp_tier_run_call_frame(cpu, 0x839f14u, 0x038da4u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
         default: _r = interp_tier_run_call_frame(cpu, 0x839f14u, 0x038da4u, 3, NULL); break;  /* masked M/X index should make this unreachable */
       }
@@ -6948,7 +6948,7 @@ RecompReturn Anim_DecodeFrame_M1X0(CpuState *cpu) {
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
         case 0: _r = interp_tier_run_call_frame(cpu, 0x838484u, 0x038ec5u, 3, NULL); break;  /* exact M0X0 -> authoritative LLE */
         case 1: _r = interp_tier_run_call_frame(cpu, 0x838484u, 0x038ec5u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
-        case 2: _r = bank_83_8484_M1X0(cpu); break;
+        case 2: _r = Gfx_CopyRomTileToWram_FastRom_M1X0(cpu); break;
         case 3: _r = interp_tier_run_call_frame(cpu, 0x838484u, 0x038ec5u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
         default: _r = interp_tier_run_call_frame(cpu, 0x838484u, 0x038ec5u, 3, NULL); break;  /* masked M/X index should make this unreachable */
       }
@@ -7313,10 +7313,10 @@ void League_CheckRaceWin(CpuState *cpu) {
   }
 }
 
-void bank_03_88E1(CpuState *cpu) {
+void League_CheckStuntWin(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_03_88E1_M0X0(cpu); break;
+    case 0: _r = League_CheckStuntWin_M0X0(cpu); break;
     case 1: _r = interp_tier_dispatch(cpu, 0x0388e1u); break; /* exact M0X1 LLE */
     case 2: _r = interp_tier_dispatch(cpu, 0x0388e1u); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x0388e1u); break; /* exact M1X1 LLE */
@@ -7325,15 +7325,15 @@ void bank_03_88E1(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_03_88E1");
+      (int)_r, "League_CheckStuntWin");
     abort();
   }
 }
 
-void bank_03_890F(CpuState *cpu) {
+void Award_Tier0Cutscene(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_03_890F_M0X0(cpu); break;
+    case 0: _r = Award_Tier0Cutscene_M0X0(cpu); break;
     case 1: _r = interp_tier_dispatch(cpu, 0x03890fu); break; /* exact M0X1 LLE */
     case 2: _r = interp_tier_dispatch(cpu, 0x03890fu); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x03890fu); break; /* exact M1X1 LLE */
@@ -7342,7 +7342,7 @@ void bank_03_890F(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_03_890F");
+      (int)_r, "Award_Tier0Cutscene");
     abort();
   }
 }
@@ -7381,19 +7381,19 @@ void League_RoundTrackToTier(CpuState *cpu) {
   }
 }
 
-void bank_03_895B(CpuState *cpu) {
+void League_ClearTierResults(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
     case 0: _r = interp_tier_dispatch(cpu, 0x03895bu); break; /* exact M0X0 LLE */
     case 1: _r = interp_tier_dispatch(cpu, 0x03895bu); break; /* exact M0X1 LLE */
-    case 2: _r = bank_03_895B_M1X0(cpu); break;
+    case 2: _r = League_ClearTierResults_M1X0(cpu); break;
     case 3: _r = interp_tier_dispatch(cpu, 0x03895bu); break; /* exact M1X1 LLE */
     default: _r = interp_tier_dispatch(cpu, 0x03895bu); break;
   }
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_03_895B");
+      (int)_r, "League_ClearTierResults");
     abort();
   }
 }

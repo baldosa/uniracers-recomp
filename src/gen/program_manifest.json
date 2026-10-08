@@ -4513,6 +4513,14 @@
       "m": 0,
       "x": 0
     },
+    "8092F2:M1X0": {
+      "m": 1,
+      "x": 0
+    },
+    "8092F7:M1X0": {
+      "m": 1,
+      "x": 0
+    },
     "809314:M1X0": {
       "m": 1,
       "x": 0
@@ -6884,6 +6892,23 @@
   },
   "format_version": 3,
   "nodes": {
+    "000199:M0X0": {
+      "demands": [],
+      "digest": "native",
+      "disposition": "lle_only",
+      "instruction_count": 0,
+      "key": {
+        "m": 0,
+        "pc24": 409,
+        "x": 0
+      },
+      "max_pc24": 409,
+      "min_pc24": 409,
+      "reasons": [
+        "empty_decode",
+        "structural_poison"
+      ]
+    },
     "008584:M0X0": {
       "demands": [
         {
@@ -127826,6 +127851,311 @@
       "min_pc24": 8423515,
       "reasons": []
     },
+    "8092F2:M1X0": {
+      "demands": [
+        {
+          "detail": "declared_boundary",
+          "kind": "direct_tail_call",
+          "resolution": "aot_exact",
+          "site_pc24": 8426240,
+          "target": {
+            "m": 1,
+            "pc24": 8426242,
+            "x": 0
+          }
+        }
+      ],
+      "digest": "native",
+      "disposition": "aot_eligible",
+      "instruction_count": 6,
+      "key": {
+        "m": 1,
+        "pc24": 8426226,
+        "x": 0
+      },
+      "max_pc24": 8426240,
+      "min_pc24": 8426226,
+      "reasons": []
+    },
+    "8092F7:M1X0": {
+      "demands": [
+        {
+          "detail": "declared_boundary",
+          "kind": "direct_tail_call",
+          "resolution": "aot_exact",
+          "site_pc24": 8426240,
+          "target": {
+            "m": 1,
+            "pc24": 8426242,
+            "x": 0
+          }
+        }
+      ],
+      "digest": "native",
+      "disposition": "aot_eligible",
+      "instruction_count": 4,
+      "key": {
+        "m": 1,
+        "pc24": 8426231,
+        "x": 0
+      },
+      "max_pc24": 8426240,
+      "min_pc24": 8426231,
+      "reasons": []
+    },
+    "809302:M1X0": {
+      "demands": [
+        {
+          "detail": "",
+          "kind": "direct_call",
+          "resolution": "aot_exact",
+          "site_pc24": 8423515,
+          "target": {
+            "m": 1,
+            "pc24": 8435197,
+            "x": 0
+          }
+        },
+        {
+          "detail": "",
+          "kind": "direct_call",
+          "resolution": "aot_exact",
+          "site_pc24": 8423518,
+          "target": {
+            "m": 1,
+            "pc24": 8429707,
+            "x": 0
+          }
+        },
+        {
+          "detail": "",
+          "kind": "direct_call",
+          "resolution": "aot_exact",
+          "site_pc24": 8423521,
+          "target": {
+            "m": 1,
+            "pc24": 8433789,
+            "x": 0
+          }
+        },
+        {
+          "detail": "",
+          "kind": "direct_call",
+          "resolution": "aot_exact",
+          "site_pc24": 8423524,
+          "target": {
+            "m": 1,
+            "pc24": 8429915,
+            "x": 0
+          }
+        },
+        {
+          "detail": "",
+          "kind": "direct_call",
+          "resolution": "aot_exact",
+          "site_pc24": 8423527,
+          "target": {
+            "m": 1,
+            "pc24": 8451401,
+            "x": 0
+          }
+        },
+        {
+          "detail": "",
+          "kind": "direct_call",
+          "resolution": "aot_exact",
+          "site_pc24": 8423530,
+          "target": {
+            "m": 1,
+            "pc24": 8442365,
+            "x": 0
+          }
+        },
+        {
+          "detail": "",
+          "kind": "direct_call",
+          "resolution": "aot_exact",
+          "site_pc24": 8423533,
+          "target": {
+            "m": 1,
+            "pc24": 8620791,
+            "x": 0
+          }
+        },
+        {
+          "detail": "",
+          "kind": "direct_call",
+          "resolution": "aot_exact",
+          "site_pc24": 8423537,
+          "target": {
+            "m": 1,
+            "pc24": 8424526,
+            "x": 0
+          }
+        },
+        {
+          "detail": "",
+          "kind": "direct_call",
+          "resolution": "aot_exact",
+          "site_pc24": 8423540,
+          "target": {
+            "m": 1,
+            "pc24": 8620835,
+            "x": 0
+          }
+        },
+        {
+          "detail": "",
+          "kind": "direct_call",
+          "resolution": "aot_exact",
+          "site_pc24": 8423544,
+          "target": {
+            "m": 1,
+            "pc24": 8432838,
+            "x": 0
+          }
+        },
+        {
+          "detail": "",
+          "kind": "direct_call",
+          "resolution": "aot_exact",
+          "site_pc24": 8423547,
+          "target": {
+            "m": 1,
+            "pc24": 8427625,
+            "x": 0
+          }
+        },
+        {
+          "detail": "",
+          "kind": "direct_call",
+          "resolution": "aot_exact",
+          "site_pc24": 8423550,
+          "target": {
+            "m": 1,
+            "pc24": 8452809,
+            "x": 0
+          }
+        },
+        {
+          "detail": "",
+          "kind": "direct_call",
+          "resolution": "aot_exact",
+          "site_pc24": 8423553,
+          "target": {
+            "m": 1,
+            "pc24": 8432838,
+            "x": 0
+          }
+        },
+        {
+          "detail": "",
+          "kind": "direct_call",
+          "resolution": "aot_exact",
+          "site_pc24": 8423575,
+          "target": {
+            "m": 1,
+            "pc24": 8443126,
+            "x": 0
+          }
+        },
+        {
+          "detail": "",
+          "kind": "direct_call",
+          "resolution": "aot_exact",
+          "site_pc24": 8423578,
+          "target": {
+            "m": 1,
+            "pc24": 8432569,
+            "x": 0
+          }
+        },
+        {
+          "detail": "",
+          "kind": "static_dispatch",
+          "resolution": "aot_exact",
+          "site_pc24": 8423595,
+          "target": {
+            "m": 0,
+            "pc24": 8426491,
+            "x": 0
+          }
+        },
+        {
+          "detail": "",
+          "kind": "static_dispatch",
+          "resolution": "aot_exact",
+          "site_pc24": 8423595,
+          "target": {
+            "m": 0,
+            "pc24": 8435217,
+            "x": 0
+          }
+        },
+        {
+          "detail": "",
+          "kind": "static_dispatch",
+          "resolution": "aot_exact",
+          "site_pc24": 8423595,
+          "target": {
+            "m": 0,
+            "pc24": 8436615,
+            "x": 0
+          }
+        },
+        {
+          "detail": "",
+          "kind": "static_dispatch",
+          "resolution": "aot_exact",
+          "site_pc24": 8423595,
+          "target": {
+            "m": 0,
+            "pc24": 8436906,
+            "x": 0
+          }
+        },
+        {
+          "detail": "",
+          "kind": "static_dispatch",
+          "resolution": "aot_exact",
+          "site_pc24": 8423595,
+          "target": {
+            "m": 0,
+            "pc24": 8437183,
+            "x": 0
+          }
+        },
+        {
+          "detail": "",
+          "kind": "static_dispatch",
+          "resolution": "aot_exact",
+          "site_pc24": 8423595,
+          "target": {
+            "m": 0,
+            "pc24": 8437556,
+            "x": 0
+          }
+        }
+      ],
+      "digest": "native",
+      "disposition": "lle_only",
+      "instruction_count": 39,
+      "key": {
+        "m": 1,
+        "pc24": 8426242,
+        "x": 0
+      },
+      "max_pc24": 8426257,
+      "min_pc24": 8423515,
+      "reasons": [
+        "unproven_call_at_809C3A_to_809C8E_m1x0",
+        "unproven_call_at_80BE42_to_80A538_m0x0",
+        "unproven_call_at_80C035_to_839229_m1x0",
+        "unproven_call_at_80DB43_to_838EFE_m1x0",
+        "unproven_call_at_80DE26_to_80EF73_m1x0",
+        "unproven_callee_exit"
+      ]
+    },
     "809314:M1X0": {
       "demands": [
         {
@@ -175169,6 +175499,11 @@
   "roots": [
     {
       "m": 0,
+      "pc24": 409,
+      "x": 0
+    },
+    {
+      "m": 0,
       "pc24": 34180,
       "x": 0
     },
@@ -179250,6 +179585,16 @@
     {
       "m": 0,
       "pc24": 260812,
+      "x": 0
+    },
+    {
+      "m": 1,
+      "pc24": 8426226,
+      "x": 0
+    },
+    {
+      "m": 1,
+      "pc24": 8426231,
       "x": 0
     },
     {

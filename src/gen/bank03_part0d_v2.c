@@ -15,14 +15,14 @@
 
 /* Split translation unit: bank $03, part 0D; entry PCs $E800-$EFFF. */
 
-RecompReturn bank_03_EC46_M0X0(CpuState *cpu);
+RecompReturn Race_UpdateRiderOverlayFrames_M0X0(CpuState *cpu);
 
-RecompReturn bank_03_EC46_M0X0(CpuState *cpu) {
+RecompReturn Race_UpdateRiderOverlayFrames_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_03_EC46_M0X0";
-  RecompStackPush("bank_03_EC46_M0X0");
-  cpu_dbg_funcname("bank_03_EC46_M0X0");
-  cpu_trace_func_entry(cpu, 0x03EC46, "bank_03_EC46_M0X0");
+  g_last_recomp_func = "Race_UpdateRiderOverlayFrames_M0X0";
+  RecompStackPush("Race_UpdateRiderOverlayFrames_M0X0");
+  cpu_dbg_funcname("Race_UpdateRiderOverlayFrames_M0X0");
+  cpu_trace_func_entry(cpu, 0x03EC46, "Race_UpdateRiderOverlayFrames_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xec46u));
@@ -1074,10 +1074,10 @@ RecompReturn bank_03_EC46_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-void bank_03_EC46(CpuState *cpu) {
+void Race_UpdateRiderOverlayFrames(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_03_EC46_M0X0(cpu); break;
+    case 0: _r = Race_UpdateRiderOverlayFrames_M0X0(cpu); break;
     case 1: _r = interp_tier_dispatch(cpu, 0x03ec46u); break; /* exact M0X1 LLE */
     case 2: _r = interp_tier_dispatch(cpu, 0x03ec46u); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x03ec46u); break; /* exact M1X1 LLE */
@@ -1086,7 +1086,7 @@ void bank_03_EC46(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_03_EC46");
+      (int)_r, "Race_UpdateRiderOverlayFrames");
     abort();
   }
 }

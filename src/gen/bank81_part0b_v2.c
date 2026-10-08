@@ -15,14 +15,14 @@
 
 /* Split translation unit: bank $81, part 0B; entry PCs $D800-$DFFF. */
 
-RecompReturn bank_81_D86E_M1X0(CpuState *cpu);
+RecompReturn Hud_UpdateSplitScreenNmi_M1X0(CpuState *cpu);
 
-RecompReturn bank_81_D86E_M1X0(CpuState *cpu) {
+RecompReturn Hud_UpdateSplitScreenNmi_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_81_D86E_M1X0";
-  RecompStackPush("bank_81_D86E_M1X0");
-  cpu_dbg_funcname("bank_81_D86E_M1X0");
-  cpu_trace_func_entry(cpu, 0x81D86E, "bank_81_D86E_M1X0");
+  g_last_recomp_func = "Hud_UpdateSplitScreenNmi_M1X0";
+  RecompStackPush("Hud_UpdateSplitScreenNmi_M1X0");
+  cpu_dbg_funcname("Hud_UpdateSplitScreenNmi_M1X0");
+  cpu_trace_func_entry(cpu, 0x81D86E, "Hud_UpdateSplitScreenNmi_M1X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xd86eu));
@@ -9035,19 +9035,19 @@ RecompReturn bank_81_D86E_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-void bank_81_D86E(CpuState *cpu) {
+void Hud_UpdateSplitScreenNmi(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
     case 0: _r = interp_tier_dispatch(cpu, 0x81d86eu); break; /* exact M0X0 LLE */
     case 1: _r = interp_tier_dispatch(cpu, 0x81d86eu); break; /* exact M0X1 LLE */
-    case 2: _r = bank_81_D86E_M1X0(cpu); break;
+    case 2: _r = Hud_UpdateSplitScreenNmi_M1X0(cpu); break;
     case 3: _r = interp_tier_dispatch(cpu, 0x81d86eu); break; /* exact M1X1 LLE */
     default: _r = interp_tier_dispatch(cpu, 0x81d86eu); break;
   }
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_81_D86E");
+      (int)_r, "Hud_UpdateSplitScreenNmi");
     abort();
   }
 }

@@ -19,8 +19,8 @@ SnesProgramModule g_program_module;
 SNES_PROGRAM_MODULE_CONSTRUCTOR(snes_program_module_register_generated) {
   g_program_module.id = "main";
   g_program_module.symbol_prefix = "";
-  g_program_module.program_digest = "c73274f1a73ac56303ba30188b183cc1cec457815ae80844bfef9cb820cde220";
-  g_program_module.build_digest = "b9de952b1f88c41bccb6030fbf5b71feb1ba55f02f745ebefdca217b4c65001d";
+  g_program_module.program_digest = "3686668a9d42a4a14296bca9578f72a3312d0833278bf1377072e2f40c253036";
+  g_program_module.build_digest = "b6063d54213c7ad8f20924d5ca7967b75a13bdc3b8688b4b738c6a94bebc6701";
   g_program_module.dispatch = g_dispatch_table;
   g_program_module.dispatch_count = g_dispatch_table_count;
   g_program_module.guards = g_ram_routine_guards;

@@ -1,10 +1,10 @@
 /* Auto-generated from the authoritative LLE/AOT manifest. */
 #include "cpu_state.h"
 
-RecompReturn bank_00_0199_M0X0(CpuState *cpu);
-RecompReturn bank_00_0199_M0X1(CpuState *cpu);
-RecompReturn bank_00_0199_M1X0(CpuState *cpu);
-RecompReturn bank_00_0199_M1X1(CpuState *cpu);
+RecompReturn Ram_MvnTrampoline_M0X0(CpuState *cpu);
+RecompReturn Ram_MvnTrampoline_M0X1(CpuState *cpu);
+RecompReturn Ram_MvnTrampoline_M1X0(CpuState *cpu);
+RecompReturn Ram_MvnTrampoline_M1X1(CpuState *cpu);
 RecompReturn I_IRQ_M0X0(CpuState *cpu);
 RecompReturn I_IRQ_M0X1(CpuState *cpu);
 RecompReturn I_IRQ_M1X0(CpuState *cpu);
@@ -28,13 +28,13 @@ RecompReturn MainLoop_8884_M1X0(CpuState *cpu);
 RecompReturn MainLoop_889D_M1X0(CpuState *cpu);
 RecompReturn MainLoop_88AE_M1X0(CpuState *cpu);
 RecompReturn Race_CheckExited_M1X0(CpuState *cpu);
-RecompReturn bank_00_8917_M1X0(CpuState *cpu);
-RecompReturn bank_00_8C41_M1X0(CpuState *cpu);
+RecompReturn League_ShowPointAwards_M1X0(CpuState *cpu);
+RecompReturn Text_GetCharClass_M1X0(CpuState *cpu);
 RecompReturn Sram_ValidateOrInit_M1X0(CpuState *cpu);
 RecompReturn Sram_ValidateOrInit_8C78_M0X0(CpuState *cpu);
 RecompReturn Sram_ValidateOrInit_8CAD_M0X0(CpuState *cpu);
 RecompReturn Sram_ValidateOrInit_8CC6_M0X0(CpuState *cpu);
-RecompReturn bank_00_8CCB_M0X0(CpuState *cpu);
+RecompReturn Records_InsertHighScore_M0X0(CpuState *cpu);
 RecompReturn Results_DrawLapRace_M0X0(CpuState *cpu);
 RecompReturn Results_DrawLapRace_8FFD_M1X0(CpuState *cpu);
 RecompReturn Results_DrawLapRace_910A_M0X0(CpuState *cpu);
@@ -43,9 +43,9 @@ RecompReturn Reset_ClearWRAM_loop00_M1X0(CpuState *cpu);
 RecompReturn Boot_ClearWRAM_92FF_M1X0(CpuState *cpu);
 RecompReturn Boot_ClearWRAM_9300_M1X0(CpuState *cpu);
 RecompReturn Boot_ClearWRAM_9302_M1X0(CpuState *cpu);
-RecompReturn bank_00_9318_M1X0(CpuState *cpu);
+RecompReturn Oam_Upload_M1X0(CpuState *cpu);
 RecompReturn Text_CopyWord_M1X0(CpuState *cpu);
-RecompReturn bank_00_935E_M0X0(CpuState *cpu);
+RecompReturn Text_CopyStripUnderscores_M0X0(CpuState *cpu);
 RecompReturn Vram_UploadTilemapAtA8_M1X0(CpuState *cpu);
 RecompReturn Vram_UploadTilemap_M1X0(CpuState *cpu);
 RecompReturn Vram_UploadTilemapBottom_M1X0(CpuState *cpu);
@@ -72,35 +72,35 @@ RecompReturn Menu_DrawTrackNameGrid_960B_M1X0(CpuState *cpu);
 RecompReturn Menu_SetupTrackGridSprites_M1X0(CpuState *cpu);
 RecompReturn Math_Div16by8_M0X0(CpuState *cpu);
 RecompReturn Math_Div16by8_M1X0(CpuState *cpu);
-RecompReturn bank_00_971D_M0X0(CpuState *cpu);
+RecompReturn Math_Div16_M0X0(CpuState *cpu);
 RecompReturn Tour_DrawSelectIcons_M1X0(CpuState *cpu);
 RecompReturn Tour_DrawSelectIcons_9764_M1X0(CpuState *cpu);
 RecompReturn Tour_DrawSelectIcons_9782_M1X0(CpuState *cpu);
 RecompReturn Tour_DrawSelectIcons_97D9_M1X0(CpuState *cpu);
 RecompReturn Results_ResetMarkerSpritesOnce_M1X0(CpuState *cpu);
-RecompReturn bank_00_9869_M1X0(CpuState *cpu);
+RecompReturn Video_FadeIn_M1X0(CpuState *cpu);
 RecompReturn Video_FadeIn_9871_M1X0(CpuState *cpu);
-RecompReturn bank_00_9885_M1X0(CpuState *cpu);
+RecompReturn Video_FadeOut_M1X0(CpuState *cpu);
 RecompReturn Video_FadeOut_988F_M1X0(CpuState *cpu);
-RecompReturn bank_00_98A4_M1X0(CpuState *cpu);
+RecompReturn Menu_HideCursor_M1X0(CpuState *cpu);
 RecompReturn Results_AnimateLapMarkers_M1X0(CpuState *cpu);
 RecompReturn Results_AnimateLapMarkers_9971_M1X0(CpuState *cpu);
 RecompReturn Math_ScaleClampVelocity_M0X0(CpuState *cpu);
-RecompReturn bank_00_999F_M1X0(CpuState *cpu);
+RecompReturn Race_StartKeepParam_M1X0(CpuState *cpu);
 RecompReturn Race_Start_M1X0(CpuState *cpu);
 RecompReturn Race_Start_9A2F_M1X1(CpuState *cpu);
 RecompReturn Race_Start_9A3A_M1X0(CpuState *cpu);
 RecompReturn Race_Start_9A3D_M1X0(CpuState *cpu);
 RecompReturn Race_Start_9A49_M1X0(CpuState *cpu);
 RecompReturn Race_Start_9A4C_M1X0(CpuState *cpu);
-RecompReturn bank_00_9AB2_M0X0(CpuState *cpu);
+RecompReturn League_CalcPointBars_M0X0(CpuState *cpu);
 RecompReturn Sram_CopyPlayerName_M0X0(CpuState *cpu);
 RecompReturn Sram_CopyPlayerName_M1X0(CpuState *cpu);
 RecompReturn Text_CopyTrackName_M0X0(CpuState *cpu);
 RecompReturn Text_CopyTrackName_M1X0(CpuState *cpu);
-RecompReturn bank_00_9B79_M0X0(CpuState *cpu);
+RecompReturn Sram_CopyLeagueName_M0X0(CpuState *cpu);
 RecompReturn Text_CopyTourName_M1X0(CpuState *cpu);
-RecompReturn bank_00_9BC4_M0X0(CpuState *cpu);
+RecompReturn DefineLeague_Main_M0X0(CpuState *cpu);
 RecompReturn DefineLeague_Main_9BD1_M1X0(CpuState *cpu);
 RecompReturn DefineLeague_Main_9BE2_M1X0(CpuState *cpu);
 RecompReturn DefineLeague_Main_9BE8_M1X0(CpuState *cpu);
@@ -110,7 +110,7 @@ RecompReturn DefineLeague_Main_9C04_M1X0(CpuState *cpu);
 RecompReturn DefineLeague_Main_9C2E_M1X0(CpuState *cpu);
 RecompReturn DefineLeague_Main_9C3A_M1X0(CpuState *cpu);
 RecompReturn DefineLeague_Main_9C3D_M1X0(CpuState *cpu);
-RecompReturn bank_00_9C8E_M1X0(CpuState *cpu);
+RecompReturn DefineLeague_PickTracks_M1X0(CpuState *cpu);
 RecompReturn DefineLeague_PickTracks_9CA2_M1X0(CpuState *cpu);
 RecompReturn DefineLeague_PickTracks_9CAC_M1X0(CpuState *cpu);
 RecompReturn DefineLeague_PickTracks_9CB2_M1X0(CpuState *cpu);
@@ -120,14 +120,14 @@ RecompReturn DefineLeague_PickTracks_9D22_M1X0(CpuState *cpu);
 RecompReturn DefineLeague_PickTracks_9D96_M1X0(CpuState *cpu);
 RecompReturn DefineLeague_PickTracks_9D9F_M1X0(CpuState *cpu);
 RecompReturn DefineLeague_PickTracks_9DD2_M1X0(CpuState *cpu);
-RecompReturn bank_00_9E3C_M1X0(CpuState *cpu);
+RecompReturn DefineLeague_CalcItemPos_M1X0(CpuState *cpu);
 RecompReturn DefineLeague_CalcItemPos_9E62_M1X0(CpuState *cpu);
 RecompReturn DefineLeague_CalcItemPos_9E68_M1X0(CpuState *cpu);
 RecompReturn DefineLeague_CalcItemPos_9E6B_M1X0(CpuState *cpu);
 RecompReturn DefineLeague_CalcItemPos_9E71_M1X0(CpuState *cpu);
 RecompReturn DefineLeague_CalcItemPos_9E7F_M1X0(CpuState *cpu);
 RecompReturn DefineLeague_CalcItemPos_9EBA_M1X0(CpuState *cpu);
-RecompReturn bank_00_9EF7_M1X0(CpuState *cpu);
+RecompReturn DefineLeague_SelectSlot_M1X0(CpuState *cpu);
 RecompReturn DefineLeague_SelectSlot_9F09_M1X0(CpuState *cpu);
 RecompReturn DefineLeague_SelectSlot_9F0C_M1X0(CpuState *cpu);
 RecompReturn Fx_HdmaWipeReveal_M1X0(CpuState *cpu);
@@ -139,7 +139,7 @@ RecompReturn Fx_HdmaWipeReveal_9FCB_M1X0(CpuState *cpu);
 RecompReturn Fx_HdmaWipeReveal_A01A_M1X0(CpuState *cpu);
 RecompReturn Fx_HdmaWipeCover_M1X0(CpuState *cpu);
 RecompReturn Fx_HdmaWipeCover_A03D_M1X0(CpuState *cpu);
-RecompReturn bank_00_A08B_M1X0(CpuState *cpu);
+RecompReturn Menu_InitVideo_M1X0(CpuState *cpu);
 RecompReturn Menu_InitVideo_A0A7_M1X0(CpuState *cpu);
 RecompReturn Menu_InitVideo_A0DA_M1X0(CpuState *cpu);
 RecompReturn Menu_InitVideo_A0F1_M0X0(CpuState *cpu);
@@ -147,12 +147,12 @@ RecompReturn Menu_InitVideo_A0FA_M0X0(CpuState *cpu);
 RecompReturn Menu_InitVideo_A103_M0X0(CpuState *cpu);
 RecompReturn Menu_InitVideo_A10A_M0X0(CpuState *cpu);
 RecompReturn Menu_InitVideo_A118_M0X0(CpuState *cpu);
-RecompReturn bank_00_A15B_M1X0(CpuState *cpu);
-RecompReturn bank_00_A1E3_M1X0(CpuState *cpu);
+RecompReturn Sys_InitVars_M1X0(CpuState *cpu);
+RecompReturn Text_NameEntry_M1X0(CpuState *cpu);
 RecompReturn Text_NameEntry_A203_M1X0(CpuState *cpu);
 RecompReturn Text_NameEntry_A225_M1X0(CpuState *cpu);
-RecompReturn bank_00_A538_M0X0(CpuState *cpu);
-RecompReturn bank_00_A538_M1X0(CpuState *cpu);
+RecompReturn League_DrawTable_M0X0(CpuState *cpu);
+RecompReturn League_DrawTable_M1X0(CpuState *cpu);
 RecompReturn League_DrawTable_A54C_M1X0(CpuState *cpu);
 RecompReturn League_DrawTable_A62B_M1X0(CpuState *cpu);
 RecompReturn League_DrawTable_A65D_M1X0(CpuState *cpu);
@@ -164,11 +164,11 @@ RecompReturn Gfx_UploadOverlayTilesA_A840_M1X0(CpuState *cpu);
 RecompReturn Pal_LoadMenuSpritePalettes_M1X0(CpuState *cpu);
 RecompReturn Pal_LoadMenuSpritePalettes_A84C_M1X0(CpuState *cpu);
 RecompReturn Pal_LoadMenuSpritePalettes_A85B_M1X0(CpuState *cpu);
-RecompReturn bank_00_A868_M1X0(CpuState *cpu);
+RecompReturn Gfx_UploadOverlayTilesB_M1X0(CpuState *cpu);
 RecompReturn Gfx_UploadOverlayTilesB_A88C_M1X0(CpuState *cpu);
-RecompReturn bank_00_A899_M1X0(CpuState *cpu);
+RecompReturn Pal_UploadBgPalettes_M1X0(CpuState *cpu);
 RecompReturn Pal_UploadBgPalettes_A89C_M1X0(CpuState *cpu);
-RecompReturn bank_00_AA0C_M0X0(CpuState *cpu);
+RecompReturn Options_WipeRam_M0X0(CpuState *cpu);
 RecompReturn MainMenu_Run_M1X0(CpuState *cpu);
 RecompReturn MainMenu_Run_ABD7_M1X0(CpuState *cpu);
 RecompReturn MainMenu_Draw_M1X0(CpuState *cpu);
@@ -183,13 +183,13 @@ RecompReturn League_SortStandings_M0X0(CpuState *cpu);
 RecompReturn League_SortStandings_M1X0(CpuState *cpu);
 RecompReturn League_SortStandings_AD44_M1X0(CpuState *cpu);
 RecompReturn League_SortStandings_AD81_M0X0(CpuState *cpu);
-RecompReturn bank_00_ADD4_M1X0(CpuState *cpu);
-RecompReturn bank_00_AE81_M0X0(CpuState *cpu);
-RecompReturn bank_00_AEBF_M0X0(CpuState *cpu);
-RecompReturn bank_00_AED7_M0X0(CpuState *cpu);
-RecompReturn bank_00_AEE4_M0X0(CpuState *cpu);
-RecompReturn bank_00_AF0C_M0X0(CpuState *cpu);
-RecompReturn bank_00_AF45_M1X0(CpuState *cpu);
+RecompReturn PostRace_Menu_M1X0(CpuState *cpu);
+RecompReturn PostRace_NextTrack_M0X0(CpuState *cpu);
+RecompReturn PostRace_SameTrack_M0X0(CpuState *cpu);
+RecompReturn PostRace_Quit_M0X0(CpuState *cpu);
+RecompReturn PostRace_SelectTrack_M0X0(CpuState *cpu);
+RecompReturn PostRace_SelectTour_M0X0(CpuState *cpu);
+RecompReturn League_AdvanceAfterRace_M1X0(CpuState *cpu);
 RecompReturn Boot_ShowLogo_M1X0(CpuState *cpu);
 RecompReturn Boot_ShowLogo_B082_M1X0(CpuState *cpu);
 RecompReturn Boot_ShowLogo_B085_M1X0(CpuState *cpu);
@@ -198,17 +198,17 @@ RecompReturn Boot_ShowLogo_B0B3_M1X0(CpuState *cpu);
 RecompReturn Boot_ShowLogo_B0C0_M1X0(CpuState *cpu);
 RecompReturn Boot_ShowLogo_B0C6_M1X0(CpuState *cpu);
 RecompReturn Boot_ShowLogo_B0CC_M1X0(CpuState *cpu);
-RecompReturn bank_00_B0EB_M1X0(CpuState *cpu);
+RecompReturn Snd_PlayError_M1X0(CpuState *cpu);
 RecompReturn Snd_PlayToggle_M1X0(CpuState *cpu);
 RecompReturn Snd_PlayConfirm_M1X0(CpuState *cpu);
-RecompReturn bank_00_B12A_M1X0(CpuState *cpu);
-RecompReturn bank_00_B13F_M1X0(CpuState *cpu);
-RecompReturn bank_00_B169_M1X0(CpuState *cpu);
+RecompReturn Snd_PlayWipe_M1X0(CpuState *cpu);
+RecompReturn Snd_PlayWipeAlt_M1X0(CpuState *cpu);
+RecompReturn Snd_PlayCursor_M1X0(CpuState *cpu);
 RecompReturn PreRace_Show_M1X0(CpuState *cpu);
 RecompReturn PreRace_Show_B188_M1X0(CpuState *cpu);
 RecompReturn PreRace_TitleRace_M0X0(CpuState *cpu);
 RecompReturn PreRace_TitleLaps_M0X0(CpuState *cpu);
-RecompReturn bank_00_B260_M0X0(CpuState *cpu);
+RecompReturn PreRace_TitleStunt_M0X0(CpuState *cpu);
 RecompReturn PreRace_TitleStunt_B3C2_M1X0(CpuState *cpu);
 RecompReturn PreRace_TitleStunt_B3C8_M1X0(CpuState *cpu);
 RecompReturn PreRace_TitleStunt_B3D3_M1X0(CpuState *cpu);
@@ -226,25 +226,25 @@ RecompReturn Options_Main_B62A_M1X0(CpuState *cpu);
 RecompReturn Options_Main_B644_M1X0(CpuState *cpu);
 RecompReturn Input_IsAnyButtonHeld_M0X0(CpuState *cpu);
 RecompReturn Input_IsAnyButtonHeld_M1X0(CpuState *cpu);
-RecompReturn bank_00_B6E3_M1X0(CpuState *cpu);
-RecompReturn bank_00_B708_M1X0(CpuState *cpu);
+RecompReturn Input_IsNonUDLButtonHeld_M1X0(CpuState *cpu);
+RecompReturn Input_IsConfirmHeld_M1X0(CpuState *cpu);
 RecompReturn Input_IsCancelHeld_M0X0(CpuState *cpu);
 RecompReturn Input_IsCancelHeld_M1X0(CpuState *cpu);
-RecompReturn bank_00_B75A_M1X0(CpuState *cpu);
-RecompReturn bank_00_B77F_M1X0(CpuState *cpu);
+RecompReturn Input_IsUpHeld_M1X0(CpuState *cpu);
+RecompReturn Input_IsDownOrSelectHeld_M1X0(CpuState *cpu);
 RecompReturn Input_IsLeftHeld_M1X0(CpuState *cpu);
 RecompReturn Input_IsRightHeld_M1X0(CpuState *cpu);
 RecompReturn Input_IsUpHeld2_M1X0(CpuState *cpu);
 RecompReturn Input_IsDownHeld_M1X0(CpuState *cpu);
-RecompReturn bank_00_B8AF_M1X0(CpuState *cpu);
+RecompReturn Input_IsStartOrAHeld_M1X0(CpuState *cpu);
 RecompReturn Input_IsSelectHeld_M1X0(CpuState *cpu);
-RecompReturn bank_00_B901_M1X0(CpuState *cpu);
+RecompReturn Input_IsStartHeld_M1X0(CpuState *cpu);
 RecompReturn Menu_RunVerticalFromTop_M1X0(CpuState *cpu);
-RecompReturn bank_00_B929_M1X0(CpuState *cpu);
-RecompReturn bank_00_B965_M1X0(CpuState *cpu);
+RecompReturn Menu_RunVertical_M1X0(CpuState *cpu);
+RecompReturn Menu_VerticalLoop_M1X0(CpuState *cpu);
 RecompReturn Menu_VerticalLoop_B96B_M1X0(CpuState *cpu);
 RecompReturn Menu_RunVerticalAlt_M1X0(CpuState *cpu);
-RecompReturn bank_00_BA8F_M1X0(CpuState *cpu);
+RecompReturn Menu_VerticalLoopAlt_M1X0(CpuState *cpu);
 RecompReturn Menu_VerticalLoopAlt_BA97_M1X0(CpuState *cpu);
 RecompReturn Mode_OnePlayerRace_M0X0(CpuState *cpu);
 RecompReturn Mode_OnePlayerRace_BB9A_M1X0(CpuState *cpu);
@@ -275,7 +275,7 @@ RecompReturn Mode_TwoPlayerRace_BD4B_M1X0(CpuState *cpu);
 RecompReturn Mode_TwoPlayerRace_BD68_M1X0(CpuState *cpu);
 RecompReturn Mode_TwoPlayerRace_BD6B_M1X0(CpuState *cpu);
 RecompReturn Mode_TwoPlayerRace_BD73_M1X0(CpuState *cpu);
-RecompReturn bank_00_BDBF_M0X0(CpuState *cpu);
+RecompReturn Mode_League_M0X0(CpuState *cpu);
 RecompReturn Mode_League_BDCF_M1X0(CpuState *cpu);
 RecompReturn Mode_League_BE06_M1X0(CpuState *cpu);
 RecompReturn Mode_League_BE09_M1X0(CpuState *cpu);
@@ -308,12 +308,12 @@ RecompReturn Options_DefinePlayer_C154_M1X0(CpuState *cpu);
 RecompReturn Options_DefinePlayer_C167_M1X0(CpuState *cpu);
 RecompReturn Oam_ClearCursorHFlip_M1X0(CpuState *cpu);
 RecompReturn Input_WaitAnyButtonL_C1F4_M1X0(CpuState *cpu);
-RecompReturn bank_00_C1F5_M1X0(CpuState *cpu);
+RecompReturn Input_WaitAnyButton_M1X0(CpuState *cpu);
 RecompReturn Input_WaitAnyButton_C1FE_M1X0(CpuState *cpu);
 RecompReturn Input_WaitAnyButton_C214_M1X0(CpuState *cpu);
 RecompReturn Input_WaitAllReleased_M1X0(CpuState *cpu);
 RecompReturn Input_WaitAllReleased_C244_M1X0(CpuState *cpu);
-RecompReturn bank_00_C258_M1X0(CpuState *cpu);
+RecompReturn Records_DrawTopScores_M1X0(CpuState *cpu);
 RecompReturn Records_DrawTopTimes_M1X0(CpuState *cpu);
 RecompReturn DrawText_M0X0(CpuState *cpu);
 RecompReturn DrawText_M1X0(CpuState *cpu);
@@ -332,7 +332,7 @@ RecompReturn Text_DrawLoop_C40A_M1X0(CpuState *cpu);
 RecompReturn Text_DrawLoop_C40D_M1X0(CpuState *cpu);
 RecompReturn Text_CmdEnd_M0X0(CpuState *cpu);
 RecompReturn Text_CmdPrintNum5_M0X0(CpuState *cpu);
-RecompReturn bank_00_C463_M0X0(CpuState *cpu);
+RecompReturn Text_CmdPrintNum2_M0X0(CpuState *cpu);
 RecompReturn Text_CmdSetPos_M0X0(CpuState *cpu);
 RecompReturn Text_CmdCenterLine_M0X0(CpuState *cpu);
 RecompReturn Text_CmdCenterLine_C4C4_M1X0(CpuState *cpu);
@@ -340,44 +340,44 @@ RecompReturn Text_CmdCenterLine_C4CB_M1X0(CpuState *cpu);
 RecompReturn Text_CmdCenterLine_C4CE_M1X0(CpuState *cpu);
 RecompReturn Text_CmdCenterLine_C4D2_M1X0(CpuState *cpu);
 RecompReturn Text_CmdCenterWord_M0X0(CpuState *cpu);
-RecompReturn bank_00_C534_M0X0(CpuState *cpu);
+RecompReturn Text_CmdCallString_M0X0(CpuState *cpu);
 RecompReturn Text_CmdSetPalette_M0X0(CpuState *cpu);
 RecompReturn Text_CmdSetPalette_C570_M0X0(CpuState *cpu);
 RecompReturn Text_CmdSetPalette_C575_M0X0(CpuState *cpu);
 RecompReturn Text_CmdSetPalette_C581_M0X0(CpuState *cpu);
 RecompReturn Text_CmdSetPalette_C5B2_M0X0(CpuState *cpu);
 RecompReturn Text_CmdSetPalette_C5B4_M0X0(CpuState *cpu);
-RecompReturn bank_00_C5BA_M0X0(CpuState *cpu);
+RecompReturn Text_CmdPlayerNameImm_M0X0(CpuState *cpu);
 RecompReturn Text_CmdPlayerNameVar_M0X0(CpuState *cpu);
 RecompReturn Text_CmdPlayerNameVar_C60B_M1X0(CpuState *cpu);
-RecompReturn bank_00_C60F_M0X0(CpuState *cpu);
+RecompReturn Text_CmdRomNameImm_M0X0(CpuState *cpu);
 RecompReturn Text_CmdRomNameVar_M0X0(CpuState *cpu);
-RecompReturn bank_00_C664_M0X0(CpuState *cpu);
-RecompReturn bank_00_C66C_M0X0(CpuState *cpu);
+RecompReturn Text_CmdLeagueNameImm_M0X0(CpuState *cpu);
+RecompReturn Text_CmdLeagueNameVar_M0X0(CpuState *cpu);
 RecompReturn Text_CmdPrintTime_M0X0(CpuState *cpu);
 RecompReturn Text_CmdPlaceSprite_M0X0(CpuState *cpu);
 RecompReturn Race_RecordResults_M1X0(CpuState *cpu);
 RecompReturn Race_RecordTimeRace_M0X0(CpuState *cpu);
 RecompReturn Race_RecordTimeRace_C7ED_M0X0(CpuState *cpu);
-RecompReturn bank_00_C7EF_M0X0(CpuState *cpu);
+RecompReturn Race_RecordP1TimeOrDnf_M0X0(CpuState *cpu);
 RecompReturn Race_RecordP1Time_M0X0(CpuState *cpu);
-RecompReturn bank_00_C81E_M0X0(CpuState *cpu);
+RecompReturn Race_RecordP2TimeOrDnf_M0X0(CpuState *cpu);
 RecompReturn Race_RecordP2Time_M0X0(CpuState *cpu);
-RecompReturn bank_00_C857_M0X0(CpuState *cpu);
-RecompReturn bank_00_C8D7_M0X0(CpuState *cpu);
-RecompReturn bank_00_C8F1_M0X0(CpuState *cpu);
-RecompReturn bank_00_C902_M0X0(CpuState *cpu);
-RecompReturn bank_00_C921_M0X0(CpuState *cpu);
-RecompReturn bank_00_C937_M0X0(CpuState *cpu);
-RecompReturn bank_00_C973_M0X0(CpuState *cpu);
-RecompReturn bank_00_C99A_M0X0(CpuState *cpu);
+RecompReturn Race_RecordLapRace_M0X0(CpuState *cpu);
+RecompReturn Race_RecordP1LapOrDnf_M0X0(CpuState *cpu);
+RecompReturn Race_RecordP1Lap_M0X0(CpuState *cpu);
+RecompReturn Race_RecordP2LapOrDnf_M0X0(CpuState *cpu);
+RecompReturn Race_RecordP2Lap_M0X0(CpuState *cpu);
+RecompReturn Race_RecordStuntRace_M0X0(CpuState *cpu);
+RecompReturn Race_AddP1StuntScore_M0X0(CpuState *cpu);
+RecompReturn Race_AddP2StuntScore_M0X0(CpuState *cpu);
 RecompReturn Records_InsertTime_M0X0(CpuState *cpu);
 RecompReturn Stats_IncP1Races_M0X0(CpuState *cpu);
 RecompReturn Stats_IncP1Wins_M0X0(CpuState *cpu);
-RecompReturn bank_00_CA8A_M0X0(CpuState *cpu);
+RecompReturn Stats_IncP1Dnf_M0X0(CpuState *cpu);
 RecompReturn Stats_IncP2Races_M0X0(CpuState *cpu);
 RecompReturn Stats_IncP2Wins_M0X0(CpuState *cpu);
-RecompReturn bank_00_CAD8_M0X0(CpuState *cpu);
+RecompReturn Stats_IncP2Dnf_M0X0(CpuState *cpu);
 RecompReturn PickUni_Open_M1X0(CpuState *cpu);
 RecompReturn PickUni_Open_CB00_M1X0(CpuState *cpu);
 RecompReturn PickUni_Open_CB06_M1X0(CpuState *cpu);
@@ -391,7 +391,7 @@ RecompReturn PickUni_Loop_CBFB_M1X0(CpuState *cpu);
 RecompReturn Results_ShowRaceTable_M0X0(CpuState *cpu);
 RecompReturn Results_ShowRaceTable_CF48_M1X0(CpuState *cpu);
 RecompReturn Results_ShowRaceTable_CF76_M0X0(CpuState *cpu);
-RecompReturn bank_00_CF8C_M0X0(CpuState *cpu);
+RecompReturn Results_RowNone_M0X0(CpuState *cpu);
 RecompReturn Results_RowP1_M0X0(CpuState *cpu);
 RecompReturn Results_RowP2_M0X0(CpuState *cpu);
 RecompReturn Results_RowRecord1_M0X0(CpuState *cpu);
@@ -399,9 +399,9 @@ RecompReturn Results_RowRecord2_M0X0(CpuState *cpu);
 RecompReturn Results_RowRecord3_M0X0(CpuState *cpu);
 RecompReturn Results_RowRecord3_D102_M1X0(CpuState *cpu);
 RecompReturn Results_LoadRowPalette_M0X0(CpuState *cpu);
-RecompReturn bank_00_D1DB_M1X0(CpuState *cpu);
-RecompReturn bank_00_D1E9_M1X0(CpuState *cpu);
-RecompReturn bank_00_D1FD_M1X0(CpuState *cpu);
+RecompReturn Input_ReadPads_M1X0(CpuState *cpu);
+RecompReturn Text_ClearBuffer_M1X0(CpuState *cpu);
+RecompReturn Menu_InitScreen_M1X0(CpuState *cpu);
 RecompReturn Menu_InitScreen_D200_M1X0(CpuState *cpu);
 RecompReturn Menu_InitScreen_D203_M1X0(CpuState *cpu);
 RecompReturn Menu_InitScreen_D26A_M0X0(CpuState *cpu);
@@ -413,11 +413,11 @@ RecompReturn Menu_InitScreen_D29C_M0X0(CpuState *cpu);
 RecompReturn Oam_ResetMenuSprites_M1X0(CpuState *cpu);
 RecompReturn Oam_ResetMenuSprites_D2BA_M1X0(CpuState *cpu);
 RecompReturn Oam_ResetMenuSprites_D361_M1X0(CpuState *cpu);
-RecompReturn bank_00_D37A_M1X0(CpuState *cpu);
+RecompReturn League_Clear_M1X0(CpuState *cpu);
 RecompReturn League_Clear_D40E_M1X0(CpuState *cpu);
 RecompReturn Oam_HideRowSprites_M1X0(CpuState *cpu);
-RecompReturn bank_00_D437_M0X0(CpuState *cpu);
-RecompReturn bank_00_D4F6_M1X0(CpuState *cpu);
+RecompReturn Options_RenamePlayer_M0X0(CpuState *cpu);
+RecompReturn Menu_ResetSlideHooks_M1X0(CpuState *cpu);
 RecompReturn Records_Menu_M0X0(CpuState *cpu);
 RecompReturn Records_Menu_D532_M1X0(CpuState *cpu);
 RecompReturn Records_Menu_D535_M1X0(CpuState *cpu);
@@ -427,16 +427,16 @@ RecompReturn Records_TrackRecords_D5DE_M1X0(CpuState *cpu);
 RecompReturn Records_TrackRecords_D601_M1X0(CpuState *cpu);
 RecompReturn Records_TrackRecords_D6CF_M1X0(CpuState *cpu);
 RecompReturn Records_TrackRecords_D71B_M1X0(CpuState *cpu);
-RecompReturn bank_00_D7C0_M0X0(CpuState *cpu);
-RecompReturn bank_00_DAC2_M0X0(CpuState *cpu);
-RecompReturn bank_00_DDE6_M0X0(CpuState *cpu);
+RecompReturn Records_HighScores_M0X0(CpuState *cpu);
+RecompReturn Records_PlayerScores_M0X0(CpuState *cpu);
+RecompReturn Records_GroupTables_M0X0(CpuState *cpu);
 RecompReturn Slide_Forward_M1X0(CpuState *cpu);
 RecompReturn Slide_DefaultFwdStep_M1X0(CpuState *cpu);
 RecompReturn Slide_DefaultFwdStep_E242_M1X0(CpuState *cpu);
-RecompReturn bank_00_E268_M1X0(CpuState *cpu);
+RecompReturn Slide_Back_M1X0(CpuState *cpu);
 RecompReturn Slide_DefaultBackStep_M1X0(CpuState *cpu);
 RecompReturn Slide_DefaultBackStep_E289_M1X0(CpuState *cpu);
-RecompReturn bank_00_E2BD_M1X0(CpuState *cpu);
+RecompReturn Screen_OpenWipe_M1X0(CpuState *cpu);
 RecompReturn Screen_OpenWipe_E30F_M1X0(CpuState *cpu);
 RecompReturn Screen_OpenWipe_E31F_M1X0(CpuState *cpu);
 RecompReturn Screen_OpenWipe_E356_M1X0(CpuState *cpu);
@@ -463,7 +463,7 @@ RecompReturn Menu_PickTrack_E927_M1X0(CpuState *cpu);
 RecompReturn Menu_PickTrack_E9BB_M1X0(CpuState *cpu);
 RecompReturn Menu_PickTrack_E9F7_M1X0(CpuState *cpu);
 RecompReturn Menu_PickTrack_E9FE_M1X0(CpuState *cpu);
-RecompReturn bank_00_EA79_M1X0(CpuState *cpu);
+RecompReturn Menu_CycleLeagueClass_M1X0(CpuState *cpu);
 RecompReturn Menu_CycleSpriteTiles_M1X0(CpuState *cpu);
 RecompReturn Menu_ShowTourTables_M1X0(CpuState *cpu);
 RecompReturn Menu_ShowTourTables_EBCC_M1X0(CpuState *cpu);
@@ -495,21 +495,21 @@ RecompReturn Menu_DrawOptionList_EF58_M1X0(CpuState *cpu);
 RecompReturn Menu_DrawOptionList_EF62_M1X0(CpuState *cpu);
 RecompReturn Menu_DrawOptionList_EF6E_M1X0(CpuState *cpu);
 RecompReturn Menu_DrawOptionList_EF72_M1X0(CpuState *cpu);
-RecompReturn bank_00_EF73_M1X0(CpuState *cpu);
+RecompReturn Scores_LoadPlayerSorted_M1X0(CpuState *cpu);
 RecompReturn Util_SortTable8Descending_M0X0(CpuState *cpu);
 RecompReturn Util_SortTable8Descending_EFC9_M0X0(CpuState *cpu);
 RecompReturn Util_SortTable8Descending_EFDC_M0X0(CpuState *cpu);
-RecompReturn bank_00_F015_M0X0(CpuState *cpu);
+RecompReturn Util_SortTable16Descending_M0X0(CpuState *cpu);
 RecompReturn Util_SortTable8Ascending_M0X0(CpuState *cpu);
-RecompReturn bank_00_F0D8_M0X0(CpuState *cpu);
+RecompReturn Results_ShowRaceResults_M0X0(CpuState *cpu);
 RecompReturn Menu_HideSpritesAndReloadGfx_M1X0(CpuState *cpu);
 RecompReturn Menu_HideSpritesAndReloadGfx_F4BC_M1X0(CpuState *cpu);
 RecompReturn Menu_ResetScreenGfx_M1X0(CpuState *cpu);
 RecompReturn Menu_ResetScreenGfx_F4DC_M1X0(CpuState *cpu);
 RecompReturn Menu_ResetScreenGfx_F4DF_M1X0(CpuState *cpu);
 RecompReturn Menu_ResetScreenGfx_F4E5_M1X0(CpuState *cpu);
-RecompReturn bank_00_F505_M1X0(CpuState *cpu);
-RecompReturn bank_00_F515_M1X0(CpuState *cpu);
+RecompReturn Menu_RequestPanelOpen_M1X0(CpuState *cpu);
+RecompReturn Menu_RequestPanelClose_M1X0(CpuState *cpu);
 RecompReturn Menu_SnapPanelOpen_M1X0(CpuState *cpu);
 RecompReturn Boot_ShowLegalScreen_M1X0(CpuState *cpu);
 RecompReturn Boot_ShowLegalScreen_F599_M1X0(CpuState *cpu);
@@ -518,27 +518,27 @@ RecompReturn Boot_ShowLegalScreen_F5AA_M1X0(CpuState *cpu);
 RecompReturn Boot_ShowLegalScreen_F5B7_M1X0(CpuState *cpu);
 RecompReturn Boot_ShowLegalScreen_F601_M1X0(CpuState *cpu);
 RecompReturn NmiHandler_Menu_M1X0(CpuState *cpu);
-RecompReturn bank_00_F653_M1X0(CpuState *cpu);
-RecompReturn bank_00_F7C6_M0X0(CpuState *cpu);
-RecompReturn bank_00_F7E5_M0X0(CpuState *cpu);
+RecompReturn Results_AnimateTally_M1X0(CpuState *cpu);
+RecompReturn Results_NextTallyColumn_M0X0(CpuState *cpu);
+RecompReturn Menu_WaitFramesOrButton_M0X0(CpuState *cpu);
 RecompReturn Dma_UploadTilemapRows_M1X0(CpuState *cpu);
 RecompReturn Dma_UploadVramC0_M0X0(CpuState *cpu);
 RecompReturn Scores_StoreResult_M0X0(CpuState *cpu);
 RecompReturn Scores_StoreResult_F8A2_M0X0(CpuState *cpu);
 RecompReturn Text_ConvertBufferCase_M0X0(CpuState *cpu);
-RecompReturn bank_00_F8D1_M1X0(CpuState *cpu);
+RecompReturn Vs_ShowChampions_M1X0(CpuState *cpu);
 RecompReturn WaitVBlankLong_M1X0(CpuState *cpu);
 RecompReturn WaitVBlankLong_FAC8_M1X0(CpuState *cpu);
-RecompReturn bank_00_FAC9_M1X0(CpuState *cpu);
+RecompReturn WaitVBlank_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_FACD_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_FAD2_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_FAD6_M1X0(CpuState *cpu);
 RecompReturn WaitVBlank_FADB_M1X0(CpuState *cpu);
-RecompReturn bank_00_FADF_M1X0(CpuState *cpu);
-RecompReturn bank_00_FBBF_M1X0(CpuState *cpu);
-RecompReturn bank_00_FC1C_M0X0(CpuState *cpu);
-RecompReturn bank_00_FC38_M0X0(CpuState *cpu);
-RecompReturn bank_00_FC3D_M0X0(CpuState *cpu);
+RecompReturn Menu_UpdateCursor_M1X0(CpuState *cpu);
+RecompReturn Menu_KeepResetScores_M1X0(CpuState *cpu);
+RecompReturn Scores_ResetPlayer_M0X0(CpuState *cpu);
+RecompReturn Menu_ReturnContinue_M0X0(CpuState *cpu);
+RecompReturn Menu_ReturnExit_M0X0(CpuState *cpu);
 RecompReturn Rider_BuildRotationTablesLong_M1X0(CpuState *cpu);
 RecompReturn Rider_BuildRotationTablesLong_99D9_M0X0(CpuState *cpu);
 RecompReturn Rider_BuildRotationTables_M1X0(CpuState *cpu);
@@ -591,7 +591,7 @@ RecompReturn Rider_BuildRotationTables_9E0F_M0X0(CpuState *cpu);
 RecompReturn Rider_BuildRotationTables_9E11_M0X0(CpuState *cpu);
 RecompReturn Track_SetupSizeParamsLong_M0X0(CpuState *cpu);
 RecompReturn Track_SetupSizeParams_M0X0(CpuState *cpu);
-RecompReturn bank_01_B668_M0X0(CpuState *cpu);
+RecompReturn Math_Multiply16_M0X0(CpuState *cpu);
 RecompReturn Math_MulFixed8p8Long_M0X0(CpuState *cpu);
 RecompReturn Math_MulFixed8p8Long_B6C3_M0X0(CpuState *cpu);
 RecompReturn Math_MulFixed8p8_M0X0(CpuState *cpu);
@@ -655,7 +655,7 @@ RecompReturn Decomp_ToRam_BA0A_M0X0(CpuState *cpu);
 RecompReturn Decomp_ToRam_BA16_M0X0(CpuState *cpu);
 RecompReturn Decomp_ToRam_BA18_M0X0(CpuState *cpu);
 RecompReturn Decomp_ToRam_BA1A_M0X0(CpuState *cpu);
-RecompReturn bank_01_BA26_M0X0(CpuState *cpu);
+RecompReturn Decomp_DecodeSymbol_M0X0(CpuState *cpu);
 RecompReturn Decomp_DecodeSymbol_BA2A_M0X0(CpuState *cpu);
 RecompReturn Decomp_DecodeSymbol_BA2C_M0X0(CpuState *cpu);
 RecompReturn Decomp_DecodeSymbol_BA35_M0X0(CpuState *cpu);
@@ -663,7 +663,7 @@ RecompReturn Decomp_DecodeSymbol_BA44_M0X0(CpuState *cpu);
 RecompReturn Decomp_DecodeSymbol_BA4D_M0X0(CpuState *cpu);
 RecompReturn Decomp_DecodeSymbol_BA54_M0X0(CpuState *cpu);
 RecompReturn Decomp_DecodeSymbol_BA59_M0X0(CpuState *cpu);
-RecompReturn bank_01_BA7A_M0X0(CpuState *cpu);
+RecompReturn Decomp_ReadBits_M0X0(CpuState *cpu);
 RecompReturn Decomp_ReadBits_BA8A_M0X0(CpuState *cpu);
 RecompReturn Decomp_ReadBits_BA90_M0X0(CpuState *cpu);
 RecompReturn Decomp_ReadBits_BA93_M0X0(CpuState *cpu);
@@ -672,7 +672,7 @@ RecompReturn Decomp_ReadBits_BA9C_M0X0(CpuState *cpu);
 RecompReturn Decomp_ReadBits_BAA9_M0X0(CpuState *cpu);
 RecompReturn Decomp_ReadBits_BAAE_M0X0(CpuState *cpu);
 RecompReturn Decomp_ReadBits_BAB3_M0X0(CpuState *cpu);
-RecompReturn bank_01_BADC_M0X0(CpuState *cpu);
+RecompReturn Decomp_BuildHuffTable_M0X0(CpuState *cpu);
 RecompReturn Decomp_BuildHuffTable_BAED_M0X0(CpuState *cpu);
 RecompReturn Decomp_BuildHuffTable_BAF4_M0X0(CpuState *cpu);
 RecompReturn Decomp_BuildHuffTable_BB09_M0X0(CpuState *cpu);
@@ -683,7 +683,7 @@ RecompReturn Decomp_BuildHuffTable_BB36_M0X0(CpuState *cpu);
 RecompReturn Decomp_BuildHuffTable_BB39_M0X0(CpuState *cpu);
 RecompReturn Decomp_BuildHuffTable_BB60_M0X0(CpuState *cpu);
 RecompReturn Decomp_BuildHuffTable_BB65_M0X0(CpuState *cpu);
-RecompReturn bank_01_BB6F_M0X0(CpuState *cpu);
+RecompReturn Decomp_FetchWord_M0X0(CpuState *cpu);
 RecompReturn Decomp_FetchWord_BB86_M0X0(CpuState *cpu);
 RecompReturn Race_ResetEventQueuesLong_M0X0(CpuState *cpu);
 RecompReturn Race_ResetEventQueues_M0X0(CpuState *cpu);
@@ -718,12 +718,12 @@ RecompReturn Snd_UploadBlock_80FB_M1X0(CpuState *cpu);
 RecompReturn Snd_UploadBlock_810A_M1X0(CpuState *cpu);
 RecompReturn Snd_UploadBlock_810D_M1X0(CpuState *cpu);
 RecompReturn Snd_UploadBlock_8123_M0X0(CpuState *cpu);
-RecompReturn bank_02_812A_M1X0(CpuState *cpu);
+RecompReturn Snd_SeekDataBlock_M1X0(CpuState *cpu);
 RecompReturn Snd_SeekDataBlock_813D_M0X0(CpuState *cpu);
 RecompReturn Snd_SeekDataBlock_8140_M0X0(CpuState *cpu);
 RecompReturn Snd_SeekDataBlock_814B_M0X0(CpuState *cpu);
-RecompReturn bank_02_8151_M0X0(CpuState *cpu);
-RecompReturn bank_02_8151_M1X0(CpuState *cpu);
+RecompReturn Snd_IncDataPtr_M0X0(CpuState *cpu);
+RecompReturn Snd_IncDataPtr_M1X0(CpuState *cpu);
 RecompReturn Snd_IncDataPtr_815F_M0X0(CpuState *cpu);
 RecompReturn Snd_IncDataPtr_8160_M1X0(CpuState *cpu);
 RecompReturn Snd_UploadBlockListLong_82A8_M0X0(CpuState *cpu);
@@ -755,7 +755,7 @@ RecompReturn Snd_UploadBlockList_8315_M1X0(CpuState *cpu);
 RecompReturn Snd_UploadBlockList_8316_M1X0(CpuState *cpu);
 RecompReturn Snd_UploadBlockList_8317_M1X0(CpuState *cpu);
 RecompReturn Snd_UploadBlockList_8318_M1X0(CpuState *cpu);
-RecompReturn bank_02_8328_M1X0(CpuState *cpu);
+RecompReturn Snd_SendByteWait_M1X0(CpuState *cpu);
 RecompReturn Snd_SendByteWait_832F_M1X0(CpuState *cpu);
 RecompReturn Res_LoadToCgram_B197_M1X0(CpuState *cpu);
 RecompReturn Res_LoadToCgram_B19A_M1X0(CpuState *cpu);
@@ -767,11 +767,11 @@ RecompReturn Res_LoadToVram_B1FC_M1X0(CpuState *cpu);
 RecompReturn Res_LoadToVram_B200_M1X0(CpuState *cpu);
 RecompReturn Res_LoadToVram_B201_M1X0(CpuState *cpu);
 RecompReturn Res_LoadToVram_B202_M1X0(CpuState *cpu);
-RecompReturn bank_02_B293_M1X0(CpuState *cpu);
+RecompReturn Res_ReadByte_M1X0(CpuState *cpu);
 RecompReturn Res_ReadByte_B299_M1X0(CpuState *cpu);
 RecompReturn Res_Lookup_Long_M1X0(CpuState *cpu);
 RecompReturn Res_Lookup_Long_B2AC_M1X0(CpuState *cpu);
-RecompReturn bank_02_B2AD_M1X0(CpuState *cpu);
+RecompReturn Res_Lookup_M1X0(CpuState *cpu);
 RecompReturn Res_Lookup_B2B9_M0X0(CpuState *cpu);
 RecompReturn Res_LoadToWram_B2E5_M1X0(CpuState *cpu);
 RecompReturn Res_LoadToWram_B326_M0X0(CpuState *cpu);
@@ -786,7 +786,7 @@ RecompReturn Race_InitHdma_D61A_M1X1(CpuState *cpu);
 RecompReturn Race_InitHdma_D6C8_M1X1(CpuState *cpu);
 RecompReturn Race_InitVideo_Long_D734_M1X0(CpuState *cpu);
 RecompReturn Race_InitVideo_D768_M1X0(CpuState *cpu);
-RecompReturn bank_02_D76D_M0X1(CpuState *cpu);
+RecompReturn Oam_InitBuffer_M0X1(CpuState *cpu);
 RecompReturn Oam_InitBuffer_D778_M0X0(CpuState *cpu);
 RecompReturn Race_InitState_Long_M1X0(CpuState *cpu);
 RecompReturn Race_InitState_Long_D80F_M0X1(CpuState *cpu);
@@ -849,11 +849,11 @@ RecompReturn League_ApplyRaceResult_M1X0(CpuState *cpu);
 RecompReturn League_ApplyRaceResult_87B0_M1X0(CpuState *cpu);
 RecompReturn League_ApplyRaceResult_87D2_M0X0(CpuState *cpu);
 RecompReturn League_CheckRaceWin_M0X0(CpuState *cpu);
-RecompReturn bank_03_88E1_M0X0(CpuState *cpu);
-RecompReturn bank_03_890F_M0X0(CpuState *cpu);
+RecompReturn League_CheckStuntWin_M0X0(CpuState *cpu);
+RecompReturn Award_Tier0Cutscene_M0X0(CpuState *cpu);
 RecompReturn League_RoundTrackToTierLong_M1X0(CpuState *cpu);
 RecompReturn League_RoundTrackToTier_M1X0(CpuState *cpu);
-RecompReturn bank_03_895B_M1X0(CpuState *cpu);
+RecompReturn League_ClearTierResults_M1X0(CpuState *cpu);
 RecompReturn Ppu_ResetBgScroll_M1X0(CpuState *cpu);
 RecompReturn Sram_CheckSizeMirror_M1X0(CpuState *cpu);
 RecompReturn Sram_ClearSessionData_M1X0(CpuState *cpu);
@@ -899,7 +899,7 @@ RecompReturn Vs_UnswapPlayers_M1X0(CpuState *cpu);
 RecompReturn Oam_SetXHighBit_M1X0(CpuState *cpu);
 RecompReturn League_BuildMemberList_9661_M0X0(CpuState *cpu);
 RecompReturn League_BuildMemberList_966F_M0X0(CpuState *cpu);
-RecompReturn bank_03_969F_M0X0(CpuState *cpu);
+RecompReturn League_IndexRoster_M0X0(CpuState *cpu);
 RecompReturn League_CopyMenuOrder_M0X0(CpuState *cpu);
 RecompReturn Records_CalcMaxima_M1X0(CpuState *cpu);
 RecompReturn Records_PercentOfRaces_M0X0(CpuState *cpu);
@@ -916,7 +916,7 @@ RecompReturn Index_TierX5_M0X0(CpuState *cpu);
 RecompReturn Player_GetTier_M0X0(CpuState *cpu);
 RecompReturn Player_GetTier_M1X0(CpuState *cpu);
 RecompReturn Player_GetPromoted_M1X0(CpuState *cpu);
-RecompReturn bank_03_A923_M1X0(CpuState *cpu);
+RecompReturn Ppu_WaitVBlank_M1X0(CpuState *cpu);
 RecompReturn Ppu_WaitVBlank_A933_M1X0(CpuState *cpu);
 RecompReturn Ppu_WaitVBlank_A938_M1X0(CpuState *cpu);
 RecompReturn Race_Main_M1X0(CpuState *cpu);
@@ -925,663 +925,665 @@ RecompReturn Race_Main_C98F_M1X0(CpuState *cpu);
 RecompReturn Race_Main_C9A9_M1X0(CpuState *cpu);
 RecompReturn Race_Main_C9AD_M1X0(CpuState *cpu);
 RecompReturn Race_Main_C9B1_M0X1(CpuState *cpu);
-RecompReturn bank_03_CA07_M0X0(CpuState *cpu);
+RecompReturn Race_Main_CA07_M0X0(CpuState *cpu);
 RecompReturn Race_Main_CA4C_M0X0(CpuState *cpu);
 RecompReturn Race_Main_CA55_M0X0(CpuState *cpu);
 RecompReturn Race_Main_CA5E_M0X0(CpuState *cpu);
 RecompReturn Race_Main_CA67_M0X0(CpuState *cpu);
 RecompReturn Race_Main_CA6E_M0X0(CpuState *cpu);
 RecompReturn Race_Main_CA7C_M0X0(CpuState *cpu);
-RecompReturn bank_03_CA91_M0X0(CpuState *cpu);
-RecompReturn bank_03_CAD6_M0X0(CpuState *cpu);
-RecompReturn bank_03_CB1B_M0X0(CpuState *cpu);
-RecompReturn bank_03_CB60_M0X0(CpuState *cpu);
+RecompReturn Race_Main_CA91_M0X0(CpuState *cpu);
+RecompReturn Race_Main_CAD6_M0X0(CpuState *cpu);
+RecompReturn Race_Main_CB1B_M0X0(CpuState *cpu);
+RecompReturn Race_Main_CB60_M0X0(CpuState *cpu);
 RecompReturn Race_Main_CBBC_M0X0(CpuState *cpu);
 RecompReturn Race_Main_CC5D_M1X0(CpuState *cpu);
 RecompReturn Race_Main_CC66_M1X0(CpuState *cpu);
-RecompReturn bank_03_CDA0_M0X0(CpuState *cpu);
-RecompReturn bank_03_CDA0_M0X1(CpuState *cpu);
-RecompReturn bank_03_CDA0_M1X0(CpuState *cpu);
-RecompReturn bank_03_CDA0_M1X1(CpuState *cpu);
-RecompReturn bank_03_CEAD_M1X0(CpuState *cpu);
-RecompReturn bank_03_CEAD_M1X1(CpuState *cpu);
-RecompReturn bank_03_D0E8_M0X0(CpuState *cpu);
-RecompReturn bank_03_D1AE_M0X0(CpuState *cpu);
-RecompReturn bank_03_D259_M1X0(CpuState *cpu);
-RecompReturn bank_03_D26E_M0X0(CpuState *cpu);
-RecompReturn bank_03_D2AD_M0X0(CpuState *cpu);
-RecompReturn bank_03_D32D_M0X0(CpuState *cpu);
-RecompReturn bank_03_D3E0_M0X0(CpuState *cpu);
-RecompReturn bank_03_D458_M0X0(CpuState *cpu);
-RecompReturn bank_03_D492_M0X0(CpuState *cpu);
-RecompReturn bank_03_D4CC_M0X0(CpuState *cpu);
-RecompReturn bank_03_D514_M0X0(CpuState *cpu);
-RecompReturn bank_03_D565_M0X0(CpuState *cpu);
+RecompReturn Race_UpdateColorHints_M0X0(CpuState *cpu);
+RecompReturn Race_UpdateColorHints_M0X1(CpuState *cpu);
+RecompReturn Race_UpdateColorHints_M1X0(CpuState *cpu);
+RecompReturn Race_UpdateColorHints_M1X1(CpuState *cpu);
+RecompReturn Race_UpdateSpecialFx_M1X0(CpuState *cpu);
+RecompReturn Race_UpdateSpecialFx_M1X1(CpuState *cpu);
+RecompReturn Race_CheckFxTrigger_M0X0(CpuState *cpu);
+RecompReturn Race_UpdateBackdropFade_M0X0(CpuState *cpu);
+RecompReturn Race_ClearFxTables_M1X0(CpuState *cpu);
+RecompReturn Race_Fx7Tick_M0X0(CpuState *cpu);
+RecompReturn Race_Fx3Tick_M0X0(CpuState *cpu);
+RecompReturn Race_Fx6Tick_M0X0(CpuState *cpu);
+RecompReturn Race_Fx4Tick_M0X0(CpuState *cpu);
+RecompReturn Race_Fx0Tick_M0X0(CpuState *cpu);
+RecompReturn Race_Fx2Tick_M0X0(CpuState *cpu);
+RecompReturn Race_Fx5Tick_M0X0(CpuState *cpu);
+RecompReturn Race_Fx1Tick_M0X0(CpuState *cpu);
+RecompReturn Race_BuildFlipHdmaTable_M0X0(CpuState *cpu);
 RecompReturn Race_UpdateCpuRival_M0X0(CpuState *cpu);
 RecompReturn Race_UpdateCpuRival_M1X0(CpuState *cpu);
 RecompReturn Race_UpdateCpuRival_M1X1(CpuState *cpu);
-RecompReturn bank_03_E238_M1X0(CpuState *cpu);
-RecompReturn bank_03_E238_M1X1(CpuState *cpu);
-RecompReturn bank_03_E580_M0X0(CpuState *cpu);
-RecompReturn bank_03_E7A5_M0X0(CpuState *cpu);
-RecompReturn bank_03_EC46_M0X0(CpuState *cpu);
-RecompReturn bank_03_F0BB_M0X0(CpuState *cpu);
-RecompReturn bank_03_F296_M0X1(CpuState *cpu);
-RecompReturn bank_03_F2BB_M0X1(CpuState *cpu);
+RecompReturn Demo_UpdateCpuInput_M1X0(CpuState *cpu);
+RecompReturn Demo_UpdateCpuInput_M1X1(CpuState *cpu);
+RecompReturn Race_UpdateCountdown_M0X0(CpuState *cpu);
+RecompReturn Race_UpdateFinish_M0X0(CpuState *cpu);
+RecompReturn Race_UpdateRiderOverlayFrames_M0X0(CpuState *cpu);
+RecompReturn Gfx_QueueRiderTileDma_M0X0(CpuState *cpu);
+RecompReturn Gfx_GetRiderFramePtr_M0X1(CpuState *cpu);
+RecompReturn Gfx_DecodeRiderFrameHeaders_M0X1(CpuState *cpu);
 RecompReturn Race_UpdatePauseMenu_M1X1(CpuState *cpu);
 RecompReturn Ppu_ResetAllRegisters_M0X0(CpuState *cpu);
 RecompReturn Ppu_ResetAllRegisters_M0X1(CpuState *cpu);
 RecompReturn Ppu_ResetAllRegisters_M1X0(CpuState *cpu);
 RecompReturn Sram_ClearAllL_FAC3_M0X0(CpuState *cpu);
 RecompReturn Sram_ClearAll_FACC_M0X0(CpuState *cpu);
-RecompReturn bank_80_85A5_M1X0(CpuState *cpu);
-RecompReturn bank_80_8610_M1X0(CpuState *cpu);
-RecompReturn bank_80_88DD_M1X0(CpuState *cpu);
-RecompReturn bank_80_8917_M1X0(CpuState *cpu);
-RecompReturn bank_80_8C41_M1X0(CpuState *cpu);
-RecompReturn bank_80_8C4E_M1X0(CpuState *cpu);
-RecompReturn bank_80_8CCB_M0X0(CpuState *cpu);
-RecompReturn bank_80_8D6E_M0X0(CpuState *cpu);
-RecompReturn bank_80_91DC_M1X0(CpuState *cpu);
-RecompReturn bank_80_9314_M1X0(CpuState *cpu);
-RecompReturn bank_80_9318_M1X0(CpuState *cpu);
-RecompReturn bank_80_933C_M1X0(CpuState *cpu);
-RecompReturn bank_80_935E_M0X0(CpuState *cpu);
-RecompReturn bank_80_937B_M1X0(CpuState *cpu);
-RecompReturn bank_80_93A1_M1X0(CpuState *cpu);
-RecompReturn bank_80_93A5_M1X0(CpuState *cpu);
-RecompReturn bank_80_93CB_M1X0(CpuState *cpu);
-RecompReturn bank_80_94EB_M1X0(CpuState *cpu);
-RecompReturn bank_80_951C_M1X0(CpuState *cpu);
-RecompReturn bank_80_95AB_M1X0(CpuState *cpu);
-RecompReturn bank_80_9625_M1X0(CpuState *cpu);
-RecompReturn bank_80_96FD_M0X0(CpuState *cpu);
-RecompReturn bank_80_9701_M0X0(CpuState *cpu);
-RecompReturn bank_80_9701_M1X0(CpuState *cpu);
-RecompReturn bank_80_9719_M0X0(CpuState *cpu);
-RecompReturn bank_80_971D_M0X0(CpuState *cpu);
-RecompReturn bank_80_974B_M1X0(CpuState *cpu);
-RecompReturn bank_80_9805_M1X0(CpuState *cpu);
-RecompReturn bank_80_9869_M1X0(CpuState *cpu);
-RecompReturn bank_80_9885_M1X0(CpuState *cpu);
-RecompReturn bank_80_98A4_M1X0(CpuState *cpu);
-RecompReturn bank_80_98B3_M1X0(CpuState *cpu);
-RecompReturn bank_80_9980_M0X0(CpuState *cpu);
-RecompReturn bank_80_999F_M1X0(CpuState *cpu);
-RecompReturn bank_80_99A4_M1X0(CpuState *cpu);
-RecompReturn bank_80_9AB2_M0X0(CpuState *cpu);
-RecompReturn bank_80_9B2F_M0X0(CpuState *cpu);
-RecompReturn bank_80_9B2F_M1X0(CpuState *cpu);
-RecompReturn bank_80_9B55_M0X0(CpuState *cpu);
-RecompReturn bank_80_9B55_M1X0(CpuState *cpu);
-RecompReturn bank_80_9B79_M0X0(CpuState *cpu);
-RecompReturn bank_80_9BA0_M1X0(CpuState *cpu);
-RecompReturn bank_80_9BC4_M0X0(CpuState *cpu);
-RecompReturn bank_80_9C8E_M1X0(CpuState *cpu);
-RecompReturn bank_80_9E3C_M1X0(CpuState *cpu);
-RecompReturn bank_80_9EF7_M1X0(CpuState *cpu);
-RecompReturn bank_80_9F6B_M1X0(CpuState *cpu);
-RecompReturn bank_80_A022_M1X0(CpuState *cpu);
-RecompReturn bank_80_A08B_M1X0(CpuState *cpu);
-RecompReturn bank_80_A15B_M1X0(CpuState *cpu);
-RecompReturn bank_80_A1E3_M1X0(CpuState *cpu);
-RecompReturn bank_80_A538_M0X0(CpuState *cpu);
-RecompReturn bank_80_A538_M1X0(CpuState *cpu);
-RecompReturn bank_80_A6F6_M1X0(CpuState *cpu);
-RecompReturn bank_80_A81C_M1X0(CpuState *cpu);
-RecompReturn bank_80_A849_M1X0(CpuState *cpu);
-RecompReturn bank_80_A868_M1X0(CpuState *cpu);
-RecompReturn bank_80_A899_M1X0(CpuState *cpu);
-RecompReturn bank_80_AA0C_M0X0(CpuState *cpu);
-RecompReturn bank_80_ACC6_M1X0(CpuState *cpu);
-RecompReturn bank_80_AD34_M0X0(CpuState *cpu);
-RecompReturn bank_80_AD38_M0X0(CpuState *cpu);
-RecompReturn bank_80_AD38_M1X0(CpuState *cpu);
-RecompReturn bank_80_ADD4_M1X0(CpuState *cpu);
-RecompReturn bank_80_AE81_M0X0(CpuState *cpu);
-RecompReturn bank_80_AEBF_M0X0(CpuState *cpu);
-RecompReturn bank_80_AED7_M0X0(CpuState *cpu);
-RecompReturn bank_80_AEE4_M0X0(CpuState *cpu);
-RecompReturn bank_80_AF0C_M0X0(CpuState *cpu);
-RecompReturn bank_80_AF45_M1X0(CpuState *cpu);
-RecompReturn bank_80_B07D_M1X0(CpuState *cpu);
-RecompReturn bank_80_B0E1_M1X0(CpuState *cpu);
-RecompReturn bank_80_B0E1_M1X1(CpuState *cpu);
-RecompReturn bank_80_B0EB_M1X0(CpuState *cpu);
-RecompReturn bank_80_B100_M1X0(CpuState *cpu);
-RecompReturn bank_80_B115_M1X0(CpuState *cpu);
-RecompReturn bank_80_B12A_M1X0(CpuState *cpu);
-RecompReturn bank_80_B13F_M1X0(CpuState *cpu);
-RecompReturn bank_80_B169_M1X0(CpuState *cpu);
-RecompReturn bank_80_B569_M1X0(CpuState *cpu);
-RecompReturn bank_80_B5FD_M1X0(CpuState *cpu);
-RecompReturn bank_80_B6BA_M1X0(CpuState *cpu);
-RecompReturn bank_80_B6BE_M0X0(CpuState *cpu);
-RecompReturn bank_80_B6BE_M1X0(CpuState *cpu);
-RecompReturn bank_80_B6E3_M1X0(CpuState *cpu);
-RecompReturn bank_80_B708_M1X0(CpuState *cpu);
-RecompReturn bank_80_B735_M0X0(CpuState *cpu);
-RecompReturn bank_80_B735_M1X0(CpuState *cpu);
-RecompReturn bank_80_B75A_M1X0(CpuState *cpu);
-RecompReturn bank_80_B77F_M1X0(CpuState *cpu);
-RecompReturn bank_80_B7A4_M1X0(CpuState *cpu);
-RecompReturn bank_80_B7C9_M1X0(CpuState *cpu);
-RecompReturn bank_80_B7EE_M1X0(CpuState *cpu);
-RecompReturn bank_80_B81B_M1X0(CpuState *cpu);
-RecompReturn bank_80_B8AF_M1X0(CpuState *cpu);
-RecompReturn bank_80_B8DC_M1X0(CpuState *cpu);
-RecompReturn bank_80_B901_M1X0(CpuState *cpu);
-RecompReturn bank_80_B927_M1X0(CpuState *cpu);
-RecompReturn bank_80_B929_M1X0(CpuState *cpu);
-RecompReturn bank_80_B965_M1X0(CpuState *cpu);
-RecompReturn bank_80_BA55_M1X0(CpuState *cpu);
-RecompReturn bank_80_BA8F_M1X0(CpuState *cpu);
-RecompReturn bank_80_BB87_M0X0(CpuState *cpu);
-RecompReturn bank_80_BCAA_M0X0(CpuState *cpu);
-RecompReturn bank_80_BDBF_M0X0(CpuState *cpu);
-RecompReturn bank_80_BF34_M0X0(CpuState *cpu);
-RecompReturn bank_80_C115_M0X0(CpuState *cpu);
-RecompReturn bank_80_C1DA_M1X0(CpuState *cpu);
-RecompReturn bank_80_C1F1_M1X0(CpuState *cpu);
-RecompReturn bank_80_C1F5_M1X0(CpuState *cpu);
-RecompReturn bank_80_C23B_M1X0(CpuState *cpu);
-RecompReturn bank_80_C258_M1X0(CpuState *cpu);
-RecompReturn bank_80_C2FD_M1X0(CpuState *cpu);
-RecompReturn bank_80_C3AB_M0X0(CpuState *cpu);
-RecompReturn bank_80_C3AB_M1X0(CpuState *cpu);
-RecompReturn bank_80_C3AF_M0X0(CpuState *cpu);
-RecompReturn bank_80_C440_M0X0(CpuState *cpu);
-RecompReturn bank_80_C445_M0X0(CpuState *cpu);
-RecompReturn bank_80_C463_M0X0(CpuState *cpu);
-RecompReturn bank_80_C481_M0X0(CpuState *cpu);
-RecompReturn bank_80_C4A7_M0X0(CpuState *cpu);
-RecompReturn bank_80_C4EF_M0X0(CpuState *cpu);
-RecompReturn bank_80_C534_M0X0(CpuState *cpu);
-RecompReturn bank_80_C546_M0X0(CpuState *cpu);
-RecompReturn bank_80_C5BA_M0X0(CpuState *cpu);
-RecompReturn bank_80_C5C2_M0X0(CpuState *cpu);
-RecompReturn bank_80_C60F_M0X0(CpuState *cpu);
-RecompReturn bank_80_C617_M0X0(CpuState *cpu);
-RecompReturn bank_80_C664_M0X0(CpuState *cpu);
-RecompReturn bank_80_C66C_M0X0(CpuState *cpu);
-RecompReturn bank_80_C6AA_M0X0(CpuState *cpu);
-RecompReturn bank_80_C6C4_M0X0(CpuState *cpu);
-RecompReturn bank_80_C775_M1X0(CpuState *cpu);
-RecompReturn bank_80_C7B3_M0X0(CpuState *cpu);
-RecompReturn bank_80_C7EF_M0X0(CpuState *cpu);
-RecompReturn bank_80_C80B_M0X0(CpuState *cpu);
-RecompReturn bank_80_C81E_M0X0(CpuState *cpu);
-RecompReturn bank_80_C83F_M0X0(CpuState *cpu);
-RecompReturn bank_80_C857_M0X0(CpuState *cpu);
-RecompReturn bank_80_C8D7_M0X0(CpuState *cpu);
-RecompReturn bank_80_C8F1_M0X0(CpuState *cpu);
-RecompReturn bank_80_C902_M0X0(CpuState *cpu);
-RecompReturn bank_80_C921_M0X0(CpuState *cpu);
-RecompReturn bank_80_C937_M0X0(CpuState *cpu);
-RecompReturn bank_80_C973_M0X0(CpuState *cpu);
-RecompReturn bank_80_C99A_M0X0(CpuState *cpu);
-RecompReturn bank_80_C9C6_M0X0(CpuState *cpu);
-RecompReturn bank_80_CA63_M0X0(CpuState *cpu);
-RecompReturn bank_80_CA72_M0X0(CpuState *cpu);
-RecompReturn bank_80_CA8A_M0X0(CpuState *cpu);
-RecompReturn bank_80_CA99_M0X0(CpuState *cpu);
-RecompReturn bank_80_CAB4_M0X0(CpuState *cpu);
-RecompReturn bank_80_CAD8_M0X0(CpuState *cpu);
-RecompReturn bank_80_CAF3_M1X0(CpuState *cpu);
-RecompReturn bank_80_CBB2_M0X0(CpuState *cpu);
-RecompReturn bank_80_CBB2_M1X0(CpuState *cpu);
-RecompReturn bank_80_CE7F_M0X0(CpuState *cpu);
-RecompReturn bank_80_CF8C_M0X0(CpuState *cpu);
-RecompReturn bank_80_CF90_M0X0(CpuState *cpu);
-RecompReturn bank_80_CFF6_M0X0(CpuState *cpu);
-RecompReturn bank_80_D061_M0X0(CpuState *cpu);
-RecompReturn bank_80_D088_M0X0(CpuState *cpu);
-RecompReturn bank_80_D0AF_M0X0(CpuState *cpu);
-RecompReturn bank_80_D152_M0X0(CpuState *cpu);
-RecompReturn bank_80_D1D7_M1X0(CpuState *cpu);
-RecompReturn bank_80_D1DB_M1X0(CpuState *cpu);
-RecompReturn bank_80_D1E9_M1X0(CpuState *cpu);
-RecompReturn bank_80_D1FD_M1X0(CpuState *cpu);
-RecompReturn bank_80_D2B0_M1X0(CpuState *cpu);
-RecompReturn bank_80_D37A_M1X0(CpuState *cpu);
-RecompReturn bank_80_D40F_M1X0(CpuState *cpu);
-RecompReturn bank_80_D437_M0X0(CpuState *cpu);
-RecompReturn bank_80_D4F6_M1X0(CpuState *cpu);
-RecompReturn bank_80_D5D9_M0X0(CpuState *cpu);
-RecompReturn bank_80_D7C0_M0X0(CpuState *cpu);
-RecompReturn bank_80_DAC2_M0X0(CpuState *cpu);
-RecompReturn bank_80_DDE6_M0X0(CpuState *cpu);
-RecompReturn bank_80_E21D_M1X0(CpuState *cpu);
-RecompReturn bank_80_E23B_M1X0(CpuState *cpu);
-RecompReturn bank_80_E268_M1X0(CpuState *cpu);
-RecompReturn bank_80_E286_M1X0(CpuState *cpu);
-RecompReturn bank_80_E2B9_M1X0(CpuState *cpu);
-RecompReturn bank_80_E2BD_M1X0(CpuState *cpu);
-RecompReturn bank_80_E3D3_M1X0(CpuState *cpu);
-RecompReturn bank_80_E536_M1X0(CpuState *cpu);
-RecompReturn bank_80_E53A_M1X0(CpuState *cpu);
-RecompReturn bank_80_E6C7_M1X0(CpuState *cpu);
-RecompReturn bank_80_E71A_M1X0(CpuState *cpu);
-RecompReturn bank_80_E78B_M1X0(CpuState *cpu);
-RecompReturn bank_80_E838_M1X0(CpuState *cpu);
-RecompReturn bank_80_EA79_M1X0(CpuState *cpu);
-RecompReturn bank_80_EB0D_M1X0(CpuState *cpu);
-RecompReturn bank_80_EB60_M1X0(CpuState *cpu);
-RecompReturn bank_80_ED07_M1X0(CpuState *cpu);
-RecompReturn bank_80_EEDC_M1X0(CpuState *cpu);
-RecompReturn bank_80_EF37_M1X0(CpuState *cpu);
-RecompReturn bank_80_EF73_M1X0(CpuState *cpu);
-RecompReturn bank_80_EFBE_M0X0(CpuState *cpu);
-RecompReturn bank_80_F015_M0X0(CpuState *cpu);
-RecompReturn bank_80_F06C_M0X0(CpuState *cpu);
-RecompReturn bank_80_F0D8_M0X0(CpuState *cpu);
-RecompReturn bank_80_F4A2_M1X0(CpuState *cpu);
-RecompReturn bank_80_F4D3_M1X0(CpuState *cpu);
-RecompReturn bank_80_F505_M1X0(CpuState *cpu);
-RecompReturn bank_80_F515_M1X0(CpuState *cpu);
-RecompReturn bank_80_F525_M1X0(CpuState *cpu);
-RecompReturn bank_80_F529_M1X0(CpuState *cpu);
-RecompReturn bank_80_F549_M1X0(CpuState *cpu);
-RecompReturn bank_80_F60C_M1X0(CpuState *cpu);
-RecompReturn bank_80_F653_M1X0(CpuState *cpu);
-RecompReturn bank_80_F7C6_M0X0(CpuState *cpu);
-RecompReturn bank_80_F7E5_M0X0(CpuState *cpu);
-RecompReturn bank_80_F7FE_M0X0(CpuState *cpu);
-RecompReturn bank_80_F7FE_M1X0(CpuState *cpu);
-RecompReturn bank_80_F802_M0X0(CpuState *cpu);
-RecompReturn bank_80_F802_M1X0(CpuState *cpu);
-RecompReturn bank_80_F859_M0X0(CpuState *cpu);
-RecompReturn bank_80_F877_M0X0(CpuState *cpu);
-RecompReturn bank_80_F8A3_M0X0(CpuState *cpu);
-RecompReturn bank_80_F8D1_M1X0(CpuState *cpu);
-RecompReturn bank_80_FA4A_M1X0(CpuState *cpu);
-RecompReturn bank_80_FAC5_M1X0(CpuState *cpu);
-RecompReturn bank_80_FAC9_M1X0(CpuState *cpu);
-RecompReturn bank_80_FADF_M1X0(CpuState *cpu);
-RecompReturn bank_80_FBBF_M1X0(CpuState *cpu);
-RecompReturn bank_80_FC1C_M0X0(CpuState *cpu);
-RecompReturn bank_80_FC38_M0X0(CpuState *cpu);
-RecompReturn bank_80_FC3D_M0X0(CpuState *cpu);
-RecompReturn bank_81_8050_M0X0(CpuState *cpu);
-RecompReturn bank_81_82E2_M0X1(CpuState *cpu);
-RecompReturn bank_81_82E6_M0X1(CpuState *cpu);
-RecompReturn bank_81_8341_M0X0(CpuState *cpu);
-RecompReturn bank_81_83A4_M0X0(CpuState *cpu);
-RecompReturn bank_81_84D2_M0X0(CpuState *cpu);
-RecompReturn bank_81_84DB_M0X0(CpuState *cpu);
-RecompReturn bank_81_8515_M0X0(CpuState *cpu);
-RecompReturn bank_81_857D_M0X0(CpuState *cpu);
-RecompReturn bank_81_85B7_M0X1(CpuState *cpu);
-RecompReturn bank_81_85BB_M0X1(CpuState *cpu);
-RecompReturn bank_81_8745_M0X0(CpuState *cpu);
-RecompReturn bank_81_8785_M0X0(CpuState *cpu);
-RecompReturn bank_81_87EB_M0X0(CpuState *cpu);
-RecompReturn bank_81_8970_M0X0(CpuState *cpu);
-RecompReturn bank_81_89B9_M0X0(CpuState *cpu);
-RecompReturn bank_81_8A17_M0X0(CpuState *cpu);
-RecompReturn bank_81_8A4A_M1X0(CpuState *cpu);
-RecompReturn bank_81_8B95_M1X0(CpuState *cpu);
-RecompReturn bank_81_8D14_M0X0(CpuState *cpu);
-RecompReturn bank_81_8D14_M0X1(CpuState *cpu);
-RecompReturn bank_81_8D18_M0X0(CpuState *cpu);
-RecompReturn bank_81_8D18_M0X1(CpuState *cpu);
-RecompReturn bank_81_8FB8_M1X0(CpuState *cpu);
-RecompReturn bank_81_983B_M0X1(CpuState *cpu);
-RecompReturn bank_81_99D6_M1X0(CpuState *cpu);
-RecompReturn bank_81_9A5A_M1X0(CpuState *cpu);
-RecompReturn bank_81_9E2A_M0X0(CpuState *cpu);
-RecompReturn bank_81_9FBF_M0X0(CpuState *cpu);
-RecompReturn bank_81_A2E5_M0X0(CpuState *cpu);
-RecompReturn bank_81_A30F_M0X0(CpuState *cpu);
-RecompReturn bank_81_A313_M0X0(CpuState *cpu);
-RecompReturn bank_81_A52B_M0X0(CpuState *cpu);
-RecompReturn bank_81_A52F_M0X0(CpuState *cpu);
-RecompReturn bank_81_A59E_M0X0(CpuState *cpu);
-RecompReturn bank_81_AB88_M0X0(CpuState *cpu);
-RecompReturn bank_81_ACB1_M0X0(CpuState *cpu);
-RecompReturn bank_81_ACFB_M0X0(CpuState *cpu);
-RecompReturn bank_81_AD2C_M0X0(CpuState *cpu);
-RecompReturn bank_81_AD7A_M0X0(CpuState *cpu);
-RecompReturn bank_81_ADB6_M0X0(CpuState *cpu);
-RecompReturn bank_81_AE59_M0X0(CpuState *cpu);
-RecompReturn bank_81_AFC3_M0X0(CpuState *cpu);
-RecompReturn bank_81_B27F_M0X0(CpuState *cpu);
-RecompReturn bank_81_B375_M0X0(CpuState *cpu);
-RecompReturn bank_81_B664_M0X0(CpuState *cpu);
-RecompReturn bank_81_B668_M0X0(CpuState *cpu);
-RecompReturn bank_81_B68B_M0X1(CpuState *cpu);
-RecompReturn bank_81_B68F_M0X1(CpuState *cpu);
-RecompReturn bank_81_B6C0_M0X0(CpuState *cpu);
-RecompReturn bank_81_B6C4_M0X0(CpuState *cpu);
-RecompReturn bank_81_B76D_M1X0(CpuState *cpu);
-RecompReturn bank_81_B773_M0X0(CpuState *cpu);
-RecompReturn bank_81_B77B_M0X0(CpuState *cpu);
-RecompReturn bank_81_B8F1_M0X0(CpuState *cpu);
-RecompReturn bank_81_BA26_M0X0(CpuState *cpu);
-RecompReturn bank_81_BA7A_M0X0(CpuState *cpu);
-RecompReturn bank_81_BADC_M0X0(CpuState *cpu);
-RecompReturn bank_81_BB6F_M0X0(CpuState *cpu);
-RecompReturn bank_81_BB89_M0X0(CpuState *cpu);
-RecompReturn bank_81_BD48_M0X0(CpuState *cpu);
-RecompReturn bank_81_BD9F_M0X0(CpuState *cpu);
-RecompReturn bank_81_BE01_M0X0(CpuState *cpu);
-RecompReturn bank_81_BE99_M0X0(CpuState *cpu);
-RecompReturn bank_81_BEB3_M0X0(CpuState *cpu);
-RecompReturn bank_81_BEB7_M0X0(CpuState *cpu);
-RecompReturn bank_81_BF41_M0X0(CpuState *cpu);
-RecompReturn bank_81_BFE3_M0X0(CpuState *cpu);
-RecompReturn bank_81_C0DD_M1X1(CpuState *cpu);
-RecompReturn bank_81_C572_M0X0(CpuState *cpu);
-RecompReturn bank_81_C576_M0X0(CpuState *cpu);
-RecompReturn bank_81_C5AF_M0X0(CpuState *cpu);
-RecompReturn bank_81_C5B3_M0X0(CpuState *cpu);
-RecompReturn bank_81_C605_M0X0(CpuState *cpu);
-RecompReturn bank_81_C609_M0X0(CpuState *cpu);
-RecompReturn bank_81_C64E_M0X0(CpuState *cpu);
-RecompReturn bank_81_C697_M0X0(CpuState *cpu);
-RecompReturn bank_81_C69B_M0X0(CpuState *cpu);
-RecompReturn bank_81_C6D3_M0X0(CpuState *cpu);
-RecompReturn bank_81_C7E1_M0X0(CpuState *cpu);
-RecompReturn bank_81_C907_M1X0(CpuState *cpu);
-RecompReturn bank_81_CCE6_M1X1(CpuState *cpu);
-RecompReturn bank_81_CD07_M1X1(CpuState *cpu);
-RecompReturn bank_81_D86E_M1X0(CpuState *cpu);
-RecompReturn bank_81_E8D9_M1X0(CpuState *cpu);
-RecompReturn bank_82_8000_M0X0(CpuState *cpu);
-RecompReturn bank_82_8000_M0X1(CpuState *cpu);
-RecompReturn bank_82_8035_M0X0(CpuState *cpu);
-RecompReturn bank_82_8035_M1X0(CpuState *cpu);
-RecompReturn bank_82_807E_M0X0(CpuState *cpu);
-RecompReturn bank_82_8082_M0X0(CpuState *cpu);
-RecompReturn bank_82_812A_M1X0(CpuState *cpu);
-RecompReturn bank_82_8151_M0X0(CpuState *cpu);
-RecompReturn bank_82_8151_M1X0(CpuState *cpu);
-RecompReturn bank_82_8294_M0X0(CpuState *cpu);
-RecompReturn bank_82_8298_M0X0(CpuState *cpu);
-RecompReturn bank_82_82A5_M0X0(CpuState *cpu);
-RecompReturn bank_82_82A9_M0X0(CpuState *cpu);
-RecompReturn bank_82_8328_M1X0(CpuState *cpu);
-RecompReturn bank_82_8337_M0X1(CpuState *cpu);
-RecompReturn bank_82_836D_M0X1(CpuState *cpu);
-RecompReturn bank_82_87CC_M0X0(CpuState *cpu);
-RecompReturn bank_82_892A_M0X0(CpuState *cpu);
-RecompReturn bank_82_8952_M0X0(CpuState *cpu);
-RecompReturn bank_82_8956_M0X0(CpuState *cpu);
-RecompReturn bank_82_89B5_M0X0(CpuState *cpu);
-RecompReturn bank_82_89B9_M0X0(CpuState *cpu);
-RecompReturn bank_82_9385_M1X0(CpuState *cpu);
-RecompReturn bank_82_9704_M0X0(CpuState *cpu);
-RecompReturn bank_82_9704_M1X0(CpuState *cpu);
-RecompReturn bank_82_980D_M0X0(CpuState *cpu);
-RecompReturn bank_82_980D_M1X1(CpuState *cpu);
-RecompReturn bank_82_9811_M0X0(CpuState *cpu);
-RecompReturn bank_82_9811_M1X1(CpuState *cpu);
-RecompReturn bank_82_98BE_M0X0(CpuState *cpu);
-RecompReturn bank_82_9A42_M0X0(CpuState *cpu);
-RecompReturn bank_82_9A42_M1X0(CpuState *cpu);
-RecompReturn bank_82_A01B_M0X0(CpuState *cpu);
-RecompReturn bank_82_A05D_M0X0(CpuState *cpu);
-RecompReturn bank_82_A0AB_M0X0(CpuState *cpu);
-RecompReturn bank_82_A0AB_M0X1(CpuState *cpu);
-RecompReturn bank_82_A22B_M0X1(CpuState *cpu);
-RecompReturn bank_82_A27C_M0X0(CpuState *cpu);
-RecompReturn bank_82_A27C_M1X0(CpuState *cpu);
-RecompReturn bank_82_A354_M0X0(CpuState *cpu);
-RecompReturn bank_82_A498_M0X1(CpuState *cpu);
-RecompReturn bank_82_A5F3_M0X1(CpuState *cpu);
-RecompReturn bank_82_A618_M0X0(CpuState *cpu);
-RecompReturn bank_82_A6F1_M0X0(CpuState *cpu);
-RecompReturn bank_82_A8C2_M0X1(CpuState *cpu);
-RecompReturn bank_82_A968_M0X0(CpuState *cpu);
-RecompReturn bank_82_A9AC_M0X1(CpuState *cpu);
-RecompReturn bank_82_AA09_M0X1(CpuState *cpu);
-RecompReturn bank_82_AA6A_M0X0(CpuState *cpu);
-RecompReturn bank_82_AA6A_M1X0(CpuState *cpu);
-RecompReturn bank_82_AA6A_M1X1(CpuState *cpu);
-RecompReturn bank_82_AA6E_M0X0(CpuState *cpu);
-RecompReturn bank_82_AA6E_M1X0(CpuState *cpu);
-RecompReturn bank_82_AA6E_M1X1(CpuState *cpu);
-RecompReturn bank_82_ACA1_M0X0(CpuState *cpu);
-RecompReturn bank_82_ACA5_M0X0(CpuState *cpu);
-RecompReturn bank_82_B180_M0X0(CpuState *cpu);
-RecompReturn bank_82_B180_M1X0(CpuState *cpu);
-RecompReturn bank_82_B1AB_M1X0(CpuState *cpu);
-RecompReturn bank_82_B1D8_M0X0(CpuState *cpu);
-RecompReturn bank_82_B1D8_M1X0(CpuState *cpu);
-RecompReturn bank_82_B293_M1X0(CpuState *cpu);
-RecompReturn bank_82_B2A9_M1X0(CpuState *cpu);
-RecompReturn bank_82_B2AD_M1X0(CpuState *cpu);
-RecompReturn bank_82_B2DA_M1X0(CpuState *cpu);
-RecompReturn bank_82_B8A7_M1X0(CpuState *cpu);
-RecompReturn bank_82_B8AB_M1X0(CpuState *cpu);
-RecompReturn bank_82_D197_M1X0(CpuState *cpu);
-RecompReturn bank_82_D19B_M1X0(CpuState *cpu);
-RecompReturn bank_82_D2D4_M1X0(CpuState *cpu);
-RecompReturn bank_82_D2D8_M1X0(CpuState *cpu);
-RecompReturn bank_82_D353_M0X0(CpuState *cpu);
-RecompReturn bank_82_D353_M1X0(CpuState *cpu);
-RecompReturn bank_82_D357_M0X0(CpuState *cpu);
-RecompReturn bank_82_D357_M1X0(CpuState *cpu);
-RecompReturn bank_82_D3CC_M1X0(CpuState *cpu);
-RecompReturn bank_82_D3D0_M1X0(CpuState *cpu);
-RecompReturn bank_82_D4E5_M0X0(CpuState *cpu);
-RecompReturn bank_82_D4E5_M1X0(CpuState *cpu);
-RecompReturn bank_82_D4E5_M1X1(CpuState *cpu);
-RecompReturn bank_82_D4E9_M0X0(CpuState *cpu);
-RecompReturn bank_82_D4E9_M1X0(CpuState *cpu);
-RecompReturn bank_82_D4E9_M1X1(CpuState *cpu);
+RecompReturn NmiHandler_Default_M1X0(CpuState *cpu);
+RecompReturn NmiHandler_Race_FastRom_M1X0(CpuState *cpu);
+RecompReturn Race_CheckExited_FastRom_M1X0(CpuState *cpu);
+RecompReturn League_ShowPointAwards_FastRom_M1X0(CpuState *cpu);
+RecompReturn Text_GetCharClass_FastRom_M1X0(CpuState *cpu);
+RecompReturn Sram_ValidateOrInit_FastRom_M1X0(CpuState *cpu);
+RecompReturn Records_InsertHighScore_FastRom_M0X0(CpuState *cpu);
+RecompReturn Results_DrawLapRace_FastRom_M0X0(CpuState *cpu);
+RecompReturn Boot_91DC_M1X0(CpuState *cpu);
+RecompReturn Reset_ClearWRAM_M1X0(CpuState *cpu);
+RecompReturn Reset_ClearWRAM_loop80_M1X0(CpuState *cpu);
+RecompReturn Oam_UploadLong_M1X0(CpuState *cpu);
+RecompReturn Oam_Upload_FastRom_M1X0(CpuState *cpu);
+RecompReturn Text_CopyWord_FastRom_M1X0(CpuState *cpu);
+RecompReturn Text_CopyStripUnderscores_FastRom_M0X0(CpuState *cpu);
+RecompReturn Vram_UploadTilemapAtA8_FastRom_M1X0(CpuState *cpu);
+RecompReturn Vram_UploadTilemapLong_M1X0(CpuState *cpu);
+RecompReturn Vram_UploadTilemap_FastRom_M1X0(CpuState *cpu);
+RecompReturn Vram_UploadTilemapBottom_FastRom_M1X0(CpuState *cpu);
+RecompReturn Attract_Main_94EB_M1X0(CpuState *cpu);
+RecompReturn Results_Show_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_DrawTrackNameGrid_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_SetupTrackGridSprites_FastRom_M1X0(CpuState *cpu);
+RecompReturn Math_Div16by8Long_M0X0(CpuState *cpu);
+RecompReturn Math_Div16by8_FastRom_M0X0(CpuState *cpu);
+RecompReturn Math_Div16by8_FastRom_M1X0(CpuState *cpu);
+RecompReturn Math_Div16Long_M0X0(CpuState *cpu);
+RecompReturn Math_Div16_FastRom_M0X0(CpuState *cpu);
+RecompReturn Tour_DrawSelectIcons_FastRom_M1X0(CpuState *cpu);
+RecompReturn Results_ResetMarkerSpritesOnce_FastRom_M1X0(CpuState *cpu);
+RecompReturn Video_FadeIn_FastRom_M1X0(CpuState *cpu);
+RecompReturn Video_FadeOut_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_HideCursor_FastRom_M1X0(CpuState *cpu);
+RecompReturn Results_AnimateLapMarkers_FastRom_M1X0(CpuState *cpu);
+RecompReturn Math_ScaleClampVelocity_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_StartKeepParam_FastRom_M1X0(CpuState *cpu);
+RecompReturn Race_Start_FastRom_M1X0(CpuState *cpu);
+RecompReturn League_CalcPointBars_FastRom_M0X0(CpuState *cpu);
+RecompReturn Sram_CopyPlayerName_FastRom_M0X0(CpuState *cpu);
+RecompReturn Sram_CopyPlayerName_FastRom_M1X0(CpuState *cpu);
+RecompReturn Text_CopyTrackName_FastRom_M0X0(CpuState *cpu);
+RecompReturn Text_CopyTrackName_FastRom_M1X0(CpuState *cpu);
+RecompReturn Sram_CopyLeagueName_FastRom_M0X0(CpuState *cpu);
+RecompReturn Text_CopyTourName_FastRom_M1X0(CpuState *cpu);
+RecompReturn DefineLeague_Main_FastRom_M0X0(CpuState *cpu);
+RecompReturn DefineLeague_PickTracks_FastRom_M1X0(CpuState *cpu);
+RecompReturn DefineLeague_CalcItemPos_FastRom_M1X0(CpuState *cpu);
+RecompReturn DefineLeague_SelectSlot_FastRom_M1X0(CpuState *cpu);
+RecompReturn Fx_HdmaWipeReveal_FastRom_M1X0(CpuState *cpu);
+RecompReturn Fx_HdmaWipeCover_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_InitVideo_FastRom_M1X0(CpuState *cpu);
+RecompReturn Sys_InitVars_FastRom_M1X0(CpuState *cpu);
+RecompReturn Text_NameEntry_FastRom_M1X0(CpuState *cpu);
+RecompReturn League_DrawTable_FastRom_M0X0(CpuState *cpu);
+RecompReturn League_DrawTable_FastRom_M1X0(CpuState *cpu);
+RecompReturn Pal_UploadSpritePalettes_FastRom_M1X0(CpuState *cpu);
+RecompReturn Gfx_UploadOverlayTilesA_FastRom_M1X0(CpuState *cpu);
+RecompReturn Pal_LoadMenuSpritePalettes_FastRom_M1X0(CpuState *cpu);
+RecompReturn Gfx_UploadOverlayTilesB_FastRom_M1X0(CpuState *cpu);
+RecompReturn Pal_UploadBgPalettes_FastRom_M1X0(CpuState *cpu);
+RecompReturn Options_WipeRam_FastRom_M0X0(CpuState *cpu);
+RecompReturn MainMenu_Draw_FastRom_M1X0(CpuState *cpu);
+RecompReturn League_SortStandingsLong_FastRom_M0X0(CpuState *cpu);
+RecompReturn League_SortStandings_FastRom_M0X0(CpuState *cpu);
+RecompReturn League_SortStandings_FastRom_M1X0(CpuState *cpu);
+RecompReturn PostRace_Menu_FastRom_M1X0(CpuState *cpu);
+RecompReturn PostRace_NextTrack_FastRom_M0X0(CpuState *cpu);
+RecompReturn PostRace_SameTrack_FastRom_M0X0(CpuState *cpu);
+RecompReturn PostRace_Quit_FastRom_M0X0(CpuState *cpu);
+RecompReturn PostRace_SelectTrack_FastRom_M0X0(CpuState *cpu);
+RecompReturn PostRace_SelectTour_FastRom_M0X0(CpuState *cpu);
+RecompReturn League_AdvanceAfterRace_FastRom_M1X0(CpuState *cpu);
+RecompReturn Boot_ShowLogo_FastRom_M1X0(CpuState *cpu);
+RecompReturn Unused_NmiEntryDB80_B0E1_M1X0(CpuState *cpu);
+RecompReturn Unused_NmiEntryDB80_B0E1_M1X1(CpuState *cpu);
+RecompReturn Snd_PlayError_FastRom_M1X0(CpuState *cpu);
+RecompReturn Snd_PlayToggle_FastRom_M1X0(CpuState *cpu);
+RecompReturn Snd_PlayConfirm_FastRom_M1X0(CpuState *cpu);
+RecompReturn Snd_PlayWipe_FastRom_M1X0(CpuState *cpu);
+RecompReturn Snd_PlayWipeAlt_FastRom_M1X0(CpuState *cpu);
+RecompReturn Snd_PlayCursor_FastRom_M1X0(CpuState *cpu);
+RecompReturn PreRace_BuildPlayerLine_FastRom_M1X0(CpuState *cpu);
+RecompReturn Vram_ClearAll_FastRom_M1X0(CpuState *cpu);
+RecompReturn Input_IsAnyButtonHeldL_M1X0(CpuState *cpu);
+RecompReturn Input_IsAnyButtonHeld_FastRom_M0X0(CpuState *cpu);
+RecompReturn Input_IsAnyButtonHeld_FastRom_M1X0(CpuState *cpu);
+RecompReturn Input_IsNonUDLButtonHeld_FastRom_M1X0(CpuState *cpu);
+RecompReturn Input_IsConfirmHeld_FastRom_M1X0(CpuState *cpu);
+RecompReturn Input_IsCancelHeld_FastRom_M0X0(CpuState *cpu);
+RecompReturn Input_IsCancelHeld_FastRom_M1X0(CpuState *cpu);
+RecompReturn Input_IsUpHeld_FastRom_M1X0(CpuState *cpu);
+RecompReturn Input_IsDownOrSelectHeld_FastRom_M1X0(CpuState *cpu);
+RecompReturn Input_IsLeftHeld_FastRom_M1X0(CpuState *cpu);
+RecompReturn Input_IsRightHeld_FastRom_M1X0(CpuState *cpu);
+RecompReturn Input_IsUpHeld2_FastRom_M1X0(CpuState *cpu);
+RecompReturn Input_IsDownHeld_FastRom_M1X0(CpuState *cpu);
+RecompReturn Input_IsStartOrAHeld_FastRom_M1X0(CpuState *cpu);
+RecompReturn Input_IsSelectHeld_FastRom_M1X0(CpuState *cpu);
+RecompReturn Input_IsStartHeld_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_RunVerticalFromTop_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_RunVertical_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_VerticalLoop_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_RunVerticalAlt_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_VerticalLoopAlt_FastRom_M1X0(CpuState *cpu);
+RecompReturn Mode_OnePlayerRace_FastRom_M0X0(CpuState *cpu);
+RecompReturn Mode_TwoPlayerRace_FastRom_M0X0(CpuState *cpu);
+RecompReturn Mode_League_FastRom_M0X0(CpuState *cpu);
+RecompReturn Mode_ChallengeRace_FastRom_M0X0(CpuState *cpu);
+RecompReturn Options_DefinePlayer_FastRom_M0X0(CpuState *cpu);
+RecompReturn Oam_ClearCursorHFlip_FastRom_M1X0(CpuState *cpu);
+RecompReturn Input_WaitAnyButtonL_M1X0(CpuState *cpu);
+RecompReturn Input_WaitAnyButton_FastRom_M1X0(CpuState *cpu);
+RecompReturn Input_WaitAllReleased_FastRom_M1X0(CpuState *cpu);
+RecompReturn Records_DrawTopScores_FastRom_M1X0(CpuState *cpu);
+RecompReturn Records_DrawTopTimes_FastRom_M1X0(CpuState *cpu);
+RecompReturn DrawText_FastRom_M0X0(CpuState *cpu);
+RecompReturn DrawText_FastRom_M1X0(CpuState *cpu);
+RecompReturn Text_DrawLoop_FastRom_M0X0(CpuState *cpu);
+RecompReturn Text_CmdEnd_FastRom_M0X0(CpuState *cpu);
+RecompReturn Text_CmdPrintNum5_FastRom_M0X0(CpuState *cpu);
+RecompReturn Text_CmdPrintNum2_FastRom_M0X0(CpuState *cpu);
+RecompReturn Text_CmdSetPos_FastRom_M0X0(CpuState *cpu);
+RecompReturn Text_CmdCenterLine_FastRom_M0X0(CpuState *cpu);
+RecompReturn Text_CmdCenterWord_FastRom_M0X0(CpuState *cpu);
+RecompReturn Text_CmdCallString_FastRom_M0X0(CpuState *cpu);
+RecompReturn Text_CmdSetPalette_FastRom_M0X0(CpuState *cpu);
+RecompReturn Text_CmdPlayerNameImm_FastRom_M0X0(CpuState *cpu);
+RecompReturn Text_CmdPlayerNameVar_FastRom_M0X0(CpuState *cpu);
+RecompReturn Text_CmdRomNameImm_FastRom_M0X0(CpuState *cpu);
+RecompReturn Text_CmdRomNameVar_FastRom_M0X0(CpuState *cpu);
+RecompReturn Text_CmdLeagueNameImm_FastRom_M0X0(CpuState *cpu);
+RecompReturn Text_CmdLeagueNameVar_FastRom_M0X0(CpuState *cpu);
+RecompReturn Text_CmdPrintTime_FastRom_M0X0(CpuState *cpu);
+RecompReturn Text_CmdPlaceSprite_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_RecordResults_FastRom_M1X0(CpuState *cpu);
+RecompReturn Race_RecordTimeRace_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_RecordP1TimeOrDnf_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_RecordP1Time_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_RecordP2TimeOrDnf_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_RecordP2Time_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_RecordLapRace_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_RecordP1LapOrDnf_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_RecordP1Lap_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_RecordP2LapOrDnf_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_RecordP2Lap_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_RecordStuntRace_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_AddP1StuntScore_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_AddP2StuntScore_FastRom_M0X0(CpuState *cpu);
+RecompReturn Records_InsertTime_FastRom_M0X0(CpuState *cpu);
+RecompReturn Stats_IncP1Races_FastRom_M0X0(CpuState *cpu);
+RecompReturn Stats_IncP1Wins_FastRom_M0X0(CpuState *cpu);
+RecompReturn Stats_IncP1Dnf_FastRom_M0X0(CpuState *cpu);
+RecompReturn Stats_IncP2Races_FastRom_M0X0(CpuState *cpu);
+RecompReturn Stats_IncP2Wins_FastRom_M0X0(CpuState *cpu);
+RecompReturn Stats_IncP2Dnf_FastRom_M0X0(CpuState *cpu);
+RecompReturn PickUni_Open_FastRom_M1X0(CpuState *cpu);
+RecompReturn PickUni_Loop_FastRom_M0X0(CpuState *cpu);
+RecompReturn PickUni_Loop_FastRom_M1X0(CpuState *cpu);
+RecompReturn Results_ShowRaceTable_FastRom_M0X0(CpuState *cpu);
+RecompReturn Results_RowNone_FastRom_M0X0(CpuState *cpu);
+RecompReturn Results_RowP1_FastRom_M0X0(CpuState *cpu);
+RecompReturn Results_RowP2_FastRom_M0X0(CpuState *cpu);
+RecompReturn Results_RowRecord1_FastRom_M0X0(CpuState *cpu);
+RecompReturn Results_RowRecord2_FastRom_M0X0(CpuState *cpu);
+RecompReturn Results_RowRecord3_FastRom_M0X0(CpuState *cpu);
+RecompReturn Results_LoadRowPalette_FastRom_M0X0(CpuState *cpu);
+RecompReturn Input_ReadPadsL_M1X0(CpuState *cpu);
+RecompReturn Input_ReadPads_FastRom_M1X0(CpuState *cpu);
+RecompReturn Text_ClearBuffer_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_InitScreen_FastRom_M1X0(CpuState *cpu);
+RecompReturn Oam_ResetMenuSprites_FastRom_M1X0(CpuState *cpu);
+RecompReturn League_Clear_FastRom_M1X0(CpuState *cpu);
+RecompReturn Oam_HideRowSprites_FastRom_M1X0(CpuState *cpu);
+RecompReturn Options_RenamePlayer_FastRom_M0X0(CpuState *cpu);
+RecompReturn Menu_ResetSlideHooks_FastRom_M1X0(CpuState *cpu);
+RecompReturn Records_TrackRecords_FastRom_M0X0(CpuState *cpu);
+RecompReturn Records_HighScores_FastRom_M0X0(CpuState *cpu);
+RecompReturn Records_PlayerScores_FastRom_M0X0(CpuState *cpu);
+RecompReturn Records_GroupTables_FastRom_M0X0(CpuState *cpu);
+RecompReturn Slide_Forward_FastRom_M1X0(CpuState *cpu);
+RecompReturn Slide_DefaultFwdStep_FastRom_M1X0(CpuState *cpu);
+RecompReturn Slide_Back_FastRom_M1X0(CpuState *cpu);
+RecompReturn Slide_DefaultBackStep_FastRom_M1X0(CpuState *cpu);
+RecompReturn Screen_OpenWipeL_M1X0(CpuState *cpu);
+RecompReturn Screen_OpenWipe_FastRom_M1X0(CpuState *cpu);
+RecompReturn TrackRecords_HandleInput_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_RunE53AL_M1X0(CpuState *cpu);
+RecompReturn Menu_PickTour_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_ApplyCycledSpriteColor_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_DrawTourList_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_CheckTourUnlocked_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_PickTrack_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_CycleLeagueClass_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_CycleSpriteTiles_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_ShowTourTables_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_DrawTourTrackTable_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_DrawTrackNumber_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_DrawOptionList_FastRom_M1X0(CpuState *cpu);
+RecompReturn Scores_LoadPlayerSorted_FastRom_M1X0(CpuState *cpu);
+RecompReturn Util_SortTable8Descending_FastRom_M0X0(CpuState *cpu);
+RecompReturn Util_SortTable16Descending_FastRom_M0X0(CpuState *cpu);
+RecompReturn Util_SortTable8Ascending_FastRom_M0X0(CpuState *cpu);
+RecompReturn Results_ShowRaceResults_FastRom_M0X0(CpuState *cpu);
+RecompReturn Menu_HideSpritesAndReloadGfx_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_ResetScreenGfx_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_RequestPanelOpen_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_RequestPanelClose_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_SnapPanelOpenLong_M1X0(CpuState *cpu);
+RecompReturn Menu_SnapPanelOpen_FastRom_M1X0(CpuState *cpu);
+RecompReturn Boot_ShowLegalScreen_FastRom_M1X0(CpuState *cpu);
+RecompReturn NmiHandler_Menu_FastRom_M1X0(CpuState *cpu);
+RecompReturn Results_AnimateTally_FastRom_M1X0(CpuState *cpu);
+RecompReturn Results_NextTallyColumn_FastRom_M0X0(CpuState *cpu);
+RecompReturn Menu_WaitFramesOrButton_FastRom_M0X0(CpuState *cpu);
+RecompReturn Dma_UploadTilemapRowsLong_M0X0(CpuState *cpu);
+RecompReturn Dma_UploadTilemapRowsLong_M1X0(CpuState *cpu);
+RecompReturn Dma_UploadTilemapRows_FastRom_M0X0(CpuState *cpu);
+RecompReturn Dma_UploadTilemapRows_FastRom_M1X0(CpuState *cpu);
+RecompReturn Dma_UploadVramC0_FastRom_M0X0(CpuState *cpu);
+RecompReturn Scores_StoreResult_FastRom_M0X0(CpuState *cpu);
+RecompReturn Text_ConvertBufferCase_FastRom_M0X0(CpuState *cpu);
+RecompReturn Vs_ShowChampions_FastRom_M1X0(CpuState *cpu);
+RecompReturn Vs_ShowChampions_FA4A_M1X0(CpuState *cpu);
+RecompReturn WaitVBlankLong_FastRom_M1X0(CpuState *cpu);
+RecompReturn WaitVBlank_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_UpdateCursor_FastRom_M1X0(CpuState *cpu);
+RecompReturn Menu_KeepResetScores_FastRom_M1X0(CpuState *cpu);
+RecompReturn Scores_ResetPlayer_FastRom_M0X0(CpuState *cpu);
+RecompReturn Menu_ReturnContinue_FastRom_M0X0(CpuState *cpu);
+RecompReturn Menu_ReturnExit_FastRom_M0X0(CpuState *cpu);
+RecompReturn Uni_CheckLapLine_M0X0(CpuState *cpu);
+RecompReturn Uni_ApplyTileEffectLong_M0X1(CpuState *cpu);
+RecompReturn Uni_ApplyTileEffect_M0X1(CpuState *cpu);
+RecompReturn Uni_ApplyTileEffect_8341_M0X0(CpuState *cpu);
+RecompReturn Uni_ApplyTileEffect_83A4_M0X0(CpuState *cpu);
+RecompReturn Uni_ApplyTileEffect_84D2_M0X0(CpuState *cpu);
+RecompReturn Uni_TileNop_84DB_M0X0(CpuState *cpu);
+RecompReturn Uni_TileNop_8515_M0X0(CpuState *cpu);
+RecompReturn Uni_TileNop_857D_M0X0(CpuState *cpu);
+RecompReturn Uni_EndFrameUpdateLong_M0X1(CpuState *cpu);
+RecompReturn Uni_EndFrameUpdate_M0X1(CpuState *cpu);
+RecompReturn Uni_TileBoost_M0X0(CpuState *cpu);
+RecompReturn Uni_TileBoost_8785_M0X0(CpuState *cpu);
+RecompReturn Uni_EmptyStub_87EB_M0X0(CpuState *cpu);
+RecompReturn Uni_EmptyStub_8970_M0X0(CpuState *cpu);
+RecompReturn Uni_EmptyStub_89B9_M0X0(CpuState *cpu);
+RecompReturn Uni_EmptyStub_8A17_M0X0(CpuState *cpu);
+RecompReturn Uni_FetchMapCells_M1X0(CpuState *cpu);
+RecompReturn Uni_ProbeCollision_M1X0(CpuState *cpu);
+RecompReturn Uni_UpdatePhysicsBothLong_M0X0(CpuState *cpu);
+RecompReturn Uni_UpdatePhysicsBothLong_M0X1(CpuState *cpu);
+RecompReturn Uni_UpdatePhysicsBoth_M0X0(CpuState *cpu);
+RecompReturn Uni_UpdatePhysicsBoth_M0X1(CpuState *cpu);
+RecompReturn Uni_ResolveTrackContact_M1X0(CpuState *cpu);
+RecompReturn Rider_CalcMotionAngle_M0X1(CpuState *cpu);
+RecompReturn Rider_BuildRotationTablesLong_FastRom_M1X0(CpuState *cpu);
+RecompReturn Rider_BuildRotationTables_FastRom_M1X0(CpuState *cpu);
+RecompReturn Rider_LoadPoseOffsets_M0X0(CpuState *cpu);
+RecompReturn Cam_UpdateFollowSpeed_M0X0(CpuState *cpu);
+RecompReturn Cam_StepLeadTowardVelocity_M0X0(CpuState *cpu);
+RecompReturn Track_SetupSizeParamsLong_FastRom_M0X0(CpuState *cpu);
+RecompReturn Track_SetupSizeParams_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_UpdateCameraLong_M0X0(CpuState *cpu);
+RecompReturn Race_UpdateCamera_M0X0(CpuState *cpu);
+RecompReturn Bg_StreamTilemapEdges_M0X0(CpuState *cpu);
+RecompReturn Bg_QueueEdgeStripDma_M0X0(CpuState *cpu);
+RecompReturn Dma_QueueVramEntry_M0X0(CpuState *cpu);
+RecompReturn Bg_FetchMapStrip_M0X0(CpuState *cpu);
+RecompReturn Bg_FetchMapRow_M0X0(CpuState *cpu);
+RecompReturn Bg_FetchMapColumn_M0X0(CpuState *cpu);
+RecompReturn Bg_SplitCoordToMetatile_M0X0(CpuState *cpu);
+RecompReturn Bg_UpdateScroll1P_M0X0(CpuState *cpu);
+RecompReturn Bg_UpdateScroll2P_M0X0(CpuState *cpu);
+RecompReturn Bg_BuildStripTiles_M0X0(CpuState *cpu);
+RecompReturn Bg_CopyMetatileTiles_M0X0(CpuState *cpu);
+RecompReturn Math_Multiply16Long_M0X0(CpuState *cpu);
+RecompReturn Math_Multiply16_FastRom_M0X0(CpuState *cpu);
+RecompReturn Math_MulS16x8Long_M0X1(CpuState *cpu);
+RecompReturn Math_MulS16x8_M0X1(CpuState *cpu);
+RecompReturn Math_MulFixed8p8Long_FastRom_M0X0(CpuState *cpu);
+RecompReturn Math_MulFixed8p8_FastRom_M0X0(CpuState *cpu);
+RecompReturn Ppu_ForceBlank_M1X0(CpuState *cpu);
+RecompReturn Math_DistanceLong_M0X0(CpuState *cpu);
+RecompReturn Math_Distance_M0X0(CpuState *cpu);
+RecompReturn Decomp_ToRam_M0X0(CpuState *cpu);
+RecompReturn Decomp_DecodeSymbol_FastRom_M0X0(CpuState *cpu);
+RecompReturn Decomp_ReadBits_FastRom_M0X0(CpuState *cpu);
+RecompReturn Decomp_BuildHuffTable_FastRom_M0X0(CpuState *cpu);
+RecompReturn Decomp_FetchWord_FastRom_M0X0(CpuState *cpu);
+RecompReturn Decomp_ToVram_M0X0(CpuState *cpu);
+RecompReturn Decomp_DecodeSymbolVram_M0X0(CpuState *cpu);
+RecompReturn Decomp_ReadBitsVram_M0X0(CpuState *cpu);
+RecompReturn Decomp_BuildHuffTableVram_M0X0(CpuState *cpu);
+RecompReturn Decomp_FetchWordVram_M0X0(CpuState *cpu);
+RecompReturn Hud_UpdateStuntNamesLong_M0X0(CpuState *cpu);
+RecompReturn Hud_UpdateStuntNames_M0X0(CpuState *cpu);
+RecompReturn Hud_ShowCachedStuntName_M0X0(CpuState *cpu);
+RecompReturn Hud_LoadStuntName_M0X0(CpuState *cpu);
+RecompReturn Stunt_DequeueAndScore_M1X1(CpuState *cpu);
+RecompReturn Race_PushEventFrontLong_M0X0(CpuState *cpu);
+RecompReturn Race_PushEventFront_M0X0(CpuState *cpu);
+RecompReturn Race_QueueEventLong_M0X0(CpuState *cpu);
+RecompReturn Race_QueueEvent_M0X0(CpuState *cpu);
+RecompReturn Race_ResetEventQueuesLong_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_ResetEventQueues_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_GetEventQueueCount_M0X0(CpuState *cpu);
+RecompReturn Race_UpdateClockLong_M0X0(CpuState *cpu);
+RecompReturn Race_UpdateClock_M0X0(CpuState *cpu);
+RecompReturn Race_TickClockUp_M0X0(CpuState *cpu);
+RecompReturn Race_TickClockDown_M0X0(CpuState *cpu);
+RecompReturn Race_UpdateLapSplits_M1X0(CpuState *cpu);
+RecompReturn Hud_InitRaceLong_FastRom_M1X1(CpuState *cpu);
+RecompReturn Hud_InitRace_FastRom_M1X1(CpuState *cpu);
+RecompReturn Hud_UpdateSplitScreenNmi_M1X0(CpuState *cpu);
+RecompReturn Hud_UpdateFullScreenNmi_FastRom_M1X0(CpuState *cpu);
+RecompReturn Snd_QueueCommand_M0X0(CpuState *cpu);
+RecompReturn Snd_QueueCommand_M0X1(CpuState *cpu);
+RecompReturn Snd_SendQueuedCommand_M0X0(CpuState *cpu);
+RecompReturn Snd_SendQueuedCommand_M1X0(CpuState *cpu);
+RecompReturn Snd_UploadBlockLong_M0X0(CpuState *cpu);
+RecompReturn Snd_UploadBlock_M0X0(CpuState *cpu);
+RecompReturn Snd_SeekDataBlock_FastRom_M1X0(CpuState *cpu);
+RecompReturn Snd_IncDataPtr_FastRom_M0X0(CpuState *cpu);
+RecompReturn Snd_IncDataPtr_FastRom_M1X0(CpuState *cpu);
+RecompReturn Snd_StopStreamLong_M0X0(CpuState *cpu);
+RecompReturn Snd_StopStream_M0X0(CpuState *cpu);
+RecompReturn Snd_UploadBlockListLong_M0X0(CpuState *cpu);
+RecompReturn Snd_UploadBlockList_M0X0(CpuState *cpu);
+RecompReturn Snd_SendByteWait_FastRom_M1X0(CpuState *cpu);
+RecompReturn Uni_UpdateLookFramesLong_M0X1(CpuState *cpu);
+RecompReturn Uni_UpdateLookFrames_M0X1(CpuState *cpu);
+RecompReturn Uni_StepLookFrame_M0X0(CpuState *cpu);
+RecompReturn Uni_StartIdleLookSeq_M0X0(CpuState *cpu);
+RecompReturn Uni_StepAnimScriptLong_M0X0(CpuState *cpu);
+RecompReturn Uni_StepAnimScript_M0X0(CpuState *cpu);
+RecompReturn Race_UpdateUnisLong_M0X0(CpuState *cpu);
+RecompReturn Race_UpdateUnis_M0X0(CpuState *cpu);
+RecompReturn Uni_UpdateLoop_M1X0(CpuState *cpu);
+RecompReturn Uni_UpdateTrackProgress_M0X0(CpuState *cpu);
+RecompReturn Uni_UpdateTrackProgress_M1X0(CpuState *cpu);
+RecompReturn Race_UpdateHintArrowsLong_M0X0(CpuState *cpu);
+RecompReturn Race_UpdateHintArrowsLong_M1X1(CpuState *cpu);
+RecompReturn Race_UpdateHintArrows_M0X0(CpuState *cpu);
+RecompReturn Race_UpdateHintArrows_M1X1(CpuState *cpu);
+RecompReturn Uni_UpdateDriveAndCharge_M0X0(CpuState *cpu);
+RecompReturn Uni_TrackStunts_M0X0(CpuState *cpu);
+RecompReturn Uni_TrackStunts_M1X0(CpuState *cpu);
+RecompReturn Uni_UpdateSkidTimer_M0X0(CpuState *cpu);
+RecompReturn Uni_SetPushDir_M0X0(CpuState *cpu);
+RecompReturn Uni_UpdateGroundLean_M0X0(CpuState *cpu);
+RecompReturn Uni_UpdateGroundLean_M0X1(CpuState *cpu);
+RecompReturn Uni_UpdateTurnFlag_M0X1(CpuState *cpu);
+RecompReturn Uni_UpdateFastFlag_M0X0(CpuState *cpu);
+RecompReturn Uni_UpdateFastFlag_M1X0(CpuState *cpu);
+RecompReturn Uni_UpdateTurnAround_M0X0(CpuState *cpu);
+RecompReturn Uni_HandleTwistInput_M0X1(CpuState *cpu);
+RecompReturn Uni_DecayVelocityX_M0X1(CpuState *cpu);
+RecompReturn Uni_ApplyVelocity_M0X0(CpuState *cpu);
+RecompReturn Uni_ClampSpeed_M0X0(CpuState *cpu);
+RecompReturn Uni_HandleJump_M0X1(CpuState *cpu);
+RecompReturn Uni_ApplyGravity_M0X0(CpuState *cpu);
+RecompReturn Uni_AccelerateRight_M0X1(CpuState *cpu);
+RecompReturn Uni_AccelerateLeft_M0X1(CpuState *cpu);
+RecompReturn Input_MapJoypadsLong_M0X0(CpuState *cpu);
+RecompReturn Input_MapJoypadsLong_M1X0(CpuState *cpu);
+RecompReturn Input_MapJoypadsLong_M1X1(CpuState *cpu);
+RecompReturn Input_MapJoypads_M0X0(CpuState *cpu);
+RecompReturn Input_MapJoypads_M1X0(CpuState *cpu);
+RecompReturn Input_MapJoypads_M1X1(CpuState *cpu);
+RecompReturn Race_UpdateUniScreenPosLong_M0X0(CpuState *cpu);
+RecompReturn Race_UpdateUniScreenPos_M0X0(CpuState *cpu);
+RecompReturn Res_LoadToCgram_M0X0(CpuState *cpu);
+RecompReturn Res_LoadToCgram_M1X0(CpuState *cpu);
+RecompReturn Res_LoadToVramAddHigh_M1X0(CpuState *cpu);
+RecompReturn Res_LoadToVram_M0X0(CpuState *cpu);
+RecompReturn Res_LoadToVram_M1X0(CpuState *cpu);
+RecompReturn Res_ReadByte_FastRom_M1X0(CpuState *cpu);
+RecompReturn Res_Lookup_Long_FastRom_M1X0(CpuState *cpu);
+RecompReturn Res_Lookup_FastRom_M1X0(CpuState *cpu);
+RecompReturn Res_LoadToWram_M1X0(CpuState *cpu);
+RecompReturn Nmi_FlushTileDmaList_Long_M1X0(CpuState *cpu);
+RecompReturn Nmi_FlushTileDmaList_M1X0(CpuState *cpu);
+RecompReturn Nmi_FlushVramDmaSlots_Long_M1X0(CpuState *cpu);
+RecompReturn Nmi_FlushVramDmaSlots_M1X0(CpuState *cpu);
+RecompReturn Nmi_UploadReservedSprites_Long_M1X0(CpuState *cpu);
+RecompReturn Nmi_UploadReservedSprites_M1X0(CpuState *cpu);
+RecompReturn Nmi_DmaOamBuffer_Long_M0X0(CpuState *cpu);
+RecompReturn Nmi_DmaOamBuffer_Long_M1X0(CpuState *cpu);
+RecompReturn Nmi_DmaOamBuffer_M0X0(CpuState *cpu);
+RecompReturn Nmi_DmaOamBuffer_M1X0(CpuState *cpu);
+RecompReturn Pal_CycleRaceColors_Long_M1X0(CpuState *cpu);
+RecompReturn Pal_CycleRaceColors_M1X0(CpuState *cpu);
+RecompReturn WaitForNMI_Long_M0X0(CpuState *cpu);
+RecompReturn WaitForNMI_Long_M1X0(CpuState *cpu);
+RecompReturn WaitForNMI_Long_M1X1(CpuState *cpu);
+RecompReturn WaitForNMI_M0X0(CpuState *cpu);
+RecompReturn WaitForNMI_M1X0(CpuState *cpu);
+RecompReturn WaitForNMI_M1X1(CpuState *cpu);
 RecompReturn WaitForNMI_spin_M1X0(CpuState *cpu);
-RecompReturn bank_82_D4F6_M1X0(CpuState *cpu);
-RecompReturn bank_82_D4FA_M1X0(CpuState *cpu);
-RecompReturn bank_82_D50E_M1X0(CpuState *cpu);
-RecompReturn bank_82_D512_M1X0(CpuState *cpu);
-RecompReturn bank_82_D526_M0X1(CpuState *cpu);
-RecompReturn bank_82_D526_M1X1(CpuState *cpu);
-RecompReturn bank_82_D56A_M0X1(CpuState *cpu);
-RecompReturn bank_82_D56A_M1X1(CpuState *cpu);
-RecompReturn bank_82_D731_M1X0(CpuState *cpu);
-RecompReturn bank_82_D735_M1X0(CpuState *cpu);
-RecompReturn bank_82_D76D_M0X1(CpuState *cpu);
-RecompReturn bank_82_D76D_M1X0(CpuState *cpu);
-RecompReturn bank_82_D80C_M1X0(CpuState *cpu);
-RecompReturn bank_82_D810_M0X0(CpuState *cpu);
-RecompReturn bank_82_D810_M1X0(CpuState *cpu);
-RecompReturn bank_82_D814_M0X0(CpuState *cpu);
-RecompReturn bank_82_D814_M1X0(CpuState *cpu);
-RecompReturn bank_82_D849_M1X0(CpuState *cpu);
-RecompReturn bank_82_DC1F_M0X0(CpuState *cpu);
-RecompReturn bank_82_DC56_M1X0(CpuState *cpu);
-RecompReturn bank_82_DC68_M1X0(CpuState *cpu);
-RecompReturn bank_82_DE13_M1X0(CpuState *cpu);
-RecompReturn bank_82_DE17_M1X0(CpuState *cpu);
-RecompReturn bank_82_DF40_M0X1(CpuState *cpu);
-RecompReturn bank_82_DFD8_M0X0(CpuState *cpu);
-RecompReturn bank_82_E02E_M1X0(CpuState *cpu);
-RecompReturn bank_82_E0A9_M1X1(CpuState *cpu);
-RecompReturn bank_82_E13D_M0X0(CpuState *cpu);
-RecompReturn bank_82_E165_M1X0(CpuState *cpu);
-RecompReturn bank_83_8484_M1X0(CpuState *cpu);
-RecompReturn bank_83_84D9_M1X0(CpuState *cpu);
-RecompReturn bank_83_84DD_M1X0(CpuState *cpu);
-RecompReturn bank_83_8779_M0X0(CpuState *cpu);
-RecompReturn bank_83_879A_M1X0(CpuState *cpu);
-RecompReturn bank_83_88D3_M0X0(CpuState *cpu);
-RecompReturn bank_83_88E1_M0X0(CpuState *cpu);
-RecompReturn bank_83_890F_M0X0(CpuState *cpu);
-RecompReturn bank_83_893C_M1X0(CpuState *cpu);
-RecompReturn bank_83_8940_M1X0(CpuState *cpu);
-RecompReturn bank_83_8957_M1X0(CpuState *cpu);
-RecompReturn bank_83_895B_M1X0(CpuState *cpu);
-RecompReturn bank_83_89BA_M1X0(CpuState *cpu);
-RecompReturn bank_83_8AF7_M1X0(CpuState *cpu);
-RecompReturn bank_83_8B23_M1X0(CpuState *cpu);
-RecompReturn bank_83_8B51_M1X0(CpuState *cpu);
-RecompReturn bank_83_8B9D_M1X0(CpuState *cpu);
-RecompReturn bank_83_8BC9_M0X0(CpuState *cpu);
-RecompReturn bank_83_8BC9_M1X0(CpuState *cpu);
-RecompReturn bank_83_8BCD_M0X0(CpuState *cpu);
-RecompReturn bank_83_8BCD_M1X0(CpuState *cpu);
-RecompReturn bank_83_8BE7_M0X0(CpuState *cpu);
-RecompReturn bank_83_8C7B_M0X0(CpuState *cpu);
-RecompReturn bank_83_8C7F_M0X0(CpuState *cpu);
-RecompReturn bank_83_8D5D_M0X0(CpuState *cpu);
-RecompReturn bank_83_8D61_M0X0(CpuState *cpu);
-RecompReturn bank_83_8D8F_M0X0(CpuState *cpu);
-RecompReturn bank_83_8D8F_M1X0(CpuState *cpu);
-RecompReturn bank_83_8E3A_M0X0(CpuState *cpu);
-RecompReturn bank_83_8E3A_M1X0(CpuState *cpu);
-RecompReturn bank_83_8EFE_M1X0(CpuState *cpu);
-RecompReturn bank_83_904A_M1X0(CpuState *cpu);
-RecompReturn bank_83_90F4_M0X0(CpuState *cpu);
-RecompReturn bank_83_90F4_M1X0(CpuState *cpu);
-RecompReturn bank_83_90F8_M0X0(CpuState *cpu);
-RecompReturn bank_83_90F8_M1X0(CpuState *cpu);
-RecompReturn bank_83_91D0_M0X0(CpuState *cpu);
-RecompReturn bank_83_91F7_M0X0(CpuState *cpu);
-RecompReturn bank_83_91F7_M1X0(CpuState *cpu);
-RecompReturn bank_83_91FB_M0X0(CpuState *cpu);
-RecompReturn bank_83_91FB_M1X0(CpuState *cpu);
-RecompReturn bank_83_9229_M1X0(CpuState *cpu);
-RecompReturn bank_83_92B0_M0X0(CpuState *cpu);
-RecompReturn bank_83_92CC_M0X0(CpuState *cpu);
-RecompReturn bank_83_92CC_M1X0(CpuState *cpu);
-RecompReturn bank_83_92E3_M0X0(CpuState *cpu);
-RecompReturn bank_83_92E3_M1X0(CpuState *cpu);
-RecompReturn bank_83_92FA_M0X0(CpuState *cpu);
-RecompReturn bank_83_92FA_M1X0(CpuState *cpu);
-RecompReturn bank_83_9311_M0X0(CpuState *cpu);
-RecompReturn bank_83_9311_M1X0(CpuState *cpu);
-RecompReturn bank_83_9328_M0X0(CpuState *cpu);
-RecompReturn bank_83_9328_M1X0(CpuState *cpu);
-RecompReturn bank_83_9340_M0X0(CpuState *cpu);
-RecompReturn bank_83_9340_M1X0(CpuState *cpu);
-RecompReturn bank_83_936E_M0X0(CpuState *cpu);
-RecompReturn bank_83_936E_M1X0(CpuState *cpu);
-RecompReturn bank_83_93D8_M0X0(CpuState *cpu);
-RecompReturn bank_83_93D8_M1X0(CpuState *cpu);
-RecompReturn bank_83_93F5_M0X0(CpuState *cpu);
-RecompReturn bank_83_93F5_M1X0(CpuState *cpu);
-RecompReturn bank_83_9486_M0X0(CpuState *cpu);
-RecompReturn bank_83_9486_M1X0(CpuState *cpu);
-RecompReturn bank_83_94A5_M0X0(CpuState *cpu);
-RecompReturn bank_83_94A5_M1X0(CpuState *cpu);
-RecompReturn bank_83_94D0_M1X0(CpuState *cpu);
-RecompReturn bank_83_94FF_M1X0(CpuState *cpu);
-RecompReturn bank_83_952E_M0X0(CpuState *cpu);
-RecompReturn bank_83_952E_M1X0(CpuState *cpu);
-RecompReturn bank_83_9543_M0X0(CpuState *cpu);
-RecompReturn bank_83_9543_M1X0(CpuState *cpu);
-RecompReturn bank_83_9558_M1X0(CpuState *cpu);
-RecompReturn bank_83_956D_M0X0(CpuState *cpu);
-RecompReturn bank_83_958C_M1X0(CpuState *cpu);
-RecompReturn bank_83_95CA_M1X0(CpuState *cpu);
-RecompReturn bank_83_961E_M1X0(CpuState *cpu);
-RecompReturn bank_83_963C_M1X0(CpuState *cpu);
-RecompReturn bank_83_967C_M0X0(CpuState *cpu);
-RecompReturn bank_83_969F_M0X0(CpuState *cpu);
-RecompReturn bank_83_969F_M1X0(CpuState *cpu);
-RecompReturn bank_83_96BE_M0X0(CpuState *cpu);
-RecompReturn bank_83_9700_M1X0(CpuState *cpu);
-RecompReturn bank_83_9734_M0X0(CpuState *cpu);
-RecompReturn bank_83_97BD_M1X0(CpuState *cpu);
-RecompReturn bank_83_986A_M0X0(CpuState *cpu);
-RecompReturn bank_83_987D_M1X0(CpuState *cpu);
-RecompReturn bank_83_9894_M1X0(CpuState *cpu);
-RecompReturn bank_83_98AB_M1X0(CpuState *cpu);
-RecompReturn bank_83_9972_M1X0(CpuState *cpu);
-RecompReturn bank_83_9983_M0X0(CpuState *cpu);
-RecompReturn bank_83_9983_M1X0(CpuState *cpu);
-RecompReturn bank_83_9987_M0X0(CpuState *cpu);
-RecompReturn bank_83_9987_M1X0(CpuState *cpu);
-RecompReturn bank_83_99C2_M1X0(CpuState *cpu);
-RecompReturn bank_83_99F6_M1X0(CpuState *cpu);
-RecompReturn bank_83_99FA_M1X0(CpuState *cpu);
-RecompReturn bank_83_9A1E_M0X0(CpuState *cpu);
-RecompReturn bank_83_9A1E_M1X0(CpuState *cpu);
-RecompReturn bank_83_9B45_M1X0(CpuState *cpu);
-RecompReturn bank_83_9B49_M1X0(CpuState *cpu);
-RecompReturn bank_83_9C47_M0X0(CpuState *cpu);
-RecompReturn bank_83_9D80_M0X0(CpuState *cpu);
-RecompReturn bank_83_9E2C_M0X0(CpuState *cpu);
-RecompReturn bank_83_9E3A_M0X0(CpuState *cpu);
-RecompReturn bank_83_9E3A_M1X0(CpuState *cpu);
-RecompReturn bank_83_9E47_M0X0(CpuState *cpu);
-RecompReturn bank_83_9E7F_M0X0(CpuState *cpu);
-RecompReturn bank_83_9EB4_M0X0(CpuState *cpu);
-RecompReturn bank_83_9EB4_M1X0(CpuState *cpu);
-RecompReturn bank_83_9EC8_M1X0(CpuState *cpu);
-RecompReturn bank_83_9ED5_M0X0(CpuState *cpu);
-RecompReturn bank_83_9ED5_M1X0(CpuState *cpu);
-RecompReturn bank_83_9EEB_M0X0(CpuState *cpu);
-RecompReturn bank_83_9F14_M0X0(CpuState *cpu);
-RecompReturn bank_83_9F14_M1X0(CpuState *cpu);
-RecompReturn bank_83_9F49_M1X0(CpuState *cpu);
-RecompReturn bank_83_9F5E_M1X0(CpuState *cpu);
-RecompReturn bank_83_9F81_M1X0(CpuState *cpu);
-RecompReturn bank_83_A286_M0X0(CpuState *cpu);
-RecompReturn bank_83_A3EB_M0X0(CpuState *cpu);
-RecompReturn bank_83_A400_M0X0(CpuState *cpu);
-RecompReturn bank_83_A493_M1X0(CpuState *cpu);
-RecompReturn bank_83_A4D2_M1X0(CpuState *cpu);
-RecompReturn bank_83_A4E9_M1X0(CpuState *cpu);
-RecompReturn bank_83_A507_M1X0(CpuState *cpu);
-RecompReturn bank_83_A614_M1X0(CpuState *cpu);
-RecompReturn bank_83_A721_M1X0(CpuState *cpu);
-RecompReturn bank_83_A923_M0X0(CpuState *cpu);
-RecompReturn bank_83_A923_M1X0(CpuState *cpu);
-RecompReturn bank_83_AEF6_M1X0(CpuState *cpu);
-RecompReturn bank_83_B79C_M0X0(CpuState *cpu);
-RecompReturn bank_83_C49C_M0X0(CpuState *cpu);
-RecompReturn bank_83_C8E0_M1X0(CpuState *cpu);
-RecompReturn bank_83_CA07_M0X0(CpuState *cpu);
-RecompReturn bank_83_CA4C_M0X0(CpuState *cpu);
-RecompReturn bank_83_CA91_M0X0(CpuState *cpu);
-RecompReturn bank_83_CAD6_M0X0(CpuState *cpu);
-RecompReturn bank_83_CB1B_M0X0(CpuState *cpu);
-RecompReturn bank_83_CB60_M0X0(CpuState *cpu);
-RecompReturn bank_83_CDA0_M0X0(CpuState *cpu);
-RecompReturn bank_83_CDA0_M0X1(CpuState *cpu);
-RecompReturn bank_83_CDA0_M1X0(CpuState *cpu);
-RecompReturn bank_83_CDA0_M1X1(CpuState *cpu);
-RecompReturn bank_83_CEAD_M1X0(CpuState *cpu);
-RecompReturn bank_83_CEAD_M1X1(CpuState *cpu);
-RecompReturn bank_83_D0E8_M0X0(CpuState *cpu);
-RecompReturn bank_83_D1AE_M0X0(CpuState *cpu);
-RecompReturn bank_83_D259_M1X0(CpuState *cpu);
-RecompReturn bank_83_D26E_M0X0(CpuState *cpu);
-RecompReturn bank_83_D2AD_M0X0(CpuState *cpu);
-RecompReturn bank_83_D32D_M0X0(CpuState *cpu);
-RecompReturn bank_83_D3E0_M0X0(CpuState *cpu);
-RecompReturn bank_83_D458_M0X0(CpuState *cpu);
-RecompReturn bank_83_D492_M0X0(CpuState *cpu);
-RecompReturn bank_83_D4CC_M0X0(CpuState *cpu);
-RecompReturn bank_83_D514_M0X0(CpuState *cpu);
-RecompReturn bank_83_D565_M0X0(CpuState *cpu);
-RecompReturn bank_83_E066_M0X0(CpuState *cpu);
-RecompReturn bank_83_E066_M1X0(CpuState *cpu);
-RecompReturn bank_83_E066_M1X1(CpuState *cpu);
-RecompReturn bank_83_E238_M1X0(CpuState *cpu);
-RecompReturn bank_83_E238_M1X1(CpuState *cpu);
-RecompReturn bank_83_E580_M0X0(CpuState *cpu);
-RecompReturn bank_83_E7A5_M0X0(CpuState *cpu);
-RecompReturn bank_83_EC46_M0X0(CpuState *cpu);
-RecompReturn bank_83_ED2F_M0X0(CpuState *cpu);
-RecompReturn bank_83_ED2F_M0X1(CpuState *cpu);
-RecompReturn bank_83_ED33_M0X0(CpuState *cpu);
-RecompReturn bank_83_ED33_M0X1(CpuState *cpu);
-RecompReturn bank_83_EF10_M0X0(CpuState *cpu);
-RecompReturn bank_83_EF10_M0X1(CpuState *cpu);
-RecompReturn bank_83_F0B7_M0X0(CpuState *cpu);
-RecompReturn bank_83_F0BB_M0X0(CpuState *cpu);
-RecompReturn bank_83_F296_M0X1(CpuState *cpu);
-RecompReturn bank_83_F2BB_M0X1(CpuState *cpu);
-RecompReturn bank_83_F602_M1X1(CpuState *cpu);
-RecompReturn bank_83_F940_M0X1(CpuState *cpu);
-RecompReturn bank_83_FAC0_M0X0(CpuState *cpu);
-RecompReturn bank_83_FAC4_M0X0(CpuState *cpu);
+RecompReturn Vram_Clear_Long_M1X0(CpuState *cpu);
+RecompReturn Vram_Clear_M1X0(CpuState *cpu);
+RecompReturn Cgram_Clear_Long_M1X0(CpuState *cpu);
+RecompReturn Cgram_Clear_M1X0(CpuState *cpu);
+RecompReturn Race_InitHdma_Long_M0X1(CpuState *cpu);
+RecompReturn Race_InitHdma_Long_M1X1(CpuState *cpu);
+RecompReturn Race_InitHdma_M0X1(CpuState *cpu);
+RecompReturn Race_InitHdma_M1X1(CpuState *cpu);
+RecompReturn Race_InitVideo_Long_M1X0(CpuState *cpu);
+RecompReturn Race_InitVideo_M1X0(CpuState *cpu);
+RecompReturn Oam_InitBuffer_FastRom_M0X1(CpuState *cpu);
+RecompReturn Oam_InitBuffer_FastRom_M1X0(CpuState *cpu);
+RecompReturn Race_InitState_Long_FastRom_M1X0(CpuState *cpu);
+RecompReturn Race_ClearRam_Long_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_ClearRam_Long_FastRom_M1X0(CpuState *cpu);
+RecompReturn Race_ClearRam_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_ClearRam_FastRom_M1X0(CpuState *cpu);
+RecompReturn Race_InitState_FastRom_M1X0(CpuState *cpu);
+RecompReturn Race_SetPpuRegs_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_LoadTrackGraphics_Long_FastRom_M1X0(CpuState *cpu);
+RecompReturn Race_LoadTrackGraphics_FastRom_M1X0(CpuState *cpu);
+RecompReturn League_RunPodium_Long_M1X0(CpuState *cpu);
+RecompReturn League_RunPodium_M1X0(CpuState *cpu);
+RecompReturn League_AnimatePodium_M0X1(CpuState *cpu);
+RecompReturn League_InitPodiumSprites_M0X0(CpuState *cpu);
+RecompReturn League_LoadPodiumGraphics_M1X0(CpuState *cpu);
+RecompReturn League_StartPodiumMusic_M1X1(CpuState *cpu);
+RecompReturn League_SetPodiumPpuRegs_M0X0(CpuState *cpu);
+RecompReturn Race_LoadTrackData_FastRom_M1X0(CpuState *cpu);
+RecompReturn Gfx_CopyRomTileToWram_FastRom_M1X0(CpuState *cpu);
+RecompReturn Name_CheckProfanityLong_M1X0(CpuState *cpu);
+RecompReturn Name_CheckProfanity_M1X0(CpuState *cpu);
+RecompReturn Str_MatchPrefix_M0X0(CpuState *cpu);
+RecompReturn League_ApplyRaceResult_FastRom_M1X0(CpuState *cpu);
+RecompReturn League_CheckRaceWin_FastRom_M0X0(CpuState *cpu);
+RecompReturn League_CheckStuntWin_FastRom_M0X0(CpuState *cpu);
+RecompReturn Award_Tier0Cutscene_FastRom_M0X0(CpuState *cpu);
+RecompReturn League_RoundTrackToTierLong_FastRom_M1X0(CpuState *cpu);
+RecompReturn League_RoundTrackToTier_FastRom_M1X0(CpuState *cpu);
+RecompReturn League_ClearTierResultsLong_M1X0(CpuState *cpu);
+RecompReturn League_ClearTierResults_FastRom_M1X0(CpuState *cpu);
+RecompReturn Ppu_ResetBgScroll_FastRom_M1X0(CpuState *cpu);
+RecompReturn Sram_CheckSizeMirror_FastRom_M1X0(CpuState *cpu);
+RecompReturn Sram_ClearSessionData_FastRom_M1X0(CpuState *cpu);
+RecompReturn Vram_ClearRegions_M1X0(CpuState *cpu);
+RecompReturn Vram_FillBlank2K_M1X0(CpuState *cpu);
+RecompReturn Str_CopyLong_FastRom_M0X0(CpuState *cpu);
+RecompReturn Str_CopyLong_FastRom_M1X0(CpuState *cpu);
+RecompReturn Str_Copy_FastRom_M0X0(CpuState *cpu);
+RecompReturn Str_Copy_FastRom_M1X0(CpuState *cpu);
+RecompReturn Text_FormatDecimal5_FastRom_M0X0(CpuState *cpu);
+RecompReturn Text_FormatRaceTimeLong_FastRom_M0X0(CpuState *cpu);
+RecompReturn Text_FormatRaceTime_FastRom_M0X0(CpuState *cpu);
+RecompReturn Math_Divide32By16Long_FastRom_M0X0(CpuState *cpu);
+RecompReturn Math_Divide32By16_FastRom_M0X0(CpuState *cpu);
+RecompReturn Menu_DrawTierBadge_FastRom_M0X0(CpuState *cpu);
+RecompReturn Menu_DrawTierBadge_FastRom_M1X0(CpuState *cpu);
+RecompReturn Anim_DecodeFrame_FastRom_M0X0(CpuState *cpu);
+RecompReturn Anim_DecodeFrame_FastRom_M1X0(CpuState *cpu);
+RecompReturn Records_CalcPlayerBars_M1X0(CpuState *cpu);
+RecompReturn Records_CalcTrackTimeRange_FastRom_M1X0(CpuState *cpu);
+RecompReturn Sram_UpdateChecksumsLong_FastRom_M0X0(CpuState *cpu);
+RecompReturn Sram_UpdateChecksumsLong_FastRom_M1X0(CpuState *cpu);
+RecompReturn Sram_UpdateChecksums_FastRom_M0X0(CpuState *cpu);
+RecompReturn Sram_UpdateChecksums_FastRom_M1X0(CpuState *cpu);
+RecompReturn Math_CalcBarLength_M0X0(CpuState *cpu);
+RecompReturn Pal_LoadPlayerColorLong_FastRom_M0X0(CpuState *cpu);
+RecompReturn Pal_LoadPlayerColorLong_FastRom_M1X0(CpuState *cpu);
+RecompReturn Pal_LoadPlayerColor_FastRom_M0X0(CpuState *cpu);
+RecompReturn Pal_LoadPlayerColor_FastRom_M1X0(CpuState *cpu);
+RecompReturn Vs_RecordResult_M1X0(CpuState *cpu);
+RecompReturn Vs_AddWin_M0X0(CpuState *cpu);
+RecompReturn Sram_InitNamesBlock_M0X0(CpuState *cpu);
+RecompReturn Sram_InitNamesBlock_M1X0(CpuState *cpu);
+RecompReturn Sram_ClearPlayerStats_M0X0(CpuState *cpu);
+RecompReturn Sram_ClearPlayerStats_M1X0(CpuState *cpu);
+RecompReturn Sram_InitBlock16E_M0X0(CpuState *cpu);
+RecompReturn Sram_InitBlock16E_M1X0(CpuState *cpu);
+RecompReturn Sram_ClearLeagueResults_M0X0(CpuState *cpu);
+RecompReturn Sram_ClearLeagueResults_M1X0(CpuState *cpu);
+RecompReturn Sram_InitLeagueMembers_M0X0(CpuState *cpu);
+RecompReturn Sram_InitLeagueMembers_M1X0(CpuState *cpu);
+RecompReturn Sram_ClearPlayerBests_FastRom_M0X0(CpuState *cpu);
+RecompReturn Sram_ClearPlayerBests_FastRom_M1X0(CpuState *cpu);
+RecompReturn Sram_InitTrackRecords_M0X0(CpuState *cpu);
+RecompReturn Sram_InitTrackRecords_M1X0(CpuState *cpu);
+RecompReturn Sram_ClearRecordHolders_M0X0(CpuState *cpu);
+RecompReturn Sram_ClearRecordHolders_M1X0(CpuState *cpu);
+RecompReturn Sram_InitLeagues_FastRom_M0X0(CpuState *cpu);
+RecompReturn Sram_InitLeagues_FastRom_M1X0(CpuState *cpu);
+RecompReturn Sram_InitOptions_FastRom_M0X0(CpuState *cpu);
+RecompReturn Sram_InitOptions_FastRom_M1X0(CpuState *cpu);
+RecompReturn Sram_WriteSignature_FastRom_M0X0(CpuState *cpu);
+RecompReturn Sram_WriteSignature_FastRom_M1X0(CpuState *cpu);
+RecompReturn Gfx_UploadTiles7A00A_FastRom_M1X0(CpuState *cpu);
+RecompReturn Gfx_UploadTiles7A00B_FastRom_M1X0(CpuState *cpu);
+RecompReturn Input_DisablePad1_FastRom_M0X0(CpuState *cpu);
+RecompReturn Input_DisablePad1_FastRom_M1X0(CpuState *cpu);
+RecompReturn Input_DisablePad2_FastRom_M0X0(CpuState *cpu);
+RecompReturn Input_DisablePad2_FastRom_M1X0(CpuState *cpu);
+RecompReturn Input_EnableBothPads_M1X0(CpuState *cpu);
+RecompReturn Math_MultiplyBy100_M0X0(CpuState *cpu);
+RecompReturn Vs_SortPlayersForRace_FastRom_M1X0(CpuState *cpu);
+RecompReturn Vs_UnswapPlayers_FastRom_M1X0(CpuState *cpu);
+RecompReturn Oam_SetXHighBit_FastRom_M1X0(CpuState *cpu);
+RecompReturn League_BuildMemberList_M1X0(CpuState *cpu);
+RecompReturn League_LoadRoster_M0X0(CpuState *cpu);
+RecompReturn League_IndexRoster_FastRom_M0X0(CpuState *cpu);
+RecompReturn League_IndexRoster_FastRom_M1X0(CpuState *cpu);
+RecompReturn League_CopyMenuOrder_FastRom_M0X0(CpuState *cpu);
+RecompReturn League_UpdateBestScore_M1X0(CpuState *cpu);
+RecompReturn League_UpdateBestFor_M0X0(CpuState *cpu);
+RecompReturn Records_CalcMaxima_FastRom_M1X0(CpuState *cpu);
+RecompReturn Records_PercentOfRaces_FastRom_M0X0(CpuState *cpu);
+RecompReturn Sram_RestoreDirectPage_FastRom_M1X0(CpuState *cpu);
+RecompReturn Sram_SaveDirectPage_M1X0(CpuState *cpu);
+RecompReturn League_SetupNextRace_M1X0(CpuState *cpu);
+RecompReturn Race_FadeUnlessKind1_FastRom_M1X0(CpuState *cpu);
+RecompReturn Track_SetCurrentLong_M0X0(CpuState *cpu);
+RecompReturn Track_SetCurrentLong_M1X0(CpuState *cpu);
+RecompReturn Track_SetCurrent_M0X0(CpuState *cpu);
+RecompReturn Track_SetCurrent_M1X0(CpuState *cpu);
+RecompReturn Race_CheckTie_M1X0(CpuState *cpu);
+RecompReturn Oam_InitCursorSpritesLong_M1X0(CpuState *cpu);
+RecompReturn Oam_InitCursorSprites_M1X0(CpuState *cpu);
+RecompReturn Menu_AnimateSprites_FastRom_M0X0(CpuState *cpu);
+RecompReturn Menu_AnimateSprites_FastRom_M1X0(CpuState *cpu);
+RecompReturn Player_DeleteLong_M1X0(CpuState *cpu);
+RecompReturn Player_Delete_M1X0(CpuState *cpu);
+RecompReturn League_RemovePlayer_M0X0(CpuState *cpu);
+RecompReturn Math_Percent_M0X0(CpuState *cpu);
+RecompReturn Index_TrackX2_FastRom_M0X0(CpuState *cpu);
+RecompReturn Index_Track_FastRom_M0X0(CpuState *cpu);
+RecompReturn Index_Track_FastRom_M1X0(CpuState *cpu);
+RecompReturn Index_PlayerBest_FastRom_M0X0(CpuState *cpu);
+RecompReturn League_IndexRankSlot_M0X0(CpuState *cpu);
+RecompReturn Index_TierMedal_FastRom_M0X0(CpuState *cpu);
+RecompReturn Index_TierMedal_FastRom_M1X0(CpuState *cpu);
+RecompReturn Index_Track6_M1X0(CpuState *cpu);
+RecompReturn Index_TierX5_FastRom_M0X0(CpuState *cpu);
+RecompReturn Index_TierX5_FastRom_M1X0(CpuState *cpu);
+RecompReturn League_GetStuntTarget_M0X0(CpuState *cpu);
+RecompReturn Player_GetTier_FastRom_M0X0(CpuState *cpu);
+RecompReturn Player_GetTier_FastRom_M1X0(CpuState *cpu);
+RecompReturn Player_SetTier_M1X0(CpuState *cpu);
+RecompReturn Player_GetPromoted_FastRom_M1X0(CpuState *cpu);
+RecompReturn Player_SetPromoted_M1X0(CpuState *cpu);
+RecompReturn Snd_Play01_M0X0(CpuState *cpu);
+RecompReturn Snd_Play12_M0X0(CpuState *cpu);
+RecompReturn Snd_Play13_M0X0(CpuState *cpu);
+RecompReturn Snd_Play1A_M1X0(CpuState *cpu);
+RecompReturn Ppu_FadeIn_M1X0(CpuState *cpu);
+RecompReturn Ppu_FadeOut_M1X0(CpuState *cpu);
+RecompReturn Cutscene_InitScreenA_M1X0(CpuState *cpu);
+RecompReturn Cutscene_InitScreenB_M1X0(CpuState *cpu);
+RecompReturn Menu_InitScreenFull_M1X0(CpuState *cpu);
+RecompReturn Ppu_WaitVBlank_FastRom_M0X0(CpuState *cpu);
+RecompReturn Ppu_WaitVBlank_FastRom_M1X0(CpuState *cpu);
+RecompReturn Award_ShowMedal_M1X0(CpuState *cpu);
+RecompReturn Cutscene_DrawLoopFrameA_M0X0(CpuState *cpu);
+RecompReturn Cutscene0_Main_M0X0(CpuState *cpu);
+RecompReturn Race_Main_FastRom_M1X0(CpuState *cpu);
+RecompReturn Race_Main_CA07_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_Main_CA4C_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_Main_CA91_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_Main_CAD6_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_Main_CB1B_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_Main_CB60_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_UpdateColorHints_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_UpdateColorHints_FastRom_M0X1(CpuState *cpu);
+RecompReturn Race_UpdateColorHints_FastRom_M1X0(CpuState *cpu);
+RecompReturn Race_UpdateColorHints_FastRom_M1X1(CpuState *cpu);
+RecompReturn Race_UpdateSpecialFx_FastRom_M1X0(CpuState *cpu);
+RecompReturn Race_UpdateSpecialFx_FastRom_M1X1(CpuState *cpu);
+RecompReturn Race_CheckFxTrigger_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_UpdateBackdropFade_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_ClearFxTables_FastRom_M1X0(CpuState *cpu);
+RecompReturn Race_Fx7Tick_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_Fx3Tick_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_Fx6Tick_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_Fx4Tick_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_Fx0Tick_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_Fx2Tick_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_Fx5Tick_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_Fx1Tick_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_BuildFlipHdmaTable_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_UpdateCpuRival_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_UpdateCpuRival_FastRom_M1X0(CpuState *cpu);
+RecompReturn Race_UpdateCpuRival_FastRom_M1X1(CpuState *cpu);
+RecompReturn Demo_UpdateCpuInput_FastRom_M1X0(CpuState *cpu);
+RecompReturn Demo_UpdateCpuInput_FastRom_M1X1(CpuState *cpu);
+RecompReturn Race_UpdateCountdown_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_UpdateFinish_FastRom_M0X0(CpuState *cpu);
+RecompReturn Race_UpdateRiderOverlayFrames_FastRom_M0X0(CpuState *cpu);
+RecompReturn Rider_UpdateAnimFrameL_M0X0(CpuState *cpu);
+RecompReturn Rider_UpdateAnimFrameL_M0X1(CpuState *cpu);
+RecompReturn Rider_UpdateAnimFrame_M0X0(CpuState *cpu);
+RecompReturn Rider_UpdateAnimFrame_M0X1(CpuState *cpu);
+RecompReturn Rider_UpdateBodyLean_M0X0(CpuState *cpu);
+RecompReturn Rider_UpdateBodyLean_M0X1(CpuState *cpu);
+RecompReturn Gfx_QueueRiderTileDmaL_M0X0(CpuState *cpu);
+RecompReturn Gfx_QueueRiderTileDma_FastRom_M0X0(CpuState *cpu);
+RecompReturn Gfx_GetRiderFramePtr_FastRom_M0X1(CpuState *cpu);
+RecompReturn Gfx_DecodeRiderFrameHeaders_FastRom_M0X1(CpuState *cpu);
+RecompReturn Race_UpdatePauseMenu_FastRom_M1X1(CpuState *cpu);
+RecompReturn Ppu_ResetAllRegisters_FastRom_M0X1(CpuState *cpu);
+RecompReturn Sram_ClearAllL_M0X0(CpuState *cpu);
+RecompReturn Sram_ClearAll_M0X0(CpuState *cpu);
 
 const DispatchEntry g_dispatch_table[] = {
-    { 0x000199u, { bank_00_0199_M0X0, bank_00_0199_M0X1, bank_00_0199_M1X0, bank_00_0199_M1X1 }, 0 },  /* bank_00_0199 */
+    { 0x000199u, { Ram_MvnTrampoline_M0X0, Ram_MvnTrampoline_M0X1, Ram_MvnTrampoline_M1X0, Ram_MvnTrampoline_M1X1 }, 0 },  /* Ram_MvnTrampoline */
     { 0x008584u, { I_IRQ_M0X0, I_IRQ_M0X1, I_IRQ_M1X0, I_IRQ_M1X1 }, 0 },  /* I_IRQ */
     { 0x008588u, { I_NMI_M0X0, I_NMI_M0X1, I_NMI_M1X0, I_NMI_M1X1 }, 0 },  /* I_NMI */
     { 0x008610u, { NULL, NULL, NmiHandler_Race_M1X0, NULL }, 0 },  /* NmiHandler_Race */
@@ -1599,13 +1601,13 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x00889Du, { NULL, NULL, MainLoop_889D_M1X0, NULL }, 0 },  /* MainLoop_889D */
     { 0x0088AEu, { NULL, NULL, MainLoop_88AE_M1X0, NULL }, 0 },  /* MainLoop_88AE */
     { 0x0088DDu, { NULL, NULL, Race_CheckExited_M1X0, NULL }, 0 },  /* Race_CheckExited */
-    { 0x008917u, { NULL, NULL, bank_00_8917_M1X0, NULL }, 0 },  /* bank_00_8917 */
-    { 0x008C41u, { NULL, NULL, bank_00_8C41_M1X0, NULL }, 0 },  /* bank_00_8C41 */
+    { 0x008917u, { NULL, NULL, League_ShowPointAwards_M1X0, NULL }, 0 },  /* League_ShowPointAwards */
+    { 0x008C41u, { NULL, NULL, Text_GetCharClass_M1X0, NULL }, 0 },  /* Text_GetCharClass */
     { 0x008C4Eu, { NULL, NULL, Sram_ValidateOrInit_M1X0, NULL }, 0 },  /* Sram_ValidateOrInit */
     { 0x008C78u, { Sram_ValidateOrInit_8C78_M0X0, NULL, NULL, NULL }, 0 },  /* Sram_ValidateOrInit_8C78 */
     { 0x008CADu, { Sram_ValidateOrInit_8CAD_M0X0, NULL, NULL, NULL }, 0 },  /* Sram_ValidateOrInit_8CAD */
     { 0x008CC6u, { Sram_ValidateOrInit_8CC6_M0X0, NULL, NULL, NULL }, 0 },  /* Sram_ValidateOrInit_8CC6 */
-    { 0x008CCBu, { bank_00_8CCB_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_8CCB */
+    { 0x008CCBu, { Records_InsertHighScore_M0X0, NULL, NULL, NULL }, 0 },  /* Records_InsertHighScore */
     { 0x008D6Eu, { Results_DrawLapRace_M0X0, NULL, NULL, NULL }, 0 },  /* Results_DrawLapRace */
     { 0x008FFDu, { NULL, NULL, Results_DrawLapRace_8FFD_M1X0, NULL }, 0 },  /* Results_DrawLapRace_8FFD */
     { 0x00910Au, { Results_DrawLapRace_910A_M0X0, NULL, NULL, NULL }, 0 },  /* Results_DrawLapRace_910A */
@@ -1614,9 +1616,9 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x0092FFu, { NULL, NULL, Boot_ClearWRAM_92FF_M1X0, NULL }, 0 },  /* Boot_ClearWRAM_92FF */
     { 0x009300u, { NULL, NULL, Boot_ClearWRAM_9300_M1X0, NULL }, 0 },  /* Boot_ClearWRAM_9300 */
     { 0x009302u, { NULL, NULL, Boot_ClearWRAM_9302_M1X0, NULL }, 0 },  /* Boot_ClearWRAM_9302 */
-    { 0x009318u, { NULL, NULL, bank_00_9318_M1X0, NULL }, 0 },  /* bank_00_9318 */
+    { 0x009318u, { NULL, NULL, Oam_Upload_M1X0, NULL }, 0 },  /* Oam_Upload */
     { 0x00933Cu, { NULL, NULL, Text_CopyWord_M1X0, NULL }, 0 },  /* Text_CopyWord */
-    { 0x00935Eu, { bank_00_935E_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_935E */
+    { 0x00935Eu, { Text_CopyStripUnderscores_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CopyStripUnderscores */
     { 0x00937Bu, { NULL, NULL, Vram_UploadTilemapAtA8_M1X0, NULL }, 0 },  /* Vram_UploadTilemapAtA8 */
     { 0x0093A5u, { NULL, NULL, Vram_UploadTilemap_M1X0, NULL }, 0 },  /* Vram_UploadTilemap */
     { 0x0093CBu, { NULL, NULL, Vram_UploadTilemapBottom_M1X0, NULL }, 0 },  /* Vram_UploadTilemapBottom */
@@ -1642,33 +1644,33 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x00960Bu, { NULL, NULL, Menu_DrawTrackNameGrid_960B_M1X0, NULL }, 0 },  /* Menu_DrawTrackNameGrid_960B */
     { 0x009625u, { NULL, NULL, Menu_SetupTrackGridSprites_M1X0, NULL }, 0 },  /* Menu_SetupTrackGridSprites */
     { 0x009701u, { Math_Div16by8_M0X0, NULL, Math_Div16by8_M1X0, NULL }, 0 },  /* Math_Div16by8 */
-    { 0x00971Du, { bank_00_971D_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_971D */
+    { 0x00971Du, { Math_Div16_M0X0, NULL, NULL, NULL }, 0 },  /* Math_Div16 */
     { 0x00974Bu, { NULL, NULL, Tour_DrawSelectIcons_M1X0, NULL }, 0 },  /* Tour_DrawSelectIcons */
     { 0x009764u, { NULL, NULL, Tour_DrawSelectIcons_9764_M1X0, NULL }, 0 },  /* Tour_DrawSelectIcons_9764 */
     { 0x009782u, { NULL, NULL, Tour_DrawSelectIcons_9782_M1X0, NULL }, 0 },  /* Tour_DrawSelectIcons_9782 */
     { 0x0097D9u, { NULL, NULL, Tour_DrawSelectIcons_97D9_M1X0, NULL }, 0 },  /* Tour_DrawSelectIcons_97D9 */
     { 0x009805u, { NULL, NULL, Results_ResetMarkerSpritesOnce_M1X0, NULL }, 0 },  /* Results_ResetMarkerSpritesOnce */
-    { 0x009869u, { NULL, NULL, bank_00_9869_M1X0, NULL }, 0 },  /* bank_00_9869 */
+    { 0x009869u, { NULL, NULL, Video_FadeIn_M1X0, NULL }, 0 },  /* Video_FadeIn */
     { 0x009871u, { NULL, NULL, Video_FadeIn_9871_M1X0, NULL }, 0 },  /* Video_FadeIn_9871 */
-    { 0x009885u, { NULL, NULL, bank_00_9885_M1X0, NULL }, 0 },  /* bank_00_9885 */
+    { 0x009885u, { NULL, NULL, Video_FadeOut_M1X0, NULL }, 0 },  /* Video_FadeOut */
     { 0x00988Fu, { NULL, NULL, Video_FadeOut_988F_M1X0, NULL }, 0 },  /* Video_FadeOut_988F */
-    { 0x0098A4u, { NULL, NULL, bank_00_98A4_M1X0, NULL }, 0 },  /* bank_00_98A4 */
+    { 0x0098A4u, { NULL, NULL, Menu_HideCursor_M1X0, NULL }, 0 },  /* Menu_HideCursor */
     { 0x0098B3u, { NULL, NULL, Results_AnimateLapMarkers_M1X0, NULL }, 0 },  /* Results_AnimateLapMarkers */
     { 0x009971u, { NULL, NULL, Results_AnimateLapMarkers_9971_M1X0, NULL }, 0 },  /* Results_AnimateLapMarkers_9971 */
     { 0x009980u, { Math_ScaleClampVelocity_M0X0, NULL, NULL, NULL }, 0 },  /* Math_ScaleClampVelocity */
-    { 0x00999Fu, { NULL, NULL, bank_00_999F_M1X0, NULL }, 0 },  /* bank_00_999F */
+    { 0x00999Fu, { NULL, NULL, Race_StartKeepParam_M1X0, NULL }, 0 },  /* Race_StartKeepParam */
     { 0x0099A4u, { NULL, NULL, Race_Start_M1X0, NULL }, 0 },  /* Race_Start */
     { 0x009A2Fu, { NULL, NULL, NULL, Race_Start_9A2F_M1X1 }, 0 },  /* Race_Start_9A2F */
     { 0x009A3Au, { NULL, NULL, Race_Start_9A3A_M1X0, NULL }, 0 },  /* Race_Start_9A3A */
     { 0x009A3Du, { NULL, NULL, Race_Start_9A3D_M1X0, NULL }, 0 },  /* Race_Start_9A3D */
     { 0x009A49u, { NULL, NULL, Race_Start_9A49_M1X0, NULL }, 0 },  /* Race_Start_9A49 */
     { 0x009A4Cu, { NULL, NULL, Race_Start_9A4C_M1X0, NULL }, 0 },  /* Race_Start_9A4C */
-    { 0x009AB2u, { bank_00_9AB2_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_9AB2 */
+    { 0x009AB2u, { League_CalcPointBars_M0X0, NULL, NULL, NULL }, 0 },  /* League_CalcPointBars */
     { 0x009B2Fu, { Sram_CopyPlayerName_M0X0, NULL, Sram_CopyPlayerName_M1X0, NULL }, 0 },  /* Sram_CopyPlayerName */
     { 0x009B55u, { Text_CopyTrackName_M0X0, NULL, Text_CopyTrackName_M1X0, NULL }, 0 },  /* Text_CopyTrackName */
-    { 0x009B79u, { bank_00_9B79_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_9B79 */
+    { 0x009B79u, { Sram_CopyLeagueName_M0X0, NULL, NULL, NULL }, 0 },  /* Sram_CopyLeagueName */
     { 0x009BA0u, { NULL, NULL, Text_CopyTourName_M1X0, NULL }, 0 },  /* Text_CopyTourName */
-    { 0x009BC4u, { bank_00_9BC4_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_9BC4 */
+    { 0x009BC4u, { DefineLeague_Main_M0X0, NULL, NULL, NULL }, 0 },  /* DefineLeague_Main */
     { 0x009BD1u, { NULL, NULL, DefineLeague_Main_9BD1_M1X0, NULL }, 0 },  /* DefineLeague_Main_9BD1 */
     { 0x009BE2u, { NULL, NULL, DefineLeague_Main_9BE2_M1X0, NULL }, 0 },  /* DefineLeague_Main_9BE2 */
     { 0x009BE8u, { NULL, NULL, DefineLeague_Main_9BE8_M1X0, NULL }, 0 },  /* DefineLeague_Main_9BE8 */
@@ -1678,7 +1680,7 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x009C2Eu, { NULL, NULL, DefineLeague_Main_9C2E_M1X0, NULL }, 0 },  /* DefineLeague_Main_9C2E */
     { 0x009C3Au, { NULL, NULL, DefineLeague_Main_9C3A_M1X0, NULL }, 0 },  /* DefineLeague_Main_9C3A */
     { 0x009C3Du, { NULL, NULL, DefineLeague_Main_9C3D_M1X0, NULL }, 0 },  /* DefineLeague_Main_9C3D */
-    { 0x009C8Eu, { NULL, NULL, bank_00_9C8E_M1X0, NULL }, 0 },  /* bank_00_9C8E */
+    { 0x009C8Eu, { NULL, NULL, DefineLeague_PickTracks_M1X0, NULL }, 0 },  /* DefineLeague_PickTracks */
     { 0x009CA2u, { NULL, NULL, DefineLeague_PickTracks_9CA2_M1X0, NULL }, 0 },  /* DefineLeague_PickTracks_9CA2 */
     { 0x009CACu, { NULL, NULL, DefineLeague_PickTracks_9CAC_M1X0, NULL }, 0 },  /* DefineLeague_PickTracks_9CAC */
     { 0x009CB2u, { NULL, NULL, DefineLeague_PickTracks_9CB2_M1X0, NULL }, 0 },  /* DefineLeague_PickTracks_9CB2 */
@@ -1688,14 +1690,14 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x009D96u, { NULL, NULL, DefineLeague_PickTracks_9D96_M1X0, NULL }, 0 },  /* DefineLeague_PickTracks_9D96 */
     { 0x009D9Fu, { NULL, NULL, DefineLeague_PickTracks_9D9F_M1X0, NULL }, 0 },  /* DefineLeague_PickTracks_9D9F */
     { 0x009DD2u, { NULL, NULL, DefineLeague_PickTracks_9DD2_M1X0, NULL }, 0 },  /* DefineLeague_PickTracks_9DD2 */
-    { 0x009E3Cu, { NULL, NULL, bank_00_9E3C_M1X0, NULL }, 0 },  /* bank_00_9E3C */
+    { 0x009E3Cu, { NULL, NULL, DefineLeague_CalcItemPos_M1X0, NULL }, 0 },  /* DefineLeague_CalcItemPos */
     { 0x009E62u, { NULL, NULL, DefineLeague_CalcItemPos_9E62_M1X0, NULL }, 0 },  /* DefineLeague_CalcItemPos_9E62 */
     { 0x009E68u, { NULL, NULL, DefineLeague_CalcItemPos_9E68_M1X0, NULL }, 0 },  /* DefineLeague_CalcItemPos_9E68 */
     { 0x009E6Bu, { NULL, NULL, DefineLeague_CalcItemPos_9E6B_M1X0, NULL }, 0 },  /* DefineLeague_CalcItemPos_9E6B */
     { 0x009E71u, { NULL, NULL, DefineLeague_CalcItemPos_9E71_M1X0, NULL }, 0 },  /* DefineLeague_CalcItemPos_9E71 */
     { 0x009E7Fu, { NULL, NULL, DefineLeague_CalcItemPos_9E7F_M1X0, NULL }, 0 },  /* DefineLeague_CalcItemPos_9E7F */
     { 0x009EBAu, { NULL, NULL, DefineLeague_CalcItemPos_9EBA_M1X0, NULL }, 0 },  /* DefineLeague_CalcItemPos_9EBA */
-    { 0x009EF7u, { NULL, NULL, bank_00_9EF7_M1X0, NULL }, 0 },  /* bank_00_9EF7 */
+    { 0x009EF7u, { NULL, NULL, DefineLeague_SelectSlot_M1X0, NULL }, 0 },  /* DefineLeague_SelectSlot */
     { 0x009F09u, { NULL, NULL, DefineLeague_SelectSlot_9F09_M1X0, NULL }, 0 },  /* DefineLeague_SelectSlot_9F09 */
     { 0x009F0Cu, { NULL, NULL, DefineLeague_SelectSlot_9F0C_M1X0, NULL }, 0 },  /* DefineLeague_SelectSlot_9F0C */
     { 0x009F6Bu, { NULL, NULL, Fx_HdmaWipeReveal_M1X0, NULL }, 0 },  /* Fx_HdmaWipeReveal */
@@ -1707,7 +1709,7 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x00A01Au, { NULL, NULL, Fx_HdmaWipeReveal_A01A_M1X0, NULL }, 0 },  /* Fx_HdmaWipeReveal_A01A */
     { 0x00A022u, { NULL, NULL, Fx_HdmaWipeCover_M1X0, NULL }, 0 },  /* Fx_HdmaWipeCover */
     { 0x00A03Du, { NULL, NULL, Fx_HdmaWipeCover_A03D_M1X0, NULL }, 0 },  /* Fx_HdmaWipeCover_A03D */
-    { 0x00A08Bu, { NULL, NULL, bank_00_A08B_M1X0, NULL }, 0 },  /* bank_00_A08B */
+    { 0x00A08Bu, { NULL, NULL, Menu_InitVideo_M1X0, NULL }, 0 },  /* Menu_InitVideo */
     { 0x00A0A7u, { NULL, NULL, Menu_InitVideo_A0A7_M1X0, NULL }, 0 },  /* Menu_InitVideo_A0A7 */
     { 0x00A0DAu, { NULL, NULL, Menu_InitVideo_A0DA_M1X0, NULL }, 0 },  /* Menu_InitVideo_A0DA */
     { 0x00A0F1u, { Menu_InitVideo_A0F1_M0X0, NULL, NULL, NULL }, 0 },  /* Menu_InitVideo_A0F1 */
@@ -1715,11 +1717,11 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x00A103u, { Menu_InitVideo_A103_M0X0, NULL, NULL, NULL }, 0 },  /* Menu_InitVideo_A103 */
     { 0x00A10Au, { Menu_InitVideo_A10A_M0X0, NULL, NULL, NULL }, 0 },  /* Menu_InitVideo_A10A */
     { 0x00A118u, { Menu_InitVideo_A118_M0X0, NULL, NULL, NULL }, 0 },  /* Menu_InitVideo_A118 */
-    { 0x00A15Bu, { NULL, NULL, bank_00_A15B_M1X0, NULL }, 0 },  /* bank_00_A15B */
-    { 0x00A1E3u, { NULL, NULL, bank_00_A1E3_M1X0, NULL }, 0 },  /* bank_00_A1E3 */
+    { 0x00A15Bu, { NULL, NULL, Sys_InitVars_M1X0, NULL }, 0 },  /* Sys_InitVars */
+    { 0x00A1E3u, { NULL, NULL, Text_NameEntry_M1X0, NULL }, 0 },  /* Text_NameEntry */
     { 0x00A203u, { NULL, NULL, Text_NameEntry_A203_M1X0, NULL }, 0 },  /* Text_NameEntry_A203 */
     { 0x00A225u, { NULL, NULL, Text_NameEntry_A225_M1X0, NULL }, 0 },  /* Text_NameEntry_A225 */
-    { 0x00A538u, { bank_00_A538_M0X0, NULL, bank_00_A538_M1X0, NULL }, 0 },  /* bank_00_A538 */
+    { 0x00A538u, { League_DrawTable_M0X0, NULL, League_DrawTable_M1X0, NULL }, 0 },  /* League_DrawTable */
     { 0x00A54Cu, { NULL, NULL, League_DrawTable_A54C_M1X0, NULL }, 0 },  /* League_DrawTable_A54C */
     { 0x00A62Bu, { NULL, NULL, League_DrawTable_A62B_M1X0, NULL }, 0 },  /* League_DrawTable_A62B */
     { 0x00A65Du, { NULL, NULL, League_DrawTable_A65D_M1X0, NULL }, 0 },  /* League_DrawTable_A65D */
@@ -1731,11 +1733,11 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x00A849u, { NULL, NULL, Pal_LoadMenuSpritePalettes_M1X0, NULL }, 0 },  /* Pal_LoadMenuSpritePalettes */
     { 0x00A84Cu, { NULL, NULL, Pal_LoadMenuSpritePalettes_A84C_M1X0, NULL }, 0 },  /* Pal_LoadMenuSpritePalettes_A84C */
     { 0x00A85Bu, { NULL, NULL, Pal_LoadMenuSpritePalettes_A85B_M1X0, NULL }, 0 },  /* Pal_LoadMenuSpritePalettes_A85B */
-    { 0x00A868u, { NULL, NULL, bank_00_A868_M1X0, NULL }, 0 },  /* bank_00_A868 */
+    { 0x00A868u, { NULL, NULL, Gfx_UploadOverlayTilesB_M1X0, NULL }, 0 },  /* Gfx_UploadOverlayTilesB */
     { 0x00A88Cu, { NULL, NULL, Gfx_UploadOverlayTilesB_A88C_M1X0, NULL }, 0 },  /* Gfx_UploadOverlayTilesB_A88C */
-    { 0x00A899u, { NULL, NULL, bank_00_A899_M1X0, NULL }, 0 },  /* bank_00_A899 */
+    { 0x00A899u, { NULL, NULL, Pal_UploadBgPalettes_M1X0, NULL }, 0 },  /* Pal_UploadBgPalettes */
     { 0x00A89Cu, { NULL, NULL, Pal_UploadBgPalettes_A89C_M1X0, NULL }, 0 },  /* Pal_UploadBgPalettes_A89C */
-    { 0x00AA0Cu, { bank_00_AA0C_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_AA0C */
+    { 0x00AA0Cu, { Options_WipeRam_M0X0, NULL, NULL, NULL }, 0 },  /* Options_WipeRam */
     { 0x00ABB9u, { NULL, NULL, MainMenu_Run_M1X0, NULL }, 0 },  /* MainMenu_Run */
     { 0x00ABD7u, { NULL, NULL, MainMenu_Run_ABD7_M1X0, NULL }, 0 },  /* MainMenu_Run_ABD7 */
     { 0x00ACC6u, { NULL, NULL, MainMenu_Draw_M1X0, NULL }, 0 },  /* MainMenu_Draw */
@@ -1749,13 +1751,13 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x00AD38u, { League_SortStandings_M0X0, NULL, League_SortStandings_M1X0, NULL }, 0 },  /* League_SortStandings */
     { 0x00AD44u, { NULL, NULL, League_SortStandings_AD44_M1X0, NULL }, 0 },  /* League_SortStandings_AD44 */
     { 0x00AD81u, { League_SortStandings_AD81_M0X0, NULL, NULL, NULL }, 0 },  /* League_SortStandings_AD81 */
-    { 0x00ADD4u, { NULL, NULL, bank_00_ADD4_M1X0, NULL }, 0 },  /* bank_00_ADD4 */
-    { 0x00AE81u, { bank_00_AE81_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_AE81 */
-    { 0x00AEBFu, { bank_00_AEBF_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_AEBF */
-    { 0x00AED7u, { bank_00_AED7_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_AED7 */
-    { 0x00AEE4u, { bank_00_AEE4_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_AEE4 */
-    { 0x00AF0Cu, { bank_00_AF0C_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_AF0C */
-    { 0x00AF45u, { NULL, NULL, bank_00_AF45_M1X0, NULL }, 0 },  /* bank_00_AF45 */
+    { 0x00ADD4u, { NULL, NULL, PostRace_Menu_M1X0, NULL }, 0 },  /* PostRace_Menu */
+    { 0x00AE81u, { PostRace_NextTrack_M0X0, NULL, NULL, NULL }, 0 },  /* PostRace_NextTrack */
+    { 0x00AEBFu, { PostRace_SameTrack_M0X0, NULL, NULL, NULL }, 0 },  /* PostRace_SameTrack */
+    { 0x00AED7u, { PostRace_Quit_M0X0, NULL, NULL, NULL }, 0 },  /* PostRace_Quit */
+    { 0x00AEE4u, { PostRace_SelectTrack_M0X0, NULL, NULL, NULL }, 0 },  /* PostRace_SelectTrack */
+    { 0x00AF0Cu, { PostRace_SelectTour_M0X0, NULL, NULL, NULL }, 0 },  /* PostRace_SelectTour */
+    { 0x00AF45u, { NULL, NULL, League_AdvanceAfterRace_M1X0, NULL }, 0 },  /* League_AdvanceAfterRace */
     { 0x00B07Du, { NULL, NULL, Boot_ShowLogo_M1X0, NULL }, 0 },  /* Boot_ShowLogo */
     { 0x00B082u, { NULL, NULL, Boot_ShowLogo_B082_M1X0, NULL }, 0 },  /* Boot_ShowLogo_B082 */
     { 0x00B085u, { NULL, NULL, Boot_ShowLogo_B085_M1X0, NULL }, 0 },  /* Boot_ShowLogo_B085 */
@@ -1764,17 +1766,17 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x00B0C0u, { NULL, NULL, Boot_ShowLogo_B0C0_M1X0, NULL }, 0 },  /* Boot_ShowLogo_B0C0 */
     { 0x00B0C6u, { NULL, NULL, Boot_ShowLogo_B0C6_M1X0, NULL }, 0 },  /* Boot_ShowLogo_B0C6 */
     { 0x00B0CCu, { NULL, NULL, Boot_ShowLogo_B0CC_M1X0, NULL }, 0 },  /* Boot_ShowLogo_B0CC */
-    { 0x00B0EBu, { NULL, NULL, bank_00_B0EB_M1X0, NULL }, 0 },  /* bank_00_B0EB */
+    { 0x00B0EBu, { NULL, NULL, Snd_PlayError_M1X0, NULL }, 0 },  /* Snd_PlayError */
     { 0x00B100u, { NULL, NULL, Snd_PlayToggle_M1X0, NULL }, 0 },  /* Snd_PlayToggle */
     { 0x00B115u, { NULL, NULL, Snd_PlayConfirm_M1X0, NULL }, 0 },  /* Snd_PlayConfirm */
-    { 0x00B12Au, { NULL, NULL, bank_00_B12A_M1X0, NULL }, 0 },  /* bank_00_B12A */
-    { 0x00B13Fu, { NULL, NULL, bank_00_B13F_M1X0, NULL }, 0 },  /* bank_00_B13F */
-    { 0x00B169u, { NULL, NULL, bank_00_B169_M1X0, NULL }, 0 },  /* bank_00_B169 */
+    { 0x00B12Au, { NULL, NULL, Snd_PlayWipe_M1X0, NULL }, 0 },  /* Snd_PlayWipe */
+    { 0x00B13Fu, { NULL, NULL, Snd_PlayWipeAlt_M1X0, NULL }, 0 },  /* Snd_PlayWipeAlt */
+    { 0x00B169u, { NULL, NULL, Snd_PlayCursor_M1X0, NULL }, 0 },  /* Snd_PlayCursor */
     { 0x00B17Eu, { NULL, NULL, PreRace_Show_M1X0, NULL }, 0 },  /* PreRace_Show */
     { 0x00B188u, { NULL, NULL, PreRace_Show_B188_M1X0, NULL }, 0 },  /* PreRace_Show_B188 */
     { 0x00B21Bu, { PreRace_TitleRace_M0X0, NULL, NULL, NULL }, 0 },  /* PreRace_TitleRace */
     { 0x00B229u, { PreRace_TitleLaps_M0X0, NULL, NULL, NULL }, 0 },  /* PreRace_TitleLaps */
-    { 0x00B260u, { bank_00_B260_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_B260 */
+    { 0x00B260u, { PreRace_TitleStunt_M0X0, NULL, NULL, NULL }, 0 },  /* PreRace_TitleStunt */
     { 0x00B3C2u, { NULL, NULL, PreRace_TitleStunt_B3C2_M1X0, NULL }, 0 },  /* PreRace_TitleStunt_B3C2 */
     { 0x00B3C8u, { NULL, NULL, PreRace_TitleStunt_B3C8_M1X0, NULL }, 0 },  /* PreRace_TitleStunt_B3C8 */
     { 0x00B3D3u, { NULL, NULL, PreRace_TitleStunt_B3D3_M1X0, NULL }, 0 },  /* PreRace_TitleStunt_B3D3 */
@@ -1791,24 +1793,24 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x00B62Au, { NULL, NULL, Options_Main_B62A_M1X0, NULL }, 0 },  /* Options_Main_B62A */
     { 0x00B644u, { NULL, NULL, Options_Main_B644_M1X0, NULL }, 0 },  /* Options_Main_B644 */
     { 0x00B6BEu, { Input_IsAnyButtonHeld_M0X0, NULL, Input_IsAnyButtonHeld_M1X0, NULL }, 0 },  /* Input_IsAnyButtonHeld */
-    { 0x00B6E3u, { NULL, NULL, bank_00_B6E3_M1X0, NULL }, 0 },  /* bank_00_B6E3 */
-    { 0x00B708u, { NULL, NULL, bank_00_B708_M1X0, NULL }, 0 },  /* bank_00_B708 */
+    { 0x00B6E3u, { NULL, NULL, Input_IsNonUDLButtonHeld_M1X0, NULL }, 0 },  /* Input_IsNonUDLButtonHeld */
+    { 0x00B708u, { NULL, NULL, Input_IsConfirmHeld_M1X0, NULL }, 0 },  /* Input_IsConfirmHeld */
     { 0x00B735u, { Input_IsCancelHeld_M0X0, NULL, Input_IsCancelHeld_M1X0, NULL }, 0 },  /* Input_IsCancelHeld */
-    { 0x00B75Au, { NULL, NULL, bank_00_B75A_M1X0, NULL }, 0 },  /* bank_00_B75A */
-    { 0x00B77Fu, { NULL, NULL, bank_00_B77F_M1X0, NULL }, 0 },  /* bank_00_B77F */
+    { 0x00B75Au, { NULL, NULL, Input_IsUpHeld_M1X0, NULL }, 0 },  /* Input_IsUpHeld */
+    { 0x00B77Fu, { NULL, NULL, Input_IsDownOrSelectHeld_M1X0, NULL }, 0 },  /* Input_IsDownOrSelectHeld */
     { 0x00B7A4u, { NULL, NULL, Input_IsLeftHeld_M1X0, NULL }, 0 },  /* Input_IsLeftHeld */
     { 0x00B7C9u, { NULL, NULL, Input_IsRightHeld_M1X0, NULL }, 0 },  /* Input_IsRightHeld */
     { 0x00B7EEu, { NULL, NULL, Input_IsUpHeld2_M1X0, NULL }, 0 },  /* Input_IsUpHeld2 */
     { 0x00B81Bu, { NULL, NULL, Input_IsDownHeld_M1X0, NULL }, 0 },  /* Input_IsDownHeld */
-    { 0x00B8AFu, { NULL, NULL, bank_00_B8AF_M1X0, NULL }, 0 },  /* bank_00_B8AF */
+    { 0x00B8AFu, { NULL, NULL, Input_IsStartOrAHeld_M1X0, NULL }, 0 },  /* Input_IsStartOrAHeld */
     { 0x00B8DCu, { NULL, NULL, Input_IsSelectHeld_M1X0, NULL }, 0 },  /* Input_IsSelectHeld */
-    { 0x00B901u, { NULL, NULL, bank_00_B901_M1X0, NULL }, 0 },  /* bank_00_B901 */
+    { 0x00B901u, { NULL, NULL, Input_IsStartHeld_M1X0, NULL }, 0 },  /* Input_IsStartHeld */
     { 0x00B927u, { NULL, NULL, Menu_RunVerticalFromTop_M1X0, NULL }, 0 },  /* Menu_RunVerticalFromTop */
-    { 0x00B929u, { NULL, NULL, bank_00_B929_M1X0, NULL }, 0 },  /* bank_00_B929 */
-    { 0x00B965u, { NULL, NULL, bank_00_B965_M1X0, NULL }, 0 },  /* bank_00_B965 */
+    { 0x00B929u, { NULL, NULL, Menu_RunVertical_M1X0, NULL }, 0 },  /* Menu_RunVertical */
+    { 0x00B965u, { NULL, NULL, Menu_VerticalLoop_M1X0, NULL }, 0 },  /* Menu_VerticalLoop */
     { 0x00B96Bu, { NULL, NULL, Menu_VerticalLoop_B96B_M1X0, NULL }, 0 },  /* Menu_VerticalLoop_B96B */
     { 0x00BA55u, { NULL, NULL, Menu_RunVerticalAlt_M1X0, NULL }, 0 },  /* Menu_RunVerticalAlt */
-    { 0x00BA8Fu, { NULL, NULL, bank_00_BA8F_M1X0, NULL }, 0 },  /* bank_00_BA8F */
+    { 0x00BA8Fu, { NULL, NULL, Menu_VerticalLoopAlt_M1X0, NULL }, 0 },  /* Menu_VerticalLoopAlt */
     { 0x00BA97u, { NULL, NULL, Menu_VerticalLoopAlt_BA97_M1X0, NULL }, 0 },  /* Menu_VerticalLoopAlt_BA97 */
     { 0x00BB87u, { Mode_OnePlayerRace_M0X0, NULL, NULL, NULL }, 0 },  /* Mode_OnePlayerRace */
     { 0x00BB9Au, { NULL, NULL, Mode_OnePlayerRace_BB9A_M1X0, NULL }, 0 },  /* Mode_OnePlayerRace_BB9A */
@@ -1839,7 +1841,7 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x00BD68u, { NULL, NULL, Mode_TwoPlayerRace_BD68_M1X0, NULL }, 0 },  /* Mode_TwoPlayerRace_BD68 */
     { 0x00BD6Bu, { NULL, NULL, Mode_TwoPlayerRace_BD6B_M1X0, NULL }, 0 },  /* Mode_TwoPlayerRace_BD6B */
     { 0x00BD73u, { NULL, NULL, Mode_TwoPlayerRace_BD73_M1X0, NULL }, 0 },  /* Mode_TwoPlayerRace_BD73 */
-    { 0x00BDBFu, { bank_00_BDBF_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_BDBF */
+    { 0x00BDBFu, { Mode_League_M0X0, NULL, NULL, NULL }, 0 },  /* Mode_League */
     { 0x00BDCFu, { NULL, NULL, Mode_League_BDCF_M1X0, NULL }, 0 },  /* Mode_League_BDCF */
     { 0x00BE06u, { NULL, NULL, Mode_League_BE06_M1X0, NULL }, 0 },  /* Mode_League_BE06 */
     { 0x00BE09u, { NULL, NULL, Mode_League_BE09_M1X0, NULL }, 0 },  /* Mode_League_BE09 */
@@ -1872,12 +1874,12 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x00C167u, { NULL, NULL, Options_DefinePlayer_C167_M1X0, NULL }, 0 },  /* Options_DefinePlayer_C167 */
     { 0x00C1DAu, { NULL, NULL, Oam_ClearCursorHFlip_M1X0, NULL }, 0 },  /* Oam_ClearCursorHFlip */
     { 0x00C1F4u, { NULL, NULL, Input_WaitAnyButtonL_C1F4_M1X0, NULL }, 0 },  /* Input_WaitAnyButtonL_C1F4 */
-    { 0x00C1F5u, { NULL, NULL, bank_00_C1F5_M1X0, NULL }, 0 },  /* bank_00_C1F5 */
+    { 0x00C1F5u, { NULL, NULL, Input_WaitAnyButton_M1X0, NULL }, 0 },  /* Input_WaitAnyButton */
     { 0x00C1FEu, { NULL, NULL, Input_WaitAnyButton_C1FE_M1X0, NULL }, 0 },  /* Input_WaitAnyButton_C1FE */
     { 0x00C214u, { NULL, NULL, Input_WaitAnyButton_C214_M1X0, NULL }, 0 },  /* Input_WaitAnyButton_C214 */
     { 0x00C23Bu, { NULL, NULL, Input_WaitAllReleased_M1X0, NULL }, 0 },  /* Input_WaitAllReleased */
     { 0x00C244u, { NULL, NULL, Input_WaitAllReleased_C244_M1X0, NULL }, 0 },  /* Input_WaitAllReleased_C244 */
-    { 0x00C258u, { NULL, NULL, bank_00_C258_M1X0, NULL }, 0 },  /* bank_00_C258 */
+    { 0x00C258u, { NULL, NULL, Records_DrawTopScores_M1X0, NULL }, 0 },  /* Records_DrawTopScores */
     { 0x00C2FDu, { NULL, NULL, Records_DrawTopTimes_M1X0, NULL }, 0 },  /* Records_DrawTopTimes */
     { 0x00C3ABu, { DrawText_M0X0, NULL, DrawText_M1X0, NULL }, 0 },  /* DrawText */
     { 0x00C3AFu, { Text_DrawLoop_M0X0, NULL, Text_DrawLoop_M1X0, NULL }, 0 },  /* Text_DrawLoop */
@@ -1894,7 +1896,7 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x00C40Du, { NULL, NULL, Text_DrawLoop_C40D_M1X0, NULL }, 0 },  /* Text_DrawLoop_C40D */
     { 0x00C440u, { Text_CmdEnd_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdEnd */
     { 0x00C445u, { Text_CmdPrintNum5_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdPrintNum5 */
-    { 0x00C463u, { bank_00_C463_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_C463 */
+    { 0x00C463u, { Text_CmdPrintNum2_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdPrintNum2 */
     { 0x00C481u, { Text_CmdSetPos_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdSetPos */
     { 0x00C4A7u, { Text_CmdCenterLine_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdCenterLine */
     { 0x00C4C4u, { NULL, NULL, Text_CmdCenterLine_C4C4_M1X0, NULL }, 0 },  /* Text_CmdCenterLine_C4C4 */
@@ -1902,44 +1904,44 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x00C4CEu, { NULL, NULL, Text_CmdCenterLine_C4CE_M1X0, NULL }, 0 },  /* Text_CmdCenterLine_C4CE */
     { 0x00C4D2u, { NULL, NULL, Text_CmdCenterLine_C4D2_M1X0, NULL }, 0 },  /* Text_CmdCenterLine_C4D2 */
     { 0x00C4EFu, { Text_CmdCenterWord_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdCenterWord */
-    { 0x00C534u, { bank_00_C534_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_C534 */
+    { 0x00C534u, { Text_CmdCallString_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdCallString */
     { 0x00C546u, { Text_CmdSetPalette_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdSetPalette */
     { 0x00C570u, { Text_CmdSetPalette_C570_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdSetPalette_C570 */
     { 0x00C575u, { Text_CmdSetPalette_C575_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdSetPalette_C575 */
     { 0x00C581u, { Text_CmdSetPalette_C581_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdSetPalette_C581 */
     { 0x00C5B2u, { Text_CmdSetPalette_C5B2_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdSetPalette_C5B2 */
     { 0x00C5B4u, { Text_CmdSetPalette_C5B4_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdSetPalette_C5B4 */
-    { 0x00C5BAu, { bank_00_C5BA_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_C5BA */
+    { 0x00C5BAu, { Text_CmdPlayerNameImm_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdPlayerNameImm */
     { 0x00C5C2u, { Text_CmdPlayerNameVar_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdPlayerNameVar */
     { 0x00C60Bu, { NULL, NULL, Text_CmdPlayerNameVar_C60B_M1X0, NULL }, 0 },  /* Text_CmdPlayerNameVar_C60B */
-    { 0x00C60Fu, { bank_00_C60F_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_C60F */
+    { 0x00C60Fu, { Text_CmdRomNameImm_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdRomNameImm */
     { 0x00C617u, { Text_CmdRomNameVar_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdRomNameVar */
-    { 0x00C664u, { bank_00_C664_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_C664 */
-    { 0x00C66Cu, { bank_00_C66C_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_C66C */
+    { 0x00C664u, { Text_CmdLeagueNameImm_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdLeagueNameImm */
+    { 0x00C66Cu, { Text_CmdLeagueNameVar_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdLeagueNameVar */
     { 0x00C6AAu, { Text_CmdPrintTime_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdPrintTime */
     { 0x00C6C4u, { Text_CmdPlaceSprite_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdPlaceSprite */
     { 0x00C775u, { NULL, NULL, Race_RecordResults_M1X0, NULL }, 0 },  /* Race_RecordResults */
     { 0x00C7B3u, { Race_RecordTimeRace_M0X0, NULL, NULL, NULL }, 0 },  /* Race_RecordTimeRace */
     { 0x00C7EDu, { Race_RecordTimeRace_C7ED_M0X0, NULL, NULL, NULL }, 0 },  /* Race_RecordTimeRace_C7ED */
-    { 0x00C7EFu, { bank_00_C7EF_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_C7EF */
+    { 0x00C7EFu, { Race_RecordP1TimeOrDnf_M0X0, NULL, NULL, NULL }, 0 },  /* Race_RecordP1TimeOrDnf */
     { 0x00C80Bu, { Race_RecordP1Time_M0X0, NULL, NULL, NULL }, 0 },  /* Race_RecordP1Time */
-    { 0x00C81Eu, { bank_00_C81E_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_C81E */
+    { 0x00C81Eu, { Race_RecordP2TimeOrDnf_M0X0, NULL, NULL, NULL }, 0 },  /* Race_RecordP2TimeOrDnf */
     { 0x00C83Fu, { Race_RecordP2Time_M0X0, NULL, NULL, NULL }, 0 },  /* Race_RecordP2Time */
-    { 0x00C857u, { bank_00_C857_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_C857 */
-    { 0x00C8D7u, { bank_00_C8D7_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_C8D7 */
-    { 0x00C8F1u, { bank_00_C8F1_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_C8F1 */
-    { 0x00C902u, { bank_00_C902_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_C902 */
-    { 0x00C921u, { bank_00_C921_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_C921 */
-    { 0x00C937u, { bank_00_C937_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_C937 */
-    { 0x00C973u, { bank_00_C973_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_C973 */
-    { 0x00C99Au, { bank_00_C99A_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_C99A */
+    { 0x00C857u, { Race_RecordLapRace_M0X0, NULL, NULL, NULL }, 0 },  /* Race_RecordLapRace */
+    { 0x00C8D7u, { Race_RecordP1LapOrDnf_M0X0, NULL, NULL, NULL }, 0 },  /* Race_RecordP1LapOrDnf */
+    { 0x00C8F1u, { Race_RecordP1Lap_M0X0, NULL, NULL, NULL }, 0 },  /* Race_RecordP1Lap */
+    { 0x00C902u, { Race_RecordP2LapOrDnf_M0X0, NULL, NULL, NULL }, 0 },  /* Race_RecordP2LapOrDnf */
+    { 0x00C921u, { Race_RecordP2Lap_M0X0, NULL, NULL, NULL }, 0 },  /* Race_RecordP2Lap */
+    { 0x00C937u, { Race_RecordStuntRace_M0X0, NULL, NULL, NULL }, 0 },  /* Race_RecordStuntRace */
+    { 0x00C973u, { Race_AddP1StuntScore_M0X0, NULL, NULL, NULL }, 0 },  /* Race_AddP1StuntScore */
+    { 0x00C99Au, { Race_AddP2StuntScore_M0X0, NULL, NULL, NULL }, 0 },  /* Race_AddP2StuntScore */
     { 0x00C9C6u, { Records_InsertTime_M0X0, NULL, NULL, NULL }, 0 },  /* Records_InsertTime */
     { 0x00CA63u, { Stats_IncP1Races_M0X0, NULL, NULL, NULL }, 0 },  /* Stats_IncP1Races */
     { 0x00CA72u, { Stats_IncP1Wins_M0X0, NULL, NULL, NULL }, 0 },  /* Stats_IncP1Wins */
-    { 0x00CA8Au, { bank_00_CA8A_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_CA8A */
+    { 0x00CA8Au, { Stats_IncP1Dnf_M0X0, NULL, NULL, NULL }, 0 },  /* Stats_IncP1Dnf */
     { 0x00CA99u, { Stats_IncP2Races_M0X0, NULL, NULL, NULL }, 0 },  /* Stats_IncP2Races */
     { 0x00CAB4u, { Stats_IncP2Wins_M0X0, NULL, NULL, NULL }, 0 },  /* Stats_IncP2Wins */
-    { 0x00CAD8u, { bank_00_CAD8_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_CAD8 */
+    { 0x00CAD8u, { Stats_IncP2Dnf_M0X0, NULL, NULL, NULL }, 0 },  /* Stats_IncP2Dnf */
     { 0x00CAF3u, { NULL, NULL, PickUni_Open_M1X0, NULL }, 0 },  /* PickUni_Open */
     { 0x00CB00u, { NULL, NULL, PickUni_Open_CB00_M1X0, NULL }, 0 },  /* PickUni_Open_CB00 */
     { 0x00CB06u, { NULL, NULL, PickUni_Open_CB06_M1X0, NULL }, 0 },  /* PickUni_Open_CB06 */
@@ -1952,7 +1954,7 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x00CE7Fu, { Results_ShowRaceTable_M0X0, NULL, NULL, NULL }, 0 },  /* Results_ShowRaceTable */
     { 0x00CF48u, { NULL, NULL, Results_ShowRaceTable_CF48_M1X0, NULL }, 0 },  /* Results_ShowRaceTable_CF48 */
     { 0x00CF76u, { Results_ShowRaceTable_CF76_M0X0, NULL, NULL, NULL }, 0 },  /* Results_ShowRaceTable_CF76 */
-    { 0x00CF8Cu, { bank_00_CF8C_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_CF8C */
+    { 0x00CF8Cu, { Results_RowNone_M0X0, NULL, NULL, NULL }, 0 },  /* Results_RowNone */
     { 0x00CF90u, { Results_RowP1_M0X0, NULL, NULL, NULL }, 0 },  /* Results_RowP1 */
     { 0x00CFF6u, { Results_RowP2_M0X0, NULL, NULL, NULL }, 0 },  /* Results_RowP2 */
     { 0x00D061u, { Results_RowRecord1_M0X0, NULL, NULL, NULL }, 0 },  /* Results_RowRecord1 */
@@ -1960,9 +1962,9 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x00D0AFu, { Results_RowRecord3_M0X0, NULL, NULL, NULL }, 0 },  /* Results_RowRecord3 */
     { 0x00D102u, { NULL, NULL, Results_RowRecord3_D102_M1X0, NULL }, 0 },  /* Results_RowRecord3_D102 */
     { 0x00D152u, { Results_LoadRowPalette_M0X0, NULL, NULL, NULL }, 0 },  /* Results_LoadRowPalette */
-    { 0x00D1DBu, { NULL, NULL, bank_00_D1DB_M1X0, NULL }, 0 },  /* bank_00_D1DB */
-    { 0x00D1E9u, { NULL, NULL, bank_00_D1E9_M1X0, NULL }, 0 },  /* bank_00_D1E9 */
-    { 0x00D1FDu, { NULL, NULL, bank_00_D1FD_M1X0, NULL }, 0 },  /* bank_00_D1FD */
+    { 0x00D1DBu, { NULL, NULL, Input_ReadPads_M1X0, NULL }, 0 },  /* Input_ReadPads */
+    { 0x00D1E9u, { NULL, NULL, Text_ClearBuffer_M1X0, NULL }, 0 },  /* Text_ClearBuffer */
+    { 0x00D1FDu, { NULL, NULL, Menu_InitScreen_M1X0, NULL }, 0 },  /* Menu_InitScreen */
     { 0x00D200u, { NULL, NULL, Menu_InitScreen_D200_M1X0, NULL }, 0 },  /* Menu_InitScreen_D200 */
     { 0x00D203u, { NULL, NULL, Menu_InitScreen_D203_M1X0, NULL }, 0 },  /* Menu_InitScreen_D203 */
     { 0x00D26Au, { Menu_InitScreen_D26A_M0X0, NULL, NULL, NULL }, 0 },  /* Menu_InitScreen_D26A */
@@ -1974,11 +1976,11 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x00D2B0u, { NULL, NULL, Oam_ResetMenuSprites_M1X0, NULL }, 0 },  /* Oam_ResetMenuSprites */
     { 0x00D2BAu, { NULL, NULL, Oam_ResetMenuSprites_D2BA_M1X0, NULL }, 0 },  /* Oam_ResetMenuSprites_D2BA */
     { 0x00D361u, { NULL, NULL, Oam_ResetMenuSprites_D361_M1X0, NULL }, 0 },  /* Oam_ResetMenuSprites_D361 */
-    { 0x00D37Au, { NULL, NULL, bank_00_D37A_M1X0, NULL }, 0 },  /* bank_00_D37A */
+    { 0x00D37Au, { NULL, NULL, League_Clear_M1X0, NULL }, 0 },  /* League_Clear */
     { 0x00D40Eu, { NULL, NULL, League_Clear_D40E_M1X0, NULL }, 0 },  /* League_Clear_D40E */
     { 0x00D40Fu, { NULL, NULL, Oam_HideRowSprites_M1X0, NULL }, 0 },  /* Oam_HideRowSprites */
-    { 0x00D437u, { bank_00_D437_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_D437 */
-    { 0x00D4F6u, { NULL, NULL, bank_00_D4F6_M1X0, NULL }, 0 },  /* bank_00_D4F6 */
+    { 0x00D437u, { Options_RenamePlayer_M0X0, NULL, NULL, NULL }, 0 },  /* Options_RenamePlayer */
+    { 0x00D4F6u, { NULL, NULL, Menu_ResetSlideHooks_M1X0, NULL }, 0 },  /* Menu_ResetSlideHooks */
     { 0x00D518u, { Records_Menu_M0X0, NULL, NULL, NULL }, 0 },  /* Records_Menu */
     { 0x00D532u, { NULL, NULL, Records_Menu_D532_M1X0, NULL }, 0 },  /* Records_Menu_D532 */
     { 0x00D535u, { NULL, NULL, Records_Menu_D535_M1X0, NULL }, 0 },  /* Records_Menu_D535 */
@@ -1988,16 +1990,16 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x00D601u, { NULL, NULL, Records_TrackRecords_D601_M1X0, NULL }, 0 },  /* Records_TrackRecords_D601 */
     { 0x00D6CFu, { NULL, NULL, Records_TrackRecords_D6CF_M1X0, NULL }, 0 },  /* Records_TrackRecords_D6CF */
     { 0x00D71Bu, { NULL, NULL, Records_TrackRecords_D71B_M1X0, NULL }, 0 },  /* Records_TrackRecords_D71B */
-    { 0x00D7C0u, { bank_00_D7C0_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_D7C0 */
-    { 0x00DAC2u, { bank_00_DAC2_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_DAC2 */
-    { 0x00DDE6u, { bank_00_DDE6_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_DDE6 */
+    { 0x00D7C0u, { Records_HighScores_M0X0, NULL, NULL, NULL }, 0 },  /* Records_HighScores */
+    { 0x00DAC2u, { Records_PlayerScores_M0X0, NULL, NULL, NULL }, 0 },  /* Records_PlayerScores */
+    { 0x00DDE6u, { Records_GroupTables_M0X0, NULL, NULL, NULL }, 0 },  /* Records_GroupTables */
     { 0x00E21Du, { NULL, NULL, Slide_Forward_M1X0, NULL }, 0 },  /* Slide_Forward */
     { 0x00E23Bu, { NULL, NULL, Slide_DefaultFwdStep_M1X0, NULL }, 0 },  /* Slide_DefaultFwdStep */
     { 0x00E242u, { NULL, NULL, Slide_DefaultFwdStep_E242_M1X0, NULL }, 0 },  /* Slide_DefaultFwdStep_E242 */
-    { 0x00E268u, { NULL, NULL, bank_00_E268_M1X0, NULL }, 0 },  /* bank_00_E268 */
+    { 0x00E268u, { NULL, NULL, Slide_Back_M1X0, NULL }, 0 },  /* Slide_Back */
     { 0x00E286u, { NULL, NULL, Slide_DefaultBackStep_M1X0, NULL }, 0 },  /* Slide_DefaultBackStep */
     { 0x00E289u, { NULL, NULL, Slide_DefaultBackStep_E289_M1X0, NULL }, 0 },  /* Slide_DefaultBackStep_E289 */
-    { 0x00E2BDu, { NULL, NULL, bank_00_E2BD_M1X0, NULL }, 0 },  /* bank_00_E2BD */
+    { 0x00E2BDu, { NULL, NULL, Screen_OpenWipe_M1X0, NULL }, 0 },  /* Screen_OpenWipe */
     { 0x00E30Fu, { NULL, NULL, Screen_OpenWipe_E30F_M1X0, NULL }, 0 },  /* Screen_OpenWipe_E30F */
     { 0x00E31Fu, { NULL, NULL, Screen_OpenWipe_E31F_M1X0, NULL }, 0 },  /* Screen_OpenWipe_E31F */
     { 0x00E356u, { NULL, NULL, Screen_OpenWipe_E356_M1X0, NULL }, 0 },  /* Screen_OpenWipe_E356 */
@@ -2024,7 +2026,7 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x00E9BBu, { NULL, NULL, Menu_PickTrack_E9BB_M1X0, NULL }, 0 },  /* Menu_PickTrack_E9BB */
     { 0x00E9F7u, { NULL, NULL, Menu_PickTrack_E9F7_M1X0, NULL }, 0 },  /* Menu_PickTrack_E9F7 */
     { 0x00E9FEu, { NULL, NULL, Menu_PickTrack_E9FE_M1X0, NULL }, 0 },  /* Menu_PickTrack_E9FE */
-    { 0x00EA79u, { NULL, NULL, bank_00_EA79_M1X0, NULL }, 0 },  /* bank_00_EA79 */
+    { 0x00EA79u, { NULL, NULL, Menu_CycleLeagueClass_M1X0, NULL }, 0 },  /* Menu_CycleLeagueClass */
     { 0x00EB0Du, { NULL, NULL, Menu_CycleSpriteTiles_M1X0, NULL }, 0 },  /* Menu_CycleSpriteTiles */
     { 0x00EB60u, { NULL, NULL, Menu_ShowTourTables_M1X0, NULL }, 0 },  /* Menu_ShowTourTables */
     { 0x00EBCCu, { NULL, NULL, Menu_ShowTourTables_EBCC_M1X0, NULL }, 0 },  /* Menu_ShowTourTables_EBCC */
@@ -2056,21 +2058,21 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x00EF62u, { NULL, NULL, Menu_DrawOptionList_EF62_M1X0, NULL }, 0 },  /* Menu_DrawOptionList_EF62 */
     { 0x00EF6Eu, { NULL, NULL, Menu_DrawOptionList_EF6E_M1X0, NULL }, 0 },  /* Menu_DrawOptionList_EF6E */
     { 0x00EF72u, { NULL, NULL, Menu_DrawOptionList_EF72_M1X0, NULL }, 0 },  /* Menu_DrawOptionList_EF72 */
-    { 0x00EF73u, { NULL, NULL, bank_00_EF73_M1X0, NULL }, 0 },  /* bank_00_EF73 */
+    { 0x00EF73u, { NULL, NULL, Scores_LoadPlayerSorted_M1X0, NULL }, 0 },  /* Scores_LoadPlayerSorted */
     { 0x00EFBEu, { Util_SortTable8Descending_M0X0, NULL, NULL, NULL }, 0 },  /* Util_SortTable8Descending */
     { 0x00EFC9u, { Util_SortTable8Descending_EFC9_M0X0, NULL, NULL, NULL }, 0 },  /* Util_SortTable8Descending_EFC9 */
     { 0x00EFDCu, { Util_SortTable8Descending_EFDC_M0X0, NULL, NULL, NULL }, 0 },  /* Util_SortTable8Descending_EFDC */
-    { 0x00F015u, { bank_00_F015_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_F015 */
+    { 0x00F015u, { Util_SortTable16Descending_M0X0, NULL, NULL, NULL }, 0 },  /* Util_SortTable16Descending */
     { 0x00F06Cu, { Util_SortTable8Ascending_M0X0, NULL, NULL, NULL }, 0 },  /* Util_SortTable8Ascending */
-    { 0x00F0D8u, { bank_00_F0D8_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_F0D8 */
+    { 0x00F0D8u, { Results_ShowRaceResults_M0X0, NULL, NULL, NULL }, 0 },  /* Results_ShowRaceResults */
     { 0x00F4A2u, { NULL, NULL, Menu_HideSpritesAndReloadGfx_M1X0, NULL }, 0 },  /* Menu_HideSpritesAndReloadGfx */
     { 0x00F4BCu, { NULL, NULL, Menu_HideSpritesAndReloadGfx_F4BC_M1X0, NULL }, 0 },  /* Menu_HideSpritesAndReloadGfx_F4BC */
     { 0x00F4D3u, { NULL, NULL, Menu_ResetScreenGfx_M1X0, NULL }, 0 },  /* Menu_ResetScreenGfx */
     { 0x00F4DCu, { NULL, NULL, Menu_ResetScreenGfx_F4DC_M1X0, NULL }, 0 },  /* Menu_ResetScreenGfx_F4DC */
     { 0x00F4DFu, { NULL, NULL, Menu_ResetScreenGfx_F4DF_M1X0, NULL }, 0 },  /* Menu_ResetScreenGfx_F4DF */
     { 0x00F4E5u, { NULL, NULL, Menu_ResetScreenGfx_F4E5_M1X0, NULL }, 0 },  /* Menu_ResetScreenGfx_F4E5 */
-    { 0x00F505u, { NULL, NULL, bank_00_F505_M1X0, NULL }, 0 },  /* bank_00_F505 */
-    { 0x00F515u, { NULL, NULL, bank_00_F515_M1X0, NULL }, 0 },  /* bank_00_F515 */
+    { 0x00F505u, { NULL, NULL, Menu_RequestPanelOpen_M1X0, NULL }, 0 },  /* Menu_RequestPanelOpen */
+    { 0x00F515u, { NULL, NULL, Menu_RequestPanelClose_M1X0, NULL }, 0 },  /* Menu_RequestPanelClose */
     { 0x00F529u, { NULL, NULL, Menu_SnapPanelOpen_M1X0, NULL }, 0 },  /* Menu_SnapPanelOpen */
     { 0x00F549u, { NULL, NULL, Boot_ShowLegalScreen_M1X0, NULL }, 0 },  /* Boot_ShowLegalScreen */
     { 0x00F599u, { NULL, NULL, Boot_ShowLegalScreen_F599_M1X0, NULL }, 0 },  /* Boot_ShowLegalScreen_F599 */
@@ -2079,27 +2081,27 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x00F5B7u, { NULL, NULL, Boot_ShowLegalScreen_F5B7_M1X0, NULL }, 0 },  /* Boot_ShowLegalScreen_F5B7 */
     { 0x00F601u, { NULL, NULL, Boot_ShowLegalScreen_F601_M1X0, NULL }, 0 },  /* Boot_ShowLegalScreen_F601 */
     { 0x00F60Cu, { NULL, NULL, NmiHandler_Menu_M1X0, NULL }, 0 },  /* NmiHandler_Menu */
-    { 0x00F653u, { NULL, NULL, bank_00_F653_M1X0, NULL }, 0 },  /* bank_00_F653 */
-    { 0x00F7C6u, { bank_00_F7C6_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_F7C6 */
-    { 0x00F7E5u, { bank_00_F7E5_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_F7E5 */
+    { 0x00F653u, { NULL, NULL, Results_AnimateTally_M1X0, NULL }, 0 },  /* Results_AnimateTally */
+    { 0x00F7C6u, { Results_NextTallyColumn_M0X0, NULL, NULL, NULL }, 0 },  /* Results_NextTallyColumn */
+    { 0x00F7E5u, { Menu_WaitFramesOrButton_M0X0, NULL, NULL, NULL }, 0 },  /* Menu_WaitFramesOrButton */
     { 0x00F802u, { NULL, NULL, Dma_UploadTilemapRows_M1X0, NULL }, 0 },  /* Dma_UploadTilemapRows */
     { 0x00F859u, { Dma_UploadVramC0_M0X0, NULL, NULL, NULL }, 0 },  /* Dma_UploadVramC0 */
     { 0x00F877u, { Scores_StoreResult_M0X0, NULL, NULL, NULL }, 0 },  /* Scores_StoreResult */
     { 0x00F8A2u, { Scores_StoreResult_F8A2_M0X0, NULL, NULL, NULL }, 0 },  /* Scores_StoreResult_F8A2 */
     { 0x00F8A3u, { Text_ConvertBufferCase_M0X0, NULL, NULL, NULL }, 0 },  /* Text_ConvertBufferCase */
-    { 0x00F8D1u, { NULL, NULL, bank_00_F8D1_M1X0, NULL }, 0 },  /* bank_00_F8D1 */
+    { 0x00F8D1u, { NULL, NULL, Vs_ShowChampions_M1X0, NULL }, 0 },  /* Vs_ShowChampions */
     { 0x00FAC5u, { NULL, NULL, WaitVBlankLong_M1X0, NULL }, 0 },  /* WaitVBlankLong */
     { 0x00FAC8u, { NULL, NULL, WaitVBlankLong_FAC8_M1X0, NULL }, 0 },  /* WaitVBlankLong_FAC8 */
-    { 0x00FAC9u, { NULL, NULL, bank_00_FAC9_M1X0, NULL }, 0 },  /* bank_00_FAC9 */
+    { 0x00FAC9u, { NULL, NULL, WaitVBlank_M1X0, NULL }, 0 },  /* WaitVBlank */
     { 0x00FACDu, { NULL, NULL, WaitVBlank_FACD_M1X0, NULL }, 0 },  /* WaitVBlank_FACD */
     { 0x00FAD2u, { NULL, NULL, WaitVBlank_FAD2_M1X0, NULL }, 0 },  /* WaitVBlank_FAD2 */
     { 0x00FAD6u, { NULL, NULL, WaitVBlank_FAD6_M1X0, NULL }, 0 },  /* WaitVBlank_FAD6 */
     { 0x00FADBu, { NULL, NULL, WaitVBlank_FADB_M1X0, NULL }, 0 },  /* WaitVBlank_FADB */
-    { 0x00FADFu, { NULL, NULL, bank_00_FADF_M1X0, NULL }, 0 },  /* bank_00_FADF */
-    { 0x00FBBFu, { NULL, NULL, bank_00_FBBF_M1X0, NULL }, 0 },  /* bank_00_FBBF */
-    { 0x00FC1Cu, { bank_00_FC1C_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_FC1C */
-    { 0x00FC38u, { bank_00_FC38_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_FC38 */
-    { 0x00FC3Du, { bank_00_FC3D_M0X0, NULL, NULL, NULL }, 0 },  /* bank_00_FC3D */
+    { 0x00FADFu, { NULL, NULL, Menu_UpdateCursor_M1X0, NULL }, 0 },  /* Menu_UpdateCursor */
+    { 0x00FBBFu, { NULL, NULL, Menu_KeepResetScores_M1X0, NULL }, 0 },  /* Menu_KeepResetScores */
+    { 0x00FC1Cu, { Scores_ResetPlayer_M0X0, NULL, NULL, NULL }, 0 },  /* Scores_ResetPlayer */
+    { 0x00FC38u, { Menu_ReturnContinue_M0X0, NULL, NULL, NULL }, 0 },  /* Menu_ReturnContinue */
+    { 0x00FC3Du, { Menu_ReturnExit_M0X0, NULL, NULL, NULL }, 0 },  /* Menu_ReturnExit */
     { 0x0199D6u, { NULL, NULL, Rider_BuildRotationTablesLong_M1X0, NULL }, 0 },  /* Rider_BuildRotationTablesLong */
     { 0x0199D9u, { Rider_BuildRotationTablesLong_99D9_M0X0, NULL, NULL, NULL }, 0 },  /* Rider_BuildRotationTablesLong_99D9 */
     { 0x019A5Au, { NULL, NULL, Rider_BuildRotationTables_M1X0, NULL }, 0 },  /* Rider_BuildRotationTables */
@@ -2151,7 +2153,7 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x019E11u, { Rider_BuildRotationTables_9E11_M0X0, NULL, NULL, NULL }, 0 },  /* Rider_BuildRotationTables_9E11 */
     { 0x01A30Fu, { Track_SetupSizeParamsLong_M0X0, NULL, NULL, NULL }, 0 },  /* Track_SetupSizeParamsLong */
     { 0x01A313u, { Track_SetupSizeParams_M0X0, NULL, NULL, NULL }, 0 },  /* Track_SetupSizeParams */
-    { 0x01B668u, { bank_01_B668_M0X0, NULL, NULL, NULL }, 0 },  /* bank_01_B668 */
+    { 0x01B668u, { Math_Multiply16_M0X0, NULL, NULL, NULL }, 0 },  /* Math_Multiply16 */
     { 0x01B6C0u, { Math_MulFixed8p8Long_M0X0, NULL, NULL, NULL }, 0 },  /* Math_MulFixed8p8Long */
     { 0x01B6C3u, { Math_MulFixed8p8Long_B6C3_M0X0, NULL, NULL, NULL }, 0 },  /* Math_MulFixed8p8Long_B6C3 */
     { 0x01B6C4u, { Math_MulFixed8p8_M0X0, NULL, NULL, NULL }, 0 },  /* Math_MulFixed8p8 */
@@ -2215,7 +2217,7 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x01BA16u, { Decomp_ToRam_BA16_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_ToRam_BA16 */
     { 0x01BA18u, { Decomp_ToRam_BA18_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_ToRam_BA18 */
     { 0x01BA1Au, { Decomp_ToRam_BA1A_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_ToRam_BA1A */
-    { 0x01BA26u, { bank_01_BA26_M0X0, NULL, NULL, NULL }, 0 },  /* bank_01_BA26 */
+    { 0x01BA26u, { Decomp_DecodeSymbol_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_DecodeSymbol */
     { 0x01BA2Au, { Decomp_DecodeSymbol_BA2A_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_DecodeSymbol_BA2A */
     { 0x01BA2Cu, { Decomp_DecodeSymbol_BA2C_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_DecodeSymbol_BA2C */
     { 0x01BA35u, { Decomp_DecodeSymbol_BA35_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_DecodeSymbol_BA35 */
@@ -2223,7 +2225,7 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x01BA4Du, { Decomp_DecodeSymbol_BA4D_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_DecodeSymbol_BA4D */
     { 0x01BA54u, { Decomp_DecodeSymbol_BA54_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_DecodeSymbol_BA54 */
     { 0x01BA59u, { Decomp_DecodeSymbol_BA59_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_DecodeSymbol_BA59 */
-    { 0x01BA7Au, { bank_01_BA7A_M0X0, NULL, NULL, NULL }, 0 },  /* bank_01_BA7A */
+    { 0x01BA7Au, { Decomp_ReadBits_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_ReadBits */
     { 0x01BA8Au, { Decomp_ReadBits_BA8A_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_ReadBits_BA8A */
     { 0x01BA90u, { Decomp_ReadBits_BA90_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_ReadBits_BA90 */
     { 0x01BA93u, { Decomp_ReadBits_BA93_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_ReadBits_BA93 */
@@ -2232,7 +2234,7 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x01BAA9u, { Decomp_ReadBits_BAA9_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_ReadBits_BAA9 */
     { 0x01BAAEu, { Decomp_ReadBits_BAAE_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_ReadBits_BAAE */
     { 0x01BAB3u, { Decomp_ReadBits_BAB3_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_ReadBits_BAB3 */
-    { 0x01BADCu, { bank_01_BADC_M0X0, NULL, NULL, NULL }, 0 },  /* bank_01_BADC */
+    { 0x01BADCu, { Decomp_BuildHuffTable_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_BuildHuffTable */
     { 0x01BAEDu, { Decomp_BuildHuffTable_BAED_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_BuildHuffTable_BAED */
     { 0x01BAF4u, { Decomp_BuildHuffTable_BAF4_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_BuildHuffTable_BAF4 */
     { 0x01BB09u, { Decomp_BuildHuffTable_BB09_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_BuildHuffTable_BB09 */
@@ -2243,7 +2245,7 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x01BB39u, { Decomp_BuildHuffTable_BB39_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_BuildHuffTable_BB39 */
     { 0x01BB60u, { Decomp_BuildHuffTable_BB60_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_BuildHuffTable_BB60 */
     { 0x01BB65u, { Decomp_BuildHuffTable_BB65_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_BuildHuffTable_BB65 */
-    { 0x01BB6Fu, { bank_01_BB6F_M0X0, NULL, NULL, NULL }, 0 },  /* bank_01_BB6F */
+    { 0x01BB6Fu, { Decomp_FetchWord_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_FetchWord */
     { 0x01BB86u, { Decomp_FetchWord_BB86_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_FetchWord_BB86 */
     { 0x01C605u, { Race_ResetEventQueuesLong_M0X0, NULL, NULL, NULL }, 0 },  /* Race_ResetEventQueuesLong */
     { 0x01C609u, { Race_ResetEventQueues_M0X0, NULL, NULL, NULL }, 0 },  /* Race_ResetEventQueues */
@@ -2278,11 +2280,11 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x02810Au, { NULL, NULL, Snd_UploadBlock_810A_M1X0, NULL }, 0 },  /* Snd_UploadBlock_810A */
     { 0x02810Du, { NULL, NULL, Snd_UploadBlock_810D_M1X0, NULL }, 0 },  /* Snd_UploadBlock_810D */
     { 0x028123u, { Snd_UploadBlock_8123_M0X0, NULL, NULL, NULL }, 0 },  /* Snd_UploadBlock_8123 */
-    { 0x02812Au, { NULL, NULL, bank_02_812A_M1X0, NULL }, 0 },  /* bank_02_812A */
+    { 0x02812Au, { NULL, NULL, Snd_SeekDataBlock_M1X0, NULL }, 0 },  /* Snd_SeekDataBlock */
     { 0x02813Du, { Snd_SeekDataBlock_813D_M0X0, NULL, NULL, NULL }, 0 },  /* Snd_SeekDataBlock_813D */
     { 0x028140u, { Snd_SeekDataBlock_8140_M0X0, NULL, NULL, NULL }, 0 },  /* Snd_SeekDataBlock_8140 */
     { 0x02814Bu, { Snd_SeekDataBlock_814B_M0X0, NULL, NULL, NULL }, 0 },  /* Snd_SeekDataBlock_814B */
-    { 0x028151u, { bank_02_8151_M0X0, NULL, bank_02_8151_M1X0, NULL }, 0 },  /* bank_02_8151 */
+    { 0x028151u, { Snd_IncDataPtr_M0X0, NULL, Snd_IncDataPtr_M1X0, NULL }, 0 },  /* Snd_IncDataPtr */
     { 0x02815Fu, { Snd_IncDataPtr_815F_M0X0, NULL, NULL, NULL }, 0 },  /* Snd_IncDataPtr_815F */
     { 0x028160u, { NULL, NULL, Snd_IncDataPtr_8160_M1X0, NULL }, 0 },  /* Snd_IncDataPtr_8160 */
     { 0x0282A8u, { Snd_UploadBlockListLong_82A8_M0X0, NULL, NULL, NULL }, 0 },  /* Snd_UploadBlockListLong_82A8 */
@@ -2314,7 +2316,7 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x028316u, { NULL, NULL, Snd_UploadBlockList_8316_M1X0, NULL }, 0 },  /* Snd_UploadBlockList_8316 */
     { 0x028317u, { NULL, NULL, Snd_UploadBlockList_8317_M1X0, NULL }, 0 },  /* Snd_UploadBlockList_8317 */
     { 0x028318u, { NULL, NULL, Snd_UploadBlockList_8318_M1X0, NULL }, 0 },  /* Snd_UploadBlockList_8318 */
-    { 0x028328u, { NULL, NULL, bank_02_8328_M1X0, NULL }, 0 },  /* bank_02_8328 */
+    { 0x028328u, { NULL, NULL, Snd_SendByteWait_M1X0, NULL }, 0 },  /* Snd_SendByteWait */
     { 0x02832Fu, { NULL, NULL, Snd_SendByteWait_832F_M1X0, NULL }, 0 },  /* Snd_SendByteWait_832F */
     { 0x02B197u, { NULL, NULL, Res_LoadToCgram_B197_M1X0, NULL }, 0 },  /* Res_LoadToCgram_B197 */
     { 0x02B19Au, { NULL, NULL, Res_LoadToCgram_B19A_M1X0, NULL }, 0 },  /* Res_LoadToCgram_B19A */
@@ -2326,11 +2328,11 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x02B200u, { NULL, NULL, Res_LoadToVram_B200_M1X0, NULL }, 0 },  /* Res_LoadToVram_B200 */
     { 0x02B201u, { NULL, NULL, Res_LoadToVram_B201_M1X0, NULL }, 0 },  /* Res_LoadToVram_B201 */
     { 0x02B202u, { NULL, NULL, Res_LoadToVram_B202_M1X0, NULL }, 0 },  /* Res_LoadToVram_B202 */
-    { 0x02B293u, { NULL, NULL, bank_02_B293_M1X0, NULL }, 0 },  /* bank_02_B293 */
+    { 0x02B293u, { NULL, NULL, Res_ReadByte_M1X0, NULL }, 0 },  /* Res_ReadByte */
     { 0x02B299u, { NULL, NULL, Res_ReadByte_B299_M1X0, NULL }, 0 },  /* Res_ReadByte_B299 */
     { 0x02B2A9u, { NULL, NULL, Res_Lookup_Long_M1X0, NULL }, 0 },  /* Res_Lookup_Long */
     { 0x02B2ACu, { NULL, NULL, Res_Lookup_Long_B2AC_M1X0, NULL }, 0 },  /* Res_Lookup_Long_B2AC */
-    { 0x02B2ADu, { NULL, NULL, bank_02_B2AD_M1X0, NULL }, 0 },  /* bank_02_B2AD */
+    { 0x02B2ADu, { NULL, NULL, Res_Lookup_M1X0, NULL }, 0 },  /* Res_Lookup */
     { 0x02B2B9u, { Res_Lookup_B2B9_M0X0, NULL, NULL, NULL }, 0 },  /* Res_Lookup_B2B9 */
     { 0x02B2E5u, { NULL, NULL, Res_LoadToWram_B2E5_M1X0, NULL }, 0 },  /* Res_LoadToWram_B2E5 */
     { 0x02B326u, { Res_LoadToWram_B326_M0X0, NULL, NULL, NULL }, 0 },  /* Res_LoadToWram_B326 */
@@ -2345,7 +2347,7 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x02D6C8u, { NULL, NULL, NULL, Race_InitHdma_D6C8_M1X1 }, 0 },  /* Race_InitHdma_D6C8 */
     { 0x02D734u, { NULL, NULL, Race_InitVideo_Long_D734_M1X0, NULL }, 0 },  /* Race_InitVideo_Long_D734 */
     { 0x02D768u, { NULL, NULL, Race_InitVideo_D768_M1X0, NULL }, 0 },  /* Race_InitVideo_D768 */
-    { 0x02D76Du, { NULL, bank_02_D76D_M0X1, NULL, NULL }, 0 },  /* bank_02_D76D */
+    { 0x02D76Du, { NULL, Oam_InitBuffer_M0X1, NULL, NULL }, 0 },  /* Oam_InitBuffer */
     { 0x02D778u, { Oam_InitBuffer_D778_M0X0, NULL, NULL, NULL }, 0 },  /* Oam_InitBuffer_D778 */
     { 0x02D80Cu, { NULL, NULL, Race_InitState_Long_M1X0, NULL }, 0 },  /* Race_InitState_Long */
     { 0x02D80Fu, { NULL, Race_InitState_Long_D80F_M0X1, NULL, NULL }, 0 },  /* Race_InitState_Long_D80F */
@@ -2408,11 +2410,11 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x0387B0u, { NULL, NULL, League_ApplyRaceResult_87B0_M1X0, NULL }, 0 },  /* League_ApplyRaceResult_87B0 */
     { 0x0387D2u, { League_ApplyRaceResult_87D2_M0X0, NULL, NULL, NULL }, 0 },  /* League_ApplyRaceResult_87D2 */
     { 0x0388D3u, { League_CheckRaceWin_M0X0, NULL, NULL, NULL }, 0 },  /* League_CheckRaceWin */
-    { 0x0388E1u, { bank_03_88E1_M0X0, NULL, NULL, NULL }, 0 },  /* bank_03_88E1 */
-    { 0x03890Fu, { bank_03_890F_M0X0, NULL, NULL, NULL }, 0 },  /* bank_03_890F */
+    { 0x0388E1u, { League_CheckStuntWin_M0X0, NULL, NULL, NULL }, 0 },  /* League_CheckStuntWin */
+    { 0x03890Fu, { Award_Tier0Cutscene_M0X0, NULL, NULL, NULL }, 0 },  /* Award_Tier0Cutscene */
     { 0x03893Cu, { NULL, NULL, League_RoundTrackToTierLong_M1X0, NULL }, 0 },  /* League_RoundTrackToTierLong */
     { 0x038940u, { NULL, NULL, League_RoundTrackToTier_M1X0, NULL }, 0 },  /* League_RoundTrackToTier */
-    { 0x03895Bu, { NULL, NULL, bank_03_895B_M1X0, NULL }, 0 },  /* bank_03_895B */
+    { 0x03895Bu, { NULL, NULL, League_ClearTierResults_M1X0, NULL }, 0 },  /* League_ClearTierResults */
     { 0x0389BAu, { NULL, NULL, Ppu_ResetBgScroll_M1X0, NULL }, 0 },  /* Ppu_ResetBgScroll */
     { 0x038AF7u, { NULL, NULL, Sram_CheckSizeMirror_M1X0, NULL }, 0 },  /* Sram_CheckSizeMirror */
     { 0x038B23u, { NULL, NULL, Sram_ClearSessionData_M1X0, NULL }, 0 },  /* Sram_ClearSessionData */
@@ -2454,7 +2456,7 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x03961Eu, { NULL, NULL, Oam_SetXHighBit_M1X0, NULL }, 0 },  /* Oam_SetXHighBit */
     { 0x039661u, { League_BuildMemberList_9661_M0X0, NULL, NULL, NULL }, 0 },  /* League_BuildMemberList_9661 */
     { 0x03966Fu, { League_BuildMemberList_966F_M0X0, NULL, NULL, NULL }, 0 },  /* League_BuildMemberList_966F */
-    { 0x03969Fu, { bank_03_969F_M0X0, NULL, NULL, NULL }, 0 },  /* bank_03_969F */
+    { 0x03969Fu, { League_IndexRoster_M0X0, NULL, NULL, NULL }, 0 },  /* League_IndexRoster */
     { 0x0396BEu, { League_CopyMenuOrder_M0X0, NULL, NULL, NULL }, 0 },  /* League_CopyMenuOrder */
     { 0x0397BDu, { NULL, NULL, Records_CalcMaxima_M1X0, NULL }, 0 },  /* Records_CalcMaxima */
     { 0x03986Au, { Records_PercentOfRaces_M0X0, NULL, NULL, NULL }, 0 },  /* Records_PercentOfRaces */
@@ -2469,7 +2471,7 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x039ED5u, { Index_TierX5_M0X0, NULL, NULL, NULL }, 0 },  /* Index_TierX5 */
     { 0x039F14u, { Player_GetTier_M0X0, NULL, Player_GetTier_M1X0, NULL }, 0 },  /* Player_GetTier */
     { 0x039F5Eu, { NULL, NULL, Player_GetPromoted_M1X0, NULL }, 0 },  /* Player_GetPromoted */
-    { 0x03A923u, { NULL, NULL, bank_03_A923_M1X0, NULL }, 0 },  /* bank_03_A923 */
+    { 0x03A923u, { NULL, NULL, Ppu_WaitVBlank_M1X0, NULL }, 0 },  /* Ppu_WaitVBlank */
     { 0x03A933u, { NULL, NULL, Ppu_WaitVBlank_A933_M1X0, NULL }, 0 },  /* Ppu_WaitVBlank_A933 */
     { 0x03A938u, { NULL, NULL, Ppu_WaitVBlank_A938_M1X0, NULL }, 0 },  /* Ppu_WaitVBlank_A938 */
     { 0x03C8E0u, { NULL, NULL, Race_Main_M1X0, NULL }, 0 },  /* Race_Main */
@@ -2478,581 +2480,584 @@ const DispatchEntry g_dispatch_table[] = {
     { 0x03C9A9u, { NULL, NULL, Race_Main_C9A9_M1X0, NULL }, 0 },  /* Race_Main_C9A9 */
     { 0x03C9ADu, { NULL, NULL, Race_Main_C9AD_M1X0, NULL }, 0 },  /* Race_Main_C9AD */
     { 0x03C9B1u, { NULL, Race_Main_C9B1_M0X1, NULL, NULL }, 0 },  /* Race_Main_C9B1 */
-    { 0x03CA07u, { bank_03_CA07_M0X0, NULL, NULL, NULL }, 0 },  /* bank_03_CA07 */
+    { 0x03CA07u, { Race_Main_CA07_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Main_CA07 */
     { 0x03CA4Cu, { Race_Main_CA4C_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Main_CA4C */
     { 0x03CA55u, { Race_Main_CA55_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Main_CA55 */
     { 0x03CA5Eu, { Race_Main_CA5E_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Main_CA5E */
     { 0x03CA67u, { Race_Main_CA67_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Main_CA67 */
     { 0x03CA6Eu, { Race_Main_CA6E_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Main_CA6E */
     { 0x03CA7Cu, { Race_Main_CA7C_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Main_CA7C */
-    { 0x03CA91u, { bank_03_CA91_M0X0, NULL, NULL, NULL }, 0 },  /* bank_03_CA91 */
-    { 0x03CAD6u, { bank_03_CAD6_M0X0, NULL, NULL, NULL }, 0 },  /* bank_03_CAD6 */
-    { 0x03CB1Bu, { bank_03_CB1B_M0X0, NULL, NULL, NULL }, 0 },  /* bank_03_CB1B */
-    { 0x03CB60u, { bank_03_CB60_M0X0, NULL, NULL, NULL }, 0 },  /* bank_03_CB60 */
+    { 0x03CA91u, { Race_Main_CA91_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Main_CA91 */
+    { 0x03CAD6u, { Race_Main_CAD6_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Main_CAD6 */
+    { 0x03CB1Bu, { Race_Main_CB1B_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Main_CB1B */
+    { 0x03CB60u, { Race_Main_CB60_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Main_CB60 */
     { 0x03CBBCu, { Race_Main_CBBC_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Main_CBBC */
     { 0x03CC5Du, { NULL, NULL, Race_Main_CC5D_M1X0, NULL }, 0 },  /* Race_Main_CC5D */
     { 0x03CC66u, { NULL, NULL, Race_Main_CC66_M1X0, NULL }, 0 },  /* Race_Main_CC66 */
-    { 0x03CDA0u, { bank_03_CDA0_M0X0, bank_03_CDA0_M0X1, bank_03_CDA0_M1X0, bank_03_CDA0_M1X1 }, 0 },  /* bank_03_CDA0 */
-    { 0x03CEADu, { NULL, NULL, bank_03_CEAD_M1X0, bank_03_CEAD_M1X1 }, 0 },  /* bank_03_CEAD */
-    { 0x03D0E8u, { bank_03_D0E8_M0X0, NULL, NULL, NULL }, 0 },  /* bank_03_D0E8 */
-    { 0x03D1AEu, { bank_03_D1AE_M0X0, NULL, NULL, NULL }, 0 },  /* bank_03_D1AE */
-    { 0x03D259u, { NULL, NULL, bank_03_D259_M1X0, NULL }, 0 },  /* bank_03_D259 */
-    { 0x03D26Eu, { bank_03_D26E_M0X0, NULL, NULL, NULL }, 0 },  /* bank_03_D26E */
-    { 0x03D2ADu, { bank_03_D2AD_M0X0, NULL, NULL, NULL }, 0 },  /* bank_03_D2AD */
-    { 0x03D32Du, { bank_03_D32D_M0X0, NULL, NULL, NULL }, 0 },  /* bank_03_D32D */
-    { 0x03D3E0u, { bank_03_D3E0_M0X0, NULL, NULL, NULL }, 0 },  /* bank_03_D3E0 */
-    { 0x03D458u, { bank_03_D458_M0X0, NULL, NULL, NULL }, 0 },  /* bank_03_D458 */
-    { 0x03D492u, { bank_03_D492_M0X0, NULL, NULL, NULL }, 0 },  /* bank_03_D492 */
-    { 0x03D4CCu, { bank_03_D4CC_M0X0, NULL, NULL, NULL }, 0 },  /* bank_03_D4CC */
-    { 0x03D514u, { bank_03_D514_M0X0, NULL, NULL, NULL }, 0 },  /* bank_03_D514 */
-    { 0x03D565u, { bank_03_D565_M0X0, NULL, NULL, NULL }, 0 },  /* bank_03_D565 */
+    { 0x03CDA0u, { Race_UpdateColorHints_M0X0, Race_UpdateColorHints_M0X1, Race_UpdateColorHints_M1X0, Race_UpdateColorHints_M1X1 }, 0 },  /* Race_UpdateColorHints */
+    { 0x03CEADu, { NULL, NULL, Race_UpdateSpecialFx_M1X0, Race_UpdateSpecialFx_M1X1 }, 0 },  /* Race_UpdateSpecialFx */
+    { 0x03D0E8u, { Race_CheckFxTrigger_M0X0, NULL, NULL, NULL }, 0 },  /* Race_CheckFxTrigger */
+    { 0x03D1AEu, { Race_UpdateBackdropFade_M0X0, NULL, NULL, NULL }, 0 },  /* Race_UpdateBackdropFade */
+    { 0x03D259u, { NULL, NULL, Race_ClearFxTables_M1X0, NULL }, 0 },  /* Race_ClearFxTables */
+    { 0x03D26Eu, { Race_Fx7Tick_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Fx7Tick */
+    { 0x03D2ADu, { Race_Fx3Tick_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Fx3Tick */
+    { 0x03D32Du, { Race_Fx6Tick_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Fx6Tick */
+    { 0x03D3E0u, { Race_Fx4Tick_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Fx4Tick */
+    { 0x03D458u, { Race_Fx0Tick_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Fx0Tick */
+    { 0x03D492u, { Race_Fx2Tick_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Fx2Tick */
+    { 0x03D4CCu, { Race_Fx5Tick_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Fx5Tick */
+    { 0x03D514u, { Race_Fx1Tick_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Fx1Tick */
+    { 0x03D565u, { Race_BuildFlipHdmaTable_M0X0, NULL, NULL, NULL }, 0 },  /* Race_BuildFlipHdmaTable */
     { 0x03E066u, { Race_UpdateCpuRival_M0X0, NULL, Race_UpdateCpuRival_M1X0, Race_UpdateCpuRival_M1X1 }, 0 },  /* Race_UpdateCpuRival */
-    { 0x03E238u, { NULL, NULL, bank_03_E238_M1X0, bank_03_E238_M1X1 }, 0 },  /* bank_03_E238 */
-    { 0x03E580u, { bank_03_E580_M0X0, NULL, NULL, NULL }, 0 },  /* bank_03_E580 */
-    { 0x03E7A5u, { bank_03_E7A5_M0X0, NULL, NULL, NULL }, 0 },  /* bank_03_E7A5 */
-    { 0x03EC46u, { bank_03_EC46_M0X0, NULL, NULL, NULL }, 0 },  /* bank_03_EC46 */
-    { 0x03F0BBu, { bank_03_F0BB_M0X0, NULL, NULL, NULL }, 0 },  /* bank_03_F0BB */
-    { 0x03F296u, { NULL, bank_03_F296_M0X1, NULL, NULL }, 0 },  /* bank_03_F296 */
-    { 0x03F2BBu, { NULL, bank_03_F2BB_M0X1, NULL, NULL }, 0 },  /* bank_03_F2BB */
+    { 0x03E238u, { NULL, NULL, Demo_UpdateCpuInput_M1X0, Demo_UpdateCpuInput_M1X1 }, 0 },  /* Demo_UpdateCpuInput */
+    { 0x03E580u, { Race_UpdateCountdown_M0X0, NULL, NULL, NULL }, 0 },  /* Race_UpdateCountdown */
+    { 0x03E7A5u, { Race_UpdateFinish_M0X0, NULL, NULL, NULL }, 0 },  /* Race_UpdateFinish */
+    { 0x03EC46u, { Race_UpdateRiderOverlayFrames_M0X0, NULL, NULL, NULL }, 0 },  /* Race_UpdateRiderOverlayFrames */
+    { 0x03F0BBu, { Gfx_QueueRiderTileDma_M0X0, NULL, NULL, NULL }, 0 },  /* Gfx_QueueRiderTileDma */
+    { 0x03F296u, { NULL, Gfx_GetRiderFramePtr_M0X1, NULL, NULL }, 0 },  /* Gfx_GetRiderFramePtr */
+    { 0x03F2BBu, { NULL, Gfx_DecodeRiderFrameHeaders_M0X1, NULL, NULL }, 0 },  /* Gfx_DecodeRiderFrameHeaders */
     { 0x03F602u, { NULL, NULL, NULL, Race_UpdatePauseMenu_M1X1 }, 0 },  /* Race_UpdatePauseMenu */
     { 0x03F940u, { Ppu_ResetAllRegisters_M0X0, Ppu_ResetAllRegisters_M0X1, Ppu_ResetAllRegisters_M1X0, NULL }, 0 },  /* Ppu_ResetAllRegisters */
     { 0x03FAC3u, { Sram_ClearAllL_FAC3_M0X0, NULL, NULL, NULL }, 0 },  /* Sram_ClearAllL_FAC3 */
     { 0x03FACCu, { Sram_ClearAll_FACC_M0X0, NULL, NULL, NULL }, 0 },  /* Sram_ClearAll_FACC */
-    { 0x8085A5u, { NULL, NULL, bank_80_85A5_M1X0, NULL }, 0 },  /* bank_80_85A5 */
-    { 0x808610u, { NULL, NULL, bank_80_8610_M1X0, NULL }, 0 },  /* bank_80_8610 */
-    { 0x8088DDu, { NULL, NULL, bank_80_88DD_M1X0, NULL }, 0 },  /* bank_80_88DD */
-    { 0x808917u, { NULL, NULL, bank_80_8917_M1X0, NULL }, 0 },  /* bank_80_8917 */
-    { 0x808C41u, { NULL, NULL, bank_80_8C41_M1X0, NULL }, 0 },  /* bank_80_8C41 */
-    { 0x808C4Eu, { NULL, NULL, bank_80_8C4E_M1X0, NULL }, 0 },  /* bank_80_8C4E */
-    { 0x808CCBu, { bank_80_8CCB_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_8CCB */
-    { 0x808D6Eu, { bank_80_8D6E_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_8D6E */
-    { 0x8091DCu, { NULL, NULL, bank_80_91DC_M1X0, NULL }, 0 },  /* bank_80_91DC */
-    { 0x809314u, { NULL, NULL, bank_80_9314_M1X0, NULL }, 0 },  /* bank_80_9314 */
-    { 0x809318u, { NULL, NULL, bank_80_9318_M1X0, NULL }, 0 },  /* bank_80_9318 */
-    { 0x80933Cu, { NULL, NULL, bank_80_933C_M1X0, NULL }, 0 },  /* bank_80_933C */
-    { 0x80935Eu, { bank_80_935E_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_935E */
-    { 0x80937Bu, { NULL, NULL, bank_80_937B_M1X0, NULL }, 0 },  /* bank_80_937B */
-    { 0x8093A1u, { NULL, NULL, bank_80_93A1_M1X0, NULL }, 0 },  /* bank_80_93A1 */
-    { 0x8093A5u, { NULL, NULL, bank_80_93A5_M1X0, NULL }, 0 },  /* bank_80_93A5 */
-    { 0x8093CBu, { NULL, NULL, bank_80_93CB_M1X0, NULL }, 0 },  /* bank_80_93CB */
-    { 0x8093FBu, { NULL, NULL, NULL, NULL }, 0 },  /* bank_80_93FB */
-    { 0x8094EBu, { NULL, NULL, bank_80_94EB_M1X0, NULL }, 0 },  /* bank_80_94EB */
-    { 0x80951Cu, { NULL, NULL, bank_80_951C_M1X0, NULL }, 0 },  /* bank_80_951C */
-    { 0x8095ABu, { NULL, NULL, bank_80_95AB_M1X0, NULL }, 0 },  /* bank_80_95AB */
-    { 0x809625u, { NULL, NULL, bank_80_9625_M1X0, NULL }, 0 },  /* bank_80_9625 */
-    { 0x8096FDu, { bank_80_96FD_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_96FD */
-    { 0x809701u, { bank_80_9701_M0X0, NULL, bank_80_9701_M1X0, NULL }, 0 },  /* bank_80_9701 */
-    { 0x809719u, { bank_80_9719_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_9719 */
-    { 0x80971Du, { bank_80_971D_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_971D */
-    { 0x80974Bu, { NULL, NULL, bank_80_974B_M1X0, NULL }, 0 },  /* bank_80_974B */
-    { 0x809805u, { NULL, NULL, bank_80_9805_M1X0, NULL }, 0 },  /* bank_80_9805 */
-    { 0x809869u, { NULL, NULL, bank_80_9869_M1X0, NULL }, 0 },  /* bank_80_9869 */
-    { 0x809885u, { NULL, NULL, bank_80_9885_M1X0, NULL }, 0 },  /* bank_80_9885 */
-    { 0x8098A4u, { NULL, NULL, bank_80_98A4_M1X0, NULL }, 0 },  /* bank_80_98A4 */
-    { 0x8098B3u, { NULL, NULL, bank_80_98B3_M1X0, NULL }, 0 },  /* bank_80_98B3 */
-    { 0x809980u, { bank_80_9980_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_9980 */
-    { 0x80999Fu, { NULL, NULL, bank_80_999F_M1X0, NULL }, 0 },  /* bank_80_999F */
-    { 0x8099A4u, { NULL, NULL, bank_80_99A4_M1X0, NULL }, 0 },  /* bank_80_99A4 */
-    { 0x809AB2u, { bank_80_9AB2_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_9AB2 */
-    { 0x809B2Fu, { bank_80_9B2F_M0X0, NULL, bank_80_9B2F_M1X0, NULL }, 0 },  /* bank_80_9B2F */
-    { 0x809B55u, { bank_80_9B55_M0X0, NULL, bank_80_9B55_M1X0, NULL }, 0 },  /* bank_80_9B55 */
-    { 0x809B79u, { bank_80_9B79_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_9B79 */
-    { 0x809BA0u, { NULL, NULL, bank_80_9BA0_M1X0, NULL }, 0 },  /* bank_80_9BA0 */
-    { 0x809BC4u, { bank_80_9BC4_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_9BC4 */
-    { 0x809C8Eu, { NULL, NULL, bank_80_9C8E_M1X0, NULL }, 0 },  /* bank_80_9C8E */
-    { 0x809E3Cu, { NULL, NULL, bank_80_9E3C_M1X0, NULL }, 0 },  /* bank_80_9E3C */
-    { 0x809EF7u, { NULL, NULL, bank_80_9EF7_M1X0, NULL }, 0 },  /* bank_80_9EF7 */
-    { 0x809F6Bu, { NULL, NULL, bank_80_9F6B_M1X0, NULL }, 0 },  /* bank_80_9F6B */
-    { 0x80A022u, { NULL, NULL, bank_80_A022_M1X0, NULL }, 0 },  /* bank_80_A022 */
-    { 0x80A08Bu, { NULL, NULL, bank_80_A08B_M1X0, NULL }, 0 },  /* bank_80_A08B */
-    { 0x80A15Bu, { NULL, NULL, bank_80_A15B_M1X0, NULL }, 0 },  /* bank_80_A15B */
-    { 0x80A1E3u, { NULL, NULL, bank_80_A1E3_M1X0, NULL }, 0 },  /* bank_80_A1E3 */
-    { 0x80A538u, { bank_80_A538_M0X0, NULL, bank_80_A538_M1X0, NULL }, 0 },  /* bank_80_A538 */
-    { 0x80A6F6u, { NULL, NULL, bank_80_A6F6_M1X0, NULL }, 0 },  /* bank_80_A6F6 */
-    { 0x80A81Cu, { NULL, NULL, bank_80_A81C_M1X0, NULL }, 0 },  /* bank_80_A81C */
-    { 0x80A849u, { NULL, NULL, bank_80_A849_M1X0, NULL }, 0 },  /* bank_80_A849 */
-    { 0x80A868u, { NULL, NULL, bank_80_A868_M1X0, NULL }, 0 },  /* bank_80_A868 */
-    { 0x80A899u, { NULL, NULL, bank_80_A899_M1X0, NULL }, 0 },  /* bank_80_A899 */
-    { 0x80AA0Cu, { bank_80_AA0C_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_AA0C */
-    { 0x80ABB9u, { NULL, NULL, NULL, NULL }, 0 },  /* bank_80_ABB9 */
-    { 0x80ACC6u, { NULL, NULL, bank_80_ACC6_M1X0, NULL }, 0 },  /* bank_80_ACC6 */
-    { 0x80AD34u, { bank_80_AD34_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_AD34 */
-    { 0x80AD38u, { bank_80_AD38_M0X0, NULL, bank_80_AD38_M1X0, NULL }, 0 },  /* bank_80_AD38 */
-    { 0x80ADD4u, { NULL, NULL, bank_80_ADD4_M1X0, NULL }, 0 },  /* bank_80_ADD4 */
-    { 0x80AE81u, { bank_80_AE81_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_AE81 */
-    { 0x80AEBFu, { bank_80_AEBF_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_AEBF */
-    { 0x80AED7u, { bank_80_AED7_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_AED7 */
-    { 0x80AEE4u, { bank_80_AEE4_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_AEE4 */
-    { 0x80AF0Cu, { bank_80_AF0C_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_AF0C */
-    { 0x80AF45u, { NULL, NULL, bank_80_AF45_M1X0, NULL }, 0 },  /* bank_80_AF45 */
-    { 0x80B07Du, { NULL, NULL, bank_80_B07D_M1X0, NULL }, 0 },  /* bank_80_B07D */
-    { 0x80B0E1u, { NULL, NULL, bank_80_B0E1_M1X0, bank_80_B0E1_M1X1 }, 0 },  /* bank_80_B0E1 */
-    { 0x80B0EBu, { NULL, NULL, bank_80_B0EB_M1X0, NULL }, 0 },  /* bank_80_B0EB */
-    { 0x80B100u, { NULL, NULL, bank_80_B100_M1X0, NULL }, 0 },  /* bank_80_B100 */
-    { 0x80B115u, { NULL, NULL, bank_80_B115_M1X0, NULL }, 0 },  /* bank_80_B115 */
-    { 0x80B12Au, { NULL, NULL, bank_80_B12A_M1X0, NULL }, 0 },  /* bank_80_B12A */
-    { 0x80B13Fu, { NULL, NULL, bank_80_B13F_M1X0, NULL }, 0 },  /* bank_80_B13F */
-    { 0x80B169u, { NULL, NULL, bank_80_B169_M1X0, NULL }, 0 },  /* bank_80_B169 */
-    { 0x80B17Eu, { NULL, NULL, NULL, NULL }, 0 },  /* bank_80_B17E */
-    { 0x80B21Bu, { NULL, NULL, NULL, NULL }, 0 },  /* bank_80_B21B */
-    { 0x80B229u, { NULL, NULL, NULL, NULL }, 0 },  /* bank_80_B229 */
-    { 0x80B260u, { NULL, NULL, NULL, NULL }, 0 },  /* bank_80_B260 */
-    { 0x80B569u, { NULL, NULL, bank_80_B569_M1X0, NULL }, 0 },  /* bank_80_B569 */
-    { 0x80B5FDu, { NULL, NULL, bank_80_B5FD_M1X0, NULL }, 0 },  /* bank_80_B5FD */
-    { 0x80B611u, { NULL, NULL, NULL, NULL }, 0 },  /* bank_80_B611 */
-    { 0x80B6BAu, { NULL, NULL, bank_80_B6BA_M1X0, NULL }, 0 },  /* bank_80_B6BA */
-    { 0x80B6BEu, { bank_80_B6BE_M0X0, NULL, bank_80_B6BE_M1X0, NULL }, 0 },  /* bank_80_B6BE */
-    { 0x80B6E3u, { NULL, NULL, bank_80_B6E3_M1X0, NULL }, 0 },  /* bank_80_B6E3 */
-    { 0x80B708u, { NULL, NULL, bank_80_B708_M1X0, NULL }, 0 },  /* bank_80_B708 */
-    { 0x80B735u, { bank_80_B735_M0X0, NULL, bank_80_B735_M1X0, NULL }, 0 },  /* bank_80_B735 */
-    { 0x80B75Au, { NULL, NULL, bank_80_B75A_M1X0, NULL }, 0 },  /* bank_80_B75A */
-    { 0x80B77Fu, { NULL, NULL, bank_80_B77F_M1X0, NULL }, 0 },  /* bank_80_B77F */
-    { 0x80B7A4u, { NULL, NULL, bank_80_B7A4_M1X0, NULL }, 0 },  /* bank_80_B7A4 */
-    { 0x80B7C9u, { NULL, NULL, bank_80_B7C9_M1X0, NULL }, 0 },  /* bank_80_B7C9 */
-    { 0x80B7EEu, { NULL, NULL, bank_80_B7EE_M1X0, NULL }, 0 },  /* bank_80_B7EE */
-    { 0x80B81Bu, { NULL, NULL, bank_80_B81B_M1X0, NULL }, 0 },  /* bank_80_B81B */
-    { 0x80B8AFu, { NULL, NULL, bank_80_B8AF_M1X0, NULL }, 0 },  /* bank_80_B8AF */
-    { 0x80B8DCu, { NULL, NULL, bank_80_B8DC_M1X0, NULL }, 0 },  /* bank_80_B8DC */
-    { 0x80B901u, { NULL, NULL, bank_80_B901_M1X0, NULL }, 0 },  /* bank_80_B901 */
-    { 0x80B927u, { NULL, NULL, bank_80_B927_M1X0, NULL }, 0 },  /* bank_80_B927 */
-    { 0x80B929u, { NULL, NULL, bank_80_B929_M1X0, NULL }, 0 },  /* bank_80_B929 */
-    { 0x80B965u, { NULL, NULL, bank_80_B965_M1X0, NULL }, 0 },  /* bank_80_B965 */
-    { 0x80BA55u, { NULL, NULL, bank_80_BA55_M1X0, NULL }, 0 },  /* bank_80_BA55 */
-    { 0x80BA8Fu, { NULL, NULL, bank_80_BA8F_M1X0, NULL }, 0 },  /* bank_80_BA8F */
-    { 0x80BB87u, { bank_80_BB87_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_BB87 */
-    { 0x80BCAAu, { bank_80_BCAA_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_BCAA */
-    { 0x80BDBFu, { bank_80_BDBF_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_BDBF */
-    { 0x80BF34u, { bank_80_BF34_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_BF34 */
-    { 0x80C115u, { bank_80_C115_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C115 */
-    { 0x80C1DAu, { NULL, NULL, bank_80_C1DA_M1X0, NULL }, 0 },  /* bank_80_C1DA */
-    { 0x80C1F1u, { NULL, NULL, bank_80_C1F1_M1X0, NULL }, 0 },  /* bank_80_C1F1 */
-    { 0x80C1F5u, { NULL, NULL, bank_80_C1F5_M1X0, NULL }, 0 },  /* bank_80_C1F5 */
-    { 0x80C23Bu, { NULL, NULL, bank_80_C23B_M1X0, NULL }, 0 },  /* bank_80_C23B */
-    { 0x80C258u, { NULL, NULL, bank_80_C258_M1X0, NULL }, 0 },  /* bank_80_C258 */
-    { 0x80C2FDu, { NULL, NULL, bank_80_C2FD_M1X0, NULL }, 0 },  /* bank_80_C2FD */
-    { 0x80C3ABu, { bank_80_C3AB_M0X0, NULL, bank_80_C3AB_M1X0, NULL }, 0 },  /* bank_80_C3AB */
-    { 0x80C3AFu, { bank_80_C3AF_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C3AF */
-    { 0x80C440u, { bank_80_C440_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C440 */
-    { 0x80C445u, { bank_80_C445_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C445 */
-    { 0x80C463u, { bank_80_C463_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C463 */
-    { 0x80C481u, { bank_80_C481_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C481 */
-    { 0x80C4A7u, { bank_80_C4A7_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C4A7 */
-    { 0x80C4EFu, { bank_80_C4EF_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C4EF */
-    { 0x80C534u, { bank_80_C534_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C534 */
-    { 0x80C546u, { bank_80_C546_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C546 */
-    { 0x80C5BAu, { bank_80_C5BA_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C5BA */
-    { 0x80C5C2u, { bank_80_C5C2_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C5C2 */
-    { 0x80C60Fu, { bank_80_C60F_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C60F */
-    { 0x80C617u, { bank_80_C617_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C617 */
-    { 0x80C664u, { bank_80_C664_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C664 */
-    { 0x80C66Cu, { bank_80_C66C_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C66C */
-    { 0x80C6AAu, { bank_80_C6AA_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C6AA */
-    { 0x80C6C4u, { bank_80_C6C4_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C6C4 */
-    { 0x80C775u, { NULL, NULL, bank_80_C775_M1X0, NULL }, 0 },  /* bank_80_C775 */
-    { 0x80C7B3u, { bank_80_C7B3_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C7B3 */
-    { 0x80C7EFu, { bank_80_C7EF_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C7EF */
-    { 0x80C80Bu, { bank_80_C80B_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C80B */
-    { 0x80C81Eu, { bank_80_C81E_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C81E */
-    { 0x80C83Fu, { bank_80_C83F_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C83F */
-    { 0x80C857u, { bank_80_C857_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C857 */
-    { 0x80C8D7u, { bank_80_C8D7_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C8D7 */
-    { 0x80C8F1u, { bank_80_C8F1_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C8F1 */
-    { 0x80C902u, { bank_80_C902_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C902 */
-    { 0x80C921u, { bank_80_C921_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C921 */
-    { 0x80C937u, { bank_80_C937_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C937 */
-    { 0x80C973u, { bank_80_C973_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C973 */
-    { 0x80C99Au, { bank_80_C99A_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C99A */
-    { 0x80C9C6u, { bank_80_C9C6_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_C9C6 */
-    { 0x80CA63u, { bank_80_CA63_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_CA63 */
-    { 0x80CA72u, { bank_80_CA72_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_CA72 */
-    { 0x80CA8Au, { bank_80_CA8A_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_CA8A */
-    { 0x80CA99u, { bank_80_CA99_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_CA99 */
-    { 0x80CAB4u, { bank_80_CAB4_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_CAB4 */
-    { 0x80CAD8u, { bank_80_CAD8_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_CAD8 */
-    { 0x80CAF3u, { NULL, NULL, bank_80_CAF3_M1X0, NULL }, 0 },  /* bank_80_CAF3 */
-    { 0x80CBB2u, { bank_80_CBB2_M0X0, NULL, bank_80_CBB2_M1X0, NULL }, 0 },  /* bank_80_CBB2 */
-    { 0x80CE7Fu, { bank_80_CE7F_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_CE7F */
-    { 0x80CF8Cu, { bank_80_CF8C_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_CF8C */
-    { 0x80CF90u, { bank_80_CF90_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_CF90 */
-    { 0x80CFF6u, { bank_80_CFF6_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_CFF6 */
-    { 0x80D061u, { bank_80_D061_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_D061 */
-    { 0x80D088u, { bank_80_D088_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_D088 */
-    { 0x80D0AFu, { bank_80_D0AF_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_D0AF */
-    { 0x80D152u, { bank_80_D152_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_D152 */
-    { 0x80D1D7u, { NULL, NULL, bank_80_D1D7_M1X0, NULL }, 0 },  /* bank_80_D1D7 */
-    { 0x80D1DBu, { NULL, NULL, bank_80_D1DB_M1X0, NULL }, 0 },  /* bank_80_D1DB */
-    { 0x80D1E9u, { NULL, NULL, bank_80_D1E9_M1X0, NULL }, 0 },  /* bank_80_D1E9 */
-    { 0x80D1FDu, { NULL, NULL, bank_80_D1FD_M1X0, NULL }, 0 },  /* bank_80_D1FD */
-    { 0x80D2B0u, { NULL, NULL, bank_80_D2B0_M1X0, NULL }, 0 },  /* bank_80_D2B0 */
-    { 0x80D37Au, { NULL, NULL, bank_80_D37A_M1X0, NULL }, 0 },  /* bank_80_D37A */
-    { 0x80D40Fu, { NULL, NULL, bank_80_D40F_M1X0, NULL }, 0 },  /* bank_80_D40F */
-    { 0x80D437u, { bank_80_D437_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_D437 */
-    { 0x80D4F6u, { NULL, NULL, bank_80_D4F6_M1X0, NULL }, 0 },  /* bank_80_D4F6 */
-    { 0x80D518u, { NULL, NULL, NULL, NULL }, 0 },  /* bank_80_D518 */
-    { 0x80D5D9u, { bank_80_D5D9_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_D5D9 */
-    { 0x80D7C0u, { bank_80_D7C0_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_D7C0 */
-    { 0x80DAC2u, { bank_80_DAC2_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_DAC2 */
-    { 0x80DDE6u, { bank_80_DDE6_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_DDE6 */
-    { 0x80E21Du, { NULL, NULL, bank_80_E21D_M1X0, NULL }, 0 },  /* bank_80_E21D */
-    { 0x80E23Bu, { NULL, NULL, bank_80_E23B_M1X0, NULL }, 0 },  /* bank_80_E23B */
-    { 0x80E268u, { NULL, NULL, bank_80_E268_M1X0, NULL }, 0 },  /* bank_80_E268 */
-    { 0x80E286u, { NULL, NULL, bank_80_E286_M1X0, NULL }, 0 },  /* bank_80_E286 */
-    { 0x80E2B9u, { NULL, NULL, bank_80_E2B9_M1X0, NULL }, 0 },  /* bank_80_E2B9 */
-    { 0x80E2BDu, { NULL, NULL, bank_80_E2BD_M1X0, NULL }, 0 },  /* bank_80_E2BD */
-    { 0x80E3D3u, { NULL, NULL, bank_80_E3D3_M1X0, NULL }, 0 },  /* bank_80_E3D3 */
-    { 0x80E536u, { NULL, NULL, bank_80_E536_M1X0, NULL }, 0 },  /* bank_80_E536 */
-    { 0x80E53Au, { NULL, NULL, bank_80_E53A_M1X0, NULL }, 0 },  /* bank_80_E53A */
-    { 0x80E6C7u, { NULL, NULL, bank_80_E6C7_M1X0, NULL }, 0 },  /* bank_80_E6C7 */
-    { 0x80E71Au, { NULL, NULL, bank_80_E71A_M1X0, NULL }, 0 },  /* bank_80_E71A */
-    { 0x80E78Bu, { NULL, NULL, bank_80_E78B_M1X0, NULL }, 0 },  /* bank_80_E78B */
-    { 0x80E838u, { NULL, NULL, bank_80_E838_M1X0, NULL }, 0 },  /* bank_80_E838 */
-    { 0x80EA79u, { NULL, NULL, bank_80_EA79_M1X0, NULL }, 0 },  /* bank_80_EA79 */
-    { 0x80EB0Du, { NULL, NULL, bank_80_EB0D_M1X0, NULL }, 0 },  /* bank_80_EB0D */
-    { 0x80EB60u, { NULL, NULL, bank_80_EB60_M1X0, NULL }, 0 },  /* bank_80_EB60 */
-    { 0x80ED07u, { NULL, NULL, bank_80_ED07_M1X0, NULL }, 0 },  /* bank_80_ED07 */
-    { 0x80EEDCu, { NULL, NULL, bank_80_EEDC_M1X0, NULL }, 0 },  /* bank_80_EEDC */
-    { 0x80EF37u, { NULL, NULL, bank_80_EF37_M1X0, NULL }, 0 },  /* bank_80_EF37 */
-    { 0x80EF73u, { NULL, NULL, bank_80_EF73_M1X0, NULL }, 0 },  /* bank_80_EF73 */
-    { 0x80EFBEu, { bank_80_EFBE_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_EFBE */
-    { 0x80F015u, { bank_80_F015_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_F015 */
-    { 0x80F06Cu, { bank_80_F06C_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_F06C */
-    { 0x80F0D8u, { bank_80_F0D8_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_F0D8 */
-    { 0x80F4A2u, { NULL, NULL, bank_80_F4A2_M1X0, NULL }, 0 },  /* bank_80_F4A2 */
-    { 0x80F4D3u, { NULL, NULL, bank_80_F4D3_M1X0, NULL }, 0 },  /* bank_80_F4D3 */
-    { 0x80F505u, { NULL, NULL, bank_80_F505_M1X0, NULL }, 0 },  /* bank_80_F505 */
-    { 0x80F515u, { NULL, NULL, bank_80_F515_M1X0, NULL }, 0 },  /* bank_80_F515 */
-    { 0x80F525u, { NULL, NULL, bank_80_F525_M1X0, NULL }, 0 },  /* bank_80_F525 */
-    { 0x80F529u, { NULL, NULL, bank_80_F529_M1X0, NULL }, 0 },  /* bank_80_F529 */
-    { 0x80F549u, { NULL, NULL, bank_80_F549_M1X0, NULL }, 0 },  /* bank_80_F549 */
-    { 0x80F60Cu, { NULL, NULL, bank_80_F60C_M1X0, NULL }, 0 },  /* bank_80_F60C */
-    { 0x80F653u, { NULL, NULL, bank_80_F653_M1X0, NULL }, 0 },  /* bank_80_F653 */
-    { 0x80F7C6u, { bank_80_F7C6_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_F7C6 */
-    { 0x80F7E5u, { bank_80_F7E5_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_F7E5 */
-    { 0x80F7FEu, { bank_80_F7FE_M0X0, NULL, bank_80_F7FE_M1X0, NULL }, 0 },  /* bank_80_F7FE */
-    { 0x80F802u, { bank_80_F802_M0X0, NULL, bank_80_F802_M1X0, NULL }, 0 },  /* bank_80_F802 */
-    { 0x80F859u, { bank_80_F859_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_F859 */
-    { 0x80F877u, { bank_80_F877_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_F877 */
-    { 0x80F8A3u, { bank_80_F8A3_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_F8A3 */
-    { 0x80F8D1u, { NULL, NULL, bank_80_F8D1_M1X0, NULL }, 0 },  /* bank_80_F8D1 */
-    { 0x80FA4Au, { NULL, NULL, bank_80_FA4A_M1X0, NULL }, 0 },  /* bank_80_FA4A */
-    { 0x80FAC5u, { NULL, NULL, bank_80_FAC5_M1X0, NULL }, 0 },  /* bank_80_FAC5 */
-    { 0x80FAC9u, { NULL, NULL, bank_80_FAC9_M1X0, NULL }, 0 },  /* bank_80_FAC9 */
-    { 0x80FADFu, { NULL, NULL, bank_80_FADF_M1X0, NULL }, 0 },  /* bank_80_FADF */
-    { 0x80FBBFu, { NULL, NULL, bank_80_FBBF_M1X0, NULL }, 0 },  /* bank_80_FBBF */
-    { 0x80FC1Cu, { bank_80_FC1C_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_FC1C */
-    { 0x80FC38u, { bank_80_FC38_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_FC38 */
-    { 0x80FC3Du, { bank_80_FC3D_M0X0, NULL, NULL, NULL }, 0 },  /* bank_80_FC3D */
-    { 0x818050u, { bank_81_8050_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_8050 */
-    { 0x8182E2u, { NULL, bank_81_82E2_M0X1, NULL, NULL }, 0 },  /* bank_81_82E2 */
-    { 0x8182E6u, { NULL, bank_81_82E6_M0X1, NULL, NULL }, 0 },  /* bank_81_82E6 */
-    { 0x818341u, { bank_81_8341_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_8341 */
-    { 0x8183A4u, { bank_81_83A4_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_83A4 */
-    { 0x8184D2u, { bank_81_84D2_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_84D2 */
-    { 0x8184DBu, { bank_81_84DB_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_84DB */
-    { 0x818515u, { bank_81_8515_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_8515 */
-    { 0x81857Du, { bank_81_857D_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_857D */
-    { 0x8185B7u, { NULL, bank_81_85B7_M0X1, NULL, NULL }, 0 },  /* bank_81_85B7 */
-    { 0x8185BBu, { NULL, bank_81_85BB_M0X1, NULL, NULL }, 0 },  /* bank_81_85BB */
-    { 0x818745u, { bank_81_8745_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_8745 */
-    { 0x818785u, { bank_81_8785_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_8785 */
-    { 0x8187EBu, { bank_81_87EB_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_87EB */
-    { 0x818970u, { bank_81_8970_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_8970 */
-    { 0x8189B9u, { bank_81_89B9_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_89B9 */
-    { 0x818A17u, { bank_81_8A17_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_8A17 */
-    { 0x818A4Au, { NULL, NULL, bank_81_8A4A_M1X0, NULL }, 0 },  /* bank_81_8A4A */
-    { 0x818B95u, { NULL, NULL, bank_81_8B95_M1X0, NULL }, 0 },  /* bank_81_8B95 */
-    { 0x818D14u, { bank_81_8D14_M0X0, bank_81_8D14_M0X1, NULL, NULL }, 0 },  /* bank_81_8D14 */
-    { 0x818D18u, { bank_81_8D18_M0X0, bank_81_8D18_M0X1, NULL, NULL }, 0 },  /* bank_81_8D18 */
-    { 0x818FB8u, { NULL, NULL, bank_81_8FB8_M1X0, NULL }, 0 },  /* bank_81_8FB8 */
-    { 0x81983Bu, { NULL, bank_81_983B_M0X1, NULL, NULL }, 0 },  /* bank_81_983B */
-    { 0x8199D6u, { NULL, NULL, bank_81_99D6_M1X0, NULL }, 0 },  /* bank_81_99D6 */
-    { 0x819A5Au, { NULL, NULL, bank_81_9A5A_M1X0, NULL }, 0 },  /* bank_81_9A5A */
-    { 0x819E2Au, { bank_81_9E2A_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_9E2A */
-    { 0x819FBFu, { bank_81_9FBF_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_9FBF */
-    { 0x81A2E5u, { bank_81_A2E5_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_A2E5 */
-    { 0x81A30Fu, { bank_81_A30F_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_A30F */
-    { 0x81A313u, { bank_81_A313_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_A313 */
-    { 0x81A52Bu, { bank_81_A52B_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_A52B */
-    { 0x81A52Fu, { bank_81_A52F_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_A52F */
-    { 0x81A59Eu, { bank_81_A59E_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_A59E */
-    { 0x81AB88u, { bank_81_AB88_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_AB88 */
-    { 0x81ACB1u, { bank_81_ACB1_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_ACB1 */
-    { 0x81ACFBu, { bank_81_ACFB_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_ACFB */
-    { 0x81AD2Cu, { bank_81_AD2C_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_AD2C */
-    { 0x81AD7Au, { bank_81_AD7A_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_AD7A */
-    { 0x81ADB6u, { bank_81_ADB6_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_ADB6 */
-    { 0x81AE59u, { bank_81_AE59_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_AE59 */
-    { 0x81AFC3u, { bank_81_AFC3_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_AFC3 */
-    { 0x81B27Fu, { bank_81_B27F_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_B27F */
-    { 0x81B375u, { bank_81_B375_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_B375 */
-    { 0x81B664u, { bank_81_B664_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_B664 */
-    { 0x81B668u, { bank_81_B668_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_B668 */
-    { 0x81B68Bu, { NULL, bank_81_B68B_M0X1, NULL, NULL }, 0 },  /* bank_81_B68B */
-    { 0x81B68Fu, { NULL, bank_81_B68F_M0X1, NULL, NULL }, 0 },  /* bank_81_B68F */
-    { 0x81B6C0u, { bank_81_B6C0_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_B6C0 */
-    { 0x81B6C4u, { bank_81_B6C4_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_B6C4 */
-    { 0x81B76Du, { NULL, NULL, bank_81_B76D_M1X0, NULL }, 0 },  /* bank_81_B76D */
-    { 0x81B773u, { bank_81_B773_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_B773 */
-    { 0x81B77Bu, { bank_81_B77B_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_B77B */
-    { 0x81B8F1u, { bank_81_B8F1_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_B8F1 */
-    { 0x81BA26u, { bank_81_BA26_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_BA26 */
-    { 0x81BA7Au, { bank_81_BA7A_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_BA7A */
-    { 0x81BADCu, { bank_81_BADC_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_BADC */
-    { 0x81BB6Fu, { bank_81_BB6F_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_BB6F */
-    { 0x81BB89u, { bank_81_BB89_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_BB89 */
-    { 0x81BD48u, { bank_81_BD48_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_BD48 */
-    { 0x81BD9Fu, { bank_81_BD9F_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_BD9F */
-    { 0x81BE01u, { bank_81_BE01_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_BE01 */
-    { 0x81BE99u, { bank_81_BE99_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_BE99 */
-    { 0x81BEB3u, { bank_81_BEB3_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_BEB3 */
-    { 0x81BEB7u, { bank_81_BEB7_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_BEB7 */
-    { 0x81BF41u, { bank_81_BF41_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_BF41 */
-    { 0x81BFE3u, { bank_81_BFE3_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_BFE3 */
-    { 0x81C0DDu, { NULL, NULL, NULL, bank_81_C0DD_M1X1 }, 0 },  /* bank_81_C0DD */
-    { 0x81C572u, { bank_81_C572_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_C572 */
-    { 0x81C576u, { bank_81_C576_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_C576 */
-    { 0x81C5AFu, { bank_81_C5AF_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_C5AF */
-    { 0x81C5B3u, { bank_81_C5B3_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_C5B3 */
-    { 0x81C605u, { bank_81_C605_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_C605 */
-    { 0x81C609u, { bank_81_C609_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_C609 */
-    { 0x81C64Eu, { bank_81_C64E_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_C64E */
-    { 0x81C697u, { bank_81_C697_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_C697 */
-    { 0x81C69Bu, { bank_81_C69B_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_C69B */
-    { 0x81C6D3u, { bank_81_C6D3_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_C6D3 */
-    { 0x81C7E1u, { bank_81_C7E1_M0X0, NULL, NULL, NULL }, 0 },  /* bank_81_C7E1 */
-    { 0x81C907u, { NULL, NULL, bank_81_C907_M1X0, NULL }, 0 },  /* bank_81_C907 */
-    { 0x81CCE6u, { NULL, NULL, NULL, bank_81_CCE6_M1X1 }, 0 },  /* bank_81_CCE6 */
-    { 0x81CD07u, { NULL, NULL, NULL, bank_81_CD07_M1X1 }, 0 },  /* bank_81_CD07 */
-    { 0x81D86Eu, { NULL, NULL, bank_81_D86E_M1X0, NULL }, 0 },  /* bank_81_D86E */
-    { 0x81E8D9u, { NULL, NULL, bank_81_E8D9_M1X0, NULL }, 0 },  /* bank_81_E8D9 */
-    { 0x828000u, { bank_82_8000_M0X0, bank_82_8000_M0X1, NULL, NULL }, 0 },  /* bank_82_8000 */
-    { 0x828035u, { bank_82_8035_M0X0, NULL, bank_82_8035_M1X0, NULL }, 0 },  /* bank_82_8035 */
-    { 0x82807Eu, { bank_82_807E_M0X0, NULL, NULL, NULL }, 0 },  /* bank_82_807E */
-    { 0x828082u, { bank_82_8082_M0X0, NULL, NULL, NULL }, 0 },  /* bank_82_8082 */
-    { 0x82812Au, { NULL, NULL, bank_82_812A_M1X0, NULL }, 0 },  /* bank_82_812A */
-    { 0x828151u, { bank_82_8151_M0X0, NULL, bank_82_8151_M1X0, NULL }, 0 },  /* bank_82_8151 */
-    { 0x828294u, { bank_82_8294_M0X0, NULL, NULL, NULL }, 0 },  /* bank_82_8294 */
-    { 0x828298u, { bank_82_8298_M0X0, NULL, NULL, NULL }, 0 },  /* bank_82_8298 */
-    { 0x8282A5u, { bank_82_82A5_M0X0, NULL, NULL, NULL }, 0 },  /* bank_82_82A5 */
-    { 0x8282A9u, { bank_82_82A9_M0X0, NULL, NULL, NULL }, 0 },  /* bank_82_82A9 */
-    { 0x828328u, { NULL, NULL, bank_82_8328_M1X0, NULL }, 0 },  /* bank_82_8328 */
-    { 0x828337u, { NULL, bank_82_8337_M0X1, NULL, NULL }, 0 },  /* bank_82_8337 */
-    { 0x82836Du, { NULL, bank_82_836D_M0X1, NULL, NULL }, 0 },  /* bank_82_836D */
-    { 0x8287CCu, { bank_82_87CC_M0X0, NULL, NULL, NULL }, 0 },  /* bank_82_87CC */
-    { 0x82892Au, { bank_82_892A_M0X0, NULL, NULL, NULL }, 0 },  /* bank_82_892A */
-    { 0x828952u, { bank_82_8952_M0X0, NULL, NULL, NULL }, 0 },  /* bank_82_8952 */
-    { 0x828956u, { bank_82_8956_M0X0, NULL, NULL, NULL }, 0 },  /* bank_82_8956 */
-    { 0x8289B5u, { bank_82_89B5_M0X0, NULL, NULL, NULL }, 0 },  /* bank_82_89B5 */
-    { 0x8289B9u, { bank_82_89B9_M0X0, NULL, NULL, NULL }, 0 },  /* bank_82_89B9 */
-    { 0x829385u, { NULL, NULL, bank_82_9385_M1X0, NULL }, 0 },  /* bank_82_9385 */
-    { 0x829704u, { bank_82_9704_M0X0, NULL, bank_82_9704_M1X0, NULL }, 0 },  /* bank_82_9704 */
-    { 0x82980Du, { bank_82_980D_M0X0, NULL, NULL, bank_82_980D_M1X1 }, 0 },  /* bank_82_980D */
-    { 0x829811u, { bank_82_9811_M0X0, NULL, NULL, bank_82_9811_M1X1 }, 0 },  /* bank_82_9811 */
-    { 0x8298BEu, { bank_82_98BE_M0X0, NULL, NULL, NULL }, 0 },  /* bank_82_98BE */
-    { 0x829A42u, { bank_82_9A42_M0X0, NULL, bank_82_9A42_M1X0, NULL }, 0 },  /* bank_82_9A42 */
-    { 0x82A01Bu, { bank_82_A01B_M0X0, NULL, NULL, NULL }, 0 },  /* bank_82_A01B */
-    { 0x82A05Du, { bank_82_A05D_M0X0, NULL, NULL, NULL }, 0 },  /* bank_82_A05D */
-    { 0x82A0ABu, { bank_82_A0AB_M0X0, bank_82_A0AB_M0X1, NULL, NULL }, 0 },  /* bank_82_A0AB */
-    { 0x82A22Bu, { NULL, bank_82_A22B_M0X1, NULL, NULL }, 0 },  /* bank_82_A22B */
-    { 0x82A27Cu, { bank_82_A27C_M0X0, NULL, bank_82_A27C_M1X0, NULL }, 0 },  /* bank_82_A27C */
-    { 0x82A354u, { bank_82_A354_M0X0, NULL, NULL, NULL }, 0 },  /* bank_82_A354 */
-    { 0x82A498u, { NULL, bank_82_A498_M0X1, NULL, NULL }, 0 },  /* bank_82_A498 */
-    { 0x82A5F3u, { NULL, bank_82_A5F3_M0X1, NULL, NULL }, 0 },  /* bank_82_A5F3 */
-    { 0x82A618u, { bank_82_A618_M0X0, NULL, NULL, NULL }, 0 },  /* bank_82_A618 */
-    { 0x82A6F1u, { bank_82_A6F1_M0X0, NULL, NULL, NULL }, 0 },  /* bank_82_A6F1 */
-    { 0x82A8C2u, { NULL, bank_82_A8C2_M0X1, NULL, NULL }, 0 },  /* bank_82_A8C2 */
-    { 0x82A968u, { bank_82_A968_M0X0, NULL, NULL, NULL }, 0 },  /* bank_82_A968 */
-    { 0x82A9ACu, { NULL, bank_82_A9AC_M0X1, NULL, NULL }, 0 },  /* bank_82_A9AC */
-    { 0x82AA09u, { NULL, bank_82_AA09_M0X1, NULL, NULL }, 0 },  /* bank_82_AA09 */
-    { 0x82AA6Au, { bank_82_AA6A_M0X0, NULL, bank_82_AA6A_M1X0, bank_82_AA6A_M1X1 }, 0 },  /* bank_82_AA6A */
-    { 0x82AA6Eu, { bank_82_AA6E_M0X0, NULL, bank_82_AA6E_M1X0, bank_82_AA6E_M1X1 }, 0 },  /* bank_82_AA6E */
-    { 0x82ACA1u, { bank_82_ACA1_M0X0, NULL, NULL, NULL }, 0 },  /* bank_82_ACA1 */
-    { 0x82ACA5u, { bank_82_ACA5_M0X0, NULL, NULL, NULL }, 0 },  /* bank_82_ACA5 */
-    { 0x82B180u, { bank_82_B180_M0X0, NULL, bank_82_B180_M1X0, NULL }, 0 },  /* bank_82_B180 */
-    { 0x82B1ABu, { NULL, NULL, bank_82_B1AB_M1X0, NULL }, 0 },  /* bank_82_B1AB */
-    { 0x82B1D8u, { bank_82_B1D8_M0X0, NULL, bank_82_B1D8_M1X0, NULL }, 0 },  /* bank_82_B1D8 */
-    { 0x82B293u, { NULL, NULL, bank_82_B293_M1X0, NULL }, 0 },  /* bank_82_B293 */
-    { 0x82B2A9u, { NULL, NULL, bank_82_B2A9_M1X0, NULL }, 0 },  /* bank_82_B2A9 */
-    { 0x82B2ADu, { NULL, NULL, bank_82_B2AD_M1X0, NULL }, 0 },  /* bank_82_B2AD */
-    { 0x82B2DAu, { NULL, NULL, bank_82_B2DA_M1X0, NULL }, 0 },  /* bank_82_B2DA */
-    { 0x82B8A7u, { NULL, NULL, bank_82_B8A7_M1X0, NULL }, 0 },  /* bank_82_B8A7 */
-    { 0x82B8ABu, { NULL, NULL, bank_82_B8AB_M1X0, NULL }, 0 },  /* bank_82_B8AB */
-    { 0x82D197u, { NULL, NULL, bank_82_D197_M1X0, NULL }, 0 },  /* bank_82_D197 */
-    { 0x82D19Bu, { NULL, NULL, bank_82_D19B_M1X0, NULL }, 0 },  /* bank_82_D19B */
-    { 0x82D2D4u, { NULL, NULL, bank_82_D2D4_M1X0, NULL }, 0 },  /* bank_82_D2D4 */
-    { 0x82D2D8u, { NULL, NULL, bank_82_D2D8_M1X0, NULL }, 0 },  /* bank_82_D2D8 */
-    { 0x82D353u, { bank_82_D353_M0X0, NULL, bank_82_D353_M1X0, NULL }, 0 },  /* bank_82_D353 */
-    { 0x82D357u, { bank_82_D357_M0X0, NULL, bank_82_D357_M1X0, NULL }, 0 },  /* bank_82_D357 */
-    { 0x82D3CCu, { NULL, NULL, bank_82_D3CC_M1X0, NULL }, 0 },  /* bank_82_D3CC */
-    { 0x82D3D0u, { NULL, NULL, bank_82_D3D0_M1X0, NULL }, 0 },  /* bank_82_D3D0 */
-    { 0x82D4E5u, { bank_82_D4E5_M0X0, NULL, bank_82_D4E5_M1X0, bank_82_D4E5_M1X1 }, 0 },  /* bank_82_D4E5 */
-    { 0x82D4E9u, { bank_82_D4E9_M0X0, NULL, bank_82_D4E9_M1X0, bank_82_D4E9_M1X1 }, 0 },  /* bank_82_D4E9 */
+    { 0x8085A5u, { NULL, NULL, NmiHandler_Default_M1X0, NULL }, 0 },  /* NmiHandler_Default */
+    { 0x808610u, { NULL, NULL, NmiHandler_Race_FastRom_M1X0, NULL }, 0 },  /* NmiHandler_Race_FastRom */
+    { 0x8088DDu, { NULL, NULL, Race_CheckExited_FastRom_M1X0, NULL }, 0 },  /* Race_CheckExited_FastRom */
+    { 0x808917u, { NULL, NULL, League_ShowPointAwards_FastRom_M1X0, NULL }, 0 },  /* League_ShowPointAwards_FastRom */
+    { 0x808C41u, { NULL, NULL, Text_GetCharClass_FastRom_M1X0, NULL }, 0 },  /* Text_GetCharClass_FastRom */
+    { 0x808C4Eu, { NULL, NULL, Sram_ValidateOrInit_FastRom_M1X0, NULL }, 0 },  /* Sram_ValidateOrInit_FastRom */
+    { 0x808CCBu, { Records_InsertHighScore_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Records_InsertHighScore_FastRom */
+    { 0x808D6Eu, { Results_DrawLapRace_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Results_DrawLapRace_FastRom */
+    { 0x8091DCu, { NULL, NULL, Boot_91DC_M1X0, NULL }, 0 },  /* Boot_91DC */
+    { 0x8092F2u, { NULL, NULL, Reset_ClearWRAM_M1X0, NULL }, 0 },  /* Reset_ClearWRAM */
+    { 0x8092F7u, { NULL, NULL, Reset_ClearWRAM_loop80_M1X0, NULL }, 0 },  /* Reset_ClearWRAM_loop80 */
+    { 0x809302u, { NULL, NULL, NULL, NULL }, 0 },  /* Boot_ClearWRAM_9302_FastRom */
+    { 0x809314u, { NULL, NULL, Oam_UploadLong_M1X0, NULL }, 0 },  /* Oam_UploadLong */
+    { 0x809318u, { NULL, NULL, Oam_Upload_FastRom_M1X0, NULL }, 0 },  /* Oam_Upload_FastRom */
+    { 0x80933Cu, { NULL, NULL, Text_CopyWord_FastRom_M1X0, NULL }, 0 },  /* Text_CopyWord_FastRom */
+    { 0x80935Eu, { Text_CopyStripUnderscores_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CopyStripUnderscores_FastRom */
+    { 0x80937Bu, { NULL, NULL, Vram_UploadTilemapAtA8_FastRom_M1X0, NULL }, 0 },  /* Vram_UploadTilemapAtA8_FastRom */
+    { 0x8093A1u, { NULL, NULL, Vram_UploadTilemapLong_M1X0, NULL }, 0 },  /* Vram_UploadTilemapLong */
+    { 0x8093A5u, { NULL, NULL, Vram_UploadTilemap_FastRom_M1X0, NULL }, 0 },  /* Vram_UploadTilemap_FastRom */
+    { 0x8093CBu, { NULL, NULL, Vram_UploadTilemapBottom_FastRom_M1X0, NULL }, 0 },  /* Vram_UploadTilemapBottom_FastRom */
+    { 0x8093FBu, { NULL, NULL, NULL, NULL }, 0 },  /* Attract_Main_FastRom */
+    { 0x8094EBu, { NULL, NULL, Attract_Main_94EB_M1X0, NULL }, 0 },  /* Attract_Main_94EB */
+    { 0x80951Cu, { NULL, NULL, Results_Show_FastRom_M1X0, NULL }, 0 },  /* Results_Show_FastRom */
+    { 0x8095ABu, { NULL, NULL, Menu_DrawTrackNameGrid_FastRom_M1X0, NULL }, 0 },  /* Menu_DrawTrackNameGrid_FastRom */
+    { 0x809625u, { NULL, NULL, Menu_SetupTrackGridSprites_FastRom_M1X0, NULL }, 0 },  /* Menu_SetupTrackGridSprites_FastRom */
+    { 0x8096FDu, { Math_Div16by8Long_M0X0, NULL, NULL, NULL }, 0 },  /* Math_Div16by8Long */
+    { 0x809701u, { Math_Div16by8_FastRom_M0X0, NULL, Math_Div16by8_FastRom_M1X0, NULL }, 0 },  /* Math_Div16by8_FastRom */
+    { 0x809719u, { Math_Div16Long_M0X0, NULL, NULL, NULL }, 0 },  /* Math_Div16Long */
+    { 0x80971Du, { Math_Div16_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Math_Div16_FastRom */
+    { 0x80974Bu, { NULL, NULL, Tour_DrawSelectIcons_FastRom_M1X0, NULL }, 0 },  /* Tour_DrawSelectIcons_FastRom */
+    { 0x809805u, { NULL, NULL, Results_ResetMarkerSpritesOnce_FastRom_M1X0, NULL }, 0 },  /* Results_ResetMarkerSpritesOnce_FastRom */
+    { 0x809869u, { NULL, NULL, Video_FadeIn_FastRom_M1X0, NULL }, 0 },  /* Video_FadeIn_FastRom */
+    { 0x809885u, { NULL, NULL, Video_FadeOut_FastRom_M1X0, NULL }, 0 },  /* Video_FadeOut_FastRom */
+    { 0x8098A4u, { NULL, NULL, Menu_HideCursor_FastRom_M1X0, NULL }, 0 },  /* Menu_HideCursor_FastRom */
+    { 0x8098B3u, { NULL, NULL, Results_AnimateLapMarkers_FastRom_M1X0, NULL }, 0 },  /* Results_AnimateLapMarkers_FastRom */
+    { 0x809980u, { Math_ScaleClampVelocity_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Math_ScaleClampVelocity_FastRom */
+    { 0x80999Fu, { NULL, NULL, Race_StartKeepParam_FastRom_M1X0, NULL }, 0 },  /* Race_StartKeepParam_FastRom */
+    { 0x8099A4u, { NULL, NULL, Race_Start_FastRom_M1X0, NULL }, 0 },  /* Race_Start_FastRom */
+    { 0x809AB2u, { League_CalcPointBars_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* League_CalcPointBars_FastRom */
+    { 0x809B2Fu, { Sram_CopyPlayerName_FastRom_M0X0, NULL, Sram_CopyPlayerName_FastRom_M1X0, NULL }, 0 },  /* Sram_CopyPlayerName_FastRom */
+    { 0x809B55u, { Text_CopyTrackName_FastRom_M0X0, NULL, Text_CopyTrackName_FastRom_M1X0, NULL }, 0 },  /* Text_CopyTrackName_FastRom */
+    { 0x809B79u, { Sram_CopyLeagueName_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Sram_CopyLeagueName_FastRom */
+    { 0x809BA0u, { NULL, NULL, Text_CopyTourName_FastRom_M1X0, NULL }, 0 },  /* Text_CopyTourName_FastRom */
+    { 0x809BC4u, { DefineLeague_Main_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* DefineLeague_Main_FastRom */
+    { 0x809C8Eu, { NULL, NULL, DefineLeague_PickTracks_FastRom_M1X0, NULL }, 0 },  /* DefineLeague_PickTracks_FastRom */
+    { 0x809E3Cu, { NULL, NULL, DefineLeague_CalcItemPos_FastRom_M1X0, NULL }, 0 },  /* DefineLeague_CalcItemPos_FastRom */
+    { 0x809EF7u, { NULL, NULL, DefineLeague_SelectSlot_FastRom_M1X0, NULL }, 0 },  /* DefineLeague_SelectSlot_FastRom */
+    { 0x809F6Bu, { NULL, NULL, Fx_HdmaWipeReveal_FastRom_M1X0, NULL }, 0 },  /* Fx_HdmaWipeReveal_FastRom */
+    { 0x80A022u, { NULL, NULL, Fx_HdmaWipeCover_FastRom_M1X0, NULL }, 0 },  /* Fx_HdmaWipeCover_FastRom */
+    { 0x80A08Bu, { NULL, NULL, Menu_InitVideo_FastRom_M1X0, NULL }, 0 },  /* Menu_InitVideo_FastRom */
+    { 0x80A15Bu, { NULL, NULL, Sys_InitVars_FastRom_M1X0, NULL }, 0 },  /* Sys_InitVars_FastRom */
+    { 0x80A1E3u, { NULL, NULL, Text_NameEntry_FastRom_M1X0, NULL }, 0 },  /* Text_NameEntry_FastRom */
+    { 0x80A538u, { League_DrawTable_FastRom_M0X0, NULL, League_DrawTable_FastRom_M1X0, NULL }, 0 },  /* League_DrawTable_FastRom */
+    { 0x80A6F6u, { NULL, NULL, Pal_UploadSpritePalettes_FastRom_M1X0, NULL }, 0 },  /* Pal_UploadSpritePalettes_FastRom */
+    { 0x80A81Cu, { NULL, NULL, Gfx_UploadOverlayTilesA_FastRom_M1X0, NULL }, 0 },  /* Gfx_UploadOverlayTilesA_FastRom */
+    { 0x80A849u, { NULL, NULL, Pal_LoadMenuSpritePalettes_FastRom_M1X0, NULL }, 0 },  /* Pal_LoadMenuSpritePalettes_FastRom */
+    { 0x80A868u, { NULL, NULL, Gfx_UploadOverlayTilesB_FastRom_M1X0, NULL }, 0 },  /* Gfx_UploadOverlayTilesB_FastRom */
+    { 0x80A899u, { NULL, NULL, Pal_UploadBgPalettes_FastRom_M1X0, NULL }, 0 },  /* Pal_UploadBgPalettes_FastRom */
+    { 0x80AA0Cu, { Options_WipeRam_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Options_WipeRam_FastRom */
+    { 0x80ABB9u, { NULL, NULL, NULL, NULL }, 0 },  /* MainMenu_Run_FastRom */
+    { 0x80ACC6u, { NULL, NULL, MainMenu_Draw_FastRom_M1X0, NULL }, 0 },  /* MainMenu_Draw_FastRom */
+    { 0x80AD34u, { League_SortStandingsLong_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* League_SortStandingsLong_FastRom */
+    { 0x80AD38u, { League_SortStandings_FastRom_M0X0, NULL, League_SortStandings_FastRom_M1X0, NULL }, 0 },  /* League_SortStandings_FastRom */
+    { 0x80ADD4u, { NULL, NULL, PostRace_Menu_FastRom_M1X0, NULL }, 0 },  /* PostRace_Menu_FastRom */
+    { 0x80AE81u, { PostRace_NextTrack_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* PostRace_NextTrack_FastRom */
+    { 0x80AEBFu, { PostRace_SameTrack_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* PostRace_SameTrack_FastRom */
+    { 0x80AED7u, { PostRace_Quit_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* PostRace_Quit_FastRom */
+    { 0x80AEE4u, { PostRace_SelectTrack_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* PostRace_SelectTrack_FastRom */
+    { 0x80AF0Cu, { PostRace_SelectTour_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* PostRace_SelectTour_FastRom */
+    { 0x80AF45u, { NULL, NULL, League_AdvanceAfterRace_FastRom_M1X0, NULL }, 0 },  /* League_AdvanceAfterRace_FastRom */
+    { 0x80B07Du, { NULL, NULL, Boot_ShowLogo_FastRom_M1X0, NULL }, 0 },  /* Boot_ShowLogo_FastRom */
+    { 0x80B0E1u, { NULL, NULL, Unused_NmiEntryDB80_B0E1_M1X0, Unused_NmiEntryDB80_B0E1_M1X1 }, 0 },  /* Unused_NmiEntryDB80_B0E1 */
+    { 0x80B0EBu, { NULL, NULL, Snd_PlayError_FastRom_M1X0, NULL }, 0 },  /* Snd_PlayError_FastRom */
+    { 0x80B100u, { NULL, NULL, Snd_PlayToggle_FastRom_M1X0, NULL }, 0 },  /* Snd_PlayToggle_FastRom */
+    { 0x80B115u, { NULL, NULL, Snd_PlayConfirm_FastRom_M1X0, NULL }, 0 },  /* Snd_PlayConfirm_FastRom */
+    { 0x80B12Au, { NULL, NULL, Snd_PlayWipe_FastRom_M1X0, NULL }, 0 },  /* Snd_PlayWipe_FastRom */
+    { 0x80B13Fu, { NULL, NULL, Snd_PlayWipeAlt_FastRom_M1X0, NULL }, 0 },  /* Snd_PlayWipeAlt_FastRom */
+    { 0x80B169u, { NULL, NULL, Snd_PlayCursor_FastRom_M1X0, NULL }, 0 },  /* Snd_PlayCursor_FastRom */
+    { 0x80B17Eu, { NULL, NULL, NULL, NULL }, 0 },  /* PreRace_Show_FastRom */
+    { 0x80B21Bu, { NULL, NULL, NULL, NULL }, 0 },  /* PreRace_TitleRace_FastRom */
+    { 0x80B229u, { NULL, NULL, NULL, NULL }, 0 },  /* PreRace_TitleLaps_FastRom */
+    { 0x80B260u, { NULL, NULL, NULL, NULL }, 0 },  /* PreRace_TitleStunt_FastRom */
+    { 0x80B569u, { NULL, NULL, PreRace_BuildPlayerLine_FastRom_M1X0, NULL }, 0 },  /* PreRace_BuildPlayerLine_FastRom */
+    { 0x80B5FDu, { NULL, NULL, Vram_ClearAll_FastRom_M1X0, NULL }, 0 },  /* Vram_ClearAll_FastRom */
+    { 0x80B611u, { NULL, NULL, NULL, NULL }, 0 },  /* Options_Main_FastRom */
+    { 0x80B6BAu, { NULL, NULL, Input_IsAnyButtonHeldL_M1X0, NULL }, 0 },  /* Input_IsAnyButtonHeldL */
+    { 0x80B6BEu, { Input_IsAnyButtonHeld_FastRom_M0X0, NULL, Input_IsAnyButtonHeld_FastRom_M1X0, NULL }, 0 },  /* Input_IsAnyButtonHeld_FastRom */
+    { 0x80B6E3u, { NULL, NULL, Input_IsNonUDLButtonHeld_FastRom_M1X0, NULL }, 0 },  /* Input_IsNonUDLButtonHeld_FastRom */
+    { 0x80B708u, { NULL, NULL, Input_IsConfirmHeld_FastRom_M1X0, NULL }, 0 },  /* Input_IsConfirmHeld_FastRom */
+    { 0x80B735u, { Input_IsCancelHeld_FastRom_M0X0, NULL, Input_IsCancelHeld_FastRom_M1X0, NULL }, 0 },  /* Input_IsCancelHeld_FastRom */
+    { 0x80B75Au, { NULL, NULL, Input_IsUpHeld_FastRom_M1X0, NULL }, 0 },  /* Input_IsUpHeld_FastRom */
+    { 0x80B77Fu, { NULL, NULL, Input_IsDownOrSelectHeld_FastRom_M1X0, NULL }, 0 },  /* Input_IsDownOrSelectHeld_FastRom */
+    { 0x80B7A4u, { NULL, NULL, Input_IsLeftHeld_FastRom_M1X0, NULL }, 0 },  /* Input_IsLeftHeld_FastRom */
+    { 0x80B7C9u, { NULL, NULL, Input_IsRightHeld_FastRom_M1X0, NULL }, 0 },  /* Input_IsRightHeld_FastRom */
+    { 0x80B7EEu, { NULL, NULL, Input_IsUpHeld2_FastRom_M1X0, NULL }, 0 },  /* Input_IsUpHeld2_FastRom */
+    { 0x80B81Bu, { NULL, NULL, Input_IsDownHeld_FastRom_M1X0, NULL }, 0 },  /* Input_IsDownHeld_FastRom */
+    { 0x80B8AFu, { NULL, NULL, Input_IsStartOrAHeld_FastRom_M1X0, NULL }, 0 },  /* Input_IsStartOrAHeld_FastRom */
+    { 0x80B8DCu, { NULL, NULL, Input_IsSelectHeld_FastRom_M1X0, NULL }, 0 },  /* Input_IsSelectHeld_FastRom */
+    { 0x80B901u, { NULL, NULL, Input_IsStartHeld_FastRom_M1X0, NULL }, 0 },  /* Input_IsStartHeld_FastRom */
+    { 0x80B927u, { NULL, NULL, Menu_RunVerticalFromTop_FastRom_M1X0, NULL }, 0 },  /* Menu_RunVerticalFromTop_FastRom */
+    { 0x80B929u, { NULL, NULL, Menu_RunVertical_FastRom_M1X0, NULL }, 0 },  /* Menu_RunVertical_FastRom */
+    { 0x80B965u, { NULL, NULL, Menu_VerticalLoop_FastRom_M1X0, NULL }, 0 },  /* Menu_VerticalLoop_FastRom */
+    { 0x80BA55u, { NULL, NULL, Menu_RunVerticalAlt_FastRom_M1X0, NULL }, 0 },  /* Menu_RunVerticalAlt_FastRom */
+    { 0x80BA8Fu, { NULL, NULL, Menu_VerticalLoopAlt_FastRom_M1X0, NULL }, 0 },  /* Menu_VerticalLoopAlt_FastRom */
+    { 0x80BB87u, { Mode_OnePlayerRace_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Mode_OnePlayerRace_FastRom */
+    { 0x80BCAAu, { Mode_TwoPlayerRace_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Mode_TwoPlayerRace_FastRom */
+    { 0x80BDBFu, { Mode_League_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Mode_League_FastRom */
+    { 0x80BF34u, { Mode_ChallengeRace_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Mode_ChallengeRace_FastRom */
+    { 0x80C115u, { Options_DefinePlayer_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Options_DefinePlayer_FastRom */
+    { 0x80C1DAu, { NULL, NULL, Oam_ClearCursorHFlip_FastRom_M1X0, NULL }, 0 },  /* Oam_ClearCursorHFlip_FastRom */
+    { 0x80C1F1u, { NULL, NULL, Input_WaitAnyButtonL_M1X0, NULL }, 0 },  /* Input_WaitAnyButtonL */
+    { 0x80C1F5u, { NULL, NULL, Input_WaitAnyButton_FastRom_M1X0, NULL }, 0 },  /* Input_WaitAnyButton_FastRom */
+    { 0x80C23Bu, { NULL, NULL, Input_WaitAllReleased_FastRom_M1X0, NULL }, 0 },  /* Input_WaitAllReleased_FastRom */
+    { 0x80C258u, { NULL, NULL, Records_DrawTopScores_FastRom_M1X0, NULL }, 0 },  /* Records_DrawTopScores_FastRom */
+    { 0x80C2FDu, { NULL, NULL, Records_DrawTopTimes_FastRom_M1X0, NULL }, 0 },  /* Records_DrawTopTimes_FastRom */
+    { 0x80C3ABu, { DrawText_FastRom_M0X0, NULL, DrawText_FastRom_M1X0, NULL }, 0 },  /* DrawText_FastRom */
+    { 0x80C3AFu, { Text_DrawLoop_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Text_DrawLoop_FastRom */
+    { 0x80C440u, { Text_CmdEnd_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdEnd_FastRom */
+    { 0x80C445u, { Text_CmdPrintNum5_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdPrintNum5_FastRom */
+    { 0x80C463u, { Text_CmdPrintNum2_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdPrintNum2_FastRom */
+    { 0x80C481u, { Text_CmdSetPos_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdSetPos_FastRom */
+    { 0x80C4A7u, { Text_CmdCenterLine_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdCenterLine_FastRom */
+    { 0x80C4EFu, { Text_CmdCenterWord_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdCenterWord_FastRom */
+    { 0x80C534u, { Text_CmdCallString_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdCallString_FastRom */
+    { 0x80C546u, { Text_CmdSetPalette_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdSetPalette_FastRom */
+    { 0x80C5BAu, { Text_CmdPlayerNameImm_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdPlayerNameImm_FastRom */
+    { 0x80C5C2u, { Text_CmdPlayerNameVar_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdPlayerNameVar_FastRom */
+    { 0x80C60Fu, { Text_CmdRomNameImm_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdRomNameImm_FastRom */
+    { 0x80C617u, { Text_CmdRomNameVar_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdRomNameVar_FastRom */
+    { 0x80C664u, { Text_CmdLeagueNameImm_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdLeagueNameImm_FastRom */
+    { 0x80C66Cu, { Text_CmdLeagueNameVar_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdLeagueNameVar_FastRom */
+    { 0x80C6AAu, { Text_CmdPrintTime_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdPrintTime_FastRom */
+    { 0x80C6C4u, { Text_CmdPlaceSprite_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Text_CmdPlaceSprite_FastRom */
+    { 0x80C775u, { NULL, NULL, Race_RecordResults_FastRom_M1X0, NULL }, 0 },  /* Race_RecordResults_FastRom */
+    { 0x80C7B3u, { Race_RecordTimeRace_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_RecordTimeRace_FastRom */
+    { 0x80C7EFu, { Race_RecordP1TimeOrDnf_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_RecordP1TimeOrDnf_FastRom */
+    { 0x80C80Bu, { Race_RecordP1Time_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_RecordP1Time_FastRom */
+    { 0x80C81Eu, { Race_RecordP2TimeOrDnf_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_RecordP2TimeOrDnf_FastRom */
+    { 0x80C83Fu, { Race_RecordP2Time_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_RecordP2Time_FastRom */
+    { 0x80C857u, { Race_RecordLapRace_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_RecordLapRace_FastRom */
+    { 0x80C8D7u, { Race_RecordP1LapOrDnf_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_RecordP1LapOrDnf_FastRom */
+    { 0x80C8F1u, { Race_RecordP1Lap_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_RecordP1Lap_FastRom */
+    { 0x80C902u, { Race_RecordP2LapOrDnf_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_RecordP2LapOrDnf_FastRom */
+    { 0x80C921u, { Race_RecordP2Lap_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_RecordP2Lap_FastRom */
+    { 0x80C937u, { Race_RecordStuntRace_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_RecordStuntRace_FastRom */
+    { 0x80C973u, { Race_AddP1StuntScore_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_AddP1StuntScore_FastRom */
+    { 0x80C99Au, { Race_AddP2StuntScore_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_AddP2StuntScore_FastRom */
+    { 0x80C9C6u, { Records_InsertTime_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Records_InsertTime_FastRom */
+    { 0x80CA63u, { Stats_IncP1Races_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Stats_IncP1Races_FastRom */
+    { 0x80CA72u, { Stats_IncP1Wins_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Stats_IncP1Wins_FastRom */
+    { 0x80CA8Au, { Stats_IncP1Dnf_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Stats_IncP1Dnf_FastRom */
+    { 0x80CA99u, { Stats_IncP2Races_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Stats_IncP2Races_FastRom */
+    { 0x80CAB4u, { Stats_IncP2Wins_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Stats_IncP2Wins_FastRom */
+    { 0x80CAD8u, { Stats_IncP2Dnf_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Stats_IncP2Dnf_FastRom */
+    { 0x80CAF3u, { NULL, NULL, PickUni_Open_FastRom_M1X0, NULL }, 0 },  /* PickUni_Open_FastRom */
+    { 0x80CBB2u, { PickUni_Loop_FastRom_M0X0, NULL, PickUni_Loop_FastRom_M1X0, NULL }, 0 },  /* PickUni_Loop_FastRom */
+    { 0x80CE7Fu, { Results_ShowRaceTable_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Results_ShowRaceTable_FastRom */
+    { 0x80CF8Cu, { Results_RowNone_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Results_RowNone_FastRom */
+    { 0x80CF90u, { Results_RowP1_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Results_RowP1_FastRom */
+    { 0x80CFF6u, { Results_RowP2_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Results_RowP2_FastRom */
+    { 0x80D061u, { Results_RowRecord1_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Results_RowRecord1_FastRom */
+    { 0x80D088u, { Results_RowRecord2_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Results_RowRecord2_FastRom */
+    { 0x80D0AFu, { Results_RowRecord3_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Results_RowRecord3_FastRom */
+    { 0x80D152u, { Results_LoadRowPalette_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Results_LoadRowPalette_FastRom */
+    { 0x80D1D7u, { NULL, NULL, Input_ReadPadsL_M1X0, NULL }, 0 },  /* Input_ReadPadsL */
+    { 0x80D1DBu, { NULL, NULL, Input_ReadPads_FastRom_M1X0, NULL }, 0 },  /* Input_ReadPads_FastRom */
+    { 0x80D1E9u, { NULL, NULL, Text_ClearBuffer_FastRom_M1X0, NULL }, 0 },  /* Text_ClearBuffer_FastRom */
+    { 0x80D1FDu, { NULL, NULL, Menu_InitScreen_FastRom_M1X0, NULL }, 0 },  /* Menu_InitScreen_FastRom */
+    { 0x80D2B0u, { NULL, NULL, Oam_ResetMenuSprites_FastRom_M1X0, NULL }, 0 },  /* Oam_ResetMenuSprites_FastRom */
+    { 0x80D37Au, { NULL, NULL, League_Clear_FastRom_M1X0, NULL }, 0 },  /* League_Clear_FastRom */
+    { 0x80D40Fu, { NULL, NULL, Oam_HideRowSprites_FastRom_M1X0, NULL }, 0 },  /* Oam_HideRowSprites_FastRom */
+    { 0x80D437u, { Options_RenamePlayer_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Options_RenamePlayer_FastRom */
+    { 0x80D4F6u, { NULL, NULL, Menu_ResetSlideHooks_FastRom_M1X0, NULL }, 0 },  /* Menu_ResetSlideHooks_FastRom */
+    { 0x80D518u, { NULL, NULL, NULL, NULL }, 0 },  /* Records_Menu_FastRom */
+    { 0x80D5D9u, { Records_TrackRecords_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Records_TrackRecords_FastRom */
+    { 0x80D7C0u, { Records_HighScores_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Records_HighScores_FastRom */
+    { 0x80DAC2u, { Records_PlayerScores_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Records_PlayerScores_FastRom */
+    { 0x80DDE6u, { Records_GroupTables_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Records_GroupTables_FastRom */
+    { 0x80E21Du, { NULL, NULL, Slide_Forward_FastRom_M1X0, NULL }, 0 },  /* Slide_Forward_FastRom */
+    { 0x80E23Bu, { NULL, NULL, Slide_DefaultFwdStep_FastRom_M1X0, NULL }, 0 },  /* Slide_DefaultFwdStep_FastRom */
+    { 0x80E268u, { NULL, NULL, Slide_Back_FastRom_M1X0, NULL }, 0 },  /* Slide_Back_FastRom */
+    { 0x80E286u, { NULL, NULL, Slide_DefaultBackStep_FastRom_M1X0, NULL }, 0 },  /* Slide_DefaultBackStep_FastRom */
+    { 0x80E2B9u, { NULL, NULL, Screen_OpenWipeL_M1X0, NULL }, 0 },  /* Screen_OpenWipeL */
+    { 0x80E2BDu, { NULL, NULL, Screen_OpenWipe_FastRom_M1X0, NULL }, 0 },  /* Screen_OpenWipe_FastRom */
+    { 0x80E3D3u, { NULL, NULL, TrackRecords_HandleInput_FastRom_M1X0, NULL }, 0 },  /* TrackRecords_HandleInput_FastRom */
+    { 0x80E536u, { NULL, NULL, Menu_RunE53AL_M1X0, NULL }, 0 },  /* Menu_RunE53AL */
+    { 0x80E53Au, { NULL, NULL, Menu_PickTour_FastRom_M1X0, NULL }, 0 },  /* Menu_PickTour_FastRom */
+    { 0x80E6C7u, { NULL, NULL, Menu_ApplyCycledSpriteColor_FastRom_M1X0, NULL }, 0 },  /* Menu_ApplyCycledSpriteColor_FastRom */
+    { 0x80E71Au, { NULL, NULL, Menu_DrawTourList_FastRom_M1X0, NULL }, 0 },  /* Menu_DrawTourList_FastRom */
+    { 0x80E78Bu, { NULL, NULL, Menu_CheckTourUnlocked_FastRom_M1X0, NULL }, 0 },  /* Menu_CheckTourUnlocked_FastRom */
+    { 0x80E838u, { NULL, NULL, Menu_PickTrack_FastRom_M1X0, NULL }, 0 },  /* Menu_PickTrack_FastRom */
+    { 0x80EA79u, { NULL, NULL, Menu_CycleLeagueClass_FastRom_M1X0, NULL }, 0 },  /* Menu_CycleLeagueClass_FastRom */
+    { 0x80EB0Du, { NULL, NULL, Menu_CycleSpriteTiles_FastRom_M1X0, NULL }, 0 },  /* Menu_CycleSpriteTiles_FastRom */
+    { 0x80EB60u, { NULL, NULL, Menu_ShowTourTables_FastRom_M1X0, NULL }, 0 },  /* Menu_ShowTourTables_FastRom */
+    { 0x80ED07u, { NULL, NULL, Menu_DrawTourTrackTable_FastRom_M1X0, NULL }, 0 },  /* Menu_DrawTourTrackTable_FastRom */
+    { 0x80EEDCu, { NULL, NULL, Menu_DrawTrackNumber_FastRom_M1X0, NULL }, 0 },  /* Menu_DrawTrackNumber_FastRom */
+    { 0x80EF37u, { NULL, NULL, Menu_DrawOptionList_FastRom_M1X0, NULL }, 0 },  /* Menu_DrawOptionList_FastRom */
+    { 0x80EF73u, { NULL, NULL, Scores_LoadPlayerSorted_FastRom_M1X0, NULL }, 0 },  /* Scores_LoadPlayerSorted_FastRom */
+    { 0x80EFBEu, { Util_SortTable8Descending_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Util_SortTable8Descending_FastRom */
+    { 0x80F015u, { Util_SortTable16Descending_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Util_SortTable16Descending_FastRom */
+    { 0x80F06Cu, { Util_SortTable8Ascending_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Util_SortTable8Ascending_FastRom */
+    { 0x80F0D8u, { Results_ShowRaceResults_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Results_ShowRaceResults_FastRom */
+    { 0x80F4A2u, { NULL, NULL, Menu_HideSpritesAndReloadGfx_FastRom_M1X0, NULL }, 0 },  /* Menu_HideSpritesAndReloadGfx_FastRom */
+    { 0x80F4D3u, { NULL, NULL, Menu_ResetScreenGfx_FastRom_M1X0, NULL }, 0 },  /* Menu_ResetScreenGfx_FastRom */
+    { 0x80F505u, { NULL, NULL, Menu_RequestPanelOpen_FastRom_M1X0, NULL }, 0 },  /* Menu_RequestPanelOpen_FastRom */
+    { 0x80F515u, { NULL, NULL, Menu_RequestPanelClose_FastRom_M1X0, NULL }, 0 },  /* Menu_RequestPanelClose_FastRom */
+    { 0x80F525u, { NULL, NULL, Menu_SnapPanelOpenLong_M1X0, NULL }, 0 },  /* Menu_SnapPanelOpenLong */
+    { 0x80F529u, { NULL, NULL, Menu_SnapPanelOpen_FastRom_M1X0, NULL }, 0 },  /* Menu_SnapPanelOpen_FastRom */
+    { 0x80F549u, { NULL, NULL, Boot_ShowLegalScreen_FastRom_M1X0, NULL }, 0 },  /* Boot_ShowLegalScreen_FastRom */
+    { 0x80F60Cu, { NULL, NULL, NmiHandler_Menu_FastRom_M1X0, NULL }, 0 },  /* NmiHandler_Menu_FastRom */
+    { 0x80F653u, { NULL, NULL, Results_AnimateTally_FastRom_M1X0, NULL }, 0 },  /* Results_AnimateTally_FastRom */
+    { 0x80F7C6u, { Results_NextTallyColumn_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Results_NextTallyColumn_FastRom */
+    { 0x80F7E5u, { Menu_WaitFramesOrButton_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Menu_WaitFramesOrButton_FastRom */
+    { 0x80F7FEu, { Dma_UploadTilemapRowsLong_M0X0, NULL, Dma_UploadTilemapRowsLong_M1X0, NULL }, 0 },  /* Dma_UploadTilemapRowsLong */
+    { 0x80F802u, { Dma_UploadTilemapRows_FastRom_M0X0, NULL, Dma_UploadTilemapRows_FastRom_M1X0, NULL }, 0 },  /* Dma_UploadTilemapRows_FastRom */
+    { 0x80F859u, { Dma_UploadVramC0_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Dma_UploadVramC0_FastRom */
+    { 0x80F877u, { Scores_StoreResult_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Scores_StoreResult_FastRom */
+    { 0x80F8A3u, { Text_ConvertBufferCase_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Text_ConvertBufferCase_FastRom */
+    { 0x80F8D1u, { NULL, NULL, Vs_ShowChampions_FastRom_M1X0, NULL }, 0 },  /* Vs_ShowChampions_FastRom */
+    { 0x80FA4Au, { NULL, NULL, Vs_ShowChampions_FA4A_M1X0, NULL }, 0 },  /* Vs_ShowChampions_FA4A */
+    { 0x80FAC5u, { NULL, NULL, WaitVBlankLong_FastRom_M1X0, NULL }, 0 },  /* WaitVBlankLong_FastRom */
+    { 0x80FAC9u, { NULL, NULL, WaitVBlank_FastRom_M1X0, NULL }, 0 },  /* WaitVBlank_FastRom */
+    { 0x80FADFu, { NULL, NULL, Menu_UpdateCursor_FastRom_M1X0, NULL }, 0 },  /* Menu_UpdateCursor_FastRom */
+    { 0x80FBBFu, { NULL, NULL, Menu_KeepResetScores_FastRom_M1X0, NULL }, 0 },  /* Menu_KeepResetScores_FastRom */
+    { 0x80FC1Cu, { Scores_ResetPlayer_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Scores_ResetPlayer_FastRom */
+    { 0x80FC38u, { Menu_ReturnContinue_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Menu_ReturnContinue_FastRom */
+    { 0x80FC3Du, { Menu_ReturnExit_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Menu_ReturnExit_FastRom */
+    { 0x818050u, { Uni_CheckLapLine_M0X0, NULL, NULL, NULL }, 0 },  /* Uni_CheckLapLine */
+    { 0x8182E2u, { NULL, Uni_ApplyTileEffectLong_M0X1, NULL, NULL }, 0 },  /* Uni_ApplyTileEffectLong */
+    { 0x8182E6u, { NULL, Uni_ApplyTileEffect_M0X1, NULL, NULL }, 0 },  /* Uni_ApplyTileEffect */
+    { 0x818341u, { Uni_ApplyTileEffect_8341_M0X0, NULL, NULL, NULL }, 0 },  /* Uni_ApplyTileEffect_8341 */
+    { 0x8183A4u, { Uni_ApplyTileEffect_83A4_M0X0, NULL, NULL, NULL }, 0 },  /* Uni_ApplyTileEffect_83A4 */
+    { 0x8184D2u, { Uni_ApplyTileEffect_84D2_M0X0, NULL, NULL, NULL }, 0 },  /* Uni_ApplyTileEffect_84D2 */
+    { 0x8184DBu, { Uni_TileNop_84DB_M0X0, NULL, NULL, NULL }, 0 },  /* Uni_TileNop_84DB */
+    { 0x818515u, { Uni_TileNop_8515_M0X0, NULL, NULL, NULL }, 0 },  /* Uni_TileNop_8515 */
+    { 0x81857Du, { Uni_TileNop_857D_M0X0, NULL, NULL, NULL }, 0 },  /* Uni_TileNop_857D */
+    { 0x8185B7u, { NULL, Uni_EndFrameUpdateLong_M0X1, NULL, NULL }, 0 },  /* Uni_EndFrameUpdateLong */
+    { 0x8185BBu, { NULL, Uni_EndFrameUpdate_M0X1, NULL, NULL }, 0 },  /* Uni_EndFrameUpdate */
+    { 0x818745u, { Uni_TileBoost_M0X0, NULL, NULL, NULL }, 0 },  /* Uni_TileBoost */
+    { 0x818785u, { Uni_TileBoost_8785_M0X0, NULL, NULL, NULL }, 0 },  /* Uni_TileBoost_8785 */
+    { 0x8187EBu, { Uni_EmptyStub_87EB_M0X0, NULL, NULL, NULL }, 0 },  /* Uni_EmptyStub_87EB */
+    { 0x818970u, { Uni_EmptyStub_8970_M0X0, NULL, NULL, NULL }, 0 },  /* Uni_EmptyStub_8970 */
+    { 0x8189B9u, { Uni_EmptyStub_89B9_M0X0, NULL, NULL, NULL }, 0 },  /* Uni_EmptyStub_89B9 */
+    { 0x818A17u, { Uni_EmptyStub_8A17_M0X0, NULL, NULL, NULL }, 0 },  /* Uni_EmptyStub_8A17 */
+    { 0x818A4Au, { NULL, NULL, Uni_FetchMapCells_M1X0, NULL }, 0 },  /* Uni_FetchMapCells */
+    { 0x818B95u, { NULL, NULL, Uni_ProbeCollision_M1X0, NULL }, 0 },  /* Uni_ProbeCollision */
+    { 0x818D14u, { Uni_UpdatePhysicsBothLong_M0X0, Uni_UpdatePhysicsBothLong_M0X1, NULL, NULL }, 0 },  /* Uni_UpdatePhysicsBothLong */
+    { 0x818D18u, { Uni_UpdatePhysicsBoth_M0X0, Uni_UpdatePhysicsBoth_M0X1, NULL, NULL }, 0 },  /* Uni_UpdatePhysicsBoth */
+    { 0x818FB8u, { NULL, NULL, Uni_ResolveTrackContact_M1X0, NULL }, 0 },  /* Uni_ResolveTrackContact */
+    { 0x81983Bu, { NULL, Rider_CalcMotionAngle_M0X1, NULL, NULL }, 0 },  /* Rider_CalcMotionAngle */
+    { 0x8199D6u, { NULL, NULL, Rider_BuildRotationTablesLong_FastRom_M1X0, NULL }, 0 },  /* Rider_BuildRotationTablesLong_FastRom */
+    { 0x819A5Au, { NULL, NULL, Rider_BuildRotationTables_FastRom_M1X0, NULL }, 0 },  /* Rider_BuildRotationTables_FastRom */
+    { 0x819E2Au, { Rider_LoadPoseOffsets_M0X0, NULL, NULL, NULL }, 0 },  /* Rider_LoadPoseOffsets */
+    { 0x819FBFu, { Cam_UpdateFollowSpeed_M0X0, NULL, NULL, NULL }, 0 },  /* Cam_UpdateFollowSpeed */
+    { 0x81A2E5u, { Cam_StepLeadTowardVelocity_M0X0, NULL, NULL, NULL }, 0 },  /* Cam_StepLeadTowardVelocity */
+    { 0x81A30Fu, { Track_SetupSizeParamsLong_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Track_SetupSizeParamsLong_FastRom */
+    { 0x81A313u, { Track_SetupSizeParams_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Track_SetupSizeParams_FastRom */
+    { 0x81A52Bu, { Race_UpdateCameraLong_M0X0, NULL, NULL, NULL }, 0 },  /* Race_UpdateCameraLong */
+    { 0x81A52Fu, { Race_UpdateCamera_M0X0, NULL, NULL, NULL }, 0 },  /* Race_UpdateCamera */
+    { 0x81A59Eu, { Bg_StreamTilemapEdges_M0X0, NULL, NULL, NULL }, 0 },  /* Bg_StreamTilemapEdges */
+    { 0x81AB88u, { Bg_QueueEdgeStripDma_M0X0, NULL, NULL, NULL }, 0 },  /* Bg_QueueEdgeStripDma */
+    { 0x81ACB1u, { Dma_QueueVramEntry_M0X0, NULL, NULL, NULL }, 0 },  /* Dma_QueueVramEntry */
+    { 0x81ACFBu, { Bg_FetchMapStrip_M0X0, NULL, NULL, NULL }, 0 },  /* Bg_FetchMapStrip */
+    { 0x81AD2Cu, { Bg_FetchMapRow_M0X0, NULL, NULL, NULL }, 0 },  /* Bg_FetchMapRow */
+    { 0x81AD7Au, { Bg_FetchMapColumn_M0X0, NULL, NULL, NULL }, 0 },  /* Bg_FetchMapColumn */
+    { 0x81ADB6u, { Bg_SplitCoordToMetatile_M0X0, NULL, NULL, NULL }, 0 },  /* Bg_SplitCoordToMetatile */
+    { 0x81AE59u, { Bg_UpdateScroll1P_M0X0, NULL, NULL, NULL }, 0 },  /* Bg_UpdateScroll1P */
+    { 0x81AFC3u, { Bg_UpdateScroll2P_M0X0, NULL, NULL, NULL }, 0 },  /* Bg_UpdateScroll2P */
+    { 0x81B27Fu, { Bg_BuildStripTiles_M0X0, NULL, NULL, NULL }, 0 },  /* Bg_BuildStripTiles */
+    { 0x81B375u, { Bg_CopyMetatileTiles_M0X0, NULL, NULL, NULL }, 0 },  /* Bg_CopyMetatileTiles */
+    { 0x81B664u, { Math_Multiply16Long_M0X0, NULL, NULL, NULL }, 0 },  /* Math_Multiply16Long */
+    { 0x81B668u, { Math_Multiply16_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Math_Multiply16_FastRom */
+    { 0x81B68Bu, { NULL, Math_MulS16x8Long_M0X1, NULL, NULL }, 0 },  /* Math_MulS16x8Long */
+    { 0x81B68Fu, { NULL, Math_MulS16x8_M0X1, NULL, NULL }, 0 },  /* Math_MulS16x8 */
+    { 0x81B6C0u, { Math_MulFixed8p8Long_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Math_MulFixed8p8Long_FastRom */
+    { 0x81B6C4u, { Math_MulFixed8p8_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Math_MulFixed8p8_FastRom */
+    { 0x81B76Du, { NULL, NULL, Ppu_ForceBlank_M1X0, NULL }, 0 },  /* Ppu_ForceBlank */
+    { 0x81B773u, { Math_DistanceLong_M0X0, NULL, NULL, NULL }, 0 },  /* Math_DistanceLong */
+    { 0x81B77Bu, { Math_Distance_M0X0, NULL, NULL, NULL }, 0 },  /* Math_Distance */
+    { 0x81B8F1u, { Decomp_ToRam_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_ToRam */
+    { 0x81BA26u, { Decomp_DecodeSymbol_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_DecodeSymbol_FastRom */
+    { 0x81BA7Au, { Decomp_ReadBits_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_ReadBits_FastRom */
+    { 0x81BADCu, { Decomp_BuildHuffTable_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_BuildHuffTable_FastRom */
+    { 0x81BB6Fu, { Decomp_FetchWord_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_FetchWord_FastRom */
+    { 0x81BB89u, { Decomp_ToVram_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_ToVram */
+    { 0x81BD48u, { Decomp_DecodeSymbolVram_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_DecodeSymbolVram */
+    { 0x81BD9Fu, { Decomp_ReadBitsVram_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_ReadBitsVram */
+    { 0x81BE01u, { Decomp_BuildHuffTableVram_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_BuildHuffTableVram */
+    { 0x81BE99u, { Decomp_FetchWordVram_M0X0, NULL, NULL, NULL }, 0 },  /* Decomp_FetchWordVram */
+    { 0x81BEB3u, { Hud_UpdateStuntNamesLong_M0X0, NULL, NULL, NULL }, 0 },  /* Hud_UpdateStuntNamesLong */
+    { 0x81BEB7u, { Hud_UpdateStuntNames_M0X0, NULL, NULL, NULL }, 0 },  /* Hud_UpdateStuntNames */
+    { 0x81BF41u, { Hud_ShowCachedStuntName_M0X0, NULL, NULL, NULL }, 0 },  /* Hud_ShowCachedStuntName */
+    { 0x81BFE3u, { Hud_LoadStuntName_M0X0, NULL, NULL, NULL }, 0 },  /* Hud_LoadStuntName */
+    { 0x81C0DDu, { NULL, NULL, NULL, Stunt_DequeueAndScore_M1X1 }, 0 },  /* Stunt_DequeueAndScore */
+    { 0x81C572u, { Race_PushEventFrontLong_M0X0, NULL, NULL, NULL }, 0 },  /* Race_PushEventFrontLong */
+    { 0x81C576u, { Race_PushEventFront_M0X0, NULL, NULL, NULL }, 0 },  /* Race_PushEventFront */
+    { 0x81C5AFu, { Race_QueueEventLong_M0X0, NULL, NULL, NULL }, 0 },  /* Race_QueueEventLong */
+    { 0x81C5B3u, { Race_QueueEvent_M0X0, NULL, NULL, NULL }, 0 },  /* Race_QueueEvent */
+    { 0x81C605u, { Race_ResetEventQueuesLong_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_ResetEventQueuesLong_FastRom */
+    { 0x81C609u, { Race_ResetEventQueues_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_ResetEventQueues_FastRom */
+    { 0x81C64Eu, { Race_GetEventQueueCount_M0X0, NULL, NULL, NULL }, 0 },  /* Race_GetEventQueueCount */
+    { 0x81C697u, { Race_UpdateClockLong_M0X0, NULL, NULL, NULL }, 0 },  /* Race_UpdateClockLong */
+    { 0x81C69Bu, { Race_UpdateClock_M0X0, NULL, NULL, NULL }, 0 },  /* Race_UpdateClock */
+    { 0x81C6D3u, { Race_TickClockUp_M0X0, NULL, NULL, NULL }, 0 },  /* Race_TickClockUp */
+    { 0x81C7E1u, { Race_TickClockDown_M0X0, NULL, NULL, NULL }, 0 },  /* Race_TickClockDown */
+    { 0x81C907u, { NULL, NULL, Race_UpdateLapSplits_M1X0, NULL }, 0 },  /* Race_UpdateLapSplits */
+    { 0x81CCE6u, { NULL, NULL, NULL, Hud_InitRaceLong_FastRom_M1X1 }, 0 },  /* Hud_InitRaceLong_FastRom */
+    { 0x81CD07u, { NULL, NULL, NULL, Hud_InitRace_FastRom_M1X1 }, 0 },  /* Hud_InitRace_FastRom */
+    { 0x81D86Eu, { NULL, NULL, Hud_UpdateSplitScreenNmi_M1X0, NULL }, 0 },  /* Hud_UpdateSplitScreenNmi */
+    { 0x81E8D9u, { NULL, NULL, Hud_UpdateFullScreenNmi_FastRom_M1X0, NULL }, 0 },  /* Hud_UpdateFullScreenNmi_FastRom */
+    { 0x828000u, { Snd_QueueCommand_M0X0, Snd_QueueCommand_M0X1, NULL, NULL }, 0 },  /* Snd_QueueCommand */
+    { 0x828035u, { Snd_SendQueuedCommand_M0X0, NULL, Snd_SendQueuedCommand_M1X0, NULL }, 0 },  /* Snd_SendQueuedCommand */
+    { 0x82807Eu, { Snd_UploadBlockLong_M0X0, NULL, NULL, NULL }, 0 },  /* Snd_UploadBlockLong */
+    { 0x828082u, { Snd_UploadBlock_M0X0, NULL, NULL, NULL }, 0 },  /* Snd_UploadBlock */
+    { 0x82812Au, { NULL, NULL, Snd_SeekDataBlock_FastRom_M1X0, NULL }, 0 },  /* Snd_SeekDataBlock_FastRom */
+    { 0x828151u, { Snd_IncDataPtr_FastRom_M0X0, NULL, Snd_IncDataPtr_FastRom_M1X0, NULL }, 0 },  /* Snd_IncDataPtr_FastRom */
+    { 0x828294u, { Snd_StopStreamLong_M0X0, NULL, NULL, NULL }, 0 },  /* Snd_StopStreamLong */
+    { 0x828298u, { Snd_StopStream_M0X0, NULL, NULL, NULL }, 0 },  /* Snd_StopStream */
+    { 0x8282A5u, { Snd_UploadBlockListLong_M0X0, NULL, NULL, NULL }, 0 },  /* Snd_UploadBlockListLong */
+    { 0x8282A9u, { Snd_UploadBlockList_M0X0, NULL, NULL, NULL }, 0 },  /* Snd_UploadBlockList */
+    { 0x828328u, { NULL, NULL, Snd_SendByteWait_FastRom_M1X0, NULL }, 0 },  /* Snd_SendByteWait_FastRom */
+    { 0x828337u, { NULL, Uni_UpdateLookFramesLong_M0X1, NULL, NULL }, 0 },  /* Uni_UpdateLookFramesLong */
+    { 0x82836Du, { NULL, Uni_UpdateLookFrames_M0X1, NULL, NULL }, 0 },  /* Uni_UpdateLookFrames */
+    { 0x8287CCu, { Uni_StepLookFrame_M0X0, NULL, NULL, NULL }, 0 },  /* Uni_StepLookFrame */
+    { 0x82892Au, { Uni_StartIdleLookSeq_M0X0, NULL, NULL, NULL }, 0 },  /* Uni_StartIdleLookSeq */
+    { 0x828952u, { Uni_StepAnimScriptLong_M0X0, NULL, NULL, NULL }, 0 },  /* Uni_StepAnimScriptLong */
+    { 0x828956u, { Uni_StepAnimScript_M0X0, NULL, NULL, NULL }, 0 },  /* Uni_StepAnimScript */
+    { 0x8289B5u, { Race_UpdateUnisLong_M0X0, NULL, NULL, NULL }, 0 },  /* Race_UpdateUnisLong */
+    { 0x8289B9u, { Race_UpdateUnis_M0X0, NULL, NULL, NULL }, 0 },  /* Race_UpdateUnis */
+    { 0x829385u, { NULL, NULL, Uni_UpdateLoop_M1X0, NULL }, 0 },  /* Uni_UpdateLoop */
+    { 0x829704u, { Uni_UpdateTrackProgress_M0X0, NULL, Uni_UpdateTrackProgress_M1X0, NULL }, 0 },  /* Uni_UpdateTrackProgress */
+    { 0x82980Du, { Race_UpdateHintArrowsLong_M0X0, NULL, NULL, Race_UpdateHintArrowsLong_M1X1 }, 0 },  /* Race_UpdateHintArrowsLong */
+    { 0x829811u, { Race_UpdateHintArrows_M0X0, NULL, NULL, Race_UpdateHintArrows_M1X1 }, 0 },  /* Race_UpdateHintArrows */
+    { 0x8298BEu, { Uni_UpdateDriveAndCharge_M0X0, NULL, NULL, NULL }, 0 },  /* Uni_UpdateDriveAndCharge */
+    { 0x829A42u, { Uni_TrackStunts_M0X0, NULL, Uni_TrackStunts_M1X0, NULL }, 0 },  /* Uni_TrackStunts */
+    { 0x82A01Bu, { Uni_UpdateSkidTimer_M0X0, NULL, NULL, NULL }, 0 },  /* Uni_UpdateSkidTimer */
+    { 0x82A05Du, { Uni_SetPushDir_M0X0, NULL, NULL, NULL }, 0 },  /* Uni_SetPushDir */
+    { 0x82A0ABu, { Uni_UpdateGroundLean_M0X0, Uni_UpdateGroundLean_M0X1, NULL, NULL }, 0 },  /* Uni_UpdateGroundLean */
+    { 0x82A22Bu, { NULL, Uni_UpdateTurnFlag_M0X1, NULL, NULL }, 0 },  /* Uni_UpdateTurnFlag */
+    { 0x82A27Cu, { Uni_UpdateFastFlag_M0X0, NULL, Uni_UpdateFastFlag_M1X0, NULL }, 0 },  /* Uni_UpdateFastFlag */
+    { 0x82A354u, { Uni_UpdateTurnAround_M0X0, NULL, NULL, NULL }, 0 },  /* Uni_UpdateTurnAround */
+    { 0x82A498u, { NULL, Uni_HandleTwistInput_M0X1, NULL, NULL }, 0 },  /* Uni_HandleTwistInput */
+    { 0x82A5F3u, { NULL, Uni_DecayVelocityX_M0X1, NULL, NULL }, 0 },  /* Uni_DecayVelocityX */
+    { 0x82A618u, { Uni_ApplyVelocity_M0X0, NULL, NULL, NULL }, 0 },  /* Uni_ApplyVelocity */
+    { 0x82A6F1u, { Uni_ClampSpeed_M0X0, NULL, NULL, NULL }, 0 },  /* Uni_ClampSpeed */
+    { 0x82A8C2u, { NULL, Uni_HandleJump_M0X1, NULL, NULL }, 0 },  /* Uni_HandleJump */
+    { 0x82A968u, { Uni_ApplyGravity_M0X0, NULL, NULL, NULL }, 0 },  /* Uni_ApplyGravity */
+    { 0x82A9ACu, { NULL, Uni_AccelerateRight_M0X1, NULL, NULL }, 0 },  /* Uni_AccelerateRight */
+    { 0x82AA09u, { NULL, Uni_AccelerateLeft_M0X1, NULL, NULL }, 0 },  /* Uni_AccelerateLeft */
+    { 0x82AA6Au, { Input_MapJoypadsLong_M0X0, NULL, Input_MapJoypadsLong_M1X0, Input_MapJoypadsLong_M1X1 }, 0 },  /* Input_MapJoypadsLong */
+    { 0x82AA6Eu, { Input_MapJoypads_M0X0, NULL, Input_MapJoypads_M1X0, Input_MapJoypads_M1X1 }, 0 },  /* Input_MapJoypads */
+    { 0x82ACA1u, { Race_UpdateUniScreenPosLong_M0X0, NULL, NULL, NULL }, 0 },  /* Race_UpdateUniScreenPosLong */
+    { 0x82ACA5u, { Race_UpdateUniScreenPos_M0X0, NULL, NULL, NULL }, 0 },  /* Race_UpdateUniScreenPos */
+    { 0x82B180u, { Res_LoadToCgram_M0X0, NULL, Res_LoadToCgram_M1X0, NULL }, 0 },  /* Res_LoadToCgram */
+    { 0x82B1ABu, { NULL, NULL, Res_LoadToVramAddHigh_M1X0, NULL }, 0 },  /* Res_LoadToVramAddHigh */
+    { 0x82B1D8u, { Res_LoadToVram_M0X0, NULL, Res_LoadToVram_M1X0, NULL }, 0 },  /* Res_LoadToVram */
+    { 0x82B293u, { NULL, NULL, Res_ReadByte_FastRom_M1X0, NULL }, 0 },  /* Res_ReadByte_FastRom */
+    { 0x82B2A9u, { NULL, NULL, Res_Lookup_Long_FastRom_M1X0, NULL }, 0 },  /* Res_Lookup_Long_FastRom */
+    { 0x82B2ADu, { NULL, NULL, Res_Lookup_FastRom_M1X0, NULL }, 0 },  /* Res_Lookup_FastRom */
+    { 0x82B2DAu, { NULL, NULL, Res_LoadToWram_M1X0, NULL }, 0 },  /* Res_LoadToWram */
+    { 0x82B8A7u, { NULL, NULL, Nmi_FlushTileDmaList_Long_M1X0, NULL }, 0 },  /* Nmi_FlushTileDmaList_Long */
+    { 0x82B8ABu, { NULL, NULL, Nmi_FlushTileDmaList_M1X0, NULL }, 0 },  /* Nmi_FlushTileDmaList */
+    { 0x82D197u, { NULL, NULL, Nmi_FlushVramDmaSlots_Long_M1X0, NULL }, 0 },  /* Nmi_FlushVramDmaSlots_Long */
+    { 0x82D19Bu, { NULL, NULL, Nmi_FlushVramDmaSlots_M1X0, NULL }, 0 },  /* Nmi_FlushVramDmaSlots */
+    { 0x82D2D4u, { NULL, NULL, Nmi_UploadReservedSprites_Long_M1X0, NULL }, 0 },  /* Nmi_UploadReservedSprites_Long */
+    { 0x82D2D8u, { NULL, NULL, Nmi_UploadReservedSprites_M1X0, NULL }, 0 },  /* Nmi_UploadReservedSprites */
+    { 0x82D353u, { Nmi_DmaOamBuffer_Long_M0X0, NULL, Nmi_DmaOamBuffer_Long_M1X0, NULL }, 0 },  /* Nmi_DmaOamBuffer_Long */
+    { 0x82D357u, { Nmi_DmaOamBuffer_M0X0, NULL, Nmi_DmaOamBuffer_M1X0, NULL }, 0 },  /* Nmi_DmaOamBuffer */
+    { 0x82D3CCu, { NULL, NULL, Pal_CycleRaceColors_Long_M1X0, NULL }, 0 },  /* Pal_CycleRaceColors_Long */
+    { 0x82D3D0u, { NULL, NULL, Pal_CycleRaceColors_M1X0, NULL }, 0 },  /* Pal_CycleRaceColors */
+    { 0x82D4E5u, { WaitForNMI_Long_M0X0, NULL, WaitForNMI_Long_M1X0, WaitForNMI_Long_M1X1 }, 0 },  /* WaitForNMI_Long */
+    { 0x82D4E9u, { WaitForNMI_M0X0, NULL, WaitForNMI_M1X0, WaitForNMI_M1X1 }, 0 },  /* WaitForNMI */
     { 0x82D4EEu, { NULL, NULL, WaitForNMI_spin_M1X0, NULL }, 0 },  /* WaitForNMI_spin */
-    { 0x82D4F6u, { NULL, NULL, bank_82_D4F6_M1X0, NULL }, 0 },  /* bank_82_D4F6 */
-    { 0x82D4FAu, { NULL, NULL, bank_82_D4FA_M1X0, NULL }, 0 },  /* bank_82_D4FA */
-    { 0x82D50Eu, { NULL, NULL, bank_82_D50E_M1X0, NULL }, 0 },  /* bank_82_D50E */
-    { 0x82D512u, { NULL, NULL, bank_82_D512_M1X0, NULL }, 0 },  /* bank_82_D512 */
-    { 0x82D526u, { NULL, bank_82_D526_M0X1, NULL, bank_82_D526_M1X1 }, 0 },  /* bank_82_D526 */
-    { 0x82D56Au, { NULL, bank_82_D56A_M0X1, NULL, bank_82_D56A_M1X1 }, 0 },  /* bank_82_D56A */
-    { 0x82D731u, { NULL, NULL, bank_82_D731_M1X0, NULL }, 0 },  /* bank_82_D731 */
-    { 0x82D735u, { NULL, NULL, bank_82_D735_M1X0, NULL }, 0 },  /* bank_82_D735 */
-    { 0x82D76Du, { NULL, bank_82_D76D_M0X1, bank_82_D76D_M1X0, NULL }, 0 },  /* bank_82_D76D */
-    { 0x82D80Cu, { NULL, NULL, bank_82_D80C_M1X0, NULL }, 0 },  /* bank_82_D80C */
-    { 0x82D810u, { bank_82_D810_M0X0, NULL, bank_82_D810_M1X0, NULL }, 0 },  /* bank_82_D810 */
-    { 0x82D814u, { bank_82_D814_M0X0, NULL, bank_82_D814_M1X0, NULL }, 0 },  /* bank_82_D814 */
-    { 0x82D849u, { NULL, NULL, bank_82_D849_M1X0, NULL }, 0 },  /* bank_82_D849 */
-    { 0x82DC1Fu, { bank_82_DC1F_M0X0, NULL, NULL, NULL }, 0 },  /* bank_82_DC1F */
-    { 0x82DC56u, { NULL, NULL, bank_82_DC56_M1X0, NULL }, 0 },  /* bank_82_DC56 */
-    { 0x82DC68u, { NULL, NULL, bank_82_DC68_M1X0, NULL }, 0 },  /* bank_82_DC68 */
-    { 0x82DE13u, { NULL, NULL, bank_82_DE13_M1X0, NULL }, 0 },  /* bank_82_DE13 */
-    { 0x82DE17u, { NULL, NULL, bank_82_DE17_M1X0, NULL }, 0 },  /* bank_82_DE17 */
-    { 0x82DF40u, { NULL, bank_82_DF40_M0X1, NULL, NULL }, 0 },  /* bank_82_DF40 */
-    { 0x82DFD8u, { bank_82_DFD8_M0X0, NULL, NULL, NULL }, 0 },  /* bank_82_DFD8 */
-    { 0x82E02Eu, { NULL, NULL, bank_82_E02E_M1X0, NULL }, 0 },  /* bank_82_E02E */
-    { 0x82E0A9u, { NULL, NULL, NULL, bank_82_E0A9_M1X1 }, 0 },  /* bank_82_E0A9 */
-    { 0x82E13Du, { bank_82_E13D_M0X0, NULL, NULL, NULL }, 0 },  /* bank_82_E13D */
-    { 0x82E165u, { NULL, NULL, bank_82_E165_M1X0, NULL }, 0 },  /* bank_82_E165 */
-    { 0x838484u, { NULL, NULL, bank_83_8484_M1X0, NULL }, 0 },  /* bank_83_8484 */
-    { 0x8384D9u, { NULL, NULL, bank_83_84D9_M1X0, NULL }, 0 },  /* bank_83_84D9 */
-    { 0x8384DDu, { NULL, NULL, bank_83_84DD_M1X0, NULL }, 0 },  /* bank_83_84DD */
-    { 0x838779u, { bank_83_8779_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_8779 */
-    { 0x83879Au, { NULL, NULL, bank_83_879A_M1X0, NULL }, 0 },  /* bank_83_879A */
-    { 0x8388D3u, { bank_83_88D3_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_88D3 */
-    { 0x8388E1u, { bank_83_88E1_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_88E1 */
-    { 0x83890Fu, { bank_83_890F_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_890F */
-    { 0x83893Cu, { NULL, NULL, bank_83_893C_M1X0, NULL }, 0 },  /* bank_83_893C */
-    { 0x838940u, { NULL, NULL, bank_83_8940_M1X0, NULL }, 0 },  /* bank_83_8940 */
-    { 0x838957u, { NULL, NULL, bank_83_8957_M1X0, NULL }, 0 },  /* bank_83_8957 */
-    { 0x83895Bu, { NULL, NULL, bank_83_895B_M1X0, NULL }, 0 },  /* bank_83_895B */
-    { 0x8389BAu, { NULL, NULL, bank_83_89BA_M1X0, NULL }, 0 },  /* bank_83_89BA */
-    { 0x838AF7u, { NULL, NULL, bank_83_8AF7_M1X0, NULL }, 0 },  /* bank_83_8AF7 */
-    { 0x838B23u, { NULL, NULL, bank_83_8B23_M1X0, NULL }, 0 },  /* bank_83_8B23 */
-    { 0x838B51u, { NULL, NULL, bank_83_8B51_M1X0, NULL }, 0 },  /* bank_83_8B51 */
-    { 0x838B9Du, { NULL, NULL, bank_83_8B9D_M1X0, NULL }, 0 },  /* bank_83_8B9D */
-    { 0x838BC9u, { bank_83_8BC9_M0X0, NULL, bank_83_8BC9_M1X0, NULL }, 0 },  /* bank_83_8BC9 */
-    { 0x838BCDu, { bank_83_8BCD_M0X0, NULL, bank_83_8BCD_M1X0, NULL }, 0 },  /* bank_83_8BCD */
-    { 0x838BE7u, { bank_83_8BE7_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_8BE7 */
-    { 0x838C7Bu, { bank_83_8C7B_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_8C7B */
-    { 0x838C7Fu, { bank_83_8C7F_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_8C7F */
-    { 0x838D5Du, { bank_83_8D5D_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_8D5D */
-    { 0x838D61u, { bank_83_8D61_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_8D61 */
-    { 0x838D8Fu, { bank_83_8D8F_M0X0, NULL, bank_83_8D8F_M1X0, NULL }, 0 },  /* bank_83_8D8F */
-    { 0x838E3Au, { bank_83_8E3A_M0X0, NULL, bank_83_8E3A_M1X0, NULL }, 0 },  /* bank_83_8E3A */
-    { 0x838EFEu, { NULL, NULL, bank_83_8EFE_M1X0, NULL }, 0 },  /* bank_83_8EFE */
-    { 0x83904Au, { NULL, NULL, bank_83_904A_M1X0, NULL }, 0 },  /* bank_83_904A */
-    { 0x8390F4u, { bank_83_90F4_M0X0, NULL, bank_83_90F4_M1X0, NULL }, 0 },  /* bank_83_90F4 */
-    { 0x8390F8u, { bank_83_90F8_M0X0, NULL, bank_83_90F8_M1X0, NULL }, 0 },  /* bank_83_90F8 */
-    { 0x8391D0u, { bank_83_91D0_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_91D0 */
-    { 0x8391F7u, { bank_83_91F7_M0X0, NULL, bank_83_91F7_M1X0, NULL }, 0 },  /* bank_83_91F7 */
-    { 0x8391FBu, { bank_83_91FB_M0X0, NULL, bank_83_91FB_M1X0, NULL }, 0 },  /* bank_83_91FB */
-    { 0x839229u, { NULL, NULL, bank_83_9229_M1X0, NULL }, 0 },  /* bank_83_9229 */
-    { 0x8392B0u, { bank_83_92B0_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_92B0 */
-    { 0x8392CCu, { bank_83_92CC_M0X0, NULL, bank_83_92CC_M1X0, NULL }, 0 },  /* bank_83_92CC */
-    { 0x8392E3u, { bank_83_92E3_M0X0, NULL, bank_83_92E3_M1X0, NULL }, 0 },  /* bank_83_92E3 */
-    { 0x8392FAu, { bank_83_92FA_M0X0, NULL, bank_83_92FA_M1X0, NULL }, 0 },  /* bank_83_92FA */
-    { 0x839311u, { bank_83_9311_M0X0, NULL, bank_83_9311_M1X0, NULL }, 0 },  /* bank_83_9311 */
-    { 0x839328u, { bank_83_9328_M0X0, NULL, bank_83_9328_M1X0, NULL }, 0 },  /* bank_83_9328 */
-    { 0x839340u, { bank_83_9340_M0X0, NULL, bank_83_9340_M1X0, NULL }, 0 },  /* bank_83_9340 */
-    { 0x83936Eu, { bank_83_936E_M0X0, NULL, bank_83_936E_M1X0, NULL }, 0 },  /* bank_83_936E */
-    { 0x8393D8u, { bank_83_93D8_M0X0, NULL, bank_83_93D8_M1X0, NULL }, 0 },  /* bank_83_93D8 */
-    { 0x8393F5u, { bank_83_93F5_M0X0, NULL, bank_83_93F5_M1X0, NULL }, 0 },  /* bank_83_93F5 */
-    { 0x839486u, { bank_83_9486_M0X0, NULL, bank_83_9486_M1X0, NULL }, 0 },  /* bank_83_9486 */
-    { 0x8394A5u, { bank_83_94A5_M0X0, NULL, bank_83_94A5_M1X0, NULL }, 0 },  /* bank_83_94A5 */
-    { 0x8394D0u, { NULL, NULL, bank_83_94D0_M1X0, NULL }, 0 },  /* bank_83_94D0 */
-    { 0x8394FFu, { NULL, NULL, bank_83_94FF_M1X0, NULL }, 0 },  /* bank_83_94FF */
-    { 0x83952Eu, { bank_83_952E_M0X0, NULL, bank_83_952E_M1X0, NULL }, 0 },  /* bank_83_952E */
-    { 0x839543u, { bank_83_9543_M0X0, NULL, bank_83_9543_M1X0, NULL }, 0 },  /* bank_83_9543 */
-    { 0x839558u, { NULL, NULL, bank_83_9558_M1X0, NULL }, 0 },  /* bank_83_9558 */
-    { 0x83956Du, { bank_83_956D_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_956D */
-    { 0x83958Cu, { NULL, NULL, bank_83_958C_M1X0, NULL }, 0 },  /* bank_83_958C */
-    { 0x8395CAu, { NULL, NULL, bank_83_95CA_M1X0, NULL }, 0 },  /* bank_83_95CA */
-    { 0x83961Eu, { NULL, NULL, bank_83_961E_M1X0, NULL }, 0 },  /* bank_83_961E */
-    { 0x83963Cu, { NULL, NULL, bank_83_963C_M1X0, NULL }, 0 },  /* bank_83_963C */
-    { 0x83967Cu, { bank_83_967C_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_967C */
-    { 0x83969Fu, { bank_83_969F_M0X0, NULL, bank_83_969F_M1X0, NULL }, 0 },  /* bank_83_969F */
-    { 0x8396BEu, { bank_83_96BE_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_96BE */
-    { 0x839700u, { NULL, NULL, bank_83_9700_M1X0, NULL }, 0 },  /* bank_83_9700 */
-    { 0x839734u, { bank_83_9734_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_9734 */
-    { 0x8397BDu, { NULL, NULL, bank_83_97BD_M1X0, NULL }, 0 },  /* bank_83_97BD */
-    { 0x83986Au, { bank_83_986A_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_986A */
-    { 0x83987Du, { NULL, NULL, bank_83_987D_M1X0, NULL }, 0 },  /* bank_83_987D */
-    { 0x839894u, { NULL, NULL, bank_83_9894_M1X0, NULL }, 0 },  /* bank_83_9894 */
-    { 0x8398ABu, { NULL, NULL, bank_83_98AB_M1X0, NULL }, 0 },  /* bank_83_98AB */
-    { 0x839972u, { NULL, NULL, bank_83_9972_M1X0, NULL }, 0 },  /* bank_83_9972 */
-    { 0x839983u, { bank_83_9983_M0X0, NULL, bank_83_9983_M1X0, NULL }, 0 },  /* bank_83_9983 */
-    { 0x839987u, { bank_83_9987_M0X0, NULL, bank_83_9987_M1X0, NULL }, 0 },  /* bank_83_9987 */
-    { 0x8399C2u, { NULL, NULL, bank_83_99C2_M1X0, NULL }, 0 },  /* bank_83_99C2 */
-    { 0x8399F6u, { NULL, NULL, bank_83_99F6_M1X0, NULL }, 0 },  /* bank_83_99F6 */
-    { 0x8399FAu, { NULL, NULL, bank_83_99FA_M1X0, NULL }, 0 },  /* bank_83_99FA */
-    { 0x839A1Eu, { bank_83_9A1E_M0X0, NULL, bank_83_9A1E_M1X0, NULL }, 0 },  /* bank_83_9A1E */
-    { 0x839B45u, { NULL, NULL, bank_83_9B45_M1X0, NULL }, 0 },  /* bank_83_9B45 */
-    { 0x839B49u, { NULL, NULL, bank_83_9B49_M1X0, NULL }, 0 },  /* bank_83_9B49 */
-    { 0x839C47u, { bank_83_9C47_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_9C47 */
-    { 0x839D80u, { bank_83_9D80_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_9D80 */
-    { 0x839E2Cu, { bank_83_9E2C_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_9E2C */
-    { 0x839E3Au, { bank_83_9E3A_M0X0, NULL, bank_83_9E3A_M1X0, NULL }, 0 },  /* bank_83_9E3A */
-    { 0x839E47u, { bank_83_9E47_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_9E47 */
-    { 0x839E7Fu, { bank_83_9E7F_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_9E7F */
-    { 0x839EB4u, { bank_83_9EB4_M0X0, NULL, bank_83_9EB4_M1X0, NULL }, 0 },  /* bank_83_9EB4 */
-    { 0x839EC8u, { NULL, NULL, bank_83_9EC8_M1X0, NULL }, 0 },  /* bank_83_9EC8 */
-    { 0x839ED5u, { bank_83_9ED5_M0X0, NULL, bank_83_9ED5_M1X0, NULL }, 0 },  /* bank_83_9ED5 */
-    { 0x839EEBu, { bank_83_9EEB_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_9EEB */
-    { 0x839F14u, { bank_83_9F14_M0X0, NULL, bank_83_9F14_M1X0, NULL }, 0 },  /* bank_83_9F14 */
-    { 0x839F49u, { NULL, NULL, bank_83_9F49_M1X0, NULL }, 0 },  /* bank_83_9F49 */
-    { 0x839F5Eu, { NULL, NULL, bank_83_9F5E_M1X0, NULL }, 0 },  /* bank_83_9F5E */
-    { 0x839F81u, { NULL, NULL, bank_83_9F81_M1X0, NULL }, 0 },  /* bank_83_9F81 */
-    { 0x83A286u, { bank_83_A286_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_A286 */
-    { 0x83A3EBu, { bank_83_A3EB_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_A3EB */
-    { 0x83A400u, { bank_83_A400_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_A400 */
-    { 0x83A493u, { NULL, NULL, bank_83_A493_M1X0, NULL }, 0 },  /* bank_83_A493 */
-    { 0x83A4D2u, { NULL, NULL, bank_83_A4D2_M1X0, NULL }, 0 },  /* bank_83_A4D2 */
-    { 0x83A4E9u, { NULL, NULL, bank_83_A4E9_M1X0, NULL }, 0 },  /* bank_83_A4E9 */
-    { 0x83A507u, { NULL, NULL, bank_83_A507_M1X0, NULL }, 0 },  /* bank_83_A507 */
-    { 0x83A614u, { NULL, NULL, bank_83_A614_M1X0, NULL }, 0 },  /* bank_83_A614 */
-    { 0x83A721u, { NULL, NULL, bank_83_A721_M1X0, NULL }, 0 },  /* bank_83_A721 */
-    { 0x83A923u, { bank_83_A923_M0X0, NULL, bank_83_A923_M1X0, NULL }, 0 },  /* bank_83_A923 */
-    { 0x83A93Au, { NULL, NULL, NULL, NULL }, 0 },  /* bank_83_A93A */
-    { 0x83AB9Au, { NULL, NULL, NULL, NULL }, 0 },  /* bank_83_AB9A */
-    { 0x83AEF6u, { NULL, NULL, bank_83_AEF6_M1X0, NULL }, 0 },  /* bank_83_AEF6 */
-    { 0x83B79Cu, { bank_83_B79C_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_B79C */
-    { 0x83C49Cu, { bank_83_C49C_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_C49C */
-    { 0x83C8E0u, { NULL, NULL, bank_83_C8E0_M1X0, NULL }, 0 },  /* bank_83_C8E0 */
-    { 0x83CA07u, { bank_83_CA07_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_CA07 */
-    { 0x83CA4Cu, { bank_83_CA4C_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_CA4C */
-    { 0x83CA91u, { bank_83_CA91_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_CA91 */
-    { 0x83CAD6u, { bank_83_CAD6_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_CAD6 */
-    { 0x83CB1Bu, { bank_83_CB1B_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_CB1B */
-    { 0x83CB60u, { bank_83_CB60_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_CB60 */
-    { 0x83CDA0u, { bank_83_CDA0_M0X0, bank_83_CDA0_M0X1, bank_83_CDA0_M1X0, bank_83_CDA0_M1X1 }, 0 },  /* bank_83_CDA0 */
-    { 0x83CEADu, { NULL, NULL, bank_83_CEAD_M1X0, bank_83_CEAD_M1X1 }, 0 },  /* bank_83_CEAD */
-    { 0x83D0E8u, { bank_83_D0E8_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_D0E8 */
-    { 0x83D1AEu, { bank_83_D1AE_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_D1AE */
-    { 0x83D259u, { NULL, NULL, bank_83_D259_M1X0, NULL }, 0 },  /* bank_83_D259 */
-    { 0x83D26Eu, { bank_83_D26E_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_D26E */
-    { 0x83D2ADu, { bank_83_D2AD_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_D2AD */
-    { 0x83D32Du, { bank_83_D32D_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_D32D */
-    { 0x83D3E0u, { bank_83_D3E0_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_D3E0 */
-    { 0x83D458u, { bank_83_D458_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_D458 */
-    { 0x83D492u, { bank_83_D492_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_D492 */
-    { 0x83D4CCu, { bank_83_D4CC_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_D4CC */
-    { 0x83D514u, { bank_83_D514_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_D514 */
-    { 0x83D565u, { bank_83_D565_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_D565 */
-    { 0x83E066u, { bank_83_E066_M0X0, NULL, bank_83_E066_M1X0, bank_83_E066_M1X1 }, 0 },  /* bank_83_E066 */
-    { 0x83E238u, { NULL, NULL, bank_83_E238_M1X0, bank_83_E238_M1X1 }, 0 },  /* bank_83_E238 */
-    { 0x83E580u, { bank_83_E580_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_E580 */
-    { 0x83E7A5u, { bank_83_E7A5_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_E7A5 */
-    { 0x83EC46u, { bank_83_EC46_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_EC46 */
-    { 0x83ED2Fu, { bank_83_ED2F_M0X0, bank_83_ED2F_M0X1, NULL, NULL }, 0 },  /* bank_83_ED2F */
-    { 0x83ED33u, { bank_83_ED33_M0X0, bank_83_ED33_M0X1, NULL, NULL }, 0 },  /* bank_83_ED33 */
-    { 0x83EF10u, { bank_83_EF10_M0X0, bank_83_EF10_M0X1, NULL, NULL }, 0 },  /* bank_83_EF10 */
-    { 0x83F0B7u, { bank_83_F0B7_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_F0B7 */
-    { 0x83F0BBu, { bank_83_F0BB_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_F0BB */
-    { 0x83F296u, { NULL, bank_83_F296_M0X1, NULL, NULL }, 0 },  /* bank_83_F296 */
-    { 0x83F2BBu, { NULL, bank_83_F2BB_M0X1, NULL, NULL }, 0 },  /* bank_83_F2BB */
-    { 0x83F602u, { NULL, NULL, NULL, bank_83_F602_M1X1 }, 0 },  /* bank_83_F602 */
-    { 0x83F940u, { NULL, bank_83_F940_M0X1, NULL, NULL }, 0 },  /* bank_83_F940 */
-    { 0x83FAC0u, { bank_83_FAC0_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_FAC0 */
-    { 0x83FAC4u, { bank_83_FAC4_M0X0, NULL, NULL, NULL }, 0 },  /* bank_83_FAC4 */
+    { 0x82D4F6u, { NULL, NULL, Vram_Clear_Long_M1X0, NULL }, 0 },  /* Vram_Clear_Long */
+    { 0x82D4FAu, { NULL, NULL, Vram_Clear_M1X0, NULL }, 0 },  /* Vram_Clear */
+    { 0x82D50Eu, { NULL, NULL, Cgram_Clear_Long_M1X0, NULL }, 0 },  /* Cgram_Clear_Long */
+    { 0x82D512u, { NULL, NULL, Cgram_Clear_M1X0, NULL }, 0 },  /* Cgram_Clear */
+    { 0x82D526u, { NULL, Race_InitHdma_Long_M0X1, NULL, Race_InitHdma_Long_M1X1 }, 0 },  /* Race_InitHdma_Long */
+    { 0x82D56Au, { NULL, Race_InitHdma_M0X1, NULL, Race_InitHdma_M1X1 }, 0 },  /* Race_InitHdma */
+    { 0x82D731u, { NULL, NULL, Race_InitVideo_Long_M1X0, NULL }, 0 },  /* Race_InitVideo_Long */
+    { 0x82D735u, { NULL, NULL, Race_InitVideo_M1X0, NULL }, 0 },  /* Race_InitVideo */
+    { 0x82D76Du, { NULL, Oam_InitBuffer_FastRom_M0X1, Oam_InitBuffer_FastRom_M1X0, NULL }, 0 },  /* Oam_InitBuffer_FastRom */
+    { 0x82D80Cu, { NULL, NULL, Race_InitState_Long_FastRom_M1X0, NULL }, 0 },  /* Race_InitState_Long_FastRom */
+    { 0x82D810u, { Race_ClearRam_Long_FastRom_M0X0, NULL, Race_ClearRam_Long_FastRom_M1X0, NULL }, 0 },  /* Race_ClearRam_Long_FastRom */
+    { 0x82D814u, { Race_ClearRam_FastRom_M0X0, NULL, Race_ClearRam_FastRom_M1X0, NULL }, 0 },  /* Race_ClearRam_FastRom */
+    { 0x82D849u, { NULL, NULL, Race_InitState_FastRom_M1X0, NULL }, 0 },  /* Race_InitState_FastRom */
+    { 0x82DC1Fu, { Race_SetPpuRegs_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_SetPpuRegs_FastRom */
+    { 0x82DC56u, { NULL, NULL, Race_LoadTrackGraphics_Long_FastRom_M1X0, NULL }, 0 },  /* Race_LoadTrackGraphics_Long_FastRom */
+    { 0x82DC68u, { NULL, NULL, Race_LoadTrackGraphics_FastRom_M1X0, NULL }, 0 },  /* Race_LoadTrackGraphics_FastRom */
+    { 0x82DE13u, { NULL, NULL, League_RunPodium_Long_M1X0, NULL }, 0 },  /* League_RunPodium_Long */
+    { 0x82DE17u, { NULL, NULL, League_RunPodium_M1X0, NULL }, 0 },  /* League_RunPodium */
+    { 0x82DF40u, { NULL, League_AnimatePodium_M0X1, NULL, NULL }, 0 },  /* League_AnimatePodium */
+    { 0x82DFD8u, { League_InitPodiumSprites_M0X0, NULL, NULL, NULL }, 0 },  /* League_InitPodiumSprites */
+    { 0x82E02Eu, { NULL, NULL, League_LoadPodiumGraphics_M1X0, NULL }, 0 },  /* League_LoadPodiumGraphics */
+    { 0x82E0A9u, { NULL, NULL, NULL, League_StartPodiumMusic_M1X1 }, 0 },  /* League_StartPodiumMusic */
+    { 0x82E13Du, { League_SetPodiumPpuRegs_M0X0, NULL, NULL, NULL }, 0 },  /* League_SetPodiumPpuRegs */
+    { 0x82E165u, { NULL, NULL, Race_LoadTrackData_FastRom_M1X0, NULL }, 0 },  /* Race_LoadTrackData_FastRom */
+    { 0x838484u, { NULL, NULL, Gfx_CopyRomTileToWram_FastRom_M1X0, NULL }, 0 },  /* Gfx_CopyRomTileToWram_FastRom */
+    { 0x8384D9u, { NULL, NULL, Name_CheckProfanityLong_M1X0, NULL }, 0 },  /* Name_CheckProfanityLong */
+    { 0x8384DDu, { NULL, NULL, Name_CheckProfanity_M1X0, NULL }, 0 },  /* Name_CheckProfanity */
+    { 0x838779u, { Str_MatchPrefix_M0X0, NULL, NULL, NULL }, 0 },  /* Str_MatchPrefix */
+    { 0x83879Au, { NULL, NULL, League_ApplyRaceResult_FastRom_M1X0, NULL }, 0 },  /* League_ApplyRaceResult_FastRom */
+    { 0x8388D3u, { League_CheckRaceWin_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* League_CheckRaceWin_FastRom */
+    { 0x8388E1u, { League_CheckStuntWin_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* League_CheckStuntWin_FastRom */
+    { 0x83890Fu, { Award_Tier0Cutscene_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Award_Tier0Cutscene_FastRom */
+    { 0x83893Cu, { NULL, NULL, League_RoundTrackToTierLong_FastRom_M1X0, NULL }, 0 },  /* League_RoundTrackToTierLong_FastRom */
+    { 0x838940u, { NULL, NULL, League_RoundTrackToTier_FastRom_M1X0, NULL }, 0 },  /* League_RoundTrackToTier_FastRom */
+    { 0x838957u, { NULL, NULL, League_ClearTierResultsLong_M1X0, NULL }, 0 },  /* League_ClearTierResultsLong */
+    { 0x83895Bu, { NULL, NULL, League_ClearTierResults_FastRom_M1X0, NULL }, 0 },  /* League_ClearTierResults_FastRom */
+    { 0x8389BAu, { NULL, NULL, Ppu_ResetBgScroll_FastRom_M1X0, NULL }, 0 },  /* Ppu_ResetBgScroll_FastRom */
+    { 0x838AF7u, { NULL, NULL, Sram_CheckSizeMirror_FastRom_M1X0, NULL }, 0 },  /* Sram_CheckSizeMirror_FastRom */
+    { 0x838B23u, { NULL, NULL, Sram_ClearSessionData_FastRom_M1X0, NULL }, 0 },  /* Sram_ClearSessionData_FastRom */
+    { 0x838B51u, { NULL, NULL, Vram_ClearRegions_M1X0, NULL }, 0 },  /* Vram_ClearRegions */
+    { 0x838B9Du, { NULL, NULL, Vram_FillBlank2K_M1X0, NULL }, 0 },  /* Vram_FillBlank2K */
+    { 0x838BC9u, { Str_CopyLong_FastRom_M0X0, NULL, Str_CopyLong_FastRom_M1X0, NULL }, 0 },  /* Str_CopyLong_FastRom */
+    { 0x838BCDu, { Str_Copy_FastRom_M0X0, NULL, Str_Copy_FastRom_M1X0, NULL }, 0 },  /* Str_Copy_FastRom */
+    { 0x838BE7u, { Text_FormatDecimal5_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Text_FormatDecimal5_FastRom */
+    { 0x838C7Bu, { Text_FormatRaceTimeLong_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Text_FormatRaceTimeLong_FastRom */
+    { 0x838C7Fu, { Text_FormatRaceTime_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Text_FormatRaceTime_FastRom */
+    { 0x838D5Du, { Math_Divide32By16Long_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Math_Divide32By16Long_FastRom */
+    { 0x838D61u, { Math_Divide32By16_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Math_Divide32By16_FastRom */
+    { 0x838D8Fu, { Menu_DrawTierBadge_FastRom_M0X0, NULL, Menu_DrawTierBadge_FastRom_M1X0, NULL }, 0 },  /* Menu_DrawTierBadge_FastRom */
+    { 0x838E3Au, { Anim_DecodeFrame_FastRom_M0X0, NULL, Anim_DecodeFrame_FastRom_M1X0, NULL }, 0 },  /* Anim_DecodeFrame_FastRom */
+    { 0x838EFEu, { NULL, NULL, Records_CalcPlayerBars_M1X0, NULL }, 0 },  /* Records_CalcPlayerBars */
+    { 0x83904Au, { NULL, NULL, Records_CalcTrackTimeRange_FastRom_M1X0, NULL }, 0 },  /* Records_CalcTrackTimeRange_FastRom */
+    { 0x8390F4u, { Sram_UpdateChecksumsLong_FastRom_M0X0, NULL, Sram_UpdateChecksumsLong_FastRom_M1X0, NULL }, 0 },  /* Sram_UpdateChecksumsLong_FastRom */
+    { 0x8390F8u, { Sram_UpdateChecksums_FastRom_M0X0, NULL, Sram_UpdateChecksums_FastRom_M1X0, NULL }, 0 },  /* Sram_UpdateChecksums_FastRom */
+    { 0x8391D0u, { Math_CalcBarLength_M0X0, NULL, NULL, NULL }, 0 },  /* Math_CalcBarLength */
+    { 0x8391F7u, { Pal_LoadPlayerColorLong_FastRom_M0X0, NULL, Pal_LoadPlayerColorLong_FastRom_M1X0, NULL }, 0 },  /* Pal_LoadPlayerColorLong_FastRom */
+    { 0x8391FBu, { Pal_LoadPlayerColor_FastRom_M0X0, NULL, Pal_LoadPlayerColor_FastRom_M1X0, NULL }, 0 },  /* Pal_LoadPlayerColor_FastRom */
+    { 0x839229u, { NULL, NULL, Vs_RecordResult_M1X0, NULL }, 0 },  /* Vs_RecordResult */
+    { 0x8392B0u, { Vs_AddWin_M0X0, NULL, NULL, NULL }, 0 },  /* Vs_AddWin */
+    { 0x8392CCu, { Sram_InitNamesBlock_M0X0, NULL, Sram_InitNamesBlock_M1X0, NULL }, 0 },  /* Sram_InitNamesBlock */
+    { 0x8392E3u, { Sram_ClearPlayerStats_M0X0, NULL, Sram_ClearPlayerStats_M1X0, NULL }, 0 },  /* Sram_ClearPlayerStats */
+    { 0x8392FAu, { Sram_InitBlock16E_M0X0, NULL, Sram_InitBlock16E_M1X0, NULL }, 0 },  /* Sram_InitBlock16E */
+    { 0x839311u, { Sram_ClearLeagueResults_M0X0, NULL, Sram_ClearLeagueResults_M1X0, NULL }, 0 },  /* Sram_ClearLeagueResults */
+    { 0x839328u, { Sram_InitLeagueMembers_M0X0, NULL, Sram_InitLeagueMembers_M1X0, NULL }, 0 },  /* Sram_InitLeagueMembers */
+    { 0x839340u, { Sram_ClearPlayerBests_FastRom_M0X0, NULL, Sram_ClearPlayerBests_FastRom_M1X0, NULL }, 0 },  /* Sram_ClearPlayerBests_FastRom */
+    { 0x83936Eu, { Sram_InitTrackRecords_M0X0, NULL, Sram_InitTrackRecords_M1X0, NULL }, 0 },  /* Sram_InitTrackRecords */
+    { 0x8393D8u, { Sram_ClearRecordHolders_M0X0, NULL, Sram_ClearRecordHolders_M1X0, NULL }, 0 },  /* Sram_ClearRecordHolders */
+    { 0x8393F5u, { Sram_InitLeagues_FastRom_M0X0, NULL, Sram_InitLeagues_FastRom_M1X0, NULL }, 0 },  /* Sram_InitLeagues_FastRom */
+    { 0x839486u, { Sram_InitOptions_FastRom_M0X0, NULL, Sram_InitOptions_FastRom_M1X0, NULL }, 0 },  /* Sram_InitOptions_FastRom */
+    { 0x8394A5u, { Sram_WriteSignature_FastRom_M0X0, NULL, Sram_WriteSignature_FastRom_M1X0, NULL }, 0 },  /* Sram_WriteSignature_FastRom */
+    { 0x8394D0u, { NULL, NULL, Gfx_UploadTiles7A00A_FastRom_M1X0, NULL }, 0 },  /* Gfx_UploadTiles7A00A_FastRom */
+    { 0x8394FFu, { NULL, NULL, Gfx_UploadTiles7A00B_FastRom_M1X0, NULL }, 0 },  /* Gfx_UploadTiles7A00B_FastRom */
+    { 0x83952Eu, { Input_DisablePad1_FastRom_M0X0, NULL, Input_DisablePad1_FastRom_M1X0, NULL }, 0 },  /* Input_DisablePad1_FastRom */
+    { 0x839543u, { Input_DisablePad2_FastRom_M0X0, NULL, Input_DisablePad2_FastRom_M1X0, NULL }, 0 },  /* Input_DisablePad2_FastRom */
+    { 0x839558u, { NULL, NULL, Input_EnableBothPads_M1X0, NULL }, 0 },  /* Input_EnableBothPads */
+    { 0x83956Du, { Math_MultiplyBy100_M0X0, NULL, NULL, NULL }, 0 },  /* Math_MultiplyBy100 */
+    { 0x83958Cu, { NULL, NULL, Vs_SortPlayersForRace_FastRom_M1X0, NULL }, 0 },  /* Vs_SortPlayersForRace_FastRom */
+    { 0x8395CAu, { NULL, NULL, Vs_UnswapPlayers_FastRom_M1X0, NULL }, 0 },  /* Vs_UnswapPlayers_FastRom */
+    { 0x83961Eu, { NULL, NULL, Oam_SetXHighBit_FastRom_M1X0, NULL }, 0 },  /* Oam_SetXHighBit_FastRom */
+    { 0x83963Cu, { NULL, NULL, League_BuildMemberList_M1X0, NULL }, 0 },  /* League_BuildMemberList */
+    { 0x83967Cu, { League_LoadRoster_M0X0, NULL, NULL, NULL }, 0 },  /* League_LoadRoster */
+    { 0x83969Fu, { League_IndexRoster_FastRom_M0X0, NULL, League_IndexRoster_FastRom_M1X0, NULL }, 0 },  /* League_IndexRoster_FastRom */
+    { 0x8396BEu, { League_CopyMenuOrder_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* League_CopyMenuOrder_FastRom */
+    { 0x839700u, { NULL, NULL, League_UpdateBestScore_M1X0, NULL }, 0 },  /* League_UpdateBestScore */
+    { 0x839734u, { League_UpdateBestFor_M0X0, NULL, NULL, NULL }, 0 },  /* League_UpdateBestFor */
+    { 0x8397BDu, { NULL, NULL, Records_CalcMaxima_FastRom_M1X0, NULL }, 0 },  /* Records_CalcMaxima_FastRom */
+    { 0x83986Au, { Records_PercentOfRaces_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Records_PercentOfRaces_FastRom */
+    { 0x83987Du, { NULL, NULL, Sram_RestoreDirectPage_FastRom_M1X0, NULL }, 0 },  /* Sram_RestoreDirectPage_FastRom */
+    { 0x839894u, { NULL, NULL, Sram_SaveDirectPage_M1X0, NULL }, 0 },  /* Sram_SaveDirectPage */
+    { 0x8398ABu, { NULL, NULL, League_SetupNextRace_M1X0, NULL }, 0 },  /* League_SetupNextRace */
+    { 0x839972u, { NULL, NULL, Race_FadeUnlessKind1_FastRom_M1X0, NULL }, 0 },  /* Race_FadeUnlessKind1_FastRom */
+    { 0x839983u, { Track_SetCurrentLong_M0X0, NULL, Track_SetCurrentLong_M1X0, NULL }, 0 },  /* Track_SetCurrentLong */
+    { 0x839987u, { Track_SetCurrent_M0X0, NULL, Track_SetCurrent_M1X0, NULL }, 0 },  /* Track_SetCurrent */
+    { 0x8399C2u, { NULL, NULL, Race_CheckTie_M1X0, NULL }, 0 },  /* Race_CheckTie */
+    { 0x8399F6u, { NULL, NULL, Oam_InitCursorSpritesLong_M1X0, NULL }, 0 },  /* Oam_InitCursorSpritesLong */
+    { 0x8399FAu, { NULL, NULL, Oam_InitCursorSprites_M1X0, NULL }, 0 },  /* Oam_InitCursorSprites */
+    { 0x839A1Eu, { Menu_AnimateSprites_FastRom_M0X0, NULL, Menu_AnimateSprites_FastRom_M1X0, NULL }, 0 },  /* Menu_AnimateSprites_FastRom */
+    { 0x839B45u, { NULL, NULL, Player_DeleteLong_M1X0, NULL }, 0 },  /* Player_DeleteLong */
+    { 0x839B49u, { NULL, NULL, Player_Delete_M1X0, NULL }, 0 },  /* Player_Delete */
+    { 0x839C47u, { League_RemovePlayer_M0X0, NULL, NULL, NULL }, 0 },  /* League_RemovePlayer */
+    { 0x839D80u, { Math_Percent_M0X0, NULL, NULL, NULL }, 0 },  /* Math_Percent */
+    { 0x839E2Cu, { Index_TrackX2_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Index_TrackX2_FastRom */
+    { 0x839E3Au, { Index_Track_FastRom_M0X0, NULL, Index_Track_FastRom_M1X0, NULL }, 0 },  /* Index_Track_FastRom */
+    { 0x839E47u, { Index_PlayerBest_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Index_PlayerBest_FastRom */
+    { 0x839E7Fu, { League_IndexRankSlot_M0X0, NULL, NULL, NULL }, 0 },  /* League_IndexRankSlot */
+    { 0x839EB4u, { Index_TierMedal_FastRom_M0X0, NULL, Index_TierMedal_FastRom_M1X0, NULL }, 0 },  /* Index_TierMedal_FastRom */
+    { 0x839EC8u, { NULL, NULL, Index_Track6_M1X0, NULL }, 0 },  /* Index_Track6 */
+    { 0x839ED5u, { Index_TierX5_FastRom_M0X0, NULL, Index_TierX5_FastRom_M1X0, NULL }, 0 },  /* Index_TierX5_FastRom */
+    { 0x839EEBu, { League_GetStuntTarget_M0X0, NULL, NULL, NULL }, 0 },  /* League_GetStuntTarget */
+    { 0x839F14u, { Player_GetTier_FastRom_M0X0, NULL, Player_GetTier_FastRom_M1X0, NULL }, 0 },  /* Player_GetTier_FastRom */
+    { 0x839F49u, { NULL, NULL, Player_SetTier_M1X0, NULL }, 0 },  /* Player_SetTier */
+    { 0x839F5Eu, { NULL, NULL, Player_GetPromoted_FastRom_M1X0, NULL }, 0 },  /* Player_GetPromoted_FastRom */
+    { 0x839F81u, { NULL, NULL, Player_SetPromoted_M1X0, NULL }, 0 },  /* Player_SetPromoted */
+    { 0x83A286u, { Snd_Play01_M0X0, NULL, NULL, NULL }, 0 },  /* Snd_Play01 */
+    { 0x83A3EBu, { Snd_Play12_M0X0, NULL, NULL, NULL }, 0 },  /* Snd_Play12 */
+    { 0x83A400u, { Snd_Play13_M0X0, NULL, NULL, NULL }, 0 },  /* Snd_Play13 */
+    { 0x83A493u, { NULL, NULL, Snd_Play1A_M1X0, NULL }, 0 },  /* Snd_Play1A */
+    { 0x83A4D2u, { NULL, NULL, Ppu_FadeIn_M1X0, NULL }, 0 },  /* Ppu_FadeIn */
+    { 0x83A4E9u, { NULL, NULL, Ppu_FadeOut_M1X0, NULL }, 0 },  /* Ppu_FadeOut */
+    { 0x83A507u, { NULL, NULL, Cutscene_InitScreenA_M1X0, NULL }, 0 },  /* Cutscene_InitScreenA */
+    { 0x83A614u, { NULL, NULL, Cutscene_InitScreenB_M1X0, NULL }, 0 },  /* Cutscene_InitScreenB */
+    { 0x83A721u, { NULL, NULL, Menu_InitScreenFull_M1X0, NULL }, 0 },  /* Menu_InitScreenFull */
+    { 0x83A923u, { Ppu_WaitVBlank_FastRom_M0X0, NULL, Ppu_WaitVBlank_FastRom_M1X0, NULL }, 0 },  /* Ppu_WaitVBlank_FastRom */
+    { 0x83A93Au, { NULL, NULL, NULL, NULL }, 0 },  /* Text2_DrawString */
+    { 0x83AB9Au, { NULL, NULL, NULL, NULL }, 0 },  /* Ending_ShowFinale */
+    { 0x83AEF6u, { NULL, NULL, Award_ShowMedal_M1X0, NULL }, 0 },  /* Award_ShowMedal */
+    { 0x83B79Cu, { Cutscene_DrawLoopFrameA_M0X0, NULL, NULL, NULL }, 0 },  /* Cutscene_DrawLoopFrameA */
+    { 0x83C49Cu, { Cutscene0_Main_M0X0, NULL, NULL, NULL }, 0 },  /* Cutscene0_Main */
+    { 0x83C8E0u, { NULL, NULL, Race_Main_FastRom_M1X0, NULL }, 0 },  /* Race_Main_FastRom */
+    { 0x83CA07u, { Race_Main_CA07_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Main_CA07_FastRom */
+    { 0x83CA4Cu, { Race_Main_CA4C_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Main_CA4C_FastRom */
+    { 0x83CA91u, { Race_Main_CA91_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Main_CA91_FastRom */
+    { 0x83CAD6u, { Race_Main_CAD6_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Main_CAD6_FastRom */
+    { 0x83CB1Bu, { Race_Main_CB1B_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Main_CB1B_FastRom */
+    { 0x83CB60u, { Race_Main_CB60_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Main_CB60_FastRom */
+    { 0x83CDA0u, { Race_UpdateColorHints_FastRom_M0X0, Race_UpdateColorHints_FastRom_M0X1, Race_UpdateColorHints_FastRom_M1X0, Race_UpdateColorHints_FastRom_M1X1 }, 0 },  /* Race_UpdateColorHints_FastRom */
+    { 0x83CEADu, { NULL, NULL, Race_UpdateSpecialFx_FastRom_M1X0, Race_UpdateSpecialFx_FastRom_M1X1 }, 0 },  /* Race_UpdateSpecialFx_FastRom */
+    { 0x83D0E8u, { Race_CheckFxTrigger_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_CheckFxTrigger_FastRom */
+    { 0x83D1AEu, { Race_UpdateBackdropFade_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_UpdateBackdropFade_FastRom */
+    { 0x83D259u, { NULL, NULL, Race_ClearFxTables_FastRom_M1X0, NULL }, 0 },  /* Race_ClearFxTables_FastRom */
+    { 0x83D26Eu, { Race_Fx7Tick_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Fx7Tick_FastRom */
+    { 0x83D2ADu, { Race_Fx3Tick_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Fx3Tick_FastRom */
+    { 0x83D32Du, { Race_Fx6Tick_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Fx6Tick_FastRom */
+    { 0x83D3E0u, { Race_Fx4Tick_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Fx4Tick_FastRom */
+    { 0x83D458u, { Race_Fx0Tick_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Fx0Tick_FastRom */
+    { 0x83D492u, { Race_Fx2Tick_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Fx2Tick_FastRom */
+    { 0x83D4CCu, { Race_Fx5Tick_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Fx5Tick_FastRom */
+    { 0x83D514u, { Race_Fx1Tick_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_Fx1Tick_FastRom */
+    { 0x83D565u, { Race_BuildFlipHdmaTable_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_BuildFlipHdmaTable_FastRom */
+    { 0x83E066u, { Race_UpdateCpuRival_FastRom_M0X0, NULL, Race_UpdateCpuRival_FastRom_M1X0, Race_UpdateCpuRival_FastRom_M1X1 }, 0 },  /* Race_UpdateCpuRival_FastRom */
+    { 0x83E238u, { NULL, NULL, Demo_UpdateCpuInput_FastRom_M1X0, Demo_UpdateCpuInput_FastRom_M1X1 }, 0 },  /* Demo_UpdateCpuInput_FastRom */
+    { 0x83E580u, { Race_UpdateCountdown_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_UpdateCountdown_FastRom */
+    { 0x83E7A5u, { Race_UpdateFinish_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_UpdateFinish_FastRom */
+    { 0x83EC46u, { Race_UpdateRiderOverlayFrames_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Race_UpdateRiderOverlayFrames_FastRom */
+    { 0x83ED2Fu, { Rider_UpdateAnimFrameL_M0X0, Rider_UpdateAnimFrameL_M0X1, NULL, NULL }, 0 },  /* Rider_UpdateAnimFrameL */
+    { 0x83ED33u, { Rider_UpdateAnimFrame_M0X0, Rider_UpdateAnimFrame_M0X1, NULL, NULL }, 0 },  /* Rider_UpdateAnimFrame */
+    { 0x83EF10u, { Rider_UpdateBodyLean_M0X0, Rider_UpdateBodyLean_M0X1, NULL, NULL }, 0 },  /* Rider_UpdateBodyLean */
+    { 0x83F0B7u, { Gfx_QueueRiderTileDmaL_M0X0, NULL, NULL, NULL }, 0 },  /* Gfx_QueueRiderTileDmaL */
+    { 0x83F0BBu, { Gfx_QueueRiderTileDma_FastRom_M0X0, NULL, NULL, NULL }, 0 },  /* Gfx_QueueRiderTileDma_FastRom */
+    { 0x83F296u, { NULL, Gfx_GetRiderFramePtr_FastRom_M0X1, NULL, NULL }, 0 },  /* Gfx_GetRiderFramePtr_FastRom */
+    { 0x83F2BBu, { NULL, Gfx_DecodeRiderFrameHeaders_FastRom_M0X1, NULL, NULL }, 0 },  /* Gfx_DecodeRiderFrameHeaders_FastRom */
+    { 0x83F602u, { NULL, NULL, NULL, Race_UpdatePauseMenu_FastRom_M1X1 }, 0 },  /* Race_UpdatePauseMenu_FastRom */
+    { 0x83F940u, { NULL, Ppu_ResetAllRegisters_FastRom_M0X1, NULL, NULL }, 0 },  /* Ppu_ResetAllRegisters_FastRom */
+    { 0x83FAC0u, { Sram_ClearAllL_M0X0, NULL, NULL, NULL }, 0 },  /* Sram_ClearAllL */
+    { 0x83FAC4u, { Sram_ClearAll_M0X0, NULL, NULL, NULL }, 0 },  /* Sram_ClearAll */
 };
 
 const unsigned g_dispatch_table_count =

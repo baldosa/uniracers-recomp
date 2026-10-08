@@ -15,22 +15,22 @@
 
 /* Split translation unit: bank $83, part 0D; entry PCs $E800-$EFFF. */
 
-RecompReturn bank_80_96FD_M0X0(CpuState *cpu);
-RecompReturn bank_81_B773_M0X0(CpuState *cpu);
-RecompReturn bank_83_EC46_M0X0(CpuState *cpu);
-RecompReturn bank_83_ED2F_M0X0(CpuState *cpu);
-RecompReturn bank_83_ED2F_M0X1(CpuState *cpu);
-RecompReturn bank_83_ED33_M0X0(CpuState *cpu);
-RecompReturn bank_83_ED33_M0X1(CpuState *cpu);
-RecompReturn bank_83_EF10_M0X0(CpuState *cpu);
-RecompReturn bank_83_EF10_M0X1(CpuState *cpu);
+RecompReturn Math_DistanceLong_M0X0(CpuState *cpu);
+RecompReturn Math_Div16by8Long_M0X0(CpuState *cpu);
+RecompReturn Race_UpdateRiderOverlayFrames_FastRom_M0X0(CpuState *cpu);
+RecompReturn Rider_UpdateAnimFrameL_M0X0(CpuState *cpu);
+RecompReturn Rider_UpdateAnimFrameL_M0X1(CpuState *cpu);
+RecompReturn Rider_UpdateAnimFrame_M0X0(CpuState *cpu);
+RecompReturn Rider_UpdateAnimFrame_M0X1(CpuState *cpu);
+RecompReturn Rider_UpdateBodyLean_M0X0(CpuState *cpu);
+RecompReturn Rider_UpdateBodyLean_M0X1(CpuState *cpu);
 
-RecompReturn bank_83_EC46_M0X0(CpuState *cpu) {
+RecompReturn Race_UpdateRiderOverlayFrames_FastRom_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_83_EC46_M0X0";
-  RecompStackPush("bank_83_EC46_M0X0");
-  cpu_dbg_funcname("bank_83_EC46_M0X0");
-  cpu_trace_func_entry(cpu, 0x83EC46, "bank_83_EC46_M0X0");
+  g_last_recomp_func = "Race_UpdateRiderOverlayFrames_FastRom_M0X0";
+  RecompStackPush("Race_UpdateRiderOverlayFrames_FastRom_M0X0");
+  cpu_dbg_funcname("Race_UpdateRiderOverlayFrames_FastRom_M0X0");
+  cpu_trace_func_entry(cpu, 0x83EC46, "Race_UpdateRiderOverlayFrames_FastRom_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xec46u));
@@ -1082,12 +1082,12 @@ RecompReturn bank_83_EC46_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_83_ED2F_M0X0(CpuState *cpu) {
+RecompReturn Rider_UpdateAnimFrameL_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_83_ED2F_M0X0";
-  RecompStackPush("bank_83_ED2F_M0X0");
-  cpu_dbg_funcname("bank_83_ED2F_M0X0");
-  cpu_trace_func_entry(cpu, 0x83ED2F, "bank_83_ED2F_M0X0");
+  g_last_recomp_func = "Rider_UpdateAnimFrameL_M0X0";
+  RecompStackPush("Rider_UpdateAnimFrameL_M0X0");
+  cpu_dbg_funcname("Rider_UpdateAnimFrameL_M0X0");
+  cpu_trace_func_entry(cpu, 0x83ED2F, "Rider_UpdateAnimFrameL_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xed2fu));
@@ -1128,8 +1128,8 @@ RecompReturn bank_83_ED2F_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_83_ED33_M0X0(cpu); break;
-        case 1: _r = bank_83_ED33_M0X1(cpu); break;
+        case 0: _r = Rider_UpdateAnimFrame_M0X0(cpu); break;
+        case 1: _r = Rider_UpdateAnimFrame_M0X1(cpu); break;
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xed33u), 0x83ed2fu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xed33u), 0x83ed2fu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
         default: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xed33u), 0x83ed2fu, 2, NULL); break;  /* masked M/X index should make this unreachable */
@@ -1213,12 +1213,12 @@ RecompReturn bank_83_ED2F_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_83_ED2F_M0X1(CpuState *cpu) {
+RecompReturn Rider_UpdateAnimFrameL_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_83_ED2F_M0X1";
-  RecompStackPush("bank_83_ED2F_M0X1");
-  cpu_dbg_funcname("bank_83_ED2F_M0X1");
-  cpu_trace_func_entry(cpu, 0x83ED2F, "bank_83_ED2F_M0X1");
+  g_last_recomp_func = "Rider_UpdateAnimFrameL_M0X1";
+  RecompStackPush("Rider_UpdateAnimFrameL_M0X1");
+  cpu_dbg_funcname("Rider_UpdateAnimFrameL_M0X1");
+  cpu_trace_func_entry(cpu, 0x83ED2F, "Rider_UpdateAnimFrameL_M0X1");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xed2fu));
@@ -1259,8 +1259,8 @@ RecompReturn bank_83_ED2F_M0X1(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_83_ED33_M0X0(cpu); break;
-        case 1: _r = bank_83_ED33_M0X1(cpu); break;
+        case 0: _r = Rider_UpdateAnimFrame_M0X0(cpu); break;
+        case 1: _r = Rider_UpdateAnimFrame_M0X1(cpu); break;
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xed33u), 0x83ed2fu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xed33u), 0x83ed2fu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
         default: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xed33u), 0x83ed2fu, 2, NULL); break;  /* masked M/X index should make this unreachable */
@@ -1344,12 +1344,12 @@ RecompReturn bank_83_ED2F_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_83_ED33_M0X0(CpuState *cpu) {
+RecompReturn Rider_UpdateAnimFrame_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_83_ED33_M0X0";
-  RecompStackPush("bank_83_ED33_M0X0");
-  cpu_dbg_funcname("bank_83_ED33_M0X0");
-  cpu_trace_func_entry(cpu, 0x83ED33, "bank_83_ED33_M0X0");
+  g_last_recomp_func = "Rider_UpdateAnimFrame_M0X0";
+  RecompStackPush("Rider_UpdateAnimFrame_M0X0");
+  cpu_dbg_funcname("Rider_UpdateAnimFrame_M0X0");
+  cpu_trace_func_entry(cpu, 0x83ED33, "Rider_UpdateAnimFrame_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xed33u));
@@ -1390,8 +1390,8 @@ RecompReturn bank_83_ED33_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_83_EF10_M0X0(cpu); break;
-        case 1: _r = bank_83_EF10_M0X1(cpu); break;
+        case 0: _r = Rider_UpdateBodyLean_M0X0(cpu); break;
+        case 1: _r = Rider_UpdateBodyLean_M0X1(cpu); break;
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xef10u), 0x83ed33u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xef10u), 0x83ed33u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
         default: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xef10u), 0x83ed33u, 2, NULL); break;  /* masked M/X index should make this unreachable */
@@ -1708,7 +1708,7 @@ RecompReturn bank_83_ED33_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B773_M0X0(cpu); break;
+        case 0: _r = Math_DistanceLong_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b773u, 0x83ede2u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b773u, 0x83ede2u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b773u, 0x83ede2u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -3127,7 +3127,7 @@ RecompReturn bank_83_ED33_M0X0(CpuState *cpu) {
       cpu->PB = 0x80;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_80_96FD_M0X0(cpu); break;
+        case 0: _r = Math_Div16by8Long_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x8096fdu, 0x83ee13u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x8096fdu, 0x83ee13u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x8096fdu, 0x83ee13u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -3402,12 +3402,12 @@ RecompReturn bank_83_ED33_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_83_ED33_M0X1(CpuState *cpu) {
+RecompReturn Rider_UpdateAnimFrame_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_83_ED33_M0X1";
-  RecompStackPush("bank_83_ED33_M0X1");
-  cpu_dbg_funcname("bank_83_ED33_M0X1");
-  cpu_trace_func_entry(cpu, 0x83ED33, "bank_83_ED33_M0X1");
+  g_last_recomp_func = "Rider_UpdateAnimFrame_M0X1";
+  RecompStackPush("Rider_UpdateAnimFrame_M0X1");
+  cpu_dbg_funcname("Rider_UpdateAnimFrame_M0X1");
+  cpu_trace_func_entry(cpu, 0x83ED33, "Rider_UpdateAnimFrame_M0X1");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xed33u));
@@ -3448,8 +3448,8 @@ RecompReturn bank_83_ED33_M0X1(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_83_EF10_M0X0(cpu); break;
-        case 1: _r = bank_83_EF10_M0X1(cpu); break;
+        case 0: _r = Rider_UpdateBodyLean_M0X0(cpu); break;
+        case 1: _r = Rider_UpdateBodyLean_M0X1(cpu); break;
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xef10u), 0x83ed33u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xef10u), 0x83ed33u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
         default: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xef10u), 0x83ed33u, 2, NULL); break;  /* masked M/X index should make this unreachable */
@@ -3766,7 +3766,7 @@ RecompReturn bank_83_ED33_M0X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B773_M0X0(cpu); break;
+        case 0: _r = Math_DistanceLong_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b773u, 0x83ede2u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b773u, 0x83ede2u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b773u, 0x83ede2u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -5185,7 +5185,7 @@ RecompReturn bank_83_ED33_M0X1(CpuState *cpu) {
       cpu->PB = 0x80;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_80_96FD_M0X0(cpu); break;
+        case 0: _r = Math_Div16by8Long_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x8096fdu, 0x83ee13u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x8096fdu, 0x83ee13u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x8096fdu, 0x83ee13u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -5460,12 +5460,12 @@ RecompReturn bank_83_ED33_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_83_EF10_M0X0(CpuState *cpu) {
+RecompReturn Rider_UpdateBodyLean_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_83_EF10_M0X0";
-  RecompStackPush("bank_83_EF10_M0X0");
-  cpu_dbg_funcname("bank_83_EF10_M0X0");
-  cpu_trace_func_entry(cpu, 0x83EF10, "bank_83_EF10_M0X0");
+  g_last_recomp_func = "Rider_UpdateBodyLean_M0X0";
+  RecompStackPush("Rider_UpdateBodyLean_M0X0");
+  cpu_dbg_funcname("Rider_UpdateBodyLean_M0X0");
+  cpu_trace_func_entry(cpu, 0x83EF10, "Rider_UpdateBodyLean_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xef10u));
@@ -7312,12 +7312,12 @@ RecompReturn bank_83_EF10_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_83_EF10_M0X1(CpuState *cpu) {
+RecompReturn Rider_UpdateBodyLean_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_83_EF10_M0X1";
-  RecompStackPush("bank_83_EF10_M0X1");
-  cpu_dbg_funcname("bank_83_EF10_M0X1");
-  cpu_trace_func_entry(cpu, 0x83EF10, "bank_83_EF10_M0X1");
+  g_last_recomp_func = "Rider_UpdateBodyLean_M0X1";
+  RecompStackPush("Rider_UpdateBodyLean_M0X1");
+  cpu_dbg_funcname("Rider_UpdateBodyLean_M0X1");
+  cpu_trace_func_entry(cpu, 0x83EF10, "Rider_UpdateBodyLean_M0X1");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xef10u));
@@ -9164,10 +9164,10 @@ RecompReturn bank_83_EF10_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-void bank_83_EC46(CpuState *cpu) {
+void Race_UpdateRiderOverlayFrames_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_83_EC46_M0X0(cpu); break;
+    case 0: _r = Race_UpdateRiderOverlayFrames_FastRom_M0X0(cpu); break;
     case 1: _r = interp_tier_dispatch(cpu, 0x83ec46u); break; /* exact M0X1 LLE */
     case 2: _r = interp_tier_dispatch(cpu, 0x83ec46u); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x83ec46u); break; /* exact M1X1 LLE */
@@ -9176,16 +9176,16 @@ void bank_83_EC46(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_83_EC46");
+      (int)_r, "Race_UpdateRiderOverlayFrames_FastRom");
     abort();
   }
 }
 
-void bank_83_ED2F(CpuState *cpu) {
+void Rider_UpdateAnimFrameL(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_83_ED2F_M0X0(cpu); break;
-    case 1: _r = bank_83_ED2F_M0X1(cpu); break;
+    case 0: _r = Rider_UpdateAnimFrameL_M0X0(cpu); break;
+    case 1: _r = Rider_UpdateAnimFrameL_M0X1(cpu); break;
     case 2: _r = interp_tier_dispatch(cpu, 0x83ed2fu); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x83ed2fu); break; /* exact M1X1 LLE */
     default: _r = interp_tier_dispatch(cpu, 0x83ed2fu); break;
@@ -9193,16 +9193,16 @@ void bank_83_ED2F(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_83_ED2F");
+      (int)_r, "Rider_UpdateAnimFrameL");
     abort();
   }
 }
 
-void bank_83_ED33(CpuState *cpu) {
+void Rider_UpdateAnimFrame(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_83_ED33_M0X0(cpu); break;
-    case 1: _r = bank_83_ED33_M0X1(cpu); break;
+    case 0: _r = Rider_UpdateAnimFrame_M0X0(cpu); break;
+    case 1: _r = Rider_UpdateAnimFrame_M0X1(cpu); break;
     case 2: _r = interp_tier_dispatch(cpu, 0x83ed33u); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x83ed33u); break; /* exact M1X1 LLE */
     default: _r = interp_tier_dispatch(cpu, 0x83ed33u); break;
@@ -9210,16 +9210,16 @@ void bank_83_ED33(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_83_ED33");
+      (int)_r, "Rider_UpdateAnimFrame");
     abort();
   }
 }
 
-void bank_83_EF10(CpuState *cpu) {
+void Rider_UpdateBodyLean(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_83_EF10_M0X0(cpu); break;
-    case 1: _r = bank_83_EF10_M0X1(cpu); break;
+    case 0: _r = Rider_UpdateBodyLean_M0X0(cpu); break;
+    case 1: _r = Rider_UpdateBodyLean_M0X1(cpu); break;
     case 2: _r = interp_tier_dispatch(cpu, 0x83ef10u); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x83ef10u); break; /* exact M1X1 LLE */
     default: _r = interp_tier_dispatch(cpu, 0x83ef10u); break;
@@ -9227,7 +9227,7 @@ void bank_83_EF10(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_83_EF10");
+      (int)_r, "Rider_UpdateBodyLean");
     abort();
   }
 }

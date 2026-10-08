@@ -21,6 +21,8 @@ RecompReturn Index_TierX5_M0X0(CpuState *cpu);
 RecompReturn Index_TrackX2_M0X0(CpuState *cpu);
 RecompReturn Index_Track_M0X0(CpuState *cpu);
 RecompReturn Index_Track_M1X0(CpuState *cpu);
+RecompReturn Input_WaitAnyButtonL_M1X0(CpuState *cpu);
+RecompReturn Math_Percent_M0X0(CpuState *cpu);
 RecompReturn Menu_AnimateSprites_M0X0(CpuState *cpu);
 RecompReturn Player_GetPromoted_M1X0(CpuState *cpu);
 RecompReturn Player_GetTier_M0X0(CpuState *cpu);
@@ -29,8 +31,6 @@ RecompReturn Race_FadeUnlessKind1_9981_M1X0(CpuState *cpu);
 RecompReturn Race_FadeUnlessKind1_M1X0(CpuState *cpu);
 RecompReturn Records_PercentOfRaces_M0X0(CpuState *cpu);
 RecompReturn Sram_RestoreDirectPage_M1X0(CpuState *cpu);
-RecompReturn bank_80_C1F1_M1X0(CpuState *cpu);
-RecompReturn bank_83_9D80_M0X0(CpuState *cpu);
 
 RecompReturn Records_PercentOfRaces_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
@@ -103,7 +103,7 @@ RecompReturn Records_PercentOfRaces_M0X0(CpuState *cpu) {
       cpu->PB = 0x83;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_83_9D80_M0X0(cpu); break;
+        case 0: _r = Math_Percent_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x839d80u, 0x039878u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x839d80u, 0x039878u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x839d80u, 0x039878u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -473,7 +473,7 @@ RecompReturn Race_FadeUnlessKind1_M1X0(CpuState *cpu) {
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
         case 0: _r = interp_tier_run_call_frame(cpu, 0x80c1f1u, 0x03997du, 3, NULL); break;  /* exact M0X0 -> authoritative LLE */
         case 1: _r = interp_tier_run_call_frame(cpu, 0x80c1f1u, 0x03997du, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
-        case 2: _r = bank_80_C1F1_M1X0(cpu); break;
+        case 2: _r = Input_WaitAnyButtonL_M1X0(cpu); break;
         case 3: _r = interp_tier_run_call_frame(cpu, 0x80c1f1u, 0x03997du, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
         default: _r = interp_tier_run_call_frame(cpu, 0x80c1f1u, 0x03997du, 3, NULL); break;  /* masked M/X index should make this unreachable */
       }

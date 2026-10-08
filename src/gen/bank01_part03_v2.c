@@ -15,6 +15,7 @@
 
 /* Split translation unit: bank $01, part 03; entry PCs $9800-$9FFF. */
 
+RecompReturn Math_MulFixed8p8Long_FastRom_M0X0(CpuState *cpu);
 RecompReturn Rider_BuildRotationTablesLong_99D9_M0X0(CpuState *cpu);
 RecompReturn Rider_BuildRotationTablesLong_M1X0(CpuState *cpu);
 RecompReturn Rider_BuildRotationTables_9A6D_M0X0(CpuState *cpu);
@@ -65,7 +66,6 @@ RecompReturn Rider_BuildRotationTables_9E08_M0X0(CpuState *cpu);
 RecompReturn Rider_BuildRotationTables_9E0F_M0X0(CpuState *cpu);
 RecompReturn Rider_BuildRotationTables_9E11_M0X0(CpuState *cpu);
 RecompReturn Rider_BuildRotationTables_M1X0(CpuState *cpu);
-RecompReturn bank_81_B6C0_M0X0(CpuState *cpu);
 
 RecompReturn Rider_BuildRotationTablesLong_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
@@ -1008,7 +1008,7 @@ RecompReturn Rider_BuildRotationTables_M1X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -1117,7 +1117,7 @@ RecompReturn Rider_BuildRotationTables_M1X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -1298,7 +1298,7 @@ RecompReturn Rider_BuildRotationTables_M1X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -1407,7 +1407,7 @@ RecompReturn Rider_BuildRotationTables_M1X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -1657,7 +1657,7 @@ RecompReturn Rider_BuildRotationTables_M1X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -1708,7 +1708,7 @@ RecompReturn Rider_BuildRotationTables_M1X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -1889,7 +1889,7 @@ RecompReturn Rider_BuildRotationTables_M1X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -1940,7 +1940,7 @@ RecompReturn Rider_BuildRotationTables_M1X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -3992,7 +3992,7 @@ RecompReturn Rider_BuildRotationTables_9A6D_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -4101,7 +4101,7 @@ RecompReturn Rider_BuildRotationTables_9A6D_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -4282,7 +4282,7 @@ RecompReturn Rider_BuildRotationTables_9A6D_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -4391,7 +4391,7 @@ RecompReturn Rider_BuildRotationTables_9A6D_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -4641,7 +4641,7 @@ RecompReturn Rider_BuildRotationTables_9A6D_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -4692,7 +4692,7 @@ RecompReturn Rider_BuildRotationTables_9A6D_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -4873,7 +4873,7 @@ RecompReturn Rider_BuildRotationTables_9A6D_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -4924,7 +4924,7 @@ RecompReturn Rider_BuildRotationTables_9A6D_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -8390,7 +8390,7 @@ RecompReturn Rider_BuildRotationTables_9B46_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -8499,7 +8499,7 @@ RecompReturn Rider_BuildRotationTables_9B46_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -8680,7 +8680,7 @@ RecompReturn Rider_BuildRotationTables_9B46_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -8789,7 +8789,7 @@ RecompReturn Rider_BuildRotationTables_9B46_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -9039,7 +9039,7 @@ RecompReturn Rider_BuildRotationTables_9B46_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -9090,7 +9090,7 @@ RecompReturn Rider_BuildRotationTables_9B46_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -9271,7 +9271,7 @@ RecompReturn Rider_BuildRotationTables_9B46_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -9322,7 +9322,7 @@ RecompReturn Rider_BuildRotationTables_9B46_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -11371,7 +11371,7 @@ RecompReturn Rider_BuildRotationTables_9B53_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -11480,7 +11480,7 @@ RecompReturn Rider_BuildRotationTables_9B53_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -11661,7 +11661,7 @@ RecompReturn Rider_BuildRotationTables_9B53_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -11770,7 +11770,7 @@ RecompReturn Rider_BuildRotationTables_9B53_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -12020,7 +12020,7 @@ RecompReturn Rider_BuildRotationTables_9B53_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -12071,7 +12071,7 @@ RecompReturn Rider_BuildRotationTables_9B53_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -12252,7 +12252,7 @@ RecompReturn Rider_BuildRotationTables_9B53_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -12303,7 +12303,7 @@ RecompReturn Rider_BuildRotationTables_9B53_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -14926,7 +14926,7 @@ RecompReturn Rider_BuildRotationTables_9BB3_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -15035,7 +15035,7 @@ RecompReturn Rider_BuildRotationTables_9BB3_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -15216,7 +15216,7 @@ RecompReturn Rider_BuildRotationTables_9BB3_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -15325,7 +15325,7 @@ RecompReturn Rider_BuildRotationTables_9BB3_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -15575,7 +15575,7 @@ RecompReturn Rider_BuildRotationTables_9BB3_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -15626,7 +15626,7 @@ RecompReturn Rider_BuildRotationTables_9BB3_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -15807,7 +15807,7 @@ RecompReturn Rider_BuildRotationTables_9BB3_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -15858,7 +15858,7 @@ RecompReturn Rider_BuildRotationTables_9BB3_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -18224,7 +18224,7 @@ RecompReturn Rider_BuildRotationTables_9C0F_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -18333,7 +18333,7 @@ RecompReturn Rider_BuildRotationTables_9C0F_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -18514,7 +18514,7 @@ RecompReturn Rider_BuildRotationTables_9C0F_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -18623,7 +18623,7 @@ RecompReturn Rider_BuildRotationTables_9C0F_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -18873,7 +18873,7 @@ RecompReturn Rider_BuildRotationTables_9C0F_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -18924,7 +18924,7 @@ RecompReturn Rider_BuildRotationTables_9C0F_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -19105,7 +19105,7 @@ RecompReturn Rider_BuildRotationTables_9C0F_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -19156,7 +19156,7 @@ RecompReturn Rider_BuildRotationTables_9C0F_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -21053,7 +21053,7 @@ RecompReturn Rider_BuildRotationTables_9C7F_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -21162,7 +21162,7 @@ RecompReturn Rider_BuildRotationTables_9C7F_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -21343,7 +21343,7 @@ RecompReturn Rider_BuildRotationTables_9C7F_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -21452,7 +21452,7 @@ RecompReturn Rider_BuildRotationTables_9C7F_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -21702,7 +21702,7 @@ RecompReturn Rider_BuildRotationTables_9C7F_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -21753,7 +21753,7 @@ RecompReturn Rider_BuildRotationTables_9C7F_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -21934,7 +21934,7 @@ RecompReturn Rider_BuildRotationTables_9C7F_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -21985,7 +21985,7 @@ RecompReturn Rider_BuildRotationTables_9C7F_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -24041,7 +24041,7 @@ RecompReturn Rider_BuildRotationTables_9C96_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -24222,7 +24222,7 @@ RecompReturn Rider_BuildRotationTables_9C96_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -24331,7 +24331,7 @@ RecompReturn Rider_BuildRotationTables_9C96_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -24581,7 +24581,7 @@ RecompReturn Rider_BuildRotationTables_9C96_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -24632,7 +24632,7 @@ RecompReturn Rider_BuildRotationTables_9C96_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -24813,7 +24813,7 @@ RecompReturn Rider_BuildRotationTables_9C96_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -24864,7 +24864,7 @@ RecompReturn Rider_BuildRotationTables_9C96_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -25821,7 +25821,7 @@ RecompReturn Rider_BuildRotationTables_9C96_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -27108,7 +27108,7 @@ RecompReturn Rider_BuildRotationTables_9CB2_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -27217,7 +27217,7 @@ RecompReturn Rider_BuildRotationTables_9CB2_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -27467,7 +27467,7 @@ RecompReturn Rider_BuildRotationTables_9CB2_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -27518,7 +27518,7 @@ RecompReturn Rider_BuildRotationTables_9CB2_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -27699,7 +27699,7 @@ RecompReturn Rider_BuildRotationTables_9CB2_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -27750,7 +27750,7 @@ RecompReturn Rider_BuildRotationTables_9CB2_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -28707,7 +28707,7 @@ RecompReturn Rider_BuildRotationTables_9CB2_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -28816,7 +28816,7 @@ RecompReturn Rider_BuildRotationTables_9CB2_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -30055,7 +30055,7 @@ RecompReturn Rider_BuildRotationTables_9CBB_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -30164,7 +30164,7 @@ RecompReturn Rider_BuildRotationTables_9CBB_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -30414,7 +30414,7 @@ RecompReturn Rider_BuildRotationTables_9CBB_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -30465,7 +30465,7 @@ RecompReturn Rider_BuildRotationTables_9CBB_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -30646,7 +30646,7 @@ RecompReturn Rider_BuildRotationTables_9CBB_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -30697,7 +30697,7 @@ RecompReturn Rider_BuildRotationTables_9CBB_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -31654,7 +31654,7 @@ RecompReturn Rider_BuildRotationTables_9CBB_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -31763,7 +31763,7 @@ RecompReturn Rider_BuildRotationTables_9CBB_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -33012,7 +33012,7 @@ RecompReturn Rider_BuildRotationTables_9CCC_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -33121,7 +33121,7 @@ RecompReturn Rider_BuildRotationTables_9CCC_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -33371,7 +33371,7 @@ RecompReturn Rider_BuildRotationTables_9CCC_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -33422,7 +33422,7 @@ RecompReturn Rider_BuildRotationTables_9CCC_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -33603,7 +33603,7 @@ RecompReturn Rider_BuildRotationTables_9CCC_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -33654,7 +33654,7 @@ RecompReturn Rider_BuildRotationTables_9CCC_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -34611,7 +34611,7 @@ RecompReturn Rider_BuildRotationTables_9CCC_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -34720,7 +34720,7 @@ RecompReturn Rider_BuildRotationTables_9CCC_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -35979,7 +35979,7 @@ RecompReturn Rider_BuildRotationTables_9CD1_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -36088,7 +36088,7 @@ RecompReturn Rider_BuildRotationTables_9CD1_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -36338,7 +36338,7 @@ RecompReturn Rider_BuildRotationTables_9CD1_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -36389,7 +36389,7 @@ RecompReturn Rider_BuildRotationTables_9CD1_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -36570,7 +36570,7 @@ RecompReturn Rider_BuildRotationTables_9CD1_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -36621,7 +36621,7 @@ RecompReturn Rider_BuildRotationTables_9CD1_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -37578,7 +37578,7 @@ RecompReturn Rider_BuildRotationTables_9CD1_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -37687,7 +37687,7 @@ RecompReturn Rider_BuildRotationTables_9CD1_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -39038,7 +39038,7 @@ RecompReturn Rider_BuildRotationTables_9CE0_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -39288,7 +39288,7 @@ RecompReturn Rider_BuildRotationTables_9CE0_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -39339,7 +39339,7 @@ RecompReturn Rider_BuildRotationTables_9CE0_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -39520,7 +39520,7 @@ RecompReturn Rider_BuildRotationTables_9CE0_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -39571,7 +39571,7 @@ RecompReturn Rider_BuildRotationTables_9CE0_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -40528,7 +40528,7 @@ RecompReturn Rider_BuildRotationTables_9CE0_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -40637,7 +40637,7 @@ RecompReturn Rider_BuildRotationTables_9CE0_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -40818,7 +40818,7 @@ RecompReturn Rider_BuildRotationTables_9CE0_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -42174,7 +42174,7 @@ RecompReturn Rider_BuildRotationTables_9CFC_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -42225,7 +42225,7 @@ RecompReturn Rider_BuildRotationTables_9CFC_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -42406,7 +42406,7 @@ RecompReturn Rider_BuildRotationTables_9CFC_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -42457,7 +42457,7 @@ RecompReturn Rider_BuildRotationTables_9CFC_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -43414,7 +43414,7 @@ RecompReturn Rider_BuildRotationTables_9CFC_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -43523,7 +43523,7 @@ RecompReturn Rider_BuildRotationTables_9CFC_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -43704,7 +43704,7 @@ RecompReturn Rider_BuildRotationTables_9CFC_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -43813,7 +43813,7 @@ RecompReturn Rider_BuildRotationTables_9CFC_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -45167,7 +45167,7 @@ RecompReturn Rider_BuildRotationTables_9CFD_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -45218,7 +45218,7 @@ RecompReturn Rider_BuildRotationTables_9CFD_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -45399,7 +45399,7 @@ RecompReturn Rider_BuildRotationTables_9CFD_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -45450,7 +45450,7 @@ RecompReturn Rider_BuildRotationTables_9CFD_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -46407,7 +46407,7 @@ RecompReturn Rider_BuildRotationTables_9CFD_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -46516,7 +46516,7 @@ RecompReturn Rider_BuildRotationTables_9CFD_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -46697,7 +46697,7 @@ RecompReturn Rider_BuildRotationTables_9CFD_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -46806,7 +46806,7 @@ RecompReturn Rider_BuildRotationTables_9CFD_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -48160,7 +48160,7 @@ RecompReturn Rider_BuildRotationTables_9D00_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -48211,7 +48211,7 @@ RecompReturn Rider_BuildRotationTables_9D00_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -48392,7 +48392,7 @@ RecompReturn Rider_BuildRotationTables_9D00_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -48443,7 +48443,7 @@ RecompReturn Rider_BuildRotationTables_9D00_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -49400,7 +49400,7 @@ RecompReturn Rider_BuildRotationTables_9D00_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -49509,7 +49509,7 @@ RecompReturn Rider_BuildRotationTables_9D00_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -49690,7 +49690,7 @@ RecompReturn Rider_BuildRotationTables_9D00_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -49799,7 +49799,7 @@ RecompReturn Rider_BuildRotationTables_9D00_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -51131,7 +51131,7 @@ RecompReturn Rider_BuildRotationTables_9D08_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -51182,7 +51182,7 @@ RecompReturn Rider_BuildRotationTables_9D08_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -51363,7 +51363,7 @@ RecompReturn Rider_BuildRotationTables_9D08_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -51414,7 +51414,7 @@ RecompReturn Rider_BuildRotationTables_9D08_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -52371,7 +52371,7 @@ RecompReturn Rider_BuildRotationTables_9D08_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -52480,7 +52480,7 @@ RecompReturn Rider_BuildRotationTables_9D08_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -52661,7 +52661,7 @@ RecompReturn Rider_BuildRotationTables_9D08_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -52770,7 +52770,7 @@ RecompReturn Rider_BuildRotationTables_9D08_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -54090,7 +54090,7 @@ RecompReturn Rider_BuildRotationTables_9D16_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -54141,7 +54141,7 @@ RecompReturn Rider_BuildRotationTables_9D16_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -54322,7 +54322,7 @@ RecompReturn Rider_BuildRotationTables_9D16_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -54373,7 +54373,7 @@ RecompReturn Rider_BuildRotationTables_9D16_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -55330,7 +55330,7 @@ RecompReturn Rider_BuildRotationTables_9D16_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -55439,7 +55439,7 @@ RecompReturn Rider_BuildRotationTables_9D16_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -55620,7 +55620,7 @@ RecompReturn Rider_BuildRotationTables_9D16_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -55729,7 +55729,7 @@ RecompReturn Rider_BuildRotationTables_9D16_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -56983,7 +56983,7 @@ RecompReturn Rider_BuildRotationTables_9D37_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -57164,7 +57164,7 @@ RecompReturn Rider_BuildRotationTables_9D37_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -57215,7 +57215,7 @@ RecompReturn Rider_BuildRotationTables_9D37_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -58172,7 +58172,7 @@ RecompReturn Rider_BuildRotationTables_9D37_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -58281,7 +58281,7 @@ RecompReturn Rider_BuildRotationTables_9D37_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -58462,7 +58462,7 @@ RecompReturn Rider_BuildRotationTables_9D37_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -58571,7 +58571,7 @@ RecompReturn Rider_BuildRotationTables_9D37_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -58821,7 +58821,7 @@ RecompReturn Rider_BuildRotationTables_9D37_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -60108,7 +60108,7 @@ RecompReturn Rider_BuildRotationTables_9D47_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -60159,7 +60159,7 @@ RecompReturn Rider_BuildRotationTables_9D47_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -61116,7 +61116,7 @@ RecompReturn Rider_BuildRotationTables_9D47_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -61225,7 +61225,7 @@ RecompReturn Rider_BuildRotationTables_9D47_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -61406,7 +61406,7 @@ RecompReturn Rider_BuildRotationTables_9D47_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -61515,7 +61515,7 @@ RecompReturn Rider_BuildRotationTables_9D47_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -61765,7 +61765,7 @@ RecompReturn Rider_BuildRotationTables_9D47_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -61816,7 +61816,7 @@ RecompReturn Rider_BuildRotationTables_9D47_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -63006,7 +63006,7 @@ RecompReturn Rider_BuildRotationTables_9D61_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -63057,7 +63057,7 @@ RecompReturn Rider_BuildRotationTables_9D61_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -64014,7 +64014,7 @@ RecompReturn Rider_BuildRotationTables_9D61_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -64123,7 +64123,7 @@ RecompReturn Rider_BuildRotationTables_9D61_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -64304,7 +64304,7 @@ RecompReturn Rider_BuildRotationTables_9D61_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -64413,7 +64413,7 @@ RecompReturn Rider_BuildRotationTables_9D61_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -64663,7 +64663,7 @@ RecompReturn Rider_BuildRotationTables_9D61_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -64714,7 +64714,7 @@ RecompReturn Rider_BuildRotationTables_9D61_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -65968,7 +65968,7 @@ RecompReturn Rider_BuildRotationTables_9D75_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -66925,7 +66925,7 @@ RecompReturn Rider_BuildRotationTables_9D75_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -67034,7 +67034,7 @@ RecompReturn Rider_BuildRotationTables_9D75_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -67215,7 +67215,7 @@ RecompReturn Rider_BuildRotationTables_9D75_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -67324,7 +67324,7 @@ RecompReturn Rider_BuildRotationTables_9D75_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -67574,7 +67574,7 @@ RecompReturn Rider_BuildRotationTables_9D75_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -67625,7 +67625,7 @@ RecompReturn Rider_BuildRotationTables_9D75_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -67806,7 +67806,7 @@ RecompReturn Rider_BuildRotationTables_9D75_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -69869,7 +69869,7 @@ RecompReturn Rider_BuildRotationTables_9D85_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -69978,7 +69978,7 @@ RecompReturn Rider_BuildRotationTables_9D85_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -70159,7 +70159,7 @@ RecompReturn Rider_BuildRotationTables_9D85_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -70268,7 +70268,7 @@ RecompReturn Rider_BuildRotationTables_9D85_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -70518,7 +70518,7 @@ RecompReturn Rider_BuildRotationTables_9D85_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -70569,7 +70569,7 @@ RecompReturn Rider_BuildRotationTables_9D85_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -70750,7 +70750,7 @@ RecompReturn Rider_BuildRotationTables_9D85_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -70801,7 +70801,7 @@ RecompReturn Rider_BuildRotationTables_9D85_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -72767,7 +72767,7 @@ RecompReturn Rider_BuildRotationTables_9D9F_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -72876,7 +72876,7 @@ RecompReturn Rider_BuildRotationTables_9D9F_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -73057,7 +73057,7 @@ RecompReturn Rider_BuildRotationTables_9D9F_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -73166,7 +73166,7 @@ RecompReturn Rider_BuildRotationTables_9D9F_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -73416,7 +73416,7 @@ RecompReturn Rider_BuildRotationTables_9D9F_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -73467,7 +73467,7 @@ RecompReturn Rider_BuildRotationTables_9D9F_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -73648,7 +73648,7 @@ RecompReturn Rider_BuildRotationTables_9D9F_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -73699,7 +73699,7 @@ RecompReturn Rider_BuildRotationTables_9D9F_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -75754,7 +75754,7 @@ RecompReturn Rider_BuildRotationTables_9DA1_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -75863,7 +75863,7 @@ RecompReturn Rider_BuildRotationTables_9DA1_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -76044,7 +76044,7 @@ RecompReturn Rider_BuildRotationTables_9DA1_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -76153,7 +76153,7 @@ RecompReturn Rider_BuildRotationTables_9DA1_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -76403,7 +76403,7 @@ RecompReturn Rider_BuildRotationTables_9DA1_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -76454,7 +76454,7 @@ RecompReturn Rider_BuildRotationTables_9DA1_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -76635,7 +76635,7 @@ RecompReturn Rider_BuildRotationTables_9DA1_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -76686,7 +76686,7 @@ RecompReturn Rider_BuildRotationTables_9DA1_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -78740,7 +78740,7 @@ RecompReturn Rider_BuildRotationTables_9DA4_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -78849,7 +78849,7 @@ RecompReturn Rider_BuildRotationTables_9DA4_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -79030,7 +79030,7 @@ RecompReturn Rider_BuildRotationTables_9DA4_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -79139,7 +79139,7 @@ RecompReturn Rider_BuildRotationTables_9DA4_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -79389,7 +79389,7 @@ RecompReturn Rider_BuildRotationTables_9DA4_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -79440,7 +79440,7 @@ RecompReturn Rider_BuildRotationTables_9DA4_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -79621,7 +79621,7 @@ RecompReturn Rider_BuildRotationTables_9DA4_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -79672,7 +79672,7 @@ RecompReturn Rider_BuildRotationTables_9DA4_M1X1(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -81685,7 +81685,7 @@ RecompReturn Rider_BuildRotationTables_9DB6_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -81794,7 +81794,7 @@ RecompReturn Rider_BuildRotationTables_9DB6_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -81975,7 +81975,7 @@ RecompReturn Rider_BuildRotationTables_9DB6_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -82084,7 +82084,7 @@ RecompReturn Rider_BuildRotationTables_9DB6_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -82334,7 +82334,7 @@ RecompReturn Rider_BuildRotationTables_9DB6_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -82385,7 +82385,7 @@ RecompReturn Rider_BuildRotationTables_9DB6_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -82566,7 +82566,7 @@ RecompReturn Rider_BuildRotationTables_9DB6_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -82617,7 +82617,7 @@ RecompReturn Rider_BuildRotationTables_9DB6_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -84773,7 +84773,7 @@ RecompReturn Rider_BuildRotationTables_9E04_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -84882,7 +84882,7 @@ RecompReturn Rider_BuildRotationTables_9E04_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -85063,7 +85063,7 @@ RecompReturn Rider_BuildRotationTables_9E04_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -85172,7 +85172,7 @@ RecompReturn Rider_BuildRotationTables_9E04_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -85422,7 +85422,7 @@ RecompReturn Rider_BuildRotationTables_9E04_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -85473,7 +85473,7 @@ RecompReturn Rider_BuildRotationTables_9E04_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -85654,7 +85654,7 @@ RecompReturn Rider_BuildRotationTables_9E04_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -85705,7 +85705,7 @@ RecompReturn Rider_BuildRotationTables_9E04_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -87753,7 +87753,7 @@ RecompReturn Rider_BuildRotationTables_9E08_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -87862,7 +87862,7 @@ RecompReturn Rider_BuildRotationTables_9E08_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -88043,7 +88043,7 @@ RecompReturn Rider_BuildRotationTables_9E08_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -88152,7 +88152,7 @@ RecompReturn Rider_BuildRotationTables_9E08_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -88402,7 +88402,7 @@ RecompReturn Rider_BuildRotationTables_9E08_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -88453,7 +88453,7 @@ RecompReturn Rider_BuildRotationTables_9E08_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -88634,7 +88634,7 @@ RecompReturn Rider_BuildRotationTables_9E08_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -88685,7 +88685,7 @@ RecompReturn Rider_BuildRotationTables_9E08_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -90741,7 +90741,7 @@ RecompReturn Rider_BuildRotationTables_9E0F_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -90850,7 +90850,7 @@ RecompReturn Rider_BuildRotationTables_9E0F_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -91031,7 +91031,7 @@ RecompReturn Rider_BuildRotationTables_9E0F_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -91140,7 +91140,7 @@ RecompReturn Rider_BuildRotationTables_9E0F_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -91390,7 +91390,7 @@ RecompReturn Rider_BuildRotationTables_9E0F_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -91441,7 +91441,7 @@ RecompReturn Rider_BuildRotationTables_9E0F_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -91622,7 +91622,7 @@ RecompReturn Rider_BuildRotationTables_9E0F_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -91673,7 +91673,7 @@ RecompReturn Rider_BuildRotationTables_9E0F_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -93735,7 +93735,7 @@ RecompReturn Rider_BuildRotationTables_9E11_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -93844,7 +93844,7 @@ RecompReturn Rider_BuildRotationTables_9E11_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -94025,7 +94025,7 @@ RecompReturn Rider_BuildRotationTables_9E11_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -94134,7 +94134,7 @@ RecompReturn Rider_BuildRotationTables_9E11_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -94384,7 +94384,7 @@ RecompReturn Rider_BuildRotationTables_9E11_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -94435,7 +94435,7 @@ RecompReturn Rider_BuildRotationTables_9E11_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -94616,7 +94616,7 @@ RecompReturn Rider_BuildRotationTables_9E11_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -94667,7 +94667,7 @@ RecompReturn Rider_BuildRotationTables_9E11_M0X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x019d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */

@@ -17,16 +17,16 @@
 
 RecompReturn Ppu_WaitVBlank_A933_M1X0(CpuState *cpu);
 RecompReturn Ppu_WaitVBlank_A938_M1X0(CpuState *cpu);
-RecompReturn bank_03_A923_M1X0(CpuState *cpu);
-RecompReturn bank_82_8035_M0X0(CpuState *cpu);
-RecompReturn bank_82_8035_M1X0(CpuState *cpu);
+RecompReturn Ppu_WaitVBlank_M1X0(CpuState *cpu);
+RecompReturn Snd_SendQueuedCommand_M0X0(CpuState *cpu);
+RecompReturn Snd_SendQueuedCommand_M1X0(CpuState *cpu);
 
-RecompReturn bank_03_A923_M1X0(CpuState *cpu) {
+RecompReturn Ppu_WaitVBlank_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_03_A923_M1X0";
-  RecompStackPush("bank_03_A923_M1X0");
-  cpu_dbg_funcname("bank_03_A923_M1X0");
-  cpu_trace_func_entry(cpu, 0x03A923, "bank_03_A923_M1X0");
+  g_last_recomp_func = "Ppu_WaitVBlank_M1X0";
+  RecompStackPush("Ppu_WaitVBlank_M1X0");
+  cpu_dbg_funcname("Ppu_WaitVBlank_M1X0");
+  cpu_trace_func_entry(cpu, 0x03A923, "Ppu_WaitVBlank_M1X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xa923u));
@@ -98,9 +98,9 @@ RecompReturn bank_03_A923_M1X0(CpuState *cpu) {
       cpu->PB = 0x82;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_82_8035_M0X0(cpu); break;
+        case 0: _r = Snd_SendQueuedCommand_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x828035u, 0x03a926u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
-        case 2: _r = bank_82_8035_M1X0(cpu); break;
+        case 2: _r = Snd_SendQueuedCommand_M1X0(cpu); break;
         case 3: _r = interp_tier_run_call_frame(cpu, 0x828035u, 0x03a926u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
         default: _r = interp_tier_run_call_frame(cpu, 0x828035u, 0x03a926u, 3, NULL); break;  /* masked M/X index should make this unreachable */
       }
@@ -152,9 +152,9 @@ RecompReturn bank_03_A923_M1X0(CpuState *cpu) {
       cpu->PB = 0x82;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_82_8035_M0X0(cpu); break;
+        case 0: _r = Snd_SendQueuedCommand_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x828035u, 0x03a92fu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
-        case 2: _r = bank_82_8035_M1X0(cpu); break;
+        case 2: _r = Snd_SendQueuedCommand_M1X0(cpu); break;
         case 3: _r = interp_tier_run_call_frame(cpu, 0x828035u, 0x03a92fu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
         default: _r = interp_tier_run_call_frame(cpu, 0x828035u, 0x03a92fu, 3, NULL); break;  /* masked M/X index should make this unreachable */
       }
@@ -402,9 +402,9 @@ RecompReturn Ppu_WaitVBlank_A933_M1X0(CpuState *cpu) {
       cpu->PB = 0x82;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_82_8035_M0X0(cpu); break;
+        case 0: _r = Snd_SendQueuedCommand_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x828035u, 0x03a92fu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
-        case 2: _r = bank_82_8035_M1X0(cpu); break;
+        case 2: _r = Snd_SendQueuedCommand_M1X0(cpu); break;
         case 3: _r = interp_tier_run_call_frame(cpu, 0x828035u, 0x03a92fu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
         default: _r = interp_tier_run_call_frame(cpu, 0x828035u, 0x03a92fu, 3, NULL); break;  /* masked M/X index should make this unreachable */
       }
@@ -528,19 +528,19 @@ RecompReturn Ppu_WaitVBlank_A938_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-void bank_03_A923(CpuState *cpu) {
+void Ppu_WaitVBlank(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
     case 0: _r = interp_tier_dispatch(cpu, 0x03a923u); break; /* exact M0X0 LLE */
     case 1: _r = interp_tier_dispatch(cpu, 0x03a923u); break; /* exact M0X1 LLE */
-    case 2: _r = bank_03_A923_M1X0(cpu); break;
+    case 2: _r = Ppu_WaitVBlank_M1X0(cpu); break;
     case 3: _r = interp_tier_dispatch(cpu, 0x03a923u); break; /* exact M1X1 LLE */
     default: _r = interp_tier_dispatch(cpu, 0x03a923u); break;
   }
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_03_A923");
+      (int)_r, "Ppu_WaitVBlank");
     abort();
   }
 }

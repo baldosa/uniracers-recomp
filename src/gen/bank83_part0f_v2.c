@@ -15,16 +15,16 @@
 
 /* Split translation unit: bank $83, part 0F; entry PCs $F800-$FFFF. */
 
-RecompReturn bank_83_F940_M0X1(CpuState *cpu);
-RecompReturn bank_83_FAC0_M0X0(CpuState *cpu);
-RecompReturn bank_83_FAC4_M0X0(CpuState *cpu);
+RecompReturn Ppu_ResetAllRegisters_FastRom_M0X1(CpuState *cpu);
+RecompReturn Sram_ClearAllL_M0X0(CpuState *cpu);
+RecompReturn Sram_ClearAll_M0X0(CpuState *cpu);
 
-RecompReturn bank_83_F940_M0X1(CpuState *cpu) {
+RecompReturn Ppu_ResetAllRegisters_FastRom_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_83_F940_M0X1";
-  RecompStackPush("bank_83_F940_M0X1");
-  cpu_dbg_funcname("bank_83_F940_M0X1");
-  cpu_trace_func_entry(cpu, 0x83F940, "bank_83_F940_M0X1");
+  g_last_recomp_func = "Ppu_ResetAllRegisters_FastRom_M0X1";
+  RecompStackPush("Ppu_ResetAllRegisters_FastRom_M0X1");
+  cpu_dbg_funcname("Ppu_ResetAllRegisters_FastRom_M0X1");
+  cpu_trace_func_entry(cpu, 0x83F940, "Ppu_ResetAllRegisters_FastRom_M0X1");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xf940u));
@@ -364,12 +364,12 @@ RecompReturn bank_83_F940_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_83_FAC0_M0X0(CpuState *cpu) {
+RecompReturn Sram_ClearAllL_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_83_FAC0_M0X0";
-  RecompStackPush("bank_83_FAC0_M0X0");
-  cpu_dbg_funcname("bank_83_FAC0_M0X0");
-  cpu_trace_func_entry(cpu, 0x83FAC0, "bank_83_FAC0_M0X0");
+  g_last_recomp_func = "Sram_ClearAllL_M0X0";
+  RecompStackPush("Sram_ClearAllL_M0X0");
+  cpu_dbg_funcname("Sram_ClearAllL_M0X0");
+  cpu_trace_func_entry(cpu, 0x83FAC0, "Sram_ClearAllL_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xfac0u));
@@ -410,7 +410,7 @@ RecompReturn bank_83_FAC0_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_83_FAC4_M0X0(cpu); break;
+        case 0: _r = Sram_ClearAll_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xfac4u), 0x83fac0u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xfac4u), 0x83fac0u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xfac4u), 0x83fac0u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -495,12 +495,12 @@ RecompReturn bank_83_FAC0_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_83_FAC4_M0X0(CpuState *cpu) {
+RecompReturn Sram_ClearAll_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_83_FAC4_M0X0";
-  RecompStackPush("bank_83_FAC4_M0X0");
-  cpu_dbg_funcname("bank_83_FAC4_M0X0");
-  cpu_trace_func_entry(cpu, 0x83FAC4, "bank_83_FAC4_M0X0");
+  g_last_recomp_func = "Sram_ClearAll_M0X0";
+  RecompStackPush("Sram_ClearAll_M0X0");
+  cpu_dbg_funcname("Sram_ClearAll_M0X0");
+  cpu_trace_func_entry(cpu, 0x83FAC4, "Sram_ClearAll_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xfac4u));
@@ -656,11 +656,11 @@ RecompReturn bank_83_FAC4_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-void bank_83_F940(CpuState *cpu) {
+void Ppu_ResetAllRegisters_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
     case 0: _r = interp_tier_dispatch(cpu, 0x83f940u); break; /* exact M0X0 LLE */
-    case 1: _r = bank_83_F940_M0X1(cpu); break;
+    case 1: _r = Ppu_ResetAllRegisters_FastRom_M0X1(cpu); break;
     case 2: _r = interp_tier_dispatch(cpu, 0x83f940u); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x83f940u); break; /* exact M1X1 LLE */
     default: _r = interp_tier_dispatch(cpu, 0x83f940u); break;
@@ -668,15 +668,15 @@ void bank_83_F940(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_83_F940");
+      (int)_r, "Ppu_ResetAllRegisters_FastRom");
     abort();
   }
 }
 
-void bank_83_FAC0(CpuState *cpu) {
+void Sram_ClearAllL(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_83_FAC0_M0X0(cpu); break;
+    case 0: _r = Sram_ClearAllL_M0X0(cpu); break;
     case 1: _r = interp_tier_dispatch(cpu, 0x83fac0u); break; /* exact M0X1 LLE */
     case 2: _r = interp_tier_dispatch(cpu, 0x83fac0u); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x83fac0u); break; /* exact M1X1 LLE */
@@ -685,15 +685,15 @@ void bank_83_FAC0(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_83_FAC0");
+      (int)_r, "Sram_ClearAllL");
     abort();
   }
 }
 
-void bank_83_FAC4(CpuState *cpu) {
+void Sram_ClearAll(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_83_FAC4_M0X0(cpu); break;
+    case 0: _r = Sram_ClearAll_M0X0(cpu); break;
     case 1: _r = interp_tier_dispatch(cpu, 0x83fac4u); break; /* exact M0X1 LLE */
     case 2: _r = interp_tier_dispatch(cpu, 0x83fac4u); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x83fac4u); break; /* exact M1X1 LLE */
@@ -702,7 +702,7 @@ void bank_83_FAC4(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_83_FAC4");
+      (int)_r, "Sram_ClearAll");
     abort();
   }
 }

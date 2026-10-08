@@ -25,6 +25,7 @@ RecompReturn Decomp_BuildHuffTable_BB36_M0X0(CpuState *cpu);
 RecompReturn Decomp_BuildHuffTable_BB39_M0X0(CpuState *cpu);
 RecompReturn Decomp_BuildHuffTable_BB60_M0X0(CpuState *cpu);
 RecompReturn Decomp_BuildHuffTable_BB65_M0X0(CpuState *cpu);
+RecompReturn Decomp_BuildHuffTable_M0X0(CpuState *cpu);
 RecompReturn Decomp_DecodeSymbol_BA2A_M0X0(CpuState *cpu);
 RecompReturn Decomp_DecodeSymbol_BA2C_M0X0(CpuState *cpu);
 RecompReturn Decomp_DecodeSymbol_BA35_M0X0(CpuState *cpu);
@@ -32,7 +33,9 @@ RecompReturn Decomp_DecodeSymbol_BA44_M0X0(CpuState *cpu);
 RecompReturn Decomp_DecodeSymbol_BA4D_M0X0(CpuState *cpu);
 RecompReturn Decomp_DecodeSymbol_BA54_M0X0(CpuState *cpu);
 RecompReturn Decomp_DecodeSymbol_BA59_M0X0(CpuState *cpu);
+RecompReturn Decomp_DecodeSymbol_M0X0(CpuState *cpu);
 RecompReturn Decomp_FetchWord_BB86_M0X0(CpuState *cpu);
+RecompReturn Decomp_FetchWord_M0X0(CpuState *cpu);
 RecompReturn Decomp_ReadBits_BA8A_M0X0(CpuState *cpu);
 RecompReturn Decomp_ReadBits_BA90_M0X0(CpuState *cpu);
 RecompReturn Decomp_ReadBits_BA93_M0X0(CpuState *cpu);
@@ -41,6 +44,7 @@ RecompReturn Decomp_ReadBits_BA9C_M0X0(CpuState *cpu);
 RecompReturn Decomp_ReadBits_BAA9_M0X0(CpuState *cpu);
 RecompReturn Decomp_ReadBits_BAAE_M0X0(CpuState *cpu);
 RecompReturn Decomp_ReadBits_BAB3_M0X0(CpuState *cpu);
+RecompReturn Decomp_ReadBits_M0X0(CpuState *cpu);
 RecompReturn Decomp_ToRam_B93D_M0X0(CpuState *cpu);
 RecompReturn Decomp_ToRam_B943_M0X0(CpuState *cpu);
 RecompReturn Decomp_ToRam_B949_M0X0(CpuState *cpu);
@@ -97,10 +101,6 @@ RecompReturn Decomp_ToRam_BA0A_M0X0(CpuState *cpu);
 RecompReturn Decomp_ToRam_BA16_M0X0(CpuState *cpu);
 RecompReturn Decomp_ToRam_BA18_M0X0(CpuState *cpu);
 RecompReturn Decomp_ToRam_BA1A_M0X0(CpuState *cpu);
-RecompReturn bank_01_BA26_M0X0(CpuState *cpu);
-RecompReturn bank_01_BA7A_M0X0(CpuState *cpu);
-RecompReturn bank_01_BADC_M0X0(CpuState *cpu);
-RecompReturn bank_01_BB6F_M0X0(CpuState *cpu);
 
 RecompReturn Decomp_ToRam_B93D_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
@@ -153,7 +153,7 @@ RecompReturn Decomp_ToRam_B93D_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BADC_M0X0(cpu); break;
+        case 0: _r = Decomp_BuildHuffTable_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbadcu), 0x01b940u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbadcu), 0x01b940u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbadcu), 0x01b940u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -189,7 +189,7 @@ RecompReturn Decomp_ToRam_B93D_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BADC_M0X0(cpu); break;
+        case 0: _r = Decomp_BuildHuffTable_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbadcu), 0x01b946u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbadcu), 0x01b946u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbadcu), 0x01b946u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -225,7 +225,7 @@ RecompReturn Decomp_ToRam_B93D_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BADC_M0X0(cpu); break;
+        case 0: _r = Decomp_BuildHuffTable_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbadcu), 0x01b94cu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbadcu), 0x01b94cu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbadcu), 0x01b94cu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -261,7 +261,7 @@ RecompReturn Decomp_ToRam_B93D_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA7A_M0X0(cpu); break;
+        case 0: _r = Decomp_ReadBits_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01b952u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01b952u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01b952u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -344,7 +344,7 @@ RecompReturn Decomp_ToRam_B943_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BADC_M0X0(cpu); break;
+        case 0: _r = Decomp_BuildHuffTable_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbadcu), 0x01b946u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbadcu), 0x01b946u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbadcu), 0x01b946u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -380,7 +380,7 @@ RecompReturn Decomp_ToRam_B943_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BADC_M0X0(cpu); break;
+        case 0: _r = Decomp_BuildHuffTable_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbadcu), 0x01b94cu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbadcu), 0x01b94cu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbadcu), 0x01b94cu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -416,7 +416,7 @@ RecompReturn Decomp_ToRam_B943_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA7A_M0X0(cpu); break;
+        case 0: _r = Decomp_ReadBits_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01b952u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01b952u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01b952u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -499,7 +499,7 @@ RecompReturn Decomp_ToRam_B949_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BADC_M0X0(cpu); break;
+        case 0: _r = Decomp_BuildHuffTable_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbadcu), 0x01b94cu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbadcu), 0x01b94cu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbadcu), 0x01b94cu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -535,7 +535,7 @@ RecompReturn Decomp_ToRam_B949_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA7A_M0X0(cpu); break;
+        case 0: _r = Decomp_ReadBits_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01b952u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01b952u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01b952u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -618,7 +618,7 @@ RecompReturn Decomp_ToRam_B94F_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA7A_M0X0(cpu); break;
+        case 0: _r = Decomp_ReadBits_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01b952u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01b952u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01b952u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -701,7 +701,7 @@ RecompReturn Decomp_ToRam_B95A_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA26_M0X0(cpu); break;
+        case 0: _r = Decomp_DecodeSymbol_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b95du, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b95du, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b95du, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -777,7 +777,7 @@ RecompReturn Decomp_ToRam_B95A_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA26_M0X0(cpu); break;
+        case 0: _r = Decomp_DecodeSymbol_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b96cu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b96cu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b96cu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -1045,7 +1045,7 @@ RecompReturn Decomp_ToRam_B960_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA26_M0X0(cpu); break;
+        case 0: _r = Decomp_DecodeSymbol_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b96cu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b96cu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b96cu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -1310,7 +1310,7 @@ RecompReturn Decomp_ToRam_B962_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA26_M0X0(cpu); break;
+        case 0: _r = Decomp_DecodeSymbol_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b96cu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b96cu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b96cu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -1567,7 +1567,7 @@ RecompReturn Decomp_ToRam_B965_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA26_M0X0(cpu); break;
+        case 0: _r = Decomp_DecodeSymbol_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b96cu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b96cu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b96cu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -3137,7 +3137,7 @@ RecompReturn Decomp_ToRam_B98C_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA26_M0X0(cpu); break;
+        case 0: _r = Decomp_DecodeSymbol_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -3380,7 +3380,7 @@ RecompReturn Decomp_ToRam_B98E_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA26_M0X0(cpu); break;
+        case 0: _r = Decomp_DecodeSymbol_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -3620,7 +3620,7 @@ RecompReturn Decomp_ToRam_B990_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA26_M0X0(cpu); break;
+        case 0: _r = Decomp_DecodeSymbol_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -3850,7 +3850,7 @@ RecompReturn Decomp_ToRam_B991_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA26_M0X0(cpu); break;
+        case 0: _r = Decomp_DecodeSymbol_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -4070,7 +4070,7 @@ RecompReturn Decomp_ToRam_B992_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA26_M0X0(cpu); break;
+        case 0: _r = Decomp_DecodeSymbol_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -4280,7 +4280,7 @@ RecompReturn Decomp_ToRam_B993_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA26_M0X0(cpu); break;
+        case 0: _r = Decomp_DecodeSymbol_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -4478,7 +4478,7 @@ RecompReturn Decomp_ToRam_B995_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA26_M0X0(cpu); break;
+        case 0: _r = Decomp_DecodeSymbol_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -4653,7 +4653,7 @@ RecompReturn Decomp_ToRam_B997_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA26_M0X0(cpu); break;
+        case 0: _r = Decomp_DecodeSymbol_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -4812,7 +4812,7 @@ RecompReturn Decomp_ToRam_B99D_M1X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA26_M0X0(cpu); break;
+        case 0: _r = Decomp_DecodeSymbol_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -4954,7 +4954,7 @@ RecompReturn Decomp_ToRam_B9A0_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA26_M0X0(cpu); break;
+        case 0: _r = Decomp_DecodeSymbol_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -5057,7 +5057,7 @@ RecompReturn Decomp_ToRam_B9A5_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA26_M0X0(cpu); break;
+        case 0: _r = Decomp_DecodeSymbol_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba26u), 0x01b9a8u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -5749,7 +5749,7 @@ RecompReturn Decomp_ToRam_B9B1_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BB6F_M0X0(cpu); break;
+        case 0: _r = Decomp_FetchWord_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -6389,7 +6389,7 @@ RecompReturn Decomp_ToRam_B9BD_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BB6F_M0X0(cpu); break;
+        case 0: _r = Decomp_FetchWord_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -7023,7 +7023,7 @@ RecompReturn Decomp_ToRam_B9BF_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BB6F_M0X0(cpu); break;
+        case 0: _r = Decomp_FetchWord_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -7646,7 +7646,7 @@ RecompReturn Decomp_ToRam_B9C3_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BB6F_M0X0(cpu); break;
+        case 0: _r = Decomp_FetchWord_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -8257,7 +8257,7 @@ RecompReturn Decomp_ToRam_B9C5_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BB6F_M0X0(cpu); break;
+        case 0: _r = Decomp_FetchWord_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -8840,7 +8840,7 @@ RecompReturn Decomp_ToRam_B9C8_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BB6F_M0X0(cpu); break;
+        case 0: _r = Decomp_FetchWord_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -9437,7 +9437,7 @@ RecompReturn Decomp_ToRam_B9CA_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BB6F_M0X0(cpu); break;
+        case 0: _r = Decomp_FetchWord_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -10017,7 +10017,7 @@ RecompReturn Decomp_ToRam_B9CC_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BB6F_M0X0(cpu); break;
+        case 0: _r = Decomp_FetchWord_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -10595,7 +10595,7 @@ RecompReturn Decomp_ToRam_B9CF_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BB6F_M0X0(cpu); break;
+        case 0: _r = Decomp_FetchWord_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -11097,7 +11097,7 @@ RecompReturn Decomp_ToRam_B9D5_M1X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BB6F_M0X0(cpu); break;
+        case 0: _r = Decomp_FetchWord_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -11579,7 +11579,7 @@ RecompReturn Decomp_ToRam_B9DA_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BB6F_M0X0(cpu); break;
+        case 0: _r = Decomp_FetchWord_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -11986,7 +11986,7 @@ RecompReturn Decomp_ToRam_B9E5_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BB6F_M0X0(cpu); break;
+        case 0: _r = Decomp_FetchWord_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -12314,7 +12314,7 @@ RecompReturn Decomp_ToRam_B9F3_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BB6F_M0X0(cpu); break;
+        case 0: _r = Decomp_FetchWord_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -12630,7 +12630,7 @@ RecompReturn Decomp_ToRam_B9F5_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BB6F_M0X0(cpu); break;
+        case 0: _r = Decomp_FetchWord_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -12943,7 +12943,7 @@ RecompReturn Decomp_ToRam_B9F7_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BB6F_M0X0(cpu); break;
+        case 0: _r = Decomp_FetchWord_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01b9fcu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -14873,12 +14873,12 @@ RecompReturn Decomp_ToRam_BA1A_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_01_BA26_M0X0(CpuState *cpu) {
+RecompReturn Decomp_DecodeSymbol_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_01_BA26_M0X0";
-  RecompStackPush("bank_01_BA26_M0X0");
-  cpu_dbg_funcname("bank_01_BA26_M0X0");
-  cpu_trace_func_entry(cpu, 0x01BA26, "bank_01_BA26_M0X0");
+  g_last_recomp_func = "Decomp_DecodeSymbol_M0X0";
+  RecompStackPush("Decomp_DecodeSymbol_M0X0");
+  cpu_dbg_funcname("Decomp_DecodeSymbol_M0X0");
+  cpu_trace_func_entry(cpu, 0x01BA26, "Decomp_DecodeSymbol_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xba26u));
@@ -15115,7 +15115,7 @@ RecompReturn Decomp_DecodeSymbol_BA2A_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA7A_M0X0(cpu); break;
+        case 0: _r = Decomp_ReadBits_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01ba41u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01ba41u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01ba41u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -15205,7 +15205,7 @@ RecompReturn Decomp_DecodeSymbol_BA2A_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA7A_M0X0(cpu); break;
+        case 0: _r = Decomp_ReadBits_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01ba51u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01ba51u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01ba51u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -15486,7 +15486,7 @@ RecompReturn Decomp_DecodeSymbol_BA2C_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA7A_M0X0(cpu); break;
+        case 0: _r = Decomp_ReadBits_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01ba41u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01ba41u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01ba41u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -15576,7 +15576,7 @@ RecompReturn Decomp_DecodeSymbol_BA2C_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA7A_M0X0(cpu); break;
+        case 0: _r = Decomp_ReadBits_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01ba51u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01ba51u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01ba51u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -15800,7 +15800,7 @@ RecompReturn Decomp_DecodeSymbol_BA35_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA7A_M0X0(cpu); break;
+        case 0: _r = Decomp_ReadBits_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01ba41u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01ba41u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01ba41u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -15890,7 +15890,7 @@ RecompReturn Decomp_DecodeSymbol_BA35_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA7A_M0X0(cpu); break;
+        case 0: _r = Decomp_ReadBits_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01ba51u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01ba51u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01ba51u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -16104,7 +16104,7 @@ RecompReturn Decomp_DecodeSymbol_BA44_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA7A_M0X0(cpu); break;
+        case 0: _r = Decomp_ReadBits_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01ba51u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01ba51u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01ba51u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -16286,7 +16286,7 @@ RecompReturn Decomp_DecodeSymbol_BA4D_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA7A_M0X0(cpu); break;
+        case 0: _r = Decomp_ReadBits_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01ba51u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01ba51u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01ba51u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -16596,12 +16596,12 @@ RecompReturn Decomp_DecodeSymbol_BA59_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_01_BA7A_M0X0(CpuState *cpu) {
+RecompReturn Decomp_ReadBits_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_01_BA7A_M0X0";
-  RecompStackPush("bank_01_BA7A_M0X0");
-  cpu_dbg_funcname("bank_01_BA7A_M0X0");
-  cpu_trace_func_entry(cpu, 0x01BA7A, "bank_01_BA7A_M0X0");
+  g_last_recomp_func = "Decomp_ReadBits_M0X0";
+  RecompStackPush("Decomp_ReadBits_M0X0");
+  cpu_dbg_funcname("Decomp_ReadBits_M0X0");
+  cpu_trace_func_entry(cpu, 0x01BA7A, "Decomp_ReadBits_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xba7au));
@@ -16897,7 +16897,7 @@ RecompReturn bank_01_BA7A_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BB6F_M0X0(cpu); break;
+        case 0: _r = Decomp_FetchWord_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01baabu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01baabu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01baabu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -17163,7 +17163,7 @@ RecompReturn Decomp_ReadBits_BA8A_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BB6F_M0X0(cpu); break;
+        case 0: _r = Decomp_FetchWord_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01baabu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01baabu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01baabu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -17394,7 +17394,7 @@ RecompReturn Decomp_ReadBits_BA90_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BB6F_M0X0(cpu); break;
+        case 0: _r = Decomp_FetchWord_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01baabu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01baabu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01baabu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -17603,7 +17603,7 @@ RecompReturn Decomp_ReadBits_BA93_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BB6F_M0X0(cpu); break;
+        case 0: _r = Decomp_FetchWord_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01baabu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01baabu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01baabu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -17777,7 +17777,7 @@ RecompReturn Decomp_ReadBits_BA99_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BB6F_M0X0(cpu); break;
+        case 0: _r = Decomp_FetchWord_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01baabu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01baabu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01baabu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -17929,7 +17929,7 @@ RecompReturn Decomp_ReadBits_BA9C_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BB6F_M0X0(cpu); break;
+        case 0: _r = Decomp_FetchWord_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01baabu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01baabu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01baabu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -18012,7 +18012,7 @@ RecompReturn Decomp_ReadBits_BAA9_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BB6F_M0X0(cpu); break;
+        case 0: _r = Decomp_FetchWord_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01baabu, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01baabu, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu), 0x01baabu, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -18218,12 +18218,12 @@ RecompReturn Decomp_ReadBits_BAB3_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_01_BADC_M0X0(CpuState *cpu) {
+RecompReturn Decomp_BuildHuffTable_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_01_BADC_M0X0";
-  RecompStackPush("bank_01_BADC_M0X0");
-  cpu_dbg_funcname("bank_01_BADC_M0X0");
-  cpu_trace_func_entry(cpu, 0x01BADC, "bank_01_BADC_M0X0");
+  g_last_recomp_func = "Decomp_BuildHuffTable_M0X0";
+  RecompStackPush("Decomp_BuildHuffTable_M0X0");
+  cpu_dbg_funcname("Decomp_BuildHuffTable_M0X0");
+  cpu_trace_func_entry(cpu, 0x01BADC, "Decomp_BuildHuffTable_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xbadcu));
@@ -18272,7 +18272,7 @@ RecompReturn bank_01_BADC_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA7A_M0X0(cpu); break;
+        case 0: _r = Decomp_ReadBits_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01bae1u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01bae1u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01bae1u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -18347,7 +18347,7 @@ RecompReturn bank_01_BADC_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA7A_M0X0(cpu); break;
+        case 0: _r = Decomp_ReadBits_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01baf1u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01baf1u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01baf1u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -19142,7 +19142,7 @@ RecompReturn Decomp_BuildHuffTable_BAED_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_01_BA7A_M0X0(cpu); break;
+        case 0: _r = Decomp_ReadBits_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01baf1u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01baf1u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xba7au), 0x01baf1u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -23732,12 +23732,12 @@ RecompReturn Decomp_BuildHuffTable_BB65_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_01_BB6F_M0X0(CpuState *cpu) {
+RecompReturn Decomp_FetchWord_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_01_BB6F_M0X0";
-  RecompStackPush("bank_01_BB6F_M0X0");
-  cpu_dbg_funcname("bank_01_BB6F_M0X0");
-  cpu_trace_func_entry(cpu, 0x01BB6F, "bank_01_BB6F_M0X0");
+  g_last_recomp_func = "Decomp_FetchWord_M0X0";
+  RecompStackPush("Decomp_FetchWord_M0X0");
+  cpu_dbg_funcname("Decomp_FetchWord_M0X0");
+  cpu_trace_func_entry(cpu, 0x01BB6F, "Decomp_FetchWord_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xbb6fu));
@@ -24995,10 +24995,10 @@ void Decomp_ToRam_BA1A(CpuState *cpu) {
   }
 }
 
-void bank_01_BA26(CpuState *cpu) {
+void Decomp_DecodeSymbol(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_01_BA26_M0X0(cpu); break;
+    case 0: _r = Decomp_DecodeSymbol_M0X0(cpu); break;
     case 1: _r = interp_tier_dispatch(cpu, 0x01ba26u); break; /* exact M0X1 LLE */
     case 2: _r = interp_tier_dispatch(cpu, 0x01ba26u); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x01ba26u); break; /* exact M1X1 LLE */
@@ -25007,7 +25007,7 @@ void bank_01_BA26(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_01_BA26");
+      (int)_r, "Decomp_DecodeSymbol");
     abort();
   }
 }
@@ -25131,10 +25131,10 @@ void Decomp_DecodeSymbol_BA59(CpuState *cpu) {
   }
 }
 
-void bank_01_BA7A(CpuState *cpu) {
+void Decomp_ReadBits(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_01_BA7A_M0X0(cpu); break;
+    case 0: _r = Decomp_ReadBits_M0X0(cpu); break;
     case 1: _r = interp_tier_dispatch(cpu, 0x01ba7au); break; /* exact M0X1 LLE */
     case 2: _r = interp_tier_dispatch(cpu, 0x01ba7au); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x01ba7au); break; /* exact M1X1 LLE */
@@ -25143,7 +25143,7 @@ void bank_01_BA7A(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_01_BA7A");
+      (int)_r, "Decomp_ReadBits");
     abort();
   }
 }
@@ -25284,10 +25284,10 @@ void Decomp_ReadBits_BAB3(CpuState *cpu) {
   }
 }
 
-void bank_01_BADC(CpuState *cpu) {
+void Decomp_BuildHuffTable(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_01_BADC_M0X0(cpu); break;
+    case 0: _r = Decomp_BuildHuffTable_M0X0(cpu); break;
     case 1: _r = interp_tier_dispatch(cpu, 0x01badcu); break; /* exact M0X1 LLE */
     case 2: _r = interp_tier_dispatch(cpu, 0x01badcu); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x01badcu); break; /* exact M1X1 LLE */
@@ -25296,7 +25296,7 @@ void bank_01_BADC(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_01_BADC");
+      (int)_r, "Decomp_BuildHuffTable");
     abort();
   }
 }
@@ -25471,10 +25471,10 @@ void Decomp_BuildHuffTable_BB65(CpuState *cpu) {
   }
 }
 
-void bank_01_BB6F(CpuState *cpu) {
+void Decomp_FetchWord(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_01_BB6F_M0X0(cpu); break;
+    case 0: _r = Decomp_FetchWord_M0X0(cpu); break;
     case 1: _r = interp_tier_dispatch(cpu, 0x01bb6fu); break; /* exact M0X1 LLE */
     case 2: _r = interp_tier_dispatch(cpu, 0x01bb6fu); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x01bb6fu); break; /* exact M1X1 LLE */
@@ -25483,7 +25483,7 @@ void bank_01_BB6F(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_01_BB6F");
+      (int)_r, "Decomp_FetchWord");
     abort();
   }
 }

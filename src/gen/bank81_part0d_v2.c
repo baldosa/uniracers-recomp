@@ -15,14 +15,14 @@
 
 /* Split translation unit: bank $81, part 0D; entry PCs $E800-$EFFF. */
 
-RecompReturn bank_81_E8D9_M1X0(CpuState *cpu);
+RecompReturn Hud_UpdateFullScreenNmi_FastRom_M1X0(CpuState *cpu);
 
-RecompReturn bank_81_E8D9_M1X0(CpuState *cpu) {
+RecompReturn Hud_UpdateFullScreenNmi_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_81_E8D9_M1X0";
-  RecompStackPush("bank_81_E8D9_M1X0");
-  cpu_dbg_funcname("bank_81_E8D9_M1X0");
-  cpu_trace_func_entry(cpu, 0x81E8D9, "bank_81_E8D9_M1X0");
+  g_last_recomp_func = "Hud_UpdateFullScreenNmi_FastRom_M1X0";
+  RecompStackPush("Hud_UpdateFullScreenNmi_FastRom_M1X0");
+  cpu_dbg_funcname("Hud_UpdateFullScreenNmi_FastRom_M1X0");
+  cpu_trace_func_entry(cpu, 0x81E8D9, "Hud_UpdateFullScreenNmi_FastRom_M1X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0xe8d9u));
@@ -5671,19 +5671,19 @@ RecompReturn bank_81_E8D9_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-void bank_81_E8D9(CpuState *cpu) {
+void Hud_UpdateFullScreenNmi_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
     case 0: _r = interp_tier_dispatch(cpu, 0x81e8d9u); break; /* exact M0X0 LLE */
     case 1: _r = interp_tier_dispatch(cpu, 0x81e8d9u); break; /* exact M0X1 LLE */
-    case 2: _r = bank_81_E8D9_M1X0(cpu); break;
+    case 2: _r = Hud_UpdateFullScreenNmi_FastRom_M1X0(cpu); break;
     case 3: _r = interp_tier_dispatch(cpu, 0x81e8d9u); break; /* exact M1X1 LLE */
     default: _r = interp_tier_dispatch(cpu, 0x81e8d9u); break;
   }
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_81_E8D9");
+      (int)_r, "Hud_UpdateFullScreenNmi_FastRom");
     abort();
   }
 }

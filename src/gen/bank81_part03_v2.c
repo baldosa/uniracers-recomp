@@ -15,20 +15,20 @@
 
 /* Split translation unit: bank $81, part 03; entry PCs $9800-$9FFF. */
 
-RecompReturn bank_81_983B_M0X1(CpuState *cpu);
-RecompReturn bank_81_99D6_M1X0(CpuState *cpu);
-RecompReturn bank_81_9A5A_M1X0(CpuState *cpu);
-RecompReturn bank_81_9E2A_M0X0(CpuState *cpu);
-RecompReturn bank_81_9FBF_M0X0(CpuState *cpu);
-RecompReturn bank_81_A2E5_M0X0(CpuState *cpu);
-RecompReturn bank_81_B6C0_M0X0(CpuState *cpu);
+RecompReturn Cam_StepLeadTowardVelocity_M0X0(CpuState *cpu);
+RecompReturn Cam_UpdateFollowSpeed_M0X0(CpuState *cpu);
+RecompReturn Math_MulFixed8p8Long_FastRom_M0X0(CpuState *cpu);
+RecompReturn Rider_BuildRotationTablesLong_FastRom_M1X0(CpuState *cpu);
+RecompReturn Rider_BuildRotationTables_FastRom_M1X0(CpuState *cpu);
+RecompReturn Rider_CalcMotionAngle_M0X1(CpuState *cpu);
+RecompReturn Rider_LoadPoseOffsets_M0X0(CpuState *cpu);
 
-RecompReturn bank_81_983B_M0X1(CpuState *cpu) {
+RecompReturn Rider_CalcMotionAngle_M0X1(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_81_983B_M0X1";
-  RecompStackPush("bank_81_983B_M0X1");
-  cpu_dbg_funcname("bank_81_983B_M0X1");
-  cpu_trace_func_entry(cpu, 0x81983B, "bank_81_983B_M0X1");
+  g_last_recomp_func = "Rider_CalcMotionAngle_M0X1";
+  RecompStackPush("Rider_CalcMotionAngle_M0X1");
+  cpu_dbg_funcname("Rider_CalcMotionAngle_M0X1");
+  cpu_trace_func_entry(cpu, 0x81983B, "Rider_CalcMotionAngle_M0X1");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0x983bu));
@@ -1688,12 +1688,12 @@ RecompReturn bank_81_983B_M0X1(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_81_99D6_M1X0(CpuState *cpu) {
+RecompReturn Rider_BuildRotationTablesLong_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_81_99D6_M1X0";
-  RecompStackPush("bank_81_99D6_M1X0");
-  cpu_dbg_funcname("bank_81_99D6_M1X0");
-  cpu_trace_func_entry(cpu, 0x8199D6, "bank_81_99D6_M1X0");
+  g_last_recomp_func = "Rider_BuildRotationTablesLong_FastRom_M1X0";
+  RecompStackPush("Rider_BuildRotationTablesLong_FastRom_M1X0");
+  cpu_dbg_funcname("Rider_BuildRotationTablesLong_FastRom_M1X0");
+  cpu_trace_func_entry(cpu, 0x8199D6, "Rider_BuildRotationTablesLong_FastRom_M1X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0x99d6u));
@@ -1736,7 +1736,7 @@ RecompReturn bank_81_99D6_M1X0(CpuState *cpu) {
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
         case 0: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0x9a5au), 0x8199d6u, 2, NULL); break;  /* exact M0X0 -> authoritative LLE */
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0x9a5au), 0x8199d6u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
-        case 2: _r = bank_81_9A5A_M1X0(cpu); break;
+        case 2: _r = Rider_BuildRotationTables_FastRom_M1X0(cpu); break;
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0x9a5au), 0x8199d6u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
         default: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0x9a5au), 0x8199d6u, 2, NULL); break;  /* masked M/X index should make this unreachable */
       }
@@ -1819,12 +1819,12 @@ RecompReturn bank_81_99D6_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_81_9A5A_M1X0(CpuState *cpu) {
+RecompReturn Rider_BuildRotationTables_FastRom_M1X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_81_9A5A_M1X0";
-  RecompStackPush("bank_81_9A5A_M1X0");
-  cpu_dbg_funcname("bank_81_9A5A_M1X0");
-  cpu_trace_func_entry(cpu, 0x819A5A, "bank_81_9A5A_M1X0");
+  g_last_recomp_func = "Rider_BuildRotationTables_FastRom_M1X0";
+  RecompStackPush("Rider_BuildRotationTables_FastRom_M1X0");
+  cpu_dbg_funcname("Rider_BuildRotationTables_FastRom_M1X0");
+  cpu_trace_func_entry(cpu, 0x819A5A, "Rider_BuildRotationTables_FastRom_M1X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0x9a5au));
@@ -2468,7 +2468,7 @@ RecompReturn bank_81_9A5A_M1X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x819c92u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x819c92u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x819c92u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -2577,7 +2577,7 @@ RecompReturn bank_81_9A5A_M1X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x819caeu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x819caeu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x819caeu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -2758,7 +2758,7 @@ RecompReturn bank_81_9A5A_M1X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x819cdcu, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x819cdcu, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x819cdcu, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -2867,7 +2867,7 @@ RecompReturn bank_81_9A5A_M1X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x819cf8u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x819cf8u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x819cf8u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -3117,7 +3117,7 @@ RecompReturn bank_81_9A5A_M1X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x819d33u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x819d33u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x819d33u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -3168,7 +3168,7 @@ RecompReturn bank_81_9A5A_M1X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x819d43u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x819d43u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x819d43u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -3349,7 +3349,7 @@ RecompReturn bank_81_9A5A_M1X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x819d71u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x819d71u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x819d71u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -3400,7 +3400,7 @@ RecompReturn bank_81_9A5A_M1X0(CpuState *cpu) {
       cpu->PB = 0x81;
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_B6C0_M0X0(cpu); break;
+        case 0: _r = Math_MulFixed8p8Long_FastRom_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x819d81u, 3, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x819d81u, 3, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, 0x81b6c0u, 0x819d81u, 3, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -5455,12 +5455,12 @@ RecompReturn bank_81_9A5A_M1X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_81_9E2A_M0X0(CpuState *cpu) {
+RecompReturn Rider_LoadPoseOffsets_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_81_9E2A_M0X0";
-  RecompStackPush("bank_81_9E2A_M0X0");
-  cpu_dbg_funcname("bank_81_9E2A_M0X0");
-  cpu_trace_func_entry(cpu, 0x819E2A, "bank_81_9E2A_M0X0");
+  g_last_recomp_func = "Rider_LoadPoseOffsets_M0X0";
+  RecompStackPush("Rider_LoadPoseOffsets_M0X0");
+  cpu_dbg_funcname("Rider_LoadPoseOffsets_M0X0");
+  cpu_trace_func_entry(cpu, 0x819E2A, "Rider_LoadPoseOffsets_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0x9e2au));
@@ -7507,12 +7507,12 @@ RecompReturn bank_81_9E2A_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-RecompReturn bank_81_9FBF_M0X0(CpuState *cpu) {
+RecompReturn Cam_UpdateFollowSpeed_M0X0(CpuState *cpu) {
   extern const char *g_last_recomp_func;
-  g_last_recomp_func = "bank_81_9FBF_M0X0";
-  RecompStackPush("bank_81_9FBF_M0X0");
-  cpu_dbg_funcname("bank_81_9FBF_M0X0");
-  cpu_trace_func_entry(cpu, 0x819FBF, "bank_81_9FBF_M0X0");
+  g_last_recomp_func = "Cam_UpdateFollowSpeed_M0X0";
+  RecompStackPush("Cam_UpdateFollowSpeed_M0X0");
+  cpu_dbg_funcname("Cam_UpdateFollowSpeed_M0X0");
+  cpu_trace_func_entry(cpu, 0x819FBF, "Cam_UpdateFollowSpeed_M0X0");
   if (interp_bridge_lle_master_deadline_reached(cpu)) {
     RecompStackPopYield();
     return interp_bridge_lle_yield_unwind(cpu, (((uint32)cpu->PB << 16) | 0x9fbfu));
@@ -7569,7 +7569,7 @@ RecompReturn bank_81_9FBF_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_A2E5_M0X0(cpu); break;
+        case 0: _r = Cam_StepLeadTowardVelocity_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xa2e5u), 0x819fc9u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xa2e5u), 0x819fc9u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xa2e5u), 0x819fc9u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -8503,7 +8503,7 @@ RecompReturn bank_81_9FBF_M0X0(CpuState *cpu) {
       cpu->host_return_valid = 2;  /* paired host caller, JSR frame */
       RecompReturn _r;
       switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-        case 0: _r = bank_81_A2E5_M0X0(cpu); break;
+        case 0: _r = Cam_StepLeadTowardVelocity_M0X0(cpu); break;
         case 1: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xa2e5u), 0x81a186u, 2, NULL); break;  /* exact M0X1 -> authoritative LLE */
         case 2: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xa2e5u), 0x81a186u, 2, NULL); break;  /* exact M1X0 -> authoritative LLE */
         case 3: _r = interp_tier_run_call_frame(cpu, (((uint32)cpu->PB << 16) | 0xa2e5u), 0x81a186u, 2, NULL); break;  /* exact M1X1 -> authoritative LLE */
@@ -11453,11 +11453,11 @@ RecompReturn bank_81_9FBF_M0X0(CpuState *cpu) {
   return RECOMP_RETURN_NORMAL;
 }
 
-void bank_81_983B(CpuState *cpu) {
+void Rider_CalcMotionAngle(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
     case 0: _r = interp_tier_dispatch(cpu, 0x81983bu); break; /* exact M0X0 LLE */
-    case 1: _r = bank_81_983B_M0X1(cpu); break;
+    case 1: _r = Rider_CalcMotionAngle_M0X1(cpu); break;
     case 2: _r = interp_tier_dispatch(cpu, 0x81983bu); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x81983bu); break; /* exact M1X1 LLE */
     default: _r = interp_tier_dispatch(cpu, 0x81983bu); break;
@@ -11465,49 +11465,49 @@ void bank_81_983B(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_81_983B");
+      (int)_r, "Rider_CalcMotionAngle");
     abort();
   }
 }
 
-void bank_81_99D6(CpuState *cpu) {
+void Rider_BuildRotationTablesLong_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
     case 0: _r = interp_tier_dispatch(cpu, 0x8199d6u); break; /* exact M0X0 LLE */
     case 1: _r = interp_tier_dispatch(cpu, 0x8199d6u); break; /* exact M0X1 LLE */
-    case 2: _r = bank_81_99D6_M1X0(cpu); break;
+    case 2: _r = Rider_BuildRotationTablesLong_FastRom_M1X0(cpu); break;
     case 3: _r = interp_tier_dispatch(cpu, 0x8199d6u); break; /* exact M1X1 LLE */
     default: _r = interp_tier_dispatch(cpu, 0x8199d6u); break;
   }
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_81_99D6");
+      (int)_r, "Rider_BuildRotationTablesLong_FastRom");
     abort();
   }
 }
 
-void bank_81_9A5A(CpuState *cpu) {
+void Rider_BuildRotationTables_FastRom(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
     case 0: _r = interp_tier_dispatch(cpu, 0x819a5au); break; /* exact M0X0 LLE */
     case 1: _r = interp_tier_dispatch(cpu, 0x819a5au); break; /* exact M0X1 LLE */
-    case 2: _r = bank_81_9A5A_M1X0(cpu); break;
+    case 2: _r = Rider_BuildRotationTables_FastRom_M1X0(cpu); break;
     case 3: _r = interp_tier_dispatch(cpu, 0x819a5au); break; /* exact M1X1 LLE */
     default: _r = interp_tier_dispatch(cpu, 0x819a5au); break;
   }
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_81_9A5A");
+      (int)_r, "Rider_BuildRotationTables_FastRom");
     abort();
   }
 }
 
-void bank_81_9E2A(CpuState *cpu) {
+void Rider_LoadPoseOffsets(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_81_9E2A_M0X0(cpu); break;
+    case 0: _r = Rider_LoadPoseOffsets_M0X0(cpu); break;
     case 1: _r = interp_tier_dispatch(cpu, 0x819e2au); break; /* exact M0X1 LLE */
     case 2: _r = interp_tier_dispatch(cpu, 0x819e2au); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x819e2au); break; /* exact M1X1 LLE */
@@ -11516,15 +11516,15 @@ void bank_81_9E2A(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_81_9E2A");
+      (int)_r, "Rider_LoadPoseOffsets");
     abort();
   }
 }
 
-void bank_81_9FBF(CpuState *cpu) {
+void Cam_UpdateFollowSpeed(CpuState *cpu) {
   RecompReturn _r;
   switch (((cpu->m_flag & 1) << 1) | (cpu->x_flag & 1)) {
-    case 0: _r = bank_81_9FBF_M0X0(cpu); break;
+    case 0: _r = Cam_UpdateFollowSpeed_M0X0(cpu); break;
     case 1: _r = interp_tier_dispatch(cpu, 0x819fbfu); break; /* exact M0X1 LLE */
     case 2: _r = interp_tier_dispatch(cpu, 0x819fbfu); break; /* exact M1X0 LLE */
     case 3: _r = interp_tier_dispatch(cpu, 0x819fbfu); break; /* exact M1X1 LLE */
@@ -11533,7 +11533,7 @@ void bank_81_9FBF(CpuState *cpu) {
   if (_r != RECOMP_RETURN_NORMAL) {
     fprintf(stderr,
       "[recomp] non-local-return SKIP_%d leaked past void alias %s\n",
-      (int)_r, "bank_81_9FBF");
+      (int)_r, "Cam_UpdateFollowSpeed");
     abort();
   }
 }
