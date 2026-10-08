@@ -117,9 +117,6 @@ snesrecomp_target_rom_cache(UniracersSNESRecomp)
 # (web/index.html) writes the visitor's ROM into the in-memory file system and
 # calls main(); saves and settings live in IndexedDB (IDBFS at /persist).
 if(EMSCRIPTEN)
-    if(NOT SNESRECOMP_INTERP_HOST)
-        message(FATAL_ERROR "The web build publishes no ROM-derived code: configure with -DSNESRECOMP_INTERP_HOST=ON.")
-    endif()
     set_target_properties(UniracersSNESRecomp PROPERTIES OUTPUT_NAME uniracers SUFFIX ".js")
     # Online two-player: the lockstep half (web/netplay.js is the lobby).
     target_sources(UniracersSNESRecomp PRIVATE src/web_netplay.c)

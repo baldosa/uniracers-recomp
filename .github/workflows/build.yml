@@ -1,9 +1,8 @@
 # Native player builds: Linux x64, Linux arm64 (Raspberry Pi), Windows x64.
 #
-# These are interpreter hosts (snesrecomp's emulator core, no recompiled code,
-# no ROM data): each plays the player's own ROM as-is. The fully native recomp
-# is built from source with your ROM (README). Every push uploads the zips as
-# workflow artifacts; a v* tag also publishes them as a GitHub Release.
+# The full recomp, built from the committed src/gen/ (no assets: each build
+# plays the player's own ROM). Every push uploads the zips as workflow
+# artifacts; a v* tag also publishes them as a GitHub Release.
 name: Builds
 
 on:
@@ -65,7 +64,7 @@ jobs:
             source "${TOOLCHAIN_DIR}/env.sh"
           fi
           cmake -S . -B build-ci -G Ninja -DCMAKE_BUILD_TYPE=Release \
-            -DSNESRECOMP_INTERP_HOST=ON -DSNESRECOMP_ENABLE_TRACE=OFF
+            -DSNESRECOMP_ENABLE_TRACE=OFF
           cmake --build build-ci --target "${EXE_NAME}"
 
       - name: Package
@@ -78,7 +77,7 @@ jobs:
           cp "${EXE}" "dist/${STAGE}/"
           [[ -d build-ci/mods ]] && cp -r build-ci/mods "dist/${STAGE}/"
           cat > "dist/${STAGE}/README.txt" <<'TXT'
-          Uniracers (snesrecomp interpreter build)
+          Uniracers (snesrecomp native recompilation)
 
           No game is included. Start the program with your own
           "Uniracers (USA)" ROM, e.g.:
@@ -87,7 +86,7 @@ jobs:
 
           keybinds.ini and config.ini are written next to the program on the
           first run; edit them and restart to change controls and display.
-          Source and the fully native build: https://github.com/${{ github.repository }}
+          Source: https://github.com/${{ github.repository }}
           TXT
           sed -i 's/^          //' "dist/${STAGE}/README.txt"
           cd dist
@@ -119,4 +118,4 @@ jobs:
         run: |
           gh release create "${GITHUB_REF_NAME}" dist/*.zip --repo "${GITHUB_REPOSITORY}" \
             --title "Uniracers ${GITHUB_REF_NAME}" \
-            --notes "Interpreter builds for Linux x64, Linux arm64 (Raspberry Pi) and Windows x64. Bring your own ROM. Web player: https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/"
+            --notes "Native recomp builds for Linux x64, Linux arm64 (Raspberry Pi) and Windows x64. Bring your own ROM. Web player: https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/"
