@@ -22,7 +22,8 @@
           padding: 6px; border-radius: 8px; border: 1px solid #3a3f4d; background: #111318; color: var(--fg); }
   #join-row, #host-row { margin-top: 14px; }
   #hostcode { font: 700 30px monospace; letter-spacing: .2em; color: var(--accent); }
-  #banner { margin: 0 0 8px; padding: 6px 12px; border-radius: 6px; background: #3a3f4d; }
+  #banner { position: fixed; top: 12px; left: 50%; transform: translateX(-50%); z-index: 1;
+            padding: 6px 12px; border-radius: 6px; background: #3a3f4d; }
   #status.err { color: #ff7b72; }
   canvas { display: none; width: 100%; max-width: 768px; aspect-ratio: 8 / 7; image-rendering: pixelated;
            background: #000; outline: none; border-radius: 6px; }
@@ -148,8 +149,14 @@ Play alone or two players on one keyboard, or online: one player creates a game 
     if (sramB64) FS.writeFile('/netplay/saves/save.srm', fromB64(sramB64));
     return '/netplay';
   }
+  let waitTimer;
   const events = {
-    onWait: (on) => banner(on ? 'Waiting for the other player\u2026' : ''),
+    // Only a real stall is worth saying: inputs routinely arrive a few ms late.
+    onWait: (on) => {
+      clearTimeout(waitTimer);
+      if (on) waitTimer = setTimeout(() => banner('Waiting for the other player\u2026'), 300);
+      else if ($('banner').textContent.startsWith('Waiting')) banner('');
+    },
     onLeft: (why) => banner(why + ' You are playing alone now.'),
     onDesync: (frame) => banner('The two games went out of sync (frame ' + frame + '). Restart the match.'),
   };
