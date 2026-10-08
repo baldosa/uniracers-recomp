@@ -42,6 +42,10 @@
 #define SNES_GAME_VERSION "dev"
 #endif
 
+#ifdef __EMSCRIPTEN__
+uint32_t WebNetplayFilterInputs(uint32_t word, unsigned frame);
+#endif
+
 static const SnesDesktopHostGame kGameHost = {
     .display_name        = "Uniracers",
     .window_title        = "Uniracers",
@@ -56,6 +60,10 @@ static const SnesDesktopHostGame kGameHost = {
     /* Battery-backed SRAM shows the launcher's SAVES panel. Leave NULL for a
      * title without one. The path is exe-relative. */
     .sram_path           = "saves/save.srm",
+#ifdef __EMSCRIPTEN__
+    /* Online two-player (web build only, src/web_netplay.c). */
+    .filter_frame_inputs = WebNetplayFilterInputs,
+#endif
 };
 
 #ifndef __ANDROID__

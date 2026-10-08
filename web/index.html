@@ -16,6 +16,13 @@
               padding: 10px 18px; border-radius: 8px; cursor: pointer; }
   input[type=file] { display: none; }
   #status { color: var(--muted); margin-top: 12px; min-height: 1.5em; }
+  button.btn { border: 0; font: inherit; margin: 4px; }
+  button.alt { background: #3a3f4d; color: var(--fg); }
+  #code { font: 600 22px monospace; width: 7.5em; text-align: center; text-transform: uppercase;
+          padding: 6px; border-radius: 8px; border: 1px solid #3a3f4d; background: #111318; color: var(--fg); }
+  #join-row, #host-row { margin-top: 14px; }
+  #hostcode { font: 700 30px monospace; letter-spacing: .2em; color: var(--accent); }
+  #banner { margin: 0 0 8px; padding: 6px 12px; border-radius: 6px; background: #3a3f4d; }
   #status.err { color: #ff7b72; }
   canvas { display: none; width: 100%; max-width: 768px; aspect-ratio: 8 / 7; image-rendering: pixelated;
            background: #000; outline: none; border-radius: 6px; }
@@ -28,12 +35,29 @@
 <body>
 <h1>Uniracers Web</h1>
 <p class="note">Runs in your browser on the snesrecomp interpreter. No game is included:
-pick your own <b>Uniracers (USA)</b> ROM. It stays on your machine; saves and settings are kept in this browser.</p>
+pick your own <b>Uniracers (USA)</b> ROM. It stays on your machine; saves and settings are kept in this browser.
+Play alone or two players on one keyboard, or online: one player creates a game and shares the code.</p>
 
 <div id="picker">
-  <label class="btn">Choose ROM&hellip;<input id="rom" type="file" accept=".sfc,.smc"></label>
+  <div id="step-rom">
+    <label class="btn">Choose ROM&hellip;<input id="rom" type="file" accept=".sfc,.smc"></label>
+  </div>
+  <div id="step-mode" hidden>
+    <button class="btn" id="solo">Play</button>
+    <button class="btn alt" id="create">Create online game</button>
+    <button class="btn alt" id="joinbtn">Join online game</button>
+    <div id="join-row" hidden>
+      <input id="code" maxlength="6" placeholder="CODE" autocomplete="off" spellcheck="false">
+      <button class="btn" id="join">Join</button>
+    </div>
+    <div id="host-row" hidden>
+      Share this code with player 2:
+      <div><span id="hostcode"></span> <button class="btn alt" id="copy">Copy</button></div>
+    </div>
+  </div>
   <div id="status"></div>
 </div>
+<div id="banner" hidden></div>
 <canvas id="canvas" tabindex="-1" oncontextmenu="event.preventDefault()"></canvas>
 
 <details>
@@ -71,18 +95,28 @@ pick your own <b>Uniracers (USA)</b> ROM. It stays on your machine; saves and se
   }
   const flush = () => { try { FS.syncfs(false, () => {}); } catch (e) {} };
 
-  document.getElementById('rom').addEventListener('change', async (ev) => {
+  const $ = (id) => document.getElementById(id);
+  const banner = (msg) => { $('banner').textContent = msg || ''; $('banner').hidden = !msg; };
+  let romBytes = null;
+
+  $('rom').addEventListener('change', async (ev) => {
     const file = ev.target.files[0];
     if (!file) return;
-    if (!Module.calledRun && !Module.callMain) { status('Still loading, try again in a moment.'); return; }
-    const bytes = new Uint8Array(await file.arrayBuffer());
+    if (!Module.callMain) { status('Still loading, try again in a moment.'); return; }
+    romBytes = new Uint8Array(await file.arrayBuffer());
     await mountPersist();
-    FS.writeFile('/uni.sfc', bytes);
-    FS.chdir('/persist');
+    FS.writeFile('/uni.sfc', romBytes);
+    $('step-rom').hidden = true;
+    $('step-mode').hidden = false;
+    status('');
+  });
+
+  function startGame(dir) {
+    FS.chdir(dir);
     setInterval(flush, 5000);
     document.addEventListener('visibilitychange', () => { if (document.hidden) flush(); });
     window.addEventListener('pagehide', flush);
-    document.getElementById('picker').style.display = 'none';
+    $('picker').style.display = 'none';
     canvas.style.display = 'block';
     canvas.focus();
     try {
@@ -90,8 +124,71 @@ pick your own <b>Uniracers (USA)</b> ROM. It stays on your machine; saves and se
     } catch (e) {
       if (e !== 'unwind') status(String(e), true);
     }
-  });
+  }
+  $('solo').onclick = () => startGame('/persist');
+
+  // ---- online two-player (web/netplay.js; lockstep in src/web_netplay.c) ----
+  const readFile = (p) => { try { return FS.readFile(p); } catch (e) { return null; } };
+  const toB64 = (u8) => u8 ? btoa(String.fromCharCode(...u8)) : null;
+  const fromB64 = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
+  async function romHash() {
+    const d = await crypto.subtle.digest('SHA-256', romBytes);
+    return Array.from(new Uint8Array(d), (b) => b.toString(16).padStart(2, '0')).join('');
+  }
+  // Both players boot from the same state: this player's settings and keys,
+  // no autosave, and the host's battery save. A scratch directory, so the
+  // match never touches either player's own saves.
+  function prepareNetDir(sramB64) {
+    FS.mkdirTree('/netplay/saves');
+    const cfg = readFile('/persist/config.ini');
+    if (cfg) FS.writeFile('/netplay/config.ini',
+      new TextDecoder().decode(cfg).replace(/^Autosave\s*=.*$/m, 'Autosave = 0'));
+    const keys = readFile('/persist/keybinds.ini');
+    if (keys) FS.writeFile('/netplay/keybinds.ini', keys);
+    if (sramB64) FS.writeFile('/netplay/saves/save.srm', fromB64(sramB64));
+    return '/netplay';
+  }
+  const events = {
+    onWait: (on) => banner(on ? 'Waiting for the other player\u2026' : ''),
+    onLeft: (why) => banner(why + ' You are playing alone now.'),
+    onDesync: (frame) => banner('The two games went out of sync (frame ' + frame + '). Restart the match.'),
+  };
+  function online(net, sramB64) {
+    Module.webNet = net;
+    banner(net.role === 1 ? 'Connected: you are player 1.' : 'Connected: you are player 2.');
+    setTimeout(() => banner(''), 4000);
+    startGame(prepareNetDir(sramB64));
+  }
+  const lockModes = () => { for (const id of ['solo', 'create', 'joinbtn']) $(id).disabled = true; };
+
+  $('create').onclick = async () => {
+    lockModes();
+    status('Opening a lobby\u2026');
+    const sram = toB64(readFile('/persist/saves/save.srm'));
+    UniNet.host({
+      romHash: await romHash(), sram, events,
+      onCode: (code) => { $('hostcode').textContent = code; $('host-row').hidden = false; status('Waiting for player 2 to join\u2026'); },
+      onReady: (net) => online(net, sram),
+      onError: (e) => status(e, true),
+    });
+  };
+  $('copy').onclick = () => navigator.clipboard.writeText($('hostcode').textContent);
+  $('joinbtn').onclick = () => { $('join-row').hidden = false; $('code').focus(); };
+  $('join').onclick = async () => {
+    const code = $('code').value.trim().toUpperCase();
+    if (code.length !== 6) { status('Codes are 6 characters.', true); return; }
+    lockModes();
+    $('join').disabled = true;
+    status('Joining ' + code + '\u2026');
+    UniNet.join({
+      code, romHash: await romHash(), events,
+      onReady: (net, sram) => online(net, sram),
+      onError: (e) => { status(e, true); $('join').disabled = false; },
+    });
+  };
 </script>
+<script src="https://unpkg.com/peerjs@1.5.5/dist/peerjs.min.js"></script>
+<script src="netplay.js"></script>
 <script src="uniracers.js"></script>
 </body>
 </html>

@@ -122,11 +122,13 @@ if(EMSCRIPTEN)
         message(FATAL_ERROR "The web build publishes no ROM-derived code: configure with -DSNESRECOMP_INTERP_HOST=ON.")
     endif()
     set_target_properties(UniracersSNESRecomp PROPERTIES OUTPUT_NAME uniracers SUFFIX ".js")
+    # Online two-player: the lockstep half (web/netplay.js is the lobby).
+    target_sources(UniracersSNESRecomp PRIVATE src/web_netplay.c)
     target_link_options(UniracersSNESRecomp PRIVATE
         # Only the host's wait paths may suspend (HostSleepMs in host_main.c);
         # instrumenting nothing else keeps the interpreter at full speed.
         -sASYNCIFY -sASYNCIFY_STACK_SIZE=65536
-        "-sASYNCIFY_ONLY=['main','__main_argc_argv','snesrecomp_desktop_main','WaitUntil','RunSavestateMenuLoop','RunRewindLoop','HostSleepMs']"
+        "-sASYNCIFY_ONLY=['main','__main_argc_argv','snesrecomp_desktop_main','WaitUntil','RunSavestateMenuLoop','RunRewindLoop','HostSleepMs','WebNetplayFilterInputs']"
         -sALLOW_MEMORY_GROWTH=1 -sSTACK_SIZE=1048576
         -sINVOKE_RUN=0 -sEXIT_RUNTIME=1 -sENVIRONMENT=web
         -sFORCE_FILESYSTEM=1 -lidbfs.js
