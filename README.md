@@ -147,14 +147,15 @@ Either way the ROM is checked against the digests above before anything boots
 — a dump that could not have produced this build is refused at the door rather
 than mis-executing ten frames in.
 
-### Controls
+### Controls and settings
 
-The first run writes `keybinds.ini` next to the executable: one `[player1]`
-and one `[player2]` section mapping the SNES buttons (`a b x y l r start
-select up down left right`) to SDL key names (`Z`, `Return`, `Right Shift`,
-`Up`, ..., or `None`). Edit it and restart. Both players default to the same
-keys; give player 2 its own if both play on one keyboard. The launcher's
-Configure view edits the same file.
+The launcher ([recomp-ui](https://github.com/RetroPortingToolKit/recomp-ui))
+sets everything: per-player keyboard or gamepad bindings, window scale,
+renderer, fullscreen, filtering, vsync, run-ahead, audio, hotkeys and mods.
+**Ctrl+L** (or Select+L3 on a gamepad) reopens it mid-game; most changes
+apply on Resume. Settings live in `config.ini` and `keybinds.ini` beside
+the executable, which you can also edit by hand (`[player1]` / `[player2]`
+map `a b x y l r start select up down left right` to SDL key names).
 
 ## Layout
 

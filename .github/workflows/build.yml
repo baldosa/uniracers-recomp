@@ -79,6 +79,7 @@ jobs:
           [[ -f "${EXE}.exe" ]] && EXE="${EXE}.exe"
           cp "${EXE}" "dist/${STAGE}/"
           [[ -d build-ci/mods ]] && cp -r build-ci/mods "dist/${STAGE}/"
+          cp -r build-ci/assets "dist/${STAGE}/"   # recomp-ui launcher fonts and art
           cat > "dist/${STAGE}/README.txt" <<'TXT'
           Uniracers (snesrecomp native recompilation)
 
@@ -87,8 +88,9 @@ jobs:
               ./UniracersSNESRecomp uni.sfc        (Linux)
               UniracersSNESRecomp.exe uni.sfc      (Windows; or drag the ROM onto the exe)
 
-          keybinds.ini and config.ini are written next to the program on the
-          first run; edit them and restart to change controls and display.
+          The launcher opens first: pick the ROM, set controls, display and
+          audio. Ctrl+L reopens it during the game. Settings are saved in
+          config.ini and keybinds.ini next to the program.
           Source: https://github.com/${{ github.repository }}
           TXT
           sed -i 's/^          //' "dist/${STAGE}/README.txt"

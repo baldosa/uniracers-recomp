@@ -2,3 +2,6 @@
 	path = snesrecomp
 	url = https://github.com/baldosa/snesrecomp.git
 	branch = uniracers/native-handoff
+[submodule "recomp-ui"]
+	path = recomp-ui
+	url = https://github.com/RetroPortingToolKit/recomp-ui.git

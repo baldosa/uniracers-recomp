@@ -103,17 +103,19 @@ snesrecomp_target_desktop_host(UniracersSNESRecomp)
 # opens on that dump rather than asking for one.
 snesrecomp_target_rom_cache(UniracersSNESRecomp)
 
-# No GUI launcher: this project was scaffolded with --no-recomp-ui.
-# Add the submodule and re-run this block to get one:
-#   git submodule add https://github.com/mstan/recomp-ui.git recomp-ui
-#   set(RECOMP_UI_ROOT "${CMAKE_SOURCE_DIR}/recomp-ui" CACHE PATH "" FORCE)
-#   include(${RECOMP_UI_ROOT}/recomp_ui.cmake)
-#   recomp_target_launcher_ui(UniracersSNESRecomp CONSOLE snes)
+# recomp-ui launcher (repo-root submodule): ROM picker, controls, display,
+# audio and mods before boot, and in game with Ctrl+L. Desktop only: the web
+# page is its own launcher.
+if(NOT EMSCRIPTEN)
+    set(RECOMP_UI_ROOT "${CMAKE_SOURCE_DIR}/recomp-ui" CACHE PATH "" FORCE)
+    include(${RECOMP_UI_ROOT}/recomp_ui.cmake)
+    recomp_target_launcher_ui(UniracersSNESRecomp CONSOLE snes)
+endif()
 
 # Netplay is not built into this target.
 # No multitap: two seats, one controller per port.
 
-# Web build (Emscripten, interpreter host only: tools/web/build.sh). The page
+# Web build (Emscripten: tools/web/build.sh). The page
 # (web/index.html) writes the visitor's ROM into the in-memory file system and
 # calls main(); saves and settings live in IndexedDB (IDBFS at /persist).
 if(EMSCRIPTEN)

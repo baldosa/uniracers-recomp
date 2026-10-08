@@ -60,6 +60,8 @@ static const SnesDesktopHostGame kGameHost = {
     /* Battery-backed SRAM shows the launcher's SAVES panel. Leave NULL for a
      * title without one. The path is exe-relative. */
     .sram_path           = "saves/save.srm",
+    /* Ctrl+L (or Select+L3) reopens the recomp-ui launcher mid-game. */
+    .in_game_launcher    = 1,
 #ifdef __EMSCRIPTEN__
     /* Online two-player (web build only, src/web_netplay.c). */
     .filter_frame_inputs = WebNetplayFilterInputs,
