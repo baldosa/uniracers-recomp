@@ -7,9 +7,11 @@ Native static recompilation of Uniracers (SNES)
 
 
 
-> **You must legally own a copy of the game.** No ROM data is distributed with
-> this project, in the repository or in any release. The recompiled C is
-> generated locally from your own copy and is never committed.
+> **You must legally own a copy of the game.** No game assets are included,
+> in the repository or in any release: graphics, music and tracks are read
+> from your own ROM at runtime. The recompiled program logic (`src/gen/`) is
+> committed; [src/gen/README.md](src/gen/README.md) explains what it is.
+> Unofficial fan project, not affiliated with Nintendo or DMA Design.
 
 ## Status
 
@@ -164,7 +166,7 @@ Configure view edits the same file.
 | `recomp/` | Analysis input: `bank*.cfg`, `symbols.toml`, generated `funcs.h` |
 | `rom_identity.txt` | ROM digests — read by the build, `tools/regen.sh` and CI |
 | `src/` | Host code you own: `main.c`, `game_rtl.c` |
-| `src/gen/` | Generated C. Never committed — regenerate locally |
+| `src/gen/` | Generated C (machine-translated game logic, no assets): `tools/regen.sh` rebuilds it |
 | `snesrecomp/` | Framework submodule (owns `lib/recomp-net`, `lib/retcomm-rbengine`) |
 | `tools/` | `regen.sh` — the ROM → C pipeline |
 | `decomp/` | Decomp knowledge: `symbols.txt` (names, comments), `ram.txt`, `hw.asm`, `subsystems.txt` |

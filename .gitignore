@@ -1,6 +1,6 @@
-# Generated recompiler output — derived from a copyrighted ROM. Never commit.
-/src/gen/
-/recomp/funcs.h
+# Generated recompiler output (src/gen/, recomp/funcs.h) is committed: see
+# src/gen/README.md. The generator's staging dirs stay local.
+/src/.gen.snesrecomp-*
 
 # The ROM itself, in every form. Players supply their own.
 *.sfc

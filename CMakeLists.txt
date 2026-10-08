@@ -50,9 +50,8 @@ add_executable(UniracersSNESRecomp
 # the release workflow read the same file. A revision bump is one edit there.
 snesrecomp_rom_identity(UniracersSNESRecomp ${CMAKE_SOURCE_DIR}/rom_identity.txt)
 
-# Generated recompiler output. Not committed: it is derived from a copyrighted
-# ROM, so every developer regenerates it locally from their own copy -- and a
-# release does not ship it either. With -DSNESRECOMP_SETUP_HOST=ON and an empty
+# Generated recompiler output, committed (src/gen/README.md says what it is);
+# tools/regen.sh rebuilds it from your own ROM. With -DSNESRECOMP_SETUP_HOST=ON and an empty
 # src/gen/, this builds the SETUP HOST instead: the same executable minus the
 # recompiled code, whose only path is the launcher's Generate & rebuild wizard.
 # That is what release zips contain; the player's machine produces the

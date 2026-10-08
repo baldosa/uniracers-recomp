@@ -41,12 +41,6 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Assert no generated C in the tree
-        run: |
-          if compgen -G 'src/gen/*.c' >/dev/null; then
-            echo "::error::src/gen/*.c is present in the checkout."; exit 1
-          fi
-
       - name: Install build dependencies (Linux)
         if: runner.os == 'Linux'
         run: |
