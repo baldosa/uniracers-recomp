@@ -71,7 +71,11 @@ static const SnesDesktopHostGame kGameHost = {
 #ifndef __ANDROID__
 #undef main   /* desktop: keep plain main() even if SDL_main.h remapped it */
 #endif
+/* The split screen's HDMA writes to OAMDATA land on $10C (runner dma.c). */
+extern bool g_hdma_oamdata_at_10c;
+
 int main(int argc, char **argv)
 {
+    g_hdma_oamdata_at_10c = true;
     return snesrecomp_desktop_main(&kGameHost, argc, argv);
 }

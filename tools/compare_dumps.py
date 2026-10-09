@@ -2,7 +2,8 @@
 
 usage: compare_dumps.py RUN_A RUN_B   (each holds dump/<tag>.wram.bin, .sram.bin)
 Prints per tag the WRAM bytes that differ (stack and tools/state_mask.txt
-masked) and whether SRAM matches. Exit 1 if any tag is missing on one side
+masked) and whether SRAM matches, and OAM too when both sides dumped it
+(the snesref core needs the debug patch for that). Exit 1 if any tag is missing on one side
 or differs in more than ALLOW bytes (env, default 0).
 
 Exact equality is not always reachable across execution tiers or emulators:
@@ -43,6 +44,11 @@ def main(a, b, allow):
         print(f'{t}: wram {len(d)} bytes differ' + ('' if not d else ': ' + ' '.join(
             f'{i:05X}:{wa[i]:02X}/{wb[i]:02X}' for i in d[:16])) + f'; sram {"same" if sram_same else "DIFFERS"}')
         ok &= len(d) <= allow and sram_same
+        if all(os.path.exists(f'{r}/dump/{t}.oam.bin') for r in (a, b)):
+            oa, ob = rd(a, 'oam'), rd(b, 'oam')
+            od = [i for i in range(len(oa)) if oa[i] != ob[i]]
+            print(f'{t}: oam {len(od)} bytes differ' + ''.join(f' {i:03X}:{oa[i]:02X}/{ob[i]:02X}' for i in od[:16]))
+            ok &= not od
     return ok
 
 if __name__ == '__main__':

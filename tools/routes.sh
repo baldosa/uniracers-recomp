@@ -19,7 +19,7 @@ for s in "$here"/tests/routes/*.txt; do
   rm -rf "$out/$r"; mkdir -p "$out/$r/dump"
   cp "$tmp/$r/log.txt" "$out/$r/"
   [ -f "$tmp/$r/fd/crc.txt" ] && cp "$tmp/$r/fd/crc.txt" "$out/$r/"
-  cp "$tmp/$r"/dump/*.wram.bin "$tmp/$r"/dump/*.sram.bin "$out/$r/dump/" 2>/dev/null
+  cp "$tmp/$r"/dump/*.wram.bin "$tmp/$r"/dump/*.sram.bin "$tmp/$r"/dump/*.oam.bin "$out/$r/dump/" 2>/dev/null
   rm -rf "$tmp/$r"
   if [ $rc -ne 0 ]; then echo "$r: run FAILED (exit $rc)"; fail=1; continue; fi
   if [ -n "$ref" ]; then
